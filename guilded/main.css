@@ -1,4 +1,3 @@
-@-moz-document domain("guilded.gg") {
 /* Credits:
  * Contributors:
  * - IdkGoodName
@@ -588,5 +587,4 @@ body,
  */
 .TeamPostRow-container {
     background-color: rgba(100, 100, 100, 0.1);
-}
 }
