@@ -1,0 +1,592 @@
+@-moz-document domain("guilded.gg") {
+/* Credits:
+ * Contributors:
+ * - IdkGoodName
+ */
+
+/*
+ *
+ * === Body ===
+ *
+ */
+body,
+.ChannelWrapper-container,
+.ChatChannelMessagesList-container,
+.SlateEditor-container-type-default {
+    /* Background */
+    --nihility-bg-0: #090909;
+    --nihility-bg-1: #0d0d0d;
+    --nihility-bg-2: #111111;
+    --nihility-bg-3: #171717;
+    --nihility-bg-4: #212121;
+    /* Text */
+    --nihility-fg-0: #494949;
+    --nihility-fg-1: #696969;
+    --nihility-fg-2: #AAAAAA;
+    --nihility-fg-3: #DDDDDD;
+    --nihility-mark: #AAAAAA;
+    --body-text-color: #AAAAAA;
+    /* Misc */
+    --border-color: #0d0d0d;
+    --nihility-theme: #595959;
+    --nihility-theme-2: #676767;
+}
+::selection {
+    background-color: rgb(246, 188, 0, 0.8);
+    color: black;
+}
+.AppV2-container-minimal-nav {
+    --left-v4-nav-color: var(--nihility-bg-0);
+    --nav-v4-sidebar-background-color: var(--nihility-bg-0);
+}
+
+/*
+ *
+ * === Icons & Buttons ===
+ *
+ */
+
+/* Team badges */
+#icon-verified-badge path:first-child {
+    fill: var(--nihility-theme);
+}
+
+/* User badges */
+.UserBadge-image ~ .UserBadge-name {
+    display: none;
+}
+.UserBasicInfoDisplay-name-and-status-wrapper {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-self: flex-end;
+}
+.UserBadges-container,
+.UserBasicInfoDisplay-user-badge {
+    margin-left: 0;
+    margin-right: 0.5rem;
+}
+
+/* Avatars */
+.CollapsedInput-container-size-sm .CollapsedInput-profile-picture,
+.CircleImageStack-image-circle,
+.UserProfilePictureControl-picture,
+.ProfilePictureSkeleton-picture-skeleton,
+.ReplyingToUserHeader-image,
+.TeamMemberBubbleStack-bubble,
+.TeamMemberBubble-image,
+.LoggedInUserAvatar-picture,
+.PlayerCardProfilePicture-avatar,
+.ChatV2MessageHeader-avatar-wrapper,
+.ChatV2MessageHeader-avatar {
+    border-radius: 0.5rem;
+}
+
+/* Status */
+.OnlineStatusDisplay-container,
+.OnlineStatusDisplay-container-size-xs,
+.LoggedInUserAvatar-online-status {
+    border-radius: 0.3rem;
+}
+
+/* Overview */
+
+.ShareContentTrigger-text,
+.ShareContentTrigger-icon,
+.ContentMetadataReplyInfo-icon,
+.GuildedText-container.ContentMetadataReplyInfo-reply-text {
+    fill: var(--nihility-fg-2);
+    color: var(--nihility-fg-2);
+}
+
+/*
+ *
+ * === Floating ===
+ *
+ */
+
+/* Tooltips */
+.HoverContextTooltip-arrow {
+    background-color: #070707E0;
+}
+.HoverContextTooltip-text-wrapper {
+    background-color: #0d0d0dE0;
+    border: 0.2rem solid #080808E0;
+}
+
+/* Chat */
+.ReactionPickerButton-container-type-content,
+.ReactionBadge-container-content,
+.ReactionBadge-container-content:hover,
+.ReactionBadge-container:not(.ReactionBadge-container-disabled):not(.ReactionBadge-container-active):hover .ReactionBadge-container-content {
+    background-color: rgba(0,0,0,0.3);
+}
+
+/*
+ *
+ * === Layout ===
+ *
+ */
+
+/*
+ * Group, server lists and user card
+ */
+.TeamChannelItemContents-container-selected {
+    background-color: var(--nihility-bg-3);
+}
+.ChatChannelInput-container .ChatChannelInput-editor,
+.Editor-container,
+.ChatChannelInput-editor {
+    background-color: var(--nihility-bg-0);
+}
+.NavV4Footer-footer-content,
+.NavV4Footer-right,
+.NavV4Sidebar-container {
+    background-color: var(--nihility-bg-0);
+}
+.GroupSelector-container,
+.NavV4Sidebar-container {
+    background-color: var(--nihility-bg-1);
+}
+.GroupAvatarBadge-container-reaction,
+.LoggedInUserAvatar-online-status {
+    background-color: var(--nihility-bg-1);
+}
+
+.LoggedInUserAvatar-name {
+    color: var(--nihility-fg-2);
+}
+.LoggedInUserStatus-content-with-status {
+    color: var(--nihility-fg-1);
+}
+.NavIcon-container-type-vertical-nav,
+.TransientMenuTrigger-container {
+    fill: var(--nihility-fg-1);
+}
+
+/* Server list revealer */
+.NavV4ItemIcon-icon {
+    fill: var(--nihility-fg-1);
+}
+
+/*
+ * Search
+ */
+.SearchBarV2-container.SearchBarV2-container-focused {
+    background-color: var(--nihility-bg-3);
+}
+.SearchBarV2-container-unfocused::after,
+.SearchBarV2-container {
+    border-radius: 1rem;
+    background-color: var(--nihility-bg-2);
+    border-color: var(--nihility-bg-1);
+}
+
+/*
+ * Channels & Members
+ */
+body,
+.TeamPageNavV3-container,
+.ScreenHeader-container,
+.SidebarWrapper-container,
+.TeamNavMenu-container {
+    background-color: var(--nihility-bg-1);
+    border-bottom: 0;
+}
+
+.ScreenHeader-name {
+    color: var(--nihility-fg-3);
+}
+.ScreenHeader-description-child {
+    color: var(--nihility-fg-2);
+}
+/* Channel card */
+.TeamChannelItemContents-container-unread .TeamChannelItemContents-name, .TeamChannelItemContents-container-channel-content .TeamChannelItemContents-name,
+.TeamChannelItemContents-container:not(.TeamChannelItemContents-container-selected):hover .TeamChannelItemContents-name {
+    color: var(--nihility-fg-2);
+}
+/* Channel card selected */
+.ChannelIcon-icon-selected,
+.ChannelIcon-icon-selected .ChannelIcon-icon,
+.TeamNavSectionItem-container-selected .TeamNavSectionItem-icon {
+    fill: var(--nihility-fg-3);
+    color: var(--nihility-fg-3);
+}
+
+/*
+ * Notifications
+ */
+.TeamChannelItemContents-container-unread::before,
+.NavV4ItemIcon-icon-unread::before,
+.NavSelectorItem-container-orientation-horizontal.NavSelectorItem-container-unread::before,
+.TeamOverviewContentItemCard-container-unread::before {
+    background-color: var(--nihility-mark);
+}
+
+/*
+ * Icon
+ */
+
+.ChannelIcon-icon-selected .ChannelIcon-icon-background,
+.ChannelIcon-icon-background {
+    background-color: var(--nihility-bg-3);
+}
+
+/*
+ *
+ * === Profiles ===
+ *
+ *
+ */
+
+/* Presence */
+.UserProfilePictureControl-online-status {
+    right: 0px;
+}
+
+/* Tagline */
+.OverviewWidgetItem-text-paragraph {
+    color: var(--nihility-fg-2);
+}
+
+/*
+ *
+ * === Content ===
+ *
+ */
+
+/*
+ * Misc
+ */
+.FormConfirmButtonV2-container.FormConfirmButtonV2-container-hollow {
+    border-color: var(--nihility-theme);
+}
+.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-hollow:hover {
+    border-color: var(--nihility-theme-2);
+}
+
+/*
+ * Overview
+ */
+
+/* Banner and header */
+.TeamOverviewBanner-container {
+    border-bottom: none;
+}
+.TeamOverviewBanner-banner {
+    mask-image: linear-gradient(to bottom, #000, #000 calc(100% - 40%), rgba(0,0,0,0) calc(100% - 5px), rgba(0,0,0,0));
+}
+.TeamOverviewRoot-container {
+    z-index: 2;
+}
+.TeamOverviewRoot-description {
+    color: var(--nihility-fg-2);
+}
+
+/* Showcase */
+.GH3-container {
+    color: var(--nihility-fg-3);
+}
+
+.ToggleControl-container.ToggleControl-container-highlighted {
+    border-color: var(--nihility-theme);
+}
+.ToggleControlButton-container,
+.ToggleControlButton-icon {
+    color: var(--nihility-fg-1);
+    fill: var(--nihility-fg-1);
+}
+.OverviewWidgetItemWrapper-container-type-filled,
+.TeamOverviewContentItemCard-container {
+    background-color: var(--nihility-bg-3);
+}
+.CollapsedInput-container {
+    background-color: rgba(100,100,100,0.1);
+}
+
+/* Showcase text */
+.TeamOverviewContentItemCard-title {
+    font-weight: bold;
+}
+.TeamOverviewContentItemCard-title,
+.TeamOverviewContentItemCard-subtitle {
+    color: var(--nihility-fg-2);
+}
+.TeamOverviewContentItemCard-subtitle2 {
+    color: var(--nihility-fg-1);
+}
+
+/* Showcase:Events */
+.ToggleControlButton-container.ToggleControlButton-container-desktop:hover
+.ToggleControlButton-icon,
+.ToggleControlButton-container.ToggleControlButton-container-selected .ToggleControlButton-icon {
+    fill: var(--nihility-theme-2);
+}
+
+/* Carousel/Scrollable list */
+.CarouselList-container-size-sm .CarouselList-blur-light.CarouselList-left-blur,
+.CarouselList-blur-light.CarouselList-left-blur {
+    background-image: linear-gradient(to left, rgba(55,57,67,0), #111111 100%);
+}
+.CarouselList-container-size-sm .CarouselList-blur-light.CarouselList-right-blur,
+.CarouselList-blur-light.CarouselList-right-blur {
+    background-image: linear-gradient(to right, rgba(55,57,67,0), #111111 100%);
+}
+.CarouselList-controls-arrow {
+    fill: var(--nihility-fg-2);
+}
+
+/* Leaderboard */
+.TeamOverviewLeaderboardSection-leaderboard-container {
+    background-color: var(--nihility-bg-3);
+}
+.GameIconAndGameName-container-style-header .GameIconAndGameName-game-name,
+.LeaderboardHeader-title, .LeaderboardHeader-name,
+.LeaderboardHeader-stats-header {
+    color: var(--nihility-fg-3);
+}
+.LeaderboardRow-stat {
+    color: var(--nihility-fg-2);
+}
+/**
+ * Formatting
+ */
+
+/* Quote block */
+.BlockQuoteContainerRenderer {
+    background-color: rgba(0,0,0,0.15);
+}
+.SlateContainerRenderer.BlockQuoteContainerRenderer.slate-margin-lg {
+    padding: 1rem;
+    padding-left: 1.5rem;
+}
+
+/* Inline code */
+.MarkRenderer-inline-code, .MarkRenderer-inline-code-v2 {
+    background-color: var(--nihility-bg-0);
+    color: var(--nihility-fg-3);
+}
+
+.ChannelPill-container {
+    color: var(--nihility-fg-3);
+    background-color: rgba(100,100,100,0.1);
+}
+
+/* Mention icons */
+.ScreenHeader-icon,
+.TeamNavSectionItem-icon,
+.TeamChannelItemContents-action-icon,
+.ChannelIcon-icon-primary {
+    fill: var(--nihility-fg-1);
+}
+
+/* Headers/Titles */
+.SlateHeadingRenderer,
+.GH1-container {
+    color: var(--nihility-fg-3);
+}
+
+/* Links */
+.LinkRenderer, .LinkRenderer:visited, .LinkRenderer:focus {
+    color: var(--nihility-theme);
+}
+.LinkRenderer:hover, .LinkRenderer:active {
+    color: var(--nihility-theme-2);
+}
+
+/* Content info */
+.DefaultContentEmbedCard-content-wrapper {
+    background-color: var(--nihility-bg-2);
+    border: 1px inset rgba(255,255,255,0.1);
+}
+.DefaultContentEmbedCard-content-fade-overflow::after {
+    background: linear-gradient(to bottom, transparent, #111111 20px);
+}
+
+/* Embeds */
+.ContentEmbedCardFooter-container {
+    background-color: var(--nihility-bg-1);
+}
+.OpenGraphEmbed-content {
+    background-color: var(--nihility-bg-3);
+}
+.TeamEmbedCard-container {
+    background-color: var(--nihility-bg-2);
+}
+
+/* Replies */
+.ReplyingToUserHeader-post-link {
+    color: var(--nihility-fg-0);
+}
+
+/*
+ * Chat
+ */
+
+/* Header */
+.ChatV2MessageTimestamp-container.ChatV2MessageHeader-timestamp {
+    color: var(--nihility-fg-1);
+    transition: color 0.5s;
+}
+.ChatV2Message-container.ChatV2Message-container-type-default:hover
+.ChatV2MessageHeader-container.ChatV2Message-header
+.SkeletonPlaceholder-container.ChatV2MessageHeader-info
+.ChatV2MessageTimestamp-container.ChatV2MessageHeader-timestamp {
+    color: var(--nihility-fg-3);
+}
+
+.LastReplyDisplayContent-message-summary,
+.BlockQuoteLineRenderer,
+.ChatV2Message-container.ChatV2Message-container-type-default,
+.LayeredPageContent-content,
+.ChannelWrapper-container,
+.ParagraphRenderer {
+    color: var(--nihility-fg-2);
+}
+
+.SidebarInfoItem-container,
+.LayeredPageContent-content,
+.ChannelWrapper-container {
+    background-color: var(--nihility-bg-2);
+    color: var(--nihility-fg-3);
+}
+.ChatV2Message-container:not(.ChatV2Message-container-editing):hover,
+.ChatV2Message-container.ChatV2Message-container-replying {
+    background-color: var(--nihility-bg-2);
+}
+
+/* Content containers */
+.QuickActionBar-container {
+    background-color: var(--nihility-bg-1);
+    border-color: var(--nihility-bg-1);
+}
+.CodeContainerRenderer-container {
+    background-color: var(--nihility-bg-1);
+}
+.CodeLineRenderer {
+    background-color: var(--nihility-bg-1);
+}
+
+/**
+ * Announcements
+ */
+.ContentMetadataCreationInfo-from-now-link, .ContentMetadataCreationInfo-from-now-link:hover, .ContentMetadataCreationInfo-from-now-link:visited, .ContentMetadataCreationInfo-from-now-link:active, .ContentMetadataCreationInfo-from-now-link:focus {
+    color: var(--nihility-fg-1);
+}
+
+/*
+ * Docs
+ */
+.DocDisplayItem-container {
+    background-color: var(--nihility-bg-2);
+}
+.ReplyPanel-container-viewing,
+.DocSummaryInfo-container {
+    background-color: var(--nihility-bg-1);
+}
+
+/* Text */
+.GuildedText-container-type-heading3 {
+    color: var(--nihility-fg-2);
+}
+.DocSummaryInfo-subtitle {
+    color: var(--nihility-fg-1);
+}
+
+/* Reply */
+.PostReplyQuoteButtons-option:not(:first-child):not(:first-child)::before {
+    background-color: var(--nihility-fg-0);
+}
+.PostReplyQuoteButtons-option, .PostReplyQuoteButtons-option:hover, .PostReplyQuoteButtons-option:visited, .PostReplyQuoteButtons-option:active, .PostReplyQuoteButtons-option:focus {
+    color: var(--nihility-theme-2);
+}
+
+/* Tags */
+.TagDisplayItemV2-container {
+    border-color: var(--nihility-bg-4);
+    background-color: var(--nihility-bg-1);
+}
+.TagDisplayItemV2-tag {
+    color: var(--nihility-fg-2);
+}
+
+/* Editor */
+.SlateToolbarIcon-icon {
+    fill: var(--nihility-fg-1);
+}
+.ReactionPickerButton-icon,
+.SlateToolbarMenuIcon,
+.SlateToolbarIcon-icon-active {
+    fill: var(--nihility-fg-2);
+}
+.SlateToolbarMenuIcon-container:hover {
+    fill: var(--nihility-fg-3);
+}
+.SlateToolbarMenuIcon-carat {
+    fill: var(--nihility-fg-1);
+}
+
+/* Post a comment and reactions */
+.RepliesAddon-header-text {
+    color: var(--nihility-fg-3);
+}
+.ReactionPickerButton-container-with-label::after {
+    color: var(--nihility-fg-2);
+}
+
+/*
+ * Events/Calendar
+ */
+
+/* Day cards */
+.FullSizedCalendar-week {
+    background-color: var(--nihility-bg-3);
+}
+.FullSizedCalendar-day {
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--nihility-bg-1);
+}
+.FullSizedCalendarDayHeader-date {
+    color: var(--nihility-fg-2);
+}
+.FullSizedCalendarDay-container-different-month {
+    background-color: var(--nihility-bg-2);
+    color: var(--nihility-fg-1);
+    color: black;
+}
+.FullSizedCalendarDay-container-today {
+    background-color: var(--nihility-bg-4);
+}
+
+/* Numbers */
+.FullSizedCalendarDayHeader-date-different-month {
+    color: var(--nihility-fg-1);
+}
+.FullSizedCalendarDayHeader-date-today {
+    background-color: var(--nihility-theme);
+    color: white;
+}
+
+/* Buttons */
+.ToggleControlButton-container.ToggleControlButton-container-desktop:hover,
+.ToggleControlButton-container.ToggleControlButton-container-selected {
+    color: var(--nihility-theme) !important;
+    background-color: var(--nihility-bg-1);
+}
+
+/* Upcoming */
+.UpcomingCalendarDay-container,
+.UpcomingCalendar-container {
+    background-color: var(--nihility-bg-1);
+}
+.UpcomingCalendarEvent-container-desktop:hover {
+    background-color: var(--nihility-bg-2);
+}
+
+/*
+ * Announcements
+ */
+.TeamPostRow-container {
+    background-color: rgba(100, 100, 100, 0.1);
+}
+}
