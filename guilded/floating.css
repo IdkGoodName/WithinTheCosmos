@@ -1,0 +1,192 @@
+/*
+ *
+ * === Floating ===
+ *
+ */
+
+/*
+ * --- New messages / Alert bar ---
+ */
+
+/* New messages, mentions and viewing older messages alerts */
+.ChatChannelAlertBar-container.ChatChannelAlertBar-container-type-viewing-older-messages,
+.ChatChannelAlertBar-container.ChatChannelAlertBar-container-type-new-messages,
+.ChatChannelAlertBar-container-type-new-mentions {
+    background-color: var(--nihility-bg-0) !important;
+}
+/* New mentions */
+.ChatChannelAlertBar-container-type-new-mentions {
+    color: var(--nihility-mention) !important;
+    fill: var(--nihility-mention) !important;
+}
+/* New mentions icon */
+.ChatChannelAlertBar-container-type-new-mentions .ChatChannelAlertBar-icon-click-wrapper .ChatChannelAlertBar-icon {
+    fill: var(--nihility-mention);
+}
+/* Any alert bar */
+.ChatChannelAlertBar-container {
+    fill: var(--nihility-fg-2);
+    color: var(--nihility-fg-2);
+    background-color: var(--nihility-bg-0);
+    border-color: var(--nihility-bg-3);
+}
+/* Alert bar icon */
+.ChatChannelAlertBar-icon {
+    fill: var(--nihility-fg-2);
+}
+/* Alert bar hover */
+.ChatChannelAlertBar-container::after {
+    background-color: var(--nihility-bg-hover);
+}
+
+/*
+ * --- Tooltips ---
+ */
+
+/* Tooltip's base */
+.HoverContextTooltip-text-wrapper {
+    background-color: #0d0d0dE0;
+    border: 0.15rem solid #080808E0;
+}
+/* Tooltip's arrow/pointer */
+.HoverContextTooltip-arrow {
+    background-color: #070707E0;
+}
+
+/*
+ * --- Reactions ---
+ */
+
+/* Reaction normally */
+.ReactionPickerButton-container-type-content,
+.ReactionBadge-container-content,
+.ReactionBadge-container-content:hover,
+.ReactionBadge-container:not(.ReactionBadge-container-disabled):not(.ReactionBadge-container-active):hover .ReactionBadge-container-content {
+    background-color: rgba(0,0,0,0.3);
+}
+.ReactionPickerButton-container-type-content {
+    transition: 0.3s;
+}
+/* When reaction is hovered over */
+.ReactionPickerButton-container-type-content:hover {
+    background: rgba(255,255,255,0.05);
+}
+/* Text after the reaction button */
+.ReactionPickerButton-container-with-label::after {
+    color: var(--nihility-fg-2);
+    transition: 0.3s;
+}
+/* Reaction icon */
+.ReactionPickerButton-container .ReactionPickerButton-icon {
+    color: var(--nihility-fg-2);
+    transition: 0.3s;
+}
+
+/*
+ * --- Member card ---
+ */
+
+/* Member card's background */
+.ProfileHoverCardV2Overlay-container {
+    background-color: var(--nihility-bg-3);
+}
+
+
+/* Section's header */
+.UserAttributionDisplay-header,
+.UserTeamXpDisplay-level-display .GuildedText-container /* Level */ {
+    color: var(--nihility-fg-3);
+}
+
+
+/* Total XP needed */
+.UserTeamXpDisplay-level-display .GuildedText-container.GuildedText-container-type-subtext2 {
+    color: var(--nihility-fg-1);
+}
+/* XP user has */
+.UserTeamXpDisplay-level-display .GuildedText-container.GuildedText-container-type-subtext2 .GuildedText-container-weight-bold {
+    color: var(--nihility-fg-2);
+}
+/* XP's background */
+.GoldenProgressBar-container-theme-dark {
+    background-color: var(--nihility-bg-1);
+}
+/* XP's progress */
+.GoldenProgressBar-progress {
+    background-color: var(--nihility-theme-2);
+}
+
+
+/* Socials' icon */
+.OverviewWidgetItem-icon {
+    fill: var(--nihility-fg-1);
+}
+/* Social's text */
+.OverviewWidgetItem-text, .OverviewWidgetItem-input {
+    color: var(--nihility-fg-2);
+}
+
+
+/* Background for buttons */
+.ProfileHoverCardV2Overlay-action-menu {
+    background-color: var(--nihility-bg-2);
+}
+/* Button hover */
+.ContextMenuItem-container::after {
+    background-color: var(--nihility-bg-hover);
+}
+/* Button's icon */
+.ContextMenu-content {
+    fill: var(--nihility-fg-1);
+}
+/* Button's text */
+.ContextMenuItem-label {
+    color: var(--nihility-fg-3);
+}
+
+/*
+ * --- Mention icons ---
+ */
+.BadgeV2-container,
+.NavIcon-dot {
+    background-color: var(--nihility-mention);
+}
+
+/*
+ * --- Emote picker ---
+ */
+
+/* Emote picker content */
+.ReactionPicker-content {
+    background-color: var(--nihility-bg-2);
+}
+/* Emote server title */
+.ReactionPicker-section-label {
+    color: var(--nihility-fg-2);
+}
+/* Bottom and top bar */
+.ReactionPickerFooter-container /* Picker footer/information */,
+.ReactionPickerNavbar-container /* Emote tabs/top bar */ {
+    color: var(--nihility-fg-1);
+    background-color: var(--nihility-bg-1);
+    border-color: var(--nihility-bg-0);
+}
+
+/* Emote picker tab */
+.ReactionPickerNavbarItem-active {
+    border-bottom-color: var(--nihility-theme);    
+}
+/* Emote picker tab's icon */
+.ReactionPickerNavbarItem-icon {
+    fill: var(--nihility-fg-1);
+}
+/* Emote picker active tab's icon */
+.ReactionPickerNavbarItem-active .ReactionPickerNavbarItem-icon {
+    fill: var(--nihility-fg-3);
+}
+
+/* Footer skintone's arrow */
+.IconMenuInput-container-gray .IconMenuInput-chevron-down, .IconMenuInput-container-gray .IconMenuInput-selected-value-icon, .IconMenuInput-container-white .IconMenuInput-chevron-down, .IconMenuInput-container-white .IconMenuInput-selected-value-icon {
+    fill: var(--nihility-fg-1);
+}
+
