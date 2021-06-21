@@ -1,0 +1,736 @@
+/*
+ *
+ * === Content ===
+ *
+ */
+
+/*
+ *
+ * -=- Misc -=-
+ *
+ */
+.FormConfirmButtonV2-container.FormConfirmButtonV2-container-hollow {
+    border-color: var(--nihility-theme);
+}
+.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-hollow:hover {
+    border-color: var(--nihility-theme-2);
+}
+.GH1-container {
+    color: var(--nihility-fg-3);
+}
+.GH2-container {
+    color: var(--nihility-fg-2);
+}
+.GH3-container {
+    color: var(--nihility-fg-1);
+}
+
+
+/* For server invite titles, */
+.GuildedText-container-type-heading2 {
+    color: var(--nihility-fg-3);
+}
+/* For level titles, message thread pop up text */
+.GuildedText-container-type-subtext2 {
+    color: var(--nihility-fg-1);
+}
+/*
+ *
+ * -=- Overview -=-
+ *
+ */
+
+/*
+ * --- Banner and header ---
+ */
+
+/* The whole container of it */
+.TeamOverviewBanner-container {
+    border-bottom: none;
+}
+/* The mask that makes it fade in */
+.TeamOverviewBanner-banner {
+    mask-image: linear-gradient(to bottom, #000, #000 calc(100% - 40%), rgba(0,0,0,0) calc(100% - 5px), rgba(0,0,0,0));
+}
+/* Whole panel below the banner, including description */
+.TeamOverviewRoot-container {
+    z-index: 2;
+}
+/* Description below the name of the server */
+.TeamOverviewRoot-description {
+    color: var(--nihility-fg-2);
+}
+
+/*
+ * --- Showcase ---
+ */
+.ToggleControl-container.ToggleControl-container-highlighted {
+    border-color: var(--nihility-theme);
+}
+.ToggleControlButton-container,
+.ToggleControlButton-icon {
+    color: var(--nihility-fg-1);
+    fill: var(--nihility-fg-1);
+}
+.OverviewWidgetItemWrapper-container-type-filled,
+.TeamOverviewContentItemCard-container {
+    background-color: var(--nihility-bg-1);
+}
+.CollapsedInput-container {
+    background-color: rgba(100,100,100,0.1);
+}
+/* Content showcase hover */
+.TeamOverviewContentItemCard-container::after {
+    background-color: var(--nihility-bg-hover);
+}
+
+/* Showcase text */
+.TeamOverviewContentItemCard-title {
+    font-weight: bold;
+}
+.TeamOverviewContentItemCard-title,
+.TeamOverviewContentItemCard-subtitle {
+    color: var(--nihility-fg-2);
+}
+.TeamOverviewContentItemCard-subtitle2 {
+    color: var(--nihility-fg-1);
+}
+
+/* Showcase:Events */
+.ToggleControlButton-container.ToggleControlButton-container-desktop:hover
+.ToggleControlButton-icon,
+.ToggleControlButton-container.ToggleControlButton-container-selected .ToggleControlButton-icon {
+    fill: var(--nihility-theme-2);
+}
+
+/*
+ * --- Carousel/Scrollable list ---
+ */
+
+/* Carousel blurs */
+.CarouselList-container-size-sm .CarouselList-blur-light.CarouselList-left-blur,
+.CarouselList-blur-light.CarouselList-left-blur {
+    background-image: linear-gradient(to left, rgba(55,57,67,0), #111111 100%);
+}
+.CarouselList-container-size-sm .CarouselList-blur-light.CarouselList-right-blur,
+.CarouselList-blur-light.CarouselList-right-blur {
+    background-image: linear-gradient(to right, rgba(55,57,67,0), #111111 100%);
+}
+/* Carousel arrow */
+.CarouselList-controls-arrow {
+    transition: 1s;
+    fill: var(--nihility-fg-2);
+}
+
+/* Leaderboard */
+.TeamOverviewLeaderboardSection-leaderboard-container {
+    background-color: var(--nihility-bg-3);
+}
+.GameIconAndGameName-container-style-header .GameIconAndGameName-game-name,
+.LeaderboardHeader-title, .LeaderboardHeader-name,
+.LeaderboardHeader-stats-header {
+    color: var(--nihility-fg-3);
+}
+.LeaderboardRow-stat {
+    color: var(--nihility-fg-2);
+}
+
+/*
+ *
+ * -=- Formatting -=-
+ *
+ */
+
+/*
+ * --- Title ---
+ */
+.SlateHeadingRenderer {
+    color: var(--nihility-fg-3);
+}
+
+/*
+ * --- Quote block ---
+ */
+.BlockQuoteContainerRenderer {
+    background-color: rgba(0,0,0,0.15);
+}
+.SlateContainerRenderer.BlockQuoteContainerRenderer.slate-margin-lg {
+    padding: 1rem;
+    padding-left: 1.5rem;
+}
+
+/*
+ * --- Code block ---
+ */
+
+/* Whole code block */
+.CodeContainerRenderer-container {
+    background-color: var(--nihility-bg-1);
+}
+/* Code block line */
+.CodeLineRenderer {
+    background-color: var(--nihility-bg-1);
+}
+/* Code block label */
+.CalloutBadge-container {
+    background-color: var(--nihility-theme-2);
+}
+
+/* Label in editor */
+.GuildedSelect-container-option-color-gray .GuildedSelect-default-option-wrapper {
+    color: var(--nihility-fg-1);
+}
+/* Label's arrow in editor */
+.GuildedSelect-container-option-color-gray .Select-arrow {
+    border-top-color: var(--nihility-fg-1) !important;
+}
+/* Label's arrow acitve in editor */
+.Select.is-open > .Select-control .Select-arrow {
+    border-top-color: var(--nihility-fg-2) !important;
+}
+
+/*
+ * --- Inline code ---
+ */
+.MarkRenderer-inline-code, .MarkRenderer-inline-code-v2 {
+    background-color: var(--nihility-bg-0);
+    color: var(--nihility-fg-3);
+}
+
+.ChannelPill-container {
+    color: var(--nihility-fg-3);
+    background-color: rgba(100,100,100,0.1);
+}
+
+/*
+ * --- Mention ---
+ */
+
+/* Mention icon */
+.ScreenHeader-icon,
+.TeamNavSectionItem-icon,
+.TeamChannelItemContents-action-icon,
+.ChannelIcon-icon-primary {
+    fill: var(--nihility-fg-1);
+}
+
+/*
+ * --- Links ---
+ */
+
+/* Link normally */
+.LinkRenderer, .LinkRenderer:visited, .LinkRenderer:focus {
+    color: var(--nihility-theme);
+}
+/* Link clicked and hovered over */
+.LinkRenderer:hover, .LinkRenderer:active {
+    color: var(--nihility-theme-3);
+}
+
+/*
+ * --- Content info ---
+ */
+
+/* Content info */
+.DefaultContentEmbedCard-content-wrapper {
+    background-color: var(--nihility-bg-2);
+    border: 1px inset rgba(255,255,255,0.1);
+}
+/* Content info fading */
+.DefaultContentEmbedCard-content-fade-overflow::after {
+    background: linear-gradient(to bottom, transparent, #111111 20px);
+}
+/* Content info hovered over */
+.DefaultContentEmbedCard-content-wrapper:not(.DefaultContentEmbedCard-content-wrapper-disabled)::after {
+    background-color: var(--nihility-bg-hover);
+}
+
+/*
+ * --- Embeds ---
+ */
+
+/* Embed itself */
+.OpenGraphEmbed-content {
+    background-color: var(--nihility-bg-2);
+}
+.TeamEmbedCard-container {
+    background-color: var(--nihility-bg-2);
+}
+/* Embed hovered over */
+.OpenGraphEmbedContent-container::after {
+    background-color: var(--nihility-bg-hover);
+}
+/* Description's text */
+.OpenGraphEmbedContent-description {
+    color: var(--nihility-fg-2);
+}
+/* Domain name */
+.OpenGraphEmbedContent-domain {
+    color: var(--nihility-fg-1);
+}
+/* Domain icon */
+.OpenGraphEmbedContent-domain-icon {
+    fill: var(--nihility-fg-1);
+}
+/* Footer background */
+.ContentEmbedCardFooter-container {
+    background-color: var(--nihility-bg-1);
+}
+
+/*
+ * --- Server invites ---
+ */
+
+/* Server's description */
+.TeamEmbedCard-description {
+    color: var(--nihility-fg-2);
+}
+/* Member and follower count */
+.EmphasizedLabel-container-type-subtle {
+    color: var(--nihility-fg-1);
+}
+/* Member and follower seperator dot */
+.TeamFollowerMemberCount-separator {
+    background-color: var(--nihility-fg-0);
+}
+/* Server invite hover */
+.TeamEmbedCard-container::after {
+    background-color: var(--nihility-bg-hover);
+}
+
+/*
+ * --- Replies ---
+ */
+.ReplyingToUserHeader-post-link {
+    color: var(--nihility-fg-0);
+}
+
+/*
+ *
+ * -=- Chat -=-
+ *
+ */
+
+/*
+ * --- Messages ---
+ */
+
+/* Chat area */
+.SidebarInfoItem-container,
+.LayeredPageContent-content,
+.ChannelWrapper-container {
+    background-color: var(--nihility-bg-2);
+    color: var(--nihility-fg-3);
+}
+/* Hovered message */
+.ChatV2Message-container:not(.ChatV2Message-container-editing):hover,
+.ChatV2Message-container.ChatV2Message-container-replying {
+    background-color: var(--nihility-bg-3);
+}
+/* Focused message/clicked message's side */
+.ChatV2Message-container.ChatV2Message-container-replying::after {
+    background-color: var(--nihility-theme-3) !important;
+}
+
+
+.LastReplyDisplayContent-message-summary,
+.BlockQuoteLineRenderer,
+.ChatV2Message-container.ChatV2Message-container-type-default,
+.LayeredPageContent-content,
+.ChannelWrapper-container,
+.ParagraphRenderer {
+    color: var(--nihility-fg-2);
+}
+
+/*
+ * --- Header ---
+ */
+
+/* Timestamp */
+.ChatV2MessageTimestamp-container.ChatV2MessageHeader-timestamp {
+    color: var(--nihility-fg-1);
+    transition: color 0.5s;
+}
+/* Timestamp hovered */
+.ChatV2Message-container.ChatV2Message-container-type-default:hover
+.ChatV2MessageHeader-container.ChatV2Message-header
+.SkeletonPlaceholder-container.ChatV2MessageHeader-info
+.ChatV2MessageTimestamp-container.ChatV2MessageHeader-timestamp {
+    color: var(--nihility-fg-3);
+}
+
+/*
+ * --- Menu ---
+ */
+
+/* Message hover menu */
+.QuickActionBar-container {
+    background-color: var(--nihility-bg-1);
+    border-color: var(--nihility-bg-1);
+}
+
+/*
+ * --- Thread menu ---
+ */
+
+/* Message thread menu */
+.ChatV2MessageReplyTooltip-content-wrapper {
+    background-color: var(--nihility-bg-1);
+    border-color: var(--nihility-bg-3);
+}
+/* Message thread menu icon */
+.ChatV2MessageReplyTooltipHeader-icon {
+    fill: var(--nihility-fg-1);
+}
+/* Message thread menu arrow/pointer */
+.ChatV2MessageReplyTooltip-arrow {
+    background-color: var(--nihility-bg-1);
+    border-color: var(--nihility-bg-3);
+}
+
+/* Message thread add a title */
+.ChatV2MessageReplyTooltipHeader-add-title, .ChatV2MessageReplyTooltipHeader-add-title:hover, .ChatV2MessageReplyTooltipHeader-add-title:visited, .ChatV2MessageReplyTooltipHeader-add-title:active, .ChatV2MessageReplyTooltipHeader-add-title:focus {
+    color: var(--nihility-fg-1);
+}
+/* Message thread add a title hovered */
+.ChatV2MessageReplyTooltipHeader-add-title:hover {
+    color: var(--nihility-fg-2);
+}
+
+/* Message thread menu send */
+.SlateEditor-send-icon {
+    fill: var(--nihility-theme-3);
+}
+/* Message thread menu cannot send */
+.SlateEditor-send-icon.SlateEditor-send-icon-disabled {
+    fill: var(--nihility-fg-0);
+}
+
+/* Thread menu title input */
+.ChatV2MessageReplyTooltipInput-title-container {
+    background-color: var(--nihility-bg-0);
+}
+.ContentEditableInput-input, .ContentEditableInput-actual-text-display {
+    color: var(--nihility-fg-2);
+}
+/* Thread menu title input icon */
+.ChatV2MessageReplyTooltipInput-title-icon {
+    fill: var(--nihility-fg-2);
+}
+
+/*
+ *
+ * -=- Voice -=-
+ *
+ */
+
+.VoiceChannelDisplay-container {
+    background-color: var(--nihility-bg-2);
+}
+
+/* X/Y allowed label */
+.LimitLabel-container {
+    background-color: var(--nihility-bg-0);
+}
+/* Current user count */
+.GuildedText-container-type-heading6 {
+    color: var(--nihility-fg-2);
+}
+/* Max user count */
+.LimitLabel-limit {
+    color: var(--nihility-fg-1);
+}
+
+/*
+ *
+ * -=- Forums -=-
+ *
+ */
+
+/*
+ * --- Forum post list ---
+ */
+
+/* Notification bubble */
+.TeamPostRow-container-unread::before {
+    background-color: var(--nihility-mark);
+}
+/* Forum post hover */
+.TeamPostRow-container-desktop::after {
+    background-color: var(--nihility-bg-hover);
+}
+/* Comment count icon */
+.TeamWidgetCommentCount-icon {
+    fill: var(--nihility-fg-1);
+}
+/* Comment count text */
+.TeamWidgetCommentCount-container-size-lg .TeamWidgetCommentCount-label {
+    color: var(--nihility-fg-1);
+}
+/* Author and date */
+.TeamPostRow-options-wrapper {
+    color: var(--nihility-fg-1);
+}
+
+/*
+ * --- Post and reply creation ---
+ */
+
+/* Input */
+.TeamThreadReplyCreator-unexpanded-wrapper,
+.DraftInputWithTitleV2-title-wrapper {
+    background-color: var(--nihility-bg-1);
+}
+/* Input hover */
+.TeamThreadReplyCreator-container-desktop .TeamThreadReplyCreator-unexpanded-wrapper::after,
+.DraftInputWithTitleV2-container-desktop.DraftInputWithTitleV2-container-unexpanded::after {
+    background-color: var(--nihility-bg-hover);
+}
+/* Input text */
+.DraftInputWithTitleV2-input::placeholder {
+    color: var(--nihility-fg-2);
+}
+
+/* Write a reply */
+.TeamThreadReplyCreator-title {
+    color: var(--nihility-fg-3);
+}
+
+/*
+ * --- Post view ---
+ */
+
+/* Post editor background */
+.TeamThreadPostEditor-container {
+    background-color: var(--nihility-bg-1);
+}
+/* Outer forum post */
+.TeamThreadPostPanel-container {
+    background-color: transparent;
+}
+/* Forum post */
+.TeamThreadPostPanelDisplay-container {
+    background-color: var(--nihility-bg-1);
+}
+
+
+/* Side handle rail */
+.Scrubber-rail {
+    background-color: var(--nihility-bg-0);
+}
+/* Side handle */
+.Scrubber-handle-wrapper .Scrubber-handle {
+    background-color: var(--nihility-mark);
+}
+/* Side handle hovered over */
+.Scrubber-handle-wrapper:hover .Scrubber-handle {
+    background-color: var(--nihility-theme-2);
+}
+
+/* Side handle label post index/posts count */
+.ScrubberLabel-value {
+    color: var(--nihility-fg-2);
+}
+/* Side handle label date */
+.ScrubberLabel-label {
+    color: var(--nihility-fg-1);
+}
+
+/*
+ *
+ * -=- Announcements -=-
+ *
+ */
+.ContentMetadataCreationInfo-from-now-link, .ContentMetadataCreationInfo-from-now-link:hover, .ContentMetadataCreationInfo-from-now-link:visited, .ContentMetadataCreationInfo-from-now-link:active, .ContentMetadataCreationInfo-from-now-link:focus {
+    color: var(--nihility-fg-1);
+}
+
+/* Pinned announcements */
+.TeamPostRow-container {
+    background-color: rgba(100, 100, 100, 0.1);
+}
+
+/*
+ * --- Role label ---
+ */
+
+/* Role name */
+.TeamWidgetProfileRank-rank-name {
+    color: var(--nihility-fg-1);
+    transition: color 0.3s;
+}
+/* Role name hover */
+.TeamWidgetProfileRank-rank-name:hover {
+    color: var(--nihility-fg-2);
+}
+
+/*
+ * --- Comment section ---
+ */
+
+/* Comment input */
+.CollapsedInput-container {
+    background-color: var(--nihility-bg-0);
+}
+/* Comment input hover */
+.CollapsedInput-container::after {
+    background-color: var(--nihility-bg-hover);
+}
+/* Comment input text */
+.CollapsedInput-container-size-sm {
+    color: var(--nihility-fg-1);
+}
+
+/* View more */
+.CircleImageStack-label {
+    color: var(--nihility-fg-1);
+}
+/* View more hovered over */
+.CircleImageStack-container-actionable:hover .CircleImageStack-label {
+    color: var(--nihility-fg-2);
+}
+
+/* Time stamp */
+.LastReplyDisplayContent-timestamp {
+    color: var(--nihility-fg-1);
+}
+/* Comment hovered over should make time stamp brighter */
+.LastReplyDisplay-container:hover .LastReplyDisplayContent-container .LastReplyDisplayContent-timestamp {
+    color: var(--nihility-fg-2);
+}
+/* Comment side bar */
+.LastReplyDisplay-container::before {
+    background-color: var(--nihility-theme);
+}
+
+/*
+ *
+ * -=- Docs -=-
+ *
+ */
+.DocDisplayItem-container {
+    background-color: var(--nihility-bg-2);
+}
+.ReplyPanel-container-viewing,
+.DocSummaryInfo-container {
+    background-color: var(--nihility-bg-1);
+}
+
+/*
+ * --- Text ---
+ */
+.GuildedText-container-type-heading3 {
+    color: var(--nihility-fg-2);
+}
+.DocSummaryInfo-subtitle {
+    color: var(--nihility-fg-1);
+}
+
+/*
+ * --- Reply ---
+ */
+.PostReplyQuoteButtons-option:not(:first-child):not(:first-child)::before {
+    background-color: var(--nihility-fg-0);
+}
+.PostReplyQuoteButtons-option, .PostReplyQuoteButtons-option:hover, .PostReplyQuoteButtons-option:visited, .PostReplyQuoteButtons-option:active, .PostReplyQuoteButtons-option:focus {
+    color: var(--nihility-theme-2);
+}
+
+/*
+ * --- Tags ---
+ */
+
+/* Tag's background */
+.TagDisplayItemV2-container {
+    border-color: var(--nihility-bg-4);
+    background-color: var(--nihility-bg-1);
+}
+/* Tag's text */
+.TagDisplayItemV2-tag {
+    color: var(--nihility-fg-2);
+}
+
+/*
+ * --- Editor ---
+ */
+
+/* Toolbar icons */
+.SlateToolbarIcon-icon {
+    fill: var(--nihility-fg-1);
+}
+/* Active toolbar icon */
+.ReactionPickerButton-icon,
+.SlateToolbarMenuIcon,
+.SlateToolbarIcon-icon-active {
+    fill: var(--nihility-fg-2);
+}
+/* Hovered over toolbar icon */
+.SlateToolbarMenuIcon-container:hover {
+    fill: var(--nihility-fg-3);
+}
+/* Drop arrow for toolbar icons */
+.SlateToolbarMenuIcon-carat {
+    fill: var(--nihility-fg-1);
+}
+
+/*
+ * --- Post a comment and reactions ---
+ */
+.RepliesAddon-header-text {
+    color: var(--nihility-fg-3);
+}
+.ReactionPickerButton-container-with-label::after {
+    color: var(--nihility-fg-2);
+}
+
+/*
+ *
+ * -=- Events/Calendar -=-
+ *
+ */
+
+/* Day cards */
+.FullSizedCalendar-week {
+    background-color: var(--nihility-bg-3);
+}
+.FullSizedCalendar-day {
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--nihility-bg-1);
+}
+.FullSizedCalendarDayHeader-date {
+    color: var(--nihility-fg-2);
+}
+.FullSizedCalendarDay-container-different-month {
+    background-color: var(--nihility-bg-2);
+    color: var(--nihility-fg-1);
+    color: black;
+}
+.FullSizedCalendarDay-container-today {
+    background-color: var(--nihility-bg-4);
+}
+
+/* Numbers */
+.FullSizedCalendarDayHeader-date-different-month {
+    color: var(--nihility-fg-1);
+}
+.FullSizedCalendarDayHeader-date-today {
+    background-color: var(--nihility-theme);
+    color: white;
+}
+
+/* Buttons */
+.ToggleControlButton-container.ToggleControlButton-container-desktop:hover,
+.ToggleControlButton-container.ToggleControlButton-container-selected {
+    color: var(--nihility-theme) !important;
+    background-color: var(--nihility-bg-1);
+}
+
+/* Upcoming */
+.UpcomingCalendarDay-container,
+.UpcomingCalendar-container {
+    background-color: var(--nihility-bg-1);
+}
+.UpcomingCalendarEvent-container-desktop:hover {
+    background-color: var(--nihility-bg-2);
+}
