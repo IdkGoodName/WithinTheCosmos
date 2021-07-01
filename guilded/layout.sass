@@ -1,0 +1,479 @@
+/*
+ * -=- Misc -=-
+ */
+
+/*
+ * --- Text ---
+ */
+
+.GH1-container
+    color: $nihility-fg-3
+.GH2-container
+    color: $nihility-fg-2
+.GH3-container
+    color: $nihility-fg-1
+.GuildedText-container-type-heading1
+    color: $nihility-fg-3
+.GuildedText-container-type-heading4
+    color: $nihility-fg-3
+.GuildedText-container-type-subtext
+    color: $nihility-fg-1
+
+/*
+ * --- Upload ---
+ */
+
+// Upload image
+.ImageUploaderButton-container
+    background-color: $nihility-bg-1
+    border-color: $nihility-bg-0
+    // Upload image icon hover
+    &::after
+        background-color: $nihility-bg-hover
+// Upload image icon
+.ImageUploaderButton-icon
+    fill: $nihility-fg-2
+// Upload image text
+.ImageUploaderButton-text
+    color: $nihility-fg-2
+
+/*
+ * -=- Loading -=-
+ */
+
+/*
+ * --- Loading dots ---
+ */
+
+// Loading dots
+.LoadingAnimationMicro-bar
+    background-color: $nihility-theme
+    // Disable other 2 loading dots
+    &:nth-child(2),
+    &:nth-child(3)
+        display: none
+    // Animate the only one
+    &:nth-child(1)
+        animation-name: nihilityLoad
+        opacity: 100%
+// Loading animation
+@keyframes nihilityLoad
+    0%
+        translate: 0rem 0rem
+        transform: scaleX(1)
+    15%
+        transform: scaleX(1.5)
+    45%
+        transform: scaleX(1)
+    50%
+        translate: 1.5rem 0rem
+    65%
+        transform: scaleX(1.5)
+    95%
+        transform: scaleX(1)
+    100%
+        translate: 0rem 0rem
+    
+/*
+ * --- Loading/connecting bar ---
+ */
+
+// Loading bar
+.NetworkReconnectionDisplay-container-reconnecting
+    background-color: $nihility-bg-0
+
+/*
+ * --- Loading/connecting content ---
+ */
+
+// Loading group icon
+.GroupSelectorSkeleton-group
+    background: $nihility-bg-3
+// Loading channel icon
+.TeamChannelsListSkeleton-icon
+    background: $nihility-bg-3
+/*
+ * -=- Gilded Buttons -=-
+ */
+
+/*
+ * --- Inactive ---
+ */
+
+// Inactive button
+.FormConfirmButtonV2-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled,
+.FormConfirmButtonV2-container.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled:hover
+    background-color: $nihility-bg-0 !important
+    border-color: $nihility-bg-2
+// Inactive button text
+.FormConfirmButtonV2-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-disabled .FormConfirmButtonV2-button-content,
+.FormConfirmButtonV2-container.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-disabled:hover .FormConfirmButtonV2-button-content
+    color: $nihility-fg-0
+
+/*
+ * --- Normal ---
+ */
+
+// Normal button
+.FormConfirmButtonV2-container.FormConfirmButtonV2-container-type-gilded
+    border-color: $nihility-theme-3
+    box-shadow: 0 0 0.5rem 0 $nihility-theme-2
+    background-image: linear-gradient(to right, $nihility-theme, $nihility-theme-3, $nihility-theme)
+// Normal button text
+.FormConfirmButtonV2-container-hollow .FormConfirmButtonV2-button-content,
+.FormConfirmButtonV2-container-type-delete .FormConfirmButtonV2-button-content
+    color: $nihility-fg-3
+// Button hovered over
+.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-filled:hover
+    box-shadow: 0 0 1rem 0 rgba($nihility-theme-3, 0.6)
+
+/*
+ * -=- Icons -=-
+ */
+
+/*
+ * --- Team badges ---
+ */
+
+// Verified badge
+#icon-verified-badge path:first-child
+    fill: $nihility-theme
+
+/*
+ * --- User badges ---
+ */
+
+// If there is an icon in the badge, remove the name
+.UserBadge-image ~ .UserBadge-name
+    display: none
+
+/*
+ * --- Legacy nav bar ---
+ */
+
+// Whole bar
+.Navbar-container
+    background-color: $nihility-bg-0
+// Guilded logo
+.LogoAndWordmarkV2-container-theme-light
+    fill: $nihility-fg-1
+// Guilded logo active
+.LogoAndWordmarkV2-container-theme-gilded
+    fill: $nihility-theme-3
+
+// The buttons
+.ChatChannelIcon-icon-group, // DM icon
+.NavbarNavExploreIcon-link .NavbarNavExploreIcon-icon // Explore stuff icons
+    fill: $nihility-fg-1
+// Selected icons
+.ChatChannelIcon-container-selected .ChatChannelIcon-icon-group
+    fill: $nihility-fg-2
+
+/*
+ * --- Group, server lists and user card ---
+ */
+
+// Server list bottom card
+.ChatChannelInput-container .ChatChannelInput-editor,
+.Editor-container,
+.ChatChannelInput-editor
+    background-color: $nihility-bg-0
+// Server list hovered server
+.NavV4SelectorRow-container::after
+    background-color: $nihility-bg-hover
+    @include nihility-transition(opacity)
+// Server list selected server
+.NavSelectorItem-container-active .NavSelectorItem-contents::after
+    border-color: $nihility-fg-2
+
+// Server list add icon
+.InlineAddItemControl-container
+    --inline-add-icon-background-color: $nihility-bg-2
+.InlineAddItemControl-add-icon
+    fill: $nihility-fg-2
+// Server list add icon hover
+.InlineAddItemControl-container-flavor-background-highlight.InlineAddItemControl-container-desktop:hover .InlineAddItemControl-add-icon
+    background-color: $nihility-bg-3
+    fill: $nihility-fg-3
+
+// Server list switcher buttons
+.NavV4SelectorRow-svg-icon
+    fill: $nihility-fg-2
+.NavV4TeamSelectorBottomOptionsList-label
+    color: $nihility-fg-2
+// Server list revealer
+.NavV4ItemIcon-icon
+    fill: $nihility-fg-1
+// Server list favourite icon
+.FavoriteTeamButton-container
+    fill: $nihility-fg-1
+    @include nihility-transition(fill)
+    // Server list favourite hover
+    &:hover
+        fill: $nihility-fg-3
+
+// Group list
+.GroupSelector-container,
+.NavV4Sidebar-container
+    background-color: $nihility-bg-1
+// No-avatar group's icon
+.GroupAvatar-container-non-base
+    background-color: $nihility-bg-3
+    border-color: $nihility-fg-0
+// The border around status and group's emote
+.GroupAvatarBadge-container-reaction,
+.LoggedInUserAvatar-online-status
+    background-color: $nihility-bg-1
+
+/*
+ * --- Cards/Headers ---
+ */
+
+// User card's name
+.LoggedInUserAvatar-name
+    color: $nihility-fg-2
+// User card's status
+.LoggedInUserStatus-content-with-status
+    color: $nihility-fg-1
+// User card buttons
+.NavIcon-container-type-vertical-nav,
+.TransientMenuTrigger-container
+    fill: $nihility-fg-1
+.NavV4Footer-footer-content,
+.NavV4Footer-right,
+.NavV4Sidebar-container
+    background-color: $nihility-bg-0
+
+// Tourney header
+.TournamentNavHeader-container
+    background-color: transparent
+    box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.5)
+    z-index: 105
+// Server header name
+.PageNavAvatarName-name-text
+    color: $nihility-fg-3
+// Server header group name
+.TeamNavGroupHeader-name
+    color: $nihility-fg-2
+// Server header hover
+.TeamNavHeader-options-carat::after
+    background-color: $nihility-bg-hover
+    @include nihility-transition(opacity)
+// Server header caret
+.TeamNavHeader-options-carat.TeamNavTeamOptionsCarat-icon
+    fill: $nihility-fg-2
+// Server header button
+.TeamNavHeaderRowButton-container
+    background-color: $nihility-bg-3
+    // Server header button hovered
+    &:not(.TeamNavHeaderRowButton-container-disabled)::after
+        background-color: $nihility-bg-hover
+// Server header button icon
+.TeamNavHeaderRowButton-icon
+    fill: $nihility-fg-2
+// Server header button text
+.TeamNavHeaderRowButton-text
+    color: $nihility-fg-2
+
+/*
+ * --- Search ---
+ */
+
+// Server search
+.TeamSearchBar-search-bar-input,
+.SearchBarV2-container.SearchBarV2-container-focused
+    background-color: $nihility-bg-3
+// In-server search, emote search
+.SearchBarInput-container-bordered,
+.SearchBarV2-container-unfocused::after,
+.SearchBarV2-container
+    border-radius: 1rem
+    background-color: $nihility-bg-2
+    border-color: $nihility-bg-1
+// Search focused
+.SearchBarV2-container-unfocused::after
+    background-color: $nihility-bg-hover
+
+// Search icon
+.SearchBarV2-container .SearchBarV2-icon
+    fill: $nihility-fg-2
+// Search placeholder
+.SearchBarV2-container .SearchBarV2-input::placeholder
+    color: $nihility-fg-1
+
+/*
+ * --- Channels & Members ---
+ */
+
+// Channel list background
+body,
+.TeamPageNavV3-container,
+.ScreenHeader-container,
+.SidebarWrapper-container,
+.TeamNavMenu-container
+    background-color: $nihility-bg-1
+    border-bottom: 0
+
+
+// Section list header
+.TeamNavSectionsList-header
+    display: none
+// Channel list header
+.TeamChannelsList-container .ChannelListHeader-container-type-default
+    // Don't display the text
+    .ChannelListHeader-text
+        display: none
+    // Add 3 dots instead
+    &::before
+        position: relative
+        content: '. . .'
+        text-align: center
+        margin-left: auto
+        margin-right: auto
+        color: $nihility-fg-1
+
+// View screen header
+.ScreenHeader-container
+    margin-left: 5%
+    margin-right: 5%
+    border-bottom-left-radius: 2rem
+    border-bottom-right-radius: 2rem
+    position: absolute
+    width: 90%
+    z-index: 500
+
+    // Make it go above
+    top: -3.5rem
+    transition: top 0.5s
+
+    // Make it go below after hovering over it
+    &:hover
+        top: 0
+
+// Screen header icon
+.ScreenHeader-icon,
+.TeamNavSectionItem-icon,
+.ChannelIcon-icon-primary,
+.TeamChannelItemContents-action-icon,
+.ScreenHeader-icon-wrapper-size-lg .ScreenHeader-icon
+    fill: $nihility-fg-1
+
+// Screen header title
+.ScreenHeader-name
+    color: $nihility-fg-2
+
+// Screen header description
+.ScreenHeader-description-child
+    color: $nihility-fg-1
+
+// Member list
+.PageSidebarWrapper-container
+    position: relative
+    top: 0
+// Also remove padding that was made for member list
+.ChannelWrapper-container-with-sidebar .ChannelWrapper-contents
+    padding-right: 0
+.TournamentPageContent-content,
+.TeamPageContent-content
+    margin-right: 0
+
+// Member list tab icon
+.SimpleIconTabMenuHeaderItem-icon
+    fill: $nihility-fg-1
+// Member list tab hover
+.SimpleIconTabMenuHeaderItem-container:hover,
+.SimpleIconTabMenuHeaderItem-container:active,
+.SimpleIconTabMenuHeaderItem-container:focus
+    background-color: $nihility-bg-2
+    // Member list active tab icon
+    .SimpleIconTabMenuHeaderItem-icon
+        fill: $nihility-fg-2
+// Member list active tab
+.SimpleIconTabMenuHeaderItem-container-selected::after
+    background-color: $nihility-fg-1
+
+// Member list role name
+.ChannelListHeader-container-type-default .ChannelListHeader-text
+    color: $nihility-fg-2
+// Member list role amount
+.ChannelListHeader-amount
+    color: $nihility-fg-1
+
+// Member list invite icon
+.SidebarInviteButton-icon-wrapper
+    background-color: $nihility-bg-3
+.SidebarInviteButton-icon
+    fill: $nihility-fg-1
+    @include nihility-transition(fill)
+// Member list invite text
+.GuildedText-container-color-gray
+    color: $nihility-fg-1
+    @include nihility-transition(color)
+// Member list invite hover
+.SidebarInviteButton-container:hover
+    .SidebarInviteButton-text, .SidebarInviteButton-icon
+        fill: $nihility-fg-2
+        color: $nihility-fg-2
+// Thread list "None"
+.ChannelThreadsInfo-none
+    color: $nihility-fg-1
+// Thread list more
+.ChannelThreadsInfo-more
+    color: $nihility-fg-1
+    @include nihility-transition(color)
+    // Thread list more hover
+    &:hover
+        color: $nihility-fg-2
+// Thread card hover
+.ChatChannelListItemInfo-container-actionable::after
+    background-color: $nihility-bg-hover
+// Thread's last activity at
+.ChatChannelListItemInfo-last-at
+    color: $nihility-fg-1
+    @include nihility-transition(color)
+// Thread's last activity at hover
+.ChatChannelListItemInfo-container-actionable:hover .ChatChannelListItemInfo-last-at
+    color: $nihility-fg-3
+// Thread reply count
+.ChatChannelListItemInfo-reply-row .ChatChannelListItemInfo-num-replies
+    color: $nihility-fg-1
+// Thread's last reply
+.ChatChannelListItemInfo-latest-message
+    color: $nihility-fg-2
+
+// Channel card
+.TeamChannelItemContents-container-unread .TeamChannelItemContents-name,
+.TeamChannelItemContents-container-channel-content .TeamChannelItemContents-name,
+.TeamChannelItemContents-container:not(.TeamChannelItemContents-container-selected):hover .TeamChannelItemContents-name
+    color: $nihility-fg-2
+// Selected channel
+.TeamChannelItemContents-container-selected,
+.TeamNavSectionItem-container-selected
+    background-color: $nihility-bg-3
+    @include nihility-transition(background-color)
+// Channel hovered
+.TeamChannelItemContents-container::after,
+.TeamNavSectionItem-container::after
+    background-color: $nihility-bg-hover
+    @include nihility-transition(opacity)
+// Sub-icon/global icon
+.ChannelIcon-icon-selected .ChannelIcon-icon-background,
+.ChannelIcon-icon-background
+    fill: $nihility-fg-1
+    background-color: $nihility-bg-0
+// Selected channel icons
+.ChannelIcon-icon-selected,
+.ChannelIcon-icon-selected .ChannelIcon-icon,
+.TeamNavSectionItem-container-selected .TeamNavSectionItem-icon
+    fill: $nihility-fg-3
+    color: $nihility-fg-3
+
+/*
+ * --- Notifications ---
+ */
+
+.TeamChannelItemContents-container-unread::before,
+.NavV4ItemIcon-icon-unread::before,
+.NavSelectorItem-container-orientation-horizontal.NavSelectorItem-container-unread::before,
+.TeamOverviewContentItemCard-container-unread::before
+    background-color: $nihility-mark

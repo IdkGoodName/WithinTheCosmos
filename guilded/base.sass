@@ -1,0 +1,75 @@
+/* === Base ===
+ * Credits:
+ * Contributors:
+ * - IdkGoodName
+ */
+
+/*
+ * --- Variables ---
+ */
+
+// Background
+$nihility-bg-0: #090909
+$nihility-bg-1: #0d0d0d
+$nihility-bg-2: #111111
+$nihility-bg-3: #171717
+$nihility-bg-4: #212121
+$nihility-bg-hover: #777777
+// Text
+$nihility-fg-0: #494949
+$nihility-fg-1: #696969
+$nihility-fg-2: #AAAAAA
+$nihility-fg-3: #DDDDDD
+$nihility-mark: #AAAAAA
+// Misc colours
+$nihility-theme: #595959
+$nihility-theme-2: #676767
+$nihility-theme-3: #848484
+$nihility-floating-opacity: 95%
+$nihility-bar: #060606
+// Noticable colours
+$nihility-mention: #C22
+$nihility-important: #A44
+$nihility-mentioned: #D9A05C
+$nihility-active: #74B2D9
+
+$nihility-bad: #A44
+$nihility-bad-2: #F66
+$nihility-good: #5A4
+// Misc
+$nihility-transition: 0.2s
+$nihility-animation: 2s
+$nihility-roundness-small: 0.5rem
+$nihility-roundness: 1rem
+$nihility-roundness-big: 2rem
+
+/*
+ * --- Body and root ---
+ */
+
+// Variable definition/redefinition
+body,
+.ChannelWrapper-container,
+.ChatChannelMessagesList-container,
+.SlateEditor-container-type-default
+    --body-text-color: $nihility-fg-2
+    --nihility-local-fg: $nihility-fg-2
+    --game-color: $nihility-theme-3
+    --border-color: $nihility-bg-1
+    color: $nihility-fg-2
+// Change selection
+::selection
+    background-color: rgba($nihility-theme-3, 0.6)
+    color: white
+// Change variables
+.AppV2-container-minimal-nav
+    --left-v4-nav-color: $nihility-bg-0
+    --nav-v4-sidebar-background-color: $nihility-bg-0
+
+/*
+ * --- Mixins ---
+ */
+
+@mixin nihility-transition($property)
+    transition: $property
+    transition-duration: $nihility-transition
