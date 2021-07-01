@@ -297,20 +297,15 @@
  */
 
 // Link normally
+.EmbedCardFooter-link,
 .ChatEmbedContent-link,
-.ChatEmbedContent-link:focus,
-.ChatEmbedContent-link:visited,
-.LinkRenderer,
-.LinkRenderer:focus,
-.LinkRenderer:visited
-    color: $nihility-theme
-
-// Link clicked and hovered over
-.ChatEmbedContent-link:hover,
-.ChatEmbedContent-link:active,
-.LinkRenderer:hover,
-.LinkRenderer:active
-    color: $nihility-theme-3
+.LinkRenderer
+    // Link normally
+    &, &:visited, &:focus
+        color: $nihility-theme
+    // Link clicked and hovered over
+    &:hover, &:active
+        color: $nihility-theme-3
 
 
 /*
@@ -524,15 +519,15 @@
 
 // Form selector
 .GuildedSelect-container .Select-control
-    border-color: $nihility-fg-1
+    border-color: $nihility-fg-1 !important
 
 // Form selector hover
 .GuildedSelect-container.GuildedSelect-container-dark:hover .Select .Select-control
-    border-color: $nihility-fg-2
+    border-color: $nihility-fg-2 !important
 
 // Form selector focused
 .GuildedSelect-container.GuildedSelect-container-dark .Select.is-focused .Select-control
-    border-color: $nihility-theme-3
+    border-color: $nihility-theme-3 !important
 
 // Form selector icon
 .GuildedSelectIcon-container
@@ -707,7 +702,7 @@
 
 // The picker
 .TypeaheadDrawer-container
-    opacity: 95%
+    opacity: $nihility-floating-opacity
     background-color: $nihility-bg-2
     border-color: $nihility-bg-0
 
