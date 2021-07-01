@@ -453,6 +453,7 @@
 .ToggleFieldWrapper-label
     color: $nihility-bad
     font-weight: bold
+    @include nihility-transition(color)
 // Toggled permission title
 .ToggleFieldWrapper-label-active
     color: $nihility-good
@@ -492,7 +493,7 @@
     background-color: $nihility-bg-2
 // Tournament page video
 .TournamentsPortalHeader-video-mask
-    background-image: linear-gradient(to bottom, rgba(17, 17, 17, 0.85) 20%, rgba(0, 0, 0, 0) 65%, rgba(17, 17, 17, 0.95))
+    background-image: linear-gradient(to bottom, rgba($nihility-bg-2, 0.85) 20%, rgba(0, 0, 0, 0) 65%, rgba($nihility-bg-2, 0.95))
 // Tournament card
 .TournamentCard-container
     background-color: $nihility-bg-3

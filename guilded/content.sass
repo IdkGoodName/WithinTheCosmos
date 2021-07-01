@@ -155,11 +155,11 @@
 // Carousel blurs
 .CarouselList-container-size-sm .CarouselList-blur-light.CarouselList-left-blur,
 .CarouselList-blur-light.CarouselList-left-blur
-    background-image: linear-gradient(to left, rgba(55, 57, 67, 0), #111111 100%)
+    background-image: linear-gradient(to left, rgba($nihility-bg-2, 0), $nihility-bg-2 100%)
 
 .CarouselList-container-size-sm .CarouselList-blur-light.CarouselList-right-blur,
 .CarouselList-blur-light.CarouselList-right-blur
-    background-image: linear-gradient(to right, rgba(55, 57, 67, 0), #111111 100%)
+    background-image: linear-gradient(to right, rgba($nihility-bg-2, 0), $nihility-bg-2 100%)
 
 // Carousel arrow
 .CarouselList-controls-arrow
@@ -289,7 +289,7 @@
 
 .ChannelPill-container
     color: $nihility-fg-3
-    background-color: rgba(100, 100, 100, 0.1)
+    background-color: rgba($nihility-fg-3, 0.1)
 
 
 /*
@@ -341,7 +341,7 @@
 
 // Content info fading
 .DefaultContentEmbedCard-content-fade-overflow::after
-    background: linear-gradient(to bottom, transparent, #111111 20px)
+    background: linear-gradient(to bottom, transparent, $nihility-bg-2 20px)
 
 /*
  * --- Embeds ---
@@ -603,11 +603,9 @@
 .DraftInputWithTitleV2-input::placeholder
     color: $nihility-fg-2
 
-
 // Write a reply
 .TeamThreadReplyCreator-title
     color: $nihility-fg-3
-
 
 // Cancel button
 .CancelText-container
