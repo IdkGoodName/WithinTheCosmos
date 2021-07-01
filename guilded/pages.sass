@@ -286,6 +286,16 @@
  * --- Other ---
  */
 
+// Fixes media preview clipping through the screen
+.MediaSplitView-container-desktop
+    height: 100%
+.MediaSplitView-container
+    width: 100%
+
+// Whole emote container
+.TransientMenuPortalContext-portal-container
+    opacity: $nihility-floating-opacity
+
 // Group settings icon
 .AddGroupOverlayDisplay-settings-icon
     fill: $nihility-fg-1
@@ -313,6 +323,24 @@
 // Connections/integrations
 .SocialLinkPanel-header
     background-color: $nihility-bg-1
+
+// Image preview container
+.MaximizedImageOverlay-image-wrapper
+    padding: $nihility-spacing-3
+    background-color: rgba($nihility-bg-0, $nihility-mild-opacity)
+// Open original
+.MaximizedImageOverlay-open-original
+    color: $nihility-fg-1
+    // Active
+    &:hover, &:active, &:focus
+        color: $nihility-fg-2
+// Image share icon
+.MaximizedImageOverlay-share-icon
+    fill: $nihility-fg-1
+    @include nihility-transition(transition)
+    // Hover
+    &:hover
+        fill: $nihility-fg-2
 
 /*
  * --- Settings ---

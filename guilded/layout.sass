@@ -45,8 +45,13 @@
  * --- Loading dots ---
  */
 
+// Loading dot container
+.LoadingAnimationMicro-container
+    width: 2.5rem
+
 // Loading dots
 .LoadingAnimationMicro-bar
+    // Increase its width
     background-color: $nihility-theme
     // Disable other 2 loading dots
     &:nth-child(2),
@@ -61,13 +66,13 @@
     0%
         translate: 0rem 0rem
         transform: scaleX(1)
-    15%
+    25%
         transform: scaleX(1.5)
     45%
         transform: scaleX(1)
     50%
-        translate: 1.5rem 0rem
-    65%
+        translate: 2rem 0rem
+    75%
         transform: scaleX(1.5)
     95%
         transform: scaleX(1)
