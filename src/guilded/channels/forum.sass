@@ -1,0 +1,60 @@
+/*
+ * --- Forum post list ---
+ */
+
+// Notification bubble
+.TeamPostRow-container-unread::before
+    background-color: $nihility-mark
+
+// Forum post hover
+.TeamPostRow-container-desktop::after
+    background-color: $nihility-bg-hover
+
+// Comment count icon
+.TeamWidgetCommentCount-icon
+    fill: $nihility-fg-1
+
+// Comment count text
+.TeamWidgetCommentCount-container-size-lg .TeamWidgetCommentCount-label
+    color: $nihility-fg-1
+
+// Author and date
+.TeamPostRow-options-wrapper
+    color: $nihility-fg-1
+
+
+/*
+ * --- Post view ---
+ */
+
+// Post editor background
+.TeamThreadPostEditor-container
+    background-color: $nihility-bg-1
+
+// Outer forum post
+.TeamThreadPostPanel-container
+    background-color: transparent
+
+// Forum post
+.TeamThreadPostPanelDisplay-container
+    background-color: $nihility-bg-1
+
+// Side handle rail
+.Scrubber-rail
+    background-color: $nihility-bg-0
+
+// Side handle
+.Scrubber-handle-wrapper
+    .Scrubber-handle
+        background-color: $nihility-mark
+    // Side handle hovered over
+    &:hover .Scrubber-handle
+        background-color: $nihility-theme-2
+
+// Side handle label post index/posts count
+.ScrubberLabel-value
+    color: $nihility-fg-2
+
+// Side handle label date
+.ScrubberLabel-label
+    color: $nihility-fg-1

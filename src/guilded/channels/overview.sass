@@ -1,0 +1,124 @@
+/*
+ * --- Widget ---
+ */
+
+// About section hover
+.OverviewWidgetItemWrapper-container-clickable::after
+    background-color: $nihility-bg-hover
+
+// Info icon
+.IconAndLabel-icon
+    fill: $nihility-fg-1
+
+// Handle input focused
+.OverviewWidgetItemEditable-container:focus.OverviewWidgetItemEditable-container
+    border-color: $nihility-theme-2
+
+/*
+ * --- Banner and header ---
+ */
+
+// The whole container of it
+.TeamOverviewBanner-container
+    border-bottom: none
+
+// The mask that makes it fade in
+.TeamOverviewBanner-banner
+    mask-image: linear-gradient(to bottom, #000, #000 calc(100% - 40%), rgba(0, 0, 0, 0) calc(100% - 5px), rgba(0, 0, 0, 0))
+
+// Whole panel below the banner, including description
+.TeamOverviewRoot-container
+    z-index: 2
+
+// Description below the name of the server
+.TeamOverviewRoot-description
+    color: $nihility-fg-2
+
+/*
+ * --- Showcase ---
+ */
+
+// No announcements title
+.TabEmptyState-title
+    color: $nihility-fg-2
+
+// No announcements description
+.TabEmptyState-subtitle
+    color: $nihility-fg-1
+
+.ToggleControl-container.ToggleControl-container-highlighted
+    border-color: $nihility-theme
+
+.OverviewWidgetItemWrapper-container-type-filled,
+.TeamOverviewContentItemCard-container
+    background-color: $nihility-bg-1
+    // Content showcase hover
+    &::after
+        background-color: $nihility-bg-hover
+
+.CollapsedInput-container
+    background-color: rgba(100, 100, 100, 0.1)
+
+// Showcase text
+.TeamOverviewContentItemCard-title
+    font-weight: bold
+
+.TeamOverviewContentItemCard-title,
+.TeamOverviewContentItemCard-subtitle
+    color: $nihility-fg-2
+
+.TeamOverviewContentItemCard-subtitle2
+    color: $nihility-fg-1
+
+
+// See all
+.TeamOverviewSectionHeader-cta-text
+    color: $nihility-fg-1
+    @include nihility-transition(color)
+    // See all hover
+    &:hover
+        color: $nihility-fg-2
+
+// Showcase event buttons
+.ToggleControlButton-container,
+.ToggleControlButton-icon
+    @include set-color($nihility-fg-1)
+
+// Showcase event buttons hover
+.ToggleControlButton-container.ToggleControlButton-container-desktop:hover .ToggleControlButton-icon,
+.ToggleControlButton-container.ToggleControlButton-container-selected .ToggleControlButton-icon
+    fill: $nihility-fg-2
+
+
+/*
+ * --- Carousel/Scrollable list ---
+ */
+
+
+// Carousel blurs
+.CarouselList-container-size-sm .CarouselList-blur-light.CarouselList-left-blur,
+.CarouselList-blur-light.CarouselList-left-blur
+    background-image: linear-gradient(to left, rgba($nihility-bg-2, 0), $nihility-bg-2 100%)
+
+.CarouselList-container-size-sm .CarouselList-blur-light.CarouselList-right-blur,
+.CarouselList-blur-light.CarouselList-right-blur
+    background-image: linear-gradient(to right, rgba($nihility-bg-2, 0), $nihility-bg-2 100%)
+
+// Carousel arrow
+.CarouselList-controls-arrow
+    transition: 1s
+    fill: $nihility-fg-2
+
+
+// Leaderboard
+.TeamOverviewLeaderboardSection-leaderboard-container
+    background-color: $nihility-bg-3
+
+.GameIconAndGameName-container-style-header .GameIconAndGameName-game-name,
+.LeaderboardHeader-title,
+.LeaderboardHeader-name,
+.LeaderboardHeader-stats-header
+    color: $nihility-fg-3
+
+.LeaderboardRow-stat
+    color: $nihility-fg-2

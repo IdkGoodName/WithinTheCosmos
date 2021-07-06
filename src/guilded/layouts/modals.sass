@@ -1,160 +1,5 @@
 /*
- *
- * === Layout:Pages ===
- *
- *
- */
-
-/*
- * -=- Profiles -=-
- */
-
-// Profile content
-.UserProfileV3-container
-    background-color: $nihility-bg-2
-
-/*
- * --- Posts ---
- */
-
-// Tagline
-.OverviewWidgetItem-text-paragraph
-    color: $nihility-fg-2
-
-// Profile setting buttons
-.UserProfileActionRow-button-icon
-    fill: $nihility-fg-2
-
-// Game overview arrow
-.OverviewPageWidgetHeader-container-desktop .OverviewPageWidgetHeader-link-icon
-    fill: $nihility-fg-1
-    @include nihility-transition(fill)
-    // Game overview arrow hovered
-    &:hover
-        fill: $nihility-fg-2
-// Game
-.UserGameSummaryCard-container
-    background-color: $nihility-bg-1
-// Game property label
-.UserInfoSummaryItem-label
-    color: $nihility-fg-1
-// Game property value
-.UserInfoSummaryItem-summary-content
-    color: $nihility-fg-2
-
-// Post
-.UserProfilePostPanel-container
-    background-color: $nihility-bg-1
-// Post highlighted(currently all)
-.UserProfilePostPanel-container-highlight
-    border-top-color: $nihility-theme
-// Post author's name
-.UserName-container,
-.TeamMemberBubble-name,
-.UserBasicInfoDisplay-name,
-.TeamWidgetProfileDetails-name
-    color: $nihility-fg-3
-// No more posts text
-.NullState-container
-    color: $nihility-fg-1
-// No more posts SVG
-.GuildedBotAvatar-container
-    fill: $nihility-fg-1
-
-// Published on
-.StatusMessage-container-persistent.StatusMessage-container-type-info
-    border-color: $nihility-bg-0
-    background-color: $nihility-bg-3
-// Published on text
-.StatusMessage-container
-    color: $nihility-fg-2
-// Published on link
-.StatusMessage-link
-    color: $nihility-theme
-    // Published on link hover
-    &:hover
-        color: $nihility-theme-3
-
-/*
- * --- Games ---
- */
-
-// Game
-.PlayerAliasCard-container-type-game
-    background-color: $nihility-bg-1
-// Game border
-.CardWrapper-container:not(.CardWrapper-container-highlighted)::after
-    border-color: $nihility-bg-0
-// Game header
-.PlayerCard-container
-    background-color: transparent
-// Game header game's name
-.PlayerCardGameInfo-name
-    color: $nihility-fg-3
-// Game header player's name
-.GameAliasDisplay-container
-    color: $nihility-fg-1
-    @include nihility-transition(color)
-    // Name hover
-    &:hover
-        color: $nihility-theme-3
-// Game info
-.PlayerAliasCard-container-type-game .PlayerAliasCard-info
-    background-color: transparent
-// Game info no accounts linked
-.UserSocialPresence-no-other-links
-    color: $nihility-fg-1
-// Game info handle icon
-.UserRichSocialLink-avatar
-    fill: $nihility-fg-1
-// Game info handle text
-.UserRichSocialLink-handle
-    color: $nihility-fg-2
-// Game info handle details
-.UserRichSocialLink-metadata
-    color: $nihility-fg-1
-
-/*
- * --- DMs ---
- */
-
-// Side bar
-.ChatChannelList-container,
-.WebAppV2-sidebar
-    background-color: $nihility-bg-1
-// Selected DMs
-.ChatChannelListItem-container-selected
-    background-color: $nihility-bg-3
-
-.ChatChannelListItemInfo-container-selected
-    // Selected DMs name
-    .ChatChannelListItemInfo-name
-        color: $nihility-fg-3
-    // Selected DMs text
-    .ChatChannelListItemInfo-latest-message
-        color: $nihility-fg-2
-    // Selected DMs timestamp
-    .ChatChannelListItemInfo-last-at
-        color: $nihility-fg-1
-// Hovered DMs
-.ChatChannelListItem-container:not(.ChatChannelListItem-container-selected):hover
-    background-color: $nihility-bg-2
-// Remove DMs crossmark
-.ChatChannelListItem-container:not(.ChatChannelListItem-container-selected):hover .ChatChannelListItem-remove-icon,
-.ChatChannelListItem-container-selected .ChatChannelListItem-remove-icon
-    background-color: transparent
-    fill: $nihility-fg-1
-    @include nihility-transition(fill)
-    // Remove DMs crossmark hover
-    &:hover
-        fill: $nihility-fg-3
-
-/*
- * -= Modals -=-
- */
-
-/*
- * --- All Modals ---
+ * -=- All Modals -=-
  */
 
 // Overlay
@@ -223,7 +68,7 @@
         fill: $nihility-fg-2
 
 /*
- * --- Create Server ---
+ * -=- Create Server -=-
  */
 
 // Tiled background
@@ -283,67 +128,7 @@
         background-color: $nihility-bg-3
 
 /*
- * --- Other ---
- */
-
-// Fixes media preview clipping through the screen
-.MediaSplitView-container-desktop
-    height: 100%
-.MediaSplitView-container
-    width: 100%
-
-// Whole emote container
-.TransientMenuPortalContext-portal-container
-    opacity: $nihility-floating-opacity
-
-// Group settings icon
-.AddGroupOverlayDisplay-settings-icon
-    fill: $nihility-fg-1
-    @include nihility-transition(fill)
-    // Group settings hover
-    &:hover
-        fill: $nihility-fg-2
-// Copy invite title
-.CopyToClipboardControlV2-title
-    color: $nihility-fg-3
-// Copy invite input
-.CopyableTextbox-container
-    background-color: $nihility-bg-3
-    border-color: $nihility-fg-1
-    @include nihility-transition(border-color)
-// Copy invite input hover
-.CopyableTextbox-container-desktop:hover
-    border-color: $nihility-fg-2
-// Settings account info
-.DefaultReadonlyEditableForm-container
-    background-color: $nihility-bg-1
-// 2FA thing
-.PersistentUpsell-container-flavor-settings
-    background-color: $nihility-bg-1
-// Connections/integrations
-.SocialLinkPanel-header
-    background-color: $nihility-bg-1
-
-// Image preview container
-.MaximizedImageOverlay-image-wrapper
-    padding: $nihility-spacing-3
-    background-color: rgba($nihility-bg-0, $nihility-mild-opacity)
-// Open original
-.MaximizedImageOverlay-open-original
-    color: $nihility-fg-1
-    // Active
-    &:hover, &:active, &:focus
-        color: $nihility-fg-2
-// Image share icon
-.MaximizedImageOverlay-share-icon
-    fill: $nihility-fg-1
-    @include nihility-transition(transition)
-    // Hover
-    &:hover
-        fill: $nihility-fg-2
-
-/*
- * --- Settings ---
+ * -=- Settings -=-
  */
 
 // Options
@@ -371,8 +156,30 @@
     background-color: $nihility-bg-2
 
 /*
- * --- Settings:Content ---
+ * --- Settings Content ---
  */
+
+// Channel or category notifications header
+.GuildedTableHeader-column-header-group, .GuildedTableHeader-column-header
+    color: $nihility-fg-2
+// Placeholder
+.GuildedTableField-empty-text
+    color: $nihility-fg-1
+// Category/channel hover
+.GuildedTableRowInputWrapper-container-desktop::after
+    background-color: $nihility-bg-hover
+// Category/channel icon
+.GuildedTableRowInputWrapper-icon
+    fill: $nihility-fg-1
+// Category/channel title
+.GuildedTableRowInputWrapper-name
+    color: $nihility-fg-2
+// X channels
+.GuildedTableRowInputWrapper-description
+    fill: $nihility-fg-1
+// Remove icon
+.GuildedTableRowNotificationOverridesInput-remove
+    color: $nihility-bad
 
 // Slider off
 .SwitchInput-container .SwitchInput-slide
@@ -423,7 +230,7 @@
         background-color: $nihility-bg-hover
 
 /*
- * --- Settings:Tabs ---
+ * --- Settings Tabs ---
  */
 
 // Team integrations
@@ -491,43 +298,66 @@
     color: $nihility-fg-1
 
 /*
- * -=- Tournaments -=-
+ * -=- Other -=-
  */
 
-/*
- * --- Sidebar ---
- */
+// Fixes media preview clipping through the screen
+.MediaSplitView-container-desktop
+    height: 100%
+.MediaSplitView-container
+    width: 100%
 
-// Sidebar
-.NavV4SectionSidebar-container
-    background-color: transparent
+// Whole emote container
+.TransientMenuPortalContext-portal-container
+    opacity: $nihility-floating-opacity
 
-// Selected tab
-.NavV4SectionSidebarOption-container-active
-    background-color: $nihility-bg-3
-    // Selected tab icon
-    .NavV4SectionSidebarOption-icon
-        fill: $nihility-fg-3
-    // Selected tab text
-    .NavV4SectionSidebarOption-label
-        color: $nihility-fg-3
-
-/*
- * --- Content ---
- */
-
-// Tournament page
-.TournamentsPortalPage-container
-    background-color: $nihility-bg-2
-// Tournament page video
-.TournamentsPortalHeader-video-mask
-    background-image: linear-gradient(to bottom, rgba($nihility-bg-2, 0.85) 20%, rgba(0, 0, 0, 0) 65%, rgba($nihility-bg-2, 0.95))
-// Tournament card
-.TournamentCard-container
-    background-color: $nihility-bg-3
-// Information icon
-.TournamentSummaryItem-container-size-sm .TournamentSummaryItem-icon
+// Group settings icon
+.AddGroupOverlayDisplay-settings-icon
     fill: $nihility-fg-1
-// Information text
-.TournamentSummaryItem-text
-    color: $nihility-fg-2
+    @include nihility-transition(fill)
+    // Group settings hover
+    &:hover
+        fill: $nihility-fg-2
+
+// Copy invite title
+.CopyToClipboardControlV2-title
+    color: $nihility-fg-3
+// Copy invite input
+.CopyableTextbox-container
+    background-color: $nihility-bg-3
+    border-color: $nihility-fg-1
+    @include nihility-transition(border-color)
+// Copy invite input hover
+.CopyableTextbox-container-desktop:hover
+    border-color: $nihility-fg-2
+// Copy invite button hover
+.SocialShareButtonV2-container-desktop:hover::after
+    background-color: $nihility-bg-hover
+
+// Settings account info
+.DefaultReadonlyEditableForm-container
+    background-color: $nihility-bg-1
+// 2FA thing
+.PersistentUpsell-container-flavor-settings
+    background-color: $nihility-bg-1
+// Connections/integrations
+.SocialLinkPanel-header
+    background-color: $nihility-bg-1
+
+// Image preview container
+.MaximizedImageOverlay-image-wrapper
+    padding: $nihility-spacing-3
+    background-color: rgba($nihility-bg-0, $nihility-mild-opacity)
+// Open original
+.MaximizedImageOverlay-open-original
+    color: $nihility-fg-1
+    // Active
+    &:hover, &:active, &:focus
+        color: $nihility-fg-2
+// Image share icon
+.MaximizedImageOverlay-share-icon
+    fill: $nihility-fg-1
+    @include nihility-transition(transition)
+    // Hover
+    &:hover
+        fill: $nihility-fg-2

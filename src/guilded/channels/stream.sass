@@ -1,0 +1,36 @@
+// Whole container
+.StreamChannelDisplay-container,
+.StreamsDisplayV2-container
+    background-color: $nihility-bg-0
+// Stacked and unstacked streaming displays
+.StreamChannel-display,
+.StreamChannel-container-stacked .StreamChannel-display
+    border-color: $nihility-bg-1
+
+// Streaming button
+.SVGIconWithTooltip-container-flavor-hover-bleach
+    background-color: $nihility-bg-1
+    // Streaming button icon
+    .SVGIconWithTooltip-icon
+        fill: $nihility-fg-1
+    // Streaming button icon hover
+    &:hover .SVGIconWithTooltip-icon
+        fill: $nihility-fg-2
+
+// Join streaming channel
+.StreamsEmptyState-title
+    color: $nihility-fg-2
+.StreamsEmptyState-subtitle
+    color: $nihility-fg-1
+
+// Leave streaming channel
+.SVGIconWithTooltip-container-flavor-filled-remove
+    background-color: $nihility-bad
+
+// Mini buttons
+.StreamDisplayActionButton-container-right .StreamDisplayActionButton-container-content,
+.StreamDisplayActionButton-container-left .StreamDisplayActionButton-container-content
+    fill: $nihility-fg-1
+.StreamDisplayActionButton-container:hover .StreamDisplayActionButton-container-content,
+.StreamDisplayActionButton-container-active .StreamDisplayActionButton-container-content
+    fill: $nihility-fg-2

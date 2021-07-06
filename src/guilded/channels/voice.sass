@@ -1,0 +1,100 @@
+// Whole container
+.VoiceChannelDisplay-container
+    background-color: $nihility-bg-2
+
+/*
+ * --- Voice room list ---
+ */
+
+// Voice room
+.VoiceChannelGroupHeader-container-interactable
+    @include nihility-transition(background)
+
+// Voice room icon
+.VoiceChannelGroupHeader-icon
+    fill: $nihility-fg-1
+
+// Voice room caret
+.DropdownCaratV2-container
+    fill: $nihility-fg-1
+
+// Voice room caret hover
+.DropdownCaratV2-container-desktop:hover
+    fill: $nihility-fg-2
+
+// Voice room hovered over
+.VoiceChannelGroupHeader-container-interactable:hover
+    background-color: $nihility-bg-3
+    // Voice room name hover
+    &:hover .VoiceChannelGroupHeader-text
+        color: $nihility-fg-2
+
+    // Voice room icon hover
+    &:hover .VoiceChannelGroupHeader-icon
+        fill: $nihility-fg-2
+
+/*
+ * --- Labels ---
+ */
+
+// X/Y allowed label
+.LimitLabel-container
+    background-color: $nihility-bg-0
+
+// Current user count
+.GuildedText-container-type-heading6
+    color: $nihility-fg-2
+
+// Max user count
+.LimitLabel-limit
+    color: $nihility-fg-1
+
+
+/*
+ * --- Voice card ---
+ */
+
+// Whole container
+.VoiceConnectionDisplayPanelContents-container
+    background-color: $nihility-bg-0
+
+
+// Voice header
+.VoiceConnectionDisplayPanelContents-info-wrapper
+    border-bottom: 0
+    // Voice header hover
+    &::after
+        background-color: $nihility-bg-hover
+
+// Voice header info display
+.VoiceConnectionDisplayInfo-container
+    background-color: transparent
+
+// Voice header info icon
+.VoiceConnectionDisplayInfo-icon
+    fill: $nihility-fg-1
+
+// Voice header toggle buttons
+.VoiceConnectionDisplayButtons-button
+    background-color: $nihility-bg-1
+    fill: $nihility-fg-2
+
+// Voice header toggle button hover
+.SVGIconWithTooltip-container-clickable:hover
+    fill: $nihility-fg-3
+
+// Voice participant list
+.VoiceConnectionDisplayPanelContents-participants
+    background-color: $nihility-bg-1
+
+// Voice participant hover
+.VoiceChannelGroupUser-container:hover
+    background-color: $nihility-bg-2
+
+// Voice participants icon
+.VoiceConnectionDisplayParticipants-participants-icon
+    fill: $nihility-fg-0
+
+// Invite icon
+.SVGIconWithTooltip-container
+    fill: $nihility-fg-1

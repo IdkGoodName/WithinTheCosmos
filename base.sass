@@ -1,4 +1,4 @@
-/* === Base ===
+/* === Absolute Nihility ===
  * Credits:
  * Contributors:
  * - IdkGoodName
@@ -32,14 +32,17 @@ $nihility-theme-2: #676767
 $nihility-theme-3: #848484
 $nihility-bar: #060606
 // Noticable colours
-$nihility-mention: #C22
-$nihility-important: #A44
-$nihility-mentioned: #D9A05C
-$nihility-active: #74B2D9
+$nihility-mention: #b15151
+$nihility-important: #b67070
+$nihility-mentioned: #d89a4e
+$nihility-mentioned-hover: #ddb98e
+$nihility-active: #53a6da
+$nihility-active-hover: #8bb9d6
 
-$nihility-bad: #A44
-$nihility-bad-2: #F66
-$nihility-good: #5A4
+$nihility-bad: #b36060
+$nihility-bad-2: #fc8080
+$nihility-good: #73ad67
+$nihility-good-2: #84e970
 // Misc
 $nihility-floating-opacity: 0.95
 $nihility-mild-opacity: 0.55
@@ -50,32 +53,17 @@ $nihility-roundness: 1rem
 $nihility-roundness-big: 2rem
 
 /*
- * --- Body and root ---
- */
-
-// Variable definition/redefinition
-body,
-.ChannelWrapper-container,
-.ChatChannelMessagesList-container,
-.SlateEditor-container-type-default
-    --body-text-color: #AAAAAA
-    --nihility-local-fg: #AAAAAA
-    --game-color: #848484
-    --border-color: #0d0d0d
-    color: $nihility-fg-2
-// Change selection
-::selection
-    background-color: rgba($nihility-theme-3, 0.6)
-    color: white
-// Change variables
-.AppV2-container-minimal-nav
-    --left-v4-nav-color: #090909
-    --nav-v4-sidebar-background-color: #090909
-
-/*
  * --- Mixins ---
  */
 
+// Sets both color and fill
+@mixin set-color($color)
+    color: $color
+    fill: $color
+// CSS variables can't contain SASS variables for some odd reason, so this mixin is used instead
+@mixin set-var($name, $value)
+    #{$name}: $value
+// For setting transition in a lot of places
 @mixin nihility-transition($property)
     transition: $property
     transition-duration: $nihility-transition

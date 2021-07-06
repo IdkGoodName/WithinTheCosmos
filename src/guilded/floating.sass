@@ -9,9 +9,9 @@
  */
 
 // New messages, mentions and viewing older messages alerts
-.ChatChannelAlertBar-container.ChatChannelAlertBar-container-type-viewing-older-messages,
-.ChatChannelAlertBar-container.ChatChannelAlertBar-container-type-new-messages,
-.ChatChannelAlertBar-container-type-new-mentions
+.ChatChannelAlertBar-container.ChatChannelAlertBar-container-type-viewing-older-messages, // Viewing older
+.ChatChannelAlertBar-container.ChatChannelAlertBar-container-type-new-messages, // New messages
+.ChatChannelAlertBar-container-type-new-mentions // New mentions
     background-color: $nihility-bg-0 !important
 
 // New mentions
@@ -25,8 +25,7 @@
 
 // Any alert bar
 .ChatChannelAlertBar-container
-    fill: $nihility-fg-2
-    color: $nihility-fg-2
+    @include set-color($nihility-fg-2)
     background-color: $nihility-bg-0
     border-color: $nihility-bg-3
     // Hover
@@ -121,8 +120,6 @@
 .OverviewWidgetItem-text,
 .OverviewWidgetItem-input
     color: $nihility-fg-2
-
-
 
 // Background for buttons
 .ProfileHoverCardV2Overlay-action-menu

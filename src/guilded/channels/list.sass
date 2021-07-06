@@ -1,0 +1,88 @@
+/*
+ * --- Item list ---
+ */
+
+// Item
+.TeamListItemIndentWrapper-container,
+.TeamListItemWrapper-container
+    background-color: $nihility-bg-3
+// Item hover
+.TeamListItemWrapper-container-unfocused::after
+    background-color: $nihility-bg-hover
+// Item handle
+.TeamListItemControls-handle
+    svg
+        fill: $nihility-fg-1
+    &:hover svg
+        fill: $nihility-fg-2
+// Note and thread indicators
+.TeamListItemAction-container-clickable
+    svg
+        fill: $nihility-fg-1
+    &:hover svg
+        fill: $nihility-fg-2
+// Note highlighted
+.TeamListItemAction-container-highlight
+    svg
+        fill: $nihility-important
+    &:hover svg
+        fill: $nihility-fg-3
+// Thread indicator
+.TeamListItemAction-container
+    color: $nihility-fg-1
+    &:hover
+        color: $nihility-fg-2
+
+// Add item slate
+.TeamListItemsInput-editor.Editor-container
+    background-color: $nihility-bg-3
+// Add item icon
+.TeamListItemsInput-icon
+    svg
+        fill: $nihility-theme-2
+    &:hover svg
+        fill: $nihility-theme-3
+// Add item add note
+.TeamListItemNoteEditor-button
+    color: $nihility-fg-1
+    &:hover
+        color: $nihility-fg-2
+        // Icon hover
+        svg
+            fill: $nihility-fg-2
+    // Icon
+    svg
+        fill: $nihility-fg-1
+
+// X completed
+.TeamListItemsCompletedHeader-count
+    color: $nihility-fg-1
+    @include nihility-transition(color)
+// X completed hover
+.TeamListItemsCompletedHeader-container:hover .TeamListItemsCompletedHeader-count
+        color: $nihility-fg-2
+/*
+ * --- Item note ---
+ */
+
+// Whole container
+.TeamListItemNote-container
+    border-color: $nihility-bg-3
+// Timestamp dots
+.TeamListItemDetails-message-count::before, .TeamListItemDetails-created-at::before
+    color: $nihility-fg-0
+// Timestamp
+.TeamListItemDetails-created-at
+    color: $nihility-fg-1
+    @include nihility-transition(color)
+    &:hover
+        color: $nihility-fg-2
+// Note
+.SingleContentEditor-display
+    background-color: $nihility-bg-3
+    &:hover .ContentMetadataCreationInfo-from-now
+        color: $nihility-fg-2
+// Note timestamp
+.ContentMetadataCreationInfo-from-now
+    color: $nihility-fg-1
+    @include nihility-transition(color)

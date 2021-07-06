@@ -1,0 +1,149 @@
+/*
+ * -=- Misc -=-
+ */
+
+/*
+ * --- Text ---
+ */
+
+.GH1-container
+    color: $nihility-fg-3
+.GH2-container
+    color: $nihility-fg-2
+.GH3-container
+    color: $nihility-fg-1
+.GuildedText-container-type-heading1
+    color: $nihility-fg-3
+.GuildedText-container-type-heading4
+    color: $nihility-fg-3
+.GuildedText-container-type-subtext
+    color: $nihility-fg-1
+
+/*
+ * --- Upload ---
+ */
+
+// Upload image
+.ImageUploaderButton-container
+    background-color: $nihility-bg-1
+    border-color: $nihility-bg-0
+    // Upload image icon hover
+    &::after
+        background-color: $nihility-bg-hover
+// Upload image icon
+.ImageUploaderButton-icon
+    fill: $nihility-fg-2
+// Upload image text
+.ImageUploaderButton-text
+    color: $nihility-fg-2
+
+/*
+ * --- Status ---
+ */
+
+// Status
+.StatusMessage-container-ephemeral.StatusMessage-container-type-info, // No mic detected
+.StatusMessage-container-persistent.StatusMessage-container-type-info // Published on
+    border-color: $nihility-bg-0
+    background-color: $nihility-bg-3
+// Status hover
+.StatusMessage-container-desktop.StatusMessage-container-clickable::after
+    background-color: $nihility-bg-hover
+// Status text
+.StatusMessage-container
+    color: $nihility-fg-2
+.StatusMessage-icon
+    fill: $nihility-fg-2
+// Status text link
+.StatusMessage-link
+    color: $nihility-theme
+    // Status text link hover
+    &:hover
+        color: $nihility-theme-3
+
+// Copy invite alert
+.StatusMessage-container-ephemeral.StatusMessage-container-type-success
+    background-color: $nihility-bg-1
+    color: $nihility-good
+    // Icon
+    .StatusMessage-icon
+        fill: $nihility-good
+
+/*
+ * -=- Widget -=-
+ */
+
+// Wrapper
+.TeamCardDisplay-container,
+.CardWrapper-container
+    background-color: $nihility-bg-2
+// Server's name
+.TeamCardHeader-team-name
+    color: $nihility-fg-3
+// Description
+.TeamCardHeader-description
+    color: $nihility-fg-2
+// Info
+.EmphasizedLabel-container
+    color: $nihility-fg-1
+// Footer
+.EmbedCardFooter-container
+    background-color: $nihility-bg-1
+// Guilded's icon
+.EmbedCardFooter-logomark
+    fill: $nihility-theme
+
+/*
+ * -=- Gilded Buttons -=-
+ */
+
+/*
+ * --- Inactive ---
+ */
+
+// Inactive button
+.FormConfirmButtonV2-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled,
+.FormConfirmButtonV2-container.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled:hover
+    background-color: $nihility-bg-0 !important
+    border-color: $nihility-bg-2
+// Inactive button text
+.FormConfirmButtonV2-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-disabled .FormConfirmButtonV2-button-content,
+.FormConfirmButtonV2-container.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-disabled:hover .FormConfirmButtonV2-button-content
+    color: $nihility-fg-0
+
+/*
+ * --- Normal ---
+ */
+
+// Normal button
+.FormConfirmButtonV2-container.FormConfirmButtonV2-container-type-gilded
+    border-color: $nihility-theme-3
+    box-shadow: 0 0 0.5rem 0 $nihility-theme-2
+    background-image: linear-gradient(to right, $nihility-theme, $nihility-theme-3, $nihility-theme)
+// Normal button text
+.FormConfirmButtonV2-container-hollow .FormConfirmButtonV2-button-content,
+.FormConfirmButtonV2-container-type-delete .FormConfirmButtonV2-button-content
+    color: $nihility-fg-3
+// Button hovered over
+.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-filled:hover
+    box-shadow: 0 0 1rem 0 rgba($nihility-theme-3, 0.6)
+
+/*
+ * -=- Icons -=-
+ */
+
+/*
+ * --- Team badges ---
+ */
+
+// Verified badge
+#icon-verified-badge path:first-child
+    fill: $nihility-theme
+
+/*
+ * --- User badges ---
+ */
+
+// If there is an icon in the badge, remove the name
+.UserBadge-image ~ .UserBadge-name
+    display: none

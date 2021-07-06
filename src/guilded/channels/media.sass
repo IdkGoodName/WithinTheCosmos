@@ -1,0 +1,37 @@
+/*
+ * --- Media list ---
+ */
+
+// Media item
+.MediaDisplayItemV3-container
+    background-color: $nihility-bg-1
+    // Media item hover
+    &::after
+        background-color: $nihility-bg-hover
+
+// Comment count
+.MediaDisplayItemMetaInfo-comment-count
+    color: $nihility-fg-2
+
+
+/*
+ * --- Media view ---
+ */
+
+// Image preview
+.MediaSplitView-media
+    background-color: $nihility-bg-0
+
+// Media side panel
+.MediaInfoPane-container
+    background-color: $nihility-bg-2
+
+// Media view exit
+.BackLink-container-desktop
+    // Exit icon
+    .BackLink-icon
+        fill: $nihility-fg-1
+        transition-duration: $nihility-transition
+    // Exit icon hover
+    &:hover .BackLink-icon
+        fill: $nihility-fg-2

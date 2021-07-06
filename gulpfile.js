@@ -4,9 +4,10 @@ const concat = require('gulp-concat')
 const sass = require('gulp-sass')(require('sass'))
 
 gulp.task('default', async cb => {
+    const platform = argv.platform ?? argv.p ?? 'guilded'
     // Compiles all SASS files to CSS
-    gulp.src(['./guilded/*.sass'])
-        .pipe(concat('guilded.sass'))
+    gulp.src(['./base.sass', `./src/${platform}/**/*.sass`])
+        .pipe(concat(`${platform}.sass`))
         .pipe(sass({ indentedSyntax: false, outputStyle: 'compressed' }))
-        .pipe(gulp.dest(`./use/${argv.path ?? 'dark'}`))
+        .pipe(gulp.dest(`./use`))
 })

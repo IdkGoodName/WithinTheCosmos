@@ -1,0 +1,188 @@
+/*
+ * --- Messages ---
+ */
+
+// Chat area
+.SidebarInfoItem-container,
+.LayeredPageContent-content,
+.ChannelWrapper-container
+    background-color: $nihility-bg-2
+    color: $nihility-fg-3
+    --nihility-local-fg: $nihility-fg-2
+
+// Message
+.ChatV2Message-container:not(.ChatV2Message-container-editing):not(.ChatV2Message-container-threads-disabled)
+    @include nihility-transition(background)
+
+// Hovered message
+.ChatV2Message-container:not(.ChatV2Message-container-editing):hover,
+.ChatV2Message-container.ChatV2Message-container-replying
+    background-color: $nihility-bg-3
+    --nihility-local-fg: $nihility-fg-3
+
+// Removes messages' margin
+.ChatV2Message-container + .ChatV2Message-container:not(.ChatV2Message-container-with-header):not(.ChatV2Message-container-type-system)
+    margin-top: 0
+
+// Focused message's background
+.ChatV2Message-container:not(.ChatV2Message-container-editing).ChatV2Message-container-replying
+    background-color: rgba($nihility-active, 0.1)
+    // Hover
+    &:hover
+        background-color: rgba($nihility-active-hover, 0.1)
+
+// Focused message/clicked message's side
+.ChatV2Message-container:not(.ChatV2Message-container-editing).ChatV2Message-container-replying::after
+    background-color: $nihility-active
+.ChatV2Message-container:not(.ChatV2Message-container-editing).ChatV2Message-container-replying:hover::after
+    background-color: $nihility-active-hover
+
+// Mention's background
+.ChatV2Message-container:not(.ChatV2Message-container-editing):not(.ChatV2Message-container-replying).ChatV2Message-container-mentioned
+    background-color: rgba($nihility-mentioned, 0.1)
+    // Mention's background hover
+    &:hover
+        background-color: rgba($nihility-mentioned-hover, 0.1)
+
+// Mention's side
+.ChatV2Message-container:not(.ChatV2Message-container-editing):not(.ChatV2Message-container-replying).ChatV2Message-container-mentioned::after
+    background-color: $nihility-mentioned
+.ChatV2Message-container:not(.ChatV2Message-container-editing):not(.ChatV2Message-container-replying).ChatV2Message-container-mentioned:hover::after
+    background-color: $nihility-mentioned-hover
+
+// Right click active
+.ChatV2Message-container-active
+    background-color: $nihility-bg-3
+
+// Input with no permissions
+.ChatChannelInput-no-permissions
+    background-color: $nihility-bg-0
+    color: $nihility-fg-1
+
+// Text
+.LastReplyDisplayContent-message-summary,
+.BlockQuoteLineRenderer,
+.ChatV2Message-container.ChatV2Message-container-type-default,
+.LayeredPageContent-content,
+.ChannelWrapper-container,
+.ParagraphRenderer
+    color: var(--nihility-local-fg)
+    @include nihility-transition(color)
+
+// (edited)
+.EditedMarker-container
+    color: $nihility-fg-1
+    @include nihility-transition(color)
+
+.ChatV2Message-container.ChatV2Message-container-type-default:hover .EditedMarker-container
+    color: $nihility-fg-3
+
+/*
+ * --- Thread messages ---
+ */
+
+// Threaded message
+.ChatMessageThread-container
+    background-color: $nihility-bg-1
+    transition: background-color 0.2s
+    // Threaded message hover
+    &::after
+        display: none
+
+// Highlight the thread when the message is hovered over
+.ChatV2MessageContents-container:hover .ChatMessageThread-container
+    background-color: $nihility-bg-2
+
+// Thread reply bar when the user is in it
+.LastReplyDisplay-container.LastReplyDisplay-container-participant:not(.LastReplyDisplay-container-unread)::before
+    background-color: $nihility-theme-3
+
+// Thread reply bar
+.LastReplyDisplay-container::before
+    background-color: $nihility-theme
+
+// Threaded message's arrow
+.LastReplyDisplay-icon-chevron
+    color: $nihility-theme-2
+
+/*
+ * --- Header ---
+ */
+
+// Timestamp
+.ChatV2MessageTimestamp-container.ChatV2MessageHeader-timestamp
+    color: $nihility-fg-1
+    transition: color 0.5s
+
+// Timestamp hovered
+.ChatV2Message-container.ChatV2Message-container-type-default:hover .ChatV2MessageTimestamp-container.ChatV2MessageHeader-timestamp
+    color: $nihility-fg-3
+
+/*
+ * --- Menu ---
+ */
+
+// Message hover menu
+.QuickActionBar-container
+    background-color: $nihility-bg-1
+    border-color: $nihility-bg-1
+
+// Message hover menu icons
+.QuickActionBar-action
+    fill: $nihility-fg-2
+
+/*
+ * --- Thread menu ---
+ */
+
+// Message thread menu
+.ChatV2MessageReplyTooltip-content-wrapper
+    background-color: $nihility-bg-1
+    border-color: $nihility-bg-3
+
+// Message thread menu icon
+.ChatV2MessageReplyTooltipHeader-icon
+    fill: $nihility-fg-1
+
+// Message thread menu arrow/pointer
+.ChatV2MessageReplyTooltip-arrow
+    background-color: $nihility-bg-1
+    border-color: $nihility-bg-3
+
+// Message thread add a title
+.ChatV2MessageReplyTooltipHeader-add-title,
+.ChatV2MessageReplyTooltipHeader-add-title:visited,
+.ChatV2MessageReplyTooltipHeader-add-title:active,
+.ChatV2MessageReplyTooltipHeader-add-title:focus
+    color: $nihility-fg-1
+
+// Message thread add a title hovered
+.ChatV2MessageReplyTooltipHeader-add-title:hover
+    color: $nihility-fg-2
+
+// Message thread menu send
+.SlateEditor-send-icon
+    fill: $nihility-theme-3
+
+// Message thread menu cannot send
+.SlateEditor-send-icon.SlateEditor-send-icon-disabled
+    fill: $nihility-fg-0
+
+// Thread menu title input
+.ChannelTitleInput-container,
+.ChatV2MessageReplyTooltipInput-title-container
+    background-color: $nihility-bg-0
+
+.ContentEditableInput-placeholder-text,
+.ContentEditableInput-input,
+.ContentEditableInput-actual-text-display
+    color: $nihility-fg-2
+
+// Thread menu title input placeholder
+.ChannelTitleInput-input-placeholder
+    color: $nihility-fg-0
+
+// Thread menu title input icon
+.ChannelTitleInput-icon,
+.ChatV2MessageReplyTooltipInput-title-icon
+    fill: $nihility-fg-2

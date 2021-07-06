@@ -1,0 +1,76 @@
+/*
+ * --- Loading dots ---
+ */
+
+// Loading dot container
+.LoadingAnimationMicro-container
+    width: 2.5rem
+
+// Loading dots
+.LoadingAnimationMicro-bar
+    // Increase its width
+    background-color: $nihility-theme
+    // Disable other 2 loading dots
+    &:nth-child(2),
+    &:nth-child(3)
+        display: none
+    // Animate the only one
+    &:nth-child(1)
+        animation-name: nihilityLoad
+        opacity: 100%
+// Loading animation
+@keyframes nihilityLoad
+    0%
+        translate: 0rem 0rem
+        transform: scaleX(1)
+    25%
+        transform: scaleX(1.5)
+    45%
+        transform: scaleX(1)
+    50%
+        translate: 2rem 0rem
+    75%
+        transform: scaleX(1.5)
+    95%
+        transform: scaleX(1)
+    100%
+        translate: 0rem 0rem
+    
+/*
+ * --- Loading/connecting bar ---
+ */
+
+// Loading bar
+.NetworkReconnectionDisplay-container-reconnecting
+    background-color: $nihility-bg-0
+
+/*
+ * --- Loading/connecting content ---
+ */
+
+// Unloaded images
+.Img-skeleton-square
+    opacity: 0.3
+// Loading group icon
+.GroupSelectorSkeleton-group
+    background: $nihility-bg-3
+// Loading channel icon
+.TeamChannelsListSkeleton-icon
+    background: $nihility-bg-3
+
+// Loading announcement
+.OverviewWidgetSkeleton-container,
+.OverviewWidgetSkeleton-container-type-filled
+    background-color: $nihility-bg-1
+// Loading avatar
+.OverviewWidgetSkeleton-profile-picture,
+.OverviewWidgetSkeleton-icon,
+// Loading others
+.OverviewWidgetSkeleton-box,
+.OverviewWidgetSkeleton-feed-item,
+// Loading text
+.OverviewWidgetSkeleton-text,
+.OverviewWidgetSkeleton-subtitle,
+.OverviewWidgetSkeleton-paragraph
+    background: $nihility-bg-3
+    background: linear-gradient(270deg, $nihility-bg-2, $nihility-bg-3, $nihility-bg-3, $nihility-bg-2)

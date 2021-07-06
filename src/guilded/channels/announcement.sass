@@ -1,0 +1,49 @@
+.ContentMetadataCreationInfo-from-now-link,
+.ContentMetadataCreationInfo-from-now-link:visited,
+.ContentMetadataCreationInfo-from-now-link:active,
+.ContentMetadataCreationInfo-from-now-link:focus
+    color: $nihility-fg-1
+
+.ContentMetadataCreationInfo-from-now-link:hover
+    color: $nihility-fg-2
+
+
+// Pinned announcements
+.TeamPostRow-container
+    background-color: rgba(100, 100, 100, 0.1)
+
+
+/*
+ * --- Role label ---
+ */
+
+
+// Role name
+.TeamWidgetProfileRank-rank-name
+    color: $nihility-fg-1
+    @include nihility-transition(color)
+    // Role name hover
+    &:hover
+        color: $nihility-fg-2
+
+/*
+ * --- Comment section ---
+ */
+
+// View more
+.CircleImageStack-label
+    color: $nihility-fg-1
+
+// View more hovered over
+.CircleImageStack-container-actionable:hover .CircleImageStack-label
+    color: $nihility-fg-2
+
+
+// Time stamp
+.LastReplyDisplayContent-timestamp
+    color: $nihility-fg-1
+    transition: color 0.2s
+
+// Comment hovered over should make time stamp brighter
+.LastReplyDisplay-container:hover .LastReplyDisplayContent-container .LastReplyDisplayContent-timestamp
+    color: $nihility-fg-2

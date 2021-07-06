@@ -1,0 +1,30 @@
+// Filter icon
+.ItemManagerFilterButton-icon
+    fill: $nihility-fg-1
+    @include nihility-transition(fill)
+
+// Filter icon hover
+.ItemManagerFilterButton-container:not(.ItemManagerFilterButton-container-active):hover .ItemManagerFilterButton-icon
+    fill: $nihility-fg-2
+
+// Filter settings clicked
+.ItemManagerFilterButton-container-open .ItemManagerFilterButton-icon
+    fill: $nihility-fg-3
+
+// Filter settings
+.ItemManagerFilterWrapper-container
+    background-color: $nihility-bg-3
+
+// Filter settings search
+.ItemManagerFilterWrapper-search
+    background-color: $nihility-bg-4
+
+.SearchBarInput-input
+    color: $nihility-fg-2
+    // Placeholder
+    &::placeholder
+        color: $nihility-fg-1
+
+// Filter settings search icon
+.SearchBarInput-icon
+    fill: $nihility-fg-2
