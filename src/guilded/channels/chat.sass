@@ -83,7 +83,7 @@
 // Replying to text
 .ChatChannelInputInlineReplyStatusBar-replying-to-text
     color: $nihility-fg-1
-// Replying to mention]
+// Replying to mention
 .ChatChannelInputInlineReplyStatusBar-ping-icon
     fill: $nihility-fg-1
     @include nihility-transition(fill)
@@ -104,9 +104,14 @@
     // Reply line
     &::after
         border-color: $nihility-fg-0
-        height: 25px
+        height: 2.5rem
     &:first-child::after
-        height: 11px
+        height: 1rem
+// Reply header thread
+.ChatV2MessageReplyHeader-container-thread::after,
+.ChatV2MessageReplyHeader-container-thread:first-child::after
+    height: 4rem
+
 // Text in the reply
 .ChatV2MessageReplyHeader-message-summary:not(.ChatV2MessageReplyHeader-message-summary-deleted)
     @include nihility-transition(color)
