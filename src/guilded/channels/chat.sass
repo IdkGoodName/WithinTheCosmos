@@ -77,6 +77,45 @@
 .ChatV2Message-container.ChatV2Message-container-type-default:hover .EditedMarker-container
     color: $nihility-fg-3
 
+// Replying to box
+.ChatChannelInputInlineReplyStatusBar-container
+    background-color: $nihility-bg-0
+// Replying to text
+.ChatChannelInputInlineReplyStatusBar-replying-to-text
+    color: $nihility-fg-1
+// Replying to mention]
+.ChatChannelInputInlineReplyStatusBar-ping-icon
+    fill: $nihility-fg-1
+    @include nihility-transition(fill)
+    .ChatChannelInputInlineReplyStatusBar-ping:hover &
+        fill: $nihility-fg-2
+    .ChatChannelInputInlineReplyStatusBar-ping-enabled & 
+        fill: $nihility-important
+// Replying to close
+.ChatChannelInputInlineReplyStatusBar-close-icon
+    fill: $nihility-fg-1
+    @include nihility-transition(fill)
+.CloseIcon-icon:hover
+    fill: $nihility-bad
+
+// Reply headers
+.ChatV2MessageReplyHeader-container-highlighted,
+.ChatV2MessageReplyHeader-container
+    // Reply line
+    &::after
+        border-color: $nihility-fg-0
+        height: 25px
+    &:first-child::after
+        height: 11px
+// Text in the reply
+.ChatV2MessageReplyHeader-message-summary:not(.ChatV2MessageReplyHeader-message-summary-deleted)
+    @include nihility-transition(color)
+    &:hover
+        color: $nihility-fg-2
+// Username in the reply
+.ChatV2MessageReplyHeader-user-info .UserBasicInfoDisplay-name-and-status-wrapper
+    font-weight: bolder
+
 /*
  * --- Thread messages ---
  */
