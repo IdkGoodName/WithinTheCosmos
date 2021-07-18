@@ -1,34 +1,35 @@
 // Whole container
 .AvailabilityDisplay-container
-    background-color: $nihility-bg-2
-// Container arrow
-.AvailabilityDisplayHeader-button
-    border-color: $nihility-bg-1
-    background-color: $nihility-bg-2
-    // Container arrow hover
-    ::after
-        background-color: $nihility-bg-hover
-// Container arrow's icon
-.AvailabilityDisplayHeader-button
-    fill: $nihility-fg-2
-
-// Current and other days
-.AvailabilityDisplayHeader-day-today, .AvailabilityDisplayHeader-day
     background-color: $nihility-bg-3
-// Tomorrow/alternative day
-.AvailabilityDisplayHeader-day-alt
-    background-color: $nihility-bg-2
 
-// Day
-.AvailabilityDisplayHeader-date
-    color: $nihility-fg-3
-// Timezone and date
-.AvailabilityDisplayHeader-timezone,
-.AvailabilityDisplayHeader-subtitle
-    color: $nihility-fg-1
-    @include nihility-transition(color)
-    &:hover
-        color: $nihility-fg-2
+.AvailabilityDisplayHeader
+    // Container arrow
+    &-button
+        border-color: $nihility-bg-1
+        background-color: $nihility-bg-3
+        // Container arrow hover
+        &::after
+            background-color: $nihility-bg-hover
+    // Container arrow's icon
+    &-button
+        fill: $nihility-fg-2
+    // Current and other days
+    &-day-today, &-day
+        background-color: $nihility-bg-4
+    // Tomorrow/alternative day
+    &-day-alt
+        background-color: $nihility-bg-3
+    // Day
+    &-date
+        color: $nihility-fg-3
+    // Timezone and date
+    &-timezone,
+    &-subtitle
+        color: $nihility-fg-1
+        @include nihility-transition(color)
+        // Hover
+        &:hover
+            color: $nihility-fg-2
 // Time
 .AvailabilityDisplayTimeAxis-label
     color: $nihility-fg-2
@@ -36,13 +37,13 @@
 .AvailabilityDayHour-now-line
     background-color: $nihility-active
 
-// Others' area
-.AvailabilityDisplayDaysPlaceholder-day,
-.AvailabilityDisplayDaysPlaceholder-day-today
-    background-color: $nihility-bg-3
-// Others' area tomorrow/alternative day
-.AvailabilityDisplayDaysPlaceholder-day-alt
-    background-color: $nihility-bg-3
-// Lighter/creation area
-.AvailabilityDisplayDaysPlaceholder-create
-    background-color: $nihility-bg-4
+.AvailabilityDisplayDaysPlaceholder
+    // Others' area
+    &-day, &-day-today
+        background-color: $nihility-bg-4
+    // Others' area tomorrow/alternative day
+    &-day-alt
+        background-color: $nihility-bg-4
+    // Lighter/creation area
+    &-create
+        background-color: $nihility-bg-5

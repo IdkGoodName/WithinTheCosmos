@@ -8,55 +8,65 @@
  * --- New messages / Alert bar ---
  */
 
-// New messages, mentions and viewing older messages alerts
-.ChatChannelAlertBar-container.ChatChannelAlertBar-container-type-viewing-older-messages, // Viewing older
-.ChatChannelAlertBar-container.ChatChannelAlertBar-container-type-new-messages, // New messages
-.ChatChannelAlertBar-container-type-new-mentions // New mentions
-    background-color: $nihility-bg-0 !important
-
-// New mentions
-.ChatChannelAlertBar-container-type-new-mentions
-    color: $nihility-mention !important
-    fill: $nihility-mention !important
-
-// New mentions icon
-.ChatChannelAlertBar-container-type-new-mentions .ChatChannelAlertBar-icon-click-wrapper .ChatChannelAlertBar-icon
-    fill: $nihility-mention
+// Alert bar icon
+.ChatChannelAlertBar-icon
+    fill: $nihility-fg-2
 
 // Any alert bar
 .ChatChannelAlertBar-container
     @include set-color($nihility-fg-2)
     background-color: $nihility-bg-0
-    border-color: $nihility-bg-3
+    border-color: $nihility-bg-4
     // Hover
     &::after
         background-color: $nihility-bg-hover
+    
+    // Viewing older messages
+    &-type-viewing-older-messages,
+    // Unread messages
+    &-type-unread-messages,
+    // New messages
+    &-type-new-messages,
+    // New mentions
+    &-type-new-mentions
+        background-color: $nihility-bg-0 !important
 
-// Alert bar icon
-.ChatChannelAlertBar-icon
-    fill: $nihility-fg-2
-
+    // New mentions
+    &-type-new-mentions
+        color: $nihility-mention !important
+        fill: $nihility-mention !important
+        // New mentions icon
+        .ChatChannelAlertBar-icon-click-wrapper .ChatChannelAlertBar-icon
+            fill: $nihility-mention
+    
+    // Unread messages
+    &-type-unread-messages
+        color: $nihility-active !important
+        fill: $nihility-active !important
+        // Unread messages icon
+        .ChatChannelAlertBar-icon-click-wrapper .ChatChannelAlertBar-icon
+            fill: $nihility-active
 
 /*
  * --- Tooltips ---
  */
 
-// Tooltip's base
-.HoverContextTooltip-text-wrapper
-    background-color: $nihility-bg-1
-    border: solid 0.15rem
-    border-color: $nihility-bg-0
-    opacity: $nihility-floating-opacity
-
-// Tooltip's arrow/pointer
-.HoverContextTooltip-arrow
-    background-color: $nihility-bg-0
+// Tooltip
+.HoverContextTooltip
+    // Base
+    &-text-wrapper
+        background-color: $nihility-bg-1
+        border: solid 0.15rem
+        border-color: $nihility-bg-0
+        opacity: $nihility-floating-opacity
+    // Arrow/Pointer
+    &-arrow
+        background-color: $nihility-bg-0
 
 // Keybinds
 .Glyph-container
-    background-color: $nihility-bg-3
+    background-color: $nihility-bg-4
     color: $nihility-fg-2
-
 
 /*
  * --- Reactions ---
@@ -72,9 +82,9 @@
 .ReactionPickerButton-container-type-content
     transition-duration: $nihility-transition
 
-// When reaction is hovered over
-.ReactionPickerButton-container-type-content:hover
-    background: rgba(255, 255, 255, 0.05)
+    // When reaction is hovered over
+    &:hover
+        background-color: $nihility-bg-1
 
 // Text after the reaction button
 .ReactionPickerButton-container-with-label::after
@@ -82,10 +92,31 @@
     transition-duration: $nihility-transition
 
 // Reaction icon
-.ReactionPickerButton-container .ReactionPickerButton-icon
-    color: $nihility-fg-2
-    transition-duration: $nihility-transition
-
+.ReactionPickerButton
+    // Normally
+    &-container &-icon
+        color: $nihility-fg-2
+        fill: $nihility-fg-2
+        transition-duration: $nihility-transition
+    // Hover
+    &-container:hover &-icon
+        color: $nihility-fg-3
+        fill: $nihility-fg-3
+// Reaction counter
+.ReactionBadge-container
+    &:not(&-disabled):hover .ReactionBadge-count
+        color: $nihility-fg-3
+    // Active
+    &.ReactionBadge-container-active
+        // Normal active reaction
+        .ReactionBadge-container-content
+            background-color: rgba($nihility-active, 0.1)
+            // Active reaction label
+            .ReactionBadge-count
+                color: $nihility-active
+        // Active reaction hover
+        &.ReactionBadge-container:not(.ReactionBadge-container-disabled):hover .ReactionBadge-container-content
+            background-color: rgba($nihility-active-hover, 0.1)
 
 /*
  * --- Member card ---
@@ -93,7 +124,7 @@
 
 // Member card's background
 .ProfileHoverCardV2Overlay-container
-    background-color: $nihility-bg-3
+    background-color: $nihility-bg-4
 
 // Section's header
 .UserAttributionDisplay-header,
@@ -106,31 +137,36 @@
     // XP user has
     .GuildedText-container-weight-bold
         color: $nihility-fg-2
-// XP's background
-.GoldenProgressBar-container-theme-dark
-    background-color: $nihility-bg-0
-// XP's progress
-.GoldenProgressBar-progress
-    background-color: $nihility-theme-2
+// XP progress bar
+.GoldenProgressBar
+    // Background
+    &-container-theme-dark
+        background-color: $nihility-bg-0
+    // Progress
+    &-progress
+        background-color: $nihility-theme-2
 
-// Socials' icon
-.OverviewWidgetItem-icon
-    fill: $nihility-fg-1
-// Social's text
-.OverviewWidgetItem-text,
-.OverviewWidgetItem-input
-    color: $nihility-fg-2
+// Socials
+.OverviewWidgetItem
+    // Icon
+    &-icon
+        fill: $nihility-fg-1
+    // Text
+    &-text, &-input
+        color: $nihility-fg-2
 
 // Background for buttons
 .ProfileHoverCardV2Overlay-action-menu
-    background-color: $nihility-bg-2
-// Button's icon
-.ContextMenu-content
-    fill: $nihility-fg-1
-// Button's text
-.ContextMenuItem-label
-    color: $nihility-fg-2
+    background-color: $nihility-bg-3
 
+// Button
+.ContextMenu
+    // Icon
+    &-content
+        fill: $nihility-fg-1
+    // Text
+    &Item-label
+        color: $nihility-fg-2
 
 /*
  * --- Mention icons ---
@@ -152,75 +188,82 @@
     border-color: $nihility-bg-0
 
 // Menu item
-.ContextMenuItem-container
-    color: $nihility-fg-2
-    fill: $nihility-fg-2
-    // Text and icon on hover
-    &:hover
+.ContextMenuItem
+    &-container
+        color: $nihility-fg-2
+        fill: $nihility-fg-2
+        // Text and icon on hover
+        &:hover
+            // Text
+            .ContextMenuItem-label
+                color: $nihility-fg-3
+            // Icon
+            .ContextMenuIcon-container-icon
+                fill: $nihility-fg-3
+        // Menu item hover glare
+        &::after
+            background-color: $nihility-bg-hover
+    // Menu item download app highlighted
+    &-highlighted
+        background-color: transparent
+        fill: $nihility-important
         // Text
         .ContextMenuItem-label
-            color: $nihility-fg-3
+            color: $nihility-important
         // Icon
         .ContextMenuIcon-container-icon
-            fill: $nihility-fg-3
-    // Menu item hover glare
-    &::after
-        background-color: $nihility-bg-hover
-// Menu item download app highlighted
-.ContextMenuItem-highlighted
-    background-color: transparent
-    fill: $nihility-important
-    // Text
-    .ContextMenuItem-label
-        color: $nihility-important
-    // Icon
-    .ContextMenuIcon-container-icon
-        color: $nihility-important
+            color: $nihility-important
 
 // Overflow icon
-.ContextMenuTrigger-container .ContextMenuTrigger-icon
-    fill: $nihility-fg-1
-    @include nihility-transition(fill)
-
-.ContextMenuTrigger-container-desktop:hover .ContextMenuTrigger-icon
-    fill: $nihility-fg-2
+.ContextMenuTrigger
+    &-container &-icon
+        fill: $nihility-fg-1
+        @include nihility-transition(fill)
+    &-container-desktop:hover &-icon
+        fill: $nihility-fg-2
 
 
 /*
  * --- Emote picker ---
  */
 
-// Emote picker content
-.ReactionPicker-content
-    background-color: $nihility-bg-2
+// Emote picker
+.ReactionPicker
+    // Emote picker content
+    &-content
+        background-color: $nihility-bg-3
+    // Emote icon
+    &Icon-container:hover, &Icon-container:focus
+        background-color: $nihility-bg-1
+    
+    // Bottom bar
+    &Footer-container,
+    // Top bar
+    &Navbar-container
+        color: $nihility-fg-2
+        background-color: $nihility-bg-1
+        border-color: $nihility-bg-0
 
-// Emote server title
-.ReactionPicker-section-label
-    color: $nihility-fg-2
-
-// Bottom and top bar
-.ReactionPickerFooter-container, // Picker footer/information
-.ReactionPickerNavbar-container // Emote tabs/top bar
-    color: $nihility-fg-1
-    background-color: $nihility-bg-1
-    border-color: $nihility-bg-0
-
-// Emote picker tab
-.ReactionPickerNavbarItem-active
-    border-bottom-color: $nihility-theme
-    // Emote picker active tab's icon
-    .ReactionPickerNavbarItem-icon
-        fill: $nihility-fg-3
-
-// Emote picker tab's icon
-.ReactionPickerNavbarItem-icon
-    fill: $nihility-fg-1
-    .ReactionPickerNavbarItem:hover &
-        fill: $nihility-fg-2
+    // Emote name
+    &-section-label
+        color: $nihility-fg-3
+    // Emote server title
+    &Preview-team
+        color: $nihility-fg-1
+    
+    // Emote picker tab active
+    .ReactionPickerNavbarItem-active
+        border-bottom-color: $nihility-theme
+    // Emote picker tab's icon
+    &NavbarItem-icon
+        fill: $nihility-fg-1
+        .ReactionPickerNavbarItem:hover &
+            fill: $nihility-fg-2
+        .ReactionPickerNavbarItem-active &
+            fill: $nihility-fg-3
 
 // Footer skintone's arrow
-.IconMenuInput-container-gray .IconMenuInput-chevron-down,
-.IconMenuInput-container-gray .IconMenuInput-selected-value-icon,
-.IconMenuInput-container-white .IconMenuInput-chevron-down,
-.IconMenuInput-container-white .IconMenuInput-selected-value-icon
-    fill: $nihility-fg-1
+.IconMenuInput-container
+    &-gray, &-white,
+        .IconMenuInput-chevron-down, .IconMenuInput-selected-value-icon
+            fill: $nihility-fg-1

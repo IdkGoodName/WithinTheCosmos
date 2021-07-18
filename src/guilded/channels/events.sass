@@ -3,43 +3,42 @@
  */
     
 // Day cards
-.FullSizedCalendar-week
-    background-color: $nihility-bg-3
-.FullSizedCalendar-day
-    border-width: 1px
-    border-style: solid
-    border-color: $nihility-bg-1
-.FullSizedCalendarDayHeader-date
-    color: $nihility-fg-2
+.FullSizedCalendar
+    // Calendar days and weeks
+    &-week
+        background-color: $nihility-bg-4
+    &-day
+        border-width: 1px
+        border-style: solid
+        border-color: $nihility-bg-1
+    // Calendar special days
+    &Day-container-different-month
+        background-color: $nihility-bg-3
+        color: $nihility-fg-1
+        color: black
+    &Day-container-today
+        background-color: $nihility-bg-5
+    // Day numbers
+    &DayHeader-date
+        color: $nihility-fg-2
+    &DayHeader-date-different-month
+        color: $nihility-fg-1
+    &DayHeader-date-today
+        background-color: $nihility-theme
+        color: white
 
-.FullSizedCalendarDay-container-different-month
-    background-color: $nihility-bg-2
-    color: $nihility-fg-1
-    color: black
-
-.FullSizedCalendarDay-container-today
-    background-color: $nihility-bg-4
-
-// Numbers
-.FullSizedCalendarDayHeader-date-different-month
-    color: $nihility-fg-1
-
-.FullSizedCalendarDayHeader-date-today
-    background-color: $nihility-theme
-    color: white
 
 // Buttons
 .ToggleControl-container
     border-color: $nihility-fg-1
-.ToggleControlButton-container.ToggleControlButton-container-desktop:hover,
-.ToggleControlButton-container.ToggleControlButton-container-selected
-    color: $nihility-theme
-    background-color: $nihility-bg-1
+.ToggleControlButton-container.ToggleControlButton-container
+    &-desktop:hover, &-selected
+        color: $nihility-theme
+        background-color: $nihility-bg-1
 
 // Upcoming
-.UpcomingCalendarDay-container,
-.UpcomingCalendar-container
-    background-color: $nihility-bg-1
-
-.UpcomingCalendarEvent-container-desktop:hover
-    background-color: $nihility-bg-2
+.UpcomingCalendar
+    &Day-container, &-container
+        background-color: $nihility-bg-1
+    &Event-container-desktop:hover
+        background-color: $nihility-bg-3

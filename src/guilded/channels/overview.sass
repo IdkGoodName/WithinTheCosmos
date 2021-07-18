@@ -18,33 +18,34 @@
  * --- Banner and header ---
  */
 
-// The whole container of it
-.TeamOverviewBanner-container
-    border-bottom: none
+.TeamOverviewBanner
+    // The whole container of it
+    &-container
+        border-bottom: none
+    // The mask that makes it fade in
+    &-banner
+        mask-image: linear-gradient(to bottom, #000, #000 calc(100% - 40%), rgba(0, 0, 0, 0) calc(100% - 5px), rgba(0, 0, 0, 0))
 
-// The mask that makes it fade in
-.TeamOverviewBanner-banner
-    mask-image: linear-gradient(to bottom, #000, #000 calc(100% - 40%), rgba(0, 0, 0, 0) calc(100% - 5px), rgba(0, 0, 0, 0))
-
-// Whole panel below the banner, including description
-.TeamOverviewRoot-container
-    z-index: 2
-
-// Description below the name of the server
-.TeamOverviewRoot-description
-    color: $nihility-fg-2
+.TeamOverviewRoot
+    // Whole panel below the banner, including description
+    &-container
+        z-index: 2
+    // Description below the name of the server
+    &-description
+        color: $nihility-fg-2
 
 /*
  * --- Showcase ---
  */
 
-// No announcements title
+// No announcements
 .TabEmptyState-title
-    color: $nihility-fg-2
-
-// No announcements description
-.TabEmptyState-subtitle
-    color: $nihility-fg-1
+    // Title
+    &-title
+        color: $nihility-fg-2
+    // Description
+    &-subtitle
+        color: $nihility-fg-1
 
 .ToggleControl-container.ToggleControl-container-highlighted
     border-color: $nihility-theme
@@ -60,15 +61,15 @@
     background-color: rgba(100, 100, 100, 0.1)
 
 // Showcase text
-.TeamOverviewContentItemCard-title
-    font-weight: bold
-
-.TeamOverviewContentItemCard-title,
-.TeamOverviewContentItemCard-subtitle
-    color: $nihility-fg-2
-
-.TeamOverviewContentItemCard-subtitle2
-    color: $nihility-fg-1
+.TeamOverviewContentItemCard
+    // Content showcase title
+    &-title
+        font-weight: bold
+    &-title, &-subtitle
+        color: $nihility-fg-2
+    // Content showcase sub-title
+    &-subtitle2
+        color: $nihility-fg-1
 
 
 // See all
@@ -80,14 +81,15 @@
         color: $nihility-fg-2
 
 // Showcase event buttons
-.ToggleControlButton-container,
-.ToggleControlButton-icon
-    @include set-color($nihility-fg-1)
+.ToggleControlButton
+    &-container, &-icon
+        @include set-color($nihility-fg-1)
 
-// Showcase event buttons hover
-.ToggleControlButton-container.ToggleControlButton-container-desktop:hover .ToggleControlButton-icon,
-.ToggleControlButton-container.ToggleControlButton-container-selected .ToggleControlButton-icon
-    fill: $nihility-fg-2
+.ToggleControlButton-container.ToggleControlButton-container
+    // Showcase event buttons hover
+    &-desktop:hover .ToggleControlButton-icon,
+    &-selected .ToggleControlButton-icon
+        fill: $nihility-fg-2
 
 
 /*
@@ -98,27 +100,27 @@
 // Carousel blurs
 .CarouselList-container-size-sm .CarouselList-blur-light.CarouselList-left-blur,
 .CarouselList-blur-light.CarouselList-left-blur
-    background-image: linear-gradient(to left, rgba($nihility-bg-2, 0), $nihility-bg-2 100%)
+    background-image: linear-gradient(to left, rgba($nihility-bg-3, 0), $nihility-bg-3 100%)
 
 .CarouselList-container-size-sm .CarouselList-blur-light.CarouselList-right-blur,
 .CarouselList-blur-light.CarouselList-right-blur
-    background-image: linear-gradient(to right, rgba($nihility-bg-2, 0), $nihility-bg-2 100%)
+    background-image: linear-gradient(to right, rgba($nihility-bg-3, 0), $nihility-bg-3 100%)
 
 // Carousel arrow
 .CarouselList-controls-arrow
     transition: 1s
     fill: $nihility-fg-2
 
-
 // Leaderboard
 .TeamOverviewLeaderboardSection-leaderboard-container
-    background-color: $nihility-bg-3
-
-.GameIconAndGameName-container-style-header .GameIconAndGameName-game-name,
-.LeaderboardHeader-title,
-.LeaderboardHeader-name,
-.LeaderboardHeader-stats-header
+    background-color: $nihility-bg-4
+// Leaderboard game name
+.GameIconAndGameName-container-style-header .GameIconAndGameName-game-name
     color: $nihility-fg-3
-
+// Leaderboard header
+.LeaderboardHeader
+    &-title, &-name, &-stats-header
+        color: $nihility-fg-3
+// Leaderboard stats and numbers
 .LeaderboardRow-stat
     color: $nihility-fg-2

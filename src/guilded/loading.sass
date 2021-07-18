@@ -48,29 +48,26 @@
  * --- Loading/connecting content ---
  */
 
-// Unloaded images
-.Img-skeleton-square
-    opacity: 0.3
+.Img-skeleton
+    // Unloaded images
+    &-rounded-square, &-circle, &-square
+        opacity: 0.3
 // Loading group icon
 .GroupSelectorSkeleton-group
-    background: $nihility-bg-3
+    background: $nihility-bg-4
 // Loading channel icon
 .TeamChannelsListSkeleton-icon
-    background: $nihility-bg-3
+    background: $nihility-bg-4
 
-// Loading announcement
-.OverviewWidgetSkeleton-container,
-.OverviewWidgetSkeleton-container-type-filled
-    background-color: $nihility-bg-1
-// Loading avatar
-.OverviewWidgetSkeleton-profile-picture,
-.OverviewWidgetSkeleton-icon,
-// Loading others
-.OverviewWidgetSkeleton-box,
-.OverviewWidgetSkeleton-feed-item,
-// Loading text
-.OverviewWidgetSkeleton-text,
-.OverviewWidgetSkeleton-subtitle,
-.OverviewWidgetSkeleton-paragraph
-    background: $nihility-bg-3
-    background: linear-gradient(270deg, $nihility-bg-2, $nihility-bg-3, $nihility-bg-3, $nihility-bg-2)
+.OverviewWidgetSkeleton
+    // Loading announcement
+    &-container, &-container-type-filled
+        background-color: $nihility-bg-1
+    // Loading avatar
+    &-profile-picture, &-icon,
+    // Loading others
+    &-box, &-feed-item,
+    // Loading text
+    &-text, &-subtitle, &-paragraph
+        background: $nihility-bg-4
+        background: linear-gradient(270deg, $nihility-bg-3, $nihility-bg-4, $nihility-bg-4, $nihility-bg-3)

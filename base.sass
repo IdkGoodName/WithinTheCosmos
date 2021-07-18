@@ -10,46 +10,66 @@
 
 // Background
 $nihility-bg-0: #090909
-$nihility-bg-1: #0d0d0d
-$nihility-bg-2: #111111
-$nihility-bg-3: #171717
-$nihility-bg-4: #212121
+$nihility-bg-1: #0c0c0c
+$nihility-bg-2: #0f0f0f
+$nihility-bg-3: #111111
+$nihility-bg-4: #171717
+$nihility-bg-5: #212121
 $nihility-bg-hover: #777777
+
 // Text
 $nihility-fg-0: #494949
 $nihility-fg-1: #696969
 $nihility-fg-2: #AAAAAA
 $nihility-fg-3: #DDDDDD
 $nihility-mark: #AAAAAA
+
 // Spacing
+$nihility-spacing-top: 0.2rem
+$nihility-spacing-side: 0.4rem
+
 $nihility-spacing-0: 0.5rem
 $nihility-spacing-1: 1rem
-$nihility-spacing-2: 2rem
-$nihility-spacing-3: 4rem
+$nihility-spacing-2: 1.5rem
+$nihility-spacing-3: 2rem
+$nihility-spacing-4: 3rem
+$nihility-spacing-5: 4rem
+
 // Misc colours
 $nihility-theme: #595959
 $nihility-theme-2: #676767
 $nihility-theme-3: #848484
 $nihility-bar: #060606
+
 // Noticable colours
-$nihility-mention: #b15151
 $nihility-important: #b67070
-$nihility-mentioned: #d89a4e
-$nihility-mentioned-hover: #ddb98e
+
 $nihility-active: #53a6da
+$nihility-mention: #c75e5e
+$nihility-mentioned: #d89a4e
+
 $nihility-active-hover: #8bb9d6
+$nihility-mention-hover: #cc8787
+$nihility-mentioned-hover: #ddb98e
 
 $nihility-bad: #b36060
-$nihility-bad-2: #fc8080
 $nihility-good: #73ad67
+$nihility-neutral: #b38c60
+
+$nihility-bad-2: #fc8080
 $nihility-good-2: #84e970
-// Misc
+$nihility-neutral-2: #fcbc80
+
+// Blurs and Opacity
 $nihility-floating-opacity: 0.95
 $nihility-mild-opacity: 0.55
+$nihility-blur: 1px
+$nihility-grey: 100%
+// Misc
 $nihility-transition: 0.2s
 $nihility-animation: 2s
 $nihility-roundness-small: 0.5rem
-$nihility-roundness: 1rem
+$nihility-roundness: 1.2rem
 $nihility-roundness-big: 2rem
 
 /*
@@ -63,6 +83,7 @@ $nihility-roundness-big: 2rem
 // CSS variables can't contain SASS variables for some odd reason, so this mixin is used instead
 @mixin set-var($name, $value)
     #{$name}: $value
+
 // For setting transition in a lot of places
 @mixin nihility-transition($property)
     transition: $property

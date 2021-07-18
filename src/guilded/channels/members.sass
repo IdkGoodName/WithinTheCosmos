@@ -1,3 +1,29 @@
+/*
+ * --- Content ---
+ */
+
+// Select all checkbox
+.SelectToggleIcon-container
+    border-color: $nihility-fg-1
+    // Select all checkbox hover
+    &-clickable:hover
+        border-color: $nihility-fg-2
+        background-color: rgba($nihility-bg-hover, 0.1)
+// Select all checkmark
+.SelectToggleIcon-checkmark
+    fill: $nihility-theme
+
+// Selected sorting
+.ItemManagerColumnHeader-container-sortable.ItemManagerColumnHeader-active
+    color: $nihility-theme
+    // Arrow
+    .ItemManagerColumnHeader-icon
+        fill: $nihility-theme
+
+/*
+ * --- Filter ---
+ */
+
 // Filter icon
 .ItemManagerFilterButton-icon
     fill: $nihility-fg-1
@@ -11,20 +37,22 @@
 .ItemManagerFilterButton-container-open .ItemManagerFilterButton-icon
     fill: $nihility-fg-3
 
-// Filter settings
 .ItemManagerFilterWrapper-container
-    background-color: $nihility-bg-3
+    // Filter settings
+    &-container
+        background-color: $nihility-bg-4
+    // Filter settings search
+    &-search
+        background-color: $nihility-bg-5
 
-// Filter settings search
-.ItemManagerFilterWrapper-search
-    background-color: $nihility-bg-4
 
-.SearchBarInput-input
-    color: $nihility-fg-2
-    // Placeholder
-    &::placeholder
-        color: $nihility-fg-1
-
-// Filter settings search icon
-.SearchBarInput-icon
-    fill: $nihility-fg-2
+.SearchBarInput
+    // Search bar
+    &-input
+        color: $nihility-fg-2
+        // Placeholder
+        &::placeholder
+            color: $nihility-fg-1
+    // Filter settings search icon
+    &-icon
+        fill: $nihility-fg-2

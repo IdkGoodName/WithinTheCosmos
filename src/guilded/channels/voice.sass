@@ -1,37 +1,36 @@
 // Whole container
 .VoiceChannelDisplay-container
-    background-color: $nihility-bg-2
+    background-color: $nihility-bg-3
 
 /*
  * --- Voice room list ---
  */
 
-// Voice room
-.VoiceChannelGroupHeader-container-interactable
-    @include nihility-transition(background)
-
-// Voice room icon
-.VoiceChannelGroupHeader-icon
-    fill: $nihility-fg-1
+.VoiceChannelGroupHeader
+    // Voice room
+    &-container-interactable
+        @include nihility-transition(background)
+    // Voice room icon
+    &-icon
+        fill: $nihility-fg-1
 
 // Voice room caret
 .DropdownCaratV2-container
     fill: $nihility-fg-1
-
-// Voice room caret hover
-.DropdownCaratV2-container-desktop:hover
-    fill: $nihility-fg-2
+    // Voice room caret hover
+    &-desktop:hover
+        fill: $nihility-fg-2
 
 // Voice room hovered over
 .VoiceChannelGroupHeader-container-interactable:hover
-    background-color: $nihility-bg-3
-    // Voice room name hover
-    &:hover .VoiceChannelGroupHeader-text
-        color: $nihility-fg-2
-
-    // Voice room icon hover
-    &:hover .VoiceChannelGroupHeader-icon
-        fill: $nihility-fg-2
+    background-color: $nihility-bg-4
+    &:hover .VoiceChannelGroupHeader
+        // Voice room name hover
+        &-text
+            color: $nihility-fg-2
+        // Voice room icon hover
+        &-icon
+            fill: $nihility-fg-2
 
 /*
  * --- Labels ---
@@ -54,25 +53,24 @@
  * --- Voice card ---
  */
 
-// Whole container
-.VoiceConnectionDisplayPanelContents-container
-    background-color: $nihility-bg-0
+.VoiceConnectionDisplayPanelContents
+    // Whole container
+    &-container
+        background-color: $nihility-bg-0
+    // Voice header
+    &-info-wrapper
+        border-bottom: 0
+        // Voice header hover
+        &::after
+            background-color: $nihility-bg-hover
 
-
-// Voice header
-.VoiceConnectionDisplayPanelContents-info-wrapper
-    border-bottom: 0
-    // Voice header hover
-    &::after
-        background-color: $nihility-bg-hover
-
-// Voice header info display
-.VoiceConnectionDisplayInfo-container
-    background-color: transparent
-
-// Voice header info icon
-.VoiceConnectionDisplayInfo-icon
-    fill: $nihility-fg-1
+.VoiceConnectionDisplayInfo
+    // Voice header info display
+    &-container
+        background-color: transparent
+    // Voice header info icon
+    &-icon
+        fill: $nihility-fg-1
 
 // Voice header toggle buttons
 .VoiceConnectionDisplayButtons-button
@@ -89,7 +87,7 @@
 
 // Voice participant hover
 .VoiceChannelGroupUser-container:hover
-    background-color: $nihility-bg-2
+    background-color: $nihility-bg-3
 
 // Voice participants icon
 .VoiceConnectionDisplayParticipants-participants-icon

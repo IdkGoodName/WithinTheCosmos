@@ -27,10 +27,12 @@
 .SVGIconWithTooltip-container-flavor-filled-remove
     background-color: $nihility-bad
 
-// Mini buttons
-.StreamDisplayActionButton-container-right .StreamDisplayActionButton-container-content,
-.StreamDisplayActionButton-container-left .StreamDisplayActionButton-container-content
-    fill: $nihility-fg-1
-.StreamDisplayActionButton-container:hover .StreamDisplayActionButton-container-content,
-.StreamDisplayActionButton-container-active .StreamDisplayActionButton-container-content
-    fill: $nihility-fg-2
+.StreamDisplayActionButton-container
+    // Mini buttons
+    &-right, &-left
+        .StreamDisplayActionButton-container-content
+            fill: $nihility-fg-1
+    // Mini buttons active
+    &:hover, &-active
+        .StreamDisplayActionButton-container-content
+            fill: $nihility-fg-2

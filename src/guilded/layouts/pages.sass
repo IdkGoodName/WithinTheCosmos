@@ -4,7 +4,7 @@
 
 // Profile content
 .UserProfileV3-container
-    background-color: $nihility-bg-2
+    background-color: $nihility-bg-3
 
 /*
  * --- Posts ---
@@ -28,19 +28,21 @@
 // Game
 .UserGameSummaryCard-container
     background-color: $nihility-bg-1
-// Game property label
-.UserInfoSummaryItem-label
-    color: $nihility-fg-1
-// Game property value
-.UserInfoSummaryItem-summary-content
-    color: $nihility-fg-2
+// Game property
+.UserInfoSummaryItem
+    // Label
+    &-label
+        color: $nihility-fg-1
+    // Value
+    &-summary-content
+        color: $nihility-fg-2
 
 // Post
 .UserProfilePostPanel-container
     background-color: $nihility-bg-1
-// Post highlighted(currently all)
-.UserProfilePostPanel-container-highlight
-    border-top-color: $nihility-theme
+    // Post highlighted(currently all)
+    &-highlight
+        border-top-color: $nihility-theme
 // Post author's name
 .UserName-container,
 .TeamMemberBubble-name,
@@ -65,11 +67,13 @@
 .CardWrapper-container:not(.CardWrapper-container-highlighted)::after
     border-color: $nihility-bg-0
 // Game header
-.PlayerCard-container
-    background-color: transparent
-// Game header game's name
-.PlayerCardGameInfo-name
-    color: $nihility-fg-3
+.PlayerCard
+    // Container
+    &-container
+        background-color: transparent
+    // Game's name
+    &GameInfo-name
+        color: $nihility-fg-3
 // Game header player's name
 .GameAliasDisplay-container
     color: $nihility-fg-1
@@ -83,15 +87,17 @@
 // Game info no accounts linked
 .UserSocialPresence-no-other-links
     color: $nihility-fg-1
-// Game info handle icon
-.UserRichSocialLink-avatar
-    fill: $nihility-fg-1
-// Game info handle text
-.UserRichSocialLink-handle
-    color: $nihility-fg-2
-// Game info handle details
-.UserRichSocialLink-metadata
-    color: $nihility-fg-1
+// Game info handle
+.UserRichSocialLink
+    // Icon
+    &-avatar
+        fill: $nihility-fg-1
+    // Text
+    &-handle
+        color: $nihility-fg-2
+    // Details
+    &-metadata
+        color: $nihility-fg-1
 
 /*
  * --- DMs ---
@@ -101,32 +107,34 @@
 .ChatChannelList-container,
 .WebAppV2-sidebar
     background-color: $nihility-bg-1
-// Selected DMs
-.ChatChannelListItem-container-selected
-    background-color: $nihility-bg-3
 
-.ChatChannelListItemInfo-container-selected
-    // Selected DMs name
-    .ChatChannelListItemInfo-name
-        color: $nihility-fg-3
-    // Selected DMs text
-    .ChatChannelListItemInfo-latest-message
-        color: $nihility-fg-2
-    // Selected DMs timestamp
-    .ChatChannelListItemInfo-last-at
-        color: $nihility-fg-1
-// Hovered DMs
-.ChatChannelListItem-container:not(.ChatChannelListItem-container-selected):hover
-    background-color: $nihility-bg-2
-// Remove DMs crossmark
-.ChatChannelListItem-container:not(.ChatChannelListItem-container-selected):hover .ChatChannelListItem-remove-icon,
-.ChatChannelListItem-container-selected .ChatChannelListItem-remove-icon
-    background-color: transparent
-    fill: $nihility-fg-1
-    @include nihility-transition(fill)
-    // Remove DMs crossmark hover
-    &:hover
-        fill: $nihility-fg-3
+.ChatChannelListItem
+    // Selected DMs
+    &-container-selected
+        background-color: $nihility-bg-4
+    // Hovered DMs
+    &-container:not(&-container-selected):hover
+        background-color: $nihility-bg-3
+    // Remove DMs crossmark
+    &-container:not(&-container-selected):hover &-remove-icon,
+    &-container-selected &-remove-icon
+        background-color: transparent
+        fill: $nihility-fg-1
+        @include nihility-transition(fill)
+        // Remove DMs crossmark hover
+        &:hover
+            fill: $nihility-fg-3
+    // Selected DMs content
+    &Info-container-selected
+        // Name
+        .ChatChannelListItemInfo-name
+            color: $nihility-fg-3
+        // Text
+        .ChatChannelListItemInfo-latest-message
+            color: $nihility-fg-2
+        // Timestamp
+        .ChatChannelListItemInfo-last-at
+            color: $nihility-fg-1
 
 /*
  * -=- Tournaments -=-
@@ -142,7 +150,7 @@
 
 // Selected tab
 .NavV4SectionSidebarOption-container-active
-    background-color: $nihility-bg-3
+    background-color: $nihility-bg-4
     // Selected tab icon
     .NavV4SectionSidebarOption-icon
         fill: $nihility-fg-3
@@ -155,17 +163,20 @@
  */
 
 // Tournament page
-.TournamentsPortalPage-container
-    background-color: $nihility-bg-2
-// Tournament page video
-.TournamentsPortalHeader-video-mask
-    background-image: linear-gradient(to bottom, rgba($nihility-bg-2, 0.85) 20%, rgba(0, 0, 0, 0) 65%, rgba($nihility-bg-2, 0.95))
+.TournamentsPortal
+    // Container
+    &Page-container
+        background-color: $nihility-bg-3
+    // Video
+    &Header-video-mask
+        background-image: linear-gradient(to bottom, rgba($nihility-bg-3, 0.85) 20%, rgba(0, 0, 0, 0) 65%, rgba($nihility-bg-3, 0.95))
 // Tournament card
 .TournamentCard-container
-    background-color: $nihility-bg-3
+    background-color: $nihility-bg-4
 // Information icon
-.TournamentSummaryItem-container-size-sm .TournamentSummaryItem-icon
-    fill: $nihility-fg-1
-// Information text
-.TournamentSummaryItem-text
-    color: $nihility-fg-2
+.TournamentSummaryItem
+    &-container-size-sm &-icon
+        fill: $nihility-fg-1
+    // Information text
+    &-text
+        color: $nihility-fg-2

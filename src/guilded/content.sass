@@ -4,41 +4,40 @@
  *
  */
 
+.FormConfirmButtonV2-container
+    // Button
+    &.FormConfirmButtonV2-container-hollow
+        border-color: $nihility-theme
+        // Button hover glare
+        &:not(.FormConfirmButtonV2-container-disabled)::after
+            background-color: $nihility-bg-hover
+    // Button hover
+    &-desktop.FormConfirmButtonV2-container-hollow:hover
+        border-color: $nihility-theme-2
+    // Delete/remove buttons
+    &.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-delete
+        border-color: $nihility-bad
 
-// Button
-.FormConfirmButtonV2-container.FormConfirmButtonV2-container-hollow
-    border-color: $nihility-theme
-    // Button hover glare
-    &:not(.FormConfirmButtonV2-container-disabled)::after
-        background-color: $nihility-bg-hover
-// Delete/remove buttons
-.FormConfirmButtonV2-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-delete
-    border-color: $nihility-bad
-// Button hover
-.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-hollow:hover
-    border-color: $nihility-theme-2
-
-// For server invite titles,
-.GuildedText-container-type-heading2
-    color: $nihility-fg-3
-
-// For level titles, message thread pop up text
-.GuildedText-container-type-subtext2
-    color: $nihility-fg-1
+.GuildedText-container-type
+    // For server invite titles,
+    &-heading2
+        color: $nihility-fg-3
+    // For level titles, message thread pop up text
+    &-subtext2
+        color: $nihility-fg-1
 
 
-// Unloaded
+// Not loaded
 .LayeredPageContent-fetch-error
-    background-color: $nihility-bg-2
+    background-color: $nihility-bg-3
 
-.NullStateV2-title
-    color: $nihility-fg-3
-
-.NullStateV2-subtitle
-    color: $nihility-fg-2
-
-.NullStateV2-container-size-md .NullStateV2-title
-    color: $nihility-fg-2
+// Not found/Not loaded
+.NullStateV2
+    &-title
+        color: $nihility-fg-3
+    &-container-size-md &-title,
+    &-subtitle
+        color: $nihility-fg-2
 
 /*
  *
@@ -63,10 +62,9 @@
     border-left-color: $nihility-theme-2
     border-left-width: 0.4rem
     overflow: hidden
-
-.SlateContainerRenderer.BlockQuoteContainerRenderer.slate-margin-lg
-    padding: 1rem
-    padding-left: 1.5rem
+    &.SlateContainerRenderer.slate-margin-lg
+        padding: $nihility-spacing-1
+        padding-left: $nihility-spacing-2
 
 
 /*
@@ -100,18 +98,23 @@
 
 
 /*
- * --- Inline code ---
+ * --- Formatting marks ---
  */
 
-.MarkRenderer-inline-code,
-.MarkRenderer-inline-code-v2
-    background-color: $nihility-bg-0
-    color: $nihility-fg-3
-
+.MarkRenderer
+    // Inline code
+    &-inline-code, &-inline-code-v2
+        background-color: $nihility-bg-0
+        color: $nihility-fg-3
+// Channel mentions
 .ChannelPill-container
     color: $nihility-fg-3
     background-color: rgba($nihility-fg-3, 0.1)
-
+// Spoilers
+.SpoilerRenderer-container
+    background-color: $nihility-bg-0
+    border-radius: $nihility-roundness-small
+    padding: 0 $nihility-spacing-side $nihility-spacing-top $nihility-spacing-side
 
 /*
  * --- Links ---
@@ -136,8 +139,7 @@
 
 // Images and videos
 .MediaRenderer-content
-    border-radius: 0.5rem
-
+    border-radius: $nihility-roundness
 
 // Image caption
 .MediaCaptionLineRenderer
@@ -149,16 +151,20 @@
  */
 
 // Content info
-.DefaultContentEmbedCard-content-wrapper
-    background-color: $nihility-bg-2
-    border: 1px inset rgba(255, 255, 255, 0.1)
-    // Content info hovered over
-    &:not(.DefaultContentEmbedCard-content-wrapper-disabled)::after
-        background-color: $nihility-bg-hover
-
-// Content info fading
-.DefaultContentEmbedCard-content-fade-overflow::after
-    background: linear-gradient(to bottom, transparent, $nihility-bg-2 20px)
+.DefaultContentEmbedCard-content
+    // Wrapper
+    &-wrapper
+        background-color: $nihility-bg-2
+        border-radius: $nihility-roundness-small
+        // Removes white border
+        border: 0
+        // Hovered over
+        &:not(&-disabled)::after
+            background-color: $nihility-bg-hover
+            border-radius: $nihility-roundness-small
+    // Fading
+    &-fade-overflow::after
+        background: linear-gradient(to bottom, transparent, $nihility-bg-3 20px)
 
 /*
  * --- Embeds ---
@@ -169,23 +175,28 @@
 .OpenGraphEmbed-content,
 .TeamEmbedCard-container
     background-color: $nihility-bg-2
+    border-radius: $nihility-roundness-small
+    // Removes white border
+    border-top: 0
+    border-right: 0
+    border-bottom: 0
 
-// Embed hovered over
-.OpenGraphEmbedContent-container::after
-    background-color: $nihility-bg-hover
-
-// Description's text
-.ChatEmbedContent-description,
-.OpenGraphEmbedContent-description
-    color: $nihility-fg-2
-
-// Domain name
-.OpenGraphEmbedContent-domain
-    color: $nihility-fg-1
-
-// Domain icon
-.OpenGraphEmbedContent-domain-icon
-    fill: $nihility-fg-1
+// Embed
+.ChatEmbedContent,
+.OpenGraphEmbedContent
+    // Hovered over
+    &-container::after
+        background-color: $nihility-bg-hover
+        border-radius: $nihility-roundness-small
+    // Domain name
+    &-domain
+        color: $nihility-fg-1
+        // Domain icon
+        &-icon
+            fill: $nihility-fg-1
+    // Description's text
+    &-description
+        color: $nihility-fg-2
 
 // Footer background
 .ChatEmbedFooter-container,
@@ -198,9 +209,13 @@
  * --- Server invites ---
  */
 
-// Server's description
-.TeamEmbedCard-description
-    color: $nihility-fg-2
+.TeamEmbedCard
+    // Server's description
+    &-description
+        color: $nihility-fg-2
+    // Server invite hover
+    &-container::after
+        background-color: $nihility-bg-hover
 
 // Member and follower count
 .EmphasizedLabel-container-type-subtle
@@ -210,18 +225,13 @@
 .TeamFollowerMemberCount-separator
     background-color: $nihility-fg-0
 
-// Server invite hover
-.TeamEmbedCard-container::after
-    background-color: $nihility-bg-hover
-
-
 /*
  * --- Polls/Forms ---
  */
 
 // Form
 .CustomFormWrapper-container-standalone
-    background-color: $nihility-bg-3
+    background-color: $nihility-bg-4
     // Form border
     &::after
         border-color: $nihility-bg-0
@@ -243,45 +253,46 @@
     &:hover
         color: $nihility-fg-2
 
-// Form input
-.TextInputWithLabel-container
-    border-color: $nihility-fg-1
+.TextInputWithLabel
+    // Form input
+    &-container
+        border-color: $nihility-fg-1
+    &-container-has-value &-input-element
+        -webkit-text-fill-color: $nihility-fg-2
+        color: $nihility-fg-2
+    // Hover
+    &-container-desktop:hover
+        border-color: $nihility-fg-1
+    
+    // Label
+    &-typeahead-suggestion, &-floating-label
+        color: $nihility-fg-1
 
-.TextInputWithLabel-container-has-value .TextInputWithLabel-input-element
-    -webkit-text-fill-color: $nihility-fg-2
-    color: $nihility-fg-2
+    // Form input label invalid
+    &-container.TextInputWithLabel-container-invalid
+        border-color: $nihility-bad
 
-// Form input hover
-.TextInputWithLabel-container-desktop:hover
-    border-color: $nihility-fg-1
-
-// Form input label
-.TextInputWithLabel-typeahead-suggestion,
-.TextInputWithLabel-floating-label
-    color: $nihility-fg-1
-
-// Form input label invalid
-.TextInputWithLabel-container.TextInputWithLabel-container-invalid .TextInputWithLabel-floating-label,
-.TextInputWithLabel-container.TextInputWithLabel-container-invalid:hover .TextInputWithLabel-floating-label
-    border-color: $nihility-bad
-
-// Form input invalid
-.TextInputWithLabel-container.TextInputWithLabel-container-invalid,
-.TextInputWithLabel-container.TextInputWithLabel-container-invalid:hover
-    border-color: $nihility-bad
+        &:hover
+            border-color: $nihility-bad
+        
+        .TextInputWithLabel-floating-label,
+        &:hover
+            .TextInputWithLabel-floating-label
+                border-color: $nihility-bad
 
 // Form input valid
 .TextInputWithLabel-container-valid.TextInputWithLabel-container-focused
     border-color: $nihility-good
 
-// Form input icon invalid
-.ValidityIndicator-container-invalid
-    border-color: $nihility-bad
-    fill: $nihility-bad
-
-// Form input icon valid
-.ValidityIndicator-container-valid
-    fill: $nihility-good
+// Form input icon
+.ValidityIndicator-container
+    // Invalid
+    &-invalid
+        border-color: $nihility-bad
+        fill: $nihility-bad
+    // Valid
+    &-valid
+        fill: $nihility-good
 
 
 // Big form input
@@ -297,22 +308,22 @@
         border-color: $nihility-theme-3
 
 
-// Big form input circle bg
-.CharacterCount-circle-background
-    stroke: $nihility-bg-1
-
-// Big form input circle char count
-.CharacterCount-circle-valid,
-.CharacterCount-circle-invalid-min
-    stroke: $nihility-good
-
-// Big form input circle too many symbols
-.CharacterCount-circle-invalid-max
-    stroke: $nihility-bad
-
-// Big form input too many symbols label
-.CharacterCount-container-invalid-max
-    color: $nihility-bad
+// Form input word count
+.CharacterCount
+    // Circle
+    &-circle
+        // Background
+        &-background
+            stroke: $nihility-bg-1
+        // Character count
+        &-valid, &-invalid-min
+            stroke: $nihility-good
+        // Too many symbols
+        &-invalid-max
+            stroke: $nihility-bad
+    // Label too many symbols
+    &-container-invalid-max
+        color: $nihility-bad
 
 
 // Form checkbox
@@ -351,13 +362,13 @@
 .CheckboxV2-container-checked .CheckboxV2-description
     color: $nihility-fg-2
 
-// Form selector
-.GuildedSelect-container .Select-control
-    border-color: $nihility-fg-1 !important
-
-// Form selector hover
-.GuildedSelect-container.GuildedSelect-container-dark:hover .Select .Select-control
-    border-color: $nihility-fg-2 !important
+.GuildedSelect-container
+    // Form selector hover
+    &.GuildedSelect-container-dark:hover .Select .Select-control
+        border-color: $nihility-fg-2 !important
+    // Form selector
+    .Select-control
+        border-color: $nihility-fg-1 !important
 
 // Form selector focused
 .GuildedSelect-container.GuildedSelect-container-dark .Select.is-focused .Select-control
@@ -379,29 +390,25 @@
         color: $nihility-theme-3
 
 // Form selector options
-.Select-menu-outer
-    border-color: $nihility-bg-0
-    border-top-color: $nihility-bg-0
-
 .Select-menu
-    background-color: $nihility-bg-3
+    background-color: $nihility-bg-4
+    &-outer
+        border-color: $nihility-bg-0
+        border-top-color: $nihility-bg-0
 
 // Form selector option
 .Select-option
     color: $nihility-fg-2
-
-.Select-option.is-selected
-    background-color: $nihility-bg-1
-
-.Select-option.is-focused
-    background-color: $nihility-bg-4
-
-.Select-option.is-focused.is-selected
-    background-color: $nihility-bg-2
+    &.is-selected
+        background-color: $nihility-bg-1
+    &.is-focused
+        background-color: $nihility-bg-5
+    &.is-focused.is-selected
+        background-color: $nihility-bg-3
 
 
 /*
- * --- Replies ---
+ * --- Misc ---
  */
 
 .ReplyingToUserHeader-post-link
@@ -418,6 +425,11 @@
 .Editor-container,
 .ChatChannelInput-editor
     background-color: $nihility-bg-1
+    border-radius: $nihility-roundness
+
+// Border after +
+.SlateInsertToolbar-container::after
+    display: none
 
 /*
  * --- Forums and Profile ---
@@ -428,10 +440,11 @@
 .DraftInputWithTitleV2-title-wrapper
     background-color: $nihility-bg-1
 
-// Input hover
-.TeamThreadReplyCreator-container-desktop .TeamThreadReplyCreator-unexpanded-wrapper::after,
-.DraftInputWithTitleV2-container-desktop.DraftInputWithTitleV2-container-unexpanded::after
-    background-color: $nihility-bg-hover
+.TeamThreadReplyCreator-container-desktop .TeamThreadReplyCreator-unexpanded-wrapper,
+.DraftInputWithTitleV2-container-desktop.DraftInputWithTitleV2-container-unexpanded
+    // Input hover
+    &::after
+        background-color: $nihility-bg-hover
 
 // Input text
 .DraftInputWithTitleV2-input::placeholder
@@ -459,17 +472,13 @@
 .CollapsedInput-container-size-sm
     color: $nihility-fg-1
 
-// Quote/Reply buttons
-.PostReplyQuoteButtons-option:not(:first-child):not(:first-child)::before
-    background-color: $nihility-fg-0
-
-// Quote/Reply buttons active
-.PostReplyQuoteButtons-option,
-.PostReplyQuoteButtons-option:hover,
-.PostReplyQuoteButtons-option:visited,
-.PostReplyQuoteButtons-option:active,
-.PostReplyQuoteButtons-option:focus
-    color: $nihility-theme-2
+.PostReplyQuoteButtons-option
+    // Quote/Reply buttons
+    &:not(:first-child):not(:first-child)::before
+        background-color: $nihility-fg-0
+    // Quote/Reply buttons active
+    &, &:hover, &:visited, &:active, &:focus
+        color: $nihility-theme-2
 
 
 // Leave a comment/Share
@@ -542,36 +551,33 @@
 // The picker
 .TypeaheadDrawer-container
     opacity: $nihility-floating-opacity
-    background-color: $nihility-bg-2
+    background-color: $nihility-bg-3
     border-color: $nihility-bg-0
 
-// Picker's header
-.SlateTypeaheadMenuHeader-container
-    background-color: $nihility-bg-1
-    color: $nihility-fg-1
-
-// Picker's search icon (@, #)
-.SlateTypeaheadMenuHeader-searchTerm
-    color: $nihility-fg-2
+.SlateTypeaheadMenuHeader
+    // Picker's header
+    &-container
+        background-color: $nihility-bg-1
+        color: $nihility-fg-1
+    // Picker's search icon (@, #)
+    &-searchTerm
+        color: $nihility-fg-2
 
 // Item hovered over
 .MenuItemEnabled-container::after
     background-color: $nihility-bg-hover
 
-// Item's description
-.MentionMenuItem-description
-    color: $nihility-fg-1
 
-// Item's icon
-.MentionMenuItem-broadcast
-    fill: $nihility-fg-1
-
-// Picked item
-.MenuItemEnabled-container-highlighted
-    background-color: $nihility-bg-3
-    // Picked item's description
-    .MentionMenuItem-description
-        color: $nihility-fg-2
-    // Picked item's icon
-    .MentionMenuItem-broadcast
-        fill: $nihility-fg-2
+.MentionMenuItem
+    // Item's icon
+    &-broadcast
+        fill: $nihility-fg-1
+        // Picked item's icon
+        .MenuItemEnabled-container-highlighted &
+            fill: $nihility-fg-2
+    // Item's description
+    &-description
+        color: $nihility-fg-1
+        // Picked item's description
+        .MenuItemEnabled-container-highlighted &
+            color: $nihility-fg-2
