@@ -1,8 +1,24 @@
 # Absolute Nihility
 
-A really dark greyscale theme for Guilded and others.
+A really dark greyscale theme for Guilded and other platforms.
 
 [![Guilded](https://raw.githubusercontent.com/IdkGoodName/AbsoluteNihility/main/screenshots/Guilded.png)](https://guilded.gg/)
+
+# Importing
+
+> ## Guilded
+> **Base:**
+> ```css
+> @import url("https://idkgoodname.github.io/AbsoluteNihility/use/guilded.css");
+> ```
+>
+> **Code highlighting:**
+> ```css
+> @import url("https://idkgoodname.github.io/AbsoluteNihility/use/guilded-code.css");
+> ```
+
+> ## VSC
+> Not possible yet
 
 # Installing this theme
 
