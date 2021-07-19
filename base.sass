@@ -1,3 +1,5 @@
+@use "sass:color"
+
 /* === Absolute Nihility ===
  * Credits:
  * Contributors:
@@ -17,12 +19,32 @@ $nihility-bg-4: #171717
 $nihility-bg-5: #212121
 $nihility-bg-hover: #777777
 
+$nihility-skeleton-0: #252525
+$nihility-skeleton-1: linear-gradient(270deg, $nihility-bg-5, $nihility-skeleton-0, $nihility-skeleton-0, $nihility-bg-5)
+
 // Text
-$nihility-fg-0: #494949
-$nihility-fg-1: #696969
+$nihility-fg-0: #626262
+$nihility-fg-1: #727272
 $nihility-fg-2: #AAAAAA
 $nihility-fg-3: #DDDDDD
 $nihility-mark: #AAAAAA
+
+// Formatting
+$nihility-fg-link: #d6a284
+$nihility-fg-link-hover: #d4b3a4
+$nihility-fg-format: $nihility-fg-3
+$nihility-fg-code: #d69e9e
+
+// Code formatting
+$nihility-code-string: #d47463
+$nihility-code-value: #76d463
+
+$nihility-code-keyword: #d682a2
+
+$nihility-code-name: #e7b689
+$nihility-code-class-name: #c581ec
+$nihility-code-function: #cfec81
+$nihility-code-property: #82add6
 
 // Spacing
 $nihility-spacing-top: 0.2rem
@@ -63,6 +85,7 @@ $nihility-neutral-2: #fcbc80
 // Blurs and Opacity
 $nihility-floating-opacity: 0.95
 $nihility-mild-opacity: 0.55
+$nihility-skeleton-opacity: 0.3
 $nihility-blur: 1px
 $nihility-grey: 100%
 // Misc

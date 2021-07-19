@@ -51,17 +51,24 @@
 .Img-skeleton
     // Unloaded images
     &-rounded-square, &-circle, &-square
-        opacity: 0.3
+        opacity: $nihility-skeleton-opacity
+// Loading team banner
+.TeamPageBanner-skeleton
+    background: $nihility-skeleton-1
 // Loading group icon
 .GroupSelectorSkeleton-group
-    background: $nihility-bg-4
+    background: $nihility-skeleton-0
+
 // Loading channel icon
 .TeamChannelsListSkeleton-icon
-    background: $nihility-bg-4
+    background: $nihility-skeleton-0
+// Loading channel name
+.SkeletonPlaceholder-container-no-children
+    background: $nihility-skeleton-0
 
 .OverviewWidgetSkeleton
     // Loading announcement
-    &-container, &-container-type-filled
+    &-container, &-container-type-filled, &-container-announcement
         background-color: $nihility-bg-1
     // Loading avatar
     &-profile-picture, &-icon,
@@ -69,5 +76,35 @@
     &-box, &-feed-item,
     // Loading text
     &-text, &-subtitle, &-paragraph
-        background: $nihility-bg-4
-        background: linear-gradient(270deg, $nihility-bg-3, $nihility-bg-4, $nihility-bg-4, $nihility-bg-3)
+        background: $nihility-skeleton-1
+
+// Input skeletons(?)
+.DraftInputSkeleton-container-type-simple,
+.DraftInputSkeleton-container,
+.DraftInputSkeleton-control,
+.DraftInputSkeleton-text
+    background: $nihility-skeleton-0
+
+// Form skeletons(?)
+.CustomFormSkeleton-question,
+.CustomFormSkeleton-answer
+    background: $nihility-skeleton-0
+
+// Activity skeletons(?)
+.ChannelActivityDisplay-group-header,
+.ChannelActivityDisplay-container,
+.ChannelActivityDisplay-item
+    background: $nihility-skeleton-0
+
+// Forum skeletons(?)
+.TeamThreadPostPanelDisplay
+    &-container, &-container-reply
+        background: $nihility-skeleton-0
+
+// Tournaments, explore servers, etc. cards and titles
+.ExploreSkeleton
+    &-title, &-card
+        background: $nihility-skeleton-1
+
+.ChannelActivityDisplay-item
+    @include set-var(--border-color, $nihility-skeleton-0)
