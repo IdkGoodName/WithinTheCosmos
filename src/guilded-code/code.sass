@@ -7,26 +7,44 @@
     // Special
     &-punctuation, &-operator
         color: $nihility-fg-1
-    &-keyword, &-tag
+    &-atrule, &-atrule-line, &-keyword, &-tag
         color: $nihility-code-keyword
-    &-comment, &-prolog, &-doctype, &-cdata
+    &-preprocessor, &-macro, &-comment, &-prolog, &-doctype, &-cdata
         color: $nihility-fg-0
+    &-annotation
+        color: $nihility-code-special
+    
+    // DIFF
+    &-deleted, &-deleted-sign
+        color: $nihility-bad
+    &-inserted, &-inserted-sign
+        color: $nihility-good
+    &-diff-diff
+        color: $nihility-neutral
+    &-diff-coord
+        color: $nihility-fg-1
     
     // Values
     &-template-string, &-string
         color: $nihility-code-string
-    &-number, &-boolean
+    &-attr-value, &-number, &-boolean, &-regex
         color: $nihility-code-value
+    &-null
+        color: $nihility-code-special
 
     // Named
     &-selector
         color: $nihility-code-name
-    &-property
+    &-property, &-property-line
         color: $nihility-code-property
-    &-class-name
+    &-class-name, &-builtin
         color: $nihility-code-class-name
     &-function
         color: $nihility-code-function
+    &-variable
+        color: $nihility-code-variable
+    &-less-variable, &-variable-line
+        color: $nihility-code-class-name
 
     // Formatting
     &-bold, &-italic
@@ -35,6 +53,11 @@
         text-decoration: underline solid
     &-strike
         text-decoration: line-through solid
+    &-url
+        text-decoration: underline solid
+        color: $nihility-fg-link
+    &-url-reference
+        color: $nihility-fg-link-hover
 
     // Code
     &-code, &-code-block
@@ -43,7 +66,7 @@
         color: $nihility-fg-code
 
     // Blocks
-    &-blockquote
+    &-blockquote, &-list
         color: $nihility-fg-1
     &-title
         font-weight: bolder
