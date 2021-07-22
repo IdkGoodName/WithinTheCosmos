@@ -183,3 +183,51 @@
 // This group is archived
 .GroupUpsell-container-archived
     background-color: $nihility-bg-3
+
+/*
+ * -=- Explore -=-
+ */
+
+.CardList
+    // Title
+    &-label
+        color: $nihility-fg-3
+    // Link
+    &-label-link
+        color: $nihility-fg-link
+        &:hover
+            color: $nihility-fg-link-hover
+// "A new way to scrim" Description
+.TitleAndDescriptionPanel-description
+    color: $nihility-fg-1
+// No scrims description
+.ScrimFinderRecentMatches-none
+    color: $nihility-fg-1
+// Scrim team
+.ScrimFinderLeaderboardTeam
+    &-name
+        color: $nihility-fg-3
+    // Index
+    &-rank
+        color: $nihility-fg-1
+
+// Post card
+.ContentCard
+    &-container
+        background-color: $nihility-bg-3
+    // Footer
+    &-metas
+        background-color: $nihility-bg-2
+        // Footer hover
+        &::after
+            background-color: $nihility-bg-hover
+
+// Profile post card
+.ProfilePostCard
+    &-title
+        color: $nihility-fg-3
+    &-metas-time
+        color: $nihility-fg-1
+        @include nihility-transition(color)
+        .ContentCard-container:hover &
+            color: $nihility-fg-3

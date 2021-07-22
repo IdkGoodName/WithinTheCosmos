@@ -26,6 +26,9 @@
     &DayHeader-date-today
         background-color: $nihility-theme
         color: white
+    // Event name
+    &Event-name
+        color: $nihility-fg-3
 
 
 // Buttons
@@ -42,3 +45,57 @@
         background-color: $nihility-bg-1
     &Event-container-desktop:hover
         background-color: $nihility-bg-3
+
+
+/*
+ * --- View ---
+ */
+
+// Header
+.EventTemporalChannelDisplay-container
+    background-color: $nihility-bg-1
+    @include set-var(--border-color, $nihility-bg-0)
+// Details
+.TeamEventDetails
+    &-post-metadata, &-status, &-item
+        background-color: $nihility-bg-2
+.EventCardMetadata
+    // Container
+    &-container-size-lg
+        background-color: $nihility-bg-2
+    // Icon
+    &-icon
+        fill: $nihility-fg-1
+    // Server URL
+    &-link
+        &, &:visited, &:active, &:focus
+            color: $nihility-fg-link
+        &:hover
+            color: $nihility-fg-link-hover
+
+// Description
+.TeamEventDescription
+    // Icon
+    &-icon
+        fill: $nihility-fg-1
+    // Text
+    &-placeholder
+        @include set-var(--nihility-local-fg, $nihility-fg-2)
+
+.EventAttendanceHeader-status
+    &-going
+        color: $nihility-fg-2
+    &:not(:first-child)
+        color: $nihility-fg-1
+        &::before
+            background-color: $nihility-fg-1
+    
+.EventRsvpsHeader
+    // See all link
+    &-attendance-see-all
+        color: $nihility-fg-link
+    &-container-desktop:not(&-container-rsvps-disabled):hover &-attendance-see-all
+        color: $nihility-fg-link-hover
+    // Maybe, invited, declined
+    &-container-desktop:not(&-container-rsvps-disabled):hover &-attendance .EventAttendanceHeader-status
+        color: $nihility-fg-2

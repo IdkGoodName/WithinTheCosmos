@@ -2,6 +2,15 @@
  * --- Messages ---
  */
 
+// Thread header
+.TemporalChannelInstructions
+    // Title
+    &-header
+        color: $nihility-fg-2
+    // Description
+    &-optimistic, &-instructions
+        color: $nihility-fg-1
+
 // Chat area
 .SidebarInfoItem-container,
 .LayeredPageContent-content,
@@ -128,6 +137,16 @@
     // Username in the reply
     &-user-info .UserBasicInfoDisplay-name-and-status-wrapper
         font-weight: bolder
+
+// Message editing actions
+.ChatV2MessageEditHelper-container
+    color: $nihility-fg-1
+// Message editing action button
+.ChatV2MessageEditHelper-action
+    &, &:visited, &:active, &:focus
+        color: $nihility-fg-link
+    &:hover
+        color: $nihility-fg-link-hover
 
 /*
  * --- Replies ---
@@ -260,11 +279,6 @@
     // Message thread menu cannot send
     &.SlateEditor-send-icon-disabled
         fill: $nihility-fg-0
-
-// Thread menu title input
-.ChannelTitleInput-container,
-.ChatV2MessageReplyTooltipInput-title-container
-    background-color: $nihility-bg-0
 
 .ContentEditableInput
     &-placeholder-text, &-input, &-actual-text-display

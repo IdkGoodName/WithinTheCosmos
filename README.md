@@ -16,6 +16,11 @@ A really dark greyscale theme for Guilded and other platforms.
 > ```css
 > @import url("https://idkgoodname.github.io/AbsoluteNihility/use/guilded-code.css");
 > ```
+>
+> **Screen header popping up and invisible by default:**
+> ```css
+> @import url("https://idkgoodname.github.io/AbsoluteNihility/use/guilded-pop-headers.css");
+> ```
 
 > ## VSC
 > Not possible yet

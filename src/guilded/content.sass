@@ -74,6 +74,7 @@
 // Whole code block
 .CodeContainerRenderer-container
     background-color: $nihility-bg-1
+    border-radius: $nihility-roundness-small
 
 // Code block line
 .CodeLineRenderer
@@ -430,14 +431,22 @@
  *
  */
 
-.ChatChannelInput-container .ChatChannelInput-editor,
-.Editor-container,
-.ChatChannelInput-editor
-    background-color: $nihility-bg-1
+// Whole container
+.ChatChannelInput-container
     border-radius: $nihility-roundness
 
+// Editor
+.ChatChannelInput-container .ChatChannelInput-editor,
+.ChatV2MessageReplyTooltipInput-title-container,
+.ChannelTitleInput-container,
+.ChatChannelInput-editor,
+.Editor-container
+    background-color: $nihility-bg-1
+
 // Border after +
-.SlateInsertToolbar-container::after
+.ChatV2MessageReplyTooltipInput-title-icon::after,
+.SlateInsertToolbar-container::after,
+.ChannelTitleInput-icon::after
     display: none
 
 /*
@@ -470,16 +479,16 @@
     &:hover
         color: $nihility-fg-2
 
-// Comment input
-.CollapsedInput-container
-    background-color: $nihility-bg-0
-    // Comment input hover
-    &::after
-        background-color: $nihility-bg-hover
-
-// Comment input text
-.CollapsedInput-container-size-sm
-    color: $nihility-fg-1
+.CollapsedInput
+    // Comment input
+    &-container
+        background-color: $nihility-bg-1
+        // Comment input hover
+        &::after
+            background-color: $nihility-bg-hover
+    // Comment input small
+    &-container-size-sm
+        color: $nihility-fg-1
 
 .PostReplyQuoteButtons-option
     // Quote/Reply buttons
