@@ -113,6 +113,19 @@
         background-color: $nihility-bg-0
         color: $nihility-fg-code
 
+// Old inline code
+.PrismTokenInlineRenderer-container-type-code
+    background-color: $nihility-bg-0
+    color: $nihility-fg-code
+
+// Embed links
+.ChatEmbedAuthor-link,
+.PrismTokenUrlRenderer-link
+    &, &:visited, &:active, &:focus
+        color: $nihility-fg-link
+    &:hover
+        color: $nihility-fg-link-hover
+
 // Channel mentions
 .ChannelPill-container
     color: $nihility-fg-3
@@ -205,8 +218,8 @@
         // Description's text
         &-description
             color: $nihility-fg-2
-    &-content
-        border-left-color: transparent
+    &-content:not([style])
+        border-left: none
 
 // Footer background
 .ChatEmbedFooter-container,
