@@ -146,10 +146,16 @@
     &:hover
         color: $nihility-fg-link-hover
 
+// Template parameters
+.TemplateParameter-container,
 // Channel mentions
 .ChannelPill-container
     color: $nihility-fg-3
     background-color: rgba($nihility-fg-3, 0.1)
+// Template icon
+.TemplateParameter-icon
+    fill: $nihility-fg-1
+
 // Spoilers
 .SpoilerRenderer-container
     background-color: $nihility-bg-0
@@ -448,18 +454,20 @@
 .Select-menu
     background-color: $nihility-bg-4
     &-outer
-        border-color: $nihility-bg-0
-        border-top-color: $nihility-bg-0
+        opacity: $nihility-floating-opacity
+        border-color: $nihility-bg-0 !important
 
 // Form selector option
 .Select-option
     color: $nihility-fg-2
-    &.is-selected
-        background-color: $nihility-bg-1
     &.is-focused
         background-color: $nihility-bg-5
-    &.is-focused.is-selected
+    &.is-selected,
+    .GuildedSelect-container &.is-selected,
+    .GuildedSelect-container.GuildedSelect-container-dark &.is-selected
         background-color: $nihility-bg-3
+    // &.is-focused.is-selected
+    //     background-color: $nihility-bg-3
 
 
 /*
@@ -612,6 +620,7 @@
  */
 
 // The picker
+.AbstractTypeaheadPlugin-container,
 .TypeaheadDrawer-container
     opacity: $nihility-floating-opacity
     background-color: $nihility-bg-3
@@ -626,10 +635,18 @@
     &-searchTerm
         color: $nihility-fg-2
 
-// Item hovered over
-.MenuItemEnabled-container::after
-    background-color: $nihility-bg-hover
+// Template parameter icon
+.TemplateParameterMenuItem-icon
+    fill: $nihility-fg-1
 
+// Item hovered over
+.MenuItemEnabled-container
+    &::after
+        background-color: $nihility-bg-hover
+    &-highlighted
+        background-color: rgba($nihility-bg-hover, 0.1)
+        .TemplateParameterMenuItem-icon
+            fill: $nihility-fg-2
 
 .MentionMenuItem
     // Item's icon

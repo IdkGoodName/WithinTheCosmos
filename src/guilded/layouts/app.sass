@@ -151,7 +151,7 @@ body
 .GroupAvatar-container-non-base,
 .GroupAvatar-icon
     border-radius: 50%
-    @include nihility-transition(border-radius)
+    @include nihility-transition(border-radius, $nihility-bounce)
     // Group hover
     .GroupSelectorItem-container:hover &,
     // Group selected
@@ -339,6 +339,11 @@ body,
 .TeamNavSectionItem-container-selected .TeamNavSectionItem-icon
     fill: $nihility-fg-3
     color: $nihility-fg-3
+
+// Invite others
+.ChannelUpsell-container
+    background-color: $nihility-bg-1
+    border-color: $nihility-bg-5
 
 /*
  * -=- Members and Threads -=-
