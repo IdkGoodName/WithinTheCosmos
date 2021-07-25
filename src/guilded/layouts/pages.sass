@@ -6,6 +6,26 @@
 .UserProfileV3-container
     background-color: $nihility-bg-3
 
+// Tab header
+.NavV4SectionSidebarOptionGroup-header
+    color: $nihility-fg-1
+.NavV4SectionSidebarOption
+    // Tab icon
+    &-icon
+        fill: $nihility-fg-1
+        // Active
+        .NavV4SectionSidebarOption-container-active &
+            fill: $nihility-fg-2
+    // Tab text
+    &-label
+        color: $nihility-fg-2
+        // Active
+        .NavV4SectionSidebarOption-container-active &
+            color: $nihility-fg-3
+    // Hover
+    &-container-inactive::after
+        background-color: $nihility-bg-hover
+
 /*
  * --- Posts ---
  */
@@ -100,7 +120,7 @@
         color: $nihility-fg-1
 
 /*
- * --- DMs ---
+ * -=- DMs -=-
  */
 
 // Side bar

@@ -28,29 +28,33 @@
  * -=- Server list -=-
  */
 
-// Server list hovered server
-.NavV4SelectorRow-container::after
-    background-color: $nihility-bg-hover
-    @include nihility-transition(opacity)
-// Server list selected server
-.NavSelectorItem-container-active .NavSelectorItem-contents::after
-    border-color: $nihility-fg-2
+/*
+ * --- Add servers ---
+ */
 
-// Server list add
-.InlineAddItemControl-container
-    @include set-var(--inline-add-icon-background-color, $nihility-bg-3)
+.InlineAddItemControl
     // Server list add icon
-    .InlineAddItemControl-add-icon
+    &-add-icon
         @include nihility-transition(background-color)
         fill: $nihility-fg-2
         // The SVG icon
         svg
             @include nihility-transition(fill)
+        // Group add icon
+        .GroupSelector-add-group &
+            border-radius: 50%
+            @include nihility-transition(border-radius)
+        .GroupSelector-add-group:hover &
+            border-radius: $nihility-roundness-small
     // Server list add text
-    .InlineAddItemControl-name
+    &-name
         @include nihility-transition(color)
         color: $nihility-fg-2
-    &:hover
+// Server list add
+.InlineAddItemControl-container
+    @include set-var(--inline-add-icon-background-color, $nihility-bg-3)
+    // Hover
+    &:hover, &-flavor-background-highlight.InlineAddItemControl-container-desktop:hover
         // Server list add icon hover
         .InlineAddItemControl-add-icon
             background-color: $nihility-bg-4
@@ -58,6 +62,18 @@
         // Server list add text hover
         .InlineAddItemControl-name
             color: $nihility-fg-3
+
+/*
+ * --- Servers and tabs ---
+ */
+    
+// Server list hovered server
+.NavV4SelectorRow-container::after
+    background-color: $nihility-bg-hover
+    @include nihility-transition(opacity)
+// Server list selected server
+.NavSelectorItem-container-active .NavSelectorItem-contents::after
+    border-color: $nihility-fg-2
 
 // Server list switcher buttons
 .NavV4SelectorRow-svg-icon
@@ -108,45 +124,87 @@
 // Favourite server list
 .NavV4FooterGlobalContextDisplay-teams-wrapper
     background-color: $nihility-bg-1
+.NavV4BadgedItem-container
+    width: auto
+    // Favourite server hover
+    &::after
+        background-color: $nihility-bg-hover
+
 
 /*
  * --- Groups ---
  */
 
+// Sets group list width
+body
+    @include set-var(--group-selector-width, 5.5rem)
 // Group list
 .GroupSelector-container,
 .NavV4Sidebar-container
     background-color: $nihility-bg-1
-// No-avatar group's icon
-.GroupAvatar-container-non-base
-    background-color: $nihility-bg-4
-    border-color: $nihility-fg-0
+// Group
+.GroupSelectorItem-container
+    @include set-var(--avatar-size, 3.5rem)
+// Group selector ring
+.NavSelectorItem-contents::after,
+// Group icon
+.GroupAvatar-container-non-base,
+.GroupAvatar-icon
+    border-radius: 50%
+    @include nihility-transition(border-radius)
+    // Group hover
+    .GroupSelectorItem-container:hover &,
+    // Group selected
+    .NavSelectorItem-container-active &
+        border-radius: $nihility-roundness-small
+        
 // The border around status and group's emote
 .GroupAvatarBadge-container-reaction,
 .LoggedInUserAvatar-online-status
     background-color: $nihility-bg-1
 
 /*
- * --- Cards/Headers ---
+ * --- User card ---
  */
 
 // User card
 .NavV4Footer-container
     background-color: $nihility-bg-1
+
 // User card's content
 .NavV4Footer-right,
 .NavV4Footer-footer-content
     border-top-right-radius: $nihility-roundness
+
 // User card's name
 .LoggedInUserAvatar-name
     color: $nihility-fg-2
-// User card's status
-.LoggedInUserStatus-content-with-status
-    color: $nihility-fg-1
+    @include nihility-transition(color)
+    &:hover
+        color: $nihility-fg-3
+
+.LoggedInUserStatus
+    // User card's status
+    &-content-with-status, &-container
+        color: $nihility-fg-1
+        @include nihility-transition(color)
+        // Hover
+        &:hover
+            color: $nihility-fg-2
+
 // User card buttons
-.NavIcon-container-type-vertical-nav,
 .TransientMenuTrigger-container
     fill: $nihility-fg-1
+    @include nihility-transition(fill)
+    &.TransientMenuTrigger-container-desktop:hover .TransientMenuTrigger-icon
+        fill: $nihility-fg-2
+
+.NavIcon-container-type-vertical-nav
+    fill: $nihility-fg-1
+    @include nihility-transition(fill)
+    &:hover
+        fill: $nihility-fg-2
+
 // More button (1) sign
 .CircleBadgeV2-container
     background-color: $nihility-important
@@ -155,6 +213,10 @@
 .NavV4Footer-right,
 .NavV4Sidebar-container
     background-color: $nihility-bg-0
+
+/*
+ * --- Header ---
+ */
 
 // Tourney header
 .TournamentNavHeader-container
@@ -187,9 +249,8 @@
 .TeamNavHeaderRowButton-text
     color: $nihility-fg-2
 
-
 /*
- * --- Channels ---
+ * -=- Channels -=-
  */
 
 // Channel list background
@@ -226,6 +287,10 @@ body,
 .ScreenHeader-icon-wrapper-size-lg .ScreenHeader-icon
     fill: $nihility-fg-1
 
+// Sets PFP border
+.ScreenHeader-icon-wrapper
+    @include set-var(--border-color, $nihility-bg-0)
+
 // Screen header
 .ScreenHeader
     // Title
@@ -247,24 +312,6 @@ body,
 // Screen header more pressed title
 .ChannelHeaderMoreOptionsMenu-header
     color: $nihility-fg-1
-
-// Member list
-.PageSidebarWrapper-container
-    position: relative
-    top: 0
-// Also remove padding that was made for member list
-.ChannelWrapper-container-with-sidebar .ChannelWrapper-contents
-    padding-right: 0
-.TournamentPageContent-content,
-.TeamPageContent-content
-    margin-right: 0
-
-.SidebarInfoItem-container
-    border-radius: $nihility-roundness
-
-/*
- * -=- Channels -=-
- */
 
 // Channel card
 .TeamChannelItemContents-container-unread .TeamChannelItemContents-name,
@@ -297,6 +344,20 @@ body,
  * -=- Members and Threads -=-
  */
 
+// Member list
+.PageSidebarWrapper-container
+    position: relative
+    top: 0
+// Also remove padding that was made for member list
+.ChannelWrapper-container-with-sidebar .ChannelWrapper-contents
+    padding-right: 0
+.TournamentPageContent-content,
+.TeamPageContent-content
+    margin-right: 0
+
+.SidebarInfoItem-container
+    border-radius: $nihility-roundness
+
 .SimpleIconTabMenuHeaderItem
     // Member/thread list tab hover
     &-container:hover, &-container:active, &-container:focus
@@ -327,6 +388,10 @@ body,
     // Member list role amount
     &-amount
         color: $nihility-fg-1
+
+// Member list user hover
+.SidebarUsersRoleInfo-user::after
+    background-color: $nihility-bg-hover
 
 .VoiceSidebarMembersDisplay-join-voice
     // Member list join voice icon

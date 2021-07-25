@@ -17,32 +17,44 @@
     // Animate the only one
     &:nth-child(1)
         animation-name: nihilityLoad
+        position: relative
         opacity: 100%
 // Loading animation
 @keyframes nihilityLoad
     0%
-        translate: 0rem 0rem
+        left: 0rem
         transform: scaleX(1)
     25%
         transform: scaleX(1.5)
     45%
         transform: scaleX(1)
     50%
-        translate: 2rem 0rem
+        left: 2rem
     75%
         transform: scaleX(1.5)
     95%
         transform: scaleX(1)
     100%
-        translate: 0rem 0rem
+        left: 0rem
     
 /*
  * --- Loading/connecting bar ---
  */
 
-// Loading bar
-.NetworkReconnectionDisplay-container-reconnecting
-    background-color: $nihility-bg-0
+.NetworkReconnectionDisplay
+    // Loading bar
+    &-container, &-container-reconnecting
+        background-color: $nihility-bg-0
+    // Connected
+    &-container
+        .NetworkReconnectionDisplay-icon
+            fill: $nihility-good
+        .NetworkReconnectionDisplay-text
+            color: $nihility-good
+
+// Loading hairline
+.LoadingHairline-container-is-active
+    background: linear-gradient(270deg, $nihility-theme, $nihility-theme-3, $nihility-theme, $nihility-theme-3, $nihility-theme, $nihility-theme-3, $nihility-theme, $nihility-theme-3, $nihility-theme, $nihility-theme-3, $nihility-theme, $nihility-theme-3, $nihility-theme, $nihility-theme-3, $nihility-theme, $nihility-theme-3, $nihility-theme, $nihility-theme-3, $nihility-theme, $nihility-theme-3, $nihility-theme, $nihility-theme-3, $nihility-theme, $nihility-theme-3)
 
 /*
  * --- Loading/connecting content ---
@@ -55,6 +67,11 @@
 // Loading team banner
 .TeamPageBanner-skeleton
     background: $nihility-skeleton-1
+// No-avatar group's icon
+.GroupAvatar-container-non-base
+    background-color: $nihility-bg-4
+    border-color: $nihility-bg-5
+    border-radius: 50%
 // Loading group icon
 .GroupSelectorSkeleton-group
     background: $nihility-skeleton-0

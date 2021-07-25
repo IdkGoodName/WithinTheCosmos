@@ -25,6 +25,9 @@
     // For level titles, message thread pop up text
     &-subtext2
         color: $nihility-fg-1
+    // Status messages
+    &-subtext3
+        color: $nihility-fg-2
 
 
 // Not loaded
@@ -169,6 +172,15 @@
 /*
  * --- Content info ---
  */
+
+// Content info not loaded
+.ContentEmbedCardError-container
+    background-color: $nihility-bg-2
+    border-radius: $nihility-roundness-small
+    color: $nihility-fg-1
+    @include nihility-transition(color)
+    &:active, &:focus, &:hover
+        color: $nihility-fg-2
 
 // Content info
 .DefaultContentEmbedCard-content
