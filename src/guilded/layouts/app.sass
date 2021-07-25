@@ -145,17 +145,20 @@ body
 // Group
 .GroupSelectorItem-container
     @include set-var(--avatar-size, 3.5rem)
+
 // Group selector ring
 .NavSelectorItem-contents::after,
 // Group icon
 .GroupAvatar-container-non-base,
 .GroupAvatar-icon
-    border-radius: 50%
-    @include nihility-transition(border-radius, $nihility-bounce)
+    // Inside group list
+    .GroupSelector-container &
+        border-radius: 50%
+        @include nihility-transition(border-radius, $nihility-bounce)
     // Group hover
     .GroupSelectorItem-container:hover &,
     // Group selected
-    .NavSelectorItem-container-active &
+    .GroupSelector-container .NavSelectorItem-container-active &
         border-radius: $nihility-roundness-small
         
 // The border around status and group's emote
