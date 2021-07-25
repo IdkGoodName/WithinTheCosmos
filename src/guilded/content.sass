@@ -49,6 +49,23 @@
  */
 
 /*
+ * --- Paragraph ---
+ */
+
+// Paragraph with only emotes
+.ParagraphRenderer-only-reaction
+    font-size: 3rem
+    // If there is only emote paragraph above, remove margin
+    & + &
+        margin-top: 0 !important
+// Emote
+.ReactionRenderer-child
+    padding: 0
+    border: 0
+.ReactionRenderer-image
+    top: 0
+
+/*
  * --- Title ---
  */
 
@@ -61,7 +78,7 @@
  */
 
 .BlockQuoteContainerRenderer
-    background-color: rgba(0, 0, 0, 0.15)
+    background-color: $nihility-shading-0
     border-left-color: $nihility-theme-2
     border-left-width: 0.4rem
     overflow: hidden
@@ -186,7 +203,8 @@
 .DefaultContentEmbedCard-content
     // Wrapper
     &-wrapper
-        background-color: $nihility-bg-2
+        //background-color: $nihility-bg-2
+        background-color: $nihility-shading-0
         border-radius: $nihility-roundness-small
         // Removes white border
         border: 0
@@ -206,7 +224,8 @@
 .ChatEmbed-container,
 .OpenGraphEmbed-content,
 .TeamEmbedCard-container
-    background-color: $nihility-bg-2
+    //background-color: $nihility-bg-2
+    background-color: $nihility-shading-0
     border-radius: $nihility-roundness-small
     // Removes white border
     border-top: 0
@@ -236,7 +255,8 @@
 // Footer background
 .ChatEmbedFooter-container,
 .ContentEmbedCardFooter-container
-    background-color: $nihility-bg-1
+    background-color: $nihility-shading-0
+    //background-color: $nihility-bg-1
     color: $nihility-fg-0
 
 

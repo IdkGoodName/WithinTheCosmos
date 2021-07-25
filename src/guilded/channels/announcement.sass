@@ -26,6 +26,14 @@
  * --- Comment section ---
  */
 
+// Replies preview
+.LastReplyDisplay-container
+    @include set-var(--nihility-local-fg, $nihility-fg-2)
+    &:hover
+        @include set-var(--nihility-local-fg, $nihility-fg-3)
+// Preview text
+.LastReplyDisplayContent-message-summary
+    @include nihility-transition(color)
 // View more
 .CircleImageStack-label
     color: $nihility-fg-1

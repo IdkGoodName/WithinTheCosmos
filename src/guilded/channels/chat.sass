@@ -19,10 +19,23 @@
     color: $nihility-fg-3
     --nihility-local-fg: $nihility-fg-2
 
+// Text
+.LastReplyDisplayContent-message-summary,
+.SystemMessageRendererWrapper-container,
+.LayeredPageContent-content,
+.ChannelWrapper-container,
+.BlockQuoteLineRenderer,
+.ParagraphRenderer
+    color: var(--nihility-local-fg)
+    @include nihility-transition(color)
+
+
 .ChatV2Message-container
     // Message
     &:not(&-editing):not(&-threads-disabled)
         @include nihility-transition(background)
+    &.ChatV2Message-container-type-default
+        color: var(--nihility-local-fg)
     // Hovered message
     &:not(&-editing):hover, &.ChatV2Message-container-replying
         background-color: $nihility-bg-4
@@ -59,6 +72,18 @@
     & + &:not(&-with-header):not(&-type-system)
         margin-top: 0
 
+// Pinned message label
+.PinnedByMessage
+    // Text
+    &-word
+        color: $nihility-fg-1
+    // Icon
+    &-icon
+        fill: $nihility-fg-1
+// Pinned message
+.ChatV2MessageContents-container-pinned .ChatV2MessageContents-display
+    background-color: transparent
+
 // Event message icon
 .SystemMessageRendererWrapper-container .SystemMessageRendererWrapper-icon
     fill: $nihility-fg-1
@@ -67,17 +92,6 @@
 .ChatChannelInput-no-permissions
     background-color: $nihility-bg-0
     color: $nihility-fg-1
-
-// Text
-.ChatV2Message-container.ChatV2Message-container-type-default,
-.LastReplyDisplayContent-message-summary,
-.SystemMessageRendererWrapper-container,
-.LayeredPageContent-content,
-.ChannelWrapper-container,
-.BlockQuoteLineRenderer,
-.ParagraphRenderer
-    color: var(--nihility-local-fg)
-    @include nihility-transition(color)
 
 // (edited)
 .EditedMarker-container
@@ -192,18 +206,22 @@
  * --- Thread messages ---
  */
 
+// Thread label
+.ChatMessageThread
+    // Text
+    &-thread-header
+        color: $nihility-fg-1
+    // Icon
+    &-icon-chat-thread
+        fill: $nihility-fg-1
+
 // Threaded message
 .ChatMessageThread-container
-    background-color: $nihility-bg-1
-    transition: background-color 0.2s
+    background-color: $nihility-shading-1
     @include set-var(--border-color, $nihility-bg-4)
     // Threaded message hover
     &::after
         display: none
-
-// Highlight the thread when the message is hovered over
-.ChatV2MessageContents-container:hover .ChatMessageThread-container
-    background-color: $nihility-bg-3
 
 .LastReplyDisplay-container
     // Thread reply bar
