@@ -163,6 +163,10 @@
  * --- User badges ---
  */
 
-// If there is an icon in the badge, remove the name
-.UserBadge-image ~ .UserBadge-name
-    display: none
+.UserBadge
+    // If there is an icon in the badge, remove the name
+    &-image ~ &-name
+        display: none
+    // Override all colours for badges
+    &-container:not(.UserFlairRow-icon)
+        background-color: $nihility-glow-0 !important

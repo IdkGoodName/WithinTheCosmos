@@ -44,29 +44,48 @@
     &-active
         background-color: $nihility-bg-4
 
-    // Focused message
+    // Replying
     &:not(&-editing).ChatV2Message-container-replying
-        background-color: rgba($nihility-active, 0.1)
+        background-color: rgba($nihility-replying, 0.1)
         // Hover
         &:hover
-            background-color: rgba($nihility-active-hover, 0.15)
+            background-color: rgba($nihility-replying, 0.05)
         // Side
         &::after
-            background-color: $nihility-active
+            background-color: $nihility-replying
         &:hover::after
-            background-color: $nihility-active-hover
+            background-color: color.adjust($nihility-replying, $whiteness: $nihility-hover-brightness)
     
     // Mentioned message
-    &:not(&-editing):not(&-replying).ChatV2Message-container-mentioned
+    &:not(&-editing):not(&-replying):not(&-private).ChatV2Message-container-mentioned
         background-color: rgba($nihility-mentioned, 0.1)
         // Hover
         &:hover
-            background-color: rgba($nihility-mentioned-hover, 0.15)
+            background-color: rgba($nihility-mentioned, 0.05)
         // Side
-        &:after
+        &::after
             background-color: $nihility-mentioned
         &:hover::after
-            background-color: $nihility-mentioned-hover
+            background-color: color.adjust($nihility-mentioned, $whiteness: $nihility-hover-brightness)
+
+    // Right clicked
+    &-active:not(&-editing)
+        background-color: rgba($nihility-active, 0.1)
+        // Hover
+        &:hover
+            background-color: rgba($nihility-active, 0.05)
+        // Side
+        &::after
+            content: ''
+            display: block
+            position: absolute
+            height: 100%
+            top: 0
+            left: 0
+            width: 2px
+            background-color: $nihility-active
+        &:hover::after
+            background-color: color.adjust($nihility-active, $whiteness: $nihility-hover-brightness)
     
     // Removes messages' margin
     & + &:not(&-with-header):not(&-type-system)
