@@ -70,22 +70,8 @@
 
     // Right clicked
     &-active:not(&-editing)
-        background-color: rgba($nihility-active, 0.1)
-        // Hover
-        &:hover
-            background-color: rgba($nihility-active, 0.05)
-        // Side
-        &::after
-            content: ''
-            display: block
-            position: absolute
-            height: 100%
-            top: 0
-            left: 0
-            width: 2px
-            background-color: $nihility-active
-        &:hover::after
-            background-color: color.adjust($nihility-active, $whiteness: $nihility-hover-brightness)
+        background-color: $nihility-bg-4
+        @include set-var(--nihility-local-fg, $nihility-fg-3)
     
     // Removes messages' margin
     & + &:not(&-with-header):not(&-type-system)
