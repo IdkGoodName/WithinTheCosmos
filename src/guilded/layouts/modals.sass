@@ -195,7 +195,7 @@
     background-color: $nihility-bg-3
 
 /*
- * --- Settings Content ---
+ * --- Server Settings ---
  */
 
 // Channel or category notifications header
@@ -267,6 +267,63 @@
     // Selection button hover
     &:not(.RadioOptionPanel-container-disabled)::after
         background-color: $nihility-bg-hover
+
+/*
+ * --- Channel settings ---
+ */
+
+.TriStateInputButton-container-type
+    // Permission allowed
+    &-on
+        // Icon
+        .TriStateInputButton-icon
+            fill: $nihility-good
+        // Icon hover
+        &:hover .TriStateInputButton-icon
+            fill: $nihility-good-2
+        // Selected
+        &.TriStateInputButton-container-selected
+            background-color: $nihility-good
+            // Selected icon
+            .TriStateInputButton-icon
+                fill: $nihility-bg-0
+            // Selected hover
+            &:hover
+                background-color: $nihility-good-2
+    // Permission inherit
+    &-passThrough
+        // Icon
+        .TriStateInputButton-icon
+            fill: $nihility-neutral
+        // Icon hover
+        &:hover .TriStateInputButton-icon
+            fill: $nihility-neutral-2
+        // Selected
+        &.TriStateInputButton-container-selected
+            background-color: $nihility-neutral
+            // Selected icon
+            .TriStateInputButton-icon
+                fill: $nihility-bg-0
+            // Selected hover
+            &:hover
+                background-color: $nihility-neutral-2
+    // Permission denied
+    &-off
+        // Icon
+        .TriStateInputButton-icon
+            fill: $nihility-bad
+        // Icon hover
+        &:hover .TriStateInputButton-icon
+            fill: $nihility-bad-2
+        // Selected
+        &.TriStateInputButton-container-selected
+            background-color: $nihility-bad
+            // Selected icon
+            .TriStateInputButton-icon
+                fill: $nihility-bg-0
+            // Selected hover
+            &:hover
+                background-color: $nihility-bad-2
 
 /*
  * --- Settings Tabs ---

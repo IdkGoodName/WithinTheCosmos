@@ -138,14 +138,6 @@
     background-color: $nihility-bg-0
     color: $nihility-fg-code
 
-// Embed links
-.ChatEmbedAuthor-link,
-.PrismTokenUrlRenderer-link
-    &, &:visited, &:active, &:focus
-        color: $nihility-fg-link
-    &:hover
-        color: $nihility-fg-link-hover
-
 // Template parameters
 .TemplateParameter-container,
 // Channel mentions
@@ -162,14 +154,14 @@
     border-radius: $nihility-roundness-small
     padding: 0 $nihility-spacing-side $nihility-spacing-top $nihility-spacing-side
 
-/*
- * --- Links ---
- */
-
-// Link normally
+// Link/Hyperlink
 .TeamListItemsCompletedHeader-show-complete,
-.EmbedCardFooter-link,
+.ChatV2MessageEditHelper-action,
+.TeamSettingsWebhookPage-link,
+.PrismTokenUrlRenderer-link,
 .ChatEmbedContent-link,
+.ChatEmbedAuthor-link,
+.EmbedCardFooter-link,
 .LinkRenderer
     // Link normally
     &, &:visited, &:focus
@@ -469,6 +461,34 @@
     // &.is-focused.is-selected
     //     background-color: $nihility-bg-3
 
+// Poll percentage
+.HorizontalPercentageBar
+    // Percentage bar
+    &-bar
+        background-color: $nihility-bg-2
+        // Progress
+        &-highlight
+            background: $nihility-progress
+    // Percentage label
+    &-value,
+    // The name of the poll item
+    &-label
+        color: $nihility-fg-3
+    // Item voted for
+    &-vote-icon
+        fill: $nihility-fg-3
+// Successful voting
+.CustomFormControls-success
+    &-message
+        color: $nihility-good
+    &-icon
+        fill: $nihility-good
+// Edit response
+.CustomFormControls-edit-response
+    color: $nihility-fg-1
+    @include nihility-transition(color)
+    &:hover
+        color: $nihility-fg-2
 
 /*
  * --- Misc ---

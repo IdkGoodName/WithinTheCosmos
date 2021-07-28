@@ -208,6 +208,25 @@
  * -=- Explore -=-
  */
 
+// Background of explore pages
+.ExplorePage-container
+    background-color: $nihility-bg-3
+
+
+// Find a server tabs
+.IconNavMenuButton-icon
+    fill: $nihility-fg-1
+    @include nihility-transition(fill)
+    .IconNavMenuButton-container-desktop:hover &
+        fill: $nihility-fg-2
+// Find a server tabs containers
+.IconNavMenuButton-container
+    @include nihility-transition(color)
+    &, &:visited, &:active, &:focus
+        color: $nihility-fg-1
+    &:hover
+        color: $nihility-fg-2
+
 .CardList
     // Title
     &-label
@@ -251,3 +270,50 @@
         @include nihility-transition(color)
         .ContentCard-container:hover &
             color: $nihility-fg-3
+
+// Invite progressbar
+.PercentageBar
+    // Empty
+    &-backplate-div
+        background-color: $nihility-bg-1 !important
+    // Progress
+    &-progress-div
+        background-color: $nihility-progress !important
+    // Progressbar
+    &-container-type-success .PercentageBar-progress-div
+        border-color: $nihility-bg-0
+// Invite text
+.RequirementProgressBar-unsatisfied-text
+    color: $nihility-fg-1
+
+// Explore servers and players game selector
+.TypeaheadInput-container-dropdown .TypeaheadInput-typeahead-options-list,
+.TypeaheadMenu-container
+    background-color: $nihility-bg-4
+    border-color: $nihility-bg-1
+    .SelectMenuItem-label
+        color: $nihility-fg-2
+
+// Game selector input
+.TextInputWithLabel-container-dropdown
+    border-color: $nihility-fg-2
+    // Hover
+    &.TextInputWithLabel-container-desktop:hover
+        border-color: $nihility-fg-3
+    // Focused
+    &.TextInputWithLabel-container-focused,
+    &.TextInputWithLabel-container-focused:hover
+        border-color: $nihility-theme !important
+// Game selector item
+.SelectMenuItem-container
+    &-desktop:hover
+        background-color: $nihility-bg-3
+        .SelectMenuItem-label
+            color: $nihility-fg-3
+    &-selected
+        background-color: $nihility-bg-2
+        .SelectMenuItem-label
+            color: $nihility-fg-3
+    // Game selector first item
+    &-border-bottom
+        border-color: $nihility-bg-1
