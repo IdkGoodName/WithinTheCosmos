@@ -92,6 +92,32 @@
         fill: $nihility-fg-3
 
 /*
+ * -=- Bars -=-
+ */
+
+// Scrollbar
+.Scrollable-container:hover::-webkit-scrollbar-thumb
+    background: $nihility-bar !important
+// Container scrollbar
+.NestedSettingsWrapper-second-child,
+.CodeContainerRenderer-container,
+.Scrollable-container:hover,
+.TeamNavMenu-wrapper:hover,
+.UserProfileV3-container,
+.ModalV2-modal-content
+    scrollbar-color: $nihility-bar transparent
+
+// Upload/XP progress bar
+.GoldenProgressBar
+    // Background
+    &-container,
+    &-container-theme-dark
+        background-color: $nihility-bg-0
+    // Progress
+    &-progress
+        background-color: $nihility-theme-2
+
+/*
  * -=- Search -=-
  */
 
@@ -137,14 +163,14 @@
 
 // Sets group list width
 body
-    @include set-var(--group-selector-width, 5.5rem)
+    @include set-var(--group-selector-width, $nihility-icon-size + 2rem)
 // Group list
 .GroupSelector-container,
 .NavV4Sidebar-container
     background-color: $nihility-bg-1
 // Group
 .GroupSelectorItem-container
-    @include set-var(--avatar-size, 3.5rem)
+    @include set-var(--avatar-size, $nihility-icon-size)
 
 // Group selector ring
 .NavSelectorItem-contents::after,
@@ -477,6 +503,7 @@ body,
 .NavSelectorItem-container-orientation-horizontal.NavSelectorItem-container-unread,
 .TeamOverviewContentItemCard-container-unread,
 .TeamChannelItemContents-container-unread,
+.TeamAnnouncementItem-container-unread,
 .NavV4ItemIcon-icon-unread
     &::before
         background-color: $nihility-mark

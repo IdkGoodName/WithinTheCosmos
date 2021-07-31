@@ -11,6 +11,14 @@
         border-width: 1px
         border-style: solid
         border-color: $nihility-bg-1
+    // Event creation
+    &Day-container-desktop.FullSizedCalendarDay-container-can-create
+        @include nihility-transition(background-color)
+        &:hover
+            background-color: $nihility-bg-5
+    &Day-new-event-icon
+        fill: $nihility-fg-1
+        @include nihility-transition(opacity)
     // Calendar special days
     &Day-container-different-month
         background-color: $nihility-bg-3
@@ -38,6 +46,8 @@
     &-desktop:hover, &-selected
         color: $nihility-theme
         background-color: $nihility-bg-1
+    &-selected:focus, &-selected:active
+        color: $nihility-theme
 
 // Upcoming
 .UpcomingCalendar

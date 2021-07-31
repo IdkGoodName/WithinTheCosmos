@@ -188,13 +188,20 @@
  * --- Content info ---
  */
 
-// Content info not loaded
-.ContentEmbedCardError-container
-    background-color: $nihility-bg-2
-    border-radius: $nihility-roundness-small
-    color: $nihility-fg-1
-    @include nihility-transition(color)
-    &:active, &:focus, &:hover
+.ContentEmbed
+    // Content info not loaded
+    &CardError-container
+        background-color: $nihility-shading-0
+        border-radius: $nihility-roundness-small
+        color: $nihility-fg-1
+        @include nihility-transition(color)
+        &:active, &:focus, &:hover
+            color: $nihility-fg-2
+    // Container selected in editor
+    &Renderer-container-selected
+        border-color: $nihility-theme-2
+    // Channel name
+    &CardFooter-channel-name
         color: $nihility-fg-2
 
 // Content info
@@ -211,8 +218,11 @@
             background-color: $nihility-bg-hover
             border-radius: $nihility-roundness-small
     // Fading
-    &-fade-overflow::after
-        background: linear-gradient(to bottom, transparent, $nihility-bg-3 20px)
+    &-fade-overflow
+        mask-image: linear-gradient(to bottom, black, transparent 95%)
+        &::after
+            display: none
+            //background: linear-gradient(to bottom, transparent, $nihility-bg-2 20px)
 
 /*
  * --- Embeds ---
@@ -511,6 +521,7 @@
 // Editor
 .ChatChannelInput-container .ChatChannelInput-editor,
 .ChatV2MessageReplyTooltipInput-title-container,
+.DocEditor-container .DocEditor-content-input,
 .ChannelTitleInput-container,
 .ChatChannelInput-editor,
 .Editor-container

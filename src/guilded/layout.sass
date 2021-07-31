@@ -59,13 +59,21 @@
     // Status hover
     &-desktop.StatusMessage-container-clickable::after
         background-color: $nihility-bg-hover
-    // Copy invite alert
-    &-type-success.StatusMessage-container-ephemeral
-        background-color: $nihility-bg-1
-        color: $nihility-good
-        // Icon
-        .StatusMessage-icon
-            fill: $nihility-good
+    &-ephemeral
+        // Copy invite alert
+        &.StatusMessage-container-type-success
+            background-color: $nihility-bg-1
+            color: $nihility-good
+            // Icon
+            .StatusMessage-icon
+                fill: $nihility-good
+        // Invalid URL
+        &.StatusMessage-container-type-error
+            background-color: $nihility-bg-1
+            color: $nihility-bad
+            // Icon
+            .StatusMessage-icon
+                fill: $nihility-bad
 
 // Status text
 .StatusMessage

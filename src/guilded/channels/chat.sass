@@ -119,9 +119,11 @@
     &-ping-icon
         fill: $nihility-fg-1
         @include nihility-transition(fill)
-        .ChatChannelInputInlineReplyStatusBar-ping:hover &
+        .ChatChannelInputInlineReplyStatusBar-ping:hover &,
+        .ReplyPingButton-ping:hover &
             fill: $nihility-fg-2
-        .ChatChannelInputInlineReplyStatusBar-ping-enabled & 
+        .ChatChannelInputInlineReplyStatusBar-ping-enabled &,
+        .ReplyPingButton-ping-enabled:hover &
             fill: $nihility-important
     // Close icon
     &-close-icon
