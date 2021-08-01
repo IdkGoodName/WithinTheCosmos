@@ -262,11 +262,23 @@
 
 // Selection buttons
 .RadioOptionPanel-container
-    background-color: $nihility-bg-1
-    border-color: $nihility-bg-0
+    background-color: $nihility-bg-2
+    border-color: $nihility-bg-1
     // Selection button hover
     &:not(.RadioOptionPanel-container-disabled)::after
         background-color: $nihility-bg-hover
+    // Channel type selection
+    &-selection-border
+        // Hover
+        &:not(.RadioOptionPanel-container-selected):hover
+            border-color: $nihility-bg-2
+            background-color: $nihility-bg-3
+        // Selected
+        &.RadioOptionPanel-container-selected
+            border-color: $nihility-theme
+    // Channel type selected icon
+    &-selected .RadioOptionPanel-icon
+        fill: $nihility-theme
 
 /*
  * --- Channel settings ---

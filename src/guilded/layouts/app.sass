@@ -43,7 +43,7 @@
         // Group add icon
         .GroupSelector-add-group &
             border-radius: 50%
-            @include nihility-transition(border-radius)
+            @include nihility-transition(border-radius, $nihility-bounce)
         .GroupSelector-add-group:hover &
             border-radius: $nihility-roundness-small
     // Server list add text
@@ -165,8 +165,10 @@
 body
     @include set-var(--group-selector-width, $nihility-icon-size + 2rem)
 // Group list
+.NavV4Sidebar-container,
 .GroupSelector-container,
-.NavV4Sidebar-container
+// Group list in group editing
+.GroupSelectorPreview-minimal-nav
     background-color: $nihility-bg-1
 // Group
 .GroupSelectorItem-container
@@ -188,8 +190,8 @@ body
         border-radius: $nihility-roundness-small
 
 // Default group icon
-.GroupAvatar-container-non-base
-    font-size: 1.5rem
+//.GroupAvatar-container-non-base
+//    font-size: 1.3em
         
 // The border around status and group's emote
 .GroupAvatarBadge-container-reaction,
@@ -283,17 +285,16 @@ body
     color: $nihility-fg-2
 
 /*
- * -=- Channels -=-
+ * --- Channels ---
  */
 
-// Channel list background
-body,
+// 
+.TeamNavMenu-container,
+// Channel list
 .TeamPageNavV3-container,
-.ScreenHeader-container,
-.SidebarWrapper-container,
-.TeamNavMenu-container
+// Channel list in group editing
+.GroupNavPreview-nav-section
     background-color: $nihility-bg-1
-    border-bottom: 0
 
 // Section list header
 .TeamNavSectionsList-header
@@ -311,6 +312,14 @@ body,
         margin-left: auto
         margin-right: auto
         color: $nihility-fg-1
+
+/*
+ * -=- Screen header -=-
+
+// Channel header
+.ScreenHeader-container
+    background-color: $nihility-bg-1
+    border-bottom: 0
 
 // Screen header icon
 .ScreenHeader-icon,
@@ -381,6 +390,12 @@ body,
 /*
  * -=- Members and Threads -=-
  */
+
+// Member list
+.SidebarWrapper-container,
+// Member list in group editing
+.CreateGroupUsersListLivePreview-members-section
+    background-color: $nihility-bg-1
 
 // Member list
 .PageSidebarWrapper-container

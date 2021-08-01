@@ -11,30 +11,22 @@
     // Increase its width
     background-color: $nihility-theme
     // Disable other 2 loading dots
+    // Animate the only one
+    &:nth-child(1),
     &:nth-child(2),
     &:nth-child(3)
-        display: none
-    // Animate the only one
-    &:nth-child(1)
-        animation-name: nihilityLoad
-        position: relative
-        opacity: 100%
+        animation-name: oldLoad
 // Loading animation
-@keyframes nihilityLoad
+@keyframes oldLoad
     0%
-        transform: translateX(0rem) scaleX(1)
-    25%
-        transform: translateX(1rem) scaleX(1.5)
-    45%
-        transform: translateX(2rem) scaleX(1)
+        opacity: 1
+        transform: translateY(2rem)
     50%
-        transform: translateX(2rem) scaleX(1)
-    75%
-        transform: translateX(1.5rem) scaleX(1.5)
-    95%
-        transform: translateX(0rem) scaleX(1)
+        opacity: 1
+        transform: translateY(0rem)
     100%
-        transform: translateX(0rem) scaleX(1)
+        opacity: 0
+        transform: translateY(0rem)
     
 /*
  * --- Loading/connecting bar ---
