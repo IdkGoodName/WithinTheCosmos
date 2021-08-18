@@ -46,10 +46,10 @@
 
     // Replying
     &:not(&-editing).ChatV2Message-container-replying
-        background-color: rgba($nihility-replying, 0.1)
+        background-color: rgba($nihility-replying, 0.05)
         // Hover
         &:hover
-            background-color: rgba($nihility-replying, 0.05)
+            background-color: rgba($nihility-replying, 0.02)
         // Side
         &::after
             background-color: $nihility-replying
@@ -58,10 +58,10 @@
     
     // Mentioned message
     &:not(&-editing):not(&-replying):not(&-private).ChatV2Message-container-mentioned
-        background-color: rgba($nihility-mentioned, 0.1)
+        background-color: rgba($nihility-mentioned, 0.05)
         // Hover
         &:hover
-            background-color: rgba($nihility-mentioned, 0.05)
+            background-color: rgba($nihility-mentioned, 0.02)
         // Side
         &::after
             background-color: $nihility-mentioned
@@ -77,27 +77,6 @@
     & + &:not(&-with-header):not(&-type-system)
         margin-top: 0
 
-// Pinned message label
-.PinnedByMessage
-    // Text
-    &-word
-        color: $nihility-fg-1
-    // Icon
-    &-icon
-        fill: $nihility-fg-1
-// Pinned message
-.ChatV2MessageContents-container-pinned .ChatV2MessageContents-display
-    background-color: transparent
-
-// Event message icon
-.SystemMessageRendererWrapper-container .SystemMessageRendererWrapper-icon
-    fill: $nihility-fg-1
-
-// Input with no permissions
-.ChatChannelInput-no-permissions
-    background-color: $nihility-bg-1
-    color: $nihility-fg-1
-
 // (edited)
 .EditedMarker-container
     color: $nihility-fg-1
@@ -105,6 +84,13 @@
     // (edited) hover
     .ChatV2Message-container.ChatV2Message-container-type-default:hover &
         color: $nihility-fg-3
+
+
+// Input with no permissions
+.ChatChannelInput-no-permissions
+    background-color: $nihility-bg-1
+    color: $nihility-fg-1
+
 
 // Replying to
 .ChatChannelInputInlineReplyStatusBar
@@ -140,6 +126,7 @@
         // Reply line
         &::after
             border-color: $nihility-fg-0
+            opacity: 30%
             height: 2.5rem
         &:first-child::after
             height: 1rem
@@ -164,9 +151,25 @@
     color: $nihility-fg-1
 
 /*
- * --- Replies ---
+ * --- Special messages ---
  */
 
+// Pinned message
+.ChatV2MessageContents-container-pinned .ChatV2MessageContents-display
+    background-color: transparent
+
+// Event message icon
+.SystemMessageRendererWrapper-container .SystemMessageRendererWrapper-icon
+    fill: $nihility-fg-1
+
+// Pinned message label
+.PinnedByMessage
+    // Text
+    &-word
+        color: $nihility-fg-1
+    // Icon
+    &-icon
+        fill: $nihility-fg-1
 // Pinned messages list
 .ChannelPinnedMessages
     // "Pinned messages" title
@@ -258,6 +261,7 @@
  * --- Menu ---
  */
 
+
 // Message hover menu
 .QuickActionBar-container
     background-color: $nihility-bg-1
@@ -266,6 +270,17 @@
 // Message hover menu icons
 .QuickActionBar-action
     fill: $nihility-fg-2
+    // Buttons hovered over
+    &-wrapper:hover .QuickActionBar-action,
+    &:hover
+        background-color: $nihility-bg-3
+        fill: $nihility-fg-3
+        // Change the fill of the SVG icon
+        .SVGIcon-container
+            fill: $nihility-fg-3
+    // Change the fill of the SVG icon
+    .SVGIcon-container
+        fill: $nihility-fg-2
 
 // Plus menu
 .ContextMenuItem-container

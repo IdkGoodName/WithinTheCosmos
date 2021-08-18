@@ -407,6 +407,11 @@ body
 .TournamentPageContent-content,
 .TeamPageContent-content
     margin-right: 0
+// When it's collapsed, don't take space
+@media ( max-width: 1000px )
+    .SidebarWrapper-container-collapsed
+        width: 0
+        padding: 0
 
 .SidebarInfoItem-container
     border-radius: $nihility-roundness

@@ -124,9 +124,7 @@
 
 .MarkRenderer
     // Bold text
-    &-bold,
-    // Italic text
-    &-italic
+    &-bold
         color: $nihility-fg-format
     // Inline code
     &-inline-code, &-inline-code-v2
@@ -156,20 +154,38 @@
 
 // Link/Hyperlink
 .TeamListItemsCompletedHeader-show-complete,
+.LandingPageV3InternalLinkColumn-link,
+.CustomFormControls-edit-response,
 .ChatV2MessageEditHelper-action,
+.HoverContext-container-linkify,
 .TeamSettingsWebhookPage-link,
 .PrismTokenUrlRenderer-link,
+.LandingFooterSEOLinks-link,
+.CardGames-overflow-link,
+.LandingFooterApps-link,
 .ChatEmbedContent-link,
 .ChatEmbedAuthor-link,
 .EmbedCardFooter-link,
+.CancelText-container,
+.RouteLink-linkify,
 .LinkRenderer
     // Link normally
     &, &:visited, &:focus
         color: $nihility-fg-link
     // Link clicked and hovered over
-    &:hover, &:active
+    &:hover, &:active,
+    &:hover .MarkRenderer-read-only,
+    &:active .MarkRenderer-read-only
         color: $nihility-fg-link-hover
 
+// Override bold/italic highlighting
+.LinkRenderer
+    &, &:visited, &:focus
+        .MarkRenderer-read-only
+            color: $nihility-fg-link
+    &:active, &:hover
+        .MarkRenderer-read-only
+            color: $nihility-fg-link-hover
 
 /*
  * --- Images ---
@@ -493,12 +509,6 @@
         color: $nihility-good
     &-icon
         fill: $nihility-good
-// Edit response
-.CustomFormControls-edit-response
-    color: $nihility-fg-1
-    @include nihility-transition(color)
-    &:hover
-        color: $nihility-fg-2
 
 /*
  * --- Misc ---
