@@ -1,7 +1,13 @@
 /*
+ * --================--
+ *    Guilded modals
+ * --================--
+ */
+    
+    
+/*
  * -=- All Modals -=-
  */
-
 
 // Whole container
 .TransientMenuPortalContext-portal-container
@@ -45,12 +51,6 @@
 // Modal's footer
 .ModalFooter-container
     border-top-color: $nihility-bg-0
-// Discard button
-.FormConfirmButtonV2-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete
-    background-color: $nihility-bad
-// Discard button hover
-.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete:hover
-    background-color: $nihility-bad-2
 
 // Fullscreen modal(settings)
 .ModalV2-container-fullscreen
@@ -229,11 +229,11 @@
 // Slider thumb
 .SwitchInput-tab
     background-color: $nihility-bg-3
-    width: 1.8rem
-    height: 1.8rem
-
-    border: solid 0.4rem
-    border-color: $nihility-theme
+    // White shadow
+    box-shadow: $nihility-shadow
+    // Disabled
+    .SwitchInput-container-disabled &
+        background-color: $nihility-bg-1
 
 // Content(flow)
 .UserCTAPanel-container
@@ -427,14 +427,20 @@
 // Copy invite title
 .CopyToClipboardControlV2-title
     color: $nihility-fg-3
-// Copy invite input
-.CopyableTextbox-container
-    background-color: $nihility-bg-4
-    border-color: $nihility-fg-1
-    @include nihility-transition(border-color)
-// Copy invite input hover
-.CopyableTextbox-container-desktop:hover
-    border-color: $nihility-fg-2
+// Invite input
+.CopyableTextbox
+    // The container itself
+    &-container
+        background-color: $nihility-bg-1
+        border-color: $nihility-fg-0
+        @include nihility-transition(border-color)
+    &-container-desktop:hover
+        border-color: $nihility-fg-1
+    // Link
+    &-url-wrapper-text
+        color: $nihility-fg-link
+    &-container-desktop:hover &-url-wrapper-text
+        color: $nihility-fg-link-hover
 // Copy invite button hover
 .SocialShareButtonV2-container-desktop:hover::after
     background-color: $nihility-bg-hover
@@ -489,3 +495,24 @@
     color: $nihility-fg-1
     background-color: $nihility-bg-1
     border-color: $nihility-bg-0
+
+// Channel switcher
+.ChatChannelSwitcherOverlay
+    &-container
+        background-color: $nihility-bg-3
+        color: $nihility-fg-1
+    &Footer-container
+        background-color: $nihility-bg-1
+// Channel switcher channel
+.ChatChannelSwitcherRow
+    &-container
+        color: $nihility-fg-2
+        // Header of the channels
+        &-header
+            color: $nihility-fg-1
+        // Selected
+        &-selected
+            background-color: $nihility-bg-4
+        // Hovered over
+        &:not(&-header)::after
+            background-color: $nihility-bg-hover

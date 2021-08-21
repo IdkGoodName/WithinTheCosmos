@@ -1,4 +1,10 @@
 /*
+ * --=======================--
+ *    App panels and layout
+ * --=======================--
+ */ 
+    
+/*
  * -=- Legacy nav bar -=-
  */
 
@@ -92,32 +98,6 @@
         fill: $nihility-fg-3
 
 /*
- * -=- Bars -=-
- */
-
-// Scrollbar
-.Scrollable-container:hover::-webkit-scrollbar-thumb
-    background: $nihility-bar !important
-// Container scrollbar
-.NestedSettingsWrapper-second-child,
-.CodeContainerRenderer-container,
-.Scrollable-container:hover,
-.TeamNavMenu-wrapper:hover,
-.UserProfileV3-container,
-.ModalV2-modal-content
-    scrollbar-color: $nihility-bar transparent
-
-// Upload/XP progress bar
-.GoldenProgressBar
-    // Background
-    &-container,
-    &-container-theme-dark
-        background-color: $nihility-bg-0
-    // Progress
-    &-progress
-        background-color: $nihility-theme-2
-
-/*
  * -=- Search -=-
  */
 
@@ -136,12 +116,13 @@
 .SearchBarV2-container-unfocused::after
     background-color: $nihility-bg-hover
 
-// Search icon
-.SearchBarV2-container .SearchBarV2-icon
-    fill: $nihility-fg-2
-// Search placeholder
-.SearchBarV2-container .SearchBarV2-input::placeholder
-    color: $nihility-fg-1
+.SearchBarV2-container
+    // Search icon
+    .SearchBarV2-icon
+        fill: $nihility-fg-2
+    // Search placeholder
+    .SearchBarV2-input::placeholder
+        color: $nihility-fg-1
 
 /*
  * -=- Sidebar -=-
@@ -197,6 +178,10 @@ body
 .GroupAvatarBadge-container-reaction,
 .LoggedInUserAvatar-online-status
     background-color: $nihility-bg-1
+
+// Group settings background
+.CreateGroupLivePreview-LiveView
+    background: $nihility-bg-0
 
 /*
  * --- User card ---
@@ -313,8 +298,17 @@ body
         margin-right: auto
         color: $nihility-fg-1
 
+// Channel 'beta' label
+.TeamChannelItemContents-label,
+// Channel 'beta' label in screen header
+.ScreenHeader-label
+    background-color: $nihility-glow-0 !important
+    color: $nihility-fg-2
+
+
 /*
  * -=- Screen header -=-
+ */
 
 // Channel header
 .ScreenHeader-container
@@ -521,6 +515,7 @@ body
  */
 
 .NavSelectorItem-container-orientation-horizontal.NavSelectorItem-container-unread,
+.NavV4BadgedItem-container-unread .NavV4BadgedItem-icon-wrapper,
 .TeamOverviewContentItemCard-container-unread,
 .TeamChannelItemContents-container-unread,
 .TeamAnnouncementItem-container-unread,

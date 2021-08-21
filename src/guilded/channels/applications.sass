@@ -1,0 +1,80 @@
+/*
+ * --- Settings ---
+ */
+
+// Highlighted text
+.TeamRecruitmentStatus-status
+    // Open
+    .TeamRecruitmentStatus-container-status-open &
+        color: $nihility-good
+    // Closed
+    .TeamRecruitmentStatus-container-status-closed &
+        color: $nihility-bad
+
+// Application selector wrapper
+.TeamApplicationInlineLink-container
+    background-color: $nihility-bg-2
+
+/*
+ * --- View ---
+ */
+
+// Application info
+.RecruitmentApplicantViewer
+    // Wrapper
+    &-applicant-card
+        background-color: $nihility-bg-1
+    // Application values
+    &-form-results
+        background-color: $nihility-bg-1
+// Result icon
+.FormResultDisplayFieldWrapper-field-header-icon
+    fill: $nihility-fg-1
+// Application info
+.ApplicantSummaryCard-container
+    .ApplicantSummaryCard-votes, .ApplicantSummaryCard-buttons-applied-date
+        background-color: $nihility-bg-1
+// Application status
+.ApplicationStatusBadge-icon
+    // Accepted
+    .ApplicationStatusBadge-container-accepted &
+        fill: $nihility-good
+    // Declined
+    .ApplicationStatusBadge-container-declined &
+        fill: $nihility-bad
+.ApplicationStatusBadge-text
+    // Accepted
+    .ApplicationStatusBadge-container-accepted &
+        color: $nihility-good
+    // Declined
+    .ApplicationStatusBadge-container-declined &
+        color: $nihility-bad
+
+/*
+ * --- All Applications ---
+ */
+
+// Application
+.ApplicantDisplayItem-container
+    background-color: $nihility-bg-2
+    // Hover
+    &-desktop::after
+        background-color: $nihility-bg-hover
+// Application status
+.ApplicantSummaryAcceptDeclineForm-applicant-status
+    .ApplicantSummaryAcceptDeclineForm-container-accepted &
+        color: $nihility-good
+// Application server's name
+.TeamAvatarDetails-name.TeamAvatarDetails-name-bold
+    color: $nihility-fg-3
+// Application timestamp
+.ApplicantGameDateDisplay-date-text
+    color: $nihility-fg-1
+
+/*
+ * --- Application modal ---
+ */
+
+// Background
+.ApplyToTeam-container
+    background-color: $nihility-bg-3

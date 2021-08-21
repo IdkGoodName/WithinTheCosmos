@@ -1,4 +1,11 @@
 /*
+ * --========================--
+ *    Channel content styles
+ * --========================--
+ */
+    
+    
+/*
  *
  * -=- Misc -=-
  *
@@ -7,13 +14,13 @@
 .FormConfirmButtonV2-container
     // Button
     &.FormConfirmButtonV2-container-hollow
-        border-color: $nihility-theme
+        border-color: $nihility-fg-0
         // Button hover glare
         &:not(.FormConfirmButtonV2-container-disabled)::after
             background-color: $nihility-bg-hover
     // Button hover
     &-desktop.FormConfirmButtonV2-container-hollow:hover
-        border-color: $nihility-theme-2
+        border-color: $nihility-fg-1
     // Delete/remove buttons
     &.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-delete
         border-color: $nihility-bad
@@ -192,8 +199,39 @@
  */
 
 // Images and videos
-.MediaRenderer-content
+.MediaRenderer-content,
+// Inner video
+.RawVideoPlayer-video,
+// Video overlay
+.GradientOverlay-container.GradientOverlay-container-subtle-2
     border-radius: $nihility-roundness-small
+
+.RawVideoPlayer
+    // Play arrow
+    &-play-icon
+        fill: $nihility-bg-1
+        filter: drop-shadow($nihility-shadow)
+// Video buttons
+.TeamStreamVolumeControl-volume-icon
+    fill: $nihility-bg-1
+    filter: drop-shadow($nihility-shadow)
+.TeamStreamPlayerButton-container
+    fill: $nihility-bg-1
+    filter: drop-shadow($nihility-shadow)
+// Volume rail
+.RangeSlider
+    &-rail,
+    &-container-type-light &-rail,
+    &-container-type-light:hover &-rail
+        background-color: rgba($nihility-bg-2, 0.7)
+    &-selected-rail,
+    &-container-type-light &-selected-rail,
+    &-container-type-light:hover &-selected-rail
+        background-color: rgba($nihility-progress, 0.9)
+// Volume knob
+.SliderKnob-container
+    background-color: $nihility-bg-1
+    box-shadow: $nihility-shadow
 
 // Image caption
 .MediaCaptionLineRenderer
@@ -417,6 +455,7 @@
 .CheckmarkIcon-container-selected .CheckmarkIcon-circle,
 .CheckboxV2-container-checked .CheckboxV2-box
     background-color: $nihility-theme-2
+    border-color: $nihility-theme
 // Form checkbox checked hover
 .CheckmarkIcon-container-clickable:hover.CheckmarkIcon-container-selected .CheckmarkIcon-circle
     background-color: $nihility-theme-3
@@ -443,11 +482,12 @@
 
 .GuildedSelect-container
     // Form selector hover
-    &.GuildedSelect-container-dark:hover .Select .Select-control
-        border-color: $nihility-fg-2 !important
+    &.GuildedSelect-container-dark:hover .Select .Select-control,
+    &:hover .Select .Select-control
+        border-color: $nihility-fg-1 !important
     // Form selector
     .Select-control
-        border-color: $nihility-fg-1 !important
+        border-color: $nihility-fg-0 !important
 
 // Form selector focused
 .GuildedSelect-container.GuildedSelect-container-dark .Select.is-focused .Select-control
@@ -463,10 +503,10 @@
         border-top-color: $nihility-theme
     // Form selector placeholder
     .Select-placeholder
-        color: $nihility-theme
+        color: $nihility-fg-1
     // Form selector value
     .Select-value-label
-        color: $nihility-theme-3
+        color: $nihility-fg-2
 
 // Form selector options
 .Select-menu

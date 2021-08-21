@@ -1,7 +1,7 @@
 /*
- *
- * === Floating ===
- *
+ * --==========================--
+ *    Floating boxes and menus
+ * --==========================--
  */
 
 /*
@@ -27,11 +27,13 @@
     &-type-unread-messages,
     // New messages
     &-type-new-messages,
+    &-type-new-replies,
     // New mentions
     &-type-new-mentions
         background-color: $nihility-bg-0 !important
-
-    // New mentions
+    
+    // New mentions and new forum replies
+    &-type-new-replies,
     &-type-new-mentions
         color: $nihility-mention !important
         fill: $nihility-mention !important
@@ -270,3 +272,23 @@
 // Filter menu hover
 .ItemManagerFilterOption-container:hover
     background-color: $nihility-bg-lighter
+
+// Server search wrapper
+.MinimalNavSearchBar-search-results
+    opacity: $nihility-floating-opacity
+.GlobalSearchResult
+    // Server search
+    &s
+        &-container
+            background-color: $nihility-bg-2
+        // Public servers header
+        &-header
+            color: $nihility-fg-1
+    // Server search item
+    &-container-desktop
+        // Server search item focused
+        &.GlobalSearchResult-container-focused
+            background-color: $nihility-bg-3
+        // Hovered over
+        &::after
+            background-color: $nihility-bg-hover

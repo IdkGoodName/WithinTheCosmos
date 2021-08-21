@@ -1,4 +1,10 @@
 /*
+ * --========================--
+ *    Common style overrides
+ * --========================--
+ */
+    
+/*
  * -=- Misc -=-
  */
 
@@ -20,6 +26,10 @@
         color: $nihility-fg-3
     &-subtext
         color: $nihility-fg-1
+
+// Badge
+.CalloutBadge-container
+    background-color: $nihility-glow-0 !important
 
 /*
  * --- Upload ---
@@ -88,6 +98,34 @@
             color: $nihility-fg-link-hover
 
 /*
+ * --- Bars ---
+ */
+
+// Container scrollbar
+.NestedSettingsWrapper-second-child,
+.CodeContainerRenderer-container,
+.Scrollable-container:hover,
+.OptionsMenu-option-content,
+.TeamNavMenu-wrapper:hover,
+.UserProfileV3-container,
+.ModalV2-modal-content
+    // Firefox scrollbar
+    scrollbar-color: $nihility-bar transparent
+    // Webkit/Chromium/Blink scrollbar
+    &::-webkit-scrollbar-thumb
+        background: $nihility-bar !important
+
+// Upload/XP progress bar
+.GoldenProgressBar
+    // Background
+    &-container,
+    &-container-theme-dark
+        background-color: $nihility-bg-0
+    // Progress
+    &-progress
+        background-color: $nihility-theme-2
+
+/*
  * -=- Widget -=-
  */
 
@@ -127,17 +165,31 @@
 
 .FormConfirmButtonV2-container
     // Normal button
-    &.FormConfirmButtonV2-container-type-gilded
+    &.FormConfirmButtonV2-container-type-gilded,
+    &-filled.FormConfirmButtonV2-container-type-delete,
+    &-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete
         border: 0
         box-shadow: none
-        background: $nihility-theme
-    // Normal button text
-    &-hollow .FormConfirmButtonV2-button-content,
-    &-type-delete .FormConfirmButtonV2-button-content
-        color: $nihility-fg-3
+        background: $nihility-bg-1
     // Button hovered over
-    &-desktop.FormConfirmButtonV2-container-filled:hover
+    &-desktop.FormConfirmButtonV2-container-filled:hover,
+    &-filled.FormConfirmButtonV2-container-type-delete:hover,
+    &-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete:hover
+        background: $nihility-bg-2
         box-shadow: none
+    
+    // Normal button text
+    &-hollow .FormConfirmButtonV2-button-content
+        @include set-color($nihility-theme)
+    // Button hovered over text
+    &-desktop.FormConfirmButtonV2-container-filled:hover .FormConfirmButtonV2-button-content
+        @include set-color($nihility-theme-2)
+    // Discard/Delete button text
+    &-type-delete .FormConfirmButtonV2-button-content
+        @include set-color($nihility-bad)
+    // Discard/Delete button text hover
+    &-desktop.FormConfirmButtonV2-container-type-delete:hover .FormConfirmButtonV2-button-content
+        @include set-color($nihility-bad-2)
     
     // Inactive button
     &.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled
@@ -150,10 +202,10 @@
         // Text
         .FormConfirmButtonV2-button-content,
         &.FormConfirmButtonV2-container-desktop:hover .FormConfirmButtonV2-button-content
-            color: $nihility-fg-0
+            @include set-color($nihility-fg-0)
 // Text
 .FormConfirmButtonV2-button-content
-    color: $nihility-fg-3
+    @include set-color($nihility-fg-3)
 
 /*
  * -=- Icons -=-
