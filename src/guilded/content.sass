@@ -102,15 +102,18 @@
 .CodeContainerRenderer-container
     background-color: $nihility-bg-1
     border-radius: $nihility-roundness-small
+    // Make it brighter in editor to not match background color
+    .ChatChannelInput-editor &,
+    .SlateEditor-editor &
+        background-color: $nihility-bg-0
 
 // Code block line
 .CodeLineRenderer
-    background-color: $nihility-bg-1
+    background-color: transparent
 
 // Code block label
 .CalloutBadge-container
     background-color: $nihility-theme-2
-
 
 .GuildedSelect-container-option-color-gray
     // Label in editor
@@ -135,13 +138,21 @@
         color: $nihility-fg-format
     // Inline code
     &-inline-code, &-inline-code-v2
-        background-color: $nihility-bg-0
+        background-color: $nihility-bg-1
         color: $nihility-fg-code
+        // Make it brighter in editor to not match background color
+        .ChatChannelInput-editor &,
+        .SlateEditor-editor &
+            background-color: $nihility-bg-0
 
 // Old inline code
 .PrismTokenInlineRenderer-container-type-code
-    background-color: $nihility-bg-0
+    background-color: $nihility-bg-1
     color: $nihility-fg-code
+    // Make it brighter in editor to not match background color
+    .ChatChannelInput-editor &,
+    .SlateEditor-editor &
+        background-color: $nihility-bg-0
 
 // Template parameters
 .TemplateParameter-container,
@@ -236,6 +247,29 @@
 // Image caption
 .MediaCaptionLineRenderer
     color: $nihility-fg-1
+// Caption itself
+.MediaRenderer-caption
+    border-color: $nihility-fg-0
+// Image caption being edited
+.MediaRenderer-caption-selected,
+.MediaRenderer-caption-has-text,
+.MediaRenderer-caption-placeholder
+    background-color: $nihility-shading-1
+
+// Don't show it on the image caption that isn't being edited
+.MediaRenderer-read-only
+    background-color: transparent
+    border-color: transparent
+
+// Formatting in caption
+.MediaCaptionLineRenderer .MarkRenderer
+    // Bold text
+    &-bold
+        color: color.adjust($nihility-fg-format, $blackness: 20%)
+    // Inline code
+    &-inline-code, &-inline-code-v2
+        background-color: $nihility-bg-0
+        color: color.adjust($nihility-fg-code, $blackness: 20%)
 
 
 /*
@@ -508,24 +542,28 @@
     .Select-value-label
         color: $nihility-fg-2
 
-// Form selector options
-.Select-menu
-    background-color: $nihility-bg-4
-    &-outer
-        opacity: $nihility-floating-opacity
-        border-color: $nihility-bg-0 !important
+.Select
+    // Form selector options
+    &-menu
+        background-color: $nihility-bg-4
+        &-outer
+            opacity: $nihility-floating-opacity
+            border-color: $nihility-bg-0 !important
 
-// Form selector option
-.Select-option
-    color: $nihility-fg-2
-    &.is-focused
-        background-color: $nihility-bg-5
-    &.is-selected,
-    .GuildedSelect-container &.is-selected,
-    .GuildedSelect-container.GuildedSelect-container-dark &.is-selected
-        background-color: $nihility-bg-3
-    // &.is-focused.is-selected
-    //     background-color: $nihility-bg-3
+    // Form selector option
+    &-option
+        color: $nihility-fg-2
+        &.is-focused
+            background-color: $nihility-bg-5
+        &.is-selected,
+        .GuildedSelect-container &.is-selected,
+        .GuildedSelect-container.GuildedSelect-container-dark &.is-selected
+            background-color: $nihility-bg-3
+        // &.is-focused.is-selected
+        //     background-color: $nihility-bg-3
+    // No results found - code container/blocks
+    &-noresults
+        background-color: $nihility-bg-4
 
 // Poll percentage
 .HorizontalPercentageBar
