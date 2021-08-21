@@ -99,13 +99,18 @@
  */
 
 // Whole code block
-.CodeContainerRenderer-container
+.CodeContainerRenderer-container,
+// Code block in Markdown plain text
+.PrismTokenCodeBlockRenderer-container
     background-color: $nihility-bg-1
     border-radius: $nihility-roundness-small
     // Make it brighter in editor to not match background color
     .ChatChannelInput-editor &,
     .SlateEditor-editor &
         background-color: $nihility-bg-0
+    // Make sure Markdown code block also gets it
+    code
+        font-family: 'Courier', monospace
 
 // Code block line
 .CodeLineRenderer
