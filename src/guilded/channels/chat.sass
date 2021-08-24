@@ -55,6 +55,28 @@
             background-color: $nihility-replying
         &:hover::after
             background-color: color.adjust($nihility-replying, $whiteness: $nihility-hover-brightness)
+    // Private replies sent
+    &:not(&-editing):not(&-replying):not(&-mentioned):not(&-private-other).ChatV2Message-container-private
+        background-color: rgba($nihility-private-send, 0.05)
+        // Hover
+        &:hover
+            background-color: rgba($nihility-private-send, 0.02)
+        // Side
+        &::after
+            background-color: $nihility-private-send
+        &:hover::after
+            background-color: color.adjust($nihility-private-send, $whiteness: $nihility-hover-brightness)
+    // Private replies received
+    &:not(&-editing):not(&-replying):not(&-mentioned):not(&-private).ChatV2Message-container-private-other
+        background-color: rgba($nihility-private-receive, 0.05)
+        // Hover
+        &:hover
+            background-color: rgba($nihility-private-receive, 0.02)
+        // Side
+        &::after
+            background-color: $nihility-private-receive
+        &:hover::after
+            background-color: color.adjust($nihility-private-receive, $whiteness: $nihility-hover-brightness)
     
     // Mentioned message
     &:not(&-editing):not(&-replying):not(&-private).ChatV2Message-container-mentioned
@@ -184,6 +206,15 @@
     border-radius: $nihility-roundness-small
     .ChatV2Message-container
         border-radius: $nihility-roundness-small
+
+// "Private message" label
+.PrivateMessageLabel
+    // Eye icon
+    &-icon
+        fill: $nihility-fg-1
+    // Text
+    &-container .GuildedText-container
+        color: $nihility-fg-1
 
 /*
  * --- Divider ---
