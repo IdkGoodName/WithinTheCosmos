@@ -98,6 +98,9 @@
     // Removes messages' margin
     & + &:not(&-with-header):not(&-type-system)
         margin-top: 0
+    &-with-header
+        margin-top: 0
+        padding-top: $nihility-spacing-1
 
 // (edited)
 .EditedMarker-container
@@ -139,7 +142,7 @@
         @include nihility-transition(fill)
 
 .CloseIcon-icon:hover
-    fill: $nihility-bad
+    fill: $nihility-bad-0
 
 // Reply headers
 .ChatV2MessageReplyHeader-container
@@ -315,10 +318,10 @@
     // Delete icon
     &-wrapper.QuickActionBar-action-wrapper-destructive
         .QuickActionBar-action
-            fill: $nihility-bad
+            fill: $nihility-bad-0
         // Delete icon hover
         &:hover .QuickActionBar-action
-            fill: $nihility-bad-2
+            fill: $nihility-bad-1
 
 // Plus menu
 .ContextMenuItem-container

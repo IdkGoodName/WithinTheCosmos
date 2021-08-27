@@ -23,7 +23,16 @@
         border-color: $nihility-fg-1
     // Delete/remove buttons
     &.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-delete
-        border-color: $nihility-bad
+        border-color: $nihility-bad-0
+
+    // Bordered button
+    &.FormConfirmButtonV2-container-type-white,
+    &.FormConfirmButtonV2-container-type-white.FormConfirmButtonV2-container-hollow,
+    &-desktop.FormConfirmButtonV2-container-type-white.FormConfirmButtonV2-container-hollow:hover
+        border-color: $nihility-fg-2
+        // Content
+        .FormConfirmButtonV2-button-content
+            color: $nihility-fg-3
 
 .GuildedText-container-type
     // For server invite titles,
@@ -228,10 +237,8 @@
         fill: $nihility-bg-1
         filter: drop-shadow($nihility-shadow)
 // Video buttons
+.TeamStreamPlayerButton-container,
 .TeamStreamVolumeControl-volume-icon
-    fill: $nihility-bg-1
-    filter: drop-shadow($nihility-shadow)
-.TeamStreamPlayerButton-container
     fill: $nihility-bg-1
     filter: drop-shadow($nihility-shadow)
 // Volume rail
@@ -426,29 +433,29 @@
 
     // Form input label invalid
     &-container.TextInputWithLabel-container-invalid
-        border-color: $nihility-bad
+        border-color: $nihility-bad-0
 
         &:hover
-            border-color: $nihility-bad
+            border-color: $nihility-bad-0
         
         .TextInputWithLabel-floating-label,
         &:hover
             .TextInputWithLabel-floating-label
-                border-color: $nihility-bad
+                border-color: $nihility-bad-0
 
 // Form input valid
 .TextInputWithLabel-container-valid.TextInputWithLabel-container-focused
-    border-color: $nihility-good
+    border-color: $nihility-good-0
 
 // Form input icon
 .ValidityIndicator-container
     // Invalid
     &-invalid
-        border-color: $nihility-bad
-        fill: $nihility-bad
+        border-color: $nihility-bad-0
+        fill: $nihility-bad-0
     // Valid
     &-valid
-        fill: $nihility-good
+        fill: $nihility-good-0
 
 
 // Big form input
@@ -473,13 +480,13 @@
             stroke: $nihility-bg-1
         // Character count
         &-valid, &-invalid-min
-            stroke: $nihility-good
+            stroke: $nihility-good-0
         // Too many symbols
         &-invalid-max
-            stroke: $nihility-bad
+            stroke: $nihility-bad-0
     // Label too many symbols
     &-container-invalid-max
-        color: $nihility-bad
+        color: $nihility-bad-0
 
 
 // Form checkbox
@@ -589,9 +596,9 @@
 // Successful voting
 .CustomFormControls-success
     &-message
-        color: $nihility-good
+        color: $nihility-good-0
     &-icon
-        fill: $nihility-good
+        fill: $nihility-good-0
 
 /*
  * --- Misc ---

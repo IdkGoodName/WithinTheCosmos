@@ -27,10 +27,6 @@
     &-subtext
         color: $nihility-fg-1
 
-// Badge
-.CalloutBadge-container
-    background-color: $nihility-glow-0 !important
-
 /*
  * --- Upload ---
  */
@@ -73,17 +69,17 @@
         // Copy invite alert
         &.StatusMessage-container-type-success
             background-color: $nihility-bg-1
-            color: $nihility-good
+            color: $nihility-good-0
             // Icon
             .StatusMessage-icon
-                fill: $nihility-good
+                fill: $nihility-good-0
         // Invalid URL
         &.StatusMessage-container-type-error
             background-color: $nihility-bg-1
-            color: $nihility-bad
+            color: $nihility-bad-0
             // Icon
             .StatusMessage-icon
-                fill: $nihility-bad
+                fill: $nihility-bad-0
 
 // Status text
 .StatusMessage
@@ -97,11 +93,42 @@
         &:hover
             color: $nihility-fg-link-hover
 
+// Connecting
+.NetworkReconnectionDisplay
+    // Loading bar
+    &-container, &-container-reconnecting
+        background-color: $nihility-bg-0
+    // Connected
+    &-container
+        .NetworkReconnectionDisplay-icon
+            fill: $nihility-good-0
+        .NetworkReconnectionDisplay-text
+            color: $nihility-good-0
+
+// Status message as a banner
+.StatusMessage-container-persistent
+    // Message
+    .StatusMessage-content
+        color: $nihility-fg-3
+    // Make it dark with a border
+    &.StatusMessage-container-type-banner
+        background: $nihility-bg-0
+        border-bottom: 0.1rem solid $nihility-active
+        .StatusMessage-content
+            color: $nihility-active
+    // Same with stream mode, but purple
+    &.StatusMessage-container-banner-type-streamer-mode
+        background: $nihility-bg-0
+        border-bottom: 0.1rem solid $nihility-stream
+        .StatusMessage-content
+            color: $nihility-stream
+
 /*
  * --- Bars ---
  */
 
 // Container scrollbar
+.VoiceChannelDisplay-container-child,
 .NestedSettingsWrapper-second-child,
 .CodeContainerRenderer-container,
 .Scrollable-container:hover,
@@ -187,10 +214,10 @@
         @include set-color($nihility-theme-2)
     // Discard/Delete button text
     &-type-delete .FormConfirmButtonV2-button-content
-        @include set-color($nihility-bad)
+        @include set-color($nihility-bad-0)
     // Discard/Delete button text hover
     &-desktop.FormConfirmButtonV2-container-type-delete:hover .FormConfirmButtonV2-button-content
-        @include set-color($nihility-bad-2)
+        @include set-color($nihility-bad-1)
     
     // Inactive button
     &.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled
@@ -218,7 +245,11 @@
 
 // Verified badge
 #icon-verified-badge path:first-child
-    fill: $nihility-theme
+    fill: $nihility-verified
+
+// Settings badge
+.PersistentActionMenuItem-container .CalloutBadge-container
+    background-color: $nihility-glow-0 !important
 
 /*
  * --- User badges ---

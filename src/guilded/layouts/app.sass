@@ -11,12 +11,16 @@
 // Whole bar
 .Navbar-container
     background-color: $nihility-bg-0
+    @include set-var(--border-color, $nihility-bg-0)
 // Guilded logo
 .LogoAndWordmarkV2-container-theme-light
     fill: $nihility-fg-1
 // Guilded logo active
 .LogoAndWordmarkV2-container-theme-gilded
     fill: $nihility-theme-3
+// User card
+.NavbarUserControls-container
+    @include set-var(--border-color, $nihility-bg-0)
 
 /*
  * --- Buttons ---
@@ -511,10 +515,11 @@ body
 
 
 /*
- * -=- Notifications -=-
+ * -=- Notifications & Guides -=-
  */
 
 .NavSelectorItem-container-orientation-horizontal.NavSelectorItem-container-unread,
+.NavSelectorItem-container-orientation-vertical.NavSelectorItem-container-unread,
 .NavV4BadgedItem-container-unread .NavV4BadgedItem-icon-wrapper,
 .TeamOverviewContentItemCard-container-unread,
 .TeamChannelItemContents-container-unread,
@@ -522,3 +527,8 @@ body
 .NavV4ItemIcon-icon-unread
     &::before
         background-color: $nihility-mark
+
+// Voice channel click guide
+.NuxTargetGlowie-container
+    &, &::after
+        background-image: radial-gradient(circle at 50% 50%, rgba($nihility-important,0), rgba($nihility-important,0) 39%, $nihility-important)

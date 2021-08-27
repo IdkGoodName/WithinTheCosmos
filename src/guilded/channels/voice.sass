@@ -48,6 +48,47 @@
 .LimitLabel-limit
     color: $nihility-fg-1
 
+/*
+ * --- Voice settings ---
+ */
+
+// Hotkey label
+.HotkeyDisplay
+    &-container
+        border-color: $nihility-bg-5
+    &-key
+        background-color: transparent
+// + before the key
+.HotkeysDisplay-key-wrapper:not(:first-child)::before
+    color: $nihility-fg-1
+// Edit keybinds
+.TextButton-container-type-light
+    color: $nihility-fg-link
+    @include nihility-transition(color)
+    &.TextButton-container-desktop:hover
+        color: $nihility-fg-link-hover
+// Keybind in the settings
+.ItemKeybindInput-container
+    background-color: $nihility-bg-2
+// Sub-text
+.GuildedText-container-type-subtextHeading
+    color: $nihility-fg-1
+// Keybind recorder
+.HotkeyRecorder-container
+    border-color: $nihility-fg-1
+    // Currently recording
+    &.HotkeyRecorder-container-recording
+        border-color: $nihility-fg-2
+// Add another
+.ItemKeybindInput-container-multiple-entities-allowed .ItemKeybindInput-subtext-wrapper
+    // + Add keybind
+    .ItemKeybindInput-plus-sign, .ItemKeybindInput-subtext
+        fill: $nihility-fg-1
+        color: $nihility-fg-1
+    // Hover
+    &:hover .ItemKeybindInput-plus-sign, &:hover .ItemKeybindInput-subtext
+        fill: $nihility-fg-2
+        color: $nihility-fg-2
 
 /*
  * --- Voice card ---
@@ -85,9 +126,14 @@
 .VoiceConnectionDisplayPanelContents-participants
     background-color: $nihility-bg-1
 
-// Voice participant hover
-.VoiceChannelGroupUser-container:hover
-    background-color: $nihility-bg-3
+// Voice participant
+.VoiceChannelGroupUser-container
+    // Hover
+    &:hover
+        background-color: $nihility-bg-3
+    // Right clicked
+    &.VoiceChannelGroupUser-container-active
+        background-color: $nihility-bg-2
 
 // Voice participants icon
 .VoiceConnectionDisplayParticipants-participants-icon
@@ -96,3 +142,37 @@
 // Invite icon
 .SVGIconWithTooltip-container
     fill: $nihility-fg-1
+
+// Connection
+.VoiceConnectionDisplayInfo
+    &-connection
+        // Good connection
+        &-good &-icon
+            fill: $nihility-good-0
+        &-good .GuildedText-container
+            color: $nihility-good-1 !important
+        // Not bad, but neither a good connection
+        &-warn &-icon
+            fill: $nihility-neutral-0
+        &-warn .GuildedText-container
+            color: $nihility-neutral-1 !important
+        // Bad connection
+        &-bad &-icon
+            fill: $nihility-bad-0
+        &-bad .GuildedText-container
+            color: $nihility-bad-1 !important
+        // Transition
+        &-icon
+            @include nihility-transition(fill)
+    &-container .GuildedText-container
+        @include nihility-transition(color)
+
+// Voice volume slider
+.RangeSlider
+    &-container-type-gilded
+        // Background
+        .RangeSlider-rail
+            background-color: $nihility-bg-4
+        // Current volume
+        .RangeSlider-selected-rail
+            background: $nihility-progress

@@ -130,13 +130,13 @@
 // Server name is too short
 .TextInputWithLabel-container.TextInputWithLabel-container-invalid .TextInputWithLabel-floating-label,
 .TextInputWithLabel-container.TextInputWithLabel-container-invalid:hover .TextInputWithLabel-floating-label
-    color: $nihility-bad
+    color: $nihility-bad-0
 // Server name is too short icon
 .ValidityIndicator-container-invalid
-    fill: $nihility-bad
+    fill: $nihility-bad-0
 // Server name looks good
 .TextInputWithLabel-container-valid .TextInputWithLabel-floating-label-validity
-    color: $nihility-good
+    color: $nihility-good-0
 // Upload avatar container
 .NewTeamUpsellIcon-container
     border-color: $nihility-fg-1
@@ -195,6 +195,14 @@
     background-color: $nihility-bg-3
 
 /*
+ * --- User settings ---
+ */
+
+// Streamer mode
+.FormSection-container-section-background-inset
+    background-color: $nihility-bg-2
+
+/*
  * --- Server Settings ---
  */
 
@@ -218,14 +226,14 @@
     fill: $nihility-fg-1
 // Remove icon
 .GuildedTableRowNotificationOverridesInput-remove
-    color: $nihility-bad
+    color: $nihility-bad-0
 
 // Slider off
 .SwitchInput-container .SwitchInput-slide
-    background-color: $nihility-bad
+    background-color: $nihility-bad-0
 // Slider on
 .SwitchInput-container-on .SwitchInput-slide
-    background-color: $nihility-good
+    background-color: $nihility-good-0
 // Slider thumb
 .SwitchInput-tab
     background-color: $nihility-bg-3
@@ -265,7 +273,7 @@
     background-color: $nihility-bg-2
     border-color: $nihility-bg-1
     // Selection button hover
-    &:not(.RadioOptionPanel-container-disabled)::after
+    &:not(&-disabled)::after
         background-color: $nihility-bg-hover
     // Channel type selection
     &-selection-border
@@ -280,6 +288,18 @@
     &-selected .RadioOptionPanel-icon
         fill: $nihility-theme
 
+// Selection checkbox
+.CheckboxPanel-container
+    background-color: $nihility-bg-2
+    border-color: $nihility-bg-1
+    // Hover
+    &.CheckboxPanel-container-clickable.CheckboxPanel-container-flavor-default:hover
+        background-color: $nihility-bg-4
+    // Icon
+    &-clickable:hover .CheckmarkIcon-circle, &-clickable:focus .CheckmarkIcon-circle
+        border-color: $nihility-theme
+
+
 /*
  * --- Channel settings ---
  */
@@ -289,53 +309,53 @@
     &-on
         // Icon
         .TriStateInputButton-icon
-            fill: $nihility-good
+            fill: $nihility-good-0
         // Icon hover
         &:hover .TriStateInputButton-icon
-            fill: $nihility-good-2
+            fill: $nihility-good-1
         // Selected
         &.TriStateInputButton-container-selected
-            background-color: $nihility-good
+            background-color: $nihility-good-0
             // Selected icon
             .TriStateInputButton-icon
                 fill: $nihility-bg-0
             // Selected hover
             &:hover
-                background-color: $nihility-good-2
+                background-color: $nihility-good-1
     // Permission inherit
     &-passThrough
         // Icon
         .TriStateInputButton-icon
-            fill: $nihility-neutral
+            fill: $nihility-normal-0
         // Icon hover
         &:hover .TriStateInputButton-icon
-            fill: $nihility-neutral-2
+            fill: $nihility-normal-1
         // Selected
         &.TriStateInputButton-container-selected
-            background-color: $nihility-neutral
+            background-color: $nihility-normal-0
             // Selected icon
             .TriStateInputButton-icon
                 fill: $nihility-bg-0
             // Selected hover
             &:hover
-                background-color: $nihility-neutral-2
+                background-color: $nihility-normal-1
     // Permission denied
     &-off
         // Icon
         .TriStateInputButton-icon
-            fill: $nihility-bad
+            fill: $nihility-bad-0
         // Icon hover
         &:hover .TriStateInputButton-icon
-            fill: $nihility-bad-2
+            fill: $nihility-bad-1
         // Selected
         &.TriStateInputButton-container-selected
-            background-color: $nihility-bad
+            background-color: $nihility-bad-0
             // Selected icon
             .TriStateInputButton-icon
                 fill: $nihility-bg-0
             // Selected hover
             &:hover
-                background-color: $nihility-bad-2
+                background-color: $nihility-bad-1
 
 /*
  * --- Settings Tabs ---
@@ -394,12 +414,12 @@
     border-color: $nihility-fg-0
 // Permission title
 .ToggleFieldWrapper-label
-    color: $nihility-bad
+    color: $nihility-bad-0
     font-weight: bold
     @include nihility-transition(color)
 // Toggled permission title
 .ToggleFieldWrapper-label-active
-    color: $nihility-good
+    color: $nihility-good-0
     font-weight: bolder
 // Role description
 .TeamRolesListInstructions-container

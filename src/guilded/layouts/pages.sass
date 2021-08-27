@@ -136,12 +136,16 @@
     background-color: $nihility-bg-1
 
 .ChatChannelListItem
+    &-container
+        @include set-var(--border-color, $nihility-bg-1)
     // Selected DMs
     &-container-selected
         background-color: $nihility-bg-4
+        @include set-var(--border-color, $nihility-bg-3)
     // Hovered DMs
     &-container:not(&-container-selected):hover
         background-color: $nihility-bg-3
+        @include set-var(--border-color, $nihility-bg-2)
     // Remove DMs crossmark
     &-container:not(&-container-selected):hover &-remove-icon,
     &-container-selected &-remove-icon
@@ -218,7 +222,13 @@
 // Background of explore pages
 .ExplorePage-container
     background-color: $nihility-bg-3
-
+// Sidebar page list
+.NavbarNavIcon-container
+    &:hover
+        background-color: rgba($nihility-bg-hover, 0.1)
+    // Selected
+    &-selected
+        background-color: $nihility-bg-3
 
 // Find a server tabs
 .IconNavMenuButton-icon
@@ -311,6 +321,9 @@
     &.TextInputWithLabel-container-focused,
     &.TextInputWithLabel-container-focused:hover
         border-color: $nihility-theme !important
+// Add background to it as well
+.SelectMenu-container
+    background-color: $nihility-bg-4
 // Game selector item
 .SelectMenuItem-container
     &-desktop:hover

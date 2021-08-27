@@ -56,6 +56,34 @@
     &Event-container-desktop:hover
         background-color: $nihility-bg-3
 
+// All day checkmark icon
+.ToggleFieldWrapper-icon
+    fill: $nihility-fg-1
+// Date input
+.FormBoxAndLabel
+    &-box
+        border-color: $nihility-fg-1
+        @include nihility-transition(border-color)
+    &-container-focused &-box,
+    &-container-desktop:hover &-box
+        border-color: $nihility-fg-2
+    // Icon
+    &-form-icon
+        fill: $nihility-fg-1
+    // Text inside input
+    &-main-text
+        color: $nihility-fg-3
+// Time input
+.TimeInput
+    // Part selected
+    &-input:focus
+        background-color: rgba($nihility-theme-2, 0.4)
+    // : delimeter
+    &-delimiter
+        color: $nihility-fg-1
+// Timezone label
+.TimeFieldWrapper-timezone-label
+    color: $nihility-fg-1
 
 /*
  * --- View ---
