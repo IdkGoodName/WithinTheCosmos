@@ -13,6 +13,37 @@
 .MediaDisplayItemMetaInfo-comment-count
     color: $nihility-fg-2
 
+/*
+ * --- Modal ---
+ */
+
+// Media modal background
+.MediaEditor-container-desktop
+    background-color: $nihility-bg-3
+// Tag input
+.GuildedTagCreator-container-input-border
+    // Normally
+    .Select-control
+        border-bottom-color: $nihility-fg-1 !important
+        @include nihility-transition(border-bottom)
+    // Hover
+    &:hover .Select-control
+        border-bottom-color: $nihility-fg-2 !important
+    // Focused
+    .Select.is-focused .Select-control
+        border-bottom-color: $nihility-theme-3 !important
+
+// Tags
+.GuildedTagCreator-container-dark .Select-value
+    // Tag's background
+    border-color: $nihility-bg-5
+    background-color: $nihility-bg-1
+    // Tag's text
+    &-label
+        color: $nihility-fg-2
+// "Tags (optional)" label
+.TextFieldLabel-container-size-sm
+    color: $nihility-fg-1
 
 /*
  * --- Media view ---
