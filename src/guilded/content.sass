@@ -96,7 +96,8 @@
 .BlockQuoteContainerRenderer
     background-color: $nihility-shading-0
     border-left-color: $nihility-theme-1
-    border-left-width: 0.4rem
+    border-left-width: $nihility-radius-0 + 0.1rem
+    border-radius: $nihility-radius-0
     overflow: hidden
     &.SlateContainerRenderer.slate-margin-lg
         padding: $nihility-spacing-1
@@ -112,7 +113,7 @@
 // Code block in Markdown plain text
 .PrismTokenCodeBlockRenderer-container
     background-color: $nihility-bg-1
-    border-radius: $nihility-roundness-small
+    border-radius: $nihility-radius-1
     // Make it brighter in editor to not match background color
     .ChatChannelInput-editor &,
     .SlateEditor-editor &
@@ -141,6 +142,17 @@
 .Select.is-open > .Select-control .Select-arrow
     border-top-color: $nihility-fg-2
 
+/*
+ * --- Lists ---
+ */
+
+.UnorderedListRenderer
+    // Every odd nest
+    &, & & &, & & & & &
+        list-style-type: square
+    // Every even nest
+    & &, & & & &, & & & & & &
+        list-style-type: circle
 
 /*
  * --- Formatting marks ---
@@ -154,7 +166,8 @@
     &-inline-code, &-inline-code-v2
         background-color: $nihility-bg-1
         color: $nihility-fg-code
-        // Make it brighter in editor to not match background color
+        // Make it darker in the editor and block quotes to not match background color
+        .BlockQuoteContainerRenderer &,
         .ChatChannelInput-editor &,
         .SlateEditor-editor &
             background-color: $nihility-bg-0
@@ -181,7 +194,7 @@
 // Spoilers
 .SpoilerRenderer-container
     background-color: $nihility-bg-0
-    border-radius: $nihility-roundness-small
+    border-radius: $nihility-radius-1
     padding: 0 $nihility-spacing-side $nihility-spacing-top $nihility-spacing-side
 
 // Link/Hyperlink
@@ -230,7 +243,7 @@
 .RawVideoPlayer-video,
 // Video overlay
 .GradientOverlay-container.GradientOverlay-container-subtle-2
-    border-radius: $nihility-roundness-small
+    border-radius: $nihility-radius-1
 
 .RawVideoPlayer
     // Play arrow
@@ -293,7 +306,7 @@
     // Content info not loaded
     &CardError-container
         background-color: $nihility-shading-0
-        border-radius: $nihility-roundness-small
+        border-radius: $nihility-radius-1
         color: $nihility-fg-1
         @include nihility-transition(color)
         &:active, &:focus, &:hover
@@ -311,13 +324,13 @@
     &-wrapper
         //background-color: $nihility-bg-2
         background-color: $nihility-shading-0
-        border-radius: $nihility-roundness-small
+        border-radius: $nihility-radius-1
         // Removes white border
         border: 0
         // Hovered over
         &:not(&-disabled)::after
             background-color: $nihility-bg-hover
-            border-radius: $nihility-roundness-small
+            border-radius: $nihility-radius-1
     // Fading
     &-fade-overflow
         mask-image: linear-gradient(to bottom, black, transparent 95%)
@@ -335,7 +348,7 @@
 .TeamEmbedCard-container
     //background-color: $nihility-bg-2
     background-color: $nihility-shading-1
-    border-radius: $nihility-roundness-small
+    border-radius: $nihility-radius-1
     // Removes white border
     border-top: 0
     border-right: 0
@@ -348,7 +361,7 @@
         // Hovered over
         &-container::after
             background-color: $nihility-bg-hover
-            border-radius: $nihility-roundness-small
+            border-radius: $nihility-radius-1
         // Domain name
         &-domain
             color: $nihility-fg-1
@@ -394,11 +407,13 @@
  */
 
 // Form
+.FormsRenderer
+    border-radius: $nihility-radius-1
 .CustomFormWrapper-container-standalone
-    background-color: $nihility-bg-4
+    background-color: $nihility-shading-0
     // Form border
     &::after
-        border-color: $nihility-bg-0
+        border: none
 
 // Form's title
 .FormSection-section-header,
@@ -594,7 +609,7 @@
 
 // Whole container
 .ChatChannelInput-container
-    border-radius: $nihility-roundness
+    border-radius: $nihility-radius-2
 
 // Editor
 .ChatChannelInput-container .ChatChannelInput-editor,

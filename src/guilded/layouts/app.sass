@@ -55,7 +55,7 @@
             border-radius: 50%
             @include nihility-transition(border-radius, $nihility-bounce)
         .GroupSelector-add-group:hover &
-            border-radius: $nihility-roundness-small
+            border-radius: $nihility-radius-1
     // Server list add text
     &-name
         @include nihility-transition(color)
@@ -173,7 +173,7 @@ body
     .GroupSelectorItem-container:hover &,
     // Group selected
     .GroupSelector-container .NavSelectorItem-container-active &
-        border-radius: $nihility-roundness-small
+        border-radius: $nihility-radius-1
 
 // Default group icon
 //.GroupAvatar-container-non-base
@@ -199,7 +199,7 @@ body
 // User card's content
 .NavV4Footer-right,
 .NavV4Footer-footer-content
-    border-top-right-radius: $nihility-roundness
+    border-top-right-radius: $nihility-radius-2
 
 // User card's name
 .LoggedInUserAvatar-name
@@ -343,7 +343,7 @@ body
 .ChannelHeaderActionButtons
     // Screen header more button
     &-menu-button, &-more-options-button
-        fill: $nihility-fg-2
+        fill: $nihility-fg-1
     // Screen header more button hover
     &-menu-trigger:hover &-menu-button,
     &-menu-trigger:hover &-more-options-button,
@@ -413,7 +413,7 @@ body
         padding: 0
 
 .SidebarInfoItem-container
-    border-radius: $nihility-roundness
+    border-radius: $nihility-radius-2
 
 .SimpleIconTabMenuHeaderItem
     // Member/thread list tab hover
