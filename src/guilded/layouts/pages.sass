@@ -69,7 +69,7 @@
     background-color: $nihility-bg-1
     // Post highlighted(currently all)
     &-highlight
-        border-top-color: $nihility-theme
+        border-top-color: $nihility-theme-0
 // Post author's name
 .UserName-container,
 .TeamMemberBubble-name,
@@ -107,7 +107,7 @@
     @include nihility-transition(color)
     // Name hover
     &:hover
-        color: $nihility-theme-3
+        color: $nihility-theme-2
 // Game info
 .PlayerAliasCard-container-type-game .PlayerAliasCard-info
     background-color: transparent
@@ -166,6 +166,10 @@
         // Timestamp
         .ChatChannelListItemInfo-last-at
             color: $nihility-fg-1
+
+// User typing in DMs
+.TypingIndicator-container
+    background-color: $nihility-bg-5
 
 /*
  * -=- Tournaments -=-
@@ -320,7 +324,7 @@
     // Focused
     &.TextInputWithLabel-container-focused,
     &.TextInputWithLabel-container-focused:hover
-        border-color: $nihility-theme !important
+        border-color: $nihility-theme-0 !important
 // Add background to it as well
 .SelectMenu-container
     background-color: $nihility-bg-4

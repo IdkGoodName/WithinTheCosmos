@@ -128,17 +128,40 @@
  */
 
 // Container scrollbar
+.GuildedSelect-container.GuildedSelect-container-dark .Select-menu-outer .Select-menu,
+.SlateEditor-container-type-reaction .SlateEditor-editor,
+.SlateEditor-container-type-simple .SlateEditor-editor,
+.UserAliasAdditionalInfoDisplayWrapper-container,
+.TeamSettingsListItems-container-desktop:hover,
+.ChatChannelSwitcherOverlay-results-container,
+.Sheet-container-scrollable .Sheet-content,
+.OnboardingTeamGameInfoStage-form-wrapper,
+.ItemChooser-items-wrapper-scrollable,
 .VoiceChannelDisplay-container-child,
 .NestedSettingsWrapper-second-child,
 .CodeContainerRenderer-container,
+.ChannelPinnedMessages-container,
+.TournamentsPortalPage-container,
+.ReactionPickerNavbar-container,
+.TeamMemberRolesDisplay-list,
+.ChatChannelList-items:hover,
 .Scrollable-container:hover,
 .OptionsMenu-option-content,
 .TeamNavMenu-wrapper:hover,
+.TextAreaInput-text-area,
+.ChatV2Sidebar-container,
 .UserProfileV3-container,
+.SimpleDrawer-container,
+.ReactionPicker-content,
+.ChatChannelList-items,
 .ModalV2-modal-content,
-.ReactionPicker-list
+.InsertGifPicker-gifs,
+.Scrollable-container,
+.ReactionPicker-list,
+.TypeaheadMenu-list,
+.FormsRenderer
     // Firefox scrollbar
-    scrollbar-color: $nihility-bar transparent
+    scrollbar-color: $nihility-bar transparent !important
     // Webkit/Chromium/Blink scrollbar
     &::-webkit-scrollbar-thumb
         background: $nihility-bar !important
@@ -181,7 +204,7 @@
         background-color: $nihility-bg-1
     // Guilded's icon
     &-logomark
-        fill: $nihility-theme
+        fill: $nihility-theme-0
 
 /*
  * -=- Gilded Buttons -=-
@@ -208,10 +231,10 @@
     
     // Normal button text
     &-hollow .FormConfirmButtonV2-button-content
-        @include set-color($nihility-theme)
+        @include set-color($nihility-theme-0)
     // Button hovered over text
     &-desktop.FormConfirmButtonV2-container-filled:hover .FormConfirmButtonV2-button-content
-        @include set-color($nihility-theme-2)
+        @include set-color($nihility-theme-1)
     // Discard/Delete button text
     &-type-delete .FormConfirmButtonV2-button-content
         @include set-color($nihility-bad-0)

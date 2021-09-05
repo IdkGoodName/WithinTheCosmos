@@ -1,0 +1,268 @@
+/*
+ * -=- Message plus menus -=-
+ */
+
+// Dashed border
+.UploadMediaBox-container
+    border-color: rgba($nihility-fg-0, 0.3)
+
+// Media upload
+.MediaUploaderDropImageInstructions
+    // Upload icon
+    &-icon
+        fill: $nihility-fg-2
+    // Drop media
+    &-drop-image-text
+        color: $nihility-fg-2
+    // Or browse your files
+    &-or-browse-text
+        color: $nihility-fg-1
+    // Browse files link
+    &-browse-link
+        &, &:visited, &:active, &:focus
+            color: $nihility-fg-link
+        &:hover
+            color: $nihility-fg-link-hover
+// Media upload paste
+.MediaUploaderPasteInstructions
+    &-container
+        background-color: $nihility-bg-2
+    // Icon
+    &-link-icon
+        fill: $nihility-fg-1
+    // Text
+    &-paste-instructions
+        color: $nihility-fg-1
+
+/*
+ * -=- Create Server -=-
+ */
+
+// Tiled background
+.OnboardingExperience-background
+    background-color: $nihility-bg-0
+// Background's tile
+.LandingPageV3WhimsicalIcon-icon
+    color: $nihility-fg-0
+    opacity: 15%
+    @include nihility-transition(opacity)
+    // Background's tile
+    &:hover
+        opacity: 45%
+// Creation container
+.FullScreenFlowStageWrapper-contents-wrapper
+    background-color: $nihility-bg-3
+// Enter your server name above
+.TextInputWithLabel-container-label-retracted .TextInputWithLabel-floating-label-validity
+    color: $nihility-fg-0
+// Server name is too short
+.TextInputWithLabel-container.TextInputWithLabel-container-invalid .TextInputWithLabel-floating-label,
+.TextInputWithLabel-container.TextInputWithLabel-container-invalid:hover .TextInputWithLabel-floating-label
+    color: $nihility-bad-0
+// Server name is too short icon
+.ValidityIndicator-container-invalid
+    fill: $nihility-bad-0
+// Server name looks good
+.TextInputWithLabel-container-valid .TextInputWithLabel-floating-label-validity
+    color: $nihility-good-0
+// Upload avatar container
+.NewTeamUpsellIcon-container
+    border-color: $nihility-fg-1
+// Upload avatar icon
+.NewTeamUpsellIcon-icon
+    fill: $nihility-fg-2
+// Upload avatar icon hover
+.NewTeamUpsellIcon-container:hover .NewTeamUpsellIcon-icon
+    fill: $nihility-fg-3
+// Upload avatar plus sign
+.NewTeamUpsellIcon-plus-icon
+    background: $nihility-theme-0
+    fill: $nihility-fg-2
+// Upload avatar plus sign hover
+.NewTeamUpsellIcon-container:hover .NewTeamUpsellIcon-plus-icon
+    background: $nihility-theme-1
+    fill: $nihility-fg-3
+
+// Games selected
+.ItemChooser-info
+    color: $nihility-fg-1
+// Game
+.ItemChooserItemWrapper-container
+    background-color: $nihility-bg-3
+    border-color: $nihility-bg-0
+    // Game hover
+    &:hover
+        background-color: $nihility-bg-4
+
+/*
+ * -=- Other -=-
+ */
+
+// Fixes media preview clipping through the screen
+.MediaSplitView-container-desktop
+    height: 100%
+.MediaSplitView-container
+    width: 100%
+
+// Group settings icon
+.AddGroupOverlayDisplay-settings-icon
+    fill: $nihility-fg-1
+    @include nihility-transition(fill)
+    // Group settings hover
+    &:hover
+        fill: $nihility-fg-2
+
+/*
+ * --- Invite ---
+ */
+
+// Copy invite title
+.CopyToClipboardControlV2-title
+    color: $nihility-fg-3
+// Invite input
+.CopyableTextbox
+    // The container itself
+    &-container
+        background-color: $nihility-bg-1
+        border-color: $nihility-fg-0
+        @include nihility-transition(border-color)
+    &-container-desktop:hover
+        border-color: $nihility-fg-1
+    // Link
+    &-url-wrapper-text
+        color: $nihility-fg-link
+    &-container-desktop:hover &-url-wrapper-text
+        color: $nihility-fg-link-hover
+// Copy invite button hover
+.SocialShareButtonV2-container-desktop:hover::after
+    background-color: $nihility-bg-hover
+
+/*
+ * --- Images ---
+ */
+
+// Open original
+.MaximizedImageOverlay-open-original
+    color: $nihility-fg-1
+    // Active
+    &:hover, &:active, &:focus
+        color: $nihility-fg-2
+// Image share icon
+.MaximizedImageOverlay-share-icon
+    fill: $nihility-fg-1
+    @include nihility-transition(transition)
+    // Hover
+    &:hover
+        fill: $nihility-fg-2
+
+/*
+ * --- Activity list ---
+ */
+
+// Activity menu
+.ChannelActivityDisplay
+    &-group-header,
+    &-container
+        background-color: $nihility-bg-3
+    &-item
+        background: $nihility-bg-2
+// Activity menu content
+.ChannelActivityItem
+    // Text
+    &-header
+        color: $nihility-fg-3
+    &-footer
+        color: $nihility-fg-1
+    // Unread activity menu item
+    &-container.ChannelActivityItem-container-unread
+        background-color: $nihility-bg-1
+
+/*
+ * --- Change nickname ---
+ */
+
+// "Nicknames are visible to everyone in the server"
+.ChangeNicknameOverlay-info
+    color: $nihility-fg-1
+    background-color: $nihility-bg-1
+    border-color: $nihility-bg-0
+
+/*
+ * --- Channel Switcher ---
+ */
+
+// Channel switcher
+.ChatChannelSwitcherOverlay
+    &-container
+        background-color: $nihility-bg-3
+        color: $nihility-fg-1
+    &Footer-container
+        background-color: $nihility-bg-1
+// Channel switcher channel
+.ChatChannelSwitcherRow
+    &-container
+        color: $nihility-fg-2
+        // Header of the channels
+        &-header
+            color: $nihility-fg-1
+        // Selected
+        &-selected
+            background-color: $nihility-bg-4
+        // Hovered over
+        &:not(&-header)::after
+            background-color: $nihility-bg-hover
+
+/*
+ * -=- Form view -=-
+ */
+
+// Poll percentage
+.HorizontalPercentageBar
+    // Percentage bar
+    &-bar
+        background-color: $nihility-bg-2
+        // Progress
+        &-highlight
+            background: $nihility-progress
+    // Percentage label
+    &-value,
+    // The name of the poll item
+    &-label
+        color: $nihility-fg-3
+    // Item voted for
+    &-vote-icon
+        fill: $nihility-fg-3
+// Successful voting
+.CustomFormControls-success
+    &-message
+        color: $nihility-good-0
+    &-icon
+        fill: $nihility-good-0
+// Question X
+.CustomFormSummaryResultSection-header
+    color: $nihility-fg-1
+// Text response in a form
+.CustomFormSummaryTextResponse-container
+    background-color: $nihility-bg-2
+    border-left: 0
+
+// Individual response header
+.CollapsibleItemHeader
+    &-container
+        background-color: $nihility-bg-1
+        // Hover
+        &-desktop::after
+            background-color: $nihility-bg-hover
+    // Date
+    &-subtitle
+        color: $nihility-fg-1
+        @include nihility-transition(color)
+    &-container:hover &-subtitle
+        color: $nihility-fg-3   
+// Individual response container
+.CustomFormIndividualResponse-result-display
+    background-color: $nihility-bg-2
+// Individual response message input text
+.TextAreaFieldDisplayRenderer-container
+    color: $nihility-fg-2
+    cursor: text

@@ -95,7 +95,7 @@
 
 .BlockQuoteContainerRenderer
     background-color: $nihility-shading-0
-    border-left-color: $nihility-theme-2
+    border-left-color: $nihility-theme-1
     border-left-width: 0.4rem
     overflow: hidden
     &.SlateContainerRenderer.slate-margin-lg
@@ -127,7 +127,7 @@
 
 // Code block label
 .CalloutBadge-container
-    background-color: $nihility-theme-2
+    background-color: $nihility-theme-1
 
 .GuildedSelect-container-option-color-gray
     // Label in editor
@@ -300,7 +300,7 @@
             color: $nihility-fg-2
     // Container selected in editor
     &Renderer-container-selected
-        border-color: $nihility-theme-2
+        border-color: $nihility-theme-1
     // Channel name
     &CardFooter-channel-name
         color: $nihility-fg-2
@@ -469,7 +469,7 @@
         border-color: $nihility-fg-2
     // Big form input focus
     &:focus
-        border-color: $nihility-theme-3
+        border-color: $nihility-theme-2
 
 
 // Form input word count
@@ -497,16 +497,16 @@
 // Form checkbox hover
 .CheckmarkIcon-container:hover .CheckmarkIcon-circle,
 .CheckboxV2-container-desktop:hover .CheckboxV2-box
-    border-color: $nihility-theme-2
+    border-color: $nihility-theme-1
 // Form checkbox checked
 .CheckmarkIcon-container-selected .CheckmarkIcon-circle,
 .CheckboxV2-container-checked .CheckboxV2-box
-    background-color: $nihility-theme-2
-    border-color: $nihility-theme
+    background-color: $nihility-theme-1
+    border-color: $nihility-theme-0
 // Form checkbox checked hover
 .CheckmarkIcon-container-clickable:hover.CheckmarkIcon-container-selected .CheckmarkIcon-circle
-    background-color: $nihility-theme-3
-    border-color: $nihility-theme-2
+    background-color: $nihility-theme-2
+    border-color: $nihility-theme-1
 
 // Form checkbox label
 .CheckboxV2-label,
@@ -538,7 +538,7 @@
 
 // Form selector focused
 .GuildedSelect-container.GuildedSelect-container-dark .Select.is-focused .Select-control
-    border-color: $nihility-theme-3 !important
+    border-color: $nihility-theme-2 !important
 
 // Form selector icon
 .GuildedSelectIcon-container
@@ -547,7 +547,7 @@
 .GuildedSelect-container
     // Form selector arrow
     .Select-arrow
-        border-top-color: $nihility-theme
+        border-top-color: $nihility-theme-0
     // Form selector placeholder
     .Select-placeholder
         color: $nihility-fg-1
@@ -577,37 +577,6 @@
     // No results found - code container/blocks
     &-noresults
         background-color: $nihility-bg-4
-
-
-// Poll percentage
-.HorizontalPercentageBar
-    // Percentage bar
-    &-bar
-        background-color: $nihility-bg-2
-        // Progress
-        &-highlight
-            background: $nihility-progress
-    // Percentage label
-    &-value,
-    // The name of the poll item
-    &-label
-        color: $nihility-fg-3
-    // Item voted for
-    &-vote-icon
-        fill: $nihility-fg-3
-// Successful voting
-.CustomFormControls-success
-    &-message
-        color: $nihility-good-0
-    &-icon
-        fill: $nihility-good-0
-// Question X
-.CustomFormSummaryResultSection-header
-    color: $nihility-fg-1
-// Text response in a form
-.CustomFormSummaryTextResponse-container
-    background-color: $nihility-bg-2
-    border-left: 0
 
 /*
  * --- Misc ---
@@ -689,7 +658,7 @@
         background-color: $nihility-fg-0
     // Quote/Reply buttons active
     &, &:hover, &:visited, &:active, &:focus
-        color: $nihility-theme-2
+        color: $nihility-theme-1
 
 
 // Leave a comment/Share

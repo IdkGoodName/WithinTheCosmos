@@ -17,7 +17,7 @@
     fill: $nihility-fg-1
 // Guilded logo active
 .LogoAndWordmarkV2-container-theme-gilded
-    fill: $nihility-theme-3
+    fill: $nihility-theme-2
 // User card
 .NavbarUserControls-container
     @include set-var(--border-color, $nihility-bg-0)
@@ -155,6 +155,7 @@ body
 // Group list in group editing
 .GroupSelectorPreview-minimal-nav
     background-color: $nihility-bg-1
+    @include set-var(--border-color, $nihility-bg-0)
 // Group
 .GroupSelectorItem-container
     @include set-var(--avatar-size, $nihility-icon-size)
@@ -515,18 +516,8 @@ body
 
 
 /*
- * -=- Notifications & Guides -=-
+ * -=- Guides -=-
  */
-
-.NavSelectorItem-container-orientation-horizontal.NavSelectorItem-container-unread,
-.NavSelectorItem-container-orientation-vertical.NavSelectorItem-container-unread,
-.NavV4BadgedItem-container-unread .NavV4BadgedItem-icon-wrapper,
-.TeamOverviewContentItemCard-container-unread,
-.TeamChannelItemContents-container-unread,
-.TeamAnnouncementItem-container-unread,
-.NavV4ItemIcon-icon-unread
-    &::before
-        background-color: $nihility-mark
 
 // Voice channel click guide
 .NuxTargetGlowie-container

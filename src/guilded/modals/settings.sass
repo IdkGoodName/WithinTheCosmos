@@ -1,0 +1,285 @@
+/*
+ * -=- Settings -=-
+ */
+
+// Options
+.OptionsMenuPageWrapper-container
+    background-color: $nihility-bg-3
+// Tabs
+.OptionsMenu-container-desktop .OptionsMenu-options-control
+    background-color: $nihility-bg-0
+// Tab text
+.DesktopOptionsControlItemTemplate-label-text
+    color: $nihility-fg-1
+// Tabs title
+.DesktopOptionsControlOptionHeader-header-text
+    color: $nihility-fg-2
+
+.DesktopOptionsControlItemTemplate-container
+    // Tab hover
+    &:hover::after
+        background-color: $nihility-bg-hover
+    // Tab hover text
+    &:hover .DesktopOptionsControlItemTemplate-label-text
+        color: $nihility-fg-3
+// Tab active
+.DesktopOptionsControlItemTemplate-container-active
+    background-color: $nihility-bg-3
+
+/*
+ * -=- User settings -=-
+ */
+
+// Streamer mode
+.FormSection-container-section-background-inset
+    background-color: $nihility-bg-2
+// Settings account info
+.DefaultReadonlyEditableForm-container
+    background-color: $nihility-bg-1
+// 2FA thing
+.PersistentUpsell-container-flavor-settings
+    background-color: $nihility-bg-1
+// Connections/integrations
+.SocialLinkPanel-header
+    background-color: $nihility-bg-1
+
+/*
+ * --- Server Settings ---
+ */
+
+// Channel or category notifications header
+.GuildedTableHeader-column-header-group, .GuildedTableHeader-column-header
+    color: $nihility-fg-2
+// Placeholder
+.GuildedTableField-empty-text
+    color: $nihility-fg-1
+// Category/channel hover
+.GuildedTableRowInputWrapper-container-desktop::after
+    background-color: $nihility-bg-hover
+// Category/channel icon
+.GuildedTableRowInputWrapper-icon
+    fill: $nihility-fg-1
+// Category/channel title
+.GuildedTableRowInputWrapper-name
+    color: $nihility-fg-2
+// X channels
+.GuildedTableRowInputWrapper-description
+    fill: $nihility-fg-1
+// Remove icon
+.GuildedTableRowNotificationOverridesInput-remove
+    color: $nihility-bad-0
+
+// Slider off
+.SwitchInput-container .SwitchInput-slide
+    background-color: $nihility-bad-0
+// Slider on
+.SwitchInput-container-on .SwitchInput-slide
+    background-color: $nihility-good-0
+// Slider thumb
+.SwitchInput-tab
+    background-color: $nihility-bg-3
+    // White shadow
+    box-shadow: $nihility-shadow
+    // Disabled
+    .SwitchInput-container-disabled &
+        background-color: $nihility-bg-1
+
+// Content(flow)
+.UserCTAPanel-container
+    background-color: $nihility-bg-1
+// Content inner(flow)
+.UserCTAPanel-container-style-bordered
+    border: 0
+// Content inner(flow) 2
+.UserCTAPanel-container-style-bordered .UserCTAPanel-contents:not(.UserCTAPanel-container-disabled)
+    background-color: transparent
+.UserCTAPanel-container-style-bordered .UserCTAPanel-contents:not(.UserCTAPanel-container-disabled):hover
+    background-color: $nihility-bg-1
+    @include nihility-transition(background)
+// Flow connection
+.PanelList-option-connector
+    background-color: $nihility-bg-1
+// Flow's title
+.PanelInfo-title
+    color: $nihility-fg-3
+// Flow's description
+.PanelInfo-description
+    color: $nihility-fg-1
+// Flow's icon
+.BotFlowDisplay-icon
+    fill: $nihility-fg-1
+
+// Selection buttons
+.RadioOptionPanel-container
+    background-color: $nihility-bg-2
+    border-color: $nihility-bg-1
+    // Selection button hover
+    &:not(&-disabled)::after
+        background-color: $nihility-bg-hover
+    // Channel type selection
+    &-selection-border
+        // Hover
+        &:not(.RadioOptionPanel-container-selected):hover
+            border-color: $nihility-bg-2
+            background-color: $nihility-bg-3
+        // Selected
+        &.RadioOptionPanel-container-selected
+            border-color: $nihility-theme-0
+    // Channel type selected icon
+    &-selected .RadioOptionPanel-icon
+        fill: $nihility-theme-0
+
+// Selection checkbox
+.CheckboxPanel-container
+    background-color: $nihility-bg-2
+    border-color: $nihility-bg-1
+    // Hover
+    &.CheckboxPanel-container-clickable.CheckboxPanel-container-flavor-default:hover
+        background-color: $nihility-bg-4
+    // Icon
+    &-clickable:hover .CheckmarkIcon-circle, &-clickable:focus .CheckmarkIcon-circle
+        border-color: $nihility-theme-0
+
+/*
+ * -=- Channel settings -=-
+ */
+
+.TriStateInputButton-container-type
+    // Permission allowed
+    &-on
+        // Icon
+        .TriStateInputButton-icon
+            fill: $nihility-good-0
+        // Icon hover
+        &:hover .TriStateInputButton-icon
+            fill: $nihility-good-1
+        // Selected
+        &.TriStateInputButton-container-selected
+            background-color: $nihility-good-0
+            // Selected icon
+            .TriStateInputButton-icon
+                fill: $nihility-bg-0
+            // Selected hover
+            &:hover
+                background-color: $nihility-good-1
+    // Permission inherit
+    &-passThrough
+        // Icon
+        .TriStateInputButton-icon
+            fill: $nihility-normal-0
+        // Icon hover
+        &:hover .TriStateInputButton-icon
+            fill: $nihility-normal-1
+        // Selected
+        &.TriStateInputButton-container-selected
+            background-color: $nihility-normal-0
+            // Selected icon
+            .TriStateInputButton-icon
+                fill: $nihility-bg-0
+            // Selected hover
+            &:hover
+                background-color: $nihility-normal-1
+    // Permission denied
+    &-off
+        // Icon
+        .TriStateInputButton-icon
+            fill: $nihility-bad-0
+        // Icon hover
+        &:hover .TriStateInputButton-icon
+            fill: $nihility-bad-1
+        // Selected
+        &.TriStateInputButton-container-selected
+            background-color: $nihility-bad-0
+            // Selected icon
+            .TriStateInputButton-icon
+                fill: $nihility-bg-0
+            // Selected hover
+            &:hover
+                background-color: $nihility-bad-1
+
+/*
+ * -=- Settings Tabs -=-
+ */
+
+/*
+ * --- Integrations ---
+ */
+
+// Team integrations
+.TeamSettingsAddIntegration-container
+    background-color: $nihility-bg-1
+// Twitch integration
+.TeamSettingsAddIntegration-container-type-twitch .TeamSettingsAddIntegration-icon
+    fill: $nihility-stream
+
+/*
+ * --- Groups ---
+ */
+
+// Group
+.GroupSettingsPanel-container
+    background-color: $nihility-bg-1
+    // Group hover
+    &:hover
+        background-color: $nihility-bg-0
+// Group gripper
+.GroupSettingsPanel-icon
+    fill: $nihility-fg-1
+
+/*
+ * --- Subscriptions ---
+ */
+
+// Subscriptions bg
+.ServerSubscriptionsSetupUpsell-content
+    background-color: $nihility-bg-4
+// Subscription points
+.GuildedText-container-type-subtextBodyWhite
+    color: $nihility-fg-2
+// Subscription enabling
+.ModalWrapper-container.ModalWrapper-container-required:not(.ModalWrapper-background-style-transparent)
+    background: rgba(0, 0, 0, 0.6)
+
+/*
+ * --- Roles ---
+ */
+
+// Role list item selected
+.TeamSettingsPermissionsItem-container-selected
+    background-color: $nihility-bg-4
+// Role list item hover
+.TeamSettingsPermissionsItem-container-desktop .TeamSettingsPermissionsItem-content::after
+    background-color: $nihility-bg-hover
+// Add role
+.TeamSettingsAddButton-icon
+    fill: $nihility-fg-1
+    @include nihility-transition(fill)
+.TeamSettingsAddButton-text
+    color: $nihility-fg-1
+    @include nihility-transition(color)
+// Add role hover
+.TeamSettingsAddButton-container:hover
+    // Icon
+    .TeamSettingsAddButton-icon
+        fill: $nihility-fg-2
+    // Text
+    .TeamSettingsAddButton-text
+        color: $nihility-fg-2
+// Selected colour
+.ColorInputOption-container-dot-selected
+    border-color: $nihility-theme-1
+// Colour hover
+.ColorInputOption-container-size-lg .ColorInputOption-container-dot:not(.ColorInputOption-container-dot-selected):hover
+    border-color: $nihility-fg-0
+// Permission title
+.ToggleFieldWrapper-label
+    color: $nihility-bad-0
+    font-weight: bold
+    @include nihility-transition(color)
+// Toggled permission title
+.ToggleFieldWrapper-label-active
+    color: $nihility-good-0
+    font-weight: bolder
+// Role description
+.TeamRolesListInstructions-container
+    color: $nihility-fg-1
