@@ -36,3 +36,13 @@
     &:hover, &-active
         .StreamDisplayActionButton-container-content
             fill: $nihility-fg-2
+
+// Livestream badge in groups and servers
+.LiveStreamBadge-indicator
+    // We have no way of selecting the live badge
+    background: $nihility-stream !important
+    color: black
+    fill: black
+// Livestream outline in the voice user list
+.VoiceChannelGroupUser-avatar-streaming::after
+    background: $nihility-stream
