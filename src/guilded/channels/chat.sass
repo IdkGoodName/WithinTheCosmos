@@ -106,7 +106,7 @@
     @include nihility-transition(color)
     // (edited) hover
     .ChatV2Message-container.ChatV2Message-container-type-default:hover &
-        color: $nihility-fg-3
+        color: $nihility-fg-2
 
 
 // Input with no permissions
@@ -262,14 +262,14 @@
 .LastReplyDisplay-container
     // Thread reply bar
     &::before
-        background-color: $nihility-theme-0
+        background-color: var(--NihilityTheme0)
     // Thread reply bar when the user is in it
     &.LastReplyDisplay-container-participant:not(&-unread)::before
-        background-color: $nihility-theme-2
+        background-color: var(--NihilityTheme2)
 
 // Threaded message's arrow
 .LastReplyDisplay-icon-chevron
-    color: $nihility-theme-1
+    color: var(--NihilityTheme1)
 
 // Archive info bar
 .BannerWithButton-container
@@ -283,11 +283,11 @@
 .ChatV2MessageTimestamp-container.ChatV2MessageHeader-timestamp,
 .ChatV2MessageTimestamp-container.SystemMessageRendererWrapper-timestamp
     color: $nihility-fg-1
-    transition: color 0.5s
+    @include nihility-transition(color)
     // Timestamp hovered
     .ChatV2Message-container.ChatV2Message-container-type-default:hover &,
     .ChatV2Message-container.ChatV2Message-container-type-system:hover &
-        color: $nihility-fg-3
+        color: $nihility-fg-2
 
 /*
  * --- Menu ---
@@ -332,6 +332,25 @@
         .ContextMenuItem-body
             color: $nihility-fg-2
 
+// Remove hover from the message in deletion menu
+.ConfirmationOverlay-item .ChatV2Message-container
+    // Since it doesn't work for ::after, don't add it here
+    // .ChatChannelMessages-delete-message
+    //     @include nihility-transition(background-color)
+    // Give it to contents
+    &:hover
+        background-color: transparent
+        .ChatChannelMessages-delete-message
+            background-color: $nihility-bg-4
+// Message delete menu fading
+.ChatChannelMessages-delete-message::after
+    background: linear-gradient(to bottom, transparent, $nihility-bg-3 75px)
+    // Doesn't work
+    // @include nihility-transition(background)
+    // When the message gets hovered over, change the fading too
+    .ChatV2Message-container:not(.ChatV2Message-container-editing):hover &
+        background: linear-gradient(to bottom, transparent, $nihility-bg-4 75px)
+
 /*
  * --- Thread menu ---
  */
@@ -363,7 +382,7 @@
 
 // Message thread menu send
 .SlateEditor-send-icon
-    fill: $nihility-theme-2
+    fill: var(--NihilityTheme2)
     // Message thread menu cannot send
     &.SlateEditor-send-icon-disabled
         fill: $nihility-fg-0

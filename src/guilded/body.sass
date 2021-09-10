@@ -1,3 +1,11 @@
+:root
+    @include set-var(--NihilityTheme0, $nihility-theme-0)
+    @include set-var(--NihilityTheme1, $nihility-theme-1)
+    @include set-var(--NihilityTheme2, $nihility-theme-2)
+    @include set-var(--NihilitySelect, rgba($nihility-theme-0, 0.6))
+    @include set-var(--NihilityLink, $nihility-fg-link)
+    @include set-var(--NihilityLinkHover, $nihility-fg-link-hover)
+
 body
     background-color: $nihility-bg-1
 
@@ -8,12 +16,12 @@ body,
 .SlateEditor-container-type-default
     @include set-var(--body-text-color, $nihility-fg-2)
     @include set-var(--nihility-local-fg, $nihility-fg-2)
-    @include set-var(--game-color, $nihility-theme-2)
+    @include set-var(--game-color, var(--NihilityTheme2))
     @include set-var(--border-color, $nihility-bg-1)
     color: $nihility-fg-2
 // Change selection
 ::selection
-    background-color: rgba($nihility-theme-0, 0.6)
+    background-color: var(--NihilitySelect)
     color: white
 // Change variables
 .AppV2-container-minimal-nav

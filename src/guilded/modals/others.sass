@@ -20,9 +20,9 @@
     // Browse files link
     &-browse-link
         &, &:visited, &:active, &:focus
-            color: $nihility-fg-link
+            color: var(--NihilityLink)
         &:hover
-            color: $nihility-fg-link-hover
+            color: var(--NihilityLinkHover)
 // Media upload paste
 .MediaUploaderPasteInstructions
     &-container
@@ -76,11 +76,11 @@
     fill: $nihility-fg-3
 // Upload avatar plus sign
 .NewTeamUpsellIcon-plus-icon
-    background: $nihility-theme-0
+    background: var(--NihilityTheme0)
     fill: $nihility-fg-2
 // Upload avatar plus sign hover
 .NewTeamUpsellIcon-container:hover .NewTeamUpsellIcon-plus-icon
-    background: $nihility-theme-1
+    background: var(--NihilityTheme1)
     fill: $nihility-fg-3
 
 // Games selected
@@ -130,9 +130,9 @@
         border-color: $nihility-fg-1
     // Link
     &-url-wrapper-text
-        color: $nihility-fg-link
+        color: var(--NihilityLink)
     &-container-desktop:hover &-url-wrapper-text
-        color: $nihility-fg-link-hover
+        color: var(--NihilityLinkHover)
 // Copy invite button hover
 .SocialShareButtonV2-container-desktop:hover::after
     background-color: $nihility-bg-hover

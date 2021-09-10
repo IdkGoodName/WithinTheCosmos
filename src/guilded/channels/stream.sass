@@ -26,6 +26,8 @@
 // Leave streaming channel
 .SVGIconWithTooltip-container-flavor-filled-remove
     background-color: $nihility-bad-0
+    .SVGIcon-icon
+        fill: black
 
 .StreamDisplayActionButton-container
     // Mini buttons
@@ -36,6 +38,16 @@
     &:hover, &-active
         .StreamDisplayActionButton-container-content
             fill: $nihility-fg-2
+
+// Hover outline
+.StreamPlayer-container:hover .StreamPlayer-inset-border
+    border-color: $nihility-active
+// The user pill
+.StreamPlayerMemberDisplay-pill
+    background-color: $nihility-bg-0
+// Muted or deaf icon
+.StreamPlayerIndicators-button
+    background-color: $nihility-bg-0
 
 // Livestream badge in groups and servers
 .LiveStreamBadge-indicator

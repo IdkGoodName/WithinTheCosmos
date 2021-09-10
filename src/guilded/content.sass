@@ -95,7 +95,7 @@
 
 .BlockQuoteContainerRenderer
     background-color: $nihility-shading-0
-    border-left-color: $nihility-theme-1
+    border-left-color: var(--NihilityTheme1)
     border-left-width: $nihility-radius-0 + 0.1rem
     border-radius: $nihility-radius-0
     overflow: hidden
@@ -126,9 +126,11 @@
 .CodeLineRenderer
     background-color: transparent
 
-// Code block label
-.CalloutBadge-container
-    background-color: $nihility-theme-1
+// Code block language
+.CodeContainerRenderer-language-indicator
+    .CalloutBadge-container
+        background-color: black
+        color: $nihility-fg-code
 
 .GuildedSelect-container-option-color-gray
     // Label in editor
@@ -217,21 +219,21 @@
 .LinkRenderer
     // Link normally
     &, &:visited, &:focus
-        color: $nihility-fg-link
+        color: var(--NihilityLink)
     // Link clicked and hovered over
     &:hover, &:active,
     &:hover .MarkRenderer-read-only,
     &:active .MarkRenderer-read-only
-        color: $nihility-fg-link-hover
+        color: var(--NihilityLinkHover)
 
 // Override bold/italic highlighting
 .LinkRenderer
     &, &:visited, &:focus
         .MarkRenderer-read-only
-            color: $nihility-fg-link
+            color: var(--NihilityLink)
     &:active, &:hover
         .MarkRenderer-read-only
-            color: $nihility-fg-link-hover
+            color: var(--NihilityLinkHover)
 
 /*
  * --- Images ---
@@ -244,6 +246,10 @@
 // Video overlay
 .GradientOverlay-container.GradientOverlay-container-subtle-2
     border-radius: $nihility-radius-1
+
+// Selected images and videos
+.MediaRenderer-content-selected
+    border-color: var(--NihilitySelect)
 
 .RawVideoPlayer
     // Play arrow
@@ -313,7 +319,7 @@
             color: $nihility-fg-2
     // Container selected in editor
     &Renderer-container-selected
-        border-color: $nihility-theme-1
+        border-color: var(--NihilitySelect)
     // Channel name
     &CardFooter-channel-name
         color: $nihility-fg-2
@@ -409,6 +415,8 @@
 // Form
 .FormsRenderer
     border-radius: $nihility-radius-1
+    &-selected
+        border-color: var(--NihilitySelect)
 .CustomFormWrapper-container-standalone
     background-color: $nihility-shading-0
     // Form border
@@ -419,6 +427,9 @@
 .FormSection-section-header,
 .CustomFormHeader-title
     color: $nihility-fg-3
+// Form's description
+.CustomFormHeader-description
+    color: $nihility-fg-2
 
 // Form "Question X"
 .FormSection-section-header-style-result
@@ -484,7 +495,7 @@
         border-color: $nihility-fg-2
     // Big form input focus
     &:focus
-        border-color: $nihility-theme-2
+        border-color: var(--NihilityTheme2)
 
 
 // Form input word count
@@ -512,16 +523,16 @@
 // Form checkbox hover
 .CheckmarkIcon-container:hover .CheckmarkIcon-circle,
 .CheckboxV2-container-desktop:hover .CheckboxV2-box
-    border-color: $nihility-theme-1
+    border-color: var(--NihilityTheme1)
 // Form checkbox checked
 .CheckmarkIcon-container-selected .CheckmarkIcon-circle,
 .CheckboxV2-container-checked .CheckboxV2-box
-    background-color: $nihility-theme-1
-    border-color: $nihility-theme-0
+    background-color: var(--NihilityTheme1)
+    border-color: var(--NihilityTheme0)
 // Form checkbox checked hover
 .CheckmarkIcon-container-clickable:hover.CheckmarkIcon-container-selected .CheckmarkIcon-circle
-    background-color: $nihility-theme-2
-    border-color: $nihility-theme-1
+    background-color: var(--NihilityTheme2)
+    border-color: var(--NihilityTheme1)
 
 // Form checkbox label
 .CheckboxV2-label,
@@ -553,7 +564,7 @@
 
 // Form selector focused
 .GuildedSelect-container.GuildedSelect-container-dark .Select.is-focused .Select-control
-    border-color: $nihility-theme-2 !important
+    border-color: var(--NihilityTheme2) !important
 
 // Form selector icon
 .GuildedSelectIcon-container
@@ -562,7 +573,7 @@
 .GuildedSelect-container
     // Form selector arrow
     .Select-arrow
-        border-top-color: $nihility-theme-0
+        border-top-color: var(--NihilityTheme0)
     // Form selector placeholder
     .Select-placeholder
         color: $nihility-fg-1
@@ -673,7 +684,7 @@
         background-color: $nihility-fg-0
     // Quote/Reply buttons active
     &, &:hover, &:visited, &:active, &:focus
-        color: $nihility-theme-1
+        color: var(--NihilityTheme1)
 
 
 // Leave a comment/Share

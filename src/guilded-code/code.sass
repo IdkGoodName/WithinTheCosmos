@@ -18,12 +18,16 @@
     
     // DIFF
     &-deleted, &-deleted-sign
+        color: $nihility-bad-1
+    &-deleted-arrow
         color: $nihility-bad-0
     &-inserted, &-inserted-sign
+        color: $nihility-good-1
+    &-inserted-arrow
         color: $nihility-good-0
-    &-diff-diff
-        color: $nihility-normal-0
-    &-diff-coord
+    &-diff
+        color: $nihility-neutral-0
+    &-coord
         color: $nihility-fg-1
     
     // Values
@@ -57,9 +61,9 @@
         text-decoration: line-through solid
     &-url
         text-decoration: underline solid
-        color: $nihility-fg-link
+        color: var(--NihilityLink)
     &-url-reference
-        color: $nihility-fg-link-hover
+        color: var(--NihilityLinkHover)
 
     // Code
     &-code, &-code-block

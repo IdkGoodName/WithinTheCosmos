@@ -17,7 +17,7 @@
     fill: $nihility-fg-1
 // Guilded logo active
 .LogoAndWordmarkV2-container-theme-gilded
-    fill: $nihility-theme-2
+    fill: var(--NihilityTheme2)
 // User card
 .NavbarUserControls-container
     @include set-var(--border-color, $nihility-bg-0)
@@ -165,15 +165,20 @@ body
 // Group icon
 .GroupAvatar-container-non-base,
 .GroupAvatar-icon
-    // Inside group list
-    .GroupSelector-container &
-        border-radius: 50%
-        @include nihility-transition(border-radius, $nihility-bounce)
-    // Group hover
-    .GroupSelectorItem-container:hover &,
-    // Group selected
-    .GroupSelector-container .NavSelectorItem-container-active &
-        border-radius: $nihility-radius-1
+        // Inside group list
+        .GroupSelector-container &
+            border-radius: 50%
+            @include nihility-transition(border-radius, $nihility-bounce)
+        // Group hover
+        .GroupSelectorItem-container:hover &,
+        // Group selected
+        .GroupSelector-container .NavSelectorItem-container-active &,
+        // Group in preview
+        .GroupSelectorPreview-container &
+            border-radius: $nihility-radius-1
+
+.NavSelectorItem-container .GroupAvatar-container
+    font-size: 1.2em
 
 // Default group icon
 //.GroupAvatar-container-non-base
@@ -187,6 +192,10 @@ body
 // Group settings background
 .CreateGroupLivePreview-LiveView
     background: $nihility-bg-0
+
+// `member` badge on hover
+.GroupMembershipBadge-container
+    background-color: $nihility-glow-0
 
 /*
  * --- User card ---

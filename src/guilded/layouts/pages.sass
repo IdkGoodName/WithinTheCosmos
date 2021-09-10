@@ -69,7 +69,7 @@
     background-color: $nihility-bg-1
     // Post highlighted(currently all)
     &-highlight
-        border-top-color: $nihility-theme-0
+        border-top-color: var(--NihilityTheme0)
 // Post author's name
 .UserName-container,
 .TeamMemberBubble-name,
@@ -107,7 +107,7 @@
     @include nihility-transition(color)
     // Name hover
     &:hover
-        color: $nihility-theme-2
+        color: var(--NihilityTheme2)
 // Game info
 .PlayerAliasCard-container-type-game .PlayerAliasCard-info
     background-color: transparent
@@ -254,9 +254,9 @@
         color: $nihility-fg-3
     // Link
     &-label-link
-        color: $nihility-fg-link
+        color: var(--NihilityLink)
         &:hover
-            color: $nihility-fg-link-hover
+            color: var(--NihilityLinkHover)
 // "A new way to scrim" Description
 .TitleAndDescriptionPanel-description
     color: $nihility-fg-1
@@ -324,7 +324,7 @@
     // Focused
     &.TextInputWithLabel-container-focused,
     &.TextInputWithLabel-container-focused:hover
-        border-color: $nihility-theme-0 !important
+        border-color: var(--NihilityTheme0) !important
 // Add background to it as well
 .SelectMenu-container
     background-color: $nihility-bg-4

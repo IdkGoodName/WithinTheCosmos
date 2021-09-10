@@ -47,6 +47,13 @@
     &-text
         color: $nihility-fg-2
 
+.CreateGroupOverlayWrapper-upload-avatar
+    background-color: $nihility-bg-1
+    border-color: $nihility-bg-0
+    .SVGIcon-icon
+        fill: $nihility-fg-2
+    &:hover
+        background-color: $nihility-bg-3
 /*
  * --- Status ---
  */
@@ -88,10 +95,10 @@
         fill: $nihility-fg-2
     // Link
     &-link
-        color: $nihility-fg-link
+        color: var(--NihilityLink)
         // Hover
         &:hover
-            color: $nihility-fg-link-hover
+            color: var(--NihilityLinkHover)
 
 // Connecting
 .NetworkReconnectionDisplay
@@ -204,7 +211,7 @@
         background-color: $nihility-bg-1
     // Guilded's icon
     &-logomark
-        fill: $nihility-theme-0
+        fill: var(--NihilityTheme0)
 
 /*
  * -=- Gilded Buttons -=-
@@ -222,19 +229,25 @@
         border: 0
         box-shadow: none
         background: $nihility-bg-1
+        // Invite copy box
+        .CopyableTextbox-container &
+            background: $nihility-bg-3
     // Button hovered over
     &-desktop.FormConfirmButtonV2-container-filled:hover,
     &-filled.FormConfirmButtonV2-container-type-delete:hover,
     &-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete:hover
         background: $nihility-bg-2
         box-shadow: none
+        // Invite copy box
+        .CopyableTextbox-container &
+            background: $nihility-bg-4
     
     // Normal button text
     &-hollow .FormConfirmButtonV2-button-content
-        @include set-color($nihility-theme-0)
+        @include set-color(var(--NihilityTheme0))
     // Button hovered over text
     &-desktop.FormConfirmButtonV2-container-filled:hover .FormConfirmButtonV2-button-content
-        @include set-color($nihility-theme-1)
+        @include set-color(var(--NihilityTheme1))
     // Discard/Delete button text
     &-type-delete .FormConfirmButtonV2-button-content
         @include set-color($nihility-bad-0)
