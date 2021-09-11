@@ -3,7 +3,7 @@
  *    Skeletons & Loading styles
  * --============================--
  */
-    
+
 /*
  * --- Loading dots ---
  */
@@ -23,18 +23,36 @@
     &:nth-child(2),
     &:nth-child(3)
         animation-name: oldLoad
+    // In channel typing, add different animation
+    .ChatChannelInputTypingIndicator-container &
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3)
+            animation-name: animateTyping
 // Loading animation
 @keyframes oldLoad
     0%
         opacity: 0
         transform: translateY(2rem)
+    25%
+        opacity: 0
     50%
         opacity: 1
         transform: translateY(0rem)
     100%
         opacity: 0
         transform: translateY(0rem)
-    
+// Typing animation
+@keyframes animateTyping
+    0%
+        opacity: 0
+        transform: scale(0, 0)
+    50%
+        opacity: 1
+        transform: scale(1, 1)
+    100%
+        opacity: 0
+
 /*
  * --- Loading/connecting bar ---
  */

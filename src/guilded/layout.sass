@@ -3,29 +3,10 @@
  *    Common style overrides
  * --========================--
  */
-    
+
 /*
  * -=- Misc -=-
  */
-
-/*
- * --- Text ---
- */
-
-.GH1-container
-    color: $nihility-fg-3
-.GH2-container
-    color: $nihility-fg-2
-.GH3-container
-    color: $nihility-fg-1
-
-.GuildedText-container-type
-    &-heading1
-        color: $nihility-fg-3
-    &-heading4
-        color: $nihility-fg-3
-    &-subtext
-        color: $nihility-fg-1
 
 /*
  * --- Upload ---
@@ -212,64 +193,6 @@
     // Guilded's icon
     &-logomark
         fill: var(--NihilityTheme0)
-
-/*
- * -=- Gilded Buttons -=-
- */
-
-/*
- * --- Inactive ---
- */
-
-.FormConfirmButtonV2-container
-    // Normal button
-    &.FormConfirmButtonV2-container-type-gilded,
-    &-filled.FormConfirmButtonV2-container-type-delete,
-    &-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete
-        border: 0
-        box-shadow: none
-        background: $nihility-bg-1
-        // Invite copy box
-        .CopyableTextbox-container &
-            background: $nihility-bg-3
-    // Button hovered over
-    &-desktop.FormConfirmButtonV2-container-filled:hover,
-    &-filled.FormConfirmButtonV2-container-type-delete:hover,
-    &-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete:hover
-        background: $nihility-bg-2
-        box-shadow: none
-        // Invite copy box
-        .CopyableTextbox-container &
-            background: $nihility-bg-4
-    
-    // Normal button text
-    &-hollow .FormConfirmButtonV2-button-content
-        @include set-color(var(--NihilityTheme0))
-    // Button hovered over text
-    &-desktop.FormConfirmButtonV2-container-filled:hover .FormConfirmButtonV2-button-content
-        @include set-color(var(--NihilityTheme1))
-    // Discard/Delete button text
-    &-type-delete .FormConfirmButtonV2-button-content
-        @include set-color($nihility-bad-0)
-    // Discard/Delete button text hover
-    &-desktop.FormConfirmButtonV2-container-type-delete:hover .FormConfirmButtonV2-button-content
-        @include set-color($nihility-bad-1)
-    
-    // Inactive button
-    &.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled
-        // Container
-        &, &.FormConfirmButtonV2-container-desktop:hover
-            background-color: $nihility-bg-0 !important
-            border-color: $nihility-bg-3
-    // Inactive button content
-    &.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-disabled
-        // Text
-        .FormConfirmButtonV2-button-content,
-        &.FormConfirmButtonV2-container-desktop:hover .FormConfirmButtonV2-button-content
-            @include set-color($nihility-fg-0)
-// Text
-.FormConfirmButtonV2-button-content
-    @include set-color($nihility-fg-3)
 
 /*
  * -=- Icons -=-

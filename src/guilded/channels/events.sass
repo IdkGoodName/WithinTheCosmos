@@ -1,9 +1,12 @@
 /*
  * --- Calendar ---
  */
-    
+
 // Day cards
 .FullSizedCalendar
+    // Week day header
+    &WeekdayHeader-day
+        color: $nihility-fg-1
     // Calendar days and weeks
     &-week
         background-color: $nihility-bg-4
@@ -11,6 +14,10 @@
         border-width: 1px
         border-style: solid
         border-color: $nihility-bg-1
+        background-color: $nihility-bg-4
+        // Day numbers
+        .FullSizedCalendarDayHeader-date
+            color: $nihility-fg-2
     // Event creation
     &Day-container-desktop.FullSizedCalendarDay-container-can-create
         @include nihility-transition(background-color)
@@ -20,24 +27,22 @@
         fill: $nihility-fg-1
         @include nihility-transition(opacity)
     // Calendar special days
+    &Day-container-in-past,
     &Day-container-different-month
         background-color: $nihility-bg-3
         color: $nihility-fg-1
-        color: black
+        // Don't make text stand out
+        .FullSizedCalendarDayHeader-date
+            color: $nihility-fg-0
     &Day-container-today
         background-color: $nihility-bg-5
-    // Day numbers
-    &DayHeader-date
-        color: $nihility-fg-2
-    &DayHeader-date-different-month
-        color: $nihility-fg-1
-    &DayHeader-date-today
-        background-color: var(--NihilityTheme0)
-        color: white
+        // Highlight the date
+        .FullSizedCalendarDayHeader-date
+            background-color: var(--NihilityTheme0)
+            color: white
     // Event name
     &Event-name
         color: $nihility-fg-3
-
 
 // Buttons
 .ToggleControl-container
@@ -48,6 +53,12 @@
         background-color: $nihility-bg-1
     &-selected:focus, &-selected:active
         color: var(--NihilityTheme0)
+// Month switching
+.DateSwitcher
+    &-month-name
+        color: $nihility-fg-3
+    &-button
+        fill: $nihility-fg-1
 
 // Upcoming
 .UpcomingCalendar
@@ -56,9 +67,6 @@
     &Event-container-desktop:hover
         background-color: $nihility-bg-3
 
-// All day checkmark icon
-.ToggleFieldWrapper-icon
-    fill: $nihility-fg-1
 // Date input
 .FormBoxAndLabel
     &-box
@@ -85,6 +93,21 @@
 .TimeFieldWrapper-timezone-label
     color: $nihility-fg-1
 
+/*
+ * --- Pop up ---
+ */
+
+// Pop-up top-level
+.TransientMenu-container-style-card
+    overflow: hidden
+    background-color: $nihility-bg-3
+// Pop up banner
+.GlassySplashHeader
+    &-image-wrapper &-image
+        mask-image: linear-gradient(to bottom, black, transparent 7rem)
+    // Remove its highlighting
+    .EventCard-container:hover &-container
+        background-color: transparent
 /*
  * --- View ---
  */
@@ -127,7 +150,7 @@
         color: $nihility-fg-1
         &::before
             background-color: $nihility-fg-1
-    
+
 .EventRsvpsHeader
     // See all link
     &-attendance-see-all
