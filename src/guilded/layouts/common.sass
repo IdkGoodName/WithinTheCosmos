@@ -1,5 +1,5 @@
 /*
- * --- State ---
+ * -=- State -=-
  */
 
 // Toggle/switch field
@@ -37,7 +37,7 @@
             background-color: $nihility-bg-1
 
 /*
- * --- Text ---
+ * -=- Text -=-
  */
 
 // Text
@@ -55,6 +55,10 @@
         color: $nihility-fg-3
     &-subtext
         color: $nihility-fg-1
+
+/*
+ * -=- Buttons -=-
+ */
 
 /*
  * --- Golden button ---
@@ -109,3 +113,28 @@
 // Text
 .FormConfirmButtonV2-button-content
     @include set-color($nihility-fg-3)
+
+/*
+ * --- Tab buttons ---
+ */
+
+.HorizontalTab,
+.SimpleIconTabMenuHeaderItem
+    // Tab
+    &-container
+        &:hover, &:active, &:focus
+            background-color: rgba($nihility-bg-hover, 0.1)
+        // Text
+        .GH2-container
+            color: $nihility-fg-2
+        &-selected .GH2-container
+            color: $nihility-fg-3
+        // Icon
+        .SimpleIconTabMenuHeaderItem-icon
+            fill: $nihility-fg-2
+        &-selected .SimpleIconTabMenuHeaderItem-icon
+            fill: $nihility-fg-3
+// Tab highlighter
+.SimpleIconTabMenuHeaderItem-container-selected::after,
+.HorizontalTab-highlighter
+    background-color: $nihility-fg-2

@@ -95,6 +95,37 @@
         background-color: $nihility-bg-4
 
 /*
+ * -=- Join through invite -=-
+ */
+
+// Invite page background
+.InvitePage-container
+    background-color: $nihility-bg-0
+// The information area of the invite
+.InvitePage-panel
+    background-color: $nihility-bg-3
+
+// Accept invite
+.GuildedText-container-type-bigBody
+    color: $nihility-fg-1
+.MemberCountPill
+    // X members, Y online pills
+    &-container
+        background-color: $nihility-bg-4
+    // Member count circle
+    &-circle
+        &-green
+            background-color: $nihility-good-0
+        &-grey
+            background-color: $nihility-fg-2
+// Accept invite and join Y server
+.SocialContextHeader-header-text
+    color: $nihility-fg-2
+// This is how you'll appear to your teammates
+.AcceptTeamInviteControl-user-profile-preview
+    color: $nihility-fg-1
+
+/*
  * -=- Other -=-
  */
 
@@ -258,7 +289,7 @@
         color: $nihility-fg-1
         @include nihility-transition(color)
     &-container:hover &-subtitle
-        color: $nihility-fg-3   
+        color: $nihility-fg-3
 // Individual response container
 .CustomFormIndividualResponse-result-display
     background-color: $nihility-bg-2

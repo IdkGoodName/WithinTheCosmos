@@ -3,8 +3,7 @@
  *    Guilded pages
  * --===============--
  */
-    
-    
+
 /*
  * -=- Profiles -=-
  */
@@ -32,6 +31,14 @@
     // Hover
     &-container-inactive::after
         background-color: $nihility-bg-hover
+.UserProfilePictureControl
+    // Status icon
+    &-online-status
+        border-color: $nihility-bg-0
+        right: 0
+    // Avatar
+    &-picture
+        border-radius: $nihility-radius-3
 
 /*
  * --- Posts ---
@@ -125,6 +132,14 @@
     // Details
     &-metadata
         color: $nihility-fg-1
+
+/*
+ * --- Friends ---
+ */
+
+// A button when hovering over friends
+.FriendsList-actions .FriendList-action-icon
+    background-color: $nihility-bg-2
 
 /*
  * -=- DMs -=-
