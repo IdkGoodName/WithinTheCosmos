@@ -42,9 +42,12 @@
 // Connections/integrations
 .SocialLinkPanel-header
     background-color: $nihility-bg-1
+// Email settings header
+.UserSettingsEmailPage-header
+    color: $nihility-fg-3
 
 /*
- * --- Server Settings ---
+ * -=- Server Settings -=-
  */
 
 // Channel or category notifications header
@@ -259,3 +262,17 @@
 // Role description
 .TeamRolesListInstructions-container
     color: $nihility-fg-1
+
+// Permission syncing
+.TeamChannelRoleSyncControl
+    &-container
+        background-color: $nihility-bg-2
+    // Syncing text
+    &-info
+        color: $nihility-fg-2
+    &-category-name
+        color: $nihility-fg-3
+        font-weight: bold
+    // Synced icon
+    &-icon
+        fill: $nihility-fg-1

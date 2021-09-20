@@ -56,6 +56,34 @@
     &-subtext
         color: $nihility-fg-1
 
+// Link/Hyperlink
+.TeamListItemsCompletedHeader-show-complete,
+.CustomFormIndividualResults-toggle-expand,
+.LandingPageV3InternalLinkColumn-link,
+.UserSettingsEmailPage-select-button,
+.CustomFormControls-edit-response,
+.ChatV2MessageEditHelper-action,
+.HoverContext-container-linkify,
+.TeamSettingsWebhookPage-link,
+.PrismTokenUrlRenderer-link,
+.LandingFooterSEOLinks-link,
+.CardGames-overflow-link,
+.LandingFooterApps-link,
+.ChatEmbedContent-link,
+.ChatEmbedAuthor-link,
+.EmbedCardFooter-link,
+.CancelText-container,
+.RouteLink-linkify,
+.LinkRenderer
+    // Link normally
+    &, &:visited, &:focus
+        color: var(--NihilityLink)
+    // Link clicked and hovered over
+    &:hover, &:active,
+    &:hover .MarkRenderer-read-only,
+    &:active .MarkRenderer-read-only
+        color: var(--NihilityLinkHover)
+
 /*
  * -=- Buttons -=-
  */
@@ -138,3 +166,80 @@
 .SimpleIconTabMenuHeaderItem-container-selected::after,
 .HorizontalTab-highlighter
     background-color: $nihility-fg-2
+
+/*
+ * -=- Animated -=-
+ */
+
+// Flash when scrolling to a message or a forum post
+.ScrollFlasher-container
+    background-color: $nihility-important
+
+/*
+ * -=- Badges -=-
+ */
+
+/*
+ * --- User badges ---
+ */
+
+.UserBadge
+    // If there is an icon in the badge, remove the name
+    &-image ~ &-name
+        display: none
+    // Override all colours for badges
+    &-container:not(.UserFlairRow-icon)
+        background-color: $nihility-glow-0 !important
+
+/*
+ * -=- Bars -=-
+ */
+
+// Container scrollbar
+.GuildedSelect-container.GuildedSelect-container-dark .Select-menu-outer .Select-menu,
+.SlateEditor-container-type-reaction .SlateEditor-editor,
+.SlateEditor-container-type-simple .SlateEditor-editor,
+.UserAliasAdditionalInfoDisplayWrapper-container,
+.TeamSettingsListItems-container-desktop:hover,
+.ChatChannelSwitcherOverlay-results-container,
+.Sheet-container-scrollable .Sheet-content,
+.OnboardingTeamGameInfoStage-form-wrapper,
+.ItemChooser-items-wrapper-scrollable,
+.VoiceChannelDisplay-container-child,
+.NestedSettingsWrapper-second-child,
+.CodeContainerRenderer-container,
+.ChannelPinnedMessages-container,
+.TournamentsPortalPage-container,
+.ReactionPickerNavbar-container,
+.TeamMemberRolesDisplay-list,
+.ChatChannelList-items:hover,
+.Scrollable-container:hover,
+.OptionsMenu-option-content,
+.TeamNavMenu-wrapper:hover,
+.TextAreaInput-text-area,
+.ChatV2Sidebar-container,
+.UserProfileV3-container,
+.SimpleDrawer-container,
+.ReactionPicker-content,
+.ChatChannelList-items,
+.ModalV2-modal-content,
+.InsertGifPicker-gifs,
+.Scrollable-container,
+.ReactionPicker-list,
+.TypeaheadMenu-list,
+.FormsRenderer
+    // Firefox scrollbar
+    scrollbar-color: $nihility-bar transparent !important
+    // Webkit/Chromium/Blink scrollbar
+    &::-webkit-scrollbar-thumb
+        background: $nihility-bar !important
+
+// Upload/XP progress bar
+.GoldenProgressBar
+    // Background
+    &-container,
+    &-container-theme-dark
+        background-color: $nihility-bg-0
+    // Progress
+    &-progress
+        background-color: $nihility-progress

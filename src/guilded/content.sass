@@ -199,33 +199,6 @@
     border-radius: $nihility-radius-1
     padding: 0 $nihility-spacing-side $nihility-spacing-top $nihility-spacing-side
 
-// Link/Hyperlink
-.TeamListItemsCompletedHeader-show-complete,
-.CustomFormIndividualResults-toggle-expand,
-.LandingPageV3InternalLinkColumn-link,
-.CustomFormControls-edit-response,
-.ChatV2MessageEditHelper-action,
-.HoverContext-container-linkify,
-.TeamSettingsWebhookPage-link,
-.PrismTokenUrlRenderer-link,
-.LandingFooterSEOLinks-link,
-.CardGames-overflow-link,
-.LandingFooterApps-link,
-.ChatEmbedContent-link,
-.ChatEmbedAuthor-link,
-.EmbedCardFooter-link,
-.CancelText-container,
-.RouteLink-linkify,
-.LinkRenderer
-    // Link normally
-    &, &:visited, &:focus
-        color: var(--NihilityLink)
-    // Link clicked and hovered over
-    &:hover, &:active,
-    &:hover .MarkRenderer-read-only,
-    &:active .MarkRenderer-read-only
-        color: var(--NihilityLinkHover)
-
 // Override bold/italic highlighting
 .LinkRenderer
     &, &:visited, &:focus
