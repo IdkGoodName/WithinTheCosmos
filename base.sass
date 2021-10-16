@@ -11,111 +11,119 @@
  */
 
 // Background
-$nihility-bg-0: #090909
-$nihility-bg-1: #0c0c0c
-$nihility-bg-2: #0f0f0f
-$nihility-bg-3: #121212
-$nihility-bg-4: #181818
-$nihility-bg-5: #222222
-$nihility-bg-hover: #777777
-$nihility-bg-lighter: rgba($nihility-bg-hover, .1)
+$bg-0: #090909
+$bg-1: #0c0c0c
+$bg-2: #0f0f0f
+$bg-3: #121212
+$bg-4: #181818
+$bg-5: #222222
+$bg-hover: #777777
+$bg-lighter: rgba($bg-hover, .1)
 
-$nihility-shading-0: rgba(0,0,0,.15)
-$nihility-shading-1: rgba(0,0,0,.2)
-$nihility-glow-0: rgba(255,255,255,.1)
+$shading-0: rgba(0, 0, 0, .07)
+$shading-1: rgba(0,0,0,.15)
+$shading-2: rgba(0,0,0,.2)
+$glow-0: rgba(255,255,255,.1)
 
-$nihility-skeleton-0: #252525
-$nihility-skeleton-1: linear-gradient(270deg, $nihility-bg-5, $nihility-skeleton-0, $nihility-skeleton-0, $nihility-bg-5)
+$skeleton-0: #252525
+$skeleton-1: linear-gradient(270deg, $bg-5, $skeleton-0, $skeleton-0, $bg-5)
 
 // Text
-$nihility-fg-0: #626262
-$nihility-fg-1: #727272
-$nihility-fg-2: #AAAAAA
-$nihility-fg-3: #DDDDDD
+$fg-0: #626262
+$fg-1: #727272
+$fg-2: #AAAAAA
+$fg-3: #DDDDDD
 
 // Formatting
-$nihility-fg-link: #d6a284
-$nihility-fg-link-hover: #d4b3a4
-$nihility-fg-format: $nihility-fg-3
-$nihility-fg-code: #da8484
+$fg-link: #d6a284
+$fg-link-hover: #d4b3a4
+$fg-format: $fg-3
+$fg-code: #da8484
 
 // Code formatting
-$nihility-code-string: #e26751
-$nihility-code-special: #a46ce4
-$nihility-code-value: #76d463
+$code-string: #e26751
+$code-special: #a46ce4
+$code-value: #76d463
 
-$nihility-code-keyword: #d682a2
+$code-keyword: #d682a2
 
-$nihility-code-name: #89aae7
-$nihility-code-variable: #ebe0c1
-$nihility-code-class-name: #c581ec
-$nihility-code-function: #ecca81
-$nihility-code-property: #82d6d6
+$code-name: #89aae7
+$code-variable: #ebe0c1
+$code-class-name: #c581ec
+$code-function: #ecca81
+$code-property: #82d6d6
 
-// Spacing
-$nihility-spacing-top: 0.2rem
-$nihility-spacing-side: 0.4rem
-
-$nihility-spacing-0: 0.5rem
-$nihility-spacing-1: 1rem
-$nihility-spacing-2: 1.5rem
-$nihility-spacing-3: 2rem
-$nihility-spacing-4: 3rem
-$nihility-spacing-5: 4rem
-
-// Misc colours
-$nihility-mark: #ddbb9b
-
-$nihility-theme-0: #db9871
-$nihility-theme-1: #cfa084
-$nihility-theme-2: #c0a393
-$nihility-bar: rgba(0,0,0,0.4)
-
-// Colourful
-$nihility-mention: #e94343
-$nihility-important: #f0664d
-$nihility-verified: #61d157
-$nihility-active: #6e80e9
-$nihility-stream: #e03056
-$nihility-progress: #a36ee9
-
-$nihility-replying: $nihility-active
-$nihility-private-receive: #6ee974
-$nihility-private-send: #e96eb2
-$nihility-mentioned: #e96d57
-
-// Status
-$nihility-bad-0: #cc5353
-$nihility-bad-1: #fc8080
-$nihility-normal-0: #9b9b9b
-$nihility-normal-1: #cccccc
-$nihility-neutral-0: #c48c4d
-$nihility-neutral-1: #e9b170
-$nihility-good-0: #6aca57
-$nihility-good-1: #84e970
-
-// Blurs and Opacity
-$nihility-floating-opacity: 0.95
-$nihility-mild-opacity: 0.55
-$nihility-skeleton-opacity: 0.3
-$nihility-blur: 1px
-$nihility-grey: 100%
-
-// Animations
-$nihility-transition: 0.2s
-$nihility-animation: 2s
-$nihility-bounce: cubic-bezier(0,2,1,.1)
+// Borders
+$border-light-0: rgba(255, 255, 255, 0.1)
+$border-light-1: rgba(255, 255, 255, 0.15)
+$border-dark-0: rgba(0, 0, 0, 0.1)
+$border-dark-1: rgba(0, 0, 0, 0.15)
 
 // Radius
-$nihility-radius-0: 0.3rem
-$nihility-radius-1: 0.5rem
-$nihility-radius-2: 1.2rem
-$nihility-radius-3: 1.5rem
+$radius-0: 0.2rem
+$radius-1: 0.3rem
+$radius-2: 0.5rem
+$radius-3: 1.2rem
+$radius-4: 1.5rem
+
+// Spacing
+$spacing-top: 0.2rem
+$spacing-side: 0.4rem
+
+$spacing-0: 0.5rem
+$spacing-1: 1rem
+$spacing-2: 1.5rem
+$spacing-3: 2rem
+$spacing-4: 3rem
+$spacing-5: 4rem
+
+// Misc colours
+$mark: #f0b177
+
+$theme-0: #db9871
+$theme-1: #cfa084
+$theme-2: #c0a393
+$bar: rgba(0,0,0,0.4)
+
+// Colourful
+$mention: #e94343
+$important: #f0664d
+$verified: #61d157
+$active: #6e80e9
+$stream: #e03056
+$progress: #a36ee9
+
+$replying: $active
+$private-receive: #6ee974
+$private-send: #e96eb2
+$mentioned: #e96d57
+
+// Status
+$bad-0: #cc5353
+$bad-1: #fc8080
+$normal-0: #9b9b9b
+$normal-1: #cccccc
+$neutral-0: #c48c4d
+$neutral-1: #e9b170
+$good-0: #6aca57
+$good-1: #84e970
+
+// Blurs and Opacity
+$floating-opacity: 0.95
+$mild-opacity: 0.55
+$skeleton-opacity: 0.3
+$blur: 1px
+$grey: 100%
+
+// Animations
+$transition: 0.2s
+$animation: 2s
+$bounce: cubic-bezier(0,2,1,.1)
 
 // Misc
-$nihility-shadow: 0 0 0.25rem white
-$nihility-icon-size: 3.5rem
-$nihility-hover-brightness: 20%
+$shadow: 0 0 0.25rem white
+$icon-size: 3.5rem
+$hover-brightness: 20%
 
 /*
  * --- Mixins ---
@@ -130,7 +138,7 @@ $nihility-hover-brightness: 20%
     #{$name}: $value
 
 // For setting transition in a lot of places
-@mixin nihility-transition($property, $fn: ease-out)
+@mixin set-transition($property, $fn: ease-out)
     transition: $property
-    transition-duration: $nihility-transition
+    transition-duration: $transition
     transition-timing-function: $fn

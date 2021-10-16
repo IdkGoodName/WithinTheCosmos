@@ -1,27 +1,27 @@
 // Whole container
 .TransientMenuPortalContext-portal-container
-    opacity: $nihility-floating-opacity
+    opacity: $floating-opacity
 // Overlay
 .ModalWrapper-container-unstyled > .Overlay-status-context
-    margin: $nihility-spacing-2
+    margin: $spacing-2
     width: 95%
 
 // Modal
 .ModalV2-container
-    background-color: $nihility-bg-3
-    border-color: $nihility-bg-0
+    background-color: $bg-3
+    border-color: $border-dark-1
 // Modal's title
 .Form-header
-    color: $nihility-fg-2
+    color: $fg-2
 // Avatar/banner input title
 .ImageInput-label
-    color: $nihility-fg-3
+    color: $fg-3
 // Field input title
 .FormFieldLabel-container
-    color: $nihility-fg-2
+    color: $fg-2
 // Field input description
 .FormFieldDescription-container
-    color: $nihility-fg-1
+    color: $fg-1
 
 /*
  * --- Modal with header ---
@@ -29,32 +29,32 @@
 
 // Modal's header
 .ModalHeaderV2-container
-    background-color: $nihility-bg-1
+    background-color: $bg-1
 .ModalHeaderV2-header
-    color: $nihility-fg-3
+    color: $fg-3
 // Modal with header's content
 .ModalV2-container-has-header .ModalV2-modal-content
-    border-top-color: $nihility-bg-0
+    border-top-color: $bg-0
 .ConfirmationOverlay-text
-    color: $nihility-fg-2
+    color: $fg-2
 // Modal's footer
 .ModalFooter-container
-    border-top-color: $nihility-bg-0
+    border-top-color: $bg-0
 
 // Fullscreen modal(settings)
 .ModalV2-container-fullscreen
-    background-color: $nihility-bg-3
-    opacity: $nihility-floating-opacity
+    background-color: $bg-3
+    opacity: $floating-opacity
     width: 100%
     height: 100%
 // Rounds the modal - :not() makes sure that the modal isn't "Unsaved changes" and similar
 .ModalV2-container:not(.ModalV2-container-has-header),
 .ModalV2-container:not(.ModalV2-container-has-header) .ModalV2-modal-content
-    border-radius: $nihility-radius-3
+    border-radius: $radius-4
 // Modal close button
 .ModalV2CloseButton-container
-    fill: $nihility-fg-1
-    @include nihility-transition(fill)
+    fill: $fg-1
+    @include set-transition(fill)
     // Modal close button hover
     &:hover
-        fill: $nihility-fg-2
+        fill: $fg-2

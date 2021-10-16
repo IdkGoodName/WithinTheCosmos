@@ -1,29 +1,29 @@
 :root
-    @include set-var(--NihilityTheme0, $nihility-theme-0)
-    @include set-var(--NihilityTheme1, $nihility-theme-1)
-    @include set-var(--NihilityTheme2, $nihility-theme-2)
-    @include set-var(--NihilitySelect, rgba($nihility-theme-0, 0.6))
-    @include set-var(--NihilityLink, $nihility-fg-link)
-    @include set-var(--NihilityLinkHover, $nihility-fg-link-hover)
+    @include set-var(--NihilityTheme0, $theme-0)
+    @include set-var(--NihilityTheme1, $theme-1)
+    @include set-var(--NihilityTheme2, $theme-2)
+    @include set-var(--NihilitySelect, rgba($theme-0, 0.6))
+    @include set-var(--NihilityLink, $fg-link)
+    @include set-var(--NihilityLinkHover, $fg-link-hover)
 
 body
-    background-color: $nihility-bg-1
+    background-color: $bg-1
 
 // Variable definition/redefinition
 body,
 .ChannelWrapper-container,
 .ChatChannelMessagesList-container,
 .SlateEditor-container-type-default
-    @include set-var(--body-text-color, $nihility-fg-2)
-    @include set-var(--nihility-local-fg, $nihility-fg-2)
+    @include set-var(--body-text-color, $fg-2)
+    @include set-var(--nihility-local-fg, $fg-2)
     @include set-var(--game-color, var(--NihilityTheme2))
-    @include set-var(--border-color, $nihility-bg-1)
-    color: $nihility-fg-2
+    @include set-var(--border-color, $bg-1)
+    color: $fg-2
 // Change selection
 ::selection
     background-color: var(--NihilitySelect)
     color: white
 // Change variables
 .AppV2-container-minimal-nav
-    @include set-var(--left-v4-nav-color, $nihility-bg-0)
-    @include set-var(--nav-v4-sidebar-background-color, $nihility-bg-0)
+    @include set-var(--left-v4-nav-color, $bg-0)
+    @include set-var(--nav-v4-sidebar-background-color, $bg-0)

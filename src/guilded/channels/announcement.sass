@@ -1,16 +1,16 @@
 .ContentMetadataCreationInfo-from-now-link
     &, &:visited, &:active, &:focus
-        color: $nihility-fg-1
+        color: $fg-1
     &:hover
-        color: $nihility-fg-2
+        color: $fg-2
 
 // Pinned announcements
 .TeamPostRow-container
-    background-color: $nihility-bg-4
+    background-color: $bg-4
 
 // Unread announcement
 .TeamAnnouncementItem-container-unread .TeamAnnouncementItem-widget-wrapper
-    background-color: $nihility-bg-2
+    background-color: $bg-2
 
 /*
  * --- Role label ---
@@ -19,11 +19,11 @@
 
 // Role name
 .TeamWidgetProfileRank-rank-name
-    color: $nihility-fg-1
-    @include nihility-transition(color)
+    color: $fg-1
+    @include set-transition(color)
     // Role name hover
     &:hover
-        color: $nihility-fg-2
+        color: $fg-2
 
 /*
  * --- Comment section ---
@@ -31,24 +31,24 @@
 
 // Replies preview
 .LastReplyDisplay-container
-    @include set-var(--nihility-local-fg, $nihility-fg-2)
+    @include set-var(--nihility-local-fg, $fg-2)
     &:hover
-        @include set-var(--nihility-local-fg, $nihility-fg-3)
+        @include set-var(--nihility-local-fg, $fg-3)
 // Preview text
 .LastReplyDisplayContent-message-summary
-    @include nihility-transition(color)
+    @include set-transition(color)
 // View more
 .CircleImageStack-label
-    color: $nihility-fg-1
+    color: $fg-1
     // View more hovered over
     .CircleImageStack-container-actionable:hover &
-        color: $nihility-fg-2
+        color: $fg-2
 
 .LastReplyDisplay
     // Timestamp
     &Content-timestamp
-        color: $nihility-fg-1
+        color: $fg-1
         transition: color 0.2s
     // Comment hovered over should make time stamp brighter
     &-container:hover &Content-container &Content-timestamp
-        color: $nihility-fg-2
+        color: $fg-2

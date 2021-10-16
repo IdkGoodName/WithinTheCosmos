@@ -4,11 +4,11 @@
 
 // About section hover
 .OverviewWidgetItemWrapper-container-clickable::after
-    background-color: $nihility-bg-hover
+    background-color: $bg-hover
 
 // Info icon
 .IconAndLabel-icon
-    fill: $nihility-fg-1
+    fill: $fg-1
 
 // Handle input focused
 .OverviewWidgetItemEditable-container:focus.OverviewWidgetItemEditable-container
@@ -32,7 +32,7 @@
         z-index: 2
     // Description below the name of the server
     &-description
-        color: $nihility-fg-2
+        color: $fg-2
 
 /*
  * --- Showcase ---
@@ -42,20 +42,20 @@
 .TabEmptyState-title
     // Title
     &-title
-        color: $nihility-fg-2
+        color: $fg-2
     // Description
     &-subtitle
-        color: $nihility-fg-1
+        color: $fg-1
 
 .ToggleControl-container.ToggleControl-container-highlighted
-    border-color: $nihility-fg-0
+    border-color: $fg-0
 
 .OverviewWidgetItemWrapper-container-type-filled,
 .TeamOverviewContentItemCard-container
-    background-color: $nihility-bg-2
+    background-color: $bg-2
     // Content showcase hover
     &::after
-        background-color: $nihility-bg-hover
+        background-color: $bg-hover
 
 // Showcase text
 .TeamOverviewContentItemCard
@@ -63,29 +63,29 @@
     &-title
         font-weight: bold
     &-title, &-subtitle
-        color: $nihility-fg-2
+        color: $fg-2
     // Content showcase sub-title
     &-subtitle2
-        color: $nihility-fg-1
+        color: $fg-1
 
 // See all
 .TeamOverviewSectionHeader-cta-text
-    color: $nihility-fg-1
-    @include nihility-transition(color)
+    color: $fg-1
+    @include set-transition(color)
     // See all hover
     &:hover
-        color: $nihility-fg-2
+        color: $fg-2
 
 // Showcase event buttons
 .ToggleControlButton
     &-container, &-icon
-        @include set-color($nihility-fg-1)
+        @include set-color($fg-1)
 
 .ToggleControlButton-container.ToggleControlButton-container
     // Showcase event buttons hover
     &-desktop:hover .ToggleControlButton-icon,
     &-selected .ToggleControlButton-icon
-        fill: $nihility-fg-2
+        fill: $fg-2
 
 /*
  * --- Carousel/Scrollable list ---
@@ -94,27 +94,27 @@
 // Carousel blurs
 .CarouselList-container-size-sm .CarouselList-blur-light.CarouselList-left-blur,
 .CarouselList-blur-light.CarouselList-left-blur
-    background-image: linear-gradient(to left, rgba($nihility-bg-3, 0), $nihility-bg-3 100%)
+    background-image: linear-gradient(to left, rgba($bg-3, 0), $bg-3 100%)
 
 .CarouselList-container-size-sm .CarouselList-blur-light.CarouselList-right-blur,
 .CarouselList-blur-light.CarouselList-right-blur
-    background-image: linear-gradient(to right, rgba($nihility-bg-3, 0), $nihility-bg-3 100%)
+    background-image: linear-gradient(to right, rgba($bg-3, 0), $bg-3 100%)
 
 // Carousel arrow
 .CarouselList-controls-arrow
     transition: 1s
-    fill: $nihility-fg-2
+    fill: $fg-2
 
 // Leaderboard
 .TeamOverviewLeaderboardSection-leaderboard-container
-    background-color: $nihility-bg-2
+    background-color: $bg-2
 // Leaderboard game name
 .GameIconAndGameName-container-style-header .GameIconAndGameName-game-name
-    color: $nihility-fg-3
+    color: $fg-3
 // Leaderboard header
 .LeaderboardHeader
     &-title, &-name, &-stats-header
-        color: $nihility-fg-3
+        color: $fg-3
 // Leaderboard stats and numbers
 .LeaderboardRow-stat
-    color: $nihility-fg-2
+    color: $fg-2

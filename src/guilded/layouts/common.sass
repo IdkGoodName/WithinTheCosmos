@@ -6,35 +6,35 @@
 .ToggleFieldWrapper
     // Toggle field title
     &-label
-        color: $nihility-bad-0
+        color: $bad-0
         font-weight: bold
-        @include nihility-transition(color)
+        @include set-transition(color)
     // Toggle field toggled title
     &-label-active
-        color: $nihility-good-0
+        color: $good-0
         font-weight: bolder
     // Moderator view tooltip icon
     &-tooltip-icon
-        fill: $nihility-fg-2
+        fill: $fg-2
     // All day checkmark icon
     &-icon
-        fill: $nihility-fg-1
+        fill: $fg-1
 
 .SwitchInput
     // Slider off
     &-container .SwitchInput-slide
-        background-color: $nihility-bad-0
+        background-color: $bad-0
     // Slider on
     &-container-on .SwitchInput-slide
-        background-color: $nihility-good-0
+        background-color: $good-0
     // Slider thumb
     &-tab
-        background-color: $nihility-bg-3
+        background-color: $bg-3
         // White shadow
-        box-shadow: $nihility-shadow
+        box-shadow: $shadow
         // Disabled
         .SwitchInput-container-disabled &
-            background-color: $nihility-bg-1
+            background-color: $bg-1
 
 /*
  * -=- Text -=-
@@ -42,19 +42,19 @@
 
 // Text
 .GH1-container
-    color: $nihility-fg-3
+    color: $fg-3
 .GH2-container
-    color: $nihility-fg-2
+    color: $fg-2
 .GH3-container
-    color: $nihility-fg-1
+    color: $fg-1
 
 .GuildedText-container-type
     &-heading1
-        color: $nihility-fg-3
+        color: $fg-3
     &-heading4
-        color: $nihility-fg-3
+        color: $fg-3
     &-subtext
-        color: $nihility-fg-1
+        color: $fg-1
 
 // Link/Hyperlink
 .TeamListItemsCompletedHeader-show-complete,
@@ -99,19 +99,19 @@
     &-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete
         border: 0
         box-shadow: none
-        background: $nihility-bg-1
+        background: $bg-1
         // Invite copy box
         .CopyableTextbox-container &
-            background: $nihility-bg-3
+            background: $bg-3
     // Button hovered over
     &-desktop.FormConfirmButtonV2-container-filled:hover,
     &-filled.FormConfirmButtonV2-container-type-delete:hover,
     &-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete:hover
-        background: $nihility-bg-2
+        background: $bg-2
         box-shadow: none
         // Invite copy box
         .CopyableTextbox-container &
-            background: $nihility-bg-4
+            background: $bg-4
 
     // Normal button text
     &-hollow .FormConfirmButtonV2-button-content
@@ -121,26 +121,71 @@
         @include set-color(var(--NihilityTheme1))
     // Discard/Delete button text
     &-type-delete .FormConfirmButtonV2-button-content
-        @include set-color($nihility-bad-0)
+        @include set-color($bad-0)
     // Discard/Delete button text hover
     &-desktop.FormConfirmButtonV2-container-type-delete:hover .FormConfirmButtonV2-button-content
-        @include set-color($nihility-bad-1)
+        @include set-color($bad-1)
 
     // Inactive button
     &.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled
         // Container
         &, &.FormConfirmButtonV2-container-desktop:hover
-            background-color: $nihility-bg-0 !important
-            border-color: $nihility-bg-3
+            background-color: $bg-0 !important
+            border-color: $border-dark-0
     // Inactive button content
     &.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-disabled
         // Text
         .FormConfirmButtonV2-button-content,
         &.FormConfirmButtonV2-container-desktop:hover .FormConfirmButtonV2-button-content
-            @include set-color($nihility-fg-0)
+            @include set-color($fg-0)
 // Text
 .FormConfirmButtonV2-button-content
-    @include set-color($nihility-fg-3)
+    @include set-color($fg-3)
+
+/*
+ * --- Custom animations ---
+ */
+
+// Message avatar bouncing
+.ChatV2MessageHeader-avatar-wrapper, .ChatV2MessageHeader-avatar
+    @include set-transition(border-radius, $bounce)
+
+    .ChatV2Message-header:hover &
+        border-radius: $radius-2
+
+.PlayerCardProfilePicture-avatar
+    @include set-transition(border-radius, $bounce)
+
+    // Announcement & forum bouncing
+    .TeamWidgetProfileDetails-container:hover &,
+    // Member list avatar bouncing
+    .SidebarUsersRoleInfo-user:hover &,
+    // Doc bouncing
+    .DocReader-header:hover &
+        border-radius: $radius-2
+
+// Favourite server bouncing
+.NavV4BadgedItem-image, .NavV4BadgedItem-icon-wrapper
+    border-radius: 50%
+    @include set-transition(border-radius, $bounce)
+
+    .NavV4BadgedItem-container:hover &
+        border-radius: $radius-2
+
+// Group icon bouncing
+.GroupAvatar-container-non-base,
+.GroupAvatar-icon
+        // Inside group list
+        .GroupSelector-container &
+            border-radius: 50%
+            @include set-transition(border-radius, $bounce)
+        // Group hover
+        .GroupSelectorItem-container:hover &,
+        // Group selected
+        .GroupSelector-container .NavSelectorItem-container-active &,
+        // Group in preview
+        .GroupSelectorPreview-container &
+            border-radius: $radius-2
 
 /*
  * --- Tab buttons ---
@@ -151,21 +196,21 @@
     // Tab
     &-container
         &:hover, &:active, &:focus
-            background-color: rgba($nihility-bg-hover, 0.1)
+            background-color: rgba($bg-hover, 0.1)
         // Text
         .GH2-container
-            color: $nihility-fg-2
+            color: $fg-2
         &-selected .GH2-container
-            color: $nihility-fg-3
+            color: $fg-3
         // Icon
         .SimpleIconTabMenuHeaderItem-icon
-            fill: $nihility-fg-2
+            fill: $fg-2
         &-selected .SimpleIconTabMenuHeaderItem-icon
-            fill: $nihility-fg-3
+            fill: $fg-3
 // Tab highlighter
 .SimpleIconTabMenuHeaderItem-container-selected::after,
 .HorizontalTab-highlighter
-    background-color: $nihility-fg-2
+    background-color: $fg-2
 
 /*
  * -=- Animated -=-
@@ -173,7 +218,7 @@
 
 // Flash when scrolling to a message or a forum post
 .ScrollFlasher-container
-    background-color: $nihility-important
+    background-color: $important
 
 /*
  * -=- Badges -=-
@@ -189,7 +234,7 @@
         display: none
     // Override all colours for badges
     &-container:not(.UserFlairRow-icon)
-        background-color: $nihility-glow-0 !important
+        background-color: $glow-0 !important
 
 /*
  * -=- Bars -=-
@@ -229,17 +274,17 @@
 .TypeaheadMenu-list,
 .FormsRenderer
     // Firefox scrollbar
-    scrollbar-color: $nihility-bar transparent !important
+    scrollbar-color: $bar transparent !important
     // Webkit/Chromium/Blink scrollbar
     &::-webkit-scrollbar-thumb
-        background: $nihility-bar !important
+        background: $bar !important
 
 // Upload/XP progress bar
 .GoldenProgressBar
     // Background
     &-container,
     &-container-theme-dark
-        background-color: $nihility-bg-0
+        background-color: $bg-0
     // Progress
     &-progress
-        background-color: $nihility-progress
+        background-color: $progress

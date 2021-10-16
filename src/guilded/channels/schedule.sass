@@ -1,49 +1,49 @@
 // Whole container
 .AvailabilityDisplay-container
-    background-color: $nihility-bg-3
+    background-color: $bg-3
 
 .AvailabilityDisplayHeader
     // Container arrow
     &-button
-        border-color: $nihility-bg-1
-        background-color: $nihility-bg-3
+        border-color: $border-dark-1
+        background-color: $bg-3
         // Container arrow hover
         &::after
-            background-color: $nihility-bg-hover
+            background-color: $bg-hover
     // Container arrow's icon
     &-button
-        fill: $nihility-fg-2
+        fill: $fg-2
     // Current and other days
     &-day-today, &-day
-        background-color: $nihility-bg-4
+        background-color: $bg-4
     // Tomorrow/alternative day
     &-day-alt
-        background-color: $nihility-bg-3
+        background-color: $bg-3
     // Day
     &-date
-        color: $nihility-fg-3
+        color: $fg-3
     // Timezone and date
     &-timezone,
     &-subtitle
-        color: $nihility-fg-1
-        @include nihility-transition(color)
+        color: $fg-1
+        @include set-transition(color)
         // Hover
         &:hover
-            color: $nihility-fg-2
+            color: $fg-2
 // Time
 .AvailabilityDisplayTimeAxis-label
-    color: $nihility-fg-2
+    color: $fg-2
 // Current time line
 .AvailabilityDayHour-now-line
-    background-color: $nihility-active
+    background-color: $active
 
 .AvailabilityDisplayDaysPlaceholder
     // Others' area
     &-day, &-day-today
-        background-color: $nihility-bg-4
+        background-color: $bg-4
     // Others' area tomorrow/alternative day
     &-day-alt
-        background-color: $nihility-bg-4
+        background-color: $bg-4
     // Lighter/creation area
     &-create
-        background-color: $nihility-bg-5
+        background-color: $bg-5

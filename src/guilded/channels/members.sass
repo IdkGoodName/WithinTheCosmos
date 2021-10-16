@@ -4,11 +4,11 @@
 
 // Select all checkbox
 .SelectToggleIcon-container
-    border-color: $nihility-fg-1
+    border-color: $fg-0
     // Select all checkbox hover
     &-clickable:hover
-        border-color: $nihility-fg-2
-        background-color: rgba($nihility-bg-hover, 0.1)
+        border-color: $border-light-1
+        background-color: rgba($bg-hover, 0.1)
 // Select all checkmark
 .SelectToggleIcon-checkmark
     fill: var(--NihilityTheme0)
@@ -26,33 +26,33 @@
 
 // Filter icon
 .ItemManagerFilterButton-icon
-    fill: $nihility-fg-1
-    @include nihility-transition(fill)
+    fill: $fg-1
+    @include set-transition(fill)
 
 // Filter icon hover
 .ItemManagerFilterButton-container:not(.ItemManagerFilterButton-container-active):hover .ItemManagerFilterButton-icon
-    fill: $nihility-fg-2
+    fill: $fg-2
 
 // Filter settings clicked
 .ItemManagerFilterButton-container-open .ItemManagerFilterButton-icon
-    fill: $nihility-fg-3
+    fill: $fg-3
 
 .ItemManagerFilterWrapper-container
     // Filter settings
     &-container
-        background-color: $nihility-bg-4
+        background-color: $bg-4
     // Filter settings search
     &-search
-        background-color: $nihility-bg-5
+        background-color: $bg-5
 
 
 .SearchBarInput
     // Search bar
     &-input
-        color: $nihility-fg-2
+        color: $fg-2
         // Placeholder
         &::placeholder
-            color: $nihility-fg-1
+            color: $fg-1
     // Filter settings search icon
     &-icon
-        fill: $nihility-fg-2
+        fill: $fg-2

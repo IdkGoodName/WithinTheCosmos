@@ -10,64 +10,64 @@
 .ImageUploaderButton
     // Container
     &-container
-        background-color: $nihility-bg-1
-        border-color: $nihility-bg-0
+        background-color: $bg-1
+        border-color: $border-dark-1
         // Hover
         &::after
-            background-color: $nihility-bg-hover
+            background-color: $bg-hover
     // Icon
     &-icon
-        fill: $nihility-fg-2
+        fill: $fg-2
     // Text
     &-text
-        color: $nihility-fg-2
+        color: $fg-2
 
 .CreateGroupOverlayWrapper-upload-avatar
-    background-color: $nihility-bg-1
-    border-color: $nihility-bg-0
+    background-color: $bg-1
+    border-color: $border-dark-1
     .SVGIcon-icon
-        fill: $nihility-fg-2
+        fill: $fg-2
     &:hover
-        background-color: $nihility-bg-3
+        background-color: $bg-3
 /*
  * --- Status ---
  */
 
 // Status
 .StatusMessage-container
-    color: $nihility-fg-2
+    color: $fg-2
     // Status info
     &-type-info
         // No mic detected
         &.StatusMessage-container-ephemeral,
         // Published on
         &.StatusMessage-container-persistent
-            border-color: $nihility-bg-0
-            background-color: $nihility-bg-4
+            border-color: $border-dark-1
+            background-color: $bg-4
     // Status hover
     &-desktop.StatusMessage-container-clickable::after
-        background-color: $nihility-bg-hover
+        background-color: $bg-hover
     &-ephemeral
         // Copy invite alert
         &.StatusMessage-container-type-success
-            background-color: $nihility-bg-1
-            color: $nihility-good-0
+            background-color: $bg-1
+            color: $good-0
             // Icon
             .StatusMessage-icon
-                fill: $nihility-good-0
+                fill: $good-0
         // Invalid URL
         &.StatusMessage-container-type-error
-            background-color: $nihility-bg-1
-            color: $nihility-bad-0
+            background-color: $bg-1
+            color: $bad-0
             // Icon
             .StatusMessage-icon
-                fill: $nihility-bad-0
+                fill: $bad-0
 
 // Status text
 .StatusMessage
     // Icon
     &-icon
-        fill: $nihility-fg-2
+        fill: $fg-2
     // Link
     &-link
         color: var(--NihilityLink)
@@ -79,31 +79,31 @@
 .NetworkReconnectionDisplay
     // Loading bar
     &-container, &-container-reconnecting
-        background-color: $nihility-bg-0
+        background-color: $bg-0
     // Connected
     &-container
         .NetworkReconnectionDisplay-icon
-            fill: $nihility-good-0
+            fill: $good-0
         .NetworkReconnectionDisplay-text
-            color: $nihility-good-0
+            color: $good-0
 
 // Status message as a banner
 .StatusMessage-container-persistent
     // Message
     .StatusMessage-content
-        color: $nihility-fg-3
+        color: $fg-3
     // Make it dark with a border
     &.StatusMessage-container-type-banner
-        background: $nihility-bg-0
-        border-bottom: 0.1rem solid $nihility-active
+        background: $bg-0
+        border-bottom: 0.1rem solid $active
         .StatusMessage-content
-            color: $nihility-active
+            color: $active
     // Same with stream mode, but purple
     &.StatusMessage-container-banner-type-streamer-mode
-        background: $nihility-bg-0
-        border-bottom: 0.1rem solid $nihility-stream
+        background: $bg-0
+        border-bottom: 0.1rem solid $stream
         .StatusMessage-content
-            color: $nihility-stream
+            color: $stream
 
 /*
  * -=- Widget -=-
@@ -112,25 +112,25 @@
 // Wrapper
 .TeamCardDisplay-container,
 .CardWrapper-container
-    background-color: $nihility-bg-3
+    background-color: $bg-3
 
 // Server
 .TeamCardHeader
     // Name
     &-team-name
-        color: $nihility-fg-3
+        color: $fg-3
     // Description
     &-description
-        color: $nihility-fg-2
+        color: $fg-2
 
 // Info
 .EmphasizedLabel-container
-    color: $nihility-fg-1
+    color: $fg-1
 
 .EmbedCardFooter
     // Footer
     &-container
-        background-color: $nihility-bg-1
+        background-color: $bg-1
     // Guilded's icon
     &-logomark
         fill: var(--NihilityTheme0)
@@ -145,8 +145,8 @@
 
 // Verified badge
 #icon-verified-badge path:first-child
-    fill: $nihility-verified
+    fill: $verified
 
 // Settings badge
 .PersistentActionMenuItem-container .CalloutBadge-container
-    background-color: $nihility-glow-0 !important
+    background-color: $glow-0 !important

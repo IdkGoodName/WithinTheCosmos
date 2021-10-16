@@ -6,81 +6,81 @@
 .FullSizedCalendar
     // Week day header
     &WeekdayHeader-day
-        color: $nihility-fg-1
+        color: $fg-1
     // Calendar days and weeks
     &-week
-        background-color: $nihility-bg-4
+        background-color: $bg-4
     &-day
         border-width: 1px
         border-style: solid
-        border-color: $nihility-bg-1
-        background-color: $nihility-bg-4
+        border-color: $border-dark-1
+        background-color: $bg-4
         // Day numbers
         .FullSizedCalendarDayHeader-date
-            color: $nihility-fg-2
+            color: $fg-2
     // Event creation
     &Day-container-desktop.FullSizedCalendarDay-container-can-create
-        @include nihility-transition(background-color)
+        @include set-transition(background-color)
         &:hover
-            background-color: $nihility-bg-5
+            background-color: $bg-5
     &Day-new-event-icon
-        fill: $nihility-fg-1
-        @include nihility-transition(opacity)
+        fill: $fg-1
+        @include set-transition(opacity)
     // Calendar special days
     &Day-container-in-past,
     &Day-container-different-month
-        background-color: $nihility-bg-3
-        color: $nihility-fg-1
+        background-color: $bg-3
+        color: $fg-1
         // Don't make text stand out
         .FullSizedCalendarDayHeader-date
-            color: $nihility-fg-0
+            color: $fg-0
     &Day-container-today
-        background-color: $nihility-bg-5
+        background-color: $bg-5
         // Highlight the date
         .FullSizedCalendarDayHeader-date
             background-color: var(--NihilityTheme0)
             color: white
     // Event name
     &Event-name
-        color: $nihility-fg-3
+        color: $fg-3
 
 // Buttons
 .ToggleControl-container
-    border-color: $nihility-fg-1
+    border-color: $fg-0
 .ToggleControlButton-container.ToggleControlButton-container
     &-desktop:hover, &-selected
         color: var(--NihilityTheme0)
-        background-color: $nihility-bg-1
+        background-color: $bg-1
     &-selected:focus, &-selected:active
         color: var(--NihilityTheme0)
 // Month switching
 .DateSwitcher
     &-month-name
-        color: $nihility-fg-3
+        color: $fg-3
     &-button
-        fill: $nihility-fg-1
+        fill: $fg-1
 
 // Upcoming
 .UpcomingCalendar
     &Day-container, &-container
-        background-color: $nihility-bg-1
+        background-color: $bg-1
     &Event-container-desktop:hover
-        background-color: $nihility-bg-3
+        background-color: $bg-3
 
 // Date input
 .FormBoxAndLabel
     &-box
-        border-color: $nihility-fg-1
-        @include nihility-transition(border-color)
+        border-color: $fg-0
+        @include set-transition(border-color)
     &-container-focused &-box,
     &-container-desktop:hover &-box
-        border-color: $nihility-fg-2
+        border-color: $border-light-1
     // Icon
     &-form-icon
-        fill: $nihility-fg-1
+        fill: $fg-1
     // Text inside input
     &-main-text
-        color: $nihility-fg-3
+        color: $fg-3
 // Time input
 .TimeInput
     // Part selected
@@ -88,10 +88,10 @@
         background-color: var(--NihilitySelect)
     // : delimeter
     &-delimiter
-        color: $nihility-fg-1
+        color: $fg-1
 // Timezone label
 .TimeFieldWrapper-timezone-label
-    color: $nihility-fg-1
+    color: $fg-1
 
 /*
  * --- Pop up ---
@@ -100,7 +100,7 @@
 // Pop-up top-level
 .TransientMenu-container-style-card
     overflow: hidden
-    background-color: $nihility-bg-3
+    background-color: $bg-3
 // Pop up banner
 .GlassySplashHeader
     &-image-wrapper &-image
@@ -114,19 +114,19 @@
 
 // Header
 .EventTemporalChannelDisplay-container
-    background-color: $nihility-bg-1
-    @include set-var(--border-color, $nihility-bg-0)
+    background-color: $bg-1
+    @include set-var(--border-color, $bg-0)
 // Details
 .TeamEventDetails
     &-post-metadata, &-status, &-item
-        background-color: $nihility-bg-2
+        background-color: $bg-2
 .EventCardMetadata
     // Container
     &-container-size-lg
-        background-color: $nihility-bg-2
+        background-color: $bg-2
     // Icon
     &-icon
-        fill: $nihility-fg-1
+        fill: $fg-1
     // Server URL
     &-link
         &, &:visited, &:active, &:focus
@@ -138,18 +138,18 @@
 .TeamEventDescription
     // Icon
     &-icon
-        fill: $nihility-fg-1
+        fill: $fg-1
     // Text
     &-placeholder
-        @include set-var(--nihility-local-fg, $nihility-fg-2)
+        @include set-var(--nihility-local-fg, $fg-2)
 
 .EventAttendanceHeader-status
     &-going
-        color: $nihility-fg-2
+        color: $fg-2
     &:not(:first-child)
-        color: $nihility-fg-1
+        color: $fg-1
         &::before
-            background-color: $nihility-fg-1
+            background-color: $fg-1
 
 .EventRsvpsHeader
     // See all link
@@ -159,4 +159,4 @@
         color: var(--NihilityLinkHover)
     // Maybe, invited, declined
     &-container-desktop:not(&-container-rsvps-disabled):hover &-attendance .EventAttendanceHeader-status
-        color: $nihility-fg-2
+        color: $fg-2

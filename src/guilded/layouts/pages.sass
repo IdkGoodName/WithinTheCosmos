@@ -10,35 +10,35 @@
 
 // Profile content
 .UserProfileV3-container
-    background-color: $nihility-bg-3
+    background-color: $bg-3
 
 // Tab header
 .NavV4SectionSidebarOptionGroup-header
-    color: $nihility-fg-1
+    color: $fg-1
 .NavV4SectionSidebarOption
     // Tab icon
     &-icon
-        fill: $nihility-fg-1
+        fill: $fg-1
         // Active
         .NavV4SectionSidebarOption-container-active &
-            fill: $nihility-fg-2
+            fill: $fg-2
     // Tab text
     &-label
-        color: $nihility-fg-2
+        color: $fg-2
         // Active
         .NavV4SectionSidebarOption-container-active &
-            color: $nihility-fg-3
+            color: $fg-3
     // Hover
     &-container-inactive::after
-        background-color: $nihility-bg-hover
+        background-color: $bg-hover
 .UserProfilePictureControl
     // Status icon
     &-online-status
-        border-color: $nihility-bg-0
+        border-color: $border-dark-1
         right: 0
     // Avatar
     &-picture
-        border-radius: $nihility-radius-3
+        border-radius: $radius-4
 
 /*
  * --- Posts ---
@@ -46,49 +46,52 @@
 
 // Tagline
 .OverviewWidgetItem-text-paragraph
-    color: $nihility-fg-2
+    color: $fg-2
 
 // Profile setting buttons
 .UserProfileActionRow-button-icon
-    fill: $nihility-fg-2
+    fill: $fg-2
 
 // Game overview arrow
 .OverviewPageWidgetHeader-container-desktop .OverviewPageWidgetHeader-link-icon
-    fill: $nihility-fg-1
-    @include nihility-transition(fill)
+    fill: $fg-1
+    @include set-transition(fill)
     // Game overview arrow hovered
     &:hover
-        fill: $nihility-fg-2
+        fill: $fg-2
 // Game
 .UserGameSummaryCard-container
-    background-color: $nihility-bg-1
+    background-color: $bg-1
 // Game property
 .UserInfoSummaryItem
     // Label
     &-label
-        color: $nihility-fg-1
+        color: $fg-1
     // Value
     &-summary-content
-        color: $nihility-fg-2
+        color: $fg-2
 
 // Post
 .UserProfilePostPanel-container
-    background-color: $nihility-bg-1
+    background-color: $bg-2
+    border-radius: $radius-2
     // Post highlighted(currently all)
     &-highlight
-        border-top-color: var(--NihilityTheme0)
+        // Until it gets fixed, remove the highlight
+        border-top: none
+        //border-top-color: var(--NihilityTheme0)
 // Post author's name
 .UserName-container,
 .TeamMemberBubble-name,
 .UserBasicInfoDisplay-name,
 .TeamWidgetProfileDetails-name
-    color: $nihility-fg-3
+    color: $fg-3
 // No more posts text
 .NullState-container
-    color: $nihility-fg-1
+    color: $fg-1
 // No more posts SVG
 .GuildedBotAvatar-container
-    fill: $nihility-fg-1
+    fill: $fg-1
 
 /*
  * --- Games ---
@@ -96,10 +99,10 @@
 
 // Game
 .PlayerAliasCard-container-type-game
-    background-color: $nihility-bg-1
+    background-color: $bg-1
 // Game border
 .CardWrapper-container:not(.CardWrapper-container-highlighted)::after
-    border-color: $nihility-bg-0
+    border-color: $border-dark-1
 // Game header
 .PlayerCard
     // Container
@@ -107,11 +110,11 @@
         background-color: transparent
     // Game's name
     &GameInfo-name
-        color: $nihility-fg-3
+        color: $fg-3
 // Game header player's name
 .GameAliasDisplay-container
-    color: $nihility-fg-1
-    @include nihility-transition(color)
+    color: $fg-1
+    @include set-transition(color)
     // Name hover
     &:hover
         color: var(--NihilityTheme2)
@@ -120,18 +123,18 @@
     background-color: transparent
 // Game info no accounts linked
 .UserSocialPresence-no-other-links
-    color: $nihility-fg-1
+    color: $fg-1
 // Game info handle
 .UserRichSocialLink
     // Icon
     &-avatar
-        fill: $nihility-fg-1
+        fill: $fg-1
     // Text
     &-handle
-        color: $nihility-fg-2
+        color: $fg-2
     // Details
     &-metadata
-        color: $nihility-fg-1
+        color: $fg-1
 
 /*
  * --- Friends ---
@@ -139,7 +142,7 @@
 
 // A button when hovering over friends
 .FriendsList-actions .FriendList-action-icon
-    background-color: $nihility-bg-2
+    background-color: $bg-2
 
 /*
  * -=- DMs -=-
@@ -148,43 +151,43 @@
 // Side bar
 .ChatChannelList-container,
 .WebAppV2-sidebar
-    background-color: $nihility-bg-1
+    background-color: $bg-1
 
 .ChatChannelListItem
     &-container
-        @include set-var(--border-color, $nihility-bg-1)
+        @include set-var(--border-color, $bg-1)
     // Selected DMs
     &-container-selected
-        background-color: $nihility-bg-4
-        @include set-var(--border-color, $nihility-bg-3)
+        background-color: $bg-4
+        @include set-var(--border-color, $bg-3)
     // Hovered DMs
     &-container:not(&-container-selected):hover
-        background-color: $nihility-bg-3
-        @include set-var(--border-color, $nihility-bg-2)
+        background-color: $bg-3
+        @include set-var(--border-color, $bg-2)
     // Remove DMs crossmark
     &-container:not(&-container-selected):hover &-remove-icon,
     &-container-selected &-remove-icon
         background-color: transparent
-        fill: $nihility-fg-1
-        @include nihility-transition(fill)
+        fill: $fg-1
+        @include set-transition(fill)
         // Remove DMs crossmark hover
         &:hover
-            fill: $nihility-fg-3
+            fill: $fg-3
     // Selected DMs content
     &Info-container-selected
         // Name
         .ChatChannelListItemInfo-name
-            color: $nihility-fg-3
+            color: $fg-3
         // Text
         .ChatChannelListItemInfo-latest-message
-            color: $nihility-fg-2
+            color: $fg-2
         // Timestamp
         .ChatChannelListItemInfo-last-at
-            color: $nihility-fg-1
+            color: $fg-1
 
 // User typing in DMs
 .TypingIndicator-container
-    background-color: $nihility-bg-5
+    background-color: $bg-5
 
 /*
  * -=- Tournaments -=-
@@ -200,13 +203,13 @@
 
 // Selected tab
 .NavV4SectionSidebarOption-container-active
-    background-color: $nihility-bg-4
+    background-color: $bg-4
     // Selected tab icon
     .NavV4SectionSidebarOption-icon
-        fill: $nihility-fg-3
+        fill: $fg-3
     // Selected tab text
     .NavV4SectionSidebarOption-label
-        color: $nihility-fg-3
+        color: $fg-3
 
 /*
  * --- Content ---
@@ -216,23 +219,23 @@
 .TournamentsPortal
     // Container
     &Page-container
-        background-color: $nihility-bg-3
+        background-color: $bg-3
     // Video
     &Header-video-mask
-        background-image: linear-gradient(to bottom, rgba($nihility-bg-3, 0.85) 20%, rgba(0, 0, 0, 0) 65%, rgba($nihility-bg-3, 0.95))
+        background-image: linear-gradient(to bottom, rgba($bg-3, 0.85) 20%, rgba(0, 0, 0, 0) 65%, rgba($bg-3, 0.95))
 // Tournament card
 .TournamentCard-container
-    background-color: $nihility-bg-4
+    background-color: $bg-4
 // Information icon
 .TournamentSummaryItem
     &-container-size-sm &-icon
-        fill: $nihility-fg-1
+        fill: $fg-1
     // Information text
     &-text
-        color: $nihility-fg-2
+        color: $fg-2
 // This group is archived
 .GroupUpsell-container-archived
-    background-color: $nihility-bg-3
+    background-color: $bg-3
 
 /*
  * -=- Explore -=-
@@ -240,33 +243,33 @@
 
 // Background of explore pages
 .ExplorePage-container
-    background-color: $nihility-bg-3
+    background-color: $bg-3
 // Sidebar page list
 .NavbarNavIcon-container
     &:hover
-        background-color: rgba($nihility-bg-hover, 0.1)
+        background-color: rgba($bg-hover, 0.1)
     // Selected
     &-selected
-        background-color: $nihility-bg-3
+        background-color: $bg-3
 
 // Find a server tabs
 .IconNavMenuButton-icon
-    fill: $nihility-fg-1
-    @include nihility-transition(fill)
+    fill: $fg-1
+    @include set-transition(fill)
     .IconNavMenuButton-container-desktop:hover &
-        fill: $nihility-fg-2
+        fill: $fg-2
 // Find a server tabs containers
 .IconNavMenuButton-container
-    @include nihility-transition(color)
+    @include set-transition(color)
     &, &:visited, &:active, &:focus
-        color: $nihility-fg-1
+        color: $fg-1
     &:hover
-        color: $nihility-fg-2
+        color: $fg-2
 
 .CardList
     // Title
     &-label
-        color: $nihility-fg-3
+        color: $fg-3
     // Link
     &-label-link
         color: var(--NihilityLink)
@@ -274,85 +277,85 @@
             color: var(--NihilityLinkHover)
 // "A new way to scrim" Description
 .TitleAndDescriptionPanel-description
-    color: $nihility-fg-1
+    color: $fg-1
 // No scrims description
 .ScrimFinderRecentMatches-none
-    color: $nihility-fg-1
+    color: $fg-1
 // Scrim team
 .ScrimFinderLeaderboardTeam
     &-name
-        color: $nihility-fg-3
+        color: $fg-3
     // Index
     &-rank
-        color: $nihility-fg-1
+        color: $fg-1
 
 // Post card
 .ContentCard
     &-container
-        background-color: $nihility-bg-3
+        background-color: $bg-3
     // Footer
     &-metas
-        background-color: $nihility-bg-2
+        background-color: $bg-2
         // Footer hover
         &::after
-            background-color: $nihility-bg-hover
+            background-color: $bg-hover
 
 // Profile post card
 .ProfilePostCard
     &-title
-        color: $nihility-fg-3
+        color: $fg-3
     &-metas-time
-        color: $nihility-fg-1
-        @include nihility-transition(color)
+        color: $fg-1
+        @include set-transition(color)
         .ContentCard-container:hover &
-            color: $nihility-fg-3
+            color: $fg-3
 
 // Invite progressbar
 .PercentageBar
     // Empty
     &-backplate-div
-        background-color: $nihility-bg-1 !important
+        background-color: $bg-1 !important
     // Progress
     &-progress-div
-        background-color: $nihility-progress !important
+        background-color: $progress !important
     // Progressbar
     &-container-type-success .PercentageBar-progress-div
-        border-color: $nihility-bg-0
+        border-color: $border-dark-1
 // Invite text
 .RequirementProgressBar-unsatisfied-text
-    color: $nihility-fg-1
+    color: $fg-1
 
 // Explore servers and players game selector
 .TypeaheadInput-container-dropdown .TypeaheadInput-typeahead-options-list,
 .TypeaheadMenu-container
-    background-color: $nihility-bg-4
-    border-color: $nihility-bg-1
+    background-color: $bg-4
+    border-color: $border-dark-1
     .SelectMenuItem-label
-        color: $nihility-fg-2
+        color: $fg-2
 
 // Game selector input
 .TextInputWithLabel-container-dropdown
-    border-color: $nihility-fg-2
+    border-color: $border-light-1
     // Hover
     &.TextInputWithLabel-container-desktop:hover
-        border-color: $nihility-fg-3
+        border-color: $border-light-1
     // Focused
     &.TextInputWithLabel-container-focused,
     &.TextInputWithLabel-container-focused:hover
         border-color: var(--NihilityTheme0) !important
 // Add background to it as well
 .SelectMenu-container
-    background-color: $nihility-bg-4
+    background-color: $bg-4
 // Game selector item
 .SelectMenuItem-container
     &-desktop:hover
-        background-color: $nihility-bg-3
+        background-color: $bg-3
         .SelectMenuItem-label
-            color: $nihility-fg-3
+            color: $fg-3
     &-selected
-        background-color: $nihility-bg-2
+        background-color: $bg-2
         .SelectMenuItem-label
-            color: $nihility-fg-3
+            color: $fg-3
     // Game selector first item
     &-border-bottom
-        border-color: $nihility-bg-1
+        border-color: $border-dark-1

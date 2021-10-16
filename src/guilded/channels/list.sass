@@ -5,38 +5,38 @@
 // Item
 .TeamListItemIndentWrapper-container,
 .TeamListItemWrapper-container
-    background-color: $nihility-bg-4
+    background-color: $bg-4
     // Item hover
     &-unfocused::after
-        background-color: $nihility-bg-hover
+        background-color: $bg-hover
 // Item handle
 .TeamListItemControls-handle
     svg
-        fill: $nihility-fg-1
+        fill: $fg-1
     &:hover svg
-        fill: $nihility-fg-2
+        fill: $fg-2
 // Note and thread indicators
 .TeamListItemAction-container-clickable
     svg
-        fill: $nihility-fg-1
+        fill: $fg-1
     &:hover svg
-        fill: $nihility-fg-2
+        fill: $fg-2
 // Note highlighted
 .TeamListItemAction-container-highlight
     svg
-        fill: $nihility-important
+        fill: $important
     &:hover svg
-        fill: $nihility-fg-3
+        fill: $fg-3
 // Thread indicator
 .TeamListItemAction-container
-    color: $nihility-fg-1
+    color: $fg-1
     &:hover
-        color: $nihility-fg-2
+        color: $fg-2
 
 .TeamListItemsInput
     // Add item slate
     &-editor.Editor-container
-        background-color: $nihility-bg-4
+        background-color: $bg-4
     // Add item icon
     &-icon
         svg
@@ -45,30 +45,30 @@
             fill: var(--NihilityTheme2)
 // Add item add note
 .TeamListItemNoteEditor-button
-    color: $nihility-fg-1
+    color: $fg-1
     &:hover
-        color: $nihility-fg-2
+        color: $fg-2
         // Icon hover
         svg
-            fill: $nihility-fg-2
+            fill: $fg-2
     // Icon
     svg
-        fill: $nihility-fg-1
+        fill: $fg-1
 
 // X completed
 .TeamListItemsCompletedHeader-count
-    color: $nihility-fg-1
-    @include nihility-transition(color)
+    color: $fg-1
+    @include set-transition(color)
     // X completed hover
     .TeamListItemsCompletedHeader-container:hover &
-        color: $nihility-fg-2
+        color: $fg-2
 
 // Editor focused
 .TeamListItemWrapper-container-focused
     border-color: var(--NihilityTheme1)
 // Fill background when the list is being dragged
 .ReorderIndentable-blockout
-    background-color: $nihility-bg-1
+    background-color: $bg-1
 
 /*
  * --- Item note ---
@@ -76,25 +76,25 @@
 
 // Whole container
 .TeamListItemNote-container
-    border-color: $nihility-bg-4
+    border-color: $border-dark-0
 
 .TeamListItemDetails
     // Timestamp dots
     &-message-count::before, &-created-at::before
-        color: $nihility-fg-0
+        color: $fg-0
     // Timestamp
     &-created-at
-        color: $nihility-fg-1
-        @include nihility-transition(color)
+        color: $fg-1
+        @include set-transition(color)
         // Timestamp hover
         &:hover
-            color: $nihility-fg-2
+            color: $fg-2
 // Note
 .SingleContentEditor-display
-    background-color: $nihility-bg-4
+    background-color: $bg-4
     &:hover .ContentMetadataCreationInfo-from-now
-        color: $nihility-fg-2
+        color: $fg-2
 // Note timestamp
 .ContentMetadataCreationInfo-from-now
-    color: $nihility-fg-1
-    @include nihility-transition(color)
+    color: $fg-1
+    @include set-transition(color)

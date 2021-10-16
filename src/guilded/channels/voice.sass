@@ -1,6 +1,6 @@
 // Whole container
 .VoiceChannelDisplay-container
-    background-color: $nihility-bg-3
+    background-color: $bg-3
 
 /*
  * --- Voice room list ---
@@ -9,28 +9,28 @@
 .VoiceChannelGroupHeader
     // Voice room
     &-container-interactable
-        @include nihility-transition(background)
+        @include set-transition(background)
     // Voice room icon
     &-icon
-        fill: $nihility-fg-1
+        fill: $fg-1
 
 // Voice room caret
 .DropdownCaratV2-container
-    fill: $nihility-fg-1
+    fill: $fg-1
     // Voice room caret hover
     &-desktop:hover
-        fill: $nihility-fg-2
+        fill: $fg-2
 
 // Voice room hovered over
 .VoiceChannelGroupHeader-container-interactable:hover
-    background-color: $nihility-bg-4
+    background-color: $bg-4
     &:hover .VoiceChannelGroupHeader
         // Voice room name hover
         &-text
-            color: $nihility-fg-2
+            color: $fg-2
         // Voice room icon hover
         &-icon
-            fill: $nihility-fg-2
+            fill: $fg-2
 
 /*
  * --- Labels ---
@@ -38,15 +38,15 @@
 
 // X/Y allowed label
 .LimitLabel-container
-    background-color: $nihility-bg-0
+    background-color: $bg-0
 
 // Current user count
 .GuildedText-container-type-heading6
-    color: $nihility-fg-2
+    color: $fg-2
 
 // Max user count
 .LimitLabel-limit
-    color: $nihility-fg-1
+    color: $fg-1
 
 /*
  * --- Voice settings ---
@@ -55,40 +55,40 @@
 // Hotkey label
 .HotkeyDisplay
     &-container
-        border-color: $nihility-bg-5
+        border-color: $border-dark-0
     &-key
         background-color: transparent
 // + before the key
 .HotkeysDisplay-key-wrapper:not(:first-child)::before
-    color: $nihility-fg-1
+    color: $fg-1
 // Edit keybinds
 .TextButton-container-type-light
     color: var(--NihilityLink)
-    @include nihility-transition(color)
+    @include set-transition(color)
     &.TextButton-container-desktop:hover
         color: var(--NihilityLinkHover)
 // Keybind in the settings
 .ItemKeybindInput-container
-    background-color: $nihility-bg-2
+    background-color: $bg-2
 // Sub-text
 .GuildedText-container-type-subtextHeading
-    color: $nihility-fg-1
+    color: $fg-1
 // Keybind recorder
 .HotkeyRecorder-container
-    border-color: $nihility-fg-1
+    border-color: $fg-0
     // Currently recording
     &.HotkeyRecorder-container-recording
-        border-color: $nihility-fg-2
+        border-color: $border-light-1
 // Add another
 .ItemKeybindInput-container-multiple-entities-allowed .ItemKeybindInput-subtext-wrapper
     // + Add keybind
     .ItemKeybindInput-plus-sign, .ItemKeybindInput-subtext
-        fill: $nihility-fg-1
-        color: $nihility-fg-1
+        fill: $fg-1
+        color: $fg-1
     // Hover
     &:hover .ItemKeybindInput-plus-sign, &:hover .ItemKeybindInput-subtext
-        fill: $nihility-fg-2
-        color: $nihility-fg-2
+        fill: $fg-2
+        color: $fg-2
 
 /*
  * --- Voice card ---
@@ -97,13 +97,13 @@
 .VoiceConnectionDisplayPanelContents
     // Whole container
     &-container
-        background-color: $nihility-bg-0
+        background-color: $bg-0
     // Voice header
     &-info-wrapper
         border-bottom: 0
         // Voice header hover
         &::after
-            background-color: $nihility-bg-hover
+            background-color: $bg-hover
 
 .VoiceConnectionDisplayInfo
     // Voice header info display
@@ -111,68 +111,68 @@
         background-color: transparent
     // Voice header info icon
     &-icon
-        fill: $nihility-fg-1
+        fill: $fg-1
 
 // Voice header toggle buttons
 .VoiceConnectionDisplayButtons-button
-    background-color: $nihility-bg-1
-    fill: $nihility-fg-2
+    background-color: $bg-1
+    fill: $fg-2
 
 // Voice header toggle button hover
 .SVGIconWithTooltip-container-clickable:hover
-    fill: $nihility-fg-3
+    fill: $fg-3
 
 // Voice participant list
 .VoiceConnectionDisplayPanelContents-participants
-    background-color: $nihility-bg-1
+    background-color: $bg-1
 
 // Voice participant
 .VoiceChannelGroupUser-container
     // Hover
     &:hover
-        background-color: $nihility-bg-3
+        background-color: $bg-3
     // Right clicked
     &.VoiceChannelGroupUser-container-active
-        background-color: $nihility-bg-2
+        background-color: $bg-2
 
 // Voice participants icon
 .VoiceConnectionDisplayParticipants-participants-icon
-    fill: $nihility-fg-0
+    fill: $fg-0
 
 // Invite icon
 .SVGIconWithTooltip-container
-    fill: $nihility-fg-1
+    fill: $fg-1
 
 // Connection
 .VoiceConnectionDisplayInfo
     &-connection
         // Good connection
         &-good &-icon
-            fill: $nihility-good-0
+            fill: $good-0
         &-good .GuildedText-container
-            color: $nihility-good-1 !important
+            color: $good-1 !important
         // Not bad, but neither a good connection
         &-warn &-icon
-            fill: $nihility-neutral-0
+            fill: $neutral-0
         &-warn .GuildedText-container
-            color: $nihility-neutral-1 !important
+            color: $neutral-1 !important
         // Bad connection
         &-bad &-icon
-            fill: $nihility-bad-0
+            fill: $bad-0
         &-bad .GuildedText-container
-            color: $nihility-bad-1 !important
+            color: $bad-1 !important
         // Transition
         &-icon
-            @include nihility-transition(fill)
+            @include set-transition(fill)
     &-container .GuildedText-container
-        @include nihility-transition(color)
+        @include set-transition(color)
 
 // Voice volume slider
 .RangeSlider
     &-container-type-gilded
         // Background
         .RangeSlider-rail
-            background-color: $nihility-bg-4
+            background-color: $bg-4
         // Current volume
         .RangeSlider-selected-rail
-            background: $nihility-progress
+            background: $progress

@@ -10,17 +10,17 @@
 
 // Whole bar
 .Navbar-container
-    background-color: $nihility-bg-0
-    @include set-var(--border-color, $nihility-bg-0)
+    background-color: $bg-0
+    @include set-var(--border-color, $bg-0)
 // Guilded logo
 .LogoAndWordmarkV2-container-theme-light
-    fill: $nihility-fg-1
+    fill: $fg-1
 // Guilded logo active
 .LogoAndWordmarkV2-container-theme-gilded
     fill: var(--NihilityTheme2)
 // User card
 .NavbarUserControls-container
-    @include set-var(--border-color, $nihility-bg-0)
+    @include set-var(--border-color, $bg-0)
 
 /*
  * --- Buttons ---
@@ -29,10 +29,10 @@
 // The buttons
 .ChatChannelIcon-icon-group, // DM icon
 .NavbarNavExploreIcon-link .NavbarNavExploreIcon-icon // Explore stuff icons
-    fill: $nihility-fg-1
+    fill: $fg-1
 // Selected icons
 .ChatChannelIcon-container-selected .ChatChannelIcon-icon-group
-    fill: $nihility-fg-2
+    fill: $fg-2
 
 /*
  * -=- Server list -=-
@@ -45,33 +45,33 @@
 .InlineAddItemControl
     // Server list add icon
     &-add-icon
-        @include nihility-transition(background-color)
-        fill: $nihility-fg-2
+        @include set-transition(background-color)
+        fill: $fg-2
         // The SVG icon
         svg
-            @include nihility-transition(fill)
+            @include set-transition(fill)
         // Group add icon
         .GroupSelector-add-group &
             border-radius: 50%
-            @include nihility-transition(border-radius, $nihility-bounce)
+            @include set-transition(border-radius, $bounce)
         .GroupSelector-add-group:hover &
-            border-radius: $nihility-radius-1
+            border-radius: $radius-2
     // Server list add text
     &-name
-        @include nihility-transition(color)
-        color: $nihility-fg-2
+        @include set-transition(color)
+        color: $fg-2
 // Server list add
 .InlineAddItemControl-container
-    @include set-var(--inline-add-icon-background-color, $nihility-bg-3)
+    @include set-var(--inline-add-icon-background-color, $bg-3)
     // Hover
     &:hover, &-flavor-background-highlight.InlineAddItemControl-container-desktop:hover
         // Server list add icon hover
         .InlineAddItemControl-add-icon
-            background-color: $nihility-bg-4
-            fill: $nihility-fg-3
+            background-color: $bg-4
+            fill: $fg-3
         // Server list add text hover
         .InlineAddItemControl-name
-            color: $nihility-fg-3
+            color: $fg-3
 
 /*
  * --- Servers and tabs ---
@@ -79,27 +79,27 @@
     
 // Server list hovered server
 .NavV4SelectorRow-container::after
-    background-color: $nihility-bg-hover
-    @include nihility-transition(opacity)
+    background-color: $bg-hover
+    @include set-transition(opacity)
 // Server list selected server
 .NavSelectorItem-container-active .NavSelectorItem-contents::after
-    border-color: $nihility-fg-2
+    border-color: $border-light-1
 
 // Server list switcher buttons
 .NavV4SelectorRow-svg-icon
-    fill: $nihility-fg-2
+    fill: $fg-2
 .NavV4TeamSelectorBottomOptionsList-label
-    color: $nihility-fg-2
+    color: $fg-2
 // Server list revealer
 .NavV4ItemIcon-icon
-    fill: $nihility-fg-1
+    fill: $fg-1
 // Server list favourite icon
 .FavoriteTeamButton-container
-    fill: $nihility-fg-1
-    @include nihility-transition(fill)
+    fill: $fg-1
+    @include set-transition(fill)
     // Server list favourite hover
     &:hover
-        fill: $nihility-fg-3
+        fill: $fg-3
 
 /*
  * -=- Search -=-
@@ -108,25 +108,25 @@
 // Server search
 .TeamSearchBar-search-bar-input,
 .SearchBarV2-container.SearchBarV2-container-focused
-    background-color: $nihility-bg-4
+    background-color: $bg-4
 // In-server search, emote search
 .SearchBarInput-container-bordered,
 .SearchBarV2-container-unfocused::after,
 .SearchBarV2-container
     border-radius: 1rem
-    background-color: $nihility-bg-3
-    border-color: $nihility-bg-1
+    background-color: $bg-3
+    border-color: $border-dark-1
 // Search focused
 .SearchBarV2-container-unfocused::after
-    background-color: $nihility-bg-hover
+    background-color: $bg-hover
 
 .SearchBarV2-container
     // Search icon
     .SearchBarV2-icon
-        fill: $nihility-fg-2
+        fill: $fg-2
     // Search placeholder
     .SearchBarV2-input::placeholder
-        color: $nihility-fg-1
+        color: $fg-1
 
 /*
  * -=- Sidebar -=-
@@ -134,12 +134,12 @@
 
 // Favourite server list
 .NavV4FooterGlobalContextDisplay-teams-wrapper
-    background-color: $nihility-bg-1
+    background-color: $bg-1
 .NavV4BadgedItem-container
     width: auto
     // Favourite server hover
     &::after
-        background-color: $nihility-bg-hover
+        background-color: $bg-hover
 
 
 /*
@@ -148,34 +148,17 @@
 
 // Sets group list width
 body
-    @include set-var(--group-selector-width, $nihility-icon-size + 2rem)
+    @include set-var(--group-selector-width, $icon-size + 2rem)
 // Group list
 .NavV4Sidebar-container,
 .GroupSelector-container,
 // Group list in group editing
 .GroupSelectorPreview-minimal-nav
-    background-color: $nihility-bg-1
-    @include set-var(--border-color, $nihility-bg-0)
+    background-color: $bg-1
+    @include set-var(--border-color, $bg-0)
 // Group
 .GroupSelectorItem-container
-    @include set-var(--avatar-size, $nihility-icon-size)
-
-// Group selector ring
-.NavSelectorItem-contents::after,
-// Group icon
-.GroupAvatar-container-non-base,
-.GroupAvatar-icon
-        // Inside group list
-        .GroupSelector-container &
-            border-radius: 50%
-            @include nihility-transition(border-radius, $nihility-bounce)
-        // Group hover
-        .GroupSelectorItem-container:hover &,
-        // Group selected
-        .GroupSelector-container .NavSelectorItem-container-active &,
-        // Group in preview
-        .GroupSelectorPreview-container &
-            border-radius: $nihility-radius-1
+    @include set-var(--avatar-size, $icon-size)
 
 .NavSelectorItem-container .GroupAvatar-container
     font-size: 1.2em
@@ -187,15 +170,15 @@ body
 // The border around status and group's emote
 .GroupAvatarBadge-container-reaction,
 .LoggedInUserAvatar-online-status
-    background-color: $nihility-bg-1
+    background-color: $bg-1
 
 // Group settings background
 .CreateGroupLivePreview-LiveView
-    background: $nihility-bg-0
+    background: $bg-0
 
 // `member` badge on hover
 .GroupMembershipBadge-container
-    background-color: $nihility-glow-0
+    background-color: $glow-0
 
 /*
  * --- User card ---
@@ -203,50 +186,50 @@ body
 
 // User card
 .NavV4Footer-container
-    background-color: $nihility-bg-1
+    background-color: $bg-1
 
 // User card's content
 .NavV4Footer-right,
 .NavV4Footer-footer-content
-    border-top-right-radius: $nihility-radius-2
+    border-top-right-radius: $radius-3
 
 // User card's name
 .LoggedInUserAvatar-name
-    color: $nihility-fg-2
-    @include nihility-transition(color)
+    color: $fg-2
+    @include set-transition(color)
     &:hover
-        color: $nihility-fg-3
+        color: $fg-3
 
 .LoggedInUserStatus
     // User card's status
     &-content-with-status, &-container
-        color: $nihility-fg-1
-        @include nihility-transition(color)
+        color: $fg-1
+        @include set-transition(color)
         // Hover
         &:hover
-            color: $nihility-fg-2
+            color: $fg-2
 
 // User card buttons
 .TransientMenuTrigger-container
-    fill: $nihility-fg-1
-    @include nihility-transition(fill)
+    fill: $fg-1
+    @include set-transition(fill)
     &.TransientMenuTrigger-container-desktop:hover .TransientMenuTrigger-icon
-        fill: $nihility-fg-2
+        fill: $fg-2
 
 .NavIcon-container-type-vertical-nav
-    fill: $nihility-fg-1
-    @include nihility-transition(fill)
+    fill: $fg-1
+    @include set-transition(fill)
     &:hover
-        fill: $nihility-fg-2
+        fill: $fg-2
 
 // More button (1) sign
 .CircleBadgeV2-container
-    background-color: $nihility-important
+    background-color: $important
 
 .NavV4Footer-footer-content,
 .NavV4Footer-right,
 .NavV4Sidebar-container
-    background-color: $nihility-bg-0
+    background-color: $bg-0
 
 /*
  * --- Header ---
@@ -259,29 +242,29 @@ body
     z-index: 105
 // Server header name
 .PageNavAvatarName-name-text
-    color: $nihility-fg-3
+    color: $fg-3
 // Server header group name
 .TeamNavGroupHeader-name
-    color: $nihility-fg-2
+    color: $fg-2
 // Server header hover
 .TeamNavHeader-options-carat::after
-    background-color: $nihility-bg-hover
-    @include nihility-transition(opacity)
+    background-color: $bg-hover
+    @include set-transition(opacity)
 // Server header caret
 .TeamNavHeader-options-carat.TeamNavTeamOptionsCarat-icon
-    fill: $nihility-fg-2
+    fill: $fg-2
 // Server header button
 .TeamNavHeaderRowButton-container
-    background-color: $nihility-bg-4
+    background-color: $bg-4
     // Server header button hovered
     &:not(.TeamNavHeaderRowButton-container-disabled)::after
-        background-color: $nihility-bg-hover
+        background-color: $bg-hover
 // Server header button icon
 .TeamNavHeaderRowButton-icon
-    fill: $nihility-fg-2
+    fill: $fg-2
 // Server header button text
 .TeamNavHeaderRowButton-text
-    color: $nihility-fg-2
+    color: $fg-2
 
 /*
  * --- Channels ---
@@ -293,7 +276,7 @@ body
 .TeamPageNavV3-container,
 // Channel list in group editing
 .GroupNavPreview-nav-section
-    background-color: $nihility-bg-1
+    background-color: $bg-1
 
 // Section list header
 .TeamNavSectionsList-header
@@ -310,14 +293,14 @@ body
         text-align: center
         margin-left: auto
         margin-right: auto
-        color: $nihility-fg-1
+        color: $fg-1
 
 // Channel 'beta' label
 .TeamChannelItemContents-label,
 // Channel 'beta' label in screen header
 .ScreenHeader-label
-    background-color: $nihility-glow-0 !important
-    color: $nihility-fg-2
+    background-color: $glow-0 !important
+    color: $fg-2
 
 
 /*
@@ -326,7 +309,7 @@ body
 
 // Channel header
 .ScreenHeader-container
-    background-color: $nihility-bg-1
+    background-color: $bg-1
     border-bottom: 0
 
 // Screen header icon
@@ -335,65 +318,65 @@ body
 .ChannelIcon-icon-primary,
 .TeamChannelItemContents-action-icon,
 .ScreenHeader-icon-wrapper-size-lg .ScreenHeader-icon
-    fill: $nihility-fg-1
+    fill: $fg-1
 
 // Sets PFP border
 .ScreenHeader-icon-wrapper
-    @include set-var(--border-color, $nihility-bg-0)
+    @include set-var(--border-color, $bg-0)
 
 // Screen header
 .ScreenHeader
     // Title
     &-name
-        color: $nihility-fg-2
+        color: $fg-2
     // Description
     &-description-child
-        color: $nihility-fg-1
+        color: $fg-1
 .ChannelHeaderActionButtons
     // Screen header more button
     &-menu-button, &-more-options-button
-        fill: $nihility-fg-1
+        fill: $fg-1
     // Screen header more button hover
     &-menu-trigger:hover &-menu-button,
     &-menu-trigger:hover &-more-options-button,
     &-options-menu-trigger:hover &-menu-button,
     &-options-menu-trigger:hover &-more-options-button
-        fill: $nihility-fg-3
+        fill: $fg-3
 // Screen header more pressed title
 .ChannelHeaderMoreOptionsMenu-header
-    color: $nihility-fg-1
+    color: $fg-1
 
 // Channel card
 .TeamChannelItemContents-container-unread .TeamChannelItemContents-name,
 .TeamChannelItemContents-container-channel-content .TeamChannelItemContents-name,
 .TeamChannelItemContents-container:not(.TeamChannelItemContents-container-selected):hover .TeamChannelItemContents-name
-    color: $nihility-fg-2
+    color: $fg-2
 // Selected channel
 .TeamChannelItemContents-container-selected,
 .TeamNavSectionItem-container-selected
-    background-color: $nihility-bg-4
-    @include nihility-transition(background-color)
+    background-color: $bg-4
+    @include set-transition(background-color)
 // Channel hovered
 .TeamChannelItemContents-container::after,
 .TeamNavSectionItem-container::after
-    background-color: $nihility-bg-hover
-    @include nihility-transition(opacity)
+    background-color: $bg-hover
+    @include set-transition(opacity)
 // Sub-icon/global icon
 .ChannelIcon-icon-selected .ChannelIcon-icon-background,
 .ChannelIcon-icon-background
-    fill: $nihility-fg-1
-    background-color: $nihility-bg-0
+    fill: $fg-1
+    background-color: $bg-0
 // Selected channel icons
 .ChannelIcon-icon-selected,
 .ChannelIcon-icon-selected .ChannelIcon-icon,
 .TeamNavSectionItem-container-selected .TeamNavSectionItem-icon
-    fill: $nihility-fg-3
-    color: $nihility-fg-3
+    fill: $fg-3
+    color: $fg-3
 
 // Invite others
 .ChannelUpsell-container
-    background-color: $nihility-bg-1
-    border-color: $nihility-bg-5
+    background-color: $bg-1
+    border-color: $border-dark-0
 
 /*
  * -=- Members and Threads -=-
@@ -403,7 +386,7 @@ body
 .SidebarWrapper-container,
 // Member list in group editing
 .CreateGroupUsersListLivePreview-members-section
-    background-color: $nihility-bg-1
+    background-color: $bg-1
 
 // Member list
 .PageSidebarWrapper-container
@@ -422,21 +405,21 @@ body
         padding: 0
 
 .SidebarInfoItem-container
-    border-radius: $nihility-radius-2
+    border-radius: $radius-3
 
 .SimpleIconTabMenuHeaderItem
     // Member/thread list tab hover
     &-container:hover, &-container:active, &-container:focus
-        background-color: $nihility-bg-3
+        background-color: $bg-3
     // Member/thread list active tab
     &-container-selected::after
-        background-color: $nihility-fg-1
+        background-color: $fg-1
     // Member/thread list tab icon
     &-icon
-        fill: $nihility-fg-1
+        fill: $fg-1
     // Member/thread list active tab icon
     &-icon
-        fill: $nihility-fg-2
+        fill: $fg-2
 
 /*
  * --- Member list ---
@@ -447,45 +430,45 @@ body
     &-container-type-default
         // Member list icon
         .ChannelListHeader-display-icon
-            fill: $nihility-fg-1
+            fill: $fg-1
         // Member list role name
         .ChannelListHeader-text
-            color: $nihility-fg-2
+            color: $fg-2
     // Member list role amount
     &-amount
-        color: $nihility-fg-1
+        color: $fg-1
 
 // Member list user hover
 .SidebarUsersRoleInfo-user::after
-    background-color: $nihility-bg-hover
+    background-color: $bg-hover
 
 .VoiceSidebarMembersDisplay-join-voice
     // Member list join voice icon
     &-icon
-        fill: $nihility-fg-1
+        fill: $fg-1
         // Member list join voice button
         &-wrapper
-            background-color: $nihility-bg-4
+            background-color: $bg-4
     // Member list join voice hover
     &:hover &-text,
     &:hover &-icon
-        @include set-color($nihility-fg-2)
+        @include set-color($fg-2)
 
 // Member list invite icon
 .SidebarInviteButton-icon
-    fill: $nihility-fg-1
-    @include nihility-transition(fill)
+    fill: $fg-1
+    @include set-transition(fill)
     // Member list invite button
     &-wrapper
-        background-color: $nihility-bg-4
+        background-color: $bg-4
 // Member list invite text
 .GuildedText-container-color-gray
-    color: $nihility-fg-1
-    @include nihility-transition(color)
+    color: $fg-1
+    @include set-transition(color)
 // Member list invite hover
 .SidebarInviteButton-container:hover
     .SidebarInviteButton-text, .SidebarInviteButton-icon
-        @include set-color($nihility-fg-2)
+        @include set-color($fg-2)
 
 /*
  * --- Thread list ---
@@ -494,34 +477,34 @@ body
 .ChannelThreadsInfo
     // Thread list "None"
     &-none
-        color: $nihility-fg-1
+        color: $fg-1
     // Thread list more
     &-more
-        color: $nihility-fg-1
-        @include nihility-transition(color)
+        color: $fg-1
+        @include set-transition(color)
         // Thread list more hover
         &:hover
-            color: $nihility-fg-2
+            color: $fg-2
 // Thread card
 .ChatChannelListItemInfo
     // Hover
     &-container-actionable::after
-        background-color: $nihility-bg-hover
+        background-color: $bg-hover
     
     // Last activity at
     &-last-at
-        color: $nihility-fg-1
-        @include nihility-transition(color)
+        color: $fg-1
+        @include set-transition(color)
     // Last activity at hover
     &-container-actionable:hover &-last-at
-        color: $nihility-fg-3
+        color: $fg-3
     
     // Reply count
     &-reply-row &-num-replies
-        color: $nihility-fg-1
+        color: $fg-1
     // Last reply
     &-latest-message
-        color: $nihility-fg-2
+        color: $fg-2
 
 
 /*
@@ -531,4 +514,4 @@ body
 // Voice channel click guide
 .NuxTargetGlowie-container
     &, &::after
-        background-image: radial-gradient(circle at 50% 50%, rgba($nihility-important,0), rgba($nihility-important,0) 39%, $nihility-important)
+        background-image: radial-gradient(circle at 50% 50%, rgba($important,0), rgba($important,0) 39%, $important)
