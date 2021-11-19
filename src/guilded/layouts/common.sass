@@ -85,64 +85,6 @@
         color: var(--NihilityLinkHover)
 
 /*
- * -=- Buttons -=-
- */
-
-/*
- * --- Golden button ---
- */
-
-.FormConfirmButtonV2-container
-    // Normal button
-    &.FormConfirmButtonV2-container-type-gilded,
-    &-filled.FormConfirmButtonV2-container-type-delete,
-    &-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete
-        border: 0
-        box-shadow: none
-        background: $bg-1
-        // Invite copy box
-        .CopyableTextbox-container &
-            background: $bg-3
-    // Button hovered over
-    &-desktop.FormConfirmButtonV2-container-filled:hover,
-    &-filled.FormConfirmButtonV2-container-type-delete:hover,
-    &-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete:hover
-        background: $bg-2
-        box-shadow: none
-        // Invite copy box
-        .CopyableTextbox-container &
-            background: $bg-4
-
-    // Normal button text
-    &-hollow .FormConfirmButtonV2-button-content
-        @include set-color(var(--NihilityTheme0))
-    // Button hovered over text
-    &-desktop.FormConfirmButtonV2-container-filled:hover .FormConfirmButtonV2-button-content
-        @include set-color(var(--NihilityTheme1))
-    // Discard/Delete button text
-    &-type-delete .FormConfirmButtonV2-button-content
-        @include set-color($bad-0)
-    // Discard/Delete button text hover
-    &-desktop.FormConfirmButtonV2-container-type-delete:hover .FormConfirmButtonV2-button-content
-        @include set-color($bad-1)
-
-    // Inactive button
-    &.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled
-        // Container
-        &, &.FormConfirmButtonV2-container-desktop:hover
-            background-color: $bg-0 !important
-            border-color: $border-dark-0
-    // Inactive button content
-    &.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-disabled
-        // Text
-        .FormConfirmButtonV2-button-content,
-        &.FormConfirmButtonV2-container-desktop:hover .FormConfirmButtonV2-button-content
-            @include set-color($fg-0)
-// Text
-.FormConfirmButtonV2-button-content
-    @include set-color($fg-3)
-
-/*
  * --- Custom animations ---
  */
 
@@ -224,6 +166,11 @@
  * -=- Badges -=-
  */
 
+.CalloutBadge-container
+    color: $fg-1
+    background-color: $bg-0 !important
+    border: 1px solid $border-light-0 !important
+
 /*
  * --- User badges ---
  */
@@ -234,7 +181,23 @@
         display: none
     // Override all colours for badges
     &-container:not(.UserFlairRow-icon)
-        background-color: $glow-0 !important
+        color: $fg-1
+        background-color: $bg-1 !important
+        border: 1px solid $border-light-0 !important
+
+/*
+ * --- Tournament badges ---
+ */
+
+// Status badge
+.TournamentStatusBadge-container-status
+    &-in-progress, &-unpublished
+        background-color: $bg-0
+        border: 1px solid $border-light-0
+    &-in-progress
+        color: $active
+    &-unpublished
+        color: $waiting
 
 /*
  * -=- Bars -=-

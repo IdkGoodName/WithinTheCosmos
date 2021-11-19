@@ -46,7 +46,8 @@
 
 // Buttons
 .ToggleControl-container
-    border-color: $fg-0
+    border-color: $border-light-1
+    overflow: hidden
 .ToggleControlButton-container.ToggleControlButton-container
     &-desktop:hover, &-selected
         color: var(--NihilityTheme0)
@@ -67,31 +68,43 @@
     &Event-container-desktop:hover
         background-color: $bg-3
 
-// Date input
-.FormBoxAndLabel
-    &-box
-        border-color: $fg-0
-        @include set-transition(border-color)
-    &-container-focused &-box,
-    &-container-desktop:hover &-box
-        border-color: $border-light-1
-    // Icon
-    &-form-icon
-        fill: $fg-1
-    // Text inside input
-    &-main-text
+/*
+ * --- Calendar Pop-up ---
+ */
+
+// Date input pop-up
+.DateInput-menu
+    //background-color: $bg-2
+    border: 1px solid $border-light-1
+.DayPicker
+    // Month name
+    &-header
         color: $fg-3
-// Time input
-.TimeInput
-    // Part selected
-    &-input:focus
-        background-color: var(--NihilitySelect)
-    // : delimeter
-    &-delimiter
+        background-color: $bg-2
+    &-arrow
+        fill: $fg-1
+    // Week day
+    &-day-label
         color: $fg-1
-// Timezone label
-.TimeFieldWrapper-timezone-label
-    color: $fg-1
+    // Day
+    &-day
+        background-color: $bg-4
+        @include set-transition(background-color)
+        &-contents
+            color: $fg-2 !important
+    &-day-next-month
+        background-color: $bg-2
+        .DayPicker-day-contents
+            color: $fg-0 !important
+    &-day:hover
+        background-color: $bg-5
+    // Day numbers
+    &-container-desktop &-day:hover &-day-contents,
+    &-container-desktop &-day-selected.DayPicker-day:hover &-day-contents
+        background-color: transparent
+    &-day-selected &-day-contents
+        background-color: var(--NihilityTheme0)
+        color: #FFF !important
 
 /*
  * --- Pop up ---
