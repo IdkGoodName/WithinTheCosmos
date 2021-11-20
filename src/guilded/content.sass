@@ -47,7 +47,7 @@ $pill-bg: rgba($fg-3, 0.1)
 
 // Paragraph with only emotes
 .ParagraphRenderer-only-reaction
-    font-size: 3rem
+    font-size: 200%
     // If there is only emote paragraph above, remove margin
     & + &
         margin-top: 0 !important
@@ -73,7 +73,7 @@ $pill-bg: rgba($fg-3, 0.1)
 .BlockQuoteContainerRenderer
     background-color: $shading-1
     border-left-color: var(--NihilityTheme1)
-    border-left-width: $radius-1 + 0.1rem
+    border-left-width: $radius-1 + 2px
     border-radius: $radius-0
     overflow: hidden
     &.SlateContainerRenderer.slate-margin-lg
@@ -89,7 +89,6 @@ $pill-bg: rgba($fg-3, 0.1)
 // Code block in Markdown plain text
 .PrismTokenCodeBlockRenderer-container
     background-color: $bg-1
-    border-radius: $radius-2
     // Embeds
     .ChatEmbed-container &,
     .OpenGraphEmbed-content &,
@@ -419,17 +418,21 @@ $pill-bg: rgba($fg-3, 0.1)
 .ChatChannelInput-container
     border-radius: $radius-3
 
-// Editor
+// Forum editor
+.Editor-container
+    border: 1px solid $border-light-0
+    background-color: $bg-2
+
+// Chat input
 .ChatChannelInput-container .ChatChannelInput-editor,
 .ChatV2MessageReplyTooltipInput-title-container,
 .ChannelTitleInput-container,
 .ChatChannelInput-editor,
-.Editor-container,
 // No write editor
 .ChatChannelInput-no-permissions,
 .ChatChannelInputPublic-container
     border: 1px solid $border-light-0
-    background-color: transparent
+    background-color: $bg-3
 
 // Doc editor
 .DocEditor-container .DocEditor-content-input,
@@ -535,7 +538,7 @@ $pill-bg: rgba($fg-3, 0.1)
 // Selected text toolbar picker
 .SlateSelectionToolbar-toolbar
     background-color: $bg-0
-    box-shadow: 0rem 0rem 1rem 0.1rem black
+    box-shadow: 0 0 16px 2px black
 
 // Selected text toolbar caret
 .SlateSelectionToolbar-caret

@@ -113,7 +113,8 @@
 .ChatChannelInputInlineReplyStatusBar
     // Box
     &-container
-        background-color: $bg-0
+        background-color: $bg-1
+        border: 1px solid $border-light-1
     // Label
     &-replying-to-text
         color: $fg-1
@@ -136,6 +137,9 @@
 .CloseIcon-icon:hover
     fill: $bad-0
 
+.ChatChannelInput-editor
+    border: none
+
 // Reply headers
 .ChatV2MessageReplyHeader-container
     // Reply header
@@ -144,12 +148,12 @@
         &::after
             border-color: $fg-0
             opacity: 30%
-            height: 2.5rem
+            height: 24px
         &:first-child::after
-            height: 1rem
+            height: 12px
     // Reply header line thread
     &-thread::after, &-thread:first-child::after
-        height: 4rem
+        height: 44px
 
 .ChatV2MessageReplyHeader
     // Text in the reply
@@ -220,7 +224,7 @@
     &-line
         background-color: $bg-5
         &:last-child
-            width: 50rem
+            width: 600px
     &-container-word-style-chat &-word,
     &-word
         color: $fg-1
