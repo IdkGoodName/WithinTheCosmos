@@ -110,7 +110,7 @@
 
 
 // Replying to
-.ChatChannelInputInlineReplyStatusBar
+.ChatChannelInputStatusBar
     // Box
     &-container
         background-color: $bg-1
@@ -119,23 +119,27 @@
     &-replying-to-text
         color: $fg-1
 
-    // Mention icon
-    &-ping-icon
-        fill: $fg-1
-        @include set-transition(fill)
-        .ChatChannelInputInlineReplyStatusBar-ping:hover &,
-        .ReplyPingButton-ping:hover &
-            fill: $fg-2
-        .ChatChannelInputInlineReplyStatusBar-ping-enabled &,
-        .ReplyPingButton-ping-enabled &
-            fill: $important
     // Close icon
-    &-close-icon
+    &Buttons
+        &-close-icon
+            fill: $fg-1
+            @include set-transition(fill)
+        &-hover:hover &-close-icon
+            fill: $bad-0
+.PrivateReplyButton
+    &-icon
         fill: $fg-1
         @include set-transition(fill)
-
-.CloseIcon-icon:hover
-    fill: $bad-0
+        &-enabled
+            fill: $private-send
+    &-container:hover:not(&-container-disabled) &-icon:not(&-icon-enabled)
+        fill: $fg-2
+.ReplyPingButton-ping
+    &-icon
+        fill: $fg-1
+        @include set-transition(fill)
+    &-enabled &-icon
+        fill: $mention
 
 .ChatChannelInput-editor
     border: none
@@ -269,10 +273,6 @@
 .LastReplyDisplay-icon-chevron
     color: var(--NihilityTheme1)
 
-// Archive info bar
-.BannerWithButton-container
-    background-color: $bg-1
-
 /*
  * --- Header ---
  */
@@ -318,17 +318,6 @@
         // Delete icon hover
         &:hover .QuickActionBar-action
             fill: $bad-1
-
-// Plus menu
-.ContextMenuItem-container
-    &-section-type-rows
-        // Description
-        .ContextMenuItem-body
-            color: $fg-1
-    &:hover
-        // Description
-        .ContextMenuItem-body
-            color: $fg-2
 
 // Remove hover from the message in deletion menu
 .ConfirmationOverlay-item .ChatV2Message-container

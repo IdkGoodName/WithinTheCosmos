@@ -129,63 +129,6 @@
         border-color: var(--NihilityTheme0)
 
 /*
- * -=- Channel settings -=-
- */
-
-.TriStateInputButton-container-type
-    // Permission allowed
-    &-on
-        // Icon
-        .TriStateInputButton-icon
-            fill: $good-0
-        // Icon hover
-        &:hover .TriStateInputButton-icon
-            fill: $good-1
-        // Selected
-        &.TriStateInputButton-container-selected
-            background-color: $good-0
-            // Selected icon
-            .TriStateInputButton-icon
-                fill: $bg-0
-            // Selected hover
-            &:hover
-                background-color: $good-1
-    // Permission inherit
-    &-passThrough
-        // Icon
-        .TriStateInputButton-icon
-            fill: $normal-0
-        // Icon hover
-        &:hover .TriStateInputButton-icon
-            fill: $normal-1
-        // Selected
-        &.TriStateInputButton-container-selected
-            background-color: $normal-0
-            // Selected icon
-            .TriStateInputButton-icon
-                fill: $bg-0
-            // Selected hover
-            &:hover
-                background-color: $normal-1
-    // Permission denied
-    &-off
-        // Icon
-        .TriStateInputButton-icon
-            fill: $bad-0
-        // Icon hover
-        &:hover .TriStateInputButton-icon
-            fill: $bad-1
-        // Selected
-        &.TriStateInputButton-container-selected
-            background-color: $bad-0
-            // Selected icon
-            .TriStateInputButton-icon
-                fill: $bg-0
-            // Selected hover
-            &:hover
-                background-color: $bad-1
-
-/*
  * -=- Settings Tabs -=-
  */
 
@@ -253,15 +196,6 @@
     // Text
     .TeamSettingsAddButton-text
         color: $fg-2
-// Selected colour
-.ColorInputOption-container-dot-selected
-    border-color: var(--NihilityTheme1)
-// Colour hover
-.ColorInputOption-container-size-lg .ColorInputOption-container-dot:not(.ColorInputOption-container-dot-selected):hover
-    border-color: $fg-0
-// Role description
-.TeamRolesListInstructions-container
-    color: $fg-1
 
 // Permission syncing
 .TeamChannelRoleSyncControl

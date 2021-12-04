@@ -1,40 +1,15 @@
 /*
- * -=- State -=-
+ * -=- Banners -=-
  */
 
-// Toggle/switch field
-.ToggleFieldWrapper
-    // Toggle field title
-    &-label
-        color: $bad-0
-        font-weight: bold
-        @include set-transition(color)
-    // Toggle field toggled title
-    &-label-active
-        color: $good-0
-        font-weight: bolder
-    // Moderator view tooltip icon
-    &-tooltip-icon
-        fill: $fg-2
-    // All day checkmark icon
+// Archive info bar, bot role warning
+.BannerWithButton
     &-icon
-        fill: $fg-1
-
-.SwitchInput
-    // Slider off
-    &-container .SwitchInput-slide
-        background-color: $bad-0
-    // Slider on
-    &-container-on .SwitchInput-slide
-        background-color: $good-0
-    // Slider thumb
-    &-tab
-        background-color: $bg-3
-        // White shadow
-        box-shadow: $shadow
-        // Disabled
-        .SwitchInput-container-disabled &
-            background-color: $bg-1
+        fill: $fg-0
+    &-container
+        background-color: $bg-1
+        &-theme-warning
+            border-color: $important
 
 /*
  * -=- Text -=-
@@ -57,6 +32,7 @@
         color: $fg-1
 
 // Link/Hyperlink
+.MediaUploaderDropImageInstructions-browse-link,
 .TeamListItemsCompletedHeader-show-complete,
 .CustomFormIndividualResults-toggle-expand,
 .LandingPageV3InternalLinkColumn-link,
@@ -67,12 +43,16 @@
 .TeamSettingsWebhookPage-link,
 .PrismTokenUrlRenderer-link,
 .LandingFooterSEOLinks-link,
+.InlineTextLink-container,
 .CardGames-overflow-link,
 .LandingFooterApps-link,
+.EventCardMetadata-link,
 .ChatEmbedContent-link,
 .ChatEmbedAuthor-link,
 .EmbedCardFooter-link,
 .CancelText-container,
+.CardList-label-link,
+.StatusMessage-link,
 .RouteLink-linkify,
 .LinkRenderer
     // Link normally
@@ -168,7 +148,7 @@
 
 .CalloutBadge-container
     color: $fg-1
-    background-color: $bg-0 !important
+    background: $bg-0 !important
     border: 1px solid $border-light-0 !important
 
 /*
@@ -182,8 +162,19 @@
     // Override all colours for badges
     &-container:not(.UserFlairRow-icon)
         color: $fg-1
-        background-color: $bg-1 !important
+        background: $bg-1 !important
         border: 1px solid $border-light-0 !important
+
+/*
+ * --- Channel & Settings badges ---
+ */
+
+// [BETA]
+.PersistentActionMenuItem-container,
+.TeamChannelItemContents-label-wrapper
+    .CalloutBadge-container
+        color: $waiting
+        background: $bg-2 !important
 
 /*
  * --- Tournament badges ---

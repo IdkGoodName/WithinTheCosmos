@@ -105,6 +105,97 @@
         color: $bad-0
 
 /*
+ * --- Toggles ---
+ */
+
+// Toggle/switch field
+.ToggleFieldWrapper
+    // Toggle field title
+    &-label
+        color: $bad-0
+        font-weight: bold
+        @include set-transition(color)
+    // Toggle field toggled title
+    &-label-active
+        color: $good-0
+        font-weight: bolder
+    // Moderator view tooltip icon
+    &-tooltip-icon
+        fill: $fg-2
+    // All day checkmark icon
+    &-icon
+        fill: $fg-1
+
+.SwitchInput
+    // Slider off
+    &-container .SwitchInput-slide
+        background-color: $bad-0
+    // Slider on
+    &-container-on .SwitchInput-slide
+        background-color: $good-0
+    // Slider thumb
+    &-tab
+        background-color: $bg-3
+        // White shadow
+        box-shadow: $shadow
+        // Disabled
+        .SwitchInput-container-disabled &
+            background-color: $bg-1
+
+.TriStateInputButton-container-type
+    // Permission allowed
+    &-on
+        // Icon
+        .TriStateInputButton-icon
+            fill: $good-0
+        // Icon hover
+        &:hover .TriStateInputButton-icon
+            fill: $good-1
+        // Selected
+        &.TriStateInputButton-container-selected
+            background-color: $good-0
+            // Selected icon
+            .TriStateInputButton-icon
+                fill: $bg-0
+            // Selected hover
+            &:hover
+                background-color: $good-1
+    // Permission inherit
+    &-passThrough
+        // Icon
+        .TriStateInputButton-icon
+            fill: $normal-0
+        // Icon hover
+        &:hover .TriStateInputButton-icon
+            fill: $normal-1
+        // Selected
+        &.TriStateInputButton-container-selected
+            background-color: $normal-0
+            // Selected icon
+            .TriStateInputButton-icon
+                fill: $bg-0
+            // Selected hover
+            &:hover
+                background-color: $normal-1
+    // Permission denied
+    &-off
+        // Icon
+        .TriStateInputButton-icon
+            fill: $bad-0
+        // Icon hover
+        &:hover .TriStateInputButton-icon
+            fill: $bad-1
+        // Selected
+        &.TriStateInputButton-container-selected
+            background-color: $bad-0
+            // Selected icon
+            .TriStateInputButton-icon
+                fill: $bg-0
+            // Selected hover
+            &:hover
+                background-color: $bad-1
+
+/*
  * --- Option-based ---
  */
 
@@ -308,3 +399,17 @@
 // Text
 .FormConfirmButtonV2-button-content
     @include set-color($fg-3)
+
+/*
+ * --- Colours (Role colours) ---
+ */
+
+// Selected colour
+.ColorInputOption-container-dot-selected
+    border-color: var(--NihilityTheme1)
+// Colour hover
+.ColorInputOption-container-size-lg .ColorInputOption-container-dot:not(.ColorInputOption-container-dot-selected):hover
+    border-color: $fg-0
+// Role description
+.TeamRolesListInstructions-container
+    color: $fg-1

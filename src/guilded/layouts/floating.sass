@@ -5,7 +5,7 @@
  */
 
 /*
- * --- New messages / Alert bar ---
+ * -=- New messages / Alert bar -=-
  */
 
 // Alert bar icon
@@ -50,7 +50,7 @@
             fill: $active
 
 /*
- * --- Tooltips ---
+ * -=- Tooltips -=-
  */
 
 // Tooltip
@@ -71,7 +71,7 @@
     color: $fg-2
 
 /*
- * --- Reactions ---
+ * -=- Reactions -=-
  */
 
 // Reaction normally
@@ -121,10 +121,12 @@
             background-color: rgba($active, 0.15)
 
 /*
- * --- Member card ---
+ * -=- Team cards -=-
  */
 
-// Member card's background
+// Role card's background
+.TeamRoleCardOverlay-container,
+// Profile card's background
 .ProfileHoverCardV2Overlay-container
     background-color: $bg-4
 
@@ -150,20 +152,12 @@
         color: $fg-2
 
 // Background for buttons
+.TeamRoleCardOverlay-menu,
 .ProfileHoverCardV2Overlay-action-menu
     background-color: $bg-3
 
-// Button
-.ContextMenu
-    // Icon
-    &-content
-        fill: $fg-1
-    // Text
-    &Item-label
-        color: $fg-2
-
 /*
- * --- Mention icons and notifications ---
+ * -=- Mention icons and notifications -=-
  */
 
 // Mentions
@@ -194,6 +188,24 @@
     background-color: $bg-1
     border-color: $border-light-1
 
+// Plus menu
+.ContextMenuItem-container
+    &-section-type-rows
+        // Description
+        .ContextMenuItem-body
+            color: $fg-1
+    &:hover
+        // Description
+        .ContextMenuItem-body
+            color: $fg-2
+// Button
+.ContextMenu
+    // Icon
+    &-content
+        fill: $fg-1
+    // Text
+    &Item-label
+        color: $fg-2
 // Menu item
 .ContextMenuItem
     &-container
@@ -221,6 +233,12 @@
         .ContextMenuIcon-container-icon
             color: $important
 
+// Highlighted
+.ContextMenuItem-container.ContextMenuItem-highlighted .ContextMenuItem-icon,
+.ContextMenuItem-container.ContextMenuItem-highlighted .ContextMenuItem-label
+    color: $highlight
+    fill: $highlight
+
 // Overflow icon
 .ContextMenuTrigger
     &-container &-icon
@@ -228,7 +246,6 @@
         @include set-transition(fill)
     &-container-desktop:hover &-icon
         fill: $fg-2
-
 
 /*
  * --- Emote picker ---
