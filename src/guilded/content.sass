@@ -74,7 +74,7 @@ $pill-bg: rgba($fg-3, 0.1)
     background-color: $shading-1
     border:
         left-color: var(--NihilityTheme1)
-        left-width: $radius-1 + 2px
+        left-width: $radius-1
         radius: $radius-0
     overflow: hidden
     &.SlateContainerRenderer.slate-margin-lg
@@ -89,12 +89,7 @@ $pill-bg: rgba($fg-3, 0.1)
 .CodeContainerRenderer-container,
 // Code block in Markdown plain text
 .PrismTokenCodeBlockRenderer-container
-    background-color: $bg-1
-    // Embeds
-    .ChatEmbed-container &,
-    .OpenGraphEmbed-content &,
-    .TeamEmbedCard-container &
-        background-color: $bg-0
+    background-color: $bg-0
     // Make sure Markdown code block also gets it
     code
         font-family: 'Courier', monospace
@@ -142,31 +137,13 @@ $pill-bg: rgba($fg-3, 0.1)
         color: $fg-format
     // Inline code
     &-inline-code, &-inline-code-v2
-        background-color: $bg-1
+        background-color: $bg-0
         color: $fg-code
-        // Make it darker in the editor, block quotes and embeds to not match background color
-        .BlockQuoteContainerRenderer &,
-        // .ChatChannelInput-editor &,
-        // .SlateEditor-editor &,
-        // Embeds
-        .ChatEmbed-container &,
-        .OpenGraphEmbed-content &,
-        .TeamEmbedCard-container &
-            background-color: $bg-0
 
 // Old inline code
 .PrismTokenInlineRenderer-container-type-code
-    background-color: $bg-1
+    background-color: $bg-0
     color: $fg-code
-    // Make it darker in the editor, block quotes and embeds to not match background color
-    .BlockQuoteContainerRenderer &,
-    // .ChatChannelInput-editor &,
-    // .SlateEditor-editor &,
-    // Embeds
-    .ChatEmbed-container &,
-    .OpenGraphEmbed-content &,
-    .TeamEmbedCard-container &
-        background-color: $bg-0
 
 // Template parameters
 .TemplateParameter-container,

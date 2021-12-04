@@ -322,84 +322,87 @@
  * --- Buttons ---
  */
 
-.FormConfirmButtonV2-container
-    // Normal button
-    &.FormConfirmButtonV2-container-type-gilded,
-    &-filled.FormConfirmButtonV2-container-type-delete,
-    &-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete
-        border: 0
-        box-shadow: none
-        background: $bg-1
-        border: 1px solid $border-light-0
-        // Invite copy box
-        .CopyableTextbox-container &
-            background: $bg-3
-    // Button hovered over
-    &-desktop.FormConfirmButtonV2-container-filled:hover,
-    &-filled.FormConfirmButtonV2-container-type-delete:hover,
-    &-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete:hover
-        background: $bg-2
-        box-shadow: none
-        // Invite copy box
-        .CopyableTextbox-container &
-            background: $bg-4
-    &.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-disabled,
-    &.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-disabled:hover
-        border-color: $border-light-0
-    // Normal button text
-    &-hollow .FormConfirmButtonV2-button-content
-        @include set-color(var(--NihilityTheme0))
-    // Button hovered over text
-    &-desktop.FormConfirmButtonV2-container-filled:hover .FormConfirmButtonV2-button-content
-        @include set-color(var(--NihilityTheme1))
-    // Discard/Delete button text
-    &-type-delete .FormConfirmButtonV2-button-content
-        @include set-color($bad-0)
-    // Discard/Delete button text hover
-    &-desktop.FormConfirmButtonV2-container-type-delete:hover .FormConfirmButtonV2-button-content
-        @include set-color($bad-1)
+@mixin button-typed($border-colour, $text-colour)
+    background: $shading-1
+    border: solid 1px $border-colour
+    .FormConfirmButtonV2-button-content
+        @include set-color($text-colour)
+@mixin button-typed-hollow($border-colour, $text-colour)
+    border: solid 1px $border-colour
+    .FormConfirmButtonV2-button-content
+        @include set-color($text-colour)
 
-    // Inactive button
-    &.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled
-        // Container
-        &, &.FormConfirmButtonV2-container-desktop:hover
-            background-color: $bg-0 !important
-            border-color: $border-light-0
-    // Inactive button content
-    &.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-disabled
-        // Text
-        .FormConfirmButtonV2-button-content,
-        &.FormConfirmButtonV2-container-desktop:hover .FormConfirmButtonV2-button-content
+.FormConfirmButtonV2
+    // Gilded button
+    &-container.FormConfirmButtonV2-container-type-gilded
+        background: $shading-1
+        box-shadow: none
+        border-color: $border-light-0
+    // Gilded button hover
+    &-container-desktop.FormConfirmButtonV2-container-filled:hover
+        box-shadow: none
+        border-color: $border-light-1
+        .FormConfirmButtonV2-button-content
+            @include set-color(var(--NihilityTheme1))
+    // Gilded button text
+    &-button-content
+        @include set-color(var(--NihilityTheme0))
+    
+    // Hollow gilded
+    &-container.FormConfirmButtonV2-container-hollow
+        background: none
+        border-color: $fg-0
+    // Hollow gilded hover
+    &-container-desktop.FormConfirmButtonV2-container-hollow:hover
+        border-color: $fg-1
+        .FormConfirmButtonV2-button-content
+            @include set-color(var(--NihilityTheme1))
+    // Hollow gilded text
+    &-container-hollow &-button-content
+        @include set-color(var(--NihilityTheme0))
+
+    // Delete button
+    &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete
+        @include button-typed($border-light-0, $bad-0)
+    &-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete:hover
+        @include button-typed($border-light-1, $bad-1)
+    
+    // Success button
+    &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-success
+        @include button-typed($border-light-0, $good-0)
+    &-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-success:hover
+        @include button-typed($border-light-0, $good-1)
+    
+    // Delete hollow
+    &-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-delete
+        @include button-typed-hollow($bad-0, $bad-0)
+    &-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-delete:hover
+        @include button-typed-hollow($bad-1, $bad-1)
+    
+    // Success hollow
+    &-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-success
+        @include button-typed-hollow($good-0, $good-0)
+    &-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-success:hover
+        @include button-typed-hollow($good-1, $good-1)
+    
+    // Normal hollow
+    &-container.FormConfirmButtonV2-container-type-bleached
+        @include button-typed-hollow($fg-0, $normal-0)
+    &-container-desktop.FormConfirmButtonV2-container-type-bleached.FormConfirmButtonV2-container-hollow:hover
+        @include button-typed-hollow($fg-1, $normal-1)
+
+    // Disabled
+    &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled,
+    &-container.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled:hover
+        background-color: $bg-0
+        border-color: $border-light-0
+        .FormConfirmButtonV2-button-content
             @include set-color($fg-0)
 
-// Hollow button
-.FormConfirmButtonV2-container
-    // Button
-    &.FormConfirmButtonV2-container-hollow
-        border-color: $fg-0
-        // Button hover glare
-        &:not(.FormConfirmButtonV2-container-disabled)::after
-            background-color: $bg-hover
-    // Button hover
-    &-desktop.FormConfirmButtonV2-container-hollow:hover
-        border-color: $fg-0
-    // Delete/remove buttons
-    &.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-delete
-        border-color: $bad-0
-
-    // Bordered button
-    &.FormConfirmButtonV2-container-type-white,
-    &.FormConfirmButtonV2-container-type-white.FormConfirmButtonV2-container-hollow,
-    &-desktop.FormConfirmButtonV2-container-type-white.FormConfirmButtonV2-container-hollow:hover
-        border-color: $border-light-1
-        // Content
-        .FormConfirmButtonV2-button-content
-            color: $fg-3
-
-// Text
-.FormConfirmButtonV2-button-content
-    @include set-color($fg-3)
-
+    // Disabled hollow
+    &-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-disabled,
+    &-container.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-disabled:hover
+        @include button-typed-hollow($fg-0, $fg-0)
 /*
  * --- Colours (Role colours) ---
  */

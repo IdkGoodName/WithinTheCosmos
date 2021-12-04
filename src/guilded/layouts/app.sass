@@ -427,6 +427,10 @@ body
  * --- Member list ---
  */
 
+// Member list section (roles)
+.TeamPageSidebarMembers-roles:not(:first-child)
+    margin-top: $spacing-5
+
 .ChannelListHeader
     // Member list
     &-container-type-default
@@ -439,6 +443,9 @@ body
     // Member list role amount
     &-amount
         color: $fg-1
+        padding: 0 $spacing-1
+        background-color: $bg-0
+        border-radius: $radius-2
 
 // Member list user hover
 .SidebarUsersRoleInfo-user::after
