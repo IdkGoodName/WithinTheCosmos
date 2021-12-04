@@ -31,9 +31,9 @@
 
 // Replies preview
 .LastReplyDisplay-container
-    @include set-var(--nihility-local-fg, $fg-2)
+    --nihility-local-fg: #{$fg-2}
     &:hover
-        @include set-var(--nihility-local-fg, $fg-3)
+        --nihility-local-fg: #{$fg-3}
 // Preview text
 .LastReplyDisplayContent-message-summary
     @include set-transition(color)

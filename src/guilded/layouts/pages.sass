@@ -155,15 +155,15 @@
 
 .ChatChannelListItem
     &-container
-        @include set-var(--border-color, $bg-1)
+        --border-color: #{$bg-1}
     // Selected DMs
     &-container-selected
         background-color: $bg-4
-        @include set-var(--border-color, $bg-3)
+        --border-color: #{$bg-3}
     // Hovered DMs
     &-container:not(&-container-selected):hover
         background-color: $bg-3
-        @include set-var(--border-color, $bg-2)
+        --border-color: #{$bg-2}
     // Remove DMs crossmark
     &-container:not(&-container-selected):hover &-remove-icon,
     &-container-selected &-remove-icon

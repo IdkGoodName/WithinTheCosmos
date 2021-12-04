@@ -72,13 +72,14 @@ $pill-bg: rgba($fg-3, 0.1)
 
 .BlockQuoteContainerRenderer
     background-color: $shading-1
-    border-left-color: var(--NihilityTheme1)
-    border-left-width: $radius-1 + 2px
-    border-radius: $radius-0
+    border:
+        left-color: var(--NihilityTheme1)
+        left-width: $radius-1 + 2px
+        radius: $radius-0
     overflow: hidden
     &.SlateContainerRenderer.slate-margin-lg
         padding: $spacing-1
-        padding-left: $spacing-2
+            left: $spacing-2
 
 /*
  * --- Code block ---
@@ -314,9 +315,9 @@ $pill-bg: rgba($fg-3, 0.1)
 .OpenGraphEmbed-content,
 .TeamEmbedCard-container
     background-color: $bg-2
-    border-radius: $radius-2
-
-    border-color: $border-light-0
+    border:
+        radius: $radius-2
+        color: $border-light-0
     overflow: hidden
     &:not([style])
         border-left: solid 1px $border-light-0
@@ -446,8 +447,9 @@ $pill-bg: rgba($fg-3, 0.1)
     border-color: $border-light-0
     // In doc editor
     .DocEditor-container &
-        border-left: solid 1px $border-light-0
-        border-right: solid 1px $border-light-0
+        border:
+            left: solid 1px $border-light-0
+            right: solid 1px $border-light-0
         padding: 0 $spacing-0
         border-radius: $radius-1
 

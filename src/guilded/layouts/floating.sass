@@ -59,7 +59,7 @@
     &-text-wrapper
         background-color: $bg-1
         border: solid 2px
-        border-color: $border-dark-1
+            color: $border-dark-1
         opacity: $floating-opacity
     // Arrow/Pointer
     &-arrow
@@ -234,10 +234,10 @@
             color: $important
 
 // Highlighted
-.ContextMenuItem-container.ContextMenuItem-highlighted .ContextMenuItem-icon,
-.ContextMenuItem-container.ContextMenuItem-highlighted .ContextMenuItem-label
-    color: $highlight
-    fill: $highlight
+.ContextMenuItem-container.ContextMenuItem-highlighted
+    .ContextMenuItem-icon, .ContextMenuItem-label
+        color: $highlight
+        fill: $highlight
 
 // Overflow icon
 .ContextMenuTrigger

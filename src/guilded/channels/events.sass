@@ -11,9 +11,10 @@
     &-week
         background-color: $bg-4
     &-day
-        border-width: 1px
-        border-style: solid
-        border-color: $border-dark-1
+        border:
+            width: 1px
+            style: solid
+            color: $border-dark-1
         background-color: $bg-4
         // Day numbers
         .FullSizedCalendarDayHeader-date
@@ -128,7 +129,7 @@
 // Header
 .EventTemporalChannelDisplay-container
     background-color: $bg-1
-    @include set-var(--border-color, $bg-0)
+    --border-color: #{$bg-0}
 // Details
 .TeamEventDetails
     &-post-metadata, &-status, &-item
@@ -148,7 +149,7 @@
         fill: $fg-1
     // Text
     &-placeholder
-        @include set-var(--nihility-local-fg, $fg-2)
+        --nihility-local-fg: #{$fg-2}
 
 .EventAttendanceHeader-status
     &-going

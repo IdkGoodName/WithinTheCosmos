@@ -11,7 +11,7 @@
 // Whole bar
 .Navbar-container
     background-color: $bg-0
-    @include set-var(--border-color, $bg-0)
+    --border-color: #{$bg-0}
 // Guilded logo
 .LogoAndWordmarkV2-container-theme-light
     fill: $fg-1
@@ -20,7 +20,7 @@
     fill: var(--NihilityTheme2)
 // User card
 .NavbarUserControls-container
-    @include set-var(--border-color, $bg-0)
+    --border-color: #{$bg-0}
 
 /*
  * --- Buttons ---
@@ -62,7 +62,7 @@
         color: $fg-2
 // Server list add
 .InlineAddItemControl-container
-    @include set-var(--inline-add-icon-background-color, $bg-3)
+    --inline-add-icon-background-color: #{$bg-3}
     // Hover
     &:hover, &-flavor-background-highlight.InlineAddItemControl-container-desktop:hover
         // Server list add icon hover
@@ -148,17 +148,17 @@
 
 // Sets group list width
 body
-    @include set-var(--group-selector-width, $icon-size + 16px)
+    --group-selector-width: #{$icon-size + 16px}
 // Group list
 .NavV4Sidebar-container,
 .GroupSelector-container,
 // Group list in group editing
 .GroupSelectorPreview-minimal-nav
     background-color: $bg-1
-    @include set-var(--border-color, $bg-0)
+    --border-color: #{$bg-0}
 // Group
 .GroupSelectorItem-container
-    @include set-var(--avatar-size, $icon-size)
+    --avatar-size: #{$icon-size}
 
 .NavSelectorItem-container .GroupAvatar-container
     font-size: 1.2em
@@ -291,8 +291,9 @@ body
         position: relative
         content: '. . .'
         text-align: center
-        margin-left: auto
-        margin-right: auto
+        margin:
+            left: auto
+            right: auto
         color: $fg-1
 
 // Channel 'beta' label
@@ -322,7 +323,7 @@ body
 
 // Sets PFP border
 .ScreenHeader-icon-wrapper
-    @include set-var(--border-color, $bg-0)
+    --border-color: #{$bg-0}
 
 // Screen header
 .ScreenHeader
@@ -389,7 +390,8 @@ body
     background-color: $bg-1
 
 // Member list
-.PageSidebarWrapper-container
+//.PageSidebarWrapper
+.SidebarWrapper-container
     position: relative
     top: 0
 // Also remove padding that was made for member list

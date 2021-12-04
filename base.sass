@@ -135,9 +135,6 @@ $hover-brightness: 20%
 @mixin set-color($color)
     color: $color
     fill: $color
-// CSS variables can't contain SASS variables for some odd reason, so this mixin is used instead
-@mixin set-var($name, $value)
-    #{$name}: $value
 
 // For setting transition in a lot of places
 @mixin set-transition($property, $fn: ease-out)

@@ -78,8 +78,9 @@
 // No-avatar group's icon
 .GroupAvatar-container-non-base
     background-color: $bg-4
-    border-color: $border-dark-0
-    border-radius: 50%
+    border:
+        color: $border-dark-0
+        radius: 50%
 // Loading group icon
 .GroupSelectorSkeleton-group
     background: $skeleton-0
@@ -132,4 +133,4 @@
         background: $skeleton-1
 
 .ChannelActivityDisplay-item
-    @include set-var(--border-color, $skeleton-0)
+    --border-color: #{$skeleton-0}

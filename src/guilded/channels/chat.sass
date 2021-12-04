@@ -40,7 +40,7 @@
     // Hovered message
     &:not(&-editing):hover, &.ChatV2Message-container-replying
         background-color: $bg-4
-        @include set-var(--nihility-local-fg, $fg-3)
+        --nihility-local-fg: #{$fg-3}
     // Right click active
     &-active
         background-color: $bg-4
@@ -94,7 +94,7 @@
     // Right clicked
     &-active:not(&-editing)
         background-color: $bg-4
-        @include set-var(--nihility-local-fg, $fg-3)
+        --nihility-local-fg: #{$fg-3}
     
     // Removes messages' margin
     & + &:not(&-with-header):not(&-type-system)
@@ -256,7 +256,7 @@
 // Threaded message
 .ChatMessageThread-container
     background-color: $shading-2
-    @include set-var(--border-color, $bg-4)
+    --border-color: #{$bg-4}
     // Threaded message hover
     &::after
         display: none
