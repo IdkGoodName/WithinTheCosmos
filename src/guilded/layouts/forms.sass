@@ -142,58 +142,68 @@
         .SwitchInput-container-disabled &
             background-color: $bg-1
 
+.TriStateInputWrapper-container
+    border-color: $border-light-0
+
 .TriStateInputButton-container-type
+    // All
+    &-on,
+    &-passThrough,
+    &-off
+        background-color: $bg-0
+    // All selected
+    &-on.TriStateInputButton-container-selected,
+    &-passThrough.TriStateInputButton-container-selected,
+    &-off.TriStateInputButton-container-selected
+        background-color: $bg-3
     // Permission allowed
     &-on
         // Icon
         .TriStateInputButton-icon
-            fill: $good-0
+            fill: $fg-0
         // Icon hover
         &:hover .TriStateInputButton-icon
-            fill: $good-1
+            fill: $fg-1
         // Selected
         &.TriStateInputButton-container-selected
-            background-color: $good-0
             // Selected icon
             .TriStateInputButton-icon
-                fill: $bg-0
+                fill: $good-0
             // Selected hover
-            &:hover
-                background-color: $good-1
+            &:hover .TriStateInputButton-icon
+                fill: $good-1
     // Permission inherit
     &-passThrough
         // Icon
         .TriStateInputButton-icon
-            fill: $normal-0
+            fill: $fg-0
         // Icon hover
         &:hover .TriStateInputButton-icon
-            fill: $normal-1
+            fill: $fg-1
         // Selected
         &.TriStateInputButton-container-selected
-            background-color: $normal-0
             // Selected icon
             .TriStateInputButton-icon
-                fill: $bg-0
+                fill: $neutral-0
             // Selected hover
-            &:hover
-                background-color: $normal-1
+            &:hover .TriStateInputButton-icon
+                fill: $neutral-1
     // Permission denied
     &-off
         // Icon
         .TriStateInputButton-icon
-            fill: $bad-0
+            fill: $fg-0
         // Icon hover
         &:hover .TriStateInputButton-icon
-            fill: $bad-1
+            fill: $fg-1
         // Selected
         &.TriStateInputButton-container-selected
-            background-color: $bad-0
             // Selected icon
             .TriStateInputButton-icon
-                fill: $bg-0
+                fill: $bad-0
             // Selected hover
-            &:hover
-                background-color: $bad-1
+            &:hover .TriStateInputButton-icon
+                fill: $bad-1
 
 /*
  * --- Option-based ---
