@@ -271,7 +271,7 @@ $pill-bg: rgba($fg-3, 0.1)
         background-color: $bg-3
         border-radius: $radius-2
         // Removes white border
-        border-color: $border-light-0
+        border-color: $border-light-1
         // Hovered over
         &:not(&-disabled)::after
             background-color: $bg-hover
@@ -294,10 +294,10 @@ $pill-bg: rgba($fg-3, 0.1)
     background-color: $bg-2
     border:
         radius: $radius-2
-        color: $border-light-0
+        color: $border-light-1
     overflow: hidden
     &:not([style])
-        border-left: solid 1px $border-light-0
+        border-left: solid 1px $border-light-1
 
 // Embed
 .ChatEmbed,
@@ -310,7 +310,7 @@ $pill-bg: rgba($fg-3, 0.1)
         &-description
             color: $fg-2
     &-content:not([style])
-        border-left: solid 1px $border-light-0
+        border-left: solid 1px $border-light-1
 
 .OpenGraphEmbedContent-domain
     color: $fg-1
@@ -366,7 +366,7 @@ $pill-bg: rgba($fg-3, 0.1)
         border-color: var(--NihilitySelect)
 .CustomFormWrapper-container-standalone
     background-color: $shading-0
-    border-color: $border-light-0
+    border-color: $border-light-1
     // Form border
     &::after
         border: none
@@ -398,7 +398,7 @@ $pill-bg: rgba($fg-3, 0.1)
 
 // Forum editor
 .Editor-container
-    border: 1px solid $border-light-0
+    border: 1px solid $border-light-1
     background-color: $bg-2
 
 // Chat input
@@ -409,7 +409,7 @@ $pill-bg: rgba($fg-3, 0.1)
 // No write editor
 .ChatChannelInput-no-permissions,
 .ChatChannelInputPublic-container
-    border: 1px solid $border-light-0
+    border: 1px solid $border-light-1
     background-color: $bg-3
 
 // Doc editor
@@ -421,12 +421,14 @@ $pill-bg: rgba($fg-3, 0.1)
 
 // Editor toolbar
 .SlateToolbarStrip
-    border-color: $border-light-0
+    border-color: $border-light-1
+    border-top: none
     // In doc editor
     .DocEditor-container &
         border:
-            left: solid 1px $border-light-0
-            right: solid 1px $border-light-0
+            top: solid 1px $border-light-1
+            left: solid 1px $border-light-1
+            right: solid 1px $border-light-1
         padding: 0 $spacing-0
         border-radius: $radius-1
 
@@ -452,7 +454,7 @@ $pill-bg: rgba($fg-3, 0.1)
 .DraftInputWithTitleV2-title-wrapper,
 .CollapsedInput-container
     background-color: transparent
-    border: 1px solid $border-light-0
+    border: 1px solid $border-light-1
 
 .TeamThreadReplyCreator-container-desktop .TeamThreadReplyCreator-unexpanded-wrapper,
 .DraftInputWithTitleV2-container-desktop.DraftInputWithTitleV2-container-unexpanded,

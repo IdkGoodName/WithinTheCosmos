@@ -8,8 +8,17 @@
         fill: $fg-0
     &-container
         background-color: $bg-1
+        border-color: $border-light-1
         &-theme-warning
-            border-color: $important
+            .GuildedText-container-type-subtextBodyWhite
+                color: $warning
+            .BannerWithButton-icon
+                fill: $warning
+// "Nicknames are visible to everyone in the server"
+.ChangeNicknameOverlay-info
+    color: $warning
+    background-color: $bg-1
+    border-color: $border-light-1
 
 /*
  * -=- Text -=-
@@ -149,7 +158,7 @@
 .CalloutBadge-container
     color: $fg-1
     background: $bg-0 !important
-    border: 1px solid $border-light-0 !important
+    border: 1px solid $border-light-1 !important
 
 /*
  * --- User badges ---
@@ -163,7 +172,10 @@
     &-container:not(.UserFlairRow-icon)
         color: $fg-1
         background: $bg-1 !important
-        border: 1px solid $border-light-0 !important
+        border: 1px solid $border-light-1 !important
+// [MEMBER]
+//.GroupMembershipBadge-container
+//    color: $verified
 
 /*
  * --- Channel & Settings badges ---
@@ -176,6 +188,11 @@
         color: $waiting
         background: $bg-2 !important
 
+// [LIVE]
+// .TeamChannelItemContents-label-wrapper
+//     .CalloutBadge-container
+//         color: $stream
+
 /*
  * --- Tournament badges ---
  */
@@ -184,7 +201,7 @@
 .TournamentStatusBadge-container-status
     &-in-progress, &-unpublished
         background-color: $bg-0
-        border: 1px solid $border-light-0
+        border: 1px solid $border-light-1
     &-in-progress
         color: $active
     &-unpublished

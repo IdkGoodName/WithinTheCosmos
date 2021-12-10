@@ -76,17 +76,21 @@
 
 // Reaction normally
 .ReactionPickerButton-container-type-content,
-.ReactionBadge-container-content,
+.ReactionBadge-container-content
+    background-color: $bg-1
+    border: solid 1px $border-light-0
+// Reaction hovered
 .ReactionBadge-container-content:hover,
 .ReactionBadge-container:not(.ReactionBadge-container-disabled):not(.ReactionBadge-container-active):hover .ReactionBadge-container-content
-    background-color: rgba(0, 0, 0, 0.3)
+    background-color: $bg-1
+    border: solid 1px $border-light-1
 
 .ReactionPickerButton-container-type-content
     transition-duration: $transition
 
     // When reaction is hovered over
     &:hover
-        background-color: $bg-1
+        background-color: $bg-0
 
 // Text after the reaction button
 .ReactionPickerButton-container-with-label::after
@@ -112,13 +116,13 @@
     &.ReactionBadge-container-active
         // Normal active reaction
         .ReactionBadge-container-content
-            background-color: rgba($active, 0.1)
+            background-color: mix($bg-1, $waiting, 90%)
             // Active reaction label
             .ReactionBadge-count
-                color: $active
+                color: $waiting
         // Active reaction hover
         &.ReactionBadge-container:not(.ReactionBadge-container-disabled):hover .ReactionBadge-container-content
-            background-color: rgba($active, 0.15)
+            background-color: mix($bg-1, $waiting, 95%)
 
 /*
  * -=- Team cards -=-
@@ -186,7 +190,7 @@
 // Menu container
 .TransientMenu-container-style-default
     background-color: $bg-1
-    border-color: $border-light-1
+    border-color: $border-light-2
 
 // Plus menu
 .ContextMenuItem-container

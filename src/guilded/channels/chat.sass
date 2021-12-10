@@ -56,28 +56,6 @@
             background-color: $replying
         &:hover::after
             background-color: color.adjust($replying, $whiteness: $hover-brightness)
-    // Private replies sent
-    &:not(&-editing):not(&-replying):not(&-mentioned):not(&-private-other).ChatV2Message-container-private
-        background-color: rgba($private-send, 0.05)
-        // Hover
-        &:hover
-            background-color: rgba($private-send, 0.02)
-        // Side
-        &::after
-            background-color: $private-send
-        &:hover::after
-            background-color: color.adjust($private-send, $whiteness: $hover-brightness)
-    // Private replies received
-    &:not(&-editing):not(&-replying):not(&-mentioned):not(&-private).ChatV2Message-container-private-other
-        background-color: rgba($private-receive, 0.05)
-        // Hover
-        &:hover
-            background-color: rgba($private-receive, 0.02)
-        // Side
-        &::after
-            background-color: $private-receive
-        &:hover::after
-            background-color: color.adjust($private-receive, $whiteness: $hover-brightness)
     
     // Mentioned message
     &:not(&-editing):not(&-replying):not(&-private).ChatV2Message-container-mentioned
@@ -90,6 +68,33 @@
             background-color: $mentioned
         &:hover::after
             background-color: color.adjust($mentioned, $whiteness: $hover-brightness)
+
+    // Private reply
+    &:not(&-editing):not(&-replying):not(&-mentioned):not(&-private-other).ChatV2Message-container-private,
+    // Private mention
+    &:not(&-editing):not(&-replying):not(&-private-other).ChatV2Message-container-private
+        background-color: rgba($private, 0.05)
+        // Hover
+        &:hover
+            background-color: rgba($private, 0.02)
+        // Side
+        &::after
+            background-color: $private
+        &:hover::after
+            background-color: color.adjust($private, $whiteness: $hover-brightness)
+    // Private reply mod view
+    &:not(&-editing):not(&-replying):not(&-mentioned):not(&-private).ChatV2Message-container-private-other,
+    // Private mention mod view
+    &:not(&-editing):not(&-replying):not(&-private).ChatV2Message-container-private-other
+        background-color: rgba($private-mod-view, 0.05)
+        // Hover
+        &:hover
+            background-color: rgba($private-mod-view, 0.02)
+        // Side
+        &::after
+            background-color: $private-mod-view
+        &:hover::after
+            background-color: color.adjust($private-mod-view, $whiteness: $hover-brightness)
 
     // Right clicked
     &-active:not(&-editing)
@@ -114,7 +119,7 @@
     // Box
     &-container
         background-color: $bg-1
-        border: 1px solid $border-light-1
+        border: 1px solid $border-light-2
     // Label
     &-replying-to-text
         color: $fg-1
@@ -131,7 +136,7 @@
         fill: $fg-1
         @include set-transition(fill)
         &-enabled
-            fill: $private-send
+            fill: color.adjust($private, $whiteness: 25%)
     &-container:hover:not(&-container-disabled) &-icon:not(&-icon-enabled)
         fill: $fg-2
 .ReplyPingButton-ping
@@ -139,7 +144,7 @@
         fill: $fg-1
         @include set-transition(fill)
     &-enabled &-icon
-        fill: $mention
+        fill: color.adjust($mention, $whiteness: 25%)
 
 .ChatChannelInput-editor
     border: none

@@ -81,7 +81,7 @@
     @include set-transition(border-color)
     // Big form input hover
     &:hover
-        border-color: $border-light-1
+        border-color: $border-light-2
     // Big form input focus
     &:focus
         border-color: var(--NihilityTheme2)
@@ -143,7 +143,7 @@
             background-color: $bg-1
 
 .TriStateInputWrapper-container
-    border-color: $border-light-0
+    border-color: $border-light-1
 
 .TriStateInputButton-container-type
     // All
@@ -273,14 +273,19 @@
     // Form selector value
     .Select-value-label
         color: $fg-2
-
+    // Form select menu
+    &.GuildedSelect-container-dark .Select-menu-outer,
+    &.GuildedSelect-container-light .Select-menu-outer
+        border-color: $border-dark-1
+        background-color: $bg-1
 .Select
     // Form selector options
     &-menu
         background-color: $bg-4
         &-outer
             opacity: $floating-opacity
-            border-color: $border-dark-1 !important
+            border-color: $border-dark-1
+            background-color: $bg-1
 
     // Form selector option
     &-option
@@ -309,7 +314,7 @@
         @include set-transition(border-color)
     &-container-focused &-box,
     &-container-desktop:hover &-box
-        border-color: $border-light-1
+        border-color: $border-light-2
     // Icon
     &-form-icon
         fill: $fg-1
@@ -347,11 +352,11 @@
     &-container.FormConfirmButtonV2-container-type-gilded
         background: $shading-1
         box-shadow: none
-        border-color: $border-light-0
+        border-color: $border-light-1
     // Gilded button hover
     &-container-desktop.FormConfirmButtonV2-container-filled:hover
         box-shadow: none
-        border-color: $border-light-1
+        border-color: $border-light-2
         .FormConfirmButtonV2-button-content
             @include set-color(var(--NihilityTheme1))
     // Gilded button text
@@ -373,15 +378,15 @@
 
     // Delete button
     &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete
-        @include button-typed($border-light-0, $bad-0)
+        @include button-typed($border-light-1, $bad-0)
     &-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete:hover
-        @include button-typed($border-light-1, $bad-1)
+        @include button-typed($border-light-2, $bad-1)
     
     // Success button
     &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-success
-        @include button-typed($border-light-0, $good-0)
+        @include button-typed($border-light-1, $good-0)
     &-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-success:hover
-        @include button-typed($border-light-0, $good-1)
+        @include button-typed($border-light-1, $good-1)
     
     // Delete hollow
     &-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-delete
@@ -405,7 +410,7 @@
     &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled,
     &-container.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled:hover
         background-color: $bg-0
-        border-color: $border-light-0
+        border-color: $border-light-1
         .FormConfirmButtonV2-button-content
             @include set-color($fg-0)
 
