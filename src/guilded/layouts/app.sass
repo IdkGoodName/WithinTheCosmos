@@ -292,13 +292,6 @@ body
             right: auto
         color: $fg-1
 
-// Channel 'beta' label
-.TeamChannelItemContents-label,
-// Channel 'beta' label in screen header
-.ScreenHeader-label
-    background-color: $glow-0 !important
-    color: $fg-2
-
 
 /*
  * -=- Screen header -=-
@@ -348,16 +341,19 @@ body
 .TeamChannelItemContents-container-channel-content .TeamChannelItemContents-name,
 .TeamChannelItemContents-container:not(.TeamChannelItemContents-container-selected):hover .TeamChannelItemContents-name
     color: $fg-2
-// Selected channel
-.TeamChannelItemContents-container-selected,
-.TeamNavSectionItem-container-selected
-    background-color: $bg-4
-    @include set-transition(background-color)
-// Channel hovered
-.TeamChannelItemContents-container::after,
-.TeamNavSectionItem-container::after
-    background-color: $bg-hover
-    @include set-transition(opacity)
+// Channel
+.TeamChannelItemContents-container,
+.TeamNavSectionItem-container
+    border: solid 1px transparent
+    // Channel selected
+    &-selected
+        background-color: $bg-3
+        border: solid 1px $border-light-0
+        @include set-transition(background-color border-color)
+    // Channel hovered
+    &::after
+        background-color: $bg-hover
+        @include set-transition(opacity)
 // Sub-icon/global icon
 .ChannelIcon-icon-selected .ChannelIcon-icon-background,
 .ChannelIcon-icon-background

@@ -158,7 +158,7 @@
 .CalloutBadge-container
     color: $fg-1
     background: $bg-0 !important
-    border: 1px solid $border-light-1 !important
+    border: solid 1px $border-light-1 !important
 
 /*
  * --- User badges ---
@@ -172,7 +172,7 @@
     &-container:not(.UserFlairRow-icon)
         color: $fg-1
         background: $bg-1 !important
-        border: 1px solid $border-light-1 !important
+        border: solid 1px $border-light-1 !important
 // [MEMBER]
 //.GroupMembershipBadge-container
 //    color: $verified
@@ -181,12 +181,14 @@
  * --- Channel & Settings badges ---
  */
 
-// [BETA]
-.PersistentActionMenuItem-container,
-.TeamChannelItemContents-label-wrapper
-    .CalloutBadge-container
-        color: $waiting
-        background: $bg-2 !important
+// [BETA] in settings
+.PersistentActionMenuItem-container .CalloutBadge-container,
+// [BETA] in channel list
+.TeamChannelItemContents-label,
+// [BETA] in screen header
+.ScreenHeader-label
+    color: $waiting
+    background: $bg-2 !important
 
 // [LIVE]
 // .TeamChannelItemContents-label-wrapper
@@ -201,7 +203,7 @@
 .TournamentStatusBadge-container-status
     &-in-progress, &-unpublished
         background-color: $bg-0
-        border: 1px solid $border-light-1
+        border: solid 1px $border-light-1
     &-in-progress
         color: $active
     &-unpublished

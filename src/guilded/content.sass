@@ -98,10 +98,13 @@ $pill-bg: rgba($fg-3, 0.1)
 .CodeLineRenderer
     background-color: transparent
 
-// Code block language
-.CodeContainerRenderer-language-indicator
-    .CalloutBadge-container
-        color: $info
+// Code block
+.CodeContainerRenderer
+    &-language-indicator
+        .CalloutBadge-container
+            color: $fg-code
+    &-header
+        background-color: $bg-1
 
 .GuildedSelect-container-option-color-gray
     // Label in editor
@@ -142,8 +145,7 @@ $pill-bg: rgba($fg-3, 0.1)
 
 // Old inline code
 .PrismTokenInlineRenderer-container-type-code
-    background-color: $bg-0
-    color: $fg-code
+    @extend .MarkRenderer-inline-code
 
 // Template parameters
 .TemplateParameter-container,
@@ -398,7 +400,7 @@ $pill-bg: rgba($fg-3, 0.1)
 
 // Forum editor
 .Editor-container
-    border: 1px solid $border-light-1
+    border: solid 1px $border-light-1
     background-color: $bg-2
 
 // Chat input
@@ -409,7 +411,7 @@ $pill-bg: rgba($fg-3, 0.1)
 // No write editor
 .ChatChannelInput-no-permissions,
 .ChatChannelInputPublic-container
-    border: 1px solid $border-light-1
+    border: solid 1px $border-light-1
     background-color: $bg-3
 
 // Doc editor
@@ -454,7 +456,7 @@ $pill-bg: rgba($fg-3, 0.1)
 .DraftInputWithTitleV2-title-wrapper,
 .CollapsedInput-container
     background-color: transparent
-    border: 1px solid $border-light-1
+    border: solid 1px $border-light-1
 
 .TeamThreadReplyCreator-container-desktop .TeamThreadReplyCreator-unexpanded-wrapper,
 .DraftInputWithTitleV2-container-desktop.DraftInputWithTitleV2-container-unexpanded,

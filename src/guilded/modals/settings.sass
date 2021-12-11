@@ -183,12 +183,13 @@
 .TeamSettingsPermissionsItem-container-desktop .TeamSettingsPermissionsItem-content::after
     background-color: $bg-hover
 // Add role
-.TeamSettingsAddButton-icon
-    fill: $fg-1
-    @include set-transition(fill)
-.TeamSettingsAddButton-text
-    color: $fg-1
-    @include set-transition(color)
+.TeamSettingsAddButton
+    &-icon
+        fill: $fg-1
+        @include set-transition(fill)
+    &-text
+        color: $fg-1
+        @include set-transition(color)
 // Add role hover
 .TeamSettingsAddButton-container:hover
     // Icon
