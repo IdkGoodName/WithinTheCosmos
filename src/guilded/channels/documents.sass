@@ -12,6 +12,31 @@
     background-color: $bg-1
     border: solid 1px $border-dark-1
 
+// "Drafts" title
+.DocsDisplayV2-title
+    color: $fg-3
+// Add [DRAFT] badge
+.TeamDocs-drafts-docs-display .DocSummaryInfo-title::after
+    content: 'draft'
+    display: inline-block
+
+    margin-left: 5px
+    padding: 0 5px
+    border-radius: 2px
+
+    line-height: 15px
+    height: 15px
+
+    -webkit-user-select: none
+    user-select: none
+    font:
+        size: 10px
+        weight: bold
+    text-transform: uppercase
+    color: $waiting
+    background-color: $bg-2
+    border: solid 1px $border-light-1
+
 
 /*
  * --- Text ---
