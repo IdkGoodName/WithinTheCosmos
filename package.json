@@ -16,9 +16,7 @@
   "homepage": "https://github.com/IdkGoodName/AbsoluteNihility#readme",
   "devDependencies": {
     "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.1",
     "gulp-sass": "^5.0.0",
-    "sass": "^1.35.1",
-    "yargs": "^7.1.2"
+    "sass": "^1.35.1"
   }
 }
