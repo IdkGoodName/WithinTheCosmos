@@ -1,5 +1,7 @@
-@import "../../base"
-@import "../../borders"
+@use "../../base"
+@use "../../set"
+@use "../../borders"
+@use "../../fake"
 
 /*
  * --- Document list ---
@@ -7,38 +9,21 @@
 
 // Document in the list
 .DocDisplayItem-container
-    background-color: $bg-3
+    background-color: base.$bg-3
 
 // Document in the list info
 .ReplyPanel-container-viewing,
 .DocSummaryInfo-container
-    background-color: $bg-1
-    border: solid 1px $border-dark-1
+    @extend %ContentBordered-3
 
 // "Drafts" title
 .DocsDisplayV2-title
-    color: $fg-3
+    color: base.$fg-3
 // Add [DRAFT] badge
 .TeamDocs-drafts-docs-display .DocSummaryInfo-title::after
     content: 'draft'
-    display: inline-block
-
-    margin-left: 5px
-    padding: 0 5px
-    border-radius: 2px
-
-    line-height: 15px
-    height: 15px
-
-    -webkit-user-select: none
-    user-select: none
-    font:
-        size: 10px
-        weight: bold
-    text-transform: uppercase
-    color: $waiting
-    background-color: $bg-2
-    border: solid 1px $border-light-1
+    color: base.$waiting
+    @extend %FakeBadge
 
 
 /*
@@ -46,10 +31,10 @@
  */
 
 .GuildedText-container-type-heading3
-    color: $fg-3
+    color: base.$fg-3
 
 .DocSummaryInfo-subtitle
-    color: $fg-1
+    color: base.$fg-1
 
 
 /*
@@ -58,25 +43,25 @@
 
 // Tag creation label
 .GuildedTagCreatorPanel-title
-    color: $fg-1
+    color: base.$fg-1
 // Tag creation
 .GuildedTagCreator-container
-    color: $fg-2
+    color: base.$fg-2
 // Remove tag
 .TagsDisplayV2-delete-icon
-    background-color: $fg-1
-    @include set-transition(background-color)
+    background-color: base.$fg-1
+    @include set.transition(background-color)
     &:hover
-        background-color: $bad-0
+        background-color: base.$bad-0
 
 .TagDisplayItemV2
     // Tag's background
     &-container
-        border-color: $border-light-0
-        background-color: $bg-1
+        border-color: base.$border-light-0
+        background-color: base.$bg-1
     // Tag's text
     &-tag
-        color: $fg-2
+        color: base.$fg-2
 
 
 /*
@@ -84,4 +69,4 @@
  */
 
 .RepliesAddon-header-text
-    color: $fg-3
+    color: base.$fg-3

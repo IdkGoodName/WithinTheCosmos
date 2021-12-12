@@ -1,5 +1,6 @@
-@import "../../base"
-@import "../../borders"
+@use "../../base"
+@use "../../set"
+@use "../../borders"
 
 /*
  * --==========================--
@@ -13,16 +14,16 @@
 
 // Alert bar icon
 .ChatChannelAlertBar-icon
-    fill: $fg-2
+    fill: base.$fg-2
 
 // Any alert bar
 .ChatChannelAlertBar-container
-    @include set-color($fg-2)
-    background-color: $bg-0 !important
-    border-color: $border-dark-0
+    @include set.color(base.$fg-2)
+    background-color: base.$bg-0 !important
+    border-color: base.$border-dark-0
     // Hover
     &::after
-        background-color: $bg-hover
+        background-color: base.$bg-hover
     
     // Viewing older messages
     &-type-viewing-older-messages,
@@ -33,24 +34,24 @@
     &-type-new-replies,
     // New mentions
     &-type-new-mentions
-        background-color: $bg-0 !important
+        background-color: base.$bg-0 !important
     
     // New mentions and new forum replies
     &-type-new-replies,
     &-type-new-mentions
-        color: $mention !important
-        fill: $mention !important
+        color: base.$mention !important
+        fill: base.$mention !important
         // New mentions icon
         .ChatChannelAlertBar-icon-click-wrapper .ChatChannelAlertBar-icon
-            fill: $mention
+            fill: base.$mention
     
     // Unread messages
     &-type-unread-messages
-        color: $active !important
-        fill: $active !important
+        color: base.$active !important
+        fill: base.$active !important
         // Unread messages icon
         .ChatChannelAlertBar-icon-click-wrapper .ChatChannelAlertBar-icon
-            fill: $active
+            fill: base.$active
 
 /*
  * -=- Tooltips -=-
@@ -60,18 +61,18 @@
 .HoverContextTooltip
     // Base
     &-text-wrapper
-        background-color: $bg-1
+        background-color: base.$bg-1
         border: solid 2px
-            color: $border-dark-1
-        opacity: $floating-opacity
+            color: base.$border-dark-1
+        opacity: base.$floating-opacity
     // Arrow/Pointer
     &-arrow
-        background-color: $bg-0
+        background-color: base.$bg-0
 
 // Keybinds
 .Glyph-container
-    background-color: $bg-4
-    color: $fg-2
+    background-color: base.$bg-4
+    color: base.$fg-2
 
 /*
  * -=- Reactions -=-
@@ -80,52 +81,50 @@
 // Reaction normally
 .ReactionPickerButton-container-type-content,
 .ReactionBadge-container-content
-    background-color: $bg-1
-    border: solid 1px $border-light-0
+    @extend %ContentMildlyBordered-3
 // Reaction hovered
 .ReactionBadge-container-content:hover,
 .ReactionBadge-container:not(.ReactionBadge-container-disabled):not(.ReactionBadge-container-active):hover .ReactionBadge-container-content
-    background-color: $bg-1
-    border: solid 1px $border-light-1
+    @extend %ContentBordered-3
 
 .ReactionPickerButton-container-type-content
-    transition-duration: $transition
+    transition-duration: base.$transition
 
     // When reaction is hovered over
     &:hover
-        background-color: $bg-0
+        background-color: base.$bg-0
 
 // Text after the reaction button
 .ReactionPickerButton-container-with-label::after
-    color: $fg-1
-    transition-duration: $transition
+    color: base.$fg-1
+    transition-duration: base.$transition
 
 // Reaction icon
 .ReactionPickerButton
     // Normally
     &-container &-icon
-        color: $fg-2
-        fill: $fg-2
-        transition-duration: $transition
+        color: base.$fg-2
+        fill: base.$fg-2
+        transition-duration: base.$transition
     // Hover
     &-container:hover &-icon
-        color: $fg-3
-        fill: $fg-3
+        color: base.$fg-3
+        fill: base.$fg-3
 // Reaction counter
 .ReactionBadge-container
     &:not(&-disabled):hover .ReactionBadge-count
-        color: $fg-3
+        color: base.$fg-3
     // Active
     &.ReactionBadge-container-active
         // Normal active reaction
         .ReactionBadge-container-content
-            background-color: mix($bg-1, $waiting, 90%)
+            background-color: mix(base.$bg-1, base.$waiting, 90%)
             // Active reaction label
             .ReactionBadge-count
-                color: $waiting
+                color: base.$waiting
         // Active reaction hover
         &.ReactionBadge-container:not(.ReactionBadge-container-disabled):hover .ReactionBadge-container-content
-            background-color: mix($bg-1, $waiting, 95%)
+            background-color: mix(base.$bg-1, base.$waiting, 95%)
 
 /*
  * -=- Team cards -=-
@@ -135,33 +134,33 @@
 .TeamRoleCardOverlay-container,
 // Profile card's background
 .ProfileHoverCardV2Overlay-container
-    background-color: $bg-4
+    background-color: base.$bg-4
 
 // Section's header
 .UserAttributionDisplay-header,
 .UserTeamXpDisplay-level-display .GuildedText-container // Level
-    color: $fg-3
+    color: base.$fg-3
 
 // Total XP needed
 .UserTeamXpDisplay-level-display .GuildedText-container.GuildedText-container-type-subtext2
-    color: $fg-1
+    color: base.$fg-1
     // XP user has
     .GuildedText-container-weight-bold
-        color: $fg-2
+        color: base.$fg-2
 
 // Socials
 .OverviewWidgetItem
     // Icon
     &-icon
-        fill: $fg-1
+        fill: base.$fg-1
     // Text
     &-text, &-input
-        color: $fg-2
+        color: base.$fg-2
 
 // Background for buttons
 .TeamRoleCardOverlay-menu,
 .ProfileHoverCardV2Overlay-action-menu
-    background-color: $bg-3
+    background-color: base.$bg-3
 
 /*
  * -=- Mention icons and notifications -=-
@@ -170,7 +169,7 @@
 // Mentions
 .BadgeV2-container,
 .NavIcon-dot
-    background-color: $mention
+    background-color: base.$mention
 
 // Notifications
 .NavSelectorItem-container-orientation-horizontal.NavSelectorItem-container-unread,
@@ -184,7 +183,7 @@
 .TeamPostRow-container-unread,
 .NavV4ItemIcon-icon-unread
     &::before
-        background-color: $mark
+        background-color: base.$mark
 
 /*
  * --- Menu ---
@@ -192,67 +191,67 @@
 
 // Menu container
 .TransientMenu-container-style-default
-    background-color: $bg-1
-    border-color: $border-light-2
+    background-color: base.$bg-1
+    border-color: base.$border-light-2
 
 // Plus menu
 .ContextMenuItem-container
     &-section-type-rows
         // Description
         .ContextMenuItem-body
-            color: $fg-1
+            color: base.$fg-1
     &:hover
         // Description
         .ContextMenuItem-body
-            color: $fg-2
+            color: base.$fg-2
 // Button
 .ContextMenu
     // Icon
     &-content
-        fill: $fg-1
+        fill: base.$fg-1
     // Text
     &Item-label
-        color: $fg-2
+        color: base.$fg-2
 // Menu item
 .ContextMenuItem
     &-container
-        color: $fg-2
-        fill: $fg-2
+        color: base.$fg-2
+        fill: base.$fg-2
         // Text and icon on hover
         &:hover
             // Text
             .ContextMenuItem-label
-                color: $fg-3
+                color: base.$fg-3
             // Icon
             .ContextMenuIcon-container-icon
-                fill: $fg-3
+                fill: base.$fg-3
         // Menu item hover glare
         &::after
-            background-color: $bg-hover
+            background-color: base.$bg-hover
     // Menu item download app highlighted
     &-highlighted
         background-color: transparent
-        fill: $important
+        fill: base.$important
         // Text
         .ContextMenuItem-label
-            color: $important
+            color: base.$important
         // Icon
         .ContextMenuIcon-container-icon
-            color: $important
+            color: base.$important
 
 // Highlighted
 .ContextMenuItem-container.ContextMenuItem-highlighted
     .ContextMenuItem-icon, .ContextMenuItem-label
-        color: $highlight
-        fill: $highlight
+        color: base.$highlight
+        fill: base.$highlight
 
 // Overflow icon
 .ContextMenuTrigger
     &-container &-icon
-        fill: $fg-1
-        @include set-transition(fill)
+        fill: base.$fg-1
+        @include set.transition(fill)
     &-container-desktop:hover &-icon
-        fill: $fg-2
+        fill: base.$fg-2
 
 /*
  * --- Emote picker ---
@@ -262,32 +261,31 @@
 .ReactionPicker
     // Emote picker content
     &-content
-        background-color: $bg-3
+        background-color: base.$bg-3
     // Emote icon
     &Icon-container:hover, &Icon-container:focus
-        background-color: $bg-1
+        background-color: base.$bg-1
     
     // Bottom bar
     &Footer-container,
     // Top bar
     &Navbar-container
-        color: $fg-2
-        background-color: $bg-1
-        border-color: $border-dark-1
+        color: base.$fg-2
+        @extend %PanelBordered-3
 
     // Emote name
     &-section-label
-        color: $fg-3
+        color: base.$fg-3
     // Emote server title
     &Preview-team
-        color: $fg-1
+        color: base.$fg-1
     // Emote picker tab's icon
     &NavbarItem-icon
-        fill: $fg-1
+        fill: base.$fg-1
         .ReactionPickerNavbarItem:hover &
-            fill: $fg-2
+            fill: base.$fg-2
         .ReactionPickerNavbarItem-active &
-            fill: $fg-3
+            fill: base.$fg-3
 
 .ReactionPickerNavbarItem-active
     border-bottom-color: var(--NihilityTheme0)
@@ -296,7 +294,7 @@
 .IconMenuInput-container
     &-gray, &-white,
         .IconMenuInput-chevron-down, .IconMenuInput-selected-value-icon
-            fill: $fg-1
+            fill: base.$fg-1
 
 /*
  * --- Misc menus ---
@@ -304,20 +302,20 @@
 
 // Server search wrapper
 .MinimalNavSearchBar-search-results
-    opacity: $floating-opacity
+    opacity: base.$floating-opacity
 .GlobalSearchResult
     // Server search
     &s
         &-container
-            background-color: $bg-2
+            background-color: base.$bg-2
         // Public servers header
         &-header
-            color: $fg-1
+            color: base.$fg-1
     // Server search item
     &-container-desktop
         // Server search item focused
         &.GlobalSearchResult-container-focused
-            background-color: $bg-3
+            background-color: base.$bg-3
         // Hovered over
         &::after
-            background-color: $bg-hover
+            background-color: base.$bg-hover

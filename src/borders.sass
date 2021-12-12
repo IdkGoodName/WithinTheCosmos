@@ -1,13 +1,65 @@
-@import "./base"
+@use "./base"
 
+// Borders
 %FullBorderLight-0
-    border: solid 1px $border-light-0
+    border: solid 1px base.$border-light-0
 %FullBorderLight-1
-    border: solid 1px $border-light-1
+    border: solid 1px base.$border-light-1
 %FullBorderLight-2
-    border: solid 1px $border-light-2
+    border: solid 1px base.$border-light-2
 
 %FullBorderDark-0
-    border: solid 1px $border-dark-0
+    border: solid 1px base.$border-dark-0
 %FullBorderDark-1
-    border: solid 1px $border-dark-1
+    border: solid 1px base.$border-dark-1
+
+// Panels with dark border
+%PanelBordered-0
+    background-color: base.$bg-4
+    @extend %FullBorderDark-1
+%PanelBordered-1
+    background-color: base.$bg-3
+    @extend %FullBorderDark-1
+%PanelBordered-2
+    background-color: base.$bg-2
+    @extend %FullBorderDark-1
+%PanelBordered-3
+    background-color: base.$bg-1
+    @extend %FullBorderDark-1
+%PanelBordered-4
+    background-color: base.$bg-0
+    @extend %FullBorderDark-1
+
+// Content with rough border
+%ContentBordered-0
+    background-color: base.$bg-4
+    @extend %FullBorderLight-1
+%ContentBordered-1
+    background-color: base.$bg-3
+    @extend %FullBorderLight-1
+%ContentBordered-2
+    background-color: base.$bg-2
+    @extend %FullBorderLight-1
+%ContentBordered-3
+    background-color: base.$bg-1
+    @extend %FullBorderLight-1
+%ContentBordered-4
+    background-color: base.$bg-0
+    @extend %FullBorderLight-1
+
+// Content with mild border
+%ContentMildlyBordered-0
+    background-color: base.$bg-4
+    @extend %FullBorderLight-0
+%ContentMildlyBordered-1
+    background-color: base.$bg-3
+    @extend %FullBorderLight-0
+%ContentMildlyBordered-2
+    background-color: base.$bg-2
+    @extend %FullBorderLight-0
+%ContentMildlyBordered-3
+    background-color: base.$bg-1
+    @extend %FullBorderLight-0
+%ContentMildlyBordered-4
+    background-color: base.$bg-0
+    @extend %FullBorderLight-0

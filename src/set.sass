@@ -1,0 +1,12 @@
+@use "./base"
+
+// Sets both color and fill
+@mixin color($color)
+    color: $color
+    fill: $color
+
+// For setting transition in a lot of places
+@mixin transition($property, $fn: ease-out)
+    transition: $property
+    transition-duration: base.$transition
+    transition-timing-function: $fn

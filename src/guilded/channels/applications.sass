@@ -1,5 +1,5 @@
-@import "../../base"
-@import "../../borders"
+@use "../../base"
+@use "../../borders"
 
 /*
  * --- Settings ---
@@ -9,15 +9,14 @@
 .TeamRecruitmentStatus-status
     // Open
     .TeamRecruitmentStatus-container-status-open &
-        color: $good-0
+        color: base.$good-0
     // Closed
     .TeamRecruitmentStatus-container-status-closed &
-        color: $bad-0
+        color: base.$bad-0
 
 // Application selector wrapper
 .TeamApplicationInlineLink-container
-    border: solid 1px $border-dark-1
-    background-color: $bg-2
+    @extend %PanelBordered-2
 
 /*
  * --- View ---
@@ -27,32 +26,32 @@
 .RecruitmentApplicantViewer
     // Wrapper
     &-applicant-card
-        background-color: $bg-1
+        background-color: base.$bg-1
     // Application values
     &-form-results
-        background-color: $bg-1
+        background-color: base.$bg-1
 // Result icon
 .FormResultDisplayFieldWrapper-field-header-icon
-    fill: $fg-1
+    fill: base.$fg-1
 // Application info
 .ApplicantSummaryCard-container
     .ApplicantSummaryCard-votes, .ApplicantSummaryCard-buttons-applied-date
-        background-color: $bg-1
+        background-color: base.$bg-1
 // Application status
 .ApplicationStatusBadge-icon
     // Accepted
     .ApplicationStatusBadge-container-accepted &
-        fill: $good-0
+        fill: base.$good-0
     // Declined
     .ApplicationStatusBadge-container-declined &
-        fill: $bad-0
+        fill: base.$bad-0
 .ApplicationStatusBadge-text
     // Accepted
     .ApplicationStatusBadge-container-accepted &
-        color: $good-0
+        color: base.$good-0
     // Declined
     .ApplicationStatusBadge-container-declined &
-        color: $bad-0
+        color: base.$bad-0
 
 /*
  * --- All Applications ---
@@ -60,28 +59,27 @@
 
 // Application
 .ApplicantDisplayItem-container
-    background-color: $bg-2
-    border: solid 1px $border-dark-1
+    @extend %PanelBordered-2
     // Hover
     &-desktop::after
-        background-color: $bg-hover
+        background-color: base.$bg-hover
 // Application status
 .ApplicantSummaryAcceptDeclineForm-applicant-status
     .ApplicantSummaryAcceptDeclineForm-container-accepted &
-        color: $good-0
+        color: base.$good-0
 // Application server's name
 .TeamAvatarDetails-name.TeamAvatarDetails-name-bold
-    color: $fg-3
+    color: base.$fg-3
 // Application timestamp
 .ApplicantGameDateDisplay-date-text
-    color: $fg-1
+    color: base.$fg-1
 
 // Application status
 .ApplicationItemStatus-label
     .ApplicationItemStatus-container-status-1 &
-        color: $good-1
+        color: base.$good-1
     .ApplicationItemStatus-container-status-0 &
-        color: $bad-1
+        color: base.$bad-1
 
 /*
  * --- Application modal ---
@@ -89,4 +87,4 @@
 
 // Background
 .ApplyToTeam-container
-    background-color: $bg-3
+    background-color: base.$bg-3

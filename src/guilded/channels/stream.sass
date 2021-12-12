@@ -1,33 +1,33 @@
-@import "../../base"
+@use "../../base"
 
 // Whole container
 .StreamChannelDisplay-container,
 .StreamsDisplayV2-container
-    background-color: $bg-0
+    background-color: base.$bg-0
 // Stacked and unstacked streaming displays
 .StreamChannel-display,
 .StreamChannel-container-stacked .StreamChannel-display
-    border-color: $border-dark-1
+    border-color: base.$border-dark-1
 
 // Streaming button
 .SVGIconWithTooltip-container-flavor-hover-bleach
-    background-color: $bg-1
+    background-color: base.$bg-1
     // Streaming button icon
     .SVGIconWithTooltip-icon
-        fill: $fg-1
+        fill: base.$fg-1
     // Streaming button icon hover
     &:hover .SVGIconWithTooltip-icon
-        fill: $fg-2
+        fill: base.$fg-2
 
 // Join streaming channel
 .StreamsEmptyState-title
-    color: $fg-2
+    color: base.$fg-2
 .StreamsEmptyState-subtitle
-    color: $fg-1
+    color: base.$fg-1
 
 // Leave streaming channel
 .SVGIconWithTooltip-container-flavor-filled-remove
-    background-color: $bad-0
+    background-color: base.$bad-0
     .SVGIcon-icon
         fill: black
 
@@ -35,29 +35,29 @@
     // Mini buttons
     &-right, &-left
         .StreamDisplayActionButton-container-content
-            fill: $fg-1
+            fill: base.$fg-1
     // Mini buttons active
     &:hover, &-active
         .StreamDisplayActionButton-container-content
-            fill: $fg-2
+            fill: base.$fg-2
 
 // Hover outline
 .StreamPlayer-container:hover .StreamPlayer-inset-border
-    border-color: $active
+    border-color: base.$active
 // The user pill
 .StreamPlayerMemberDisplay-pill
-    background-color: $bg-0
+    background-color: base.$bg-0
 // Muted or deaf icon
 .StreamPlayerIndicators-button
-    background-color: $bg-0
+    background-color: base.$bg-0
 
 // Livestream badge in groups and servers
 .LiveStreamBadge-indicator
     // We have no way of selecting the live badge
-    background: $stream !important
+    background: base.$stream !important
 // Livestream outline in the voice user list
 .VoiceChannelGroupUser-avatar-streaming::after
-    background: $stream
+    background: base.$stream
 
 /*
  * --- Modes ---

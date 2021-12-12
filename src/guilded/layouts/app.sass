@@ -1,5 +1,6 @@
-@import "../../base"
-@import "../../borders"
+@use "../../base"
+@use "../../set"
+@use "../../borders"
 
 /*
  * --=======================--
@@ -13,17 +14,17 @@
 
 // Whole bar
 .Navbar-container
-    background-color: $bg-0
-    --border-color: #{$bg-0}
+    background-color: base.$bg-0
+    --border-color: #{base.$bg-0}
 // Guilded logo
 .LogoAndWordmarkV2-container-theme-light
-    fill: $fg-1
+    fill: base.$fg-1
 // Guilded logo active
 .LogoAndWordmarkV2-container-theme-gilded
     fill: var(--NihilityTheme2)
 // User card
 .NavbarUserControls-container
-    --border-color: #{$bg-0}
+    --border-color: #{base.$bg-0}
 
 /*
  * --- Buttons ---
@@ -32,10 +33,10 @@
 // The buttons
 .ChatChannelIcon-icon-group, // DM icon
 .NavbarNavExploreIcon-link .NavbarNavExploreIcon-icon // Explore stuff icons
-    fill: $fg-1
+    fill: base.$fg-1
 // Selected icons
 .ChatChannelIcon-container-selected .ChatChannelIcon-icon-group
-    fill: $fg-2
+    fill: base.$fg-2
 
 /*
  * -=- Server list -=-
@@ -48,33 +49,33 @@
 .InlineAddItemControl
     // Server list add icon
     &-add-icon
-        @include set-transition(background-color)
-        fill: $fg-2
+        @include set.transition(background-color)
+        fill: base.$fg-2
         // The SVG icon
         svg
-            @include set-transition(fill)
+            @include set.transition(fill)
         // Group add icon
         .GroupSelector-add-group &
             border-radius: 50%
-            @include set-transition(border-radius, $bounce)
+            @include set.transition(border-radius, base.$bounce)
         .GroupSelector-add-group:hover &
-            border-radius: $radius-2
+            border-radius: base.$radius-2
     // Server list add text
     &-name
-        @include set-transition(color)
-        color: $fg-2
+        @include set.transition(color)
+        color: base.$fg-2
 // Server list add
 .InlineAddItemControl-container
-    --inline-add-icon-background-color: #{$bg-3}
+    --inline-add-icon-background-color: #{base.$bg-3}
     // Hover
     &:hover, &-flavor-background-highlight.InlineAddItemControl-container-desktop:hover
         // Server list add icon hover
         .InlineAddItemControl-add-icon
-            background-color: $bg-4
-            fill: $fg-3
+            background-color: base.$bg-4
+            fill: base.$fg-3
         // Server list add text hover
         .InlineAddItemControl-name
-            color: $fg-3
+            color: base.$fg-3
 
 /*
  * --- Servers and tabs ---
@@ -82,27 +83,27 @@
     
 // Server list hovered server
 .NavV4SelectorRow-container::after
-    background-color: $bg-hover
-    @include set-transition(opacity)
+    background-color: base.$bg-hover
+    @include set.transition(opacity)
 // Server list selected server
 .NavSelectorItem-container-active .NavSelectorItem-contents::after
-    border-color: $border-light-2
+    border-color: base.$border-light-2
 
 // Server list switcher buttons
 .NavV4SelectorRow-svg-icon
-    fill: $fg-2
+    fill: base.$fg-2
 .NavV4TeamSelectorBottomOptionsList-label
-    color: $fg-2
+    color: base.$fg-2
 // Server list revealer
 .NavV4ItemIcon-icon
-    fill: $fg-1
+    fill: base.$fg-1
 // Server list favourite icon
 .FavoriteTeamButton-container
-    fill: $fg-1
-    @include set-transition(fill)
+    fill: base.$fg-1
+    @include set.transition(fill)
     // Server list favourite hover
     &:hover
-        fill: $fg-3
+        fill: base.$fg-3
 
 /*
  * -=- Search -=-
@@ -111,25 +112,25 @@
 // Server search
 .TeamSearchBar-search-bar-input,
 .SearchBarV2-container.SearchBarV2-container-focused
-    background-color: $bg-4
+    background-color: base.$bg-4
 // In-server search, emote search
 .SearchBarInput-container-bordered,
 .SearchBarV2-container-unfocused::after,
 .SearchBarV2-container
     border-radius: 10px
-    background-color: $shading-1
-    border-color: $border-light-1
+    background-color: base.$shading-1
+    border-color: base.$border-light-1
 // Search focused
 .SearchBarV2-container-unfocused::after
-    background-color: $bg-hover
+    background-color: base.$bg-hover
 
 .SearchBarV2-container
     // Search icon
     .SearchBarV2-icon
-        fill: $fg-2
+        fill: base.$fg-2
     // Search placeholder
     .SearchBarV2-input::placeholder
-        color: $fg-1
+        color: base.$fg-1
 
 /*
  * -=- Sidebar -=-
@@ -137,12 +138,12 @@
 
 // Favourite server list
 .NavV4FooterGlobalContextDisplay-teams-wrapper
-    background-color: $bg-1
+    background-color: base.$bg-1
 .NavV4BadgedItem-container
     width: auto
     // Favourite server hover
     &::after
-        background-color: $bg-hover
+        background-color: base.$bg-hover
 
 
 /*
@@ -151,17 +152,17 @@
 
 // Sets group list width
 body
-    --group-selector-width: #{$icon-size + 16px}
+    --group-selector-width: #{base.$icon-size + 16px}
 // Group list
 .NavV4Sidebar-container,
 .GroupSelector-container,
 // Group list in group editing
 .GroupSelectorPreview-minimal-nav
-    background-color: $bg-1
-    --border-color: #{$bg-0}
+    background-color: base.$bg-1
+    --border-color: #{base.$bg-0}
 // Group
 .GroupSelectorItem-container
-    --avatar-size: #{$icon-size}
+    --avatar-size: #{base.$icon-size}
 
 .NavSelectorItem-container .GroupAvatar-container
     font-size: 1.2em
@@ -173,11 +174,11 @@ body
 // The border around status and group's emote
 .GroupAvatarBadge-container-reaction,
 .LoggedInUserAvatar-online-status
-    background-color: $bg-1
+    background-color: base.$bg-1
 
 // Group settings background
 .CreateGroupLivePreview-LiveView
-    background: $bg-0
+    background: base.$bg-0
 
 /*
  * --- User card ---
@@ -185,50 +186,50 @@ body
 
 // User card
 .NavV4Footer-container
-    background-color: $bg-1
+    background-color: base.$bg-1
 
 // User card's content
 .NavV4Footer-right,
 .NavV4Footer-footer-content
-    border-top-right-radius: $radius-3
+    border-top-right-radius: base.$radius-3
 
 // User card's name
 .LoggedInUserAvatar-name
-    color: $fg-2
-    @include set-transition(color)
+    color: base.$fg-2
+    @include set.transition(color)
     &:hover
-        color: $fg-3
+        color: base.$fg-3
 
 .LoggedInUserStatus
     // User card's status
     &-content-with-status, &-container
-        color: $fg-1
-        @include set-transition(color)
+        color: base.$fg-1
+        @include set.transition(color)
         // Hover
         &:hover
-            color: $fg-2
+            color: base.$fg-2
 
 // User card buttons
 .TransientMenuTrigger-container
-    fill: $fg-1
-    @include set-transition(fill)
+    fill: base.$fg-1
+    @include set.transition(fill)
     &.TransientMenuTrigger-container-desktop:hover .TransientMenuTrigger-icon
-        fill: $fg-2
+        fill: base.$fg-2
 
 .NavIcon-container-type-vertical-nav
-    fill: $fg-1
-    @include set-transition(fill)
+    fill: base.$fg-1
+    @include set.transition(fill)
     &:hover
-        fill: $fg-2
+        fill: base.$fg-2
 
 // More button (1) sign
 .CircleBadgeV2-container
-    background-color: $important
+    background-color: base.$important
 
 .NavV4Footer-footer-content,
 .NavV4Footer-right,
 .NavV4Sidebar-container
-    background-color: $bg-0
+    background-color: base.$bg-0
 
 /*
  * --- Header ---
@@ -241,29 +242,29 @@ body
     z-index: 105
 // Server header name
 .PageNavAvatarName-name-text
-    color: $fg-3
+    color: base.$fg-3
 // Server header group name
 .TeamNavGroupHeader-name
-    color: $fg-2
+    color: base.$fg-2
 // Server header hover
 .TeamNavHeader-options-carat::after
-    background-color: $bg-hover
-    @include set-transition(opacity)
+    background-color: base.$bg-hover
+    @include set.transition(opacity)
 // Server header caret
 .TeamNavHeader-options-carat.TeamNavTeamOptionsCarat-icon
-    fill: $fg-2
+    fill: base.$fg-2
 // Server header button
 .TeamNavHeaderRowButton-container
-    background-color: $bg-4
+    background-color: base.$bg-4
     // Server header button hovered
     &:not(.TeamNavHeaderRowButton-container-disabled)::after
-        background-color: $bg-hover
+        background-color: base.$bg-hover
 // Server header button icon
 .TeamNavHeaderRowButton-icon
-    fill: $fg-2
+    fill: base.$fg-2
 // Server header button text
 .TeamNavHeaderRowButton-text
-    color: $fg-2
+    color: base.$fg-2
 
 /*
  * --- Channels ---
@@ -275,7 +276,7 @@ body
 .TeamPageNavV3-container,
 // Channel list in group editing
 .GroupNavPreview-nav-section
-    background-color: $bg-1
+    background-color: base.$bg-1
 
 // Section list header
 .TeamNavSectionsList-header
@@ -293,7 +294,7 @@ body
         margin:
             left: auto
             right: auto
-        color: $fg-1
+        color: base.$fg-1
 
 
 /*
@@ -302,7 +303,7 @@ body
 
 // Channel header
 .ScreenHeader-container
-    background-color: $bg-1
+    background-color: base.$bg-1
     border-bottom: 0
 
 // Screen header icon
@@ -311,68 +312,67 @@ body
 .ChannelIcon-icon-primary,
 .TeamChannelItemContents-action-icon,
 .ScreenHeader-icon-wrapper-size-lg .ScreenHeader-icon
-    fill: $fg-1
+    fill: base.$fg-1
 
 // Sets PFP border
 .ScreenHeader-icon-wrapper
-    --border-color: #{$bg-0}
+    --border-color: #{base.$bg-0}
 
 // Screen header
 .ScreenHeader
     // Title
     &-name
-        color: $fg-2
+        color: base.$fg-2
     // Description
     &-description-child
-        color: $fg-1
+        color: base.$fg-1
 .ChannelHeaderActionButtons
     // Screen header more button
     &-menu-button, &-more-options-button
-        fill: $fg-1
+        fill: base.$fg-1
     // Screen header more button hover
     &-menu-trigger:hover &-menu-button,
     &-menu-trigger:hover &-more-options-button,
     &-options-menu-trigger:hover &-menu-button,
     &-options-menu-trigger:hover &-more-options-button
-        fill: $fg-3
+        fill: base.$fg-3
 // Screen header more pressed title
 .ChannelHeaderMoreOptionsMenu-header
-    color: $fg-1
+    color: base.$fg-1
 
 // Channel card
 .TeamChannelItemContents-container-unread .TeamChannelItemContents-name,
 .TeamChannelItemContents-container-channel-content .TeamChannelItemContents-name,
 .TeamChannelItemContents-container:not(.TeamChannelItemContents-container-selected):hover .TeamChannelItemContents-name
-    color: $fg-2
+    color: base.$fg-2
 // Channel
 .TeamChannelItemContents-container,
 .TeamNavSectionItem-container
     border: solid 1px transparent
     // Channel selected
     &-selected
-        background-color: $bg-3
-        border: solid 1px $border-light-0
-        @include set-transition(background-color border-color)
+        @extend %ContentMildlyBordered-1
+        @include set.transition(background-color border-color)
     // Channel hovered
     &::after
-        background-color: $bg-hover
-        @include set-transition(opacity)
+        background-color: base.$bg-hover
+        @include set.transition(opacity)
 // Sub-icon/global icon
 .ChannelIcon-icon-selected .ChannelIcon-icon-background,
 .ChannelIcon-icon-background
-    fill: $fg-1
-    background-color: $bg-0
+    fill: base.$fg-1
+    background-color: base.$bg-0
 // Selected channel icons
 .ChannelIcon-icon-selected,
 .ChannelIcon-icon-selected .ChannelIcon-icon,
 .TeamNavSectionItem-container-selected .TeamNavSectionItem-icon
-    fill: $fg-3
-    color: $fg-3
+    fill: base.$fg-3
+    color: base.$fg-3
 
 // Invite others
 .ChannelUpsell-container
-    background-color: $bg-1
-    border-color: $border-dark-0
+    background-color: base.$bg-1
+    border-color: base.$border-dark-0
 
 /*
  * -=- Members and Threads -=-
@@ -382,7 +382,7 @@ body
 .SidebarWrapper-container,
 // Member list in group editing
 .CreateGroupUsersListLivePreview-members-section
-    background-color: $bg-1
+    background-color: base.$bg-1
 
 // Member list
 //.PageSidebarWrapper
@@ -402,21 +402,21 @@ body
         padding: 0
 
 .SidebarInfoItem-container
-    border-radius: $radius-3
+    border-radius: base.$radius-3
 
 .SimpleIconTabMenuHeaderItem
     // Member/thread list tab hover
     &-container:hover, &-container:active, &-container:focus
-        background-color: $bg-3
+        background-color: base.$bg-3
     // Member/thread list active tab
     &-container-selected::after
-        background-color: $fg-1
+        background-color: base.$fg-1
     // Member/thread list tab icon
     &-icon
-        fill: $fg-1
+        fill: base.$fg-1
     // Member/thread list active tab icon
     &-icon
-        fill: $fg-2
+        fill: base.$fg-2
 
 /*
  * --- Member list ---
@@ -424,55 +424,55 @@ body
 
 // Member list section (roles)
 .TeamPageSidebarMembers-roles:not(:first-child)
-    margin-top: $spacing-5
+    margin-top: base.$spacing-5
 
 .ChannelListHeader
     // Member list
     &-container-type-default
         // Member list icon
         .ChannelListHeader-display-icon
-            fill: $fg-1
+            fill: base.$fg-1
         // Member list role name
         .ChannelListHeader-text
-            color: $fg-2
+            color: base.$fg-2
     // Member list role amount
     &-amount
-        color: $fg-1
-        padding: 0 $spacing-1
-        background-color: $bg-0
-        border-radius: $radius-2
+        color: base.$fg-1
+        padding: 0 base.$spacing-1
+        background-color: base.$bg-0
+        border-radius: base.$radius-2
 
 // Member list user hover
 .SidebarUsersRoleInfo-user::after
-    background-color: $bg-hover
+    background-color: base.$bg-hover
 
 .VoiceSidebarMembersDisplay-join-voice
     // Member list join voice icon
     &-icon
-        fill: $fg-1
+        fill: base.$fg-1
         // Member list join voice button
         &-wrapper
-            background-color: $bg-4
+            background-color: base.$bg-4
     // Member list join voice hover
     &:hover &-text,
     &:hover &-icon
-        @include set-color($fg-2)
+        @include set.color(base.$fg-2)
 
 // Member list invite icon
 .SidebarInviteButton-icon
-    fill: $fg-1
-    @include set-transition(fill)
+    fill: base.$fg-1
+    @include set.transition(fill)
     // Member list invite button
     &-wrapper
-        background-color: $bg-4
+        background-color: base.$bg-4
 // Member list invite text
 .GuildedText-container-color-gray
-    color: $fg-1
-    @include set-transition(color)
+    color: base.$fg-1
+    @include set.transition(color)
 // Member list invite hover
 .SidebarInviteButton-container:hover
     .SidebarInviteButton-text, .SidebarInviteButton-icon
-        @include set-color($fg-2)
+        @include set.color(base.$fg-2)
 
 /*
  * --- Thread list ---
@@ -481,34 +481,34 @@ body
 .ChannelThreadsInfo
     // Thread list "None"
     &-none
-        color: $fg-1
+        color: base.$fg-1
     // Thread list more
     &-more
-        color: $fg-1
-        @include set-transition(color)
+        color: base.$fg-1
+        @include set.transition(color)
         // Thread list more hover
         &:hover
-            color: $fg-2
+            color: base.$fg-2
 // Thread card
 .ChatChannelListItemInfo
     // Hover
     &-container-actionable::after
-        background-color: $bg-hover
+        background-color: base.$bg-hover
     
     // Last activity at
     &-last-at
-        color: $fg-1
-        @include set-transition(color)
+        color: base.$fg-1
+        @include set.transition(color)
     // Last activity at hover
     &-container-actionable:hover &-last-at
-        color: $fg-3
+        color: base.$fg-3
     
     // Reply count
     &-reply-row &-num-replies
-        color: $fg-1
+        color: base.$fg-1
     // Last reply
     &-latest-message
-        color: $fg-2
+        color: base.$fg-2
 
 
 /*
@@ -518,4 +518,4 @@ body
 // Voice channel click guide
 .NuxTargetGlowie-container
     &, &::after
-        background-image: radial-gradient(circle at 50% 50%, rgba($important,0), rgba($important,0) 39%, $important)
+        background-image: radial-gradient(circle at 50% 50%, rgba(base.$important,0), rgba(base.$important,0) 39%, base.$important)

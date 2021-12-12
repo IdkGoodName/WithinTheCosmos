@@ -1,5 +1,6 @@
-@import "../../base"
-@import "../../borders"
+@use "../../base"
+@use "../../set"
+@use "../../borders"
 
 /*
  * --=======================--
@@ -13,19 +14,19 @@
 
 // Section name
 .FormSection-section-header
-    color: $fg-3
+    color: base.$fg-3
 
 // Custom form header name ("Question 1")
 .FormSection-section-header-style-result
-    color: $fg-1
+    color: base.$fg-1
 
 // Form "(optional)"
 .FormFieldLabel-optional
-    color: $fg-0
-    @include set-transition(color)
+    color: base.$fg-0
+    @include set.transition(color)
     // Hover
     &:hover
-        color: $fg-2
+        color: base.$fg-2
 
 /*
  * -=- Fields -=-
@@ -38,53 +39,53 @@
 .TextInputWithLabel
     // Form input
     &-container
-        border-color: $fg-0
+        border-color: base.$fg-0
     &-container-has-value &-input-element
-        -webkit-text-fill-color: $fg-2
-        color: $fg-2
+        -webkit-text-fill-color: base.$fg-2
+        color: base.$fg-2
     // Hover
     &-container-desktop:hover
-        border-color: $fg-0
+        border-color: base.$fg-0
     
     // Label
     &-typeahead-suggestion, &-floating-label
-        color: $fg-1
+        color: base.$fg-1
 
     // Form input label invalid
     &-container.TextInputWithLabel-container-invalid
-        border-color: $bad-0
+        border-color: base.$bad-0
 
         &:hover
-            border-color: $bad-0
+            border-color: base.$bad-0
         
         .TextInputWithLabel-floating-label,
         &:hover
             .TextInputWithLabel-floating-label
-                border-color: $bad-0
+                border-color: base.$bad-0
 
 // Form input valid
 .TextInputWithLabel-container-valid.TextInputWithLabel-container-focused
-    border-color: $good-0
+    border-color: base.$good-0
 
 // Form input icon
 .ValidityIndicator-container
     // Invalid
     &-invalid
-        border-color: $bad-0
-        fill: $bad-0
+        border-color: base.$bad-0
+        fill: base.$bad-0
     // Valid
     &-valid
-        fill: $good-0
+        fill: base.$good-0
 
 
 // Big form input
 .TextAreaInput-text-area
-    border-color: $fg-0
-    color: $fg-2
-    @include set-transition(border-color)
+    border-color: base.$fg-0
+    color: base.$fg-2
+    @include set.transition(border-color)
     // Big form input hover
     &:hover
-        border-color: $border-light-2
+        border-color: base.$border-light-2
     // Big form input focus
     &:focus
         border-color: var(--NihilityTheme2)
@@ -96,16 +97,16 @@
     &-circle
         // Background
         &-background
-            stroke: $bg-1
+            stroke: base.$bg-1
         // Character count
         &-valid, &-invalid-min
-            stroke: $good-0
+            stroke: base.$good-0
         // Too many symbols
         &-invalid-max
-            stroke: $bad-0
+            stroke: base.$bad-0
     // Label too many symbols
     &-container-invalid-max
-        color: $bad-0
+        color: base.$bad-0
 
 /*
  * --- Toggles ---
@@ -115,98 +116,98 @@
 .ToggleFieldWrapper
     // Toggle field title
     &-label
-        color: $bad-0
+        color: base.$bad-0
         font-weight: bold
-        @include set-transition(color)
+        @include set.transition(color)
     // Toggle field toggled title
     &-label-active
-        color: $good-0
+        color: base.$good-0
         font-weight: bolder
     // Moderator view tooltip icon
     &-tooltip-icon
-        fill: $fg-2
+        fill: base.$fg-2
     // All day checkmark icon
     &-icon
-        fill: $fg-1
+        fill: base.$fg-1
 
 .SwitchInput
     // Slider off
     &-container .SwitchInput-slide
-        background-color: $bad-0
+        background-color: base.$bad-0
     // Slider on
     &-container-on .SwitchInput-slide
-        background-color: $good-0
+        background-color: base.$good-0
     // Slider thumb
     &-tab
-        background-color: $bg-3
+        background-color: base.$bg-3
         // White shadow
-        box-shadow: $shadow
+        box-shadow: base.$shadow
         // Disabled
         .SwitchInput-container-disabled &
-            background-color: $bg-1
+            background-color: base.$bg-1
 
 .TriStateInputWrapper-container
-    border-color: $border-light-1
+    border-color: base.$border-light-1
 
 .TriStateInputButton-container-type
     // All
     &-on,
     &-passThrough,
     &-off
-        background-color: $bg-0
+        background-color: base.$bg-0
     // All selected
     &-on.TriStateInputButton-container-selected,
     &-passThrough.TriStateInputButton-container-selected,
     &-off.TriStateInputButton-container-selected
-        background-color: $bg-3
+        background-color: base.$bg-3
     // Permission allowed
     &-on
         // Icon
         .TriStateInputButton-icon
-            fill: $fg-0
+            fill: base.$fg-0
         // Icon hover
         &:hover .TriStateInputButton-icon
-            fill: $fg-1
+            fill: base.$fg-1
         // Selected
         &.TriStateInputButton-container-selected
             // Selected icon
             .TriStateInputButton-icon
-                fill: $good-0
+                fill: base.$good-0
             // Selected hover
             &:hover .TriStateInputButton-icon
-                fill: $good-1
+                fill: base.$good-1
     // Permission inherit
     &-passThrough
         // Icon
         .TriStateInputButton-icon
-            fill: $fg-0
+            fill: base.$fg-0
         // Icon hover
         &:hover .TriStateInputButton-icon
-            fill: $fg-1
+            fill: base.$fg-1
         // Selected
         &.TriStateInputButton-container-selected
             // Selected icon
             .TriStateInputButton-icon
-                fill: $neutral-0
+                fill: base.$neutral-0
             // Selected hover
             &:hover .TriStateInputButton-icon
-                fill: $neutral-1
+                fill: base.$neutral-1
     // Permission denied
     &-off
         // Icon
         .TriStateInputButton-icon
-            fill: $fg-0
+            fill: base.$fg-0
         // Icon hover
         &:hover .TriStateInputButton-icon
-            fill: $fg-1
+            fill: base.$fg-1
         // Selected
         &.TriStateInputButton-container-selected
             // Selected icon
             .TriStateInputButton-icon
-                fill: $bad-0
+                fill: base.$bad-0
             // Selected hover
             &:hover .TriStateInputButton-icon
-                fill: $bad-1
+                fill: base.$bad-1
 
 /*
  * --- Option-based ---
@@ -215,7 +216,7 @@
 // Form checkbox
 .CheckmarkIcon-container .CheckmarkIcon-circle,
 .CheckboxV2-container-desktop .CheckboxV2-box
-    border-color: $fg-0
+    border-color: base.$fg-0
 // Form checkbox hover
 .CheckmarkIcon-container:hover .CheckmarkIcon-circle,
 .CheckboxV2-container-desktop:hover .CheckboxV2-box
@@ -234,7 +235,7 @@
 .CheckboxV2-label,
 .RadioOptionPanel-label,
 .CheckboxV2-label-wrapper
-    color: $fg-1
+    color: base.$fg-1
 
 .CheckboxV2-container-unchecked:hover .CheckboxV2-label,
 .RadioInput-container-unselected:hover .CheckboxV2-label,
@@ -242,21 +243,21 @@
 .CheckboxV2-container-checked .CheckboxV2-label,
 .RadioOptionPanel-container-selected .CheckboxV2-label,
 .RadioOptionPanel-container-selected .RadioOptionPanel-label
-    color: $fg-2
+    color: base.$fg-2
 // Form checkbox description
 .CheckboxV2-description
-    color: $fg-1
+    color: base.$fg-1
 .CheckboxV2-container-checked .CheckboxV2-description
-    color: $fg-2
+    color: base.$fg-2
 
 .GuildedSelect-container
     // Form selector hover
     &.GuildedSelect-container-dark:hover .Select .Select-control,
     &:hover .Select .Select-control
-        border-color: $fg-0 !important
+        border-color: base.$fg-0 !important
     // Form selector
     .Select-control
-        border-color: $fg-0 !important
+        border-color: base.$fg-0 !important
 
 // Form selector focused
 .GuildedSelect-container.GuildedSelect-container-dark .Select.is-focused .Select-control
@@ -264,7 +265,7 @@
 
 // Form selector icon
 .GuildedSelectIcon-container
-    fill: $fg-1
+    fill: base.$fg-1
 
 .GuildedSelect-container
     // Form selector arrow
@@ -272,55 +273,53 @@
         border-top-color: var(--NihilityTheme0)
     // Form selector placeholder
     .Select-placeholder
-        color: $fg-1
+        color: base.$fg-1
     // Form selector value
     .Select-value-label
-        color: $fg-2
+        color: base.$fg-2
     // Form select menu
     &.GuildedSelect-container-dark .Select-menu-outer,
     &.GuildedSelect-container-light .Select-menu-outer
-        border-color: $border-dark-1
-        background-color: $bg-1
+        border-color: base.$border-dark-1
+        background-color: base.$bg-1
 .Select
     // Form selector options
     &-menu
-        background-color: $bg-3
-        padding: $spacing-0
+        background-color: base.$bg-3
+        padding: base.$spacing-0
         &-outer
-            opacity: $floating-opacity
-            border-color: $border-dark-1
-            background-color: $bg-1
+            opacity: base.$floating-opacity
+            border-color: base.$border-dark-1
+            background-color: base.$bg-1
 
     // Form selector option
     &-option
-        border-radius: $radius-0
-        color: $fg-2
+        border-radius: base.$radius-0
+        color: base.$fg-2
         border: solid 1px transparent
         // Normally
         .GuildedSelect-container.GuildedSelect-container-dark &,
         .GuildedSelect-container.GuildedSelect-container-light &
-            color: $fg-2
+            color: base.$fg-2
         // Focused
         &.is-focused
-            background-color: $bg-4
-            border: solid 1px $border-light-1
+            @extend %ContentBordered-0
             .GuildedSelect-container.GuildedSelect-container-dark &,
             .GuildedSelect-container.GuildedSelect-container-light &
-                color: $fg-3
+                color: base.$fg-3
         // Already selected
         &.is-selected,
         .GuildedSelect-container &.is-selected,
         .GuildedSelect-container.GuildedSelect-container-dark &.is-selected,
         .GuildedSelect-container.GuildedSelect-container-light &.is-selected
-            background-color: $bg-2
-            border: solid 1px $border-dark-1
+            @extend %PanelBordered-0
         // &.is-focused.is-selected
-        //     background-color: $bg-3
+        //     background-color: base.$bg-3
     // No results found - code container/blocks
     .GuildedSelect-container.GuildedSelect-container-light &-noresults,
     .GuildedSelect-container.GuildedSelect-container-dark &-noresults,
     &-noresults
-        background-color: $bg-3
+        background-color: base.$bg-3
 
 /*
  * --- Timed ---
@@ -329,17 +328,17 @@
 // Date input
 .FormBoxAndLabel
     &-box
-        border-color: $fg-0
-        @include set-transition(border-color)
+        border-color: base.$fg-0
+        @include set.transition(border-color)
     &-container-focused &-box,
     &-container-desktop:hover &-box
-        border-color: $border-light-2
+        border-color: base.$border-light-2
     // Icon
     &-form-icon
-        fill: $fg-1
+        fill: base.$fg-1
     // Text inside input
     &-main-text
-        color: $fg-3
+        color: base.$fg-3
 // Time input
 .TimeInput
     // Part selected
@@ -347,96 +346,96 @@
         background-color: var(--NihilitySelect)
     // : delimeter
     &-delimiter
-        color: $fg-1
+        color: base.$fg-1
 // Timezone label
 .TimeFieldWrapper-timezone-label
-    color: $fg-1
+    color: base.$fg-1
 
 /*
  * --- Buttons ---
  */
 
 @mixin button-typed($border-colour, $text-colour)
-    background: $shading-1
+    background: base.$shading-1
     border: solid 1px $border-colour
     .FormConfirmButtonV2-button-content
-        @include set-color($text-colour)
+        @include set.color($text-colour)
 @mixin button-typed-hollow($border-colour, $text-colour)
     border: solid 1px $border-colour
     .FormConfirmButtonV2-button-content
-        @include set-color($text-colour)
+        @include set.color($text-colour)
 
 .FormConfirmButtonV2
     // Gilded button
     &-container.FormConfirmButtonV2-container-type-gilded
-        background: $shading-1
+        background: base.$shading-1
         box-shadow: none
-        border-color: $border-light-1
+        border-color: base.$border-light-1
     // Gilded button hover
     &-container-desktop.FormConfirmButtonV2-container-filled:hover
         box-shadow: none
-        border-color: $border-light-2
+        border-color: base.$border-light-2
         .FormConfirmButtonV2-button-content
-            @include set-color(var(--NihilityTheme1))
+            @include set.color(var(--NihilityTheme1))
     // Gilded button text
     &-button-content
-        @include set-color(var(--NihilityTheme0))
+        @include set.color(var(--NihilityTheme0))
     
     // Hollow gilded
     &-container.FormConfirmButtonV2-container-hollow
         background: none
-        border-color: $fg-0
+        border-color: base.$fg-0
     // Hollow gilded hover
     &-container-desktop.FormConfirmButtonV2-container-hollow:hover
-        border-color: $fg-1
+        border-color: base.$fg-1
         .FormConfirmButtonV2-button-content
-            @include set-color(var(--NihilityTheme1))
+            @include set.color(var(--NihilityTheme1))
     // Hollow gilded text
     &-container-hollow &-button-content
-        @include set-color(var(--NihilityTheme0))
+        @include set.color(var(--NihilityTheme0))
 
     // Delete button
     &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete
-        @include button-typed($border-light-1, $bad-0)
+        @include button-typed(base.$border-light-1, base.$bad-0)
     &-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete:hover
-        @include button-typed($border-light-2, $bad-1)
+        @include button-typed(base.$border-light-2, base.$bad-1)
     
     // Success button
     &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-success
-        @include button-typed($border-light-1, $good-0)
+        @include button-typed(base.$border-light-1, base.$good-0)
     &-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-success:hover
-        @include button-typed($border-light-1, $good-1)
+        @include button-typed(base.$border-light-1, base.$good-1)
     
     // Delete hollow
     &-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-delete
-        @include button-typed-hollow($bad-0, $bad-0)
+        @include button-typed-hollow(base.$bad-0, base.$bad-0)
     &-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-delete:hover
-        @include button-typed-hollow($bad-1, $bad-1)
+        @include button-typed-hollow(base.$bad-1, base.$bad-1)
     
     // Success hollow
     &-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-success
-        @include button-typed-hollow($good-0, $good-0)
+        @include button-typed-hollow(base.$good-0, base.$good-0)
     &-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-success:hover
-        @include button-typed-hollow($good-1, $good-1)
+        @include button-typed-hollow(base.$good-1, base.$good-1)
     
     // Normal hollow
     &-container.FormConfirmButtonV2-container-type-bleached
-        @include button-typed-hollow($fg-0, $normal-0)
+        @include button-typed-hollow(base.$fg-0, base.$normal-0)
     &-container-desktop.FormConfirmButtonV2-container-type-bleached.FormConfirmButtonV2-container-hollow:hover
-        @include button-typed-hollow($fg-1, $normal-1)
+        @include button-typed-hollow(base.$fg-1, base.$normal-1)
 
     // Disabled
     &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled,
     &-container.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled:hover
-        background-color: $bg-0
-        border-color: $border-light-1
+        background-color: base.$bg-0
+        border-color: base.$border-light-1
         .FormConfirmButtonV2-button-content
-            @include set-color($fg-0)
+            @include set.color(base.$fg-0)
 
     // Disabled hollow
     &-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-disabled,
     &-container.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-disabled:hover
-        @include button-typed-hollow($fg-0, $fg-0)
+        @include button-typed-hollow(base.$fg-0, base.$fg-0)
 /*
  * --- Colours (Role colours) ---
  */
@@ -446,7 +445,7 @@
     border-color: var(--NihilityTheme1)
 // Colour hover
 .ColorInputOption-container-size-lg .ColorInputOption-container-dot:not(.ColorInputOption-container-dot-selected):hover
-    border-color: $fg-0
+    border-color: base.$fg-0
 // Role description
 .TeamRolesListInstructions-container
-    color: $fg-1
+    color: base.$fg-1

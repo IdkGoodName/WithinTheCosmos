@@ -1,4 +1,5 @@
-@import "../../base"
+@use "../../base"
+@use "../../set"
 
 /*
  * --- Content ---
@@ -6,11 +7,11 @@
 
 // Select all checkbox
 .SelectToggleIcon-container
-    border-color: $fg-0
+    border-color: base.$fg-0
     // Select all checkbox hover
     &-clickable:hover
-        border-color: $border-light-2
-        background-color: rgba($bg-hover, 0.1)
+        border-color: base.$border-light-2
+        background-color: rgba(base.$bg-hover, 0.1)
 // Select all checkmark
 .SelectToggleIcon-checkmark
     fill: var(--NihilityTheme0)
@@ -34,36 +35,36 @@
 
 // Filter icon
 .ItemManagerFilterButton-icon
-    fill: $fg-1
-    @include set-transition(fill)
+    fill: base.$fg-1
+    @include set.transition(fill)
 
 // Filter icon hover
 .ItemManagerFilterButton-container:not(.ItemManagerFilterButton-container-active):hover .ItemManagerFilterButton-icon
-    fill: $fg-2
+    fill: base.$fg-2
 
 // Filter settings clicked
 .ItemManagerFilterButton-container-open .ItemManagerFilterButton-icon
-    fill: $fg-3
+    fill: base.$fg-3
 
 .ItemManagerFilterWrapper
     // Filter settings
     &-container
-        background-color: $bg-4
+        background-color: base.$bg-4
     // Filter settings search
     &-search
-        background-color: $bg-5
+        background-color: base.$bg-5
 // Filter menu hover
 .ItemManagerFilterOption-container:hover
-    background-color: $bg-lighter
+    background-color: base.$bg-lighter
 
 
 .SearchBarInput
     // Search bar
     &-input
-        color: $fg-2
+        color: base.$fg-2
         // Placeholder
         &::placeholder
-            color: $fg-1
+            color: base.$fg-1
     // Filter settings search icon
     &-icon
-        fill: $fg-2
+        fill: base.$fg-2

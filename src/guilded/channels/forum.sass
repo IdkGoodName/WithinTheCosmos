@@ -1,5 +1,5 @@
-@import "../../base"
-@import "../../borders"
+@use "../../base"
+@use "../../borders"
 
 /*
  * --- Forum post list ---
@@ -8,19 +8,19 @@
 .TeamPostRow-container
     // Forum post hover
     &-desktop::after
-        background-color: $bg-hover
+        background-color: base.$bg-hover
 
 .TeamWidgetCommentCount
     // Comment count icon
     &-icon
-        fill: $fg-1
+        fill: base.$fg-1
     // Comment count text
     &-container-size-lg &-label
-        color: $fg-1
+        color: base.$fg-1
 
 // Author and date
 .TeamPostRow-options-wrapper
-    color: $fg-1
+    color: base.$fg-1
 
 
 /*
@@ -35,33 +35,32 @@
 .TeamThreadPostEditor-container,
 // Forum post
 .TeamThreadPostPanelDisplay-container
-    background-color: $bg-2
-    border: solid 1px $border-dark-1
-    border-radius: $radius-3
+    @extend %PanelBordered-2
+    border-radius: base.$radius-3
 
 // Reply SVG
 .ReplyingToUserHeader-icon
-    fill: $fg-1
+    fill: base.$fg-1
 
 // Reply index
 .ReplyPanel-reply-num
-    color: $fg-1
+    color: base.$fg-1
     // Hovered over
     .ReplyPanel-options-wrapper:hover &
-        color: $fg-2
+        color: base.$fg-2
 
 // Side handle rail
 .Scrubber-rail
-    background-color: $bg-0
+    background-color: base.$bg-0
 
 // Unread side rail
 .Scrubber-highlight-rail
-    background-color: $bg-2
+    background-color: base.$bg-2
 
 .Scrubber-handle
     // Side handle
     &-wrapper &
-        background-color: $mark
+        background-color: base.$mark
     // Side handle hovered over
     &-wrapper:hover &
         background-color: var(--NihilityTheme1)
@@ -69,7 +68,7 @@
 .ScrubberLabel
     // Side handle label post index/posts count
     &-value
-        color: $fg-2
+        color: base.$fg-2
     // Side handle label date
     &-label
-        color: $fg-1
+        color: base.$fg-1

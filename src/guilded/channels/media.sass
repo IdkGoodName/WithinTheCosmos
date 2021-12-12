@@ -1,5 +1,6 @@
-@import "../../base"
-@import "../../borders"
+@use "../../base"
+@use "../../set"
+@use "../../borders"
 
 /*
  * --- Media list ---
@@ -7,14 +8,14 @@
 
 // Media item
 .MediaDisplayItemV3-container
-    background-color: $bg-1
+    background-color: base.$bg-1
     // Media item hover
     &::after
-        background-color: $bg-hover
+        background-color: base.$bg-hover
 
 // Comment count
 .MediaDisplayItemMetaInfo-comment-count
-    color: $fg-2
+    color: base.$fg-2
 
 /*
  * --- Modal ---
@@ -22,16 +23,16 @@
 
 // Media modal background
 .MediaEditor-container-desktop
-    background-color: $bg-3
+    background-color: base.$bg-3
 // Tag input
 .GuildedTagCreator-container-input-border
     // Normally
     .Select-control
-        border-bottom-color: $fg-1 !important
-        @include set-transition(border-bottom)
+        border-bottom-color: base.$fg-1 !important
+        @include set.transition(border-bottom)
     // Hover
     &:hover .Select-control
-        border-bottom-color: $fg-2 !important
+        border-bottom-color: base.$fg-2 !important
     // Focused
     .Select.is-focused .Select-control
         border-bottom-color: var(--NihilityTheme2) !important
@@ -39,14 +40,14 @@
 // Tags
 .GuildedTagCreator-container-dark .Select-value
     // Tag's background
-    border-color: $border-dark-0
-    background-color: $bg-1
+    border-color: base.$border-dark-0
+    background-color: base.$bg-1
     // Tag's text
     &-label
-        color: $fg-2
+        color: base.$fg-2
 // "Tags (optional)" label
 .TextFieldLabel-container-size-sm
-    color: $fg-1
+    color: base.$fg-1
 
 /*
  * --- Media view ---
@@ -54,18 +55,18 @@
 
 // Image preview
 .MediaSplitView-media
-    background-color: $bg-0
+    background-color: base.$bg-0
 
 // Media side panel
 .MediaInfoPane-container
-    background-color: $bg-3
+    background-color: base.$bg-3
 
 // Media view exit
 .BackLink-container-desktop
     // Exit icon
     .BackLink-icon
-        fill: $fg-1
-        transition-duration: $transition
+        fill: base.$fg-1
+        transition-duration: base.$transition
     // Exit icon hover
     &:hover .BackLink-icon
-        fill: $fg-2
+        fill: base.$fg-2

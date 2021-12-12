@@ -1,51 +1,51 @@
-@import "../../base"
+@use "../../base"
+@use "../../set"
 
 // Whole container
 .AvailabilityDisplay-container
-    background-color: $bg-3
+    background-color: base.$bg-3
 
 .AvailabilityDisplayHeader
     // Container arrow
     &-button
-        border-color: $border-dark-1
-        background-color: $bg-3
+        @extend %PanelBordered-1
         // Container arrow hover
         &::after
-            background-color: $bg-hover
+            background-color: base.$bg-hover
     // Container arrow's icon
     &-button
-        fill: $fg-2
+        fill: base.$fg-2
     // Current and other days
     &-day-today, &-day
-        background-color: $bg-4
+        background-color: base.$bg-4
     // Tomorrow/alternative day
     &-day-alt
-        background-color: $bg-3
+        background-color: base.$bg-3
     // Day
     &-date
-        color: $fg-3
+        color: base.$fg-3
     // Timezone and date
     &-timezone,
     &-subtitle
-        color: $fg-1
-        @include set-transition(color)
+        color: base.$fg-1
+        @include set.transition(color)
         // Hover
         &:hover
-            color: $fg-2
+            color: base.$fg-2
 // Time
 .AvailabilityDisplayTimeAxis-label
-    color: $fg-2
+    color: base.$fg-2
 // Current time line
 .AvailabilityDayHour-now-line
-    background-color: $active
+    background-color: base.$active
 
 .AvailabilityDisplayDaysPlaceholder
     // Others' area
     &-day, &-day-today
-        background-color: $bg-4
+        background-color: base.$bg-4
     // Others' area tomorrow/alternative day
     &-day-alt
-        background-color: $bg-4
+        background-color: base.$bg-4
     // Lighter/creation area
     &-create
-        background-color: $bg-5
+        background-color: base.$bg-5

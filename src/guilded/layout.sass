@@ -1,5 +1,5 @@
-@import "../base"
-@import "../borders"
+@use "../base"
+@use "../borders"
 
 @import "./layouts/app"
 @import "./layouts/common"
@@ -24,94 +24,91 @@
 .ImageUploaderButton
     // Container
     &-container
-        background-color: $bg-1
-        border-color: $border-dark-1
+        @extend %PanelBordered-3
         // Hover
         &::after
-            background-color: $bg-hover
+            background-color: base.$bg-hover
     // Icon
     &-icon
-        fill: $fg-2
+        fill: base.$fg-2
     // Text
     &-text
-        color: $fg-2
+        color: base.$fg-2
 
 .CreateGroupOverlayWrapper-upload-avatar
-    background-color: $bg-1
-    border-color: $border-dark-1
+    @extend %PanelBordered-3
     .SVGIcon-icon
-        fill: $fg-2
+        fill: base.$fg-2
     &:hover
-        background-color: $bg-3
+        background-color: base.$bg-3
 /*
  * --- Status ---
  */
 
 // Status
 .StatusMessage-container
-    color: $fg-2
+    color: base.$fg-2
     // Status info
     &-type-info
         // No mic detected
         &.StatusMessage-container-ephemeral,
         // Published on
         &.StatusMessage-container-persistent
-            border-color: $border-dark-1
-            background-color: $bg-4
+            @extend %PanelBordered-0
     // Status hover
     &-desktop.StatusMessage-container-clickable::after
-        background-color: $bg-hover
+        background-color: base.$bg-hover
     &-ephemeral
         // Copy invite alert
         &.StatusMessage-container-type-success
-            background-color: $bg-1
-            color: $good-0
+            background-color: base.$bg-1
+            color: base.$good-0
             // Icon
             .StatusMessage-icon
-                fill: $good-0
+                fill: base.$good-0
         // Invalid URL
         &.StatusMessage-container-type-error
-            background-color: $bg-1
-            color: $bad-0
+            background-color: base.$bg-1
+            color: base.$bad-0
             // Icon
             .StatusMessage-icon
-                fill: $bad-0
+                fill: base.$bad-0
 
 // Status text
 .StatusMessage
     // Icon
     &-icon
-        fill: $fg-2
+        fill: base.$fg-2
 
 // Connecting
 .NetworkReconnectionDisplay
     // Loading bar
     &-container, &-container-reconnecting
-        background-color: $bg-0
+        background-color: base.$bg-0
     // Connected
     &-container
         .NetworkReconnectionDisplay-icon
-            fill: $good-0
+            fill: base.$good-0
         .NetworkReconnectionDisplay-text
-            color: $good-0
+            color: base.$good-0
 
 // Status message as a banner
 .StatusMessage-container-persistent
     // Message
     .StatusMessage-content
-        color: $fg-3
+        color: base.$fg-3
     // Make it dark with a border
     &.StatusMessage-container-type-banner
-        background: $bg-0
-        border-bottom: solid 1px $active
+        background: base.$bg-0
+        border-bottom: solid 1px base.$active
         .StatusMessage-content
-            color: $active
+            color: base.$active
     // Same with stream mode, but purple
     &.StatusMessage-container-banner-type-streamer-mode
-        background: $bg-0
-        border-bottom: solid 1px $stream
+        background: base.$bg-0
+        border-bottom: solid 1px base.$stream
         .StatusMessage-content
-            color: $stream
+            color: base.$stream
 
 /*
  * -=- Widget -=-
@@ -120,25 +117,25 @@
 // Wrapper
 .TeamCardDisplay-container,
 .CardWrapper-container
-    background-color: $bg-3
+    background-color: base.$bg-3
 
 // Server
 .TeamCardHeader
     // Name
     &-team-name
-        color: $fg-3
+        color: base.$fg-3
     // Description
     &-description
-        color: $fg-2
+        color: base.$fg-2
 
 // Info
 .EmphasizedLabel-container
-    color: $fg-1
+    color: base.$fg-1
 
 .EmbedCardFooter
     // Footer
     &-container
-        background-color: $bg-1
+        background-color: base.$bg-1
     // Guilded's icon
     &-logomark
         fill: var(--NihilityTheme0)
@@ -153,4 +150,4 @@
 
 // Verified badge
 #icon-verified-badge path:first-child
-    fill: $verified
+    fill: base.$verified

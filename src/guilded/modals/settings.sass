@@ -1,5 +1,6 @@
-@import "../../base"
-@import "../../borders"
+@use "../../base"
+@use "../../set"
+@use "../../borders"
 
 /*
  * -=- Settings -=-
@@ -7,27 +8,27 @@
 
 // Options
 .OptionsMenuPageWrapper-container
-    background-color: $bg-3
+    background-color: base.$bg-3
 // Tabs
 .OptionsMenu-container-desktop .OptionsMenu-options-control
-    background-color: $bg-0
+    background-color: base.$bg-0
 // Tab text
 .DesktopOptionsControlItemTemplate-label-text
-    color: $fg-1
+    color: base.$fg-1
 // Tabs title
 .DesktopOptionsControlOptionHeader-header-text
-    color: $fg-2
+    color: base.$fg-2
 
 .DesktopOptionsControlItemTemplate-container
     // Tab hover
     &:hover::after
-        background-color: $bg-hover
+        background-color: base.$bg-hover
     // Tab hover text
     &:hover .DesktopOptionsControlItemTemplate-label-text
-        color: $fg-3
+        color: base.$fg-3
 // Tab active
 .DesktopOptionsControlItemTemplate-container-active
-    background-color: $bg-3
+    background-color: base.$bg-3
 
 /*
  * -=- User settings -=-
@@ -35,19 +36,19 @@
 
 // Streamer mode
 .FormSection-container-section-background-inset
-    background-color: $bg-2
+    background-color: base.$bg-2
 // Settings account info
 .DefaultReadonlyEditableForm-container
-    background-color: $bg-1
+    background-color: base.$bg-1
 // 2FA thing
 .PersistentUpsell-container-flavor-settings
-    background-color: $bg-1
+    background-color: base.$bg-1
 // Connections/integrations
 .SocialLinkPanel-header
-    background-color: $bg-1
+    background-color: base.$bg-1
 // Email settings header
 .UserSettingsEmailPage-header
-    color: $fg-3
+    color: base.$fg-3
 
 /*
  * -=- Server Settings -=-
@@ -55,30 +56,29 @@
 
 // Channel or category notifications header
 .GuildedTableHeader-column-header-group, .GuildedTableHeader-column-header
-    color: $fg-2
+    color: base.$fg-2
 // Placeholder
 .GuildedTableField-empty-text
-    color: $fg-1
+    color: base.$fg-1
 // Category/channel hover
 .GuildedTableRowInputWrapper-container-desktop::after
-    background-color: $bg-hover
+    background-color: base.$bg-hover
 // Category/channel icon
 .GuildedTableRowInputWrapper-icon
-    fill: $fg-1
+    fill: base.$fg-1
 // Category/channel title
 .GuildedTableRowInputWrapper-name
-    color: $fg-2
+    color: base.$fg-2
 // X channels
 .GuildedTableRowInputWrapper-description
-    fill: $fg-1
+    fill: base.$fg-1
 // Remove icon
 .GuildedTableRowNotificationOverridesInput-remove
-    color: $bad-0
+    color: base.$bad-0
 
 // Content(flow)
 .UserCTAPanel-container
-    background-color: $bg-1
-    border: solid 1px $border-dark-1 
+    @extend %PanelBordered-3 
 // // Content inner(flow)
 // .UserCTAPanel-container-style-bordered
 //     border: 0
@@ -86,34 +86,34 @@
 .UserCTAPanel-container-style-bordered .UserCTAPanel-contents:not(.UserCTAPanel-container-disabled)
     background-color: transparent
 .UserCTAPanel-container-style-bordered .UserCTAPanel-contents:not(.UserCTAPanel-container-disabled):hover
-    background-color: $bg-1
-    @include set-transition(background)
+    background-color: base.$bg-1
+    @include set.transition(background)
 // Flow connection
 .PanelList-option-connector
-    background-color: $bg-0
+    background-color: base.$bg-0
 // Flow's title
 .PanelInfo-title
-    color: $fg-3
+    color: base.$fg-3
 // Flow's description
 .PanelInfo-description
-    color: $fg-1
+    color: base.$fg-1
 // Flow's icon
 .BotFlowDisplay-icon
-    fill: $fg-1
+    fill: base.$fg-1
 
 // Selection buttons
 .RadioOptionPanel-container
-    background-color: $bg-2
-    border-color: $border-dark-1
+    background-color: base.$bg-2
+    border-color: base.$border-dark-1
     // Selection button hover
     &:not(&-disabled)::after
-        background-color: $bg-hover
+        background-color: base.$bg-hover
     // Channel type selection
     &-selection-border
         // Hover
         &:not(.RadioOptionPanel-container-selected):hover
-            border-color: $border-dark-0
-            background-color: $bg-3
+            border-color: base.$border-dark-0
+            background-color: base.$bg-3
         // Selected
         &.RadioOptionPanel-container-selected
             border-color: var(--NihilityTheme0)
@@ -123,11 +123,11 @@
 
 // Selection checkbox
 .CheckboxPanel-container
-    background-color: $bg-2
-    border-color: $border-dark-1
+    background-color: base.$bg-2
+    border-color: base.$border-dark-1
     // Hover
     &.CheckboxPanel-container-clickable.CheckboxPanel-container-flavor-default:hover
-        background-color: $bg-4
+        background-color: base.$bg-4
     // Icon
     &-clickable:hover .CheckmarkIcon-circle, &-clickable:focus .CheckmarkIcon-circle
         border-color: var(--NihilityTheme0)
@@ -142,10 +142,10 @@
 
 // Team integrations
 .TeamSettingsAddIntegration-container
-    background-color: $bg-1
+    background-color: base.$bg-1
 // Twitch integration
 .TeamSettingsAddIntegration-container-type-twitch .TeamSettingsAddIntegration-icon
-    fill: $stream
+    fill: base.$stream
 
 /*
  * --- Groups ---
@@ -153,13 +153,13 @@
 
 // Group
 .GroupSettingsPanel-container
-    background-color: $bg-1
+    background-color: base.$bg-1
     // Group hover
     &:hover
-        background-color: $bg-0
+        background-color: base.$bg-0
 // Group gripper
 .GroupSettingsPanel-icon
-    fill: $fg-1
+    fill: base.$fg-1
 
 /*
  * --- Subscriptions ---
@@ -167,10 +167,10 @@
 
 // Subscriptions bg
 .ServerSubscriptionsSetupUpsell-content
-    background-color: $bg-4
+    background-color: base.$bg-4
 // Subscription points
 .GuildedText-container-type-subtextBodyWhite
-    color: $fg-2
+    color: base.$fg-2
 // Subscription enabling
 .ModalWrapper-container.ModalWrapper-container-required:not(.ModalWrapper-background-style-transparent)
     background: rgba(0, 0, 0, 0.6)
@@ -181,37 +181,37 @@
 
 // Role list item selected
 .TeamSettingsPermissionsItem-container-selected
-    background-color: $bg-4
+    background-color: base.$bg-4
 // Role list item hover
 .TeamSettingsPermissionsItem-container-desktop .TeamSettingsPermissionsItem-content::after
-    background-color: $bg-hover
+    background-color: base.$bg-hover
 // Add role
 .TeamSettingsAddButton
     &-icon
-        fill: $fg-1
-        @include set-transition(fill)
+        fill: base.$fg-1
+        @include set.transition(fill)
     &-text
-        color: $fg-1
-        @include set-transition(color)
+        color: base.$fg-1
+        @include set.transition(color)
 // Add role hover
 .TeamSettingsAddButton-container:hover
     // Icon
     .TeamSettingsAddButton-icon
-        fill: $fg-2
+        fill: base.$fg-2
     // Text
     .TeamSettingsAddButton-text
-        color: $fg-2
+        color: base.$fg-2
 
 // Permission syncing
 .TeamChannelRoleSyncControl
     &-container
-        background-color: $bg-2
+        background-color: base.$bg-2
     // Syncing text
     &-info
-        color: $fg-2
+        color: base.$fg-2
     &-category-name
-        color: $fg-3
+        color: base.$fg-3
         font-weight: bold
     // Synced icon
     &-icon
-        fill: $fg-1
+        fill: base.$fg-1

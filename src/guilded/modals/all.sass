@@ -1,29 +1,30 @@
-@import "../../base"
+@use "../../base"
+@use "../../set"
 
 // Whole container
 .TransientMenuPortalContext-portal-container
-    opacity: $floating-opacity
+    opacity: base.$floating-opacity
 // Overlay
 .ModalWrapper-container-unstyled > .Overlay-status-context
-    margin: $spacing-2
+    margin: base.$spacing-2
     width: 95%
 
 // Modal
 .ModalV2-container
-    background-color: $bg-3
-    border-color: $border-light-1
+    background-color: base.$bg-3
+    border-color: base.$border-light-1
 // Modal's title
 .Form-header
-    color: $fg-2
+    color: base.$fg-2
 // Avatar/banner input title
 .ImageInput-label
-    color: $fg-3
+    color: base.$fg-3
 // Field input title
 .FormFieldLabel-container
-    color: $fg-2
+    color: base.$fg-2
 // Field input description
 .FormFieldDescription-container
-    color: $fg-1
+    color: base.$fg-1
 
 /*
  * --- Modal with header ---
@@ -31,32 +32,32 @@
 
 // Modal's header
 .ModalHeaderV2-container
-    background-color: $bg-2
+    background-color: base.$bg-2
 .ModalHeaderV2-header
-    color: $fg-3
+    color: base.$fg-3
 // Modal with header's content
 .ModalV2-container-has-header .ModalV2-modal-content
-    border-top-color: $border-light-1
+    border-top-color: base.$border-light-1
 .ConfirmationOverlay-text
-    color: $fg-2
+    color: base.$fg-2
 // Modal's footer
 .ModalFooter-container
     border-top: none
 
 // Fullscreen modal(settings)
 .ModalV2-container-fullscreen
-    background-color: $bg-3
-    opacity: $floating-opacity
+    background-color: base.$bg-3
+    opacity: base.$floating-opacity
     width: 100%
     height: 100%
 // Rounds the modal - :not() makes sure that the modal isn't "Unsaved changes" and similar
 .ModalV2-container:not(.ModalV2-container-has-header),
 .ModalV2-container:not(.ModalV2-container-has-header) .ModalV2-modal-content
-    border-radius: $radius-4
+    border-radius: base.$radius-4
 // Modal close button
 .ModalV2CloseButton-container
-    fill: $fg-1
-    @include set-transition(fill)
+    fill: base.$fg-1
+    @include set.transition(fill)
     // Modal close button hover
     &:hover
-        fill: $fg-2
+        fill: base.$fg-2

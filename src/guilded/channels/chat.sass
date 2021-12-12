@@ -1,7 +1,7 @@
+@use "../../base"
+@use "../../set"
+@use "../../borders"
 @use "sass:color"
-
-@import "../../base"
-@import "../../borders"
 
 /*
  * --- Messages ---
@@ -11,19 +11,18 @@
 .TemporalChannelInstructions
     // Title
     &-header
-        color: $fg-2
+        color: base.$fg-2
     // Description
     &-optimistic, &-instructions
-        color: $fg-1
-
+        color: base.$fg-1
 
 // Chat area
 .SidebarInfoItem-container,
 .LayeredPageContent-content,
 .ChannelWrapper-container
-    background-color: $bg-3
-    color: $fg-3
-    --nihility-local-fg: $fg-2
+    background-color: base.$bg-3
+    color: base.$fg-3
+    --nihility-local-fg: base.$fg-2
 
 // Text
 .LastReplyDisplayContent-message-summary,
@@ -33,78 +32,78 @@
 .BlockQuoteLineRenderer,
 .ParagraphRenderer
     color: var(--nihility-local-fg)
-    @include set-transition(color)
+    @include set.transition(color)
 
 
 .ChatV2Message-container
     // Message
     &:not(&-editing):not(&-threads-disabled)
-        @include set-transition(background)
+        @include set.transition(background)
     &.ChatV2Message-container-type-default
         color: var(--nihility-local-fg)
     // Hovered message
     &:not(&-editing):hover, &.ChatV2Message-container-replying
-        background-color: $bg-4
-        --nihility-local-fg: #{$fg-3}
+        background-color: base.$bg-4
+        --nihility-local-fg: #{base.$fg-3}
     // Right click active
     &-active
-        background-color: $bg-4
+        background-color: base.$bg-4
 
     // Replying
     &:not(&-editing).ChatV2Message-container-replying
-        background-color: rgba($replying, 0.05)
+        background-color: rgba(base.$replying, 0.05)
         // Hover
         &:hover
-            background-color: rgba($replying, 0.02)
+            background-color: rgba(base.$replying, 0.02)
         // Side
         &::after
-            background-color: $replying
+            background-color: base.$replying
         &:hover::after
-            background-color: color.adjust($replying, $whiteness: $hover-brightness)
+            background-color: color.adjust(base.$replying, base.$whiteness: base.$hover-brightness)
     
     // Mentioned message
     &:not(&-editing):not(&-replying):not(&-private).ChatV2Message-container-mentioned
-        background-color: rgba($mentioned, 0.05)
+        background-color: rgba(base.$mentioned, 0.05)
         // Hover
         &:hover
-            background-color: rgba($mentioned, 0.02)
+            background-color: rgba(base.$mentioned, 0.02)
         // Side
         &::after
-            background-color: $mentioned
+            background-color: base.$mentioned
         &:hover::after
-            background-color: color.adjust($mentioned, $whiteness: $hover-brightness)
+            background-color: color.adjust(base.$mentioned, base.$whiteness: base.$hover-brightness)
 
     // Private reply
     &:not(&-editing):not(&-replying):not(&-mentioned):not(&-private-other).ChatV2Message-container-private,
     // Private mention
     &:not(&-editing):not(&-replying):not(&-private-other).ChatV2Message-container-private
-        background-color: rgba($private, 0.05)
+        background-color: rgba(base.$private, 0.05)
         // Hover
         &:hover
-            background-color: rgba($private, 0.02)
+            background-color: rgba(base.$private, 0.02)
         // Side
         &::after
-            background-color: $private
+            background-color: base.$private
         &:hover::after
-            background-color: color.adjust($private, $whiteness: $hover-brightness)
+            background-color: color.adjust(base.$private, base.$whiteness: base.$hover-brightness)
     // Private reply mod view
     &:not(&-editing):not(&-replying):not(&-mentioned):not(&-private).ChatV2Message-container-private-other,
     // Private mention mod view
     &:not(&-editing):not(&-replying):not(&-private).ChatV2Message-container-private-other
-        background-color: rgba($private-mod-view, 0.05)
+        background-color: rgba(base.$private-mod-view, 0.05)
         // Hover
         &:hover
-            background-color: rgba($private-mod-view, 0.02)
+            background-color: rgba(base.$private-mod-view, 0.02)
         // Side
         &::after
-            background-color: $private-mod-view
+            background-color: base.$private-mod-view
         &:hover::after
-            background-color: color.adjust($private-mod-view, $whiteness: $hover-brightness)
+            background-color: color.adjust(base.$private-mod-view, base.$whiteness: base.$hover-brightness)
 
     // Right clicked
     &-active:not(&-editing)
-        background-color: $bg-4
-        --nihility-local-fg: #{$fg-3}
+        background-color: base.$bg-4
+        --nihility-local-fg: #{base.$fg-3}
     
     // Removes messages' margin
     & + &:not(&-with-header):not(&-type-system)
@@ -112,44 +111,43 @@
 
 // (edited)
 .EditedMarker-container
-    color: $fg-1
-    @include set-transition(color)
+    color: base.$fg-1
+    @include set.transition(color)
     // (edited) hover
     .ChatV2Message-container.ChatV2Message-container-type-default:hover &
-        color: $fg-2
+        color: base.$fg-2
 
 
 // Replying to
 .ChatChannelInputStatusBar
     // Box
     &-container
-        background-color: $bg-1
-        border: solid 1px $border-light-2
+        @extend %ContentBordered-3
     // Label
     &-replying-to-text
-        color: $fg-1
+        color: base.$fg-1
 
     // Close icon
     &Buttons
         &-close-icon
-            fill: $fg-1
-            @include set-transition(fill)
+            fill: base.$fg-1
+            @include set.transition(fill)
         &-hover:hover &-close-icon
-            fill: $bad-0
+            fill: base.$bad-0
 .PrivateReplyButton
     &-icon
-        fill: $fg-1
-        @include set-transition(fill)
+        fill: base.$fg-1
+        @include set.transition(fill)
         &-enabled
-            fill: color.adjust($private, $whiteness: 25%)
+            fill: color.adjust(base.$private, base.$whiteness: 25%)
     &-container:hover:not(&-container-disabled) &-icon:not(&-icon-enabled)
-        fill: $fg-2
+        fill: base.$fg-2
 .ReplyPingButton-ping
     &-icon
-        fill: $fg-1
-        @include set-transition(fill)
+        fill: base.$fg-1
+        @include set.transition(fill)
     &-enabled &-icon
-        fill: color.adjust($mention, $whiteness: 25%)
+        fill: color.adjust(base.$mention, base.$whiteness: 25%)
 
 .ChatChannelInput-editor
     border: none
@@ -160,7 +158,7 @@
     &, &-highlighted
         // Reply line
         &::after
-            border-color: $fg-0
+            border-color: base.$fg-0
             opacity: 30%
             height: 24px
         &:first-child::after
@@ -174,16 +172,16 @@
     &-message-summary
         // Non-deleted summary
         &:not(&-deleted)
-            @include set-transition(color)
+            @include set.transition(color)
             &:hover
-                color: $fg-2
+                color: base.$fg-2
     // Username in the reply
     &-user-info .UserBasicInfoDisplay-name-and-status-wrapper
         font-weight: bolder
 
 // Message editing actions
 .ChatV2MessageEditHelper-container
-    color: $fg-1
+    color: base.$fg-1
 
 /*
  * --- Special messages ---
@@ -195,39 +193,39 @@
 
 // Event message icon
 .SystemMessageRendererWrapper-container .SystemMessageRendererWrapper-icon
-    fill: $fg-1
+    fill: base.$fg-1
 
 // Pinned message label
 .PinnedByMessage
     // Text
     &-word
-        color: $fg-1
+        color: base.$fg-1
     // Icon
     &-icon
-        fill: $fg-1
+        fill: base.$fg-1
 // Pinned messages list
 .ChannelPinnedMessages
     // "Pinned messages" title
     &-header
-        color: $fg-1
+        color: base.$fg-1
     // Box
     &-container
-        background-color: $bg-1
+        background-color: base.$bg-1
 // Pinned message
 .ChatV2PinnedMessage-message-wrapper
-    background-color: $bg-3
-    border-radius: $radius-2
+    background-color: base.$bg-3
+    border-radius: base.$radius-2
     .ChatV2Message-container
-        border-radius: $radius-2
+        border-radius: base.$radius-2
 
 // "Private message" label
 .PrivateMessageLabel
     // Eye icon
     &-icon
-        fill: $fg-1
+        fill: base.$fg-1
     // Text
     &-container .GuildedText-container
-        color: $fg-1
+        color: base.$fg-1
 
 /*
  * --- Divider ---
@@ -236,19 +234,19 @@
 .WordDividerLine
     // Normal
     &-line
-        background-color: $bg-5
+        background-color: base.$bg-5
         &:last-child
             width: 600px
     &-container-word-style-chat &-word,
     &-word
-        color: $fg-1
+        color: base.$fg-1
     // New messages
     &-container-type-alert
         .WordDividerLine-line
-            background: $important
+            background: base.$important
     &-container-type-alert
         .WordDividerLine-word
-            color: $important
+            color: base.$important
 
 /*
  * --- Threads ---
@@ -258,15 +256,15 @@
 .ChatMessageThread
     // Text
     &-thread-header
-        color: $fg-1
+        color: base.$fg-1
     // Icon
     &-icon-chat-thread
-        fill: $fg-1
+        fill: base.$fg-1
 
 // Threaded message
 .ChatMessageThread-container
-    background-color: $shading-2
-    --border-color: #{$bg-4}
+    background-color: base.$shading-2
+    --border-color: #{base.$bg-4}
     // Threaded message hover
     &::after
         display: none
@@ -290,12 +288,12 @@
 // Timestamp
 .ChatV2MessageTimestamp-container.ChatV2MessageHeader-timestamp,
 .ChatV2MessageTimestamp-container.SystemMessageRendererWrapper-timestamp
-    color: $fg-1
-    @include set-transition(color)
+    color: base.$fg-1
+    @include set.transition(color)
     // Timestamp hovered
     .ChatV2Message-container.ChatV2Message-container-type-default:hover &,
     .ChatV2Message-container.ChatV2Message-container-type-system:hover &
-        color: $fg-2
+        color: base.$fg-2
 
 /*
  * --- Menu ---
@@ -304,49 +302,48 @@
 
 // Message hover menu
 .QuickActionBar-container
-    background-color: $bg-1
-    border-color: $border-dark-1
+    @extend %PanelBordered-3
 
 // Message hover menu icons
 .QuickActionBar-action
-    fill: $fg-2
+    fill: base.$fg-2
     // Buttons hovered over
     &-wrapper:hover .QuickActionBar-action,
     &:hover
-        background-color: $bg-3
-        fill: $fg-3
+        background-color: base.$bg-3
+        fill: base.$fg-3
         // Change the fill of the SVG icon
         .SVGIcon-container
-            fill: $fg-3
+            fill: base.$fg-3
     // Change the fill of the SVG icon
     .SVGIcon-container
-        fill: $fg-2
+        fill: base.$fg-2
     // Delete icon
     &-wrapper.QuickActionBar-action-wrapper-destructive
         .QuickActionBar-action
-            fill: $bad-0
+            fill: base.$bad-0
         // Delete icon hover
         &:hover .QuickActionBar-action
-            fill: $bad-1
+            fill: base.$bad-1
 
 // Remove hover from the message in deletion menu
 .ConfirmationOverlay-item .ChatV2Message-container
     // Since it doesn't work for ::after, don't add it here
     // .ChatChannelMessages-delete-message
-    //     @include set-transition(background-color)
+    //     @include set.transition(background-color)
     // Give it to contents
     &:hover
         background-color: transparent
         .ChatChannelMessages-delete-message
-            background-color: $bg-4
+            background-color: base.$bg-4
 // Message delete menu fading
 .ChatChannelMessages-delete-message::after
-    background: linear-gradient(to bottom, transparent, $bg-3 75px)
+    background: linear-gradient(to bottom, transparent, base.$bg-3 75px)
     // Doesn't work
-    // @include set-transition(background)
+    // @include set.transition(background)
     // When the message gets hovered over, change the fading too
     .ChatV2Message-container:not(.ChatV2Message-container-editing):hover &
-        background: linear-gradient(to bottom, transparent, $bg-4 75px)
+        background: linear-gradient(to bottom, transparent, base.$bg-4 75px)
 
 /*
  * --- Thread menu ---
@@ -357,42 +354,42 @@
 .ChatV2MessageReplyTooltip
     // Base
     &-content-wrapper
-        background-color: $bg-2
-        border-color: $border-dark-0
-        opacity: $floating-opacity
+        background-color: base.$bg-2
+        border-color: base.$border-dark-0
+        opacity: base.$floating-opacity
     // Arrow/Pointer
     &-arrow
-        background-color: $bg-2
-        border-color: $border-dark-0
+        background-color: base.$bg-2
+        border-color: base.$border-dark-0
     // Message thread menu header
     &Header
         // Icon
         &-icon
-            fill: $fg-1
+            fill: base.$fg-1
         // Message thread add a title
         &-add-title
             &, &:visited, &:active, &:focus
-                color: $fg-1
+                color: base.$fg-1
             // Hovered
             &:hover
-                color: $fg-2
+                color: base.$fg-2
 
 // Message thread menu send
 .SlateEditor-send-icon
     fill: var(--NihilityTheme2)
     // Message thread menu cannot send
     &.SlateEditor-send-icon-disabled
-        fill: $fg-0
+        fill: base.$fg-0
 
 .ContentEditableInput
     &-placeholder-text, &-input, &-actual-text-display
-        color: $fg-2
+        color: base.$fg-2
 
 // Thread menu title input placeholder
 .ChannelTitleInput-input-placeholder
-    color: $fg-0
+    color: base.$fg-0
 
 // Thread menu title input icon
 .ChannelTitleInput-icon,
 .ChatV2MessageReplyTooltipInput-title-icon
-    fill: $fg-2
+    fill: base.$fg-2

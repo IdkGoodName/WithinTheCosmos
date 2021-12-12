@@ -1,5 +1,6 @@
-@import "../../base"
-@import "../../borders"
+@use "../../base"
+@use "../../set"
+@use "../../borders"
 
 /*
  * --- Item list ---
@@ -8,38 +9,38 @@
 // Item
 .TeamListItemIndentWrapper-container,
 .TeamListItemWrapper-container
-    background-color: $bg-4
+    background-color: base.$bg-4
     // Item hover
     &-unfocused::after
-        background-color: $bg-hover
+        background-color: base.$bg-hover
 // Item handle
 .TeamListItemControls-handle
     svg
-        fill: $fg-1
+        fill: base.$fg-1
     &:hover svg
-        fill: $fg-2
+        fill: base.$fg-2
 // Note and thread indicators
 .TeamListItemAction-container-clickable
     svg
-        fill: $fg-1
+        fill: base.$fg-1
     &:hover svg
-        fill: $fg-2
+        fill: base.$fg-2
 // Note highlighted
 .TeamListItemAction-container-highlight
     svg
-        fill: $important
+        fill: base.$important
     &:hover svg
-        fill: $fg-3
+        fill: base.$fg-3
 // Thread indicator
 .TeamListItemAction-container
-    color: $fg-1
+    color: base.$fg-1
     &:hover
-        color: $fg-2
+        color: base.$fg-2
 
 .TeamListItemsInput
     // Add item slate
     &-editor.Editor-container
-        background-color: $bg-4
+        background-color: base.$bg-4
     // Add item icon
     &-icon
         svg
@@ -48,30 +49,30 @@
             fill: var(--NihilityTheme2)
 // Add item add note
 .TeamListItemNoteEditor-button
-    color: $fg-1
+    color: base.$fg-1
     &:hover
-        color: $fg-2
+        color: base.$fg-2
         // Icon hover
         svg
-            fill: $fg-2
+            fill: base.$fg-2
     // Icon
     svg
-        fill: $fg-1
+        fill: base.$fg-1
 
 // X completed
 .TeamListItemsCompletedHeader-count
-    color: $fg-1
-    @include set-transition(color)
+    color: base.$fg-1
+    @include set.transition(color)
     // X completed hover
     .TeamListItemsCompletedHeader-container:hover &
-        color: $fg-2
+        color: base.$fg-2
 
 // Editor focused
 .TeamListItemWrapper-container-focused
     border-color: var(--NihilityTheme1)
 // Fill background when the list is being dragged
 .ReorderIndentable-blockout
-    background-color: $bg-1
+    background-color: base.$bg-1
 
 /*
  * --- Item note ---
@@ -79,25 +80,25 @@
 
 // Whole container
 .TeamListItemNote-container
-    border-color: $border-dark-0
+    border-color: base.$border-dark-0
 
 .TeamListItemDetails
     // Timestamp dots
     &-message-count::before, &-created-at::before
-        color: $fg-0
+        color: base.$fg-0
     // Timestamp
     &-created-at
-        color: $fg-1
-        @include set-transition(color)
+        color: base.$fg-1
+        @include set.transition(color)
         // Timestamp hover
         &:hover
-            color: $fg-2
+            color: base.$fg-2
 // Note
 .SingleContentEditor-display
-    background-color: $bg-4
+    background-color: base.$bg-4
     &:hover .ContentMetadataCreationInfo-from-now
-        color: $fg-2
+        color: base.$fg-2
 // Note timestamp
 .ContentMetadataCreationInfo-from-now
-    color: $fg-1
-    @include set-transition(color)
+    color: base.$fg-1
+    @include set.transition(color)

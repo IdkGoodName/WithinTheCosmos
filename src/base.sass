@@ -148,18 +148,3 @@ $bounce: cubic-bezier(0,2,1,.1)
 $shadow: 0 0 4px white
 $icon-size: 36px
 $hover-brightness: 20%
-
-/*
- * --- Mixins ---
- */
-
-// Sets both color and fill
-@mixin set-color($color)
-    color: $color
-    fill: $color
-
-// For setting transition in a lot of places
-@mixin set-transition($property, $fn: ease-out)
-    transition: $property
-    transition-duration: $transition
-    transition-timing-function: $fn

@@ -1,5 +1,6 @@
-@import "../../base"
-@import "../../borders"
+@use "../../base"
+@use "../../set"
+@use "../../borders"
 
 /*
  * -=- Message plus menus -=-
@@ -7,29 +8,29 @@
 
 // Dashed border
 .UploadMediaBox-container
-    border-color: rgba($fg-0, 0.3)
+    border-color: rgba(base.$fg-0, 0.3)
 
 // Media upload
 .MediaUploaderDropImageInstructions
     // Upload icon
     &-icon
-        fill: $fg-2
+        fill: base.$fg-2
     // Drop media
     &-drop-image-text
-        color: $fg-2
+        color: base.$fg-2
     // Or browse your files
     &-or-browse-text
-        color: $fg-1
+        color: base.$fg-1
 // Media upload paste
 .MediaUploaderPasteInstructions
     &-container
-        background-color: $bg-2
+        background-color: base.$bg-2
     // Icon
     &-link-icon
-        fill: $fg-1
+        fill: base.$fg-1
     // Text
     &-paste-instructions
-        color: $fg-1
+        color: base.$fg-1
 
 /*
  * -=- Create Server -=-
@@ -37,59 +38,59 @@
 
 // Tiled background
 .OnboardingExperience-background
-    background-color: $bg-0
+    background-color: base.$bg-0
 // Background's tile
 .LandingPageV3WhimsicalIcon-icon
-    color: $fg-0
+    color: base.$fg-0
     opacity: 15%
-    @include set-transition(opacity)
+    @include set.transition(opacity)
     // Background's tile
     &:hover
         opacity: 45%
 // Creation container
 .FullScreenFlowStageWrapper-contents-wrapper
-    background-color: $bg-3
+    background-color: base.$bg-3
 // Enter your server name above
 .TextInputWithLabel-container-label-retracted .TextInputWithLabel-floating-label-validity
-    color: $fg-0
+    color: base.$fg-0
 // Server name is too short
 .TextInputWithLabel-container.TextInputWithLabel-container-invalid .TextInputWithLabel-floating-label,
 .TextInputWithLabel-container.TextInputWithLabel-container-invalid:hover .TextInputWithLabel-floating-label
-    color: $bad-0
+    color: base.$bad-0
 // Server name is too short icon
 .ValidityIndicator-container-invalid
-    fill: $bad-0
+    fill: base.$bad-0
 // Server name looks good
 .TextInputWithLabel-container-valid .TextInputWithLabel-floating-label-validity
-    color: $good-0
+    color: base.$good-0
 // Upload avatar container
 .NewTeamUpsellIcon-container
-    border-color: $fg-0
+    border-color: base.$fg-0
 // Upload avatar icon
 .NewTeamUpsellIcon-icon
-    fill: $fg-2
+    fill: base.$fg-2
 // Upload avatar icon hover
 .NewTeamUpsellIcon-container:hover .NewTeamUpsellIcon-icon
-    fill: $fg-3
+    fill: base.$fg-3
 // Upload avatar plus sign
 .NewTeamUpsellIcon-plus-icon
     background: var(--NihilityTheme0)
-    fill: $fg-2
+    fill: base.$fg-2
 // Upload avatar plus sign hover
 .NewTeamUpsellIcon-container:hover .NewTeamUpsellIcon-plus-icon
     background: var(--NihilityTheme1)
-    fill: $fg-3
+    fill: base.$fg-3
 
 // Games selected
 .ItemChooser-info
-    color: $fg-1
+    color: base.$fg-1
 // Game
 .ItemChooserItemWrapper-container
-    background-color: $bg-3
-    border-color: $border-dark-1
+    background-color: base.$bg-3
+    border-color: base.$border-dark-1
     // Game hover
     &:hover
-        background-color: $bg-4
+        background-color: base.$bg-4
 
 /*
  * -=- Join through invite -=-
@@ -97,30 +98,30 @@
 
 // Invite page background
 .InvitePage-container
-    background-color: $bg-0
+    background-color: base.$bg-0
 // The information area of the invite
 .InvitePage-panel
-    background-color: $bg-3
+    background-color: base.$bg-3
 
 // Accept invite
 .GuildedText-container-type-bigBody
-    color: $fg-1
+    color: base.$fg-1
 .MemberCountPill
     // X members, Y online pills
     &-container
-        background-color: $bg-4
+        background-color: base.$bg-4
     // Member count circle
     &-circle
         &-green
-            background-color: $good-0
+            background-color: base.$good-0
         &-grey
-            background-color: $fg-2
+            background-color: base.$fg-2
 // Accept invite and join Y server
 .SocialContextHeader-header-text
-    color: $fg-2
+    color: base.$fg-2
 // This is how you'll appear to your teammates
 .AcceptTeamInviteControl-user-profile-preview
-    color: $fg-1
+    color: base.$fg-1
 
 /*
  * -=- Other -=-
@@ -134,11 +135,11 @@
 
 // Group settings icon
 .AddGroupOverlayDisplay-settings-icon
-    fill: $fg-1
-    @include set-transition(fill)
+    fill: base.$fg-1
+    @include set.transition(fill)
     // Group settings hover
     &:hover
-        fill: $fg-2
+        fill: base.$fg-2
 
 /*
  * --- Invite ---
@@ -146,16 +147,16 @@
 
 // Copy invite title
 .CopyToClipboardControlV2-title
-    color: $fg-3
+    color: base.$fg-3
 // Invite input
 .CopyableTextbox
     // The container itself
     &-container
-        background-color: $bg-1
-        border-color: $fg-0
-        @include set-transition(border-color)
+        background-color: base.$bg-1
+        border-color: base.$fg-0
+        @include set.transition(border-color)
     &-container-desktop:hover
-        border-color: $fg-0
+        border-color: base.$fg-0
     // Link
     &-url-wrapper-text
         color: var(--NihilityLink)
@@ -163,7 +164,7 @@
         color: var(--NihilityLinkHover)
 // Copy invite button hover
 .SocialShareButtonV2-container-desktop:hover::after
-    background-color: $bg-hover
+    background-color: base.$bg-hover
 
 /*
  * --- Images ---
@@ -171,17 +172,17 @@
 
 // Open original
 .MaximizedImageOverlay-open-original
-    color: $fg-1
+    color: base.$fg-1
     // Active
     &:hover, &:active, &:focus
-        color: $fg-2
+        color: base.$fg-2
 // Image share icon
 .MaximizedImageOverlay-share-icon
-    fill: $fg-1
-    @include set-transition(transition)
+    fill: base.$fg-1
+    @include set.transition(transition)
     // Hover
     &:hover
-        fill: $fg-2
+        fill: base.$fg-2
 
 /*
  * --- Activity list ---
@@ -191,20 +192,19 @@
 .ChannelActivityDisplay
     &-group-header,
     &-container
-        background-color: $bg-3
+        background-color: base.$bg-3
     &-item
-        background: $bg-2
-        border: solid 1px $border-dark-1
+        @extend %PanelBordered-2
 // Activity menu content
 .ChannelActivityItem
     // Text
     &-header
-        color: $fg-3
+        color: base.$fg-3
     &-footer
-        color: $fg-1
+        color: base.$fg-1
     // Unread activity menu item
     &-container.ChannelActivityItem-container-unread
-        background-color: $bg-1
+        background-color: base.$bg-1
 
 /*
  * --- Channel Switcher ---
@@ -213,31 +213,30 @@
 // Channel switcher
 .ChatChannelSwitcherOverlay
     &-container
-        background-color: $bg-3
-        color: $fg-1
+        background-color: base.$bg-3
+        color: base.$fg-1
     &Footer-container
-        background-color: $bg-1
+        background-color: base.$bg-1
 // Channel switcher channel
 .ChatChannelSwitcherRow
     &-container
-        color: $fg-2
+        color: base.$fg-2
         // Header of the channels
         &-header
-            color: $fg-1
+            color: base.$fg-1
         // Selected
         &-selected
-            background-color: $bg-4
+            background-color: base.$bg-4
         // Hovered over
         &:not(&-header)::after
-            background-color: $bg-hover
+            background-color: base.$bg-hover
 
 /*
  * --- Role Picker ---
  */
 
 .ToggleRoleControl-container
-    background-color: $bg-2
-    border: solid 1px $border-dark-1
+    @extend %PanelBordered-2
 
 /*
  * -=- Form view -=-
@@ -247,49 +246,49 @@
 .HorizontalPercentageBar
     // Percentage bar
     &-bar
-        background-color: $bg-2
+        background-color: base.$bg-2
         // Progress
         &-highlight
-            background: $progress
+            background: base.$progress
     // Percentage label
     &-value,
     // The name of the poll item
     &-label
-        color: $fg-3
+        color: base.$fg-3
     // Item voted for
     &-vote-icon
-        fill: $fg-3
+        fill: base.$fg-3
 // Successful voting
 .CustomFormControls-success
     &-message
-        color: $good-0
+        color: base.$good-0
     &-icon
-        fill: $good-0
+        fill: base.$good-0
 // Question X
 .CustomFormSummaryResultSection-header
-    color: $fg-1
+    color: base.$fg-1
 // Text response in a form
 .CustomFormSummaryTextResponse-container
-    background-color: $bg-2
+    background-color: base.$bg-2
     border-left: 0
 
 // Individual response header
 .CollapsibleItemHeader
     &-container
-        background-color: $bg-1
+        background-color: base.$bg-1
         // Hover
         &-desktop::after
-            background-color: $bg-hover
+            background-color: base.$bg-hover
     // Date
     &-subtitle
-        color: $fg-1
-        @include set-transition(color)
+        color: base.$fg-1
+        @include set.transition(color)
     &-container:hover &-subtitle
-        color: $fg-3
+        color: base.$fg-3
 // Individual response container
 .CustomFormIndividualResponse-result-display
-    background-color: $bg-2
+    background-color: base.$bg-2
 // Individual response message input text
 .TextAreaFieldDisplayRenderer-container
-    color: $fg-2
+    color: base.$fg-2
     cursor: text
