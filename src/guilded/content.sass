@@ -5,6 +5,14 @@
  */
 
 $pill-bg: rgba($fg-3, 0.1)
+
+%FakeMention
+    background-color: $pill-bg
+    color: $fg-3
+    font-weight: bold
+    // Guilded native
+    padding: 0 4px
+    border-radius: 2px
     
 /*
  *
@@ -260,11 +268,7 @@ $pill-bg: rgba($fg-3, 0.1)
         border-color: var(--NihilitySelect)
     // Channel name
     &CardFooter-channel-name
-        background-color: $pill-bg
-        color: $fg-3
-        // Guilded native
-        padding: 0 4px
-        border-radius: 2px
+        @extend %FakeMention
 
 // Content info
 .DefaultContentEmbedCard-content
@@ -565,16 +569,21 @@ $pill-bg: rgba($fg-3, 0.1)
 .TypeaheadDrawer-container
     opacity: $floating-opacity
     background-color: $bg-3
-    border-color: $border-dark-1
+    border:
+        color: $border-light-1
+        radius: $radius-2
 
 .SlateTypeaheadMenuHeader
     // Picker's header
     &-container
-        background-color: $bg-1
+        background-color: transparent
+        border-bottom: solid 1px $border-light-1
         color: $fg-1
     // Picker's search icon (@, #)
     &-searchTerm
-        color: $fg-2
+        @extend %FakeMention
+.TypeaheadMenu-list
+    padding: $spacing-0
 
 // Template parameter icon
 .TemplateParameterMenuItem-icon
@@ -582,10 +591,13 @@ $pill-bg: rgba($fg-3, 0.1)
 
 // Item hovered over
 .MenuItemEnabled-container
+    border-radius: $radius-1
+    border: solid 1px transparent
     &::after
         background-color: $bg-hover
     &-highlighted
         background-color: rgba($bg-hover, 0.1)
+        border: solid 1px $border-light-1
         .TemplateParameterMenuItem-icon
             fill: $fg-2
 

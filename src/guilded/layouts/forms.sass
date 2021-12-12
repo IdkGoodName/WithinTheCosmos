@@ -281,7 +281,8 @@
 .Select
     // Form selector options
     &-menu
-        background-color: $bg-4
+        background-color: $bg-3
+        padding: $spacing-0
         &-outer
             opacity: $floating-opacity
             border-color: $border-dark-1
@@ -289,19 +290,34 @@
 
     // Form selector option
     &-option
+        border-radius: $radius-0
         color: $fg-2
+        border: solid 1px transparent
+        // Normally
+        .GuildedSelect-container.GuildedSelect-container-dark &,
+        .GuildedSelect-container.GuildedSelect-container-light &
+            color: $fg-2
+        // Focused
         &.is-focused
-            background-color: $bg-5
+            background-color: $bg-4
+            border: solid 1px $border-light-1
+            .GuildedSelect-container.GuildedSelect-container-dark &,
+            .GuildedSelect-container.GuildedSelect-container-light &
+                color: $fg-3
+        // Already selected
         &.is-selected,
         .GuildedSelect-container &.is-selected,
-        .GuildedSelect-container.GuildedSelect-container-dark &.is-selected
-            background-color: $bg-3
+        .GuildedSelect-container.GuildedSelect-container-dark &.is-selected,
+        .GuildedSelect-container.GuildedSelect-container-light &.is-selected
+            background-color: $bg-2
+            border: solid 1px $border-dark-1
         // &.is-focused.is-selected
         //     background-color: $bg-3
     // No results found - code container/blocks
+    .GuildedSelect-container.GuildedSelect-container-light &-noresults,
     .GuildedSelect-container.GuildedSelect-container-dark &-noresults,
     &-noresults
-        background-color: $bg-4
+        background-color: $bg-3
 
 /*
  * --- Timed ---
