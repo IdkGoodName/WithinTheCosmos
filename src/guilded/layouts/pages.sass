@@ -250,6 +250,7 @@
 .RestApiDocs
     &Table-row
         background-color: $bg-2
+        border: solid 1px $border-dark-0
     &SchemaItem-verb
         color: $action
 
@@ -370,3 +371,82 @@
     // Game selector first item
     &-border-bottom
         border-color: $border-dark-1
+
+/*
+ * -=- Jobs -=-
+ */
+
+.LandingPageNavBar-container-theme-gilded
+    background-color: $bg-4
+.LogoAndWordmarkV2-container-theme-dark
+    fill: $gold
+.LandingPageNavBarLinks-container-theme-dark .LandingPageNavBarLinks-link
+    &, &:focus, &:active, &:visited, &:hover
+        color: $gold
+.JobLandingHeader
+    &-container::before
+        @extend .LandingPageNavBar-container-theme-gilded
+    &-title
+        color: $gold
+    &-description
+        color: $gold
+.JobOpeningHeader
+    &-icon
+        fill: $gold
+    &-container
+        color: $gold
+        @extend .JobLandingHeader-container
+        .ParagraphRenderer
+            color: $gold
+
+%JobsSectionHeading
+    color: $fg-3
+%JobsSectionDescription
+    color: $fg-2
+%JobsItemHeading
+    color: $fg-2
+%JobsItemDescription
+    color: $fg-1
+// Jobs
+.JobLandingOpenings
+    &-heading
+        @extend %JobsSectionHeading
+    &-description
+        @extend %JobsSectionDescription
+    &-job
+        background-color: $bg-3
+        &:hover
+            background-color: $bg-4
+        &-icon, svg
+            fill: $fg-1
+        &:hover svg
+            fill: $gold
+        &-fill-light-blue:hover svg
+            fill: $blue
+        &-fill-green:hover svg
+            fill: $green
+        &-title
+            @extend %JobsItemHeading
+        &-subtext
+            @extend %JobsItemDescription
+// Perks
+.JobsPerks
+    &-container
+        background-color: $bg-3
+    &-header
+        @extend %JobsSectionHeading
+    &-description
+        @extend %JobsSectionDescription
+.JobsPerk
+    &-icon
+        fill: $gold
+    &-name
+        @extend %JobsItemHeading
+    &-description
+        @extend %JobsItemDescription
+// Learn more
+.JobLearnMore
+    &-header
+        @extend %JobsSectionHeading
+    &-description
+        @extend %JobsSectionDescription
