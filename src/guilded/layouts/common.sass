@@ -11,8 +11,7 @@
     &-icon
         fill: base.$fg-0
     &-container
-        background-color: base.$bg-1
-        border-color: base.$border-light-1
+        @extend %OverrideContentBordered-3
         &-theme-warning
             .GuildedText-container-type-subtextBodyWhite
                 color: base.$warning
@@ -21,8 +20,7 @@
 // "Nicknames are visible to everyone in the server"
 .ChangeNicknameOverlay-info
     color: base.$warning
-    background-color: base.$bg-1
-    border-color: base.$border-light-1
+    @extend %OverrideContentBordered-3
 
 /*
  * -=- Text -=-

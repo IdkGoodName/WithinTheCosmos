@@ -280,8 +280,7 @@
     // Form select menu
     &.GuildedSelect-container-dark .Select-menu-outer,
     &.GuildedSelect-container-light .Select-menu-outer
-        border-color: base.$border-dark-1
-        background-color: base.$bg-1
+        @extend %OverridePanelBordered-3
 .Select
     // Form selector options
     &-menu
@@ -289,8 +288,7 @@
         padding: base.$spacing-0
         &-outer
             opacity: base.$floating-opacity
-            border-color: base.$border-dark-1
-            background-color: base.$bg-1
+            @extend %OverridePanelBordered-3
 
     // Form selector option
     &-option
@@ -427,8 +425,7 @@
     // Disabled
     &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled,
     &-container.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled:hover
-        background-color: base.$bg-0
-        border-color: base.$border-light-1
+        @extend %OverrideContentBordered-4
         .FormConfirmButtonV2-button-content
             @include set.color(base.$fg-0)
 

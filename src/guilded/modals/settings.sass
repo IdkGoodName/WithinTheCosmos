@@ -103,8 +103,7 @@
 
 // Selection buttons
 .RadioOptionPanel-container
-    background-color: base.$bg-2
-    border-color: base.$border-dark-1
+    @extend %OverridePanelBordered-2
     // Selection button hover
     &:not(&-disabled)::after
         background-color: base.$bg-hover
@@ -123,8 +122,7 @@
 
 // Selection checkbox
 .CheckboxPanel-container
-    background-color: base.$bg-2
-    border-color: base.$border-dark-1
+    @extend %OverridePanelBordered-2
     // Hover
     &.CheckboxPanel-container-clickable.CheckboxPanel-container-flavor-default:hover
         background-color: base.$bg-4

@@ -285,10 +285,8 @@
 .DefaultContentEmbedCard-content
     // Wrapper
     &-wrapper
-        background-color: base.$bg-3
         border-radius: base.$radius-2
-        // Removes white border
-        border-color: base.$border-light-1
+        @extend %OverrideContentBordered-1
         // Hovered over
         &:not(&-disabled)::after
             background-color: base.$bg-hover
