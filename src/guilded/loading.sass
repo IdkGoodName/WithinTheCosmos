@@ -1,4 +1,5 @@
 @use "../base"
+@use "../borders"
 
 /*
  * --============================--
@@ -121,14 +122,13 @@
 
 // Content embed loading
 .ContentEmbedCardLoading-container
-    background-color: base.$shading-1
-    border-color: base.$border-dark-1
+    @extend %OverrideContentBordered-1
 
 // Forum skeletons(?)
 .TeamThreadPostPanelDisplay
     &-container, &-container-reply
         background: base.$skeleton-0
-        @extend %FullBorderDark-1
+        border: solid 1px base.$border-dark-1
 
 // Tournaments, explore servers, etc. cards and titles
 .ExploreSkeleton

@@ -366,9 +366,8 @@
 .FormConfirmButtonV2
     // Gilded button
     &-container.FormConfirmButtonV2-container-type-gilded
-        background: base.$shading-1
         box-shadow: none
-        border-color: base.$border-light-1
+        @extend %OverrideContentBordered-darker
     // Gilded button hover
     &-container-desktop.FormConfirmButtonV2-container-filled:hover
         box-shadow: none

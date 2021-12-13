@@ -118,8 +118,7 @@
 .SearchBarV2-container-unfocused::after,
 .SearchBarV2-container
     border-radius: 10px
-    background-color: base.$shading-1
-    border-color: base.$border-light-1
+    @extend %OverrideContentBordered-darker
 // Search focused
 .SearchBarV2-container-unfocused::after
     background-color: base.$bg-hover
