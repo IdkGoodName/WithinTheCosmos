@@ -255,19 +255,21 @@
     &.GuildedSelect-container-dark:hover .Select .Select-control,
     &:hover .Select .Select-control
         border-color: base.$fg-0 !important
+    // Label
+    &.GuildedSelect-container-dark:not(&-has-label-type) .GuildedSelect-label
+        color: base.$fg-2
     // Form selector
     .Select-control
         border-color: base.$fg-0 !important
 
-// Form selector focused
-.GuildedSelect-container.GuildedSelect-container-dark .Select.is-focused .Select-control
-    border-color: var(--NihilityTheme2) !important
-
-// Form selector icon
-.GuildedSelectIcon-container
-    fill: base.$fg-1
-
-.GuildedSelect-container
+    // Code container stuff
+    &-option-color-gray
+        // Label in editor
+        .GuildedSelect-default-option-wrapper
+            color: base.$fg-1
+        // Label's arrow in editor
+        .Select-arrow
+            border-top-color: base.$fg-1
     // Form selector arrow
     .Select-arrow
         border-top-color: var(--NihilityTheme0)
@@ -281,6 +283,16 @@
     &.GuildedSelect-container-dark .Select-menu-outer,
     &.GuildedSelect-container-light .Select-menu-outer
         @extend %OverridePanelBordered-3
+
+
+// Form selector focused
+.GuildedSelect-container.GuildedSelect-container-dark .Select.is-focused .Select-control
+    border-color: var(--NihilityTheme2) !important
+
+// Form selector icon
+.GuildedSelectIcon-container
+    fill: base.$fg-1
+
 .Select
     // Form selector options
     &-menu
@@ -318,6 +330,9 @@
     .GuildedSelect-container.GuildedSelect-container-dark &-noresults,
     &-noresults
         background-color: base.$bg-3
+    // Label's arrow acitve in editor
+    &.is-open > &-control &-arrow
+        border-top-color: base.$fg-2
 
 /*
  * --- Timed ---
@@ -367,7 +382,7 @@
     // Gilded button
     &-container.FormConfirmButtonV2-container-type-gilded
         box-shadow: none
-        background-color: base.$bg-0
+        background: base.$bg-0
         border-color: base.$border-light-1
     // Gilded button hover
     &-container-desktop.FormConfirmButtonV2-container-filled:hover

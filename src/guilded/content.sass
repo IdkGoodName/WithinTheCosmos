@@ -13,7 +13,7 @@
 @use "./channels/forum"
 @use "./channels/list"
 @use "./channels/media"
-@use "./channels/members"
+@use "./channels/members-audit"
 @use "./channels/overview"
 @use "./channels/schedule"
 @use "./channels/stream"
@@ -124,18 +124,6 @@
             color: base.$fg-code
     &-header
         background-color: base.$bg-1
-
-.GuildedSelect-container-option-color-gray
-    // Label in editor
-    .GuildedSelect-default-option-wrapper
-        color: base.$fg-1
-    // Label's arrow in editor
-    .Select-arrow
-        border-top-color: base.$fg-1
-
-// Label's arrow acitve in editor
-.Select.is-open > .Select-control .Select-arrow
-    border-top-color: base.$fg-2
 
 /*
  * --- Lists ---

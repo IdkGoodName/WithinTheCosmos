@@ -1,5 +1,6 @@
 @use "../../base"
 @use "../../set"
+@use "../../fake"
 
 /*
  * --- Content ---
@@ -68,3 +69,16 @@
     // Filter settings search icon
     &-icon
         fill: base.$fg-2
+
+/*
+ * -=- Audit log -=-
+ */
+
+.TeamAuditLogAction-icon
+    fill: base.$fg-0
+
+.ChannelEntityNameDisplay
+    &-container
+        @extend %FakeMention
+    &-icon
+        fill: base.$fg-1
