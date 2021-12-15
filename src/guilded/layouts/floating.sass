@@ -118,13 +118,14 @@
     &.ReactionBadge-container-active
         // Normal active reaction
         .ReactionBadge-container-content
-            background-color: mix(base.$bg-1, base.$waiting, 90%)
+            background-color: mix(base.$bg-1, base.$active, 90%)
+            border-color: rgba(base.$active, 0.1)
             // Active reaction label
             .ReactionBadge-count
-                color: base.$waiting
+                color: base.$active
         // Active reaction hover
         &.ReactionBadge-container:not(.ReactionBadge-container-disabled):hover .ReactionBadge-container-content
-            background-color: mix(base.$bg-1, base.$waiting, 95%)
+            background-color: mix(base.$bg-1, base.$active, 95%)
 
 /*
  * -=- Team cards -=-

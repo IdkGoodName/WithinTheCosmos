@@ -35,6 +35,29 @@
     @include set.transition(color)
 
 
+@mixin define-message-type($colour)
+    background-color: rgba($colour, 0.05)
+    // Hover
+    &:hover
+        background-color: rgba($colour, 0.02)
+    // Side
+    &::after
+        background-color: $colour
+    &:hover::after
+        background-color: color.adjust($colour, $whiteness: base.$hover-brightness)
+    // Reactions
+    .ReactionBadge-container.ReactionBadge-container-active
+        // Normal active reaction
+        .ReactionBadge-container-content
+            background-color: mix(base.$bg-1, $colour, 85%)
+            border-color: rgba($colour, 0.1)
+            // Active reaction label
+            .ReactionBadge-count
+                color: $colour
+        // Active reaction hover
+        &.ReactionBadge-container:not(.ReactionBadge-container-disabled):hover .ReactionBadge-container-content
+            background-color: mix(base.$bg-1, $colour, 90%)
+
 .ChatV2Message-container
     // Message
     &:not(&-editing):not(&-threads-disabled)
@@ -51,54 +74,23 @@
 
     // Replying
     &:not(&-editing).ChatV2Message-container-replying
-        background-color: rgba(base.$replying, 0.05)
-        // Hover
-        &:hover
-            background-color: rgba(base.$replying, 0.02)
-        // Side
-        &::after
-            background-color: base.$replying
-        &:hover::after
-            background-color: color.adjust(base.$replying, base.$whiteness: base.$hover-brightness)
-    
+        @include define-message-type(base.$replying)
+        
     // Mentioned message
     &:not(&-editing):not(&-replying):not(&-private).ChatV2Message-container-mentioned
-        background-color: rgba(base.$mentioned, 0.05)
-        // Hover
-        &:hover
-            background-color: rgba(base.$mentioned, 0.02)
-        // Side
-        &::after
-            background-color: base.$mentioned
-        &:hover::after
-            background-color: color.adjust(base.$mentioned, base.$whiteness: base.$hover-brightness)
+        @include define-message-type(base.$mentioned)
 
     // Private reply
     &:not(&-editing):not(&-replying):not(&-mentioned):not(&-private-other).ChatV2Message-container-private,
     // Private mention
     &:not(&-editing):not(&-replying):not(&-private-other).ChatV2Message-container-private
-        background-color: rgba(base.$private, 0.05)
-        // Hover
-        &:hover
-            background-color: rgba(base.$private, 0.02)
-        // Side
-        &::after
-            background-color: base.$private
-        &:hover::after
-            background-color: color.adjust(base.$private, base.$whiteness: base.$hover-brightness)
+        @include define-message-type(base.$private)
+
     // Private reply mod view
     &:not(&-editing):not(&-replying):not(&-mentioned):not(&-private).ChatV2Message-container-private-other,
     // Private mention mod view
     &:not(&-editing):not(&-replying):not(&-private).ChatV2Message-container-private-other
-        background-color: rgba(base.$private-mod-view, 0.05)
-        // Hover
-        &:hover
-            background-color: rgba(base.$private-mod-view, 0.02)
-        // Side
-        &::after
-            background-color: base.$private-mod-view
-        &:hover::after
-            background-color: color.adjust(base.$private-mod-view, base.$whiteness: base.$hover-brightness)
+        @include define-message-type(base.$private-mod-view)
 
     // Right clicked
     &-active:not(&-editing)
