@@ -1,6 +1,7 @@
 @use "../../base"
 @use "../../set"
 @use "../../borders"
+@use "sass:color"
 
 /*
  * --=======================--
@@ -333,6 +334,43 @@
     // Label's arrow acitve in editor
     &.is-open > &-control &-arrow
         border-top-color: base.$fg-2
+
+/*
+ * --- Numeric ---
+ */
+
+// Voice volume slider
+.RangeSlider
+    &-container-type-gilded
+        // Background
+        .RangeSlider-rail
+            background-color: base.$bg-0
+        // Current volume
+        .RangeSlider-selected-rail
+            background: base.$progress
+.RangeSliderStep
+    &-label
+        color: base.$fg-0
+    &-step-type-gilded
+        background-color: base.$bg-1
+    &-step-filled
+        background-color: color.adjust(base.$progress, $whiteness: 10%)
+.KnobAndLabel-label
+    color: base.$fg-2
+// Video volume rail
+.RangeSlider
+    &-rail,
+    &-container-type-light &-rail,
+    &-container-type-light:hover &-rail
+        background-color: rgba(base.$bg-2, 0.7)
+    &-selected-rail,
+    &-container-type-light &-selected-rail,
+    &-container-type-light:hover &-selected-rail
+        background-color: rgba(base.$progress, 0.9)
+// Video volume knob
+.SliderKnob-container
+    background-color: base.$bg-1
+    box-shadow: base.$shadow
 
 /*
  * --- Timed ---

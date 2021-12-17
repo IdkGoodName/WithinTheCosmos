@@ -109,6 +109,25 @@
     .ChatV2Message-container.ChatV2Message-container-type-default:hover &
         color: base.$fg-2
 
+/*
+ * --- Message input ---
+ */
+
+// Slow mode
+.SlowModeInfoLabel
+    &-icon
+        fill: base.$fg-0
+    &-container
+        color: base.$fg-1
+    // Seconds left
+    &-cooldown-text
+        color: base.$warning
+
+// Failed to send
+.ChatV2Message-retry-control
+    fill: base.$warning
+    .SVGIcon-icon
+        fill: base.$warning
 
 // Replying to
 .ChatChannelInputStatusBar
