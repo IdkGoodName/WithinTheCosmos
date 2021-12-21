@@ -251,6 +251,37 @@
 .CheckboxV2-container-checked .CheckboxV2-description
     color: base.$fg-2
 
+// Radio highlighted (channel selection)
+.RadioOptionPanel-container
+    @extend %OverridePanelBordered-2
+    // Selection button hover
+    &:not(&-disabled)::after
+        background-color: base.$bg-hover
+    // Channel type selection
+    &-selection-border
+        // Hover
+        &:not(.RadioOptionPanel-container-selected):hover
+            border-color: base.$border-dark-0
+            background-color: base.$bg-3
+        // Selected
+        &.RadioOptionPanel-container-selected
+            border:
+                color: var(--NihilityTheme0)
+                width: 1px 
+    // Channel type selected icon
+    &-selected .RadioOptionPanel-icon
+        fill: var(--NihilityTheme0)
+
+// Selection checkbox
+.CheckboxPanel-container
+    @extend %OverridePanelBordered-2
+    // Hover
+    &.CheckboxPanel-container-clickable.CheckboxPanel-container-flavor-default:hover
+        background-color: base.$bg-5
+    // Icon
+    &-clickable:hover .CheckmarkIcon-circle, &-clickable:focus .CheckmarkIcon-circle
+        border-color: var(--NihilityTheme0)
+
 .GuildedSelect-container
     // Form selector hover
     &.GuildedSelect-container-dark:hover .Select .Select-control,

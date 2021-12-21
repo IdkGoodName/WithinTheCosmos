@@ -13,7 +13,7 @@
         color: base.$fg-1
     // Calendar days and weeks
     &-week
-        background-color: base.$bg-4
+        background-color: base.$bg-5
     &-day
         @extend %PanelBordered-0
         // Day numbers
@@ -23,7 +23,7 @@
     &Day-container-desktop.FullSizedCalendarDay-container-can-create
         @include set.transition(background-color)
         &:hover
-            background-color: base.$bg-5
+            background-color: base.$bg-6
     &Day-new-event-icon
         fill: base.$fg-1
         @include set.transition(opacity)
@@ -36,7 +36,7 @@
         .FullSizedCalendarDayHeader-date
             color: base.$fg-0
     &Day-container-today
-        background-color: base.$bg-5
+        background-color: base.$bg-6
         // Highlight the date
         .FullSizedCalendarDayHeader-date
             background-color: var(--NihilityTheme0)
@@ -89,7 +89,7 @@
         color: base.$fg-1
     // Day
     &-day
-        background-color: base.$bg-4
+        background-color: base.$bg-5
         @include set.transition(background-color)
         &-contents
             color: base.$fg-2 !important
@@ -98,7 +98,7 @@
         .DayPicker-day-contents
             color: base.$fg-0 !important
     &-day:hover
-        background-color: base.$bg-5
+        background-color: base.$bg-6
     // Day numbers
     &-container-desktop &-day:hover &-day-contents,
     &-container-desktop &-day-selected.DayPicker-day:hover &-day-contents

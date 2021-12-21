@@ -71,7 +71,7 @@
     &:hover, &-flavor-background-highlight.InlineAddItemControl-container-desktop:hover
         // Server list add icon hover
         .InlineAddItemControl-add-icon
-            background-color: base.$bg-4
+            background-color: base.$bg-5
             fill: base.$fg-3
         // Server list add text hover
         .InlineAddItemControl-name
@@ -112,7 +112,7 @@
 // Server search
 .TeamSearchBar-search-bar-input,
 .SearchBarV2-container.SearchBarV2-container-focused
-    background-color: base.$bg-4
+    background-color: base.$bg-5
 // In-server search, emote search
 .SearchBarInput-container-bordered,
 .SearchBarV2-container-unfocused::after,
@@ -254,7 +254,7 @@ body
     fill: base.$fg-2
 // Server header button
 .TeamNavHeaderRowButton-container
-    background-color: base.$bg-4
+    background-color: base.$bg-5
     // Server header button hovered
     &:not(.TeamNavHeaderRowButton-container-disabled)::after
         background-color: base.$bg-hover
@@ -348,14 +348,16 @@ body
 .TeamChannelItemContents-container,
 .TeamNavSectionItem-container
     border: solid 1px transparent
-    // Channel selected
-    &-selected
-        @extend %ContentMildlyBordered-1
-        @include set.transition(background-color border-color)
     // Channel hovered
     &::after
         background-color: base.$bg-hover
         @include set.transition(opacity)
+// Channel selected
+// Because transparent border overrides it otherwise
+.TeamChannelItemContents-container.TeamChannelItemContents-container-selected,
+.TeamNavSectionItem-container.TeamNavSectionItem-container-selected
+    @extend %ContentMildlyBordered-1
+    @include set.transition(background-color, border-color)
 // Sub-icon/global icon
 .ChannelIcon-icon-selected .ChannelIcon-icon-background,
 .ChannelIcon-icon-background
@@ -451,7 +453,7 @@ body
         fill: base.$fg-1
         // Member list join voice button
         &-wrapper
-            background-color: base.$bg-4
+            background-color: base.$bg-5
     // Member list join voice hover
     &:hover &-text,
     &:hover &-icon
@@ -463,7 +465,7 @@ body
     @include set.transition(fill)
     // Member list invite button
     &-wrapper
-        background-color: base.$bg-4
+        background-color: base.$bg-5
 // Member list invite text
 .GuildedText-container-color-gray
     color: base.$fg-1

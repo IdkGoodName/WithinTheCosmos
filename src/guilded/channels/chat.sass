@@ -22,7 +22,7 @@
 .ChannelWrapper-container
     background-color: base.$bg-3
     color: base.$fg-3
-    --nihility-local-fg: base.$fg-2
+    --nihility-local-fg: #{base.$fg-2}
 
 // Text
 .LastReplyDisplayContent-message-summary,
@@ -66,11 +66,11 @@
         color: var(--nihility-local-fg)
     // Hovered message
     &:not(&-editing):hover, &.ChatV2Message-container-replying
-        background-color: base.$bg-4
+        background-color: base.$bg-5
         --nihility-local-fg: #{base.$fg-3}
     // Right click active
     &-active
-        background-color: base.$bg-4
+        background-color: base.$bg-5
 
     // Replying
     &:not(&-editing).ChatV2Message-container-replying
@@ -94,7 +94,7 @@
 
     // Right clicked
     &-active:not(&-editing)
-        background-color: base.$bg-4
+        background-color: base.$bg-5
         --nihility-local-fg: #{base.$fg-3}
     
     // Removes messages' margin
@@ -133,7 +133,7 @@
 .ChatChannelInputStatusBar
     // Box
     &-container
-        @extend %ContentBordered-3
+        @extend %ContentBordered-4
     // Label
     &-replying-to-text
         color: base.$fg-1
@@ -245,7 +245,7 @@
 .WordDividerLine
     // Normal
     &-line
-        background-color: base.$bg-5
+        background-color: base.$bg-6
         &:last-child
             width: 600px
     &-container-word-style-chat &-word,
@@ -275,7 +275,7 @@
 // Threaded message
 .ChatMessageThread-container
     background-color: base.$shading-2
-    --border-color: #{base.$bg-4}
+    --border-color: #{base.$bg-5}
     // Threaded message hover
     &::after
         display: none
@@ -346,7 +346,7 @@
     &:hover
         background-color: transparent
         .ChatChannelMessages-delete-message
-            background-color: base.$bg-4
+            background-color: base.$bg-5
 // Message delete menu fading
 .ChatChannelMessages-delete-message::after
     background: linear-gradient(to bottom, transparent, base.$bg-3 75px)
@@ -354,7 +354,7 @@
     // @include set.transition(background)
     // When the message gets hovered over, change the fading too
     .ChatV2Message-container:not(.ChatV2Message-container-editing):hover &
-        background: linear-gradient(to bottom, transparent, base.$bg-4 75px)
+        background: linear-gradient(to bottom, transparent, base.$bg-5 75px)
 
 /*
  * --- Thread menu ---

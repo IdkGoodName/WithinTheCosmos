@@ -9,7 +9,7 @@
 // Item
 .TeamListItemIndentWrapper-container,
 .TeamListItemWrapper-container
-    background-color: base.$bg-4
+    @extend %PanelBordered-2
     // Item hover
     &-unfocused::after
         background-color: base.$bg-hover
@@ -40,13 +40,21 @@
 .TeamListItemsInput
     // Add item slate
     &-editor.Editor-container
-        background-color: base.$bg-4
+        background-color: base.$bg-2
     // Add item icon
     &-icon
         svg
             fill: var(--NihilityTheme1)
         &:hover svg
             fill: var(--NihilityTheme2)
+// Editor in a list item being edited
+.TeamListItem-message
+    background-color: base.$bg-2
+    border: none
+// Note editor
+.TeamListItemNoteEditor-editor
+    background-color: base.$bg-3
+
 // Add item add note
 .TeamListItemNoteEditor-button
     color: base.$fg-1
@@ -95,7 +103,7 @@
             color: base.$fg-2
 // Note
 .SingleContentEditor-display
-    background-color: base.$bg-4
+    background-color: base.$bg-5
     &:hover .ContentMetadataCreationInfo-from-now
         color: base.$fg-2
 // Note timestamp

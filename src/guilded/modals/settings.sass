@@ -101,35 +101,6 @@
 .BotFlowDisplay-icon
     fill: base.$fg-1
 
-// Selection buttons
-.RadioOptionPanel-container
-    @extend %OverridePanelBordered-2
-    // Selection button hover
-    &:not(&-disabled)::after
-        background-color: base.$bg-hover
-    // Channel type selection
-    &-selection-border
-        // Hover
-        &:not(.RadioOptionPanel-container-selected):hover
-            border-color: base.$border-dark-0
-            background-color: base.$bg-3
-        // Selected
-        &.RadioOptionPanel-container-selected
-            border-color: var(--NihilityTheme0)
-    // Channel type selected icon
-    &-selected .RadioOptionPanel-icon
-        fill: var(--NihilityTheme0)
-
-// Selection checkbox
-.CheckboxPanel-container
-    @extend %OverridePanelBordered-2
-    // Hover
-    &.CheckboxPanel-container-clickable.CheckboxPanel-container-flavor-default:hover
-        background-color: base.$bg-4
-    // Icon
-    &-clickable:hover .CheckmarkIcon-circle, &-clickable:focus .CheckmarkIcon-circle
-        border-color: var(--NihilityTheme0)
-
 /*
  * -=- Settings Tabs -=-
  */
@@ -165,7 +136,7 @@
 
 // Subscriptions bg
 .ServerSubscriptionsSetupUpsell-content
-    background-color: base.$bg-4
+    background-color: base.$bg-5
 // Subscription points
 .GuildedText-container-type-subtextBodyWhite
     color: base.$fg-2
@@ -179,7 +150,7 @@
 
 // Role list item selected
 .TeamSettingsPermissionsItem-container-selected
-    background-color: base.$bg-4
+    background-color: base.$bg-5
 // Role list item hover
 .TeamSettingsPermissionsItem-container-desktop .TeamSettingsPermissionsItem-content::after
     background-color: base.$bg-hover

@@ -387,7 +387,7 @@
 
 // Forum editor
 .Editor-container
-    @extend %ContentBordered-2
+    @extend %ContentBordered-1
 
 // Chat input
 .ChatChannelInput-container .ChatChannelInput-editor,
@@ -440,8 +440,11 @@
 .TeamThreadReplyCreator-unexpanded-wrapper,
 .DraftInputWithTitleV2-title-wrapper,
 .CollapsedInput-container
-    background-color: transparent
-    @extend %FullBorderLight-1
+    @extend %ContentBordered-1
+
+// Make it stand-out less
+.CollapsedInput-container.ContentMetadataInlineReplyDisplay-collapsed-input
+    @extend %ContentBordered-2
 
 .TeamThreadReplyCreator-container-desktop .TeamThreadReplyCreator-unexpanded-wrapper,
 .DraftInputWithTitleV2-container-desktop.DraftInputWithTitleV2-container-unexpanded,
