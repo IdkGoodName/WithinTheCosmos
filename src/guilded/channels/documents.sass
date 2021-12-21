@@ -14,7 +14,7 @@
 // Document in the list info
 .ReplyPanel-container-viewing,
 .DocSummaryInfo-container
-    @extend %PanelBordered-2
+    @extend %PanelBordered-3
 
 // "Drafts" title
 .DocsDisplayV2-title
@@ -57,7 +57,7 @@
 .TagDisplayItemV2
     // Tag's background
     &-container
-        border-color: base.$border-light-0
+        @extend %SetBorderLight-0
         background-color: base.$bg-1
     // Tag's text
     &-tag

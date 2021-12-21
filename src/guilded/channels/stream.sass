@@ -1,4 +1,5 @@
 @use "../../base"
+@use "../../borders"
 
 // Whole container
 .StreamChannelDisplay-container,
@@ -7,7 +8,7 @@
 // Stacked and unstacked streaming displays
 .StreamChannel-display,
 .StreamChannel-container-stacked .StreamChannel-display
-    border-color: base.$border-dark-1
+    @extend %SetBorderDark-1
 
 // Streaming button
 .SVGIconWithTooltip-container-flavor-hover-bleach

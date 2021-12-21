@@ -9,7 +9,7 @@
 // Item
 .TeamListItemIndentWrapper-container,
 .TeamListItemWrapper-container
-    @extend %PanelBordered-2
+    @extend %PanelBordered-3
     // Item hover
     &-unfocused::after
         background-color: base.$bg-hover
@@ -88,7 +88,7 @@
 
 // Whole container
 .TeamListItemNote-container
-    border-color: base.$border-dark-0
+    @extend %SetBorderDark-0
 
 .TeamListItemDetails
     // Timestamp dots

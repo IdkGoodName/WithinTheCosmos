@@ -313,7 +313,7 @@
 
 // Message hover menu
 .QuickActionBar-container
-    @extend %PanelBordered-3
+    @extend %PanelBordered-4
 
 // Message hover menu icons
 .QuickActionBar-action
@@ -366,12 +366,12 @@
     // Base
     &-content-wrapper
         background-color: base.$bg-2
-        border-color: base.$border-dark-0
+        @extend %SetBorderDark-0
         opacity: base.$floating-opacity
     // Arrow/Pointer
     &-arrow
         background-color: base.$bg-2
-        border-color: base.$border-dark-0
+        @extend %SetBorderDark-0
     // Message thread menu header
     &Header
         // Icon

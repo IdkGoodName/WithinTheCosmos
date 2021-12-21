@@ -59,7 +59,7 @@
 // Hotkey label
 .HotkeyDisplay
     &-container
-        border-color: base.$border-dark-0
+        @extend %SetBorderDark-0
     &-key
         background-color: transparent
 // + before the key
@@ -82,7 +82,7 @@
     border-color: base.$fg-0
     // Currently recording
     &.HotkeyRecorder-container-recording
-        border-color: base.$border-light-2
+        @extend %SetBorderLight-2
 // Add another
 .ItemKeybindInput-container-multiple-entities-allowed .ItemKeybindInput-subtext-wrapper
     // + Add keybind

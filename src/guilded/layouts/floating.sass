@@ -20,7 +20,7 @@
 .ChatChannelAlertBar-container
     @include set.color(base.$fg-2)
     background-color: base.$bg-0 !important
-    border-color: base.$border-dark-0
+    @extend %SetBorderDark-0
     // Hover
     &::after
         background-color: base.$bg-hover
@@ -81,7 +81,7 @@
 // Reaction normally
 .ReactionPickerButton-container-type-content,
 .ReactionBadge-container-content
-    @extend %ContentMildlyBordered-3
+    @extend %ContentMildlyBordered-4
 // Reaction hovered
 .ReactionBadge-container-content:hover,
 .ReactionBadge-container:not(.ReactionBadge-container-disabled):not(.ReactionBadge-container-active):hover .ReactionBadge-container-content
@@ -193,7 +193,7 @@
 // Menu container
 .TransientMenu-container-style-default
     background-color: base.$bg-1
-    border-color: base.$border-light-2
+    @extend %SetBorderLight-2
 
 // Plus menu
 .ContextMenuItem-container
@@ -260,19 +260,25 @@
 
 // Emote picker
 .ReactionPicker
+    &-container
+        @extend %FullBorderLight-1
     // Emote picker content
     &-content
         background-color: base.$bg-3
     // Emote icon
-    &Icon-container:hover, &Icon-container:focus
-        background-color: base.$bg-1
+    &Icon-container
+        border: solid 1px transparent
+    &Icon-container:hover,
+    &Icon-container:focus
+        background-color: base.$bg-4
+        border: solid 1px var(--NihilityTheme0)
     
     // Bottom bar
     &Footer-container,
     // Top bar
     &Navbar-container
         color: base.$fg-2
-        @extend %PanelBordered-3
+        @extend %OverrideContentBordered-3
 
     // Emote name
     &-section-label

@@ -1,6 +1,7 @@
 @use "../../base"
 @use "../../set"
 @use "../../fake"
+@use "../../borders"
 
 /*
  * --- Content ---
@@ -11,7 +12,7 @@
     border-color: base.$fg-0
     // Select all checkbox hover
     &-clickable:hover
-        border-color: base.$border-light-2
+        @extend %SetBorderLight-2
         background-color: rgba(base.$bg-hover, 0.1)
 // Select all checkmark
 .SelectToggleIcon-checkmark
@@ -39,21 +40,24 @@
     fill: base.$fg-1
     @include set.transition(fill)
 
-// Filter icon hover
-.ItemManagerFilterButton-container:not(.ItemManagerFilterButton-container-active):hover .ItemManagerFilterButton-icon
-    fill: base.$fg-2
-
-// Filter settings clicked
-.ItemManagerFilterButton-container-open .ItemManagerFilterButton-icon
-    fill: base.$fg-3
+.ItemManagerFilterButton-container
+    // Filter icon hover
+    &:not(&-active):hover .ItemManagerFilterButton-icon
+        fill: base.$fg-2
+    // Filter settings clicked
+    &-open .ItemManagerFilterButton-icon
+        fill: base.$fg-3
 
 .ItemManagerFilterWrapper
+    &-header
+        @extend %OverrideContentBordered-3
     // Filter settings
     &-container
-        background-color: base.$bg-5
+        background-color: base.$bg-3
+        border: none
     // Filter settings search
     &-search
-        background-color: base.$bg-6
+        @extend %ContentBordered-4
 // Filter menu hover
 .ItemManagerFilterOption-container:hover
     background-color: base.$bg-lighter

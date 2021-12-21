@@ -38,7 +38,7 @@
 .UserProfilePictureControl
     // Status icon
     &-online-status
-        border-color: base.$border-dark-1
+        @extend %SetBorderDark-1
         right: 0
     // Avatar
     &-picture
@@ -78,7 +78,7 @@
 // Post
 .UserProfilePostPanel-container
     border-radius: base.$radius-2
-    @extend %PanelBordered-2
+    @extend %PanelBordered-3
     // Post highlighted(currently all)
     &-highlight
         // Until it gets fixed, remove the highlight
@@ -106,7 +106,7 @@
     background-color: base.$bg-1
 // Game border
 .CardWrapper-container:not(.CardWrapper-container-highlighted)::after
-    border-color: base.$border-dark-1
+    @extend %SetBorderDark-1
 // Game header
 .PlayerCard
     // Container
@@ -252,7 +252,7 @@
         color: base.$info
 .RestApiDocs
     &Table-row
-        @extend %PanelBordered-3
+        @extend %PanelBordered-4
     &SchemaItem-verb
         color: base.$action
 
@@ -334,7 +334,7 @@
         background-color: base.$progress !important
     // Progressbar
     &-container-type-success .PercentageBar-progress-div
-        border-color: base.$border-dark-1
+        @extend %SetBorderDark-1
 // Invite text
 .RequirementProgressBar-unsatisfied-text
     color: base.$fg-1
@@ -348,10 +348,10 @@
 
 // Game selector input
 .TextInputWithLabel-container-dropdown
-    border-color: base.$border-light-2
+    @extend %SetBorderLight-2
     // Hover
     &.TextInputWithLabel-container-desktop:hover
-        border-color: base.$border-light-2
+        @extend %SetBorderLight-2
     // Focused
     &.TextInputWithLabel-container-focused,
     &.TextInputWithLabel-container-focused:hover
@@ -371,7 +371,7 @@
             color: base.$fg-3
     // Game selector first item
     &-border-bottom
-        border-color: base.$border-dark-1
+        @extend %SetBorderDark-1
 
 /*
  * -=- Jobs -=-

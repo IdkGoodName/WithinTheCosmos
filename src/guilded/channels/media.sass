@@ -14,7 +14,7 @@
         background-color: base.$bg-hover
 // Description
 .MediaDisplayItemV3-meta-info-wrapper
-    border: solid 1px base.$border-light-1
+    @extend %FullBorderLight-1
     border-top: none
     border-radius: 0px 0px 8px 8px
 
@@ -45,7 +45,7 @@
 // Tags
 .GuildedTagCreator-container-dark .Select-value
     // Tag's background
-    border-color: base.$border-dark-0
+    @extend %SetBorderDark-0
     background-color: base.$bg-1
     // Tag's text
     &-label

@@ -260,7 +260,7 @@
     // Wrapper
     &-wrapper
         border-radius: base.$radius-2
-        @extend %OverrideContentBordered-1
+        @extend %OverrideContentBordered-2
         // Hovered over
         &:not(&-disabled)::after
             background-color: base.$bg-hover
@@ -355,7 +355,7 @@
         border-color: var(--NihilitySelect)
 .CustomFormWrapper-container-standalone
     background-color: base.$shading-0
-    border-color: base.$border-light-1
+    @extend %SetBorderLight-1
     // Form border
     &::after
         border: none
@@ -408,7 +408,7 @@
 
 // Editor toolbar
 .SlateToolbarStrip
-    border-color: base.$border-light-1
+    @extend %SetBorderLight-1
     border-top: none
     // In doc editor
     .DocEditor-container &
@@ -554,14 +554,14 @@
     opacity: base.$floating-opacity
     background-color: base.$bg-3
     border:
-        color: base.$border-light-1
+        color: base.$border-light-2
         radius: base.$radius-2
 
 .SlateTypeaheadMenuHeader
     // Picker's header
     &-container
-        background-color: transparent
-        border-bottom: solid 1px base.$border-light-1
+        background-color: base.$bg-2
+        border-bottom: solid 1px base.$border-light-2
         color: base.$fg-1
     // Picker's search icon (@, #)
     &-searchTerm

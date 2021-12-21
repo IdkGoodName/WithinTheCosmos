@@ -87,7 +87,7 @@
     @include set.transition(opacity)
 // Server list selected server
 .NavSelectorItem-container-active .NavSelectorItem-contents::after
-    border-color: base.$border-light-2
+    @extend %SetBorderLight-2
 
 // Server list switcher buttons
 .NavV4SelectorRow-svg-icon
@@ -356,7 +356,7 @@ body
 // Because transparent border overrides it otherwise
 .TeamChannelItemContents-container.TeamChannelItemContents-container-selected,
 .TeamNavSectionItem-container.TeamNavSectionItem-container-selected
-    @extend %ContentMildlyBordered-1
+    @extend %ContentMildlyBordered-2
     @include set.transition(background-color, border-color)
 // Sub-icon/global icon
 .ChannelIcon-icon-selected .ChannelIcon-icon-background,
@@ -373,7 +373,7 @@ body
 // Invite others
 .ChannelUpsell-container
     background-color: base.$bg-1
-    border-color: base.$border-dark-0
+    @extend %SetBorderDark-0
 
 /*
  * -=- Members and Threads -=-
