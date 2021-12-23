@@ -40,9 +40,24 @@
 // Connections/integrations
 .SocialLinkPanel-header
     background-color: base.$bg-1
-// Email settings header
-.UserSettingsEmailPage-header
+.UserSettings
+    // Email settings header
+    &EmailPage-header
+        color: base.$fg-3
+    // User settings subscription info
+    &ServerSubscriptionsUpsell-container
+        @extend %PanelBordered-3
+// Server to subscribe to
+.ServerSubscriptionBar-container
+    @extend %PanelBordered-3
+// Payment
+.UserSettingsPayments-header
     color: base.$fg-3
+.UserPaymentsHistory-none,
+.PanelList-container-none
+    color: base.$fg-2
+.PaymentInstrumentSelector-add-method:hover
+    color: var(--NihilityLinkHover)
 
 /*
  * -=- Server Settings -=-
