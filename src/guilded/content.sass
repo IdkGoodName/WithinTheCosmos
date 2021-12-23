@@ -391,7 +391,6 @@
 
 // Chat input
 .ChatChannelInput-container .ChatChannelInput-editor,
-.ChatV2MessageReplyTooltipInput-title-container,
 .ChannelTitleInput-container,
 .ChatChannelInput-editor,
 // No write editor
@@ -405,6 +404,9 @@
 .TeamListItemsInput-editor
     background-color: transparent
     border: none
+// Forum reply editor
+.TeamThreadPostEditor-editor .Editor-container
+    background-color: base.$bg-3
 
 // Editor toolbar
 .SlateToolbarStrip
@@ -418,6 +420,15 @@
             right: solid 1px base.$border-light-1
         padding: 0 base.$spacing-0
         border-radius: base.$radius-1
+
+// Thread pop-up
+.ChatV2MessageReplyTooltipInput
+    // Content editor
+    &-container .Editor-container
+        background-color: base.$bg-3
+    // Title editor
+    &-title-container
+        @extend %ContentBordered-2
 
 // Border after +
 .ChatV2MessageReplyTooltipInput-title-icon::after,

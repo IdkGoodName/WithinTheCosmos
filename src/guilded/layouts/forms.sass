@@ -30,6 +30,17 @@
         color: base.$fg-2
 
 /*
+ * -=- Sections & Types -=-
+ */
+
+// Streamer mode
+.FormSection-container-section-background-inset
+    @extend %PanelBordered-3
+// Settings account info
+.DefaultReadonlyEditableForm-container
+    @extend %PanelBordered-4
+
+/*
  * -=- Fields -=-
  */
 
@@ -343,20 +354,23 @@
         .GuildedSelect-container.GuildedSelect-container-dark &,
         .GuildedSelect-container.GuildedSelect-container-light &
             color: base.$fg-2
-        // Focused
-        &.is-focused
-            @extend %ContentBordered-0
-            .GuildedSelect-container.GuildedSelect-container-dark &,
-            .GuildedSelect-container.GuildedSelect-container-light &
-                color: base.$fg-3
         // Already selected
         &.is-selected,
         .GuildedSelect-container &.is-selected,
         .GuildedSelect-container.GuildedSelect-container-dark &.is-selected,
         .GuildedSelect-container.GuildedSelect-container-light &.is-selected
             @extend %PanelBordered-0
-        // &.is-focused.is-selected
-        //     background-color: base.$bg-3
+        // Focused
+        &.is-focused
+            @extend %ContentBordered-0
+            .GuildedSelect-container.GuildedSelect-container-dark &,
+            .GuildedSelect-container.GuildedSelect-container-light &
+                color: base.$fg-3
+        &.is-selected.is-focused,
+        .GuildedSelect-container &.is-selected.is-focused,
+        .GuildedSelect-container.GuildedSelect-container-dark &.is-selected.is-focused,
+        .GuildedSelect-container.GuildedSelect-container-light &.is-selected.is-focused
+            @extend %ContentBordered-0
     // No results found - code container/blocks
     .GuildedSelect-container.GuildedSelect-container-light &-noresults,
     .GuildedSelect-container.GuildedSelect-container-dark &-noresults,

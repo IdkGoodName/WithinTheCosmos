@@ -1,6 +1,7 @@
 @use "../../base"
 @use "../../set"
 @use "../../borders"
+@use "sass:color"
 
 /*
  * --==========================--
@@ -12,46 +13,49 @@
  * -=- New messages / Alert bar -=-
  */
 
-// Alert bar icon
-.ChatChannelAlertBar-icon
-    fill: base.$fg-2
+.ChatChannelAlertBar
+    // Alert bar icon
+    &-icon
+        fill: base.$fg-2
+    &-leading-icon-private-thread
+        fill: color.adjust(base.$private, base.$whiteness: 25%)
 
-// Any alert bar
-.ChatChannelAlertBar-container
-    @include set.color(base.$fg-2)
-    background-color: base.$bg-0 !important
-    @extend %SetBorderDark-0
-    // Hover
-    &::after
-        background-color: base.$bg-hover
-    
-    // Viewing older messages
-    &-type-viewing-older-messages,
-    // Unread messages
-    &-type-unread-messages,
-    // New messages
-    &-type-new-messages,
-    &-type-new-replies,
-    // New mentions
-    &-type-new-mentions
+    // Any alert bar
+    &-container
+        @include set.color(base.$fg-2)
         background-color: base.$bg-0 !important
-    
-    // New mentions and new forum replies
-    &-type-new-replies,
-    &-type-new-mentions
-        color: base.$mention !important
-        fill: base.$mention !important
-        // New mentions icon
-        .ChatChannelAlertBar-icon-click-wrapper .ChatChannelAlertBar-icon
-            fill: base.$mention
-    
-    // Unread messages
-    &-type-unread-messages
-        color: base.$active !important
-        fill: base.$active !important
-        // Unread messages icon
-        .ChatChannelAlertBar-icon-click-wrapper .ChatChannelAlertBar-icon
-            fill: base.$active
+        @extend %SetBorderDark-0
+        // Hover
+        &::after
+            background-color: base.$bg-hover
+        
+        // Viewing older messages
+        &-type-viewing-older-messages,
+        // Unread messages
+        &-type-unread-messages,
+        // New messages
+        &-type-new-messages,
+        &-type-new-replies,
+        // New mentions
+        &-type-new-mentions
+            background-color: base.$bg-0 !important
+        
+        // New mentions and new forum replies
+        &-type-new-replies,
+        &-type-new-mentions
+            color: base.$mention !important
+            fill: base.$mention !important
+            // New mentions icon
+            .ChatChannelAlertBar-icon-click-wrapper .ChatChannelAlertBar-icon
+                fill: base.$mention
+        
+        // Unread messages
+        &-type-unread-messages
+            color: base.$active !important
+            fill: base.$active !important
+            // Unread messages icon
+            .ChatChannelAlertBar-icon-click-wrapper .ChatChannelAlertBar-icon
+                fill: base.$active
 
 /*
  * -=- Tooltips -=-
