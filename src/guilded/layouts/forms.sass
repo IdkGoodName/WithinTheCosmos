@@ -51,13 +51,13 @@
 .TextInputWithLabel
     // Form input
     &-container
-        border-color: base.$fg-0
+        @extend %SetBorderLight-2
     &-container-has-value &-input-element
         -webkit-text-fill-color: base.$fg-2
         @extend %TextMedium
     // Hover
     &-container-desktop:hover
-        border-color: base.$fg-0
+        @extend %SetBorderLight-3
     
     // Label
     &-typeahead-suggestion, &-floating-label
@@ -91,12 +91,12 @@
 
 // Big form input
 .TextAreaInput-text-area
-    border-color: base.$fg-0
+    border-color: base.$border-light-2
     color: base.$fg-2
     @include set.transition(border-color)
     // Big form input hover
     &:hover
-        @extend %SetBorderLight-2
+        @extend %SetBorderLight-3
     // Big form input focus
     &:focus
         border-color: var(--NihilityTheme2)
@@ -160,65 +160,74 @@
 .TriStateInputWrapper-container
     @extend %SetBorderLight-1
 
-.TriStateInputButton-container-type
-    // All
-    &-on,
-    &-passThrough,
-    &-off
-        @extend %Panel-5
-    // All selected
-    &-on.TriStateInputButton-container-selected,
-    &-passThrough.TriStateInputButton-container-selected,
-    &-off.TriStateInputButton-container-selected
-        @extend %Panel-2
-    // Permission allowed
-    &-on
-        // Icon
-        .TriStateInputButton-icon
-            @extend %SvgDarker
-        // Icon hover
-        &:hover .TriStateInputButton-icon
-            @extend %SvgDark
-        // Selected
-        &.TriStateInputButton-container-selected
-            // Selected icon
+.TriStateInputButton-container
+    // Types
+    &-type
+        // All
+        &-on,
+        &-passThrough,
+        &-off
+            @extend %Panel-5
+        // All selected
+        &-on.TriStateInputButton-container-selected,
+        &-passThrough.TriStateInputButton-container-selected,
+        &-off.TriStateInputButton-container-selected
+            @extend %Panel-2
+        // Permission allowed
+        &-on
+            // Icon
             .TriStateInputButton-icon
-                @extend %SvgGood
-            // Selected hover
+                @extend %SvgDarker
+            // Icon hover
             &:hover .TriStateInputButton-icon
-                @extend %SvgGoodHighlight
-    // Permission inherit
-    &-passThrough
-        // Icon
-        .TriStateInputButton-icon
-            @extend %SvgDarker
-        // Icon hover
-        &:hover .TriStateInputButton-icon
-            @extend %SvgDark
-        // Selected
-        &.TriStateInputButton-container-selected
-            // Selected icon
+                @extend %SvgDark
+            // Selected
+            &.TriStateInputButton-container-selected
+                // Selected icon
+                .TriStateInputButton-icon
+                    @extend %SvgGood
+                // Selected hover
+                &:hover .TriStateInputButton-icon
+                    @extend %SvgGoodHighlight
+        // Permission inherit
+        &-passThrough
+            // Icon
             .TriStateInputButton-icon
-                @extend %SvgNeutral
-            // Selected hover
+                @extend %SvgDarker
+            // Icon hover
             &:hover .TriStateInputButton-icon
-                @extend %SvgNeutralHighlight
-    // Permission denied
-    &-off
-        // Icon
-        .TriStateInputButton-icon
-            @extend %SvgDarker
-        // Icon hover
-        &:hover .TriStateInputButton-icon
-            @extend %SvgDark
-        // Selected
-        &.TriStateInputButton-container-selected
-            // Selected icon
+                @extend %SvgDark
+            // Selected
+            &.TriStateInputButton-container-selected
+                // Selected icon
+                .TriStateInputButton-icon
+                    @extend %SvgNeutral
+                // Selected hover
+                &:hover .TriStateInputButton-icon
+                    @extend %SvgNeutralHighlight
+        // Permission denied
+        &-off
+            // Icon
             .TriStateInputButton-icon
-                @extend %SvgBad
-            // Selected hover
+                @extend %SvgDarker
+            // Icon hover
             &:hover .TriStateInputButton-icon
-                @extend %SvgBadHighlight
+                @extend %SvgDark
+            // Selected
+            &.TriStateInputButton-container-selected
+                // Selected icon
+                .TriStateInputButton-icon
+                    @extend %SvgBad
+                // Selected hover
+                &:hover .TriStateInputButton-icon
+                    @extend %SvgBadHighlight
+    // States
+    &-disabled
+        opacity: 1
+        .TriStateInputButton-icon
+            opacity: 0.3
+    &-highlighted:not(.TriStateInputButton-container-selected)
+        @extend %Panel-1
 
 /*
  * --- Option-based ---
@@ -283,6 +292,9 @@
     // Channel type selected icon
     &-selected .RadioOptionPanel-icon
         @extend %SvgTheme
+// Radio icon
+.RadioOptionPanel-icon
+    @extend %SvgMedium
 
 // Selection checkbox
 .CheckboxPanel-container
@@ -295,16 +307,16 @@
         border-color: var(--NihilityTheme0)
 
 .GuildedSelect-container
-    // Form selector hover
-    &.GuildedSelect-container-dark:hover .Select .Select-control,
-    &:hover .Select .Select-control
-        border-color: base.$fg-0 !important
     // Label
     &.GuildedSelect-container-dark:not(&-has-label-type) .GuildedSelect-label
         @extend %TextMedium
     // Form selector
     .Select-control
-        border-color: base.$fg-0 !important
+        border-color: base.$border-light-2 !important
+    // Form selector hover
+    &.GuildedSelect-container-dark:hover .Select .Select-control,
+    &:hover .Select .Select-control
+        border-color: base.$border-light-3 !important
 
     // Code container stuff
     &-option-color-gray
