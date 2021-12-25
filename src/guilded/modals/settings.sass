@@ -17,16 +17,19 @@
 // Tabs
 .OptionsMenu-container-desktop .OptionsMenu-options-control
     @extend %Panel-5
-// Tabs section title
+// Tab section header
+.DesktopOptionsControlOptionHeader-container
+    padding: 0 20px
+// Tabs section header title
 .DesktopOptionsControlOptionHeader-header-text
     @extend %TextMedium
 
 // Tab text
 .DesktopOptionsControlItemTemplate-label-text
     @extend %TextDark
-
 .DesktopOptionsControlItemTemplate-container
     border-radius: base.$radius-1
+    padding: 6px 12px
     @extend %FullBorderTransparent
     // Tab hover
     &:hover::after
