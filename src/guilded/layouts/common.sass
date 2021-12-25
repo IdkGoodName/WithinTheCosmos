@@ -106,17 +106,20 @@
 // Group icon bouncing
 .GroupAvatar-container-non-base,
 .GroupAvatar-icon
-        // Inside group list
-        .GroupSelector-container &
-            border-radius: 50%
-            @include set.transition(border-radius, base.$bounce)
-        // Group hover
-        .GroupSelectorItem-container:hover &,
-        // Group selected
-        .GroupSelector-container .NavSelectorItem-container-active &,
-        // Group in preview
-        .GroupSelectorPreview-container &
-            border-radius: base.$radius-2
+    border-radius: 50%
+    // Inside group list
+    .GroupSelector-container &
+        @include set.transition(border-radius, base.$bounce)
+    // Group hover
+    .GroupSelectorItem-container:hover &,
+    // Group selected
+    .GroupSelector-container .NavSelectorItem-container-active &,
+    // Group in preview
+    .GroupSelectorPreview-container &
+        border-radius: base.$radius-2
+
+.GroupAvatar-container-non-base
+    @extend %ContentMildlyBordered-2
 
 /*
  * --- Tab buttons ---
@@ -218,6 +221,9 @@
 // .TeamChannelItemContents-label-wrapper
 //     .CalloutBadge-container
 //         color: base.$stream
+// Group reorder [DEFAULT]
+.GroupSettingsPanel-name-wrapper .CalloutBadge-container
+    color: base.$blue
 
 /*
  * --- Tournament badges ---

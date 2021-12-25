@@ -237,6 +237,9 @@
 .CheckboxV2-container-checked .CheckboxV2-box
     background-color: var(--NihilityTheme1)
     border-color: var(--NihilityTheme0)
+.CheckmarkIcon-container-selected .CheckmarkIcon-icon,
+.CheckboxV2-checkmark
+    fill: var(--NihilityThemeFg)
 // Form checkbox checked hover
 .CheckmarkIcon-container-clickable:hover.CheckmarkIcon-container-selected .CheckmarkIcon-circle
     background-color: var(--NihilityTheme2)
@@ -540,3 +543,11 @@
 // Role description
 .TeamRolesListInstructions-container
     @extend %TextDark
+
+/*
+ * --- Others ---
+ */
+
+// Reorder groups
+.GroupSettingsPanel-avatar
+    font-size: 22px

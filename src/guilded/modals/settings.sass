@@ -9,26 +9,40 @@
 // Options
 .OptionsMenuPageWrapper-container
     @extend %Panel-2
+
+// Section tabs
+.PersistentActionMenu-menu-section
+    padding: 0 base.$spacing-1
+
 // Tabs
 .OptionsMenu-container-desktop .OptionsMenu-options-control
     @extend %Panel-5
-// Tab text
-.DesktopOptionsControlItemTemplate-label-text
-    @extend %TextDark
-// Tabs title
+// Tabs section title
 .DesktopOptionsControlOptionHeader-header-text
     @extend %TextMedium
 
+// Tab text
+.DesktopOptionsControlItemTemplate-label-text
+    @extend %TextDark
+
 .DesktopOptionsControlItemTemplate-container
+    border-radius: base.$radius-1
+    @extend %FullBorderTransparent
     // Tab hover
     &:hover::after
         @extend %ContentGlare
     // Tab hover text
     &:hover .DesktopOptionsControlItemTemplate-label-text
         @extend %TextLight
-// Tab active
-.DesktopOptionsControlItemTemplate-container-active
-    @extend %Panel-2
+    // Tab active
+    &-active
+        @extend %ContentMildlyBordered-3
+        .DesktopOptionsControlItemTemplate-label-text
+            @extend %TextMedium
+
+// Gilded tab
+.DesktopOptionsControlItemTemplate-container-type-gilded .DesktopOptionsControlItemTemplate-label-text
+    color: base.$gold
 
 /*
  * -=- User settings -=-
