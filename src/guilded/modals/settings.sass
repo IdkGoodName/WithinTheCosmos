@@ -1,6 +1,6 @@
 @use "../../base"
 @use "../../set"
-@use "../../borders"
+@use "../../content"
 
 /*
  * -=- Settings -=-
@@ -8,27 +8,27 @@
 
 // Options
 .OptionsMenuPageWrapper-container
-    background-color: base.$bg-3
+    @extend %Panel-2
 // Tabs
 .OptionsMenu-container-desktop .OptionsMenu-options-control
-    background-color: base.$bg-0
+    @extend %Panel-5
 // Tab text
 .DesktopOptionsControlItemTemplate-label-text
-    color: base.$fg-1
+    @extend %TextDark
 // Tabs title
 .DesktopOptionsControlOptionHeader-header-text
-    color: base.$fg-2
+    @extend %TextMedium
 
 .DesktopOptionsControlItemTemplate-container
     // Tab hover
     &:hover::after
-        background-color: base.$bg-hover
+        @extend %ContentGlare
     // Tab hover text
     &:hover .DesktopOptionsControlItemTemplate-label-text
-        color: base.$fg-3
+        @extend %TextLight
 // Tab active
 .DesktopOptionsControlItemTemplate-container-active
-    background-color: base.$bg-3
+    @extend %Panel-2
 
 /*
  * -=- User settings -=-
@@ -36,14 +36,14 @@
 
 // 2FA thing
 .PersistentUpsell-container-flavor-settings
-    background-color: base.$bg-1
+    @extend %Panel-4
 // Connections/integrations
 .SocialLinkPanel-header
-    background-color: base.$bg-1
+    @extend %Panel-4
 .UserSettings
     // Email settings header
     &EmailPage-header
-        color: base.$fg-3
+        @extend %TextLight
     // User settings subscription info
     &ServerSubscriptionsUpsell-container
         @extend %PanelBordered-3
@@ -52,12 +52,12 @@
     @extend %PanelBordered-3
 // Payment
 .UserSettingsPayments-header
-    color: base.$fg-3
+    @extend %TextLight
 .UserPaymentsHistory-none,
 .PanelList-container-none
-    color: base.$fg-2
+    @extend %TextMedium
 .PaymentInstrumentSelector-add-method:hover
-    color: var(--NihilityLinkHover)
+    @extend %TextLinkHighlight
 
 /*
  * -=- Server Settings -=-
@@ -65,25 +65,25 @@
 
 // Channel or category notifications header
 .GuildedTableHeader-column-header-group, .GuildedTableHeader-column-header
-    color: base.$fg-2
+    @extend %TextMedium
 // Placeholder
 .GuildedTableField-empty-text
-    color: base.$fg-1
+    @extend %TextDark
 // Category/channel hover
 .GuildedTableRowInputWrapper-container-desktop::after
-    background-color: base.$bg-hover
+    @extend %ContentGlare
 // Category/channel icon
 .GuildedTableRowInputWrapper-icon
-    fill: base.$fg-1
+    @extend %SvgDark
 // Category/channel title
 .GuildedTableRowInputWrapper-name
-    color: base.$fg-2
+    @extend %TextMedium
 // X channels
 .GuildedTableRowInputWrapper-description
-    fill: base.$fg-1
+    @extend %SvgDark
 // Remove icon
 .GuildedTableRowNotificationOverridesInput-remove
-    color: base.$bad-0
+    @extend %TextBad
 
 // Content(flow)
 .UserCTAPanel-container
@@ -93,22 +93,22 @@
 //     border: 0
 // Content inner(flow) 2
 .UserCTAPanel-container-style-bordered .UserCTAPanel-contents:not(.UserCTAPanel-container-disabled)
-    background-color: transparent
+    @extend %PanelTransparent
 .UserCTAPanel-container-style-bordered .UserCTAPanel-contents:not(.UserCTAPanel-container-disabled):hover
-    background-color: base.$bg-1
+    @extend %Panel-4
     @include set.transition(background)
 // Flow connection
 .PanelList-option-connector
-    background-color: base.$bg-0
+    @extend %Panel-5
 // Flow's title
 .PanelInfo-title
-    color: base.$fg-3
+    @extend %TextLight
 // Flow's description
 .PanelInfo-description
-    color: base.$fg-1
+    @extend %TextDark
 // Flow's icon
 .BotFlowDisplay-icon
-    fill: base.$fg-1
+    @extend %SvgDark
 
 /*
  * -=- Settings Tabs -=-
@@ -120,7 +120,7 @@
 
 // Team integrations
 .TeamSettingsAddIntegration-container
-    background-color: base.$bg-1
+    @extend %Panel-4
 // Twitch integration
 .TeamSettingsAddIntegration-container-type-twitch .TeamSettingsAddIntegration-icon
     fill: base.$stream
@@ -131,13 +131,13 @@
 
 // Group
 .GroupSettingsPanel-container
-    background-color: base.$bg-1
+    @extend %Panel-4
     // Group hover
     &:hover
-        background-color: base.$bg-0
+        @extend %Panel-5
 // Group gripper
 .GroupSettingsPanel-icon
-    fill: base.$fg-1
+    @extend %SvgDark
 
 /*
  * --- Subscriptions ---
@@ -145,10 +145,10 @@
 
 // Subscriptions bg
 .ServerSubscriptionsSetupUpsell-content
-    background-color: base.$bg-5
+    @extend %Panel-0
 // Subscription points
 .GuildedText-container-type-subtextBodyWhite
-    color: base.$fg-2
+    @extend %TextMedium
 // Subscription enabling
 .ModalWrapper-container.ModalWrapper-container-required:not(.ModalWrapper-background-style-transparent)
     background: rgba(0, 0, 0, 0.6)
@@ -159,26 +159,26 @@
 
 // Role list item selected
 .TeamSettingsPermissionsItem-container-selected
-    background-color: base.$bg-5
+    @extend %Panel-0
 // Role list item hover
 .TeamSettingsPermissionsItem-container-desktop .TeamSettingsPermissionsItem-content::after
-    background-color: base.$bg-hover
+    @extend %ContentGlare
 // Add role
 .TeamSettingsAddButton
     &-icon
-        fill: base.$fg-1
+        @extend %SvgDark
         @include set.transition(fill)
     &-text
-        color: base.$fg-1
+        @extend %TextDark
         @include set.transition(color)
 // Add role hover
 .TeamSettingsAddButton-container:hover
     // Icon
     .TeamSettingsAddButton-icon
-        fill: base.$fg-2
+        @extend %SvgMedium
     // Text
     .TeamSettingsAddButton-text
-        color: base.$fg-2
+        @extend %TextMedium
 
 // Permission syncing
 .TeamChannelRoleSyncControl
@@ -186,10 +186,10 @@
         @extend %PanelBordered-3
     // Syncing text
     &-info
-        color: base.$fg-2
+        @extend %TextMedium
     &-category-name
-        color: base.$fg-3
+        @extend %TextLight
         font-weight: bold
     // Synced icon
     &-icon
-        fill: base.$fg-1
+        @extend %SvgDark

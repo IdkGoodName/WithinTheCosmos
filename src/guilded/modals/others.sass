@@ -1,6 +1,6 @@
 @use "../../base"
 @use "../../set"
-@use "../../borders"
+@use "../../content"
 
 /*
  * -=- Message plus menus -=-
@@ -14,23 +14,23 @@
 .MediaUploaderDropImageInstructions
     // Upload icon
     &-icon
-        fill: base.$fg-2
+        @extend %SvgMedium
     // Drop media
     &-drop-image-text
-        color: base.$fg-2
+        @extend %TextMedium
     // Or browse your files
     &-or-browse-text
-        color: base.$fg-1
+        @extend %TextDark
 // Media upload paste
 .MediaUploaderPasteInstructions
     &-container
         @extend %PanelBordered-3
     // Icon
     &-link-icon
-        fill: base.$fg-1
+        @extend %SvgDark
     // Text
     &-paste-instructions
-        color: base.$fg-1
+        @extend %TextDark
 
 /*
  * -=- Create Server -=-
@@ -38,10 +38,10 @@
 
 // Tiled background
 .OnboardingExperience-background
-    background-color: base.$bg-0
+    @extend %Panel-5
 // Background's tile
 .LandingPageV3WhimsicalIcon-icon
-    color: base.$fg-0
+    @extend %TextDarker
     opacity: 15%
     @include set.transition(opacity)
     // Background's tile
@@ -49,47 +49,47 @@
         opacity: 45%
 // Creation container
 .FullScreenFlowStageWrapper-contents-wrapper
-    background-color: base.$bg-3
+    @extend %Panel-2
 // Enter your server name above
 .TextInputWithLabel-container-label-retracted .TextInputWithLabel-floating-label-validity
-    color: base.$fg-0
+    @extend %TextDarker
 // Server name is too short
 .TextInputWithLabel-container.TextInputWithLabel-container-invalid .TextInputWithLabel-floating-label,
 .TextInputWithLabel-container.TextInputWithLabel-container-invalid:hover .TextInputWithLabel-floating-label
-    color: base.$bad-0
+    @extend %TextBad
 // Server name is too short icon
 .ValidityIndicator-container-invalid
-    fill: base.$bad-0
+    @extend %SvgBad
 // Server name looks good
 .TextInputWithLabel-container-valid .TextInputWithLabel-floating-label-validity
-    color: base.$good-0
+    @extend %TextGood
 // Upload avatar container
 .NewTeamUpsellIcon-container
     border-color: base.$fg-0
 // Upload avatar icon
 .NewTeamUpsellIcon-icon
-    fill: base.$fg-2
+    @extend %SvgMedium
 // Upload avatar icon hover
 .NewTeamUpsellIcon-container:hover .NewTeamUpsellIcon-icon
-    fill: base.$fg-3
+    @extend %SvgLight
 // Upload avatar plus sign
 .NewTeamUpsellIcon-plus-icon
     background: var(--NihilityTheme0)
-    fill: base.$fg-2
+    @extend %SvgMedium
 // Upload avatar plus sign hover
 .NewTeamUpsellIcon-container:hover .NewTeamUpsellIcon-plus-icon
     background: var(--NihilityTheme1)
-    fill: base.$fg-3
+    @extend %SvgLight
 
 // Games selected
 .ItemChooser-info
-    color: base.$fg-1
+    @extend %TextDark
 // Game
 .ItemChooserItemWrapper-container
     @extend %OverridePanelBordered-2
     // Game hover
     &:hover
-        background-color: base.$bg-5
+        @extend %Panel-0
 
 /*
  * -=- Join through invite -=-
@@ -97,30 +97,30 @@
 
 // Invite page background
 .InvitePage-container
-    background-color: base.$bg-0
+    @extend %Panel-5
 // The information area of the invite
 .InvitePage-panel
-    background-color: base.$bg-3
+    @extend %Panel-2
 
 // Accept invite
 .GuildedText-container-type-bigBody
-    color: base.$fg-1
+    @extend %TextDark
 .MemberCountPill
     // X members, Y online pills
     &-container
-        background-color: base.$bg-5
+        @extend %Panel-0
     // Member count circle
     &-circle
         &-green
-            background-color: base.$good-0
+            @extend %PanelGood
         &-grey
             background-color: base.$fg-2
 // Accept invite and join Y server
 .SocialContextHeader-header-text
-    color: base.$fg-2
+    @extend %TextMedium
 // This is how you'll appear to your teammates
 .AcceptTeamInviteControl-user-profile-preview
-    color: base.$fg-1
+    @extend %TextDark
 
 /*
  * -=- Other -=-
@@ -134,11 +134,11 @@
 
 // Group settings icon
 .AddGroupOverlayDisplay-settings-icon
-    fill: base.$fg-1
+    @extend %SvgDark
     @include set.transition(fill)
     // Group settings hover
     &:hover
-        fill: base.$fg-2
+        @extend %SvgMedium
 
 /*
  * --- Invite ---
@@ -146,24 +146,24 @@
 
 // Copy invite title
 .CopyToClipboardControlV2-title
-    color: base.$fg-3
+    @extend %TextLight
 // Invite input
 .CopyableTextbox
     // The container itself
     &-container
-        background-color: base.$bg-1
+        @extend %Panel-4
         border-color: base.$fg-0
         @include set.transition(border-color)
     &-container-desktop:hover
         border-color: base.$fg-0
     // Link
     &-url-wrapper-text
-        color: var(--NihilityLink)
+        @extend %TextLink
     &-container-desktop:hover &-url-wrapper-text
-        color: var(--NihilityLinkHover)
+        @extend %TextLinkHighlight
 // Copy invite button hover
 .SocialShareButtonV2-container-desktop:hover::after
-    background-color: base.$bg-hover
+    @extend %ContentGlare
 
 /*
  * --- Images ---
@@ -171,17 +171,17 @@
 
 // Open original
 .MaximizedImageOverlay-open-original
-    color: base.$fg-1
+    @extend %TextDark
     // Active
     &:hover, &:active, &:focus
-        color: base.$fg-2
+        @extend %TextMedium
 // Image share icon
 .MaximizedImageOverlay-share-icon
-    fill: base.$fg-1
+    @extend %SvgDark
     @include set.transition(transition)
     // Hover
     &:hover
-        fill: base.$fg-2
+        @extend %SvgMedium
 
 /*
  * --- Activity list ---
@@ -191,19 +191,19 @@
 .ChannelActivityDisplay
     &-group-header,
     &-container
-        background-color: base.$bg-3
+        @extend %Panel-2
     &-item
         @extend %PanelBordered-3
 // Activity menu content
 .ChannelActivityItem
     // Text
     &-header
-        color: base.$fg-3
+        @extend %TextLight
     &-footer
-        color: base.$fg-1
+        @extend %TextDark
     // Unread activity menu item
     &-container.ChannelActivityItem-container-unread
-        background-color: base.$bg-1
+        @extend %Panel-4
 
 /*
  * --- Channel Switcher ---
@@ -215,20 +215,20 @@
         background-color: base.$bg-3
         color: base.$fg-1
     &Footer-container
-        background-color: base.$bg-1
+        @extend %Panel-4
 // Channel switcher channel
 .ChatChannelSwitcherRow
     &-container
-        color: base.$fg-2
+        @extend %TextMedium
         // Header of the channels
         &-header
-            color: base.$fg-1
+            @extend %TextDark
         // Selected
         &-selected
-            background-color: base.$bg-5
+            @extend %Panel-0
         // Hovered over
         &:not(&-header)::after
-            background-color: base.$bg-hover
+            @extend %ContentGlare
 
 /*
  * --- Role Picker ---
@@ -245,7 +245,7 @@
 .HorizontalPercentageBar
     // Percentage bar
     &-bar
-        background-color: base.$bg-2
+        @extend %Panel-3
         // Progress
         &-highlight
             background: base.$progress
@@ -253,41 +253,41 @@
     &-value,
     // The name of the poll item
     &-label
-        color: base.$fg-3
+        @extend %TextLight
     // Item voted for
     &-vote-icon
-        fill: base.$fg-3
+        @extend %SvgLight
 // Successful voting
 .CustomFormControls-success
     &-message
-        color: base.$good-0
+        @extend %TextGood
     &-icon
-        fill: base.$good-0
+        @extend %SvgGood
 // Question X
 .CustomFormSummaryResultSection-header
-    color: base.$fg-1
+    @extend %TextDark
 // Text response in a form
 .CustomFormSummaryTextResponse-container
-    background-color: base.$bg-2
+    @extend %Panel-3
     border-left: 0
 
 // Individual response header
 .CollapsibleItemHeader
     &-container
-        background-color: base.$bg-1
+        @extend %Panel-4
         // Hover
         &-desktop::after
-            background-color: base.$bg-hover
+            @extend %ContentGlare
     // Date
     &-subtitle
-        color: base.$fg-1
+        @extend %TextDark
         @include set.transition(color)
     &-container:hover &-subtitle
-        color: base.$fg-3
+        @extend %TextLight
 // Individual response container
 .CustomFormIndividualResponse-result-display
-    background-color: base.$bg-2
+    @extend %Panel-3
 // Individual response message input text
 .TextAreaFieldDisplayRenderer-container
-    color: base.$fg-2
+    @extend %TextMedium
     cursor: text

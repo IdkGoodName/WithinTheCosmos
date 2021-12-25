@@ -1,6 +1,6 @@
 @use "../../base"
 @use "../../set"
-@use "../../borders"
+@use "../../content"
 
 /*
  * --- Item list ---
@@ -12,75 +12,75 @@
     @extend %PanelBordered-3
     // Item hover
     &-unfocused::after
-        background-color: base.$bg-hover
+        @extend %ContentGlare
 // Item handle
 .TeamListItemControls-handle
     svg
-        fill: base.$fg-1
+        @extend %SvgDark
     &:hover svg
-        fill: base.$fg-2
+        @extend %SvgMedium
 // Note and thread indicators
 .TeamListItemAction-container-clickable
     svg
-        fill: base.$fg-1
+        @extend %SvgDark
     &:hover svg
-        fill: base.$fg-2
+        @extend %SvgMedium
 // Note highlighted
 .TeamListItemAction-container-highlight
     svg
         fill: base.$important
     &:hover svg
-        fill: base.$fg-3
+        @extend %SvgLight
 // Thread indicator
 .TeamListItemAction-container
-    color: base.$fg-1
+    @extend %TextDark
     &:hover
-        color: base.$fg-2
+        @extend %TextMedium
 
 .TeamListItemsInput
     // Add item slate
     &-editor.Editor-container
-        background-color: base.$bg-2
+        @extend %Panel-3
     // Add item icon
     &-icon
         svg
-            fill: var(--NihilityTheme1)
+            @extend %SvgThemeDull
         &:hover svg
-            fill: var(--NihilityTheme2)
+            @extend %SvgThemeBleached
 // Editor in a list item being edited
 .TeamListItem-message
-    background-color: base.$bg-2
+    @extend %Panel-3
     border: none
 // Note editor
 .TeamListItemNoteEditor-editor
-    background-color: base.$bg-3
+    @extend %Panel-2
 
 // Add item add note
 .TeamListItemNoteEditor-button
-    color: base.$fg-1
+    @extend %TextDark
     &:hover
-        color: base.$fg-2
+        @extend %TextMedium
         // Icon hover
         svg
-            fill: base.$fg-2
+            @extend %SvgMedium
     // Icon
     svg
-        fill: base.$fg-1
+        @extend %SvgDark
 
 // X completed
 .TeamListItemsCompletedHeader-count
-    color: base.$fg-1
+    @extend %TextDark
     @include set.transition(color)
     // X completed hover
     .TeamListItemsCompletedHeader-container:hover &
-        color: base.$fg-2
+        @extend %TextMedium
 
 // Editor focused
 .TeamListItemWrapper-container-focused
     border-color: var(--NihilityTheme1)
 // Fill background when the list is being dragged
 .ReorderIndentable-blockout
-    background-color: base.$bg-1
+    @extend %Panel-4
 
 /*
  * --- Item note ---
@@ -93,20 +93,20 @@
 .TeamListItemDetails
     // Timestamp dots
     &-message-count::before, &-created-at::before
-        color: base.$fg-0
+        @extend %TextDarker
     // Timestamp
     &-created-at
-        color: base.$fg-1
+        @extend %TextDark
         @include set.transition(color)
         // Timestamp hover
         &:hover
-            color: base.$fg-2
+            @extend %TextMedium
 // Note
 .SingleContentEditor-display
-    background-color: base.$bg-5
+    @extend %Panel-0
     &:hover .ContentMetadataCreationInfo-from-now
-        color: base.$fg-2
+        @extend %TextMedium
 // Note timestamp
 .ContentMetadataCreationInfo-from-now
-    color: base.$fg-1
+    @extend %TextDark
     @include set.transition(color)

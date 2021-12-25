@@ -1,4 +1,5 @@
 @use "../base"
+@use "../content"
 
 :root
     $rgba-theme-0       : rgba(base.$theme-0, 0.6)
@@ -10,7 +11,7 @@
     --NihilityLinkHover : #{base.$fg-link-hover}
 
 body
-    background-color: base.$bg-1
+    @extend %Panel-4
 
 // Variable definition/redefinition
 body,
@@ -18,9 +19,9 @@ body,
 .ChatChannelMessagesList-container,
 .SlateEditor-container-type-default
     --body-text-color: #{base.$fg-2}
-    --game-color: var(--NihilityTheme2)
+    --game-color: var(--NihilityTheme0)
     --border-color: #{base.$bg-1}
-    color: base.$fg-2
+    @extend %TextMedium
 // Change selection
 ::selection
     background-color: var(--NihilitySelect)

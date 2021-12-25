@@ -1,7 +1,7 @@
+@use "sass:color"
 @use "../../base"
 @use "../../set"
-@use "../../borders"
-@use "sass:color"
+@use "../../content"
 
 /*
  * --=======================--
@@ -15,19 +15,19 @@
 
 // Section name
 .FormSection-section-header
-    color: base.$fg-3
+    @extend %TextLight
 
 // Custom form header name ("Question 1")
 .FormSection-section-header-style-result
-    color: base.$fg-1
+    @extend %TextDark
 
 // Form "(optional)"
 .FormFieldLabel-optional
-    color: base.$fg-0
+    @extend %TextDarker
     @include set.transition(color)
     // Hover
     &:hover
-        color: base.$fg-2
+        @extend %TextMedium
 
 /*
  * -=- Sections & Types -=-
@@ -54,30 +54,29 @@
         border-color: base.$fg-0
     &-container-has-value &-input-element
         -webkit-text-fill-color: base.$fg-2
-        color: base.$fg-2
+        @extend %TextMedium
     // Hover
     &-container-desktop:hover
         border-color: base.$fg-0
     
     // Label
     &-typeahead-suggestion, &-floating-label
-        color: base.$fg-1
+        @extend %TextDark
 
     // Form input label invalid
     &-container.TextInputWithLabel-container-invalid
-        border-color: base.$bad-0
+        @extend %SetBorderBad
 
         &:hover
-            border-color: base.$bad-0
+            @extend %SetBorderBad
         
         .TextInputWithLabel-floating-label,
-        &:hover
-            .TextInputWithLabel-floating-label
-                border-color: base.$bad-0
+        &:hover .TextInputWithLabel-floating-label
+            @extend %SetBorderBad
 
 // Form input valid
 .TextInputWithLabel-container-valid.TextInputWithLabel-container-focused
-    border-color: base.$good-0
+    @extend %SetBorderGood
 
 // Form input icon
 .ValidityIndicator-container
@@ -87,7 +86,7 @@
         fill: base.$bad-0
     // Valid
     &-valid
-        fill: base.$good-0
+        @extend %SvgGood
 
 
 // Big form input
@@ -118,7 +117,7 @@
             stroke: base.$bad-0
     // Label too many symbols
     &-container-invalid-max
-        color: base.$bad-0
+        @extend %TextBad
 
 /*
  * --- Toggles ---
@@ -128,35 +127,35 @@
 .ToggleFieldWrapper
     // Toggle field title
     &-label
-        color: base.$bad-0
+        @extend %TextBad
         font-weight: bold
         @include set.transition(color)
     // Toggle field toggled title
     &-label-active
-        color: base.$good-0
-        font-weight: bolder
+        @extend %TextGood
+        font-weight: bold
     // Moderator view tooltip icon
     &-tooltip-icon
-        fill: base.$fg-2
+        @extend %SvgMedium
     // All day checkmark icon
     &-icon
-        fill: base.$fg-1
+        @extend %SvgDark
 
 .SwitchInput
     // Slider off
     &-container .SwitchInput-slide
-        background-color: base.$bad-0
+        @extend %PanelBad
     // Slider on
     &-container-on .SwitchInput-slide
-        background-color: base.$good-0
+        @extend %PanelGood
     // Slider thumb
     &-tab
-        background-color: base.$bg-3
+        @extend %Panel-2
         // White shadow
         box-shadow: base.$shadow
         // Disabled
         .SwitchInput-container-disabled &
-            background-color: base.$bg-1
+            @extend %Panel-4
 
 .TriStateInputWrapper-container
     @extend %SetBorderLight-1
@@ -166,60 +165,60 @@
     &-on,
     &-passThrough,
     &-off
-        background-color: base.$bg-0
+        @extend %Panel-5
     // All selected
     &-on.TriStateInputButton-container-selected,
     &-passThrough.TriStateInputButton-container-selected,
     &-off.TriStateInputButton-container-selected
-        background-color: base.$bg-3
+        @extend %Panel-2
     // Permission allowed
     &-on
         // Icon
         .TriStateInputButton-icon
-            fill: base.$fg-0
+            @extend %SvgDarker
         // Icon hover
         &:hover .TriStateInputButton-icon
-            fill: base.$fg-1
+            @extend %SvgDark
         // Selected
         &.TriStateInputButton-container-selected
             // Selected icon
             .TriStateInputButton-icon
-                fill: base.$good-0
+                @extend %SvgGood
             // Selected hover
             &:hover .TriStateInputButton-icon
-                fill: base.$good-1
+                @extend %SvgGoodHighlight
     // Permission inherit
     &-passThrough
         // Icon
         .TriStateInputButton-icon
-            fill: base.$fg-0
+            @extend %SvgDarker
         // Icon hover
         &:hover .TriStateInputButton-icon
-            fill: base.$fg-1
+            @extend %SvgDark
         // Selected
         &.TriStateInputButton-container-selected
             // Selected icon
             .TriStateInputButton-icon
-                fill: base.$neutral-0
+                @extend %SvgNeutral
             // Selected hover
             &:hover .TriStateInputButton-icon
-                fill: base.$neutral-1
+                @extend %SvgNeutralHighlight
     // Permission denied
     &-off
         // Icon
         .TriStateInputButton-icon
-            fill: base.$fg-0
+            @extend %SvgDarker
         // Icon hover
         &:hover .TriStateInputButton-icon
-            fill: base.$fg-1
+            @extend %SvgDark
         // Selected
         &.TriStateInputButton-container-selected
             // Selected icon
             .TriStateInputButton-icon
-                fill: base.$bad-0
+                @extend %SvgBad
             // Selected hover
             &:hover .TriStateInputButton-icon
-                fill: base.$bad-1
+                @extend %SvgBadHighlight
 
 /*
  * --- Option-based ---
@@ -247,7 +246,7 @@
 .CheckboxV2-label,
 .RadioOptionPanel-label,
 .CheckboxV2-label-wrapper
-    color: base.$fg-1
+    @extend %TextDark
 
 .CheckboxV2-container-unchecked:hover .CheckboxV2-label,
 .RadioInput-container-unselected:hover .CheckboxV2-label,
@@ -255,25 +254,24 @@
 .CheckboxV2-container-checked .CheckboxV2-label,
 .RadioOptionPanel-container-selected .CheckboxV2-label,
 .RadioOptionPanel-container-selected .RadioOptionPanel-label
-    color: base.$fg-2
+    @extend %TextMedium
 // Form checkbox description
 .CheckboxV2-description
-    color: base.$fg-1
+    @extend %TextDark
 .CheckboxV2-container-checked .CheckboxV2-description
-    color: base.$fg-2
+    @extend %TextMedium
 
 // Radio highlighted (channel selection)
 .RadioOptionPanel-container
     @extend %OverridePanelBordered-3
     // Selection button hover
     &:not(&-disabled)::after
-        background-color: base.$bg-hover
+        @extend %ContentGlare
     // Channel type selection
     &-selection-border
         // Hover
         &:not(.RadioOptionPanel-container-selected):hover
-            @extend %SetBorderDark-0
-            background-color: base.$bg-3
+            @extend %OverridePanelMildlyBordered-2
         // Selected
         &.RadioOptionPanel-container-selected
             border:
@@ -281,14 +279,14 @@
                 width: 1px 
     // Channel type selected icon
     &-selected .RadioOptionPanel-icon
-        fill: var(--NihilityTheme0)
+        @extend %SvgTheme
 
 // Selection checkbox
 .CheckboxPanel-container
     @extend %OverridePanelBordered-3
     // Hover
     &.CheckboxPanel-container-clickable.CheckboxPanel-container-flavor-default:hover
-        background-color: base.$bg-5
+        @extend %Panel-0
     // Icon
     &-clickable:hover .CheckmarkIcon-circle, &-clickable:focus .CheckmarkIcon-circle
         border-color: var(--NihilityTheme0)
@@ -300,7 +298,7 @@
         border-color: base.$fg-0 !important
     // Label
     &.GuildedSelect-container-dark:not(&-has-label-type) .GuildedSelect-label
-        color: base.$fg-2
+        @extend %TextMedium
     // Form selector
     .Select-control
         border-color: base.$fg-0 !important
@@ -309,7 +307,7 @@
     &-option-color-gray
         // Label in editor
         .GuildedSelect-default-option-wrapper
-            color: base.$fg-1
+            @extend %TextDark
         // Label's arrow in editor
         .Select-arrow
             border-top-color: base.$fg-1
@@ -318,10 +316,10 @@
         border-top-color: var(--NihilityTheme0)
     // Form selector placeholder
     .Select-placeholder
-        color: base.$fg-1
+        @extend %TextDark
     // Form selector value
     .Select-value-label
-        color: base.$fg-2
+        @extend %TextMedium
     // Form select menu
     &.GuildedSelect-container-dark .Select-menu-outer,
     &.GuildedSelect-container-light .Select-menu-outer
@@ -334,12 +332,12 @@
 
 // Form selector icon
 .GuildedSelectIcon-container
-    fill: base.$fg-1
+    @extend %SvgDark
 
 .Select
     // Form selector options
     &-menu
-        background-color: base.$bg-3
+        @extend %Panel-2
         padding: base.$spacing-0
         &-outer
             opacity: base.$floating-opacity
@@ -348,12 +346,12 @@
     // Form selector option
     &-option
         border-radius: base.$radius-0
-        color: base.$fg-2
+        @extend %TextMedium
         border: solid 1px transparent
         // Normally
         .GuildedSelect-container.GuildedSelect-container-dark &,
         .GuildedSelect-container.GuildedSelect-container-light &
-            color: base.$fg-2
+            @extend %TextMedium
         // Already selected
         &.is-selected,
         .GuildedSelect-container &.is-selected,
@@ -365,7 +363,7 @@
             @extend %ContentBordered-0
             .GuildedSelect-container.GuildedSelect-container-dark &,
             .GuildedSelect-container.GuildedSelect-container-light &
-                color: base.$fg-3
+                @extend %TextLight
         &.is-selected.is-focused,
         .GuildedSelect-container &.is-selected.is-focused,
         .GuildedSelect-container.GuildedSelect-container-dark &.is-selected.is-focused,
@@ -375,7 +373,7 @@
     .GuildedSelect-container.GuildedSelect-container-light &-noresults,
     .GuildedSelect-container.GuildedSelect-container-dark &-noresults,
     &-noresults
-        background-color: base.$bg-3
+        @extend %Panel-2
     // Label's arrow acitve in editor
     &.is-open > &-control &-arrow
         border-top-color: base.$fg-2
@@ -389,19 +387,19 @@
     &-container-type-gilded
         // Background
         .RangeSlider-rail
-            background-color: base.$bg-0
+            @extend %Panel-5
         // Current volume
         .RangeSlider-selected-rail
             background: base.$progress
 .RangeSliderStep
     &-label
-        color: base.$fg-0
+        @extend %TextDarker
     &-step-type-gilded
-        background-color: base.$bg-1
+        @extend %Panel-4
     &-step-filled
         background-color: color.adjust(base.$progress, $whiteness: 10%)
 .KnobAndLabel-label
-    color: base.$fg-2
+    @extend %TextMedium
 // Video volume rail
 .RangeSlider
     &-rail,
@@ -431,10 +429,10 @@
         @extend %SetBorderLight-2
     // Icon
     &-form-icon
-        fill: base.$fg-1
+        @extend %SvgDark
     // Text inside input
     &-main-text
-        color: base.$fg-3
+        @extend %TextLight
 // Time input
 .TimeInput
     // Part selected
@@ -442,10 +440,10 @@
         background-color: var(--NihilitySelect)
     // : delimeter
     &-delimiter
-        color: base.$fg-1
+        @extend %TextDark
 // Timezone label
 .TimeFieldWrapper-timezone-label
-    color: base.$fg-1
+    @extend %TextDark
 
 /*
  * --- Buttons ---
@@ -455,11 +453,11 @@
     background: base.$shading-1
     border: solid 1px $border-colour
     .FormConfirmButtonV2-button-content
-        @include set.color($text-colour)
+        @include set.font-color($text-colour)
 @mixin button-typed-hollow($border-colour, $text-colour)
     border: solid 1px $border-colour
     .FormConfirmButtonV2-button-content
-        @include set.color($text-colour)
+        @include set.font-color($text-colour)
 
 .FormConfirmButtonV2
     // Gilded button
@@ -472,10 +470,10 @@
         box-shadow: none
         @extend %SetBorderLight-2
         .FormConfirmButtonV2-button-content
-            @include set.color(var(--NihilityTheme1))
+            @include set.font-color(var(--NihilityTheme1))
     // Gilded button text
     &-button-content
-        @include set.color(var(--NihilityTheme0))
+        @include set.font-color(var(--NihilityTheme0))
     
     // Hollow gilded
     &-container.FormConfirmButtonV2-container-hollow
@@ -486,7 +484,7 @@
         @include button-typed(base.$border-light-2, var(--NihilityTheme1))
     // Hollow gilded text
     &-container-hollow &-button-content
-        @include set.color(var(--NihilityTheme0))
+        @extend %FontTheme
 
     // Delete button
     &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete
@@ -523,7 +521,7 @@
     &-container.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled:hover
         @extend %OverrideContentBordered-5
         .FormConfirmButtonV2-button-content
-            @include set.color(base.$fg-0)
+            @extend %FontDarker
 
     // Disabled hollow
     &-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-disabled,
@@ -541,4 +539,4 @@
     border-color: base.$fg-0
 // Role description
 .TeamRolesListInstructions-container
-    color: base.$fg-1
+    @extend %TextDark

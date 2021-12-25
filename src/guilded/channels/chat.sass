@@ -1,6 +1,6 @@
 @use "../../base"
 @use "../../set"
-@use "../../borders"
+@use "../../content"
 @use "sass:color"
 
 /*
@@ -11,10 +11,10 @@
 .TemporalChannelInstructions
     // Title
     &-header
-        color: base.$fg-2
+        @extend %TextMedium
     // Description
     &-optimistic, &-instructions
-        color: base.$fg-1
+        @extend %TextDark
 
 // Chat area
 .SidebarInfoItem-container,
@@ -66,11 +66,11 @@
         color: var(--body-text-color)
     // Hovered message
     &:not(&-editing):hover, &.ChatV2Message-container-replying
-        background-color: base.$bg-5
+        @extend %Panel-0
         --body-text-color: #{base.$fg-3}
     // Right click active
     &-active
-        background-color: base.$bg-5
+        @extend %Panel-0
 
     // Replying
     &:not(&-editing).ChatV2Message-container-replying
@@ -94,7 +94,7 @@
 
     // Right clicked
     &-active:not(&-editing)
-        background-color: base.$bg-5
+        @extend %Panel-0
         --body-text-color: #{base.$fg-3}
     
     // Removes messages' margin
@@ -103,11 +103,11 @@
 
 // (edited)
 .EditedMarker-container
-    color: base.$fg-1
+    @extend %TextDark
     @include set.transition(color)
     // (edited) hover
     .ChatV2Message-container.ChatV2Message-container-type-default:hover &
-        color: base.$fg-2
+        @extend %TextMedium
 
 /*
  * --- Message input ---
@@ -116,9 +116,9 @@
 // Slow mode
 .SlowModeInfoLabel
     &-icon
-        fill: base.$fg-0
+        @extend %SvgDarker
     &-container
-        color: base.$fg-1
+        @extend %TextDark
     // Seconds left
     &-cooldown-text
         color: base.$warning
@@ -136,26 +136,26 @@
         @extend %ContentBordered-4
     // Label
     &-replying-to-text
-        color: base.$fg-1
+        @extend %TextDark
 
     // Close icon
     &Buttons
         &-close-icon
-            fill: base.$fg-1
+            @extend %SvgDark
             @include set.transition(fill)
         &-hover:hover &-close-icon
-            fill: base.$bad-0
+            @extend %SvgBad
 .PrivateReplyButton
     &-icon
-        fill: base.$fg-1
+        @extend %SvgDark
         @include set.transition(fill)
         &-enabled
             fill: color.adjust(base.$private, base.$whiteness: 25%)
     &-container:hover:not(&-container-disabled) &-icon:not(&-icon-enabled)
-        fill: base.$fg-2
+        @extend %SvgMedium
 .ReplyPingButton-ping
     &-icon
-        fill: base.$fg-1
+        @extend %SvgDark
         @include set.transition(fill)
     &-enabled &-icon
         fill: color.adjust(base.$mention, base.$whiteness: 25%)
@@ -185,14 +185,14 @@
         &:not(&-deleted)
             @include set.transition(color)
             &:hover
-                color: base.$fg-2
+                @extend %TextMedium
     // Username in the reply
     &-user-info .UserBasicInfoDisplay-name-and-status-wrapper
         font-weight: bolder
 
 // Message editing actions
 .ChatV2MessageEditHelper-container
-    color: base.$fg-1
+    @extend %TextDark
 
 /*
  * --- Special messages ---
@@ -200,31 +200,31 @@
 
 // Pinned message
 .ChatV2MessageContents-container-pinned .ChatV2MessageContents-display
-    background-color: transparent
+    @extend %PanelTransparent
 
 // Event message icon
 .SystemMessageRendererWrapper-container .SystemMessageRendererWrapper-icon
-    fill: base.$fg-1
+    @extend %SvgDark
 
 // Pinned message label
 .PinnedByMessage
     // Text
     &-word
-        color: base.$fg-1
+        @extend %TextDark
     // Icon
     &-icon
-        fill: base.$fg-1
+        @extend %SvgDark
 // Pinned messages list
 .ChannelPinnedMessages
     // "Pinned messages" title
     &-header
-        color: base.$fg-1
+        @extend %TextDark
     // Box
     &-container
-        background-color: base.$bg-1
+        @extend %Panel-4
 // Pinned message
 .ChatV2PinnedMessage-message-wrapper
-    background-color: base.$bg-3
+    @extend %Panel-2
     border-radius: base.$radius-2
     .ChatV2Message-container
         border-radius: base.$radius-2
@@ -233,10 +233,10 @@
 .PrivateMessageLabel
     // Eye icon
     &-icon
-        fill: base.$fg-1
+        @extend %SvgDark
     // Text
     &-container .GuildedText-container
-        color: base.$fg-1
+        @extend %TextDark
 
 /*
  * --- Divider ---
@@ -250,7 +250,7 @@
             width: 600px
     &-container-word-style-chat &-word,
     &-word
-        color: base.$fg-1
+        @extend %TextDark
     // New messages
     &-container-type-alert
         .WordDividerLine-line
@@ -267,10 +267,10 @@
 .ChatMessageThread
     // Text
     &-thread-header
-        color: base.$fg-1
+        @extend %TextDark
     // Icon
     &-icon-chat-thread
-        fill: base.$fg-1
+        @extend %SvgDark
 
 // Threaded message
 .ChatMessageThread-container
@@ -290,7 +290,7 @@
 
 // Threaded message's arrow
 .LastReplyDisplay-icon-chevron
-    color: var(--NihilityTheme1)
+    @extend %TextThemeDull
 
 /*
  * --- Header ---
@@ -299,12 +299,12 @@
 // Timestamp
 .ChatV2MessageTimestamp-container.ChatV2MessageHeader-timestamp,
 .ChatV2MessageTimestamp-container.SystemMessageRendererWrapper-timestamp
-    color: base.$fg-1
+    @extend %TextDark
     @include set.transition(color)
     // Timestamp hovered
     .ChatV2Message-container.ChatV2Message-container-type-default:hover &,
     .ChatV2Message-container.ChatV2Message-container-type-system:hover &
-        color: base.$fg-2
+        @extend %TextMedium
 
 /*
  * --- Menu ---
@@ -317,7 +317,7 @@
 
 // Message hover menu icons
 .QuickActionBar-action
-    fill: base.$fg-2
+    @extend %SvgMedium
     // Buttons hovered over
     &-wrapper:hover .QuickActionBar-action,
     &:hover
@@ -325,17 +325,17 @@
         fill: base.$fg-3
         // Change the fill of the SVG icon
         .SVGIcon-container
-            fill: base.$fg-3
+            @extend %SvgLight
     // Change the fill of the SVG icon
     .SVGIcon-container
-        fill: base.$fg-2
+        @extend %SvgMedium
     // Delete icon
     &-wrapper.QuickActionBar-action-wrapper-destructive
         .QuickActionBar-action
-            fill: base.$bad-0
+            @extend %SvgBad
         // Delete icon hover
         &:hover .QuickActionBar-action
-            fill: base.$bad-1
+            @extend %SvgBadHighlight
 
 // Remove hover from the message in deletion menu
 .ConfirmationOverlay-item .ChatV2Message-container
@@ -344,9 +344,9 @@
     //     @include set.transition(background-color)
     // Give it to contents
     &:hover
-        background-color: transparent
+        @extend %PanelTransparent
         .ChatChannelMessages-delete-message
-            background-color: base.$bg-5
+            @extend %Panel-0
 // Message delete menu fading
 .ChatChannelMessages-delete-message::after
     background: linear-gradient(to bottom, transparent, base.$bg-3 75px)
@@ -365,42 +365,40 @@
 .ChatV2MessageReplyTooltip
     // Base
     &-content-wrapper
-        background-color: base.$bg-2
-        @extend %SetBorderDark-0
+        @extend %OverridePanelMildlyBordered-3
         opacity: base.$floating-opacity
     // Arrow/Pointer
     &-arrow
-        background-color: base.$bg-2
-        @extend %SetBorderDark-0
+        @extend %OverridePanelMildlyBordered-3
     // Message thread menu header
     &Header
         // Icon
         &-icon
-            fill: base.$fg-1
+            @extend %SvgDark
         // Message thread add a title
         &-add-title
             &, &:visited, &:active, &:focus
-                color: base.$fg-1
+                @extend %TextDark
             // Hovered
             &:hover
-                color: base.$fg-2
+                @extend %TextMedium
 
 // Message thread menu send
 .SlateEditor-send-icon
-    fill: var(--NihilityTheme2)
+    @extend %SvgThemeBleached
     // Message thread menu cannot send
     &.SlateEditor-send-icon-disabled
-        fill: base.$fg-0
+        @extend %SvgDarker
 
 .ContentEditableInput
     &-placeholder-text, &-input, &-actual-text-display
-        color: base.$fg-2
+        @extend %TextMedium
 
 // Thread menu title input placeholder
 .ChannelTitleInput-input-placeholder
-    color: base.$fg-0
+    @extend %TextDarker
 
 // Thread menu title input icon
 .ChannelTitleInput-icon,
 .ChatV2MessageReplyTooltipInput-title-icon
-    fill: base.$fg-2
+    @extend %SvgMedium

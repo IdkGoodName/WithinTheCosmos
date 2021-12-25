@@ -1,10 +1,10 @@
 @use "../../base"
-@use "../../borders"
+@use "../../content"
 
 // Whole container
 .StreamChannelDisplay-container,
 .StreamsDisplayV2-container
-    background-color: base.$bg-0
+    @extend %Panel-5
 // Stacked and unstacked streaming displays
 .StreamChannel-display,
 .StreamChannel-container-stacked .StreamChannel-display
@@ -12,23 +12,23 @@
 
 // Streaming button
 .SVGIconWithTooltip-container-flavor-hover-bleach
-    background-color: base.$bg-1
+    @extend %Panel-4
     // Streaming button icon
     .SVGIconWithTooltip-icon
-        fill: base.$fg-1
+        @extend %SvgDark
     // Streaming button icon hover
     &:hover .SVGIconWithTooltip-icon
-        fill: base.$fg-2
+        @extend %SvgMedium
 
 // Join streaming channel
 .StreamsEmptyState-title
-    color: base.$fg-2
+    @extend %TextMedium
 .StreamsEmptyState-subtitle
-    color: base.$fg-1
+    @extend %TextDark
 
 // Leave streaming channel
 .SVGIconWithTooltip-container-flavor-filled-remove
-    background-color: base.$bad-0
+    @extend %PanelBad
     .SVGIcon-icon
         fill: black
 
@@ -36,21 +36,21 @@
     // Mini buttons
     &-right, &-left
         .StreamDisplayActionButton-container-content
-            fill: base.$fg-1
+            @extend %SvgDark
     // Mini buttons active
     &:hover, &-active
         .StreamDisplayActionButton-container-content
-            fill: base.$fg-2
+            @extend %SvgMedium
 
 // Hover outline
 .StreamPlayer-container:hover .StreamPlayer-inset-border
     border-color: base.$active
 // The user pill
 .StreamPlayerMemberDisplay-pill
-    background-color: base.$bg-0
+    @extend %Panel-5
 // Muted or deaf icon
 .StreamPlayerIndicators-button
-    background-color: base.$bg-0
+    @extend %Panel-5
 
 // Livestream badge in groups and servers
 .LiveStreamBadge-indicator

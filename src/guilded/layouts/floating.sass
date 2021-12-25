@@ -1,6 +1,6 @@
 @use "../../base"
 @use "../../set"
-@use "../../borders"
+@use "../../content"
 @use "sass:color"
 
 /*
@@ -16,18 +16,18 @@
 .ChatChannelAlertBar
     // Alert bar icon
     &-icon
-        fill: base.$fg-2
+        @extend %SvgMedium
     &-leading-icon-private-thread
         fill: color.adjust(base.$private, base.$whiteness: 25%)
 
     // Any alert bar
     &-container
-        @include set.color(base.$fg-2)
+        @include set.font-color(base.$fg-2)
         background-color: base.$bg-0 !important
         @extend %SetBorderDark-0
         // Hover
         &::after
-            background-color: base.$bg-hover
+            @extend %ContentGlare
         
         // Viewing older messages
         &-type-viewing-older-messages,
@@ -65,13 +65,13 @@
 .HoverContextTooltip
     // Base
     &-text-wrapper
-        background-color: base.$bg-1
+        @extend %Panel-4
         border: solid 2px
             color: base.$border-dark-1
         opacity: base.$floating-opacity
     // Arrow/Pointer
     &-arrow
-        background-color: base.$bg-0
+        @extend %Panel-5
 
 // Keybinds
 .Glyph-container
@@ -96,28 +96,26 @@
 
     // When reaction is hovered over
     &:hover
-        background-color: base.$bg-0
+        @extend %Panel-5
 
 // Text after the reaction button
 .ReactionPickerButton-container-with-label::after
-    color: base.$fg-1
+    @extend %TextDark
     transition-duration: base.$transition
 
 // Reaction icon
 .ReactionPickerButton
     // Normally
     &-container &-icon
-        color: base.$fg-2
-        fill: base.$fg-2
+        @extend %FontMedium
         transition-duration: base.$transition
     // Hover
     &-container:hover &-icon
-        color: base.$fg-3
-        fill: base.$fg-3
+        @extend %FontLight
 // Reaction counter
 .ReactionBadge-container
     &:not(&-disabled):hover .ReactionBadge-count
-        color: base.$fg-3
+        @extend %TextLight
     // Active
     &.ReactionBadge-container-active
         // Normal active reaction
@@ -139,33 +137,33 @@
 .TeamRoleCardOverlay-container,
 // Profile card's background
 .ProfileHoverCardV2Overlay-container
-    background-color: base.$bg-5
+    @extend %Panel-0
 
 // Section's header
 .UserAttributionDisplay-header,
 .UserTeamXpDisplay-level-display .GuildedText-container // Level
-    color: base.$fg-3
+    @extend %TextLight
 
 // Total XP needed
 .UserTeamXpDisplay-level-display .GuildedText-container.GuildedText-container-type-subtext2
-    color: base.$fg-1
+    @extend %TextDark
     // XP user has
     .GuildedText-container-weight-bold
-        color: base.$fg-2
+        @extend %TextMedium
 
 // Socials
 .OverviewWidgetItem
     // Icon
     &-icon
-        fill: base.$fg-1
+        @extend %SvgDark
     // Text
     &-text, &-input
-        color: base.$fg-2
+        @extend %TextMedium
 
 // Background for buttons
 .TeamRoleCardOverlay-menu,
 .ProfileHoverCardV2Overlay-action-menu
-    background-color: base.$bg-3
+    @extend %Panel-2
 
 /*
  * --- Menu ---
@@ -173,43 +171,41 @@
 
 // Menu container
 .TransientMenu-container-style-default
-    background-color: base.$bg-1
-    @extend %SetBorderLight-2
+    @extend %OverrideContentRoughBordered-4
 
 // Plus menu
 .ContextMenuItem-container
     &-section-type-rows
         // Description
         .ContextMenuItem-body
-            color: base.$fg-1
+            @extend %TextDark
     &:hover
         // Description
         .ContextMenuItem-body
-            color: base.$fg-2
+            @extend %TextMedium
 // Button
 .ContextMenu
     // Icon
     &-content
-        fill: base.$fg-1
+        @extend %SvgDark
     // Text
     &Item-label
-        color: base.$fg-2
+        @extend %TextMedium
 // Menu item
 .ContextMenuItem
     &-container
-        color: base.$fg-2
-        fill: base.$fg-2
+        @extend %FontMedium
         // Text and icon on hover
         &:hover
             // Text
             .ContextMenuItem-label
-                color: base.$fg-3
+                @extend %TextLight
             // Icon
             .ContextMenuIcon-container-icon
-                fill: base.$fg-3
+                @extend %SvgLight
         // Menu item hover glare
         &::after
-            background-color: base.$bg-hover
+            @extend %ContentGlare
     // Menu item download app highlighted
     &-highlighted
         background-color: transparent
@@ -230,10 +226,10 @@
 // Overflow icon
 .ContextMenuTrigger
     &-container &-icon
-        fill: base.$fg-1
+        @extend %SvgDark
         @include set.transition(fill)
     &-container-desktop:hover &-icon
-        fill: base.$fg-2
+        @extend %SvgMedium
 
 /*
  * --- Emote picker ---
@@ -245,35 +241,37 @@
         @extend %FullBorderLight-1
     // Emote picker content
     &-content
-        background-color: base.$bg-3
+        @extend %Panel-2
     // Emote icon
     &Icon-container
-        border: solid 1px transparent
+        @extend %FullBorderTransparent
     &Icon-container:hover,
     &Icon-container:focus
-        background-color: base.$bg-4
+        @extend %Panel-1
         border: solid 1px var(--NihilityTheme0)
     
     // Bottom bar
     &Footer-container,
     // Top bar
     &Navbar-container
-        color: base.$fg-2
         @extend %OverrideContentBordered-3
 
-    // Emote name
+    // Emote name in grid
     &-section-label
-        color: base.$fg-3
+        @extend %TextLight
+    // Emote name in footbar
+    &Preview-reaction-name
+        @extend %TextMedium
     // Emote server title
     &Preview-team
-        color: base.$fg-1
+        @extend %TextDark
     // Emote picker tab's icon
     &NavbarItem-icon
-        fill: base.$fg-1
+        @extend %SvgDark
         .ReactionPickerNavbarItem:hover &
-            fill: base.$fg-2
+            @extend %SvgMedium
         .ReactionPickerNavbarItem-active &
-            fill: base.$fg-3
+            @extend %SvgLight
 
 .ReactionPickerNavbarItem-active
     border-bottom-color: var(--NihilityTheme0)
@@ -282,7 +280,7 @@
 .IconMenuInput-container
     &-gray, &-white,
         .IconMenuInput-chevron-down, .IconMenuInput-selected-value-icon
-            fill: base.$fg-1
+            @extend %SvgDark
 
 /*
  * --- Misc menus ---
@@ -295,15 +293,15 @@
     // Server search
     &s
         &-container
-            background-color: base.$bg-2
+            @extend %Panel-3
         // Public servers header
         &-header
-            color: base.$fg-1
+            @extend %TextDark
     // Server search item
     &-container-desktop
         // Server search item focused
         &.GlobalSearchResult-container-focused
-            background-color: base.$bg-3
+            @extend %Panel-2
         // Hovered over
         &::after
-            background-color: base.$bg-hover
+            @extend %ContentGlare

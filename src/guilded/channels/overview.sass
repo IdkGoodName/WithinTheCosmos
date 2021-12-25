@@ -1,6 +1,6 @@
 @use "../../base"
 @use "../../set"
-@use "../../borders"
+@use "../../content"
 
 /*
  * --- Widget ---
@@ -8,11 +8,11 @@
 
 // About section hover
 .OverviewWidgetItemWrapper-container-clickable::after
-    background-color: base.$bg-hover
+    @extend %ContentGlare
 
 // Info icon
 .IconAndLabel-icon
-    fill: base.$fg-1
+    @extend %SvgDark
 
 // Handle input focused
 .OverviewWidgetItemEditable-container:focus.OverviewWidgetItemEditable-container
@@ -36,7 +36,7 @@
         z-index: 2
     // Description below the name of the server
     &-description
-        color: base.$fg-2
+        @extend %TextMedium
 
 /*
  * --- Showcase ---
@@ -46,10 +46,10 @@
 .TabEmptyState-title
     // Title
     &-title
-        color: base.$fg-2
+        @extend %TextMedium
     // Description
     &-subtitle
-        color: base.$fg-1
+        @extend %TextDark
 
 .ToggleControl-container.ToggleControl-container-highlighted
     border-color: base.$fg-0
@@ -59,7 +59,7 @@
     @extend %PanelBordered-3
     // Content showcase hover
     &::after
-        background-color: base.$bg-hover
+        @extend %ContentGlare
 
 // Showcase text
 .TeamOverviewContentItemCard
@@ -67,29 +67,29 @@
     &-title
         font-weight: bold
     &-title, &-subtitle
-        color: base.$fg-2
+        @extend %TextMedium
     // Content showcase sub-title
     &-subtitle2
-        color: base.$fg-1
+        @extend %TextDark
 
 // See all
 .TeamOverviewSectionHeader-cta-text
-    color: base.$fg-1
+    @extend %TextDark
     @include set.transition(color)
     // See all hover
     &:hover
-        color: base.$fg-2
+        @extend %TextMedium
 
 // Showcase event buttons
 .ToggleControlButton
     &-container, &-icon
-        @include set.color(base.$fg-1)
+        @extend %FontDark
 
 .ToggleControlButton-container.ToggleControlButton-container
     // Showcase event buttons hover
     &-desktop:hover .ToggleControlButton-icon,
     &-selected .ToggleControlButton-icon
-        fill: base.$fg-2
+        @extend %SvgMedium
 
 /*
  * --- Carousel/Scrollable list ---
@@ -107,18 +107,18 @@
 // Carousel arrow
 .CarouselList-controls-arrow
     transition: 1s
-    fill: base.$fg-2
+    @extend %SvgMedium
 
 // Leaderboard
 .TeamOverviewLeaderboardSection-leaderboard-container
-    background-color: base.$bg-2
+    @extend %Panel-3
 // Leaderboard game name
 .GameIconAndGameName-container-style-header .GameIconAndGameName-game-name
-    color: base.$fg-3
+    @extend %TextLight
 // Leaderboard header
 .LeaderboardHeader
     &-title, &-name, &-stats-header
-        color: base.$fg-3
+        @extend %TextLight
 // Leaderboard stats and numbers
 .LeaderboardRow-stat
-    color: base.$fg-2
+    @extend %TextMedium

@@ -1,6 +1,6 @@
 @use "../../base"
 @use "../../set"
-@use "../../borders"
+@use "../../content"
 
 /*
  * --===============--
@@ -14,31 +14,31 @@
 
 // Profile content
 .UserProfileV3-container
-    background-color: base.$bg-3
+    @extend %Panel-2
 
 // Tab header
 .NavV4SectionSidebarOptionGroup-header
-    color: base.$fg-1
+    @extend %TextDark
 .NavV4SectionSidebarOption
     // Tab icon
     &-icon
-        fill: base.$fg-1
+        @extend %SvgDark
         // Active
         .NavV4SectionSidebarOption-container-active &
-            fill: base.$fg-2
+            @extend %SvgMedium
     // Tab text
     &-label
-        color: base.$fg-2
+        @extend %TextMedium
         // Active
         .NavV4SectionSidebarOption-container-active &
-            color: base.$fg-3
+            @extend %TextLight
     // Hover
     &-container-inactive::after
-        background-color: base.$bg-hover
+        @extend %ContentGlare
 .UserProfilePictureControl
     // Status icon
     &-online-status
-        @extend %SetBorderDark-1
+        border-color: base.$bg-1
         right: 0
     // Avatar
     &-picture
@@ -50,30 +50,30 @@
 
 // Tagline
 .OverviewWidgetItem-text-paragraph
-    color: base.$fg-2
+    @extend %TextMedium
 
 // Profile setting buttons
 .UserProfileActionRow-button-icon
-    fill: base.$fg-2
+    @extend %SvgMedium
 
 // Game overview arrow
 .OverviewPageWidgetHeader-container-desktop .OverviewPageWidgetHeader-link-icon
-    fill: base.$fg-1
+    @extend %SvgDark
     @include set.transition(fill)
     // Game overview arrow hovered
     &:hover
-        fill: base.$fg-2
+        @extend %SvgMedium
 // Game
 .UserGameSummaryCard-container
-    background-color: base.$bg-1
+    @extend %Panel-4
 // Game property
 .UserInfoSummaryItem
     // Label
     &-label
-        color: base.$fg-1
+        @extend %TextDark
     // Value
     &-summary-content
-        color: base.$fg-2
+        @extend %TextMedium
 
 // Post
 .UserProfilePostPanel-container
@@ -89,13 +89,13 @@
 .TeamMemberBubble-name,
 .UserBasicInfoDisplay-name,
 .TeamWidgetProfileDetails-name
-    color: base.$fg-3
+    @extend %TextLight
 // No more posts text
 .NullState-container
-    color: base.$fg-1
+    @extend %TextDark
 // No more posts SVG
 .GuildedBotAvatar-container
-    fill: base.$fg-1
+    @extend %SvgDark
 
 /*
  * --- Games ---
@@ -103,7 +103,7 @@
 
 // Game
 .PlayerAliasCard-container-type-game
-    background-color: base.$bg-1
+    @extend %Panel-4
 // Game border
 .CardWrapper-container:not(.CardWrapper-container-highlighted)::after
     @extend %SetBorderDark-1
@@ -111,34 +111,34 @@
 .PlayerCard
     // Container
     &-container
-        background-color: transparent
+        @extend %PanelTransparent
     // Game's name
     &GameInfo-name
-        color: base.$fg-3
+        @extend %TextLight
 // Game header player's name
 .GameAliasDisplay-container
-    color: base.$fg-1
+    @extend %TextDark
     @include set.transition(color)
     // Name hover
     &:hover
-        color: var(--NihilityTheme2)
+        @extend %TextThemeBleached
 // Game info
 .PlayerAliasCard-container-type-game .PlayerAliasCard-info
-    background-color: transparent
+    @extend %PanelTransparent
 // Game info no accounts linked
 .UserSocialPresence-no-other-links
-    color: base.$fg-1
+    @extend %TextDark
 // Game info handle
 .UserRichSocialLink
     // Icon
     &-avatar
-        fill: base.$fg-1
+        @extend %SvgDark
     // Text
     &-handle
-        color: base.$fg-2
+        @extend %TextMedium
     // Details
     &-metadata
-        color: base.$fg-1
+        @extend %TextDark
 
 /*
  * --- Friends ---
@@ -146,7 +146,7 @@
 
 // A button when hovering over friends
 .FriendsList-actions .FriendList-action-icon
-    background-color: base.$bg-2
+    @extend %Panel-3
 
 /*
  * -=- DMs -=-
@@ -155,18 +155,18 @@
 // Side bar
 .ChatChannelList-container,
 .WebAppV2-sidebar
-    background-color: base.$bg-1
+    @extend %Panel-4
 
 .ChatChannelListItem
     &-container
         --border-color: #{base.$bg-1}
     // Selected DMs
     &-container-selected
-        background-color: base.$bg-5
+        @extend %Panel-0
         --border-color: #{base.$bg-3}
     // Hovered DMs
     &-container:not(&-container-selected):hover
-        background-color: base.$bg-3
+        @extend %Panel-2
         --border-color: #{base.$bg-2}
     // Remove DMs crossmark
     &-container:not(&-container-selected):hover &-remove-icon,
@@ -176,18 +176,18 @@
         @include set.transition(fill)
         // Remove DMs crossmark hover
         &:hover
-            fill: base.$fg-3
+            @extend %SvgLight
     // Selected DMs content
     &Info-container-selected
         // Name
         .ChatChannelListItemInfo-name
-            color: base.$fg-3
+            @extend %TextLight
         // Text
         .ChatChannelListItemInfo-latest-message
-            color: base.$fg-2
+            @extend %TextMedium
         // Timestamp
         .ChatChannelListItemInfo-last-at
-            color: base.$fg-1
+            @extend %TextDark
 
 // User typing in DMs
 .TypingIndicator-container
@@ -203,17 +203,17 @@
 
 // Sidebar
 .NavV4SectionSidebar-container
-    background-color: transparent
+    @extend %PanelTransparent
 
 // Selected tab
 .NavV4SectionSidebarOption-container-active
-    background-color: base.$bg-5
+    @extend %Panel-0
     // Selected tab icon
     .NavV4SectionSidebarOption-icon
-        fill: base.$fg-3
+        @extend %SvgLight
     // Selected tab text
     .NavV4SectionSidebarOption-label
-        color: base.$fg-3
+        @extend %TextLight
 
 /*
  * --- Content ---
@@ -223,23 +223,23 @@
 .TournamentsPortal
     // Container
     &Page-container
-        background-color: base.$bg-3
+        @extend %Panel-2
     // Video
     &Header-video-mask
         background-image: linear-gradient(to bottom, rgba(base.$bg-3, 0.85) 20%, rgba(0, 0, 0, 0) 65%, rgba(base.$bg-3, 0.95))
 // Tournament card
 .TournamentCard-container
-    background-color: base.$bg-5
+    @extend %Panel-0
 // Information icon
 .TournamentSummaryItem
     &-container-size-sm &-icon
-        fill: base.$fg-1
+        @extend %SvgDark
     // Information text
     &-text
-        color: base.$fg-2
+        @extend %TextMedium
 // This group is archived
 .GroupUpsell-container-archived
-    background-color: base.$bg-3
+    @extend %Panel-2
 
 /*
  * -=- Flow -=-
@@ -247,7 +247,7 @@
 
 .ApiDocs
     &-container
-        background-color: base.$bg-3
+        @extend %Panel-2
     &-api-callout
         color: base.$info
 .RestApiDocs
@@ -262,67 +262,67 @@
 
 // Background of explore pages
 .ExplorePage-container
-    background-color: base.$bg-3
+    @extend %Panel-2
 // Sidebar page list
 .NavbarNavIcon-container
     &:hover
         background-color: rgba(base.$bg-hover, 0.1)
     // Selected
     &-selected
-        background-color: base.$bg-3
+        @extend %Panel-2
 
 // Find a server tabs
 .IconNavMenuButton-icon
-    fill: base.$fg-1
+    @extend %SvgDark
     @include set.transition(fill)
     .IconNavMenuButton-container-desktop:hover &
-        fill: base.$fg-2
+        @extend %SvgMedium
 // Find a server tabs containers
 .IconNavMenuButton-container
     @include set.transition(color)
     &, &:visited, &:active, &:focus
-        color: base.$fg-1
+        @extend %TextDark
     &:hover
-        color: base.$fg-2
+        @extend %TextMedium
 
 .CardList
     // Title
     &-label
-        color: base.$fg-3
+        @extend %TextLight
 // "A new way to scrim" Description
 .TitleAndDescriptionPanel-description
-    color: base.$fg-1
+    @extend %TextDark
 // No scrims description
 .ScrimFinderRecentMatches-none
-    color: base.$fg-1
+    @extend %TextDark
 // Scrim team
 .ScrimFinderLeaderboardTeam
     &-name
-        color: base.$fg-3
+        @extend %TextLight
     // Index
     &-rank
-        color: base.$fg-1
+        @extend %TextDark
 
 // Post card
 .ContentCard
     &-container
-        background-color: base.$bg-3
+        @extend %Panel-2
     // Footer
     &-metas
-        background-color: base.$bg-2
+        @extend %Panel-3
         // Footer hover
         &::after
-            background-color: base.$bg-hover
+            @extend %ContentGlare
 
 // Profile post card
 .ProfilePostCard
     &-title
-        color: base.$fg-3
+        @extend %TextLight
     &-metas-time
-        color: base.$fg-1
+        @extend %TextDark
         @include set.transition(color)
         .ContentCard-container:hover &
-            color: base.$fg-3
+            @extend %TextLight
 
 // Invite progressbar
 .PercentageBar
@@ -337,14 +337,14 @@
         @extend %SetBorderDark-1
 // Invite text
 .RequirementProgressBar-unsatisfied-text
-    color: base.$fg-1
+    @extend %TextDark
 
 // Explore servers and players game selector
 .TypeaheadInput-container-dropdown .TypeaheadInput-typeahead-options-list,
 .TypeaheadMenu-container
     @extend %OverridePanelBordered-0
     .SelectMenuItem-label
-        color: base.$fg-2
+        @extend %TextMedium
 
 // Game selector input
 .TextInputWithLabel-container-dropdown
@@ -358,17 +358,17 @@
         border-color: var(--NihilityTheme0) !important
 // Add background to it as well
 .SelectMenu-container
-    background-color: base.$bg-5
+    @extend %Panel-0
 // Game selector item
 .SelectMenuItem-container
     &-desktop:hover
-        background-color: base.$bg-3
+        @extend %Panel-2
         .SelectMenuItem-label
-            color: base.$fg-3
+            @extend %TextLight
     &-selected
-        background-color: base.$bg-2
+        @extend %Panel-3
         .SelectMenuItem-label
-            color: base.$fg-3
+            @extend %TextLight
     // Game selector first item
     &-border-bottom
         @extend %SetBorderDark-1
@@ -378,7 +378,7 @@
  */
 
 .LandingPageNavBar-container-theme-gilded
-    background-color: base.$bg-5
+    @extend %Panel-0
 .LogoAndWordmarkV2-container-theme-dark
     fill: base.$gold
 .LandingPageNavBarLinks-container-theme-dark .LandingPageNavBarLinks-link
@@ -401,13 +401,13 @@
             color: base.$gold
 
 %JobsSectionHeading
-    color: base.$fg-3
+    @extend %TextLight
 %JobsSectionDescription
-    color: base.$fg-2
+    @extend %TextMedium
 %JobsItemHeading
-    color: base.$fg-2
+    @extend %TextMedium
 %JobsItemDescription
-    color: base.$fg-1
+    @extend %TextDark
 // Jobs
 .JobLandingOpenings
     &-heading
@@ -415,11 +415,11 @@
     &-description
         @extend %JobsSectionDescription
     &-job
-        background-color: base.$bg-3
+        @extend %Panel-2
         &:hover
-            background-color: base.$bg-5
+            @extend %Panel-0
         &-icon, svg
-            fill: base.$fg-1
+            @extend %SvgDark
         &:hover svg
             fill: base.$gold
         &-fill-light-blue:hover svg
@@ -433,7 +433,7 @@
 // Perks
 .JobsPerks
     &-container
-        background-color: base.$bg-3
+        @extend %Panel-2
     &-header
         @extend %JobsSectionHeading
     &-description

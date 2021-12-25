@@ -1,5 +1,5 @@
 @use "../base"
-@use "../borders"
+@use "../content"
 
 @use "./layouts/app"
 @use "./layouts/common"
@@ -27,27 +27,27 @@
         @extend %PanelBordered-4
         // Hover
         &::after
-            background-color: base.$bg-hover
+            @extend %ContentGlare
     // Icon
     &-icon
-        fill: base.$fg-2
+        @extend %SvgMedium
     // Text
     &-text
-        color: base.$fg-2
+        @extend %TextMedium
 
 .CreateGroupOverlayWrapper-upload-avatar
     @extend %PanelBordered-4
     .SVGIcon-icon
-        fill: base.$fg-2
+        @extend %SvgMedium
     &:hover
-        background-color: base.$bg-3
+        @extend %Panel-2
 /*
  * --- Status ---
  */
 
 // Status
 .StatusMessage-container
-    color: base.$fg-2
+    @extend %TextMedium
     // Status info
     &-type-info
         // No mic detected
@@ -57,47 +57,47 @@
             @extend %PanelBordered-0
     // Status hover
     &-desktop.StatusMessage-container-clickable::after
-        background-color: base.$bg-hover
+        @extend %ContentGlare
     &-ephemeral
         @extend %PanelBordered-4
         // Copy invite alert
         &.StatusMessage-container-type-success
-            background-color: base.$bg-1
-            color: base.$good-0
+            @extend %Panel-4
+            @extend %TextGood
             // Icon
             .StatusMessage-icon
-                fill: base.$good-0
+                @extend %SvgGood
         // Invalid URL
         &.StatusMessage-container-type-error
-            background-color: base.$bg-1
-            color: base.$bad-0
+            @extend %Panel-4
+            @extend %TextBad
             // Icon
             .StatusMessage-icon
-                fill: base.$bad-0
+                @extend %SvgBad
 
 // Status text
 .StatusMessage
     // Icon
     &-icon
-        fill: base.$fg-2
+        @extend %SvgMedium
 
 // Connecting
 .NetworkReconnectionDisplay
     // Loading bar
     &-container, &-container-reconnecting
-        background-color: base.$bg-0
+        @extend %Panel-5
     // Connected
     &-container
         .NetworkReconnectionDisplay-icon
-            fill: base.$good-0
+            @extend %SvgGood
         .NetworkReconnectionDisplay-text
-            color: base.$good-0
+            @extend %TextGood
 
 // Status message as a banner
 .StatusMessage-container-persistent
     // Message
     .StatusMessage-content
-        color: base.$fg-3
+        @extend %TextLight
     // Make it dark with a border
     &.StatusMessage-container-type-banner
         background: base.$bg-0
@@ -118,28 +118,28 @@
 // Wrapper
 .TeamCardDisplay-container,
 .CardWrapper-container
-    background-color: base.$bg-3
+    @extend %Panel-2
 
 // Server
 .TeamCardHeader
     // Name
     &-team-name
-        color: base.$fg-3
+        @extend %TextLight
     // Description
     &-description
-        color: base.$fg-2
+        @extend %TextMedium
 
 // Info
 .EmphasizedLabel-container
-    color: base.$fg-1
+    @extend %TextDark
 
 .EmbedCardFooter
     // Footer
     &-container
-        background-color: base.$bg-1
+        @extend %Panel-4
     // Guilded's icon
     &-logomark
-        fill: var(--NihilityTheme0)
+        @extend %SvgTheme
 
 /*
  * -=- Icons -=-

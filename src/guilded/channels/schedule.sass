@@ -1,10 +1,10 @@
 @use "../../base"
 @use "../../set"
-@use "../../borders"
+@use "../../content"
 
 // Whole container
 .AvailabilityDisplay-container
-    background-color: base.$bg-3
+    @extend %Panel-2
 
 .AvailabilityDisplayHeader
     // Container arrow
@@ -12,30 +12,30 @@
         @extend %PanelBordered-2
         // Container arrow hover
         &::after
-            background-color: base.$bg-hover
+            @extend %ContentGlare
     // Container arrow's icon
     &-button
-        fill: base.$fg-2
+        @extend %SvgMedium
     // Current and other days
     &-day-today, &-day
-        background-color: base.$bg-5
+        @extend %Panel-0
     // Tomorrow/alternative day
     &-day-alt
-        background-color: base.$bg-3
+        @extend %Panel-2
     // Day
     &-date
-        color: base.$fg-3
+        @extend %TextLight
     // Timezone and date
     &-timezone,
     &-subtitle
-        color: base.$fg-1
+        @extend %TextDark
         @include set.transition(color)
         // Hover
         &:hover
-            color: base.$fg-2
+            @extend %TextMedium
 // Time
 .AvailabilityDisplayTimeAxis-label
-    color: base.$fg-2
+    @extend %TextMedium
 // Current time line
 .AvailabilityDayHour-now-line
     background-color: base.$active
@@ -43,10 +43,10 @@
 .AvailabilityDisplayDaysPlaceholder
     // Others' area
     &-day, &-day-today
-        background-color: base.$bg-4
+        @extend %Panel-1
     // Others' area tomorrow/alternative day
     &-day-alt
-        background-color: base.$bg-4
+        @extend %Panel-1
     // Lighter/creation area
     &-create
-        background-color: base.$bg-5
+        @extend %Panel-0

@@ -1,15 +1,16 @@
 @use "../../base"
 @use "../../set"
+@use "../../content"
 
 .ContentMetadataCreationInfo-from-now-link
     &, &:visited, &:active, &:focus
-        color: base.$fg-1
+        @extend %TextDark
     &:hover
-        color: base.$fg-2
+        @extend %TextMedium
 
 // Unread announcement
 .TeamAnnouncementItem-container-unread .TeamAnnouncementItem-widget-wrapper
-    background-color: base.$bg-1
+    @extend %Panel-4
 
 /*
  * --- Role label ---
@@ -18,11 +19,11 @@
 
 // Role name
 .TeamWidgetProfileRank-rank-name
-    color: base.$fg-1
+    @extend %TextDark
     @include set.transition(color)
     // Role name hover
     &:hover
-        color: base.$fg-2
+        @extend %TextMedium
 
 /*
  * --- Comment section ---
@@ -38,16 +39,16 @@
     @include set.transition(color)
 // View more
 .CircleImageStack-label
-    color: base.$fg-1
+    @extend %TextDark
     // View more hovered over
     .CircleImageStack-container-actionable:hover &
-        color: base.$fg-2
+        @extend %TextMedium
 
 .LastReplyDisplay
     // Timestamp
     &Content-timestamp
-        color: base.$fg-1
+        @extend %TextDark
         transition: color 0.2s
     // Comment hovered over should make time stamp brighter
     &-container:hover &Content-container &Content-timestamp
-        color: base.$fg-2
+        @extend %TextMedium

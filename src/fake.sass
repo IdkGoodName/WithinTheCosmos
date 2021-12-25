@@ -1,5 +1,5 @@
 @use "./base"
-@use "./borders"
+@use "./content"
 
 $pill-bg: rgba(base.$fg-3, 0.1)
 
@@ -26,4 +26,5 @@ $pill-bg: rgba(base.$fg-3, 0.1)
         size: 10px
         weight: bold
     text-transform: uppercase
-    @extend %ContentBordered-3
+    background-color: base.$bg-2
+    border: solid 1px base.$border-light-1

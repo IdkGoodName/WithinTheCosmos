@@ -1,6 +1,6 @@
 @use "../base"
 @use "../set"
-@use "../borders"
+@use "../content"
 @use "../fake"
 @use "sass:color"
 
@@ -35,27 +35,27 @@
     &-type
         // For server invite titles,
         &-heading2
-            color: base.$fg-3
+            @extend %TextLight
         // For level titles, message thread pop up text
         &-subtext2
-            color: base.$fg-1
+            @extend %TextDark
         // Status messages
         &-subtext3
-            color: base.$fg-2
+            @extend %TextMedium
     &-color-gilded1
-        color: var(--NihilityLink)
+        @extend %TextLink
 
 // Not loaded
 .LayeredPageContent-fetch-error
-    background-color: base.$bg-3
+    @extend %Panel-2
 
 // Not found/Not loaded
 .NullStateV2
     &-title
-        color: base.$fg-3
+        @extend %TextLight
     &-container-size-md &-title,
     &-subtitle
-        color: base.$fg-2
+        @extend %TextMedium
 
 /*
  *
@@ -85,7 +85,7 @@
  */
 
 .SlateHeadingRenderer
-    color: base.$fg-3
+    @extend %TextLight
 
 
 /*
@@ -111,14 +111,14 @@
 .CodeContainerRenderer-container,
 // Code block in Markdown plain text
 .PrismTokenCodeBlockRenderer-container
-    background-color: base.$bg-0
+    @extend %Panel-5
     // Make sure Markdown code block also gets it
     code
         font-family: 'Courier', monospace
 
 // Code block line
 .CodeLineRenderer
-    background-color: transparent
+    @extend %PanelTransparent
 
 // Code block
 .CodeContainerRenderer
@@ -126,7 +126,7 @@
         .CalloutBadge-container
             color: base.$fg-code
     &-header
-        background-color: base.$bg-1
+        @extend %Panel-4
 
 /*
  * --- Lists ---
@@ -150,7 +150,7 @@
         color: base.$fg-format
     // Inline code
     &-inline-code, &-inline-code-v2
-        background-color: base.$bg-0
+        @extend %Panel-5
         color: base.$fg-code
 
 // Old inline code
@@ -161,15 +161,15 @@
 .TemplateParameter-container,
 // Channel mentions
 .ChannelPill-container
-    color: base.$fg-3
+    @extend %TextLight
     background-color: fake.$pill-bg
 // Template icon
 .TemplateParameter-icon
-    fill: base.$fg-1
+    @extend %SvgDark
 
 // Spoilers
 .SpoilerRenderer-container
-    background-color: base.$bg-0
+    @extend %Panel-5
     border-radius: base.$radius-2
     padding: 0 base.$spacing-side base.$spacing-top base.$spacing-side
 
@@ -177,10 +177,10 @@
 .LinkRenderer
     &, &:visited, &:focus
         .MarkRenderer-read-only
-            color: var(--NihilityLink)
+            @extend %TextLink
     &:active, &:hover
         .MarkRenderer-read-only
-            color: var(--NihilityLinkHover)
+            @extend %TextLinkHighlight
 
 /*
  * --- Images ---
@@ -212,7 +212,7 @@
 
 // Image caption
 .MediaCaptionLineRenderer
-    color: base.$fg-1
+    @extend %TextDark
 // Caption itself
 .MediaRenderer-caption
     border-color: base.$fg-0
@@ -224,8 +224,8 @@
 
 // Don't show it on the image caption that isn't being edited
 .MediaRenderer-read-only
-    background-color: transparent
-    border-color: transparent
+    @extend %PanelTransparent
+    @extend %SetBorderTransparent
 
 // Formatting in caption
 .MediaCaptionLineRenderer .MarkRenderer
@@ -234,7 +234,7 @@
         color: color.adjust(base.$fg-format, base.$blackness: 20%)
     // Inline code
     &-inline-code, &-inline-code-v2
-        background-color: base.$bg-0
+        @extend %Panel-5
         color: color.adjust(base.$fg-code, base.$blackness: 20%)
 
 
@@ -246,11 +246,7 @@
     // Content info not loaded
     &CardError-container
         background-color: base.$bg-3
-        border-radius: base.$radius-2
         color: base.$fg-1
-        @include set.transition(color)
-        &:active, &:focus, &:hover
-            color: base.$fg-2
     // Container selected in editor
     &Renderer-container-selected
         border-color: var(--NihilitySelect)
@@ -262,12 +258,10 @@
 .DefaultContentEmbedCard-content
     // Wrapper
     &-wrapper
-        border-radius: base.$radius-2
         @extend %OverrideContentBordered-2
         // Hovered over
         &:not(&-disabled)::after
-            background-color: base.$bg-hover
-            border-radius: base.$radius-2
+            @extend %ContentGlare
     // Fading
     &-fade-overflow::after
         //mask-image: linear-gradient(to bottom, black, transparent 95%)
@@ -283,7 +277,7 @@
 .ChatEmbed-container,
 .OpenGraphEmbed-content,
 .TeamEmbedCard-container
-    background-color: base.$bg-2
+    @extend %Panel-3
     border:
         radius: base.$radius-2
         color: base.$border-light-1
@@ -300,15 +294,15 @@
             background-color: base.$bg-hover
             border-radius: base.$radius-2
         &-description
-            color: base.$fg-2
+            @extend %TextMedium
     &-content:not([style])
         border-left: solid 1px base.$border-light-1
 
 .OpenGraphEmbedContent-domain
-    color: base.$fg-1
+    @extend %TextDark
     // Domain icon
     &-icon
-        fill: base.$fg-1
+        @extend %SvgDark
 
 .ChatEmbedContent-image,
 .OpenGraphEmbedImage-image,
@@ -329,19 +323,19 @@
 .TeamEmbedCard
     // Server's description
     &-description
-        color: base.$fg-2
+        @extend %TextMedium
     // Server invite hover
     &-container::after
-        background-color: base.$bg-hover
+        @extend %ContentGlare
 
 .TournamentInviteEmbedCard-container
-    background-color: base.$bg-1
+    @extend %Panel-4
     &::after
-        background-color: base.$bg-hover
+        @extend %ContentGlare
 
 // Member and follower count
 .EmphasizedLabel-container-type-subtle
-    color: base.$fg-1
+    @extend %TextDark
 
 // Member and follower seperator dot
 .TeamFollowerMemberCount-separator
@@ -365,17 +359,17 @@
 
 // Form's title
 .CustomFormHeader-title
-    color: base.$fg-3
+    @extend %TextLight
 // Form's description
 .CustomFormHeader-description
-    color: base.$fg-2
+    @extend %TextMedium
 
 /*
  * --- Misc ---
  */
 
 .ReplyingToUserHeader-post-link
-    color: base.$fg-0
+    @extend %TextDarker
 
 
 /*
@@ -405,11 +399,11 @@
 .DocEditor-container .DocEditor-content-input,
 // List item editor
 .TeamListItemsInput-editor
-    background-color: transparent
+    @extend %PanelTransparent
     border: none
 // Forum reply editor
 .TeamThreadPostEditor-editor .Editor-container
-    background-color: base.$bg-3
+    @extend %Panel-2
 
 // Editor toolbar
 .SlateToolbarStrip
@@ -428,7 +422,7 @@
 .ChatV2MessageReplyTooltipInput
     // Content editor
     &-container .Editor-container
-        background-color: base.$bg-3
+        @extend %Panel-2
     // Title editor
     &-title-container
         @extend %ContentBordered-2
@@ -442,9 +436,9 @@
 // Change text in no write allowed inputs
 .ChatChannelInput-no-permissions,
 .ChatChannelInputPublic-container
-    color: base.$fg-1
+    @extend %TextDark
 .ChatChannelInputPublic-header
-    color: base.$fg-2
+    @extend %TextMedium
 
 /*
  * --- Forums and Profile ---
@@ -465,26 +459,26 @@
 .CollapsedInput-container
     // Input hover
     &::after
-        background-color: base.$bg-hover
+        @extend %ContentGlare
 
 // Input text
 .DraftInputWithTitleV2-input::placeholder
-    color: base.$fg-2
+    @extend %TextMedium
 
 // Write a reply
 .TeamThreadReplyCreator-title
-    color: base.$fg-3
+    @extend %TextLight
 
 // Cancel button
 .CancelText-container
-    color: base.$fg-1
+    @extend %TextDark
     // Cancel button hovered
     &:hover
-        color: base.$fg-2
+        @extend %TextMedium
 
 // Comment input small
 .CollapsedInput-container-size-sm
-    color: base.$fg-1
+    @extend %TextDark
 
 .PostReplyQuoteButtons-option
     // Quote/Reply buttons
@@ -498,22 +492,22 @@
 // Leave a comment/Share
 .ShareContentTrigger-text,
 .ContentMetadataReplyInfo-reply-text
-    color: base.$fg-1
+    @extend %TextDark
     @include set.transition(color)
 
 .ShareContentTrigger-container-desktop:hover .ShareContentTrigger-text,
 .ContentMetadataReplyInfo-repliers:hover .ContentMetadataReplyInfo-reply-text
-    color: base.$fg-2
+    @extend %TextMedium
 
 // Leave a comment/Share icon
 .ShareContentTrigger-icon,
 .ContentMetadataReplyInfo-icon
-    fill: base.$fg-1
+    @extend %SvgDark
     @include set.transition(fill)
 
 .ShareContentTrigger-container-desktop:hover .ShareContentTrigger-icon,
 .ContentMetadataReplyInfo-repliers:hover .ContentMetadataReplyInfo-icon
-    fill: base.$fg-2
+    @extend %SvgMedium
 
 
 /*
@@ -522,7 +516,7 @@
 
 // Selected text toolbar picker
 .SlateSelectionToolbar-toolbar
-    background-color: base.$bg-0
+    @extend %Panel-5
     box-shadow: 0 0 16px 2px black
 
 // Selected text toolbar caret
@@ -535,7 +529,7 @@
 .SlateEditor-clear-icon,
 .SlateToolbarIcon-icon,
 .SlateToolbarMenuIcon
-    fill: base.$fg-1
+    @extend %SvgDark
     @include set.transition(fill)
 
 // Hovered over toolbar icon
@@ -546,16 +540,16 @@
 .SlateToolbarMenuIcon:hover,
 .SlateToolbarMenuIcon *:hover .SlateToolbarMenuIcon-carat,
 .SlateToolbarMenuIcon *:hover .SlateToolbarMenuIcon-icon
-    fill: base.$fg-3
+    @extend %SvgLight
 
 // Active toolbar icon
 .SlateEditor-send-icon,
 .SlateToolbarIcon-icon-active
-    fill: base.$fg-2
+    @extend %SvgMedium
 
 // Drop arrow for toolbar icons
 .SlateToolbarMenuIcon-carat
-    fill: base.$fg-1
+    @extend %SvgDark
 
 
 /*
@@ -575,7 +569,7 @@
     // Picker's header
     &-container
         background-color: base.$bg-2
-        border-bottom: solid 1px base.$border-light-2
+        //border-bottom: solid 1px base.$border-light-2
         color: base.$fg-1
     // Picker's search icon (@, #)
     &-searchTerm
@@ -585,30 +579,30 @@
 
 // Template parameter icon
 .TemplateParameterMenuItem-icon
-    fill: base.$fg-1
+    @extend %SvgDark
 
 // Item hovered over
 .MenuItemEnabled-container
     border-radius: base.$radius-1
     border: solid 1px transparent
     &::after
-        background-color: base.$bg-hover
+        @extend %ContentGlare
     &-highlighted
         background-color: rgba(base.$bg-hover, 0.1)
         @extend %FullBorderLight-1
         .TemplateParameterMenuItem-icon
-            fill: base.$fg-2
+            @extend %SvgMedium
 
 .MentionMenuItem
     // Item's icon
     &-broadcast
-        fill: base.$fg-1
+        @extend %SvgDark
         // Picked item's icon
         .MenuItemEnabled-container-highlighted &
-            fill: base.$fg-2
+            @extend %SvgMedium
     // Item's description
     &-description
-        color: base.$fg-1
+        @extend %TextDark
         // Picked item's description
         .MenuItemEnabled-container-highlighted &
-            color: base.$fg-2
+            @extend %TextMedium

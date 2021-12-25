@@ -1,5 +1,5 @@
 @use "../../base"
-@use "../../borders"
+@use "../../content"
 
 /*
  * --- Forum post list ---
@@ -8,22 +8,22 @@
 .TeamPostRow-container
     @extend %PanelBordered-3
     &-unread
-        background-color: base.$bg-1
+        @extend %Panel-4
     // Forum post hover
     &-desktop::after
-        background-color: base.$bg-hover
+        @extend %ContentGlare
 
 .TeamWidgetCommentCount
     // Comment count icon
     &-icon
-        fill: base.$fg-1
+        @extend %SvgDark
     // Comment count text
     &-container-size-lg &-label
-        color: base.$fg-1
+        @extend %TextDark
 
 // Author and date
 .TeamPostRow-options-wrapper
-    color: base.$fg-1
+    @extend %TextDark
 
 
 /*
@@ -32,7 +32,7 @@
 
 // Outer forum post
 .TeamThreadPostPanel-container
-    background-color: transparent
+    @extend %PanelTransparent
 
 // Post editor background
 .TeamThreadPostEditor-container,
@@ -40,25 +40,26 @@
 .TeamThreadPostPanelDisplay-container
     @extend %PanelBordered-3
     border-radius: base.$radius-3
+    --border-color: #{base.$bg-1}
 
 // Reply SVG
 .ReplyingToUserHeader-icon
-    fill: base.$fg-1
+    @extend %SvgDark
 
 // Reply index
 .ReplyPanel-reply-num
-    color: base.$fg-1
+    @extend %TextDark
     // Hovered over
     .ReplyPanel-options-wrapper:hover &
-        color: base.$fg-2
+        @extend %TextMedium
 
 // Side handle rail
 .Scrubber-rail
-    background-color: base.$bg-0
+    @extend %Panel-5
 
 // Unread side rail
 .Scrubber-highlight-rail
-    background-color: base.$bg-2
+    @extend %Panel-3
 
 .Scrubber-handle
     // Side handle
@@ -71,7 +72,7 @@
 .ScrubberLabel
     // Side handle label post index/posts count
     &-value
-        color: base.$fg-2
+        @extend %TextMedium
     // Side handle label date
     &-label
-        color: base.$fg-1
+        @extend %TextDark

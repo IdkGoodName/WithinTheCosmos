@@ -1,10 +1,10 @@
 @use "../../base"
 @use "../../set"
-@use "../../borders"
+@use "../../content"
 
 // Whole container
 .VoiceChannelDisplay-container
-    background-color: base.$bg-3
+    @extend %Panel-2
 
 /*
  * --- Voice room list ---
@@ -16,25 +16,25 @@
         @include set.transition(background)
     // Voice room icon
     &-icon
-        fill: base.$fg-1
+        @extend %SvgDark
 
 // Voice room caret
 .DropdownCaratV2-container
-    fill: base.$fg-1
+    @extend %SvgDark
     // Voice room caret hover
     &-desktop:hover
-        fill: base.$fg-2
+        @extend %SvgMedium
 
 // Voice room hovered over
 .VoiceChannelGroupHeader-container-interactable:hover
-    background-color: base.$bg-5
+    @extend %Panel-0
     &:hover .VoiceChannelGroupHeader
         // Voice room name hover
         &-text
-            color: base.$fg-2
+            @extend %TextMedium
         // Voice room icon hover
         &-icon
-            fill: base.$fg-2
+            @extend %SvgMedium
 
 /*
  * --- Labels ---
@@ -42,15 +42,15 @@
 
 // X/Y allowed label
 .LimitLabel-container
-    background-color: base.$bg-0
+    @extend %Panel-5
 
 // Current user count
 .GuildedText-container-type-heading6
-    color: base.$fg-2
+    @extend %TextMedium
 
 // Max user count
 .LimitLabel-limit
-    color: base.$fg-1
+    @extend %TextDark
 
 /*
  * --- Voice settings ---
@@ -61,22 +61,22 @@
     &-container
         @extend %SetBorderDark-0
     &-key
-        background-color: transparent
+        @extend %PanelTransparent
 // + before the key
 .HotkeysDisplay-key-wrapper:not(:first-child)::before
-    color: base.$fg-1
+    @extend %TextDark
 // Edit keybinds
 .TextButton-container-type-light
-    color: var(--NihilityLink)
+    @extend %TextLink
     @include set.transition(color)
     &.TextButton-container-desktop:hover
-        color: var(--NihilityLinkHover)
+        @extend %TextLinkHighlight
 // Keybind in the settings
 .ItemKeybindInput-container
-    background-color: base.$bg-2
+    @extend %Panel-3
 // Sub-text
 .GuildedText-container-type-subtextHeading
-    color: base.$fg-1
+    @extend %TextDark
 // Keybind recorder
 .HotkeyRecorder-container
     border-color: base.$fg-0
@@ -87,12 +87,10 @@
 .ItemKeybindInput-container-multiple-entities-allowed .ItemKeybindInput-subtext-wrapper
     // + Add keybind
     .ItemKeybindInput-plus-sign, .ItemKeybindInput-subtext
-        fill: base.$fg-1
-        color: base.$fg-1
+        @extend %FontDark
     // Hover
     &:hover .ItemKeybindInput-plus-sign, &:hover .ItemKeybindInput-subtext
-        fill: base.$fg-2
-        color: base.$fg-2
+        @extend %FontMedium
 
 /*
  * --- Voice card ---
@@ -101,21 +99,21 @@
 .VoiceConnectionDisplayPanelContents
     // Whole container
     &-container
-        background-color: base.$bg-0
+        @extend %Panel-5
     // Voice header
     &-info-wrapper
         border-bottom: 0
         // Voice header hover
         &::after
-            background-color: base.$bg-hover
+            @extend %ContentGlare
 
 .VoiceConnectionDisplayInfo
     // Voice header info display
     &-container
-        background-color: transparent
+        @extend %PanelTransparent
     // Voice header info icon
     &-icon
-        fill: base.$fg-1
+        @extend %SvgDark
 
 // Voice header toggle buttons
 .VoiceConnectionDisplayButtons-button
@@ -124,45 +122,45 @@
 
 // Voice header toggle button hover
 .SVGIconWithTooltip-container-clickable:hover
-    fill: base.$fg-3
+    @extend %SvgLight
 
 // Voice participant list
 .VoiceConnectionDisplayPanelContents-participants
-    background-color: base.$bg-1
+    @extend %Panel-4
 
 // Voice participant
 .VoiceChannelGroupUser-container
     // Hover
     &:hover
-        background-color: base.$bg-3
+        @extend %Panel-2
     // Right clicked
     &.VoiceChannelGroupUser-container-active
-        background-color: base.$bg-2
+        @extend %Panel-3
 
 // Voice participants icon
 .VoiceConnectionDisplayParticipants-participants-icon
-    fill: base.$fg-0
+    @extend %SvgDarker
 
 // Invite icon
 .SVGIconWithTooltip-container
-    fill: base.$fg-1
+    @extend %SvgDark
 
 // Connection
 .VoiceConnectionDisplayInfo
     &-connection
         // Good connection
         &-good &-icon
-            fill: base.$good-0
+            @extend %SvgGood
         &-good .GuildedText-container
             color: base.$good-1 !important
         // Not bad, but neither a good connection
         &-warn &-icon
-            fill: base.$neutral-0
+            @extend %SvgNeutral
         &-warn .GuildedText-container
             color: base.$neutral-1 !important
         // Bad connection
         &-bad &-icon
-            fill: base.$bad-0
+            @extend %SvgBad
         &-bad .GuildedText-container
             color: base.$bad-1 !important
         // Transition

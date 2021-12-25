@@ -1,7 +1,7 @@
 @use "../../base"
 @use "../../set"
 @use "../../fake"
-@use "../../borders"
+@use "../../content"
 
 /*
  * --- Content ---
@@ -16,20 +16,20 @@
         background-color: rgba(base.$bg-hover, 0.1)
 // Select all checkmark
 .SelectToggleIcon-checkmark
-    fill: var(--NihilityTheme0)
+    @extend %SvgTheme
 
 .ItemManagerListItem
     // Selected member
     &-checkmark-icon
-        fill: var(--NihilityTheme0)
+        @extend %SvgTheme
     &-container-selectable::after
         border-color: var(--NihilityTheme0)
 // Selected sorting
 .ItemManagerColumnHeader-container-sortable.ItemManagerColumnHeader-active
-    color: var(--NihilityTheme0)
+    @extend %TextTheme
     // Arrow
     .ItemManagerColumnHeader-icon
-        fill: var(--NihilityTheme0)
+        @extend %SvgTheme
 
 /*
  * --- Filter ---
@@ -37,23 +37,23 @@
 
 // Filter icon
 .ItemManagerFilterButton-icon
-    fill: base.$fg-1
+    @extend %SvgDark
     @include set.transition(fill)
 
 .ItemManagerFilterButton-container
     // Filter icon hover
     &:not(&-active):hover .ItemManagerFilterButton-icon
-        fill: base.$fg-2
+        @extend %SvgMedium
     // Filter settings clicked
     &-open .ItemManagerFilterButton-icon
-        fill: base.$fg-3
+        @extend %SvgLight
 
 .ItemManagerFilterWrapper
     &-header
         @extend %OverrideContentBordered-3
     // Filter settings
     &-container
-        background-color: base.$bg-3
+        @extend %Panel-2
         border: none
     // Filter settings search
     &-search
@@ -66,23 +66,23 @@
 .SearchBarInput
     // Search bar
     &-input
-        color: base.$fg-2
+        @extend %TextMedium
         // Placeholder
         &::placeholder
-            color: base.$fg-1
+            @extend %TextDark
     // Filter settings search icon
     &-icon
-        fill: base.$fg-2
+        @extend %SvgMedium
 
 /*
  * -=- Audit log -=-
  */
 
 .TeamAuditLogAction-icon
-    fill: base.$fg-0
+    @extend %SvgDarker
 
 .ChannelEntityNameDisplay
     &-container
         @extend %FakeMention
     &-icon
-        fill: base.$fg-1
+        @extend %SvgDark

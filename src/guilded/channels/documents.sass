@@ -1,6 +1,6 @@
 @use "../../base"
 @use "../../set"
-@use "../../borders"
+@use "../../content"
 @use "../../fake"
 
 /*
@@ -9,7 +9,7 @@
 
 // Document in the list
 .DocDisplayItem-container
-    background-color: base.$bg-3
+    @extend %Panel-2
 
 // Document in the list info
 .ReplyPanel-container-viewing,
@@ -18,7 +18,7 @@
 
 // "Drafts" title
 .DocsDisplayV2-title
-    color: base.$fg-3
+    @extend %TextLight
 // Add [DRAFT] badge
 .TeamDocs-drafts-docs-display .DocSummaryInfo-title::after
     content: 'draft'
@@ -31,10 +31,10 @@
  */
 
 .GuildedText-container-type-heading3
-    color: base.$fg-3
+    @extend %TextLight
 
 .DocSummaryInfo-subtitle
-    color: base.$fg-1
+    @extend %TextDark
 
 
 /*
@@ -43,25 +43,24 @@
 
 // Tag creation label
 .GuildedTagCreatorPanel-title
-    color: base.$fg-1
+    @extend %TextDark
 // Tag creation
 .GuildedTagCreator-container
-    color: base.$fg-2
+    @extend %TextMedium
 // Remove tag
 .TagsDisplayV2-delete-icon
     background-color: base.$fg-1
     @include set.transition(background-color)
     &:hover
-        background-color: base.$bad-0
+        @extend %PanelBad
 
 .TagDisplayItemV2
     // Tag's background
     &-container
-        @extend %SetBorderLight-0
-        background-color: base.$bg-1
+        @extend %OverrideContentMildlyBordered-4
     // Tag's text
     &-tag
-        color: base.$fg-2
+        @extend %TextMedium
 
 
 /*
@@ -69,4 +68,4 @@
  */
 
 .RepliesAddon-header-text
-    color: base.$fg-3
+    @extend %TextLight

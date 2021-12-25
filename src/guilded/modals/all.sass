@@ -1,5 +1,6 @@
 @use "../../base"
 @use "../../set"
+@use "../../content"
 
 // Whole container
 .TransientMenuPortalContext-portal-container
@@ -14,16 +15,16 @@
     @extend %OverrideContentBordered-2
 // Modal's title
 .Form-header
-    color: base.$fg-2
+    @extend %TextMedium
 // Avatar/banner input title
 .ImageInput-label
-    color: base.$fg-3
+    @extend %TextLight
 // Field input title
 .FormFieldLabel-container
-    color: base.$fg-2
+    @extend %TextMedium
 // Field input description
 .FormFieldDescription-container
-    color: base.$fg-1
+    @extend %TextDark
 
 /*
  * --- Modal with header ---
@@ -31,21 +32,21 @@
 
 // Modal's header
 .ModalHeaderV2-container
-    background-color: base.$bg-2
+    @extend %Panel-3
 .ModalHeaderV2-header
-    color: base.$fg-3
+    @extend %TextLight
 // Modal with header's content
 .ModalV2-container-has-header .ModalV2-modal-content
     border-top-color: base.$border-light-1
 .ConfirmationOverlay-text
-    color: base.$fg-2
+    @extend %TextMedium
 // Modal's footer
 .ModalFooter-container
     border-top: none
 
 // Fullscreen modal(settings)
 .ModalV2-container-fullscreen
-    background-color: base.$bg-3
+    @extend %Panel-2
     opacity: base.$floating-opacity
     width: 100%
     height: 100%
@@ -55,8 +56,8 @@
     border-radius: base.$radius-4
 // Modal close button
 .ModalV2CloseButton-container
-    fill: base.$fg-1
+    @extend %SvgDark
     @include set.transition(fill)
     // Modal close button hover
     &:hover
-        fill: base.$fg-2
+        @extend %SvgMedium

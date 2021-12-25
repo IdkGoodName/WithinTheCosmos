@@ -1,5 +1,5 @@
 @use "../../base"
-@use "../../borders"
+@use "../../content"
 
 /*
  * --- Settings ---
@@ -9,10 +9,10 @@
 .TeamRecruitmentStatus-status
     // Open
     .TeamRecruitmentStatus-container-status-open &
-        color: base.$good-0
+        @extend %TextGood
     // Closed
     .TeamRecruitmentStatus-container-status-closed &
-        color: base.$bad-0
+        @extend %TextBad
 
 // Application selector wrapper
 .TeamApplicationInlineLink-container
@@ -26,32 +26,32 @@
 .RecruitmentApplicantViewer
     // Wrapper
     &-applicant-card
-        background-color: base.$bg-1
+        @extend %Panel-4
     // Application values
     &-form-results
-        background-color: base.$bg-1
+        @extend %Panel-4
 // Result icon
 .FormResultDisplayFieldWrapper-field-header-icon
-    fill: base.$fg-1
+    @extend %SvgDark
 // Application info
 .ApplicantSummaryCard-container
     .ApplicantSummaryCard-votes, .ApplicantSummaryCard-buttons-applied-date
-        background-color: base.$bg-1
+        @extend %Panel-4
 // Application status
 .ApplicationStatusBadge-icon
     // Accepted
     .ApplicationStatusBadge-container-accepted &
-        fill: base.$good-0
+        @extend %SvgGood
     // Declined
     .ApplicationStatusBadge-container-declined &
-        fill: base.$bad-0
+        @extend %SvgBad
 .ApplicationStatusBadge-text
     // Accepted
     .ApplicationStatusBadge-container-accepted &
-        color: base.$good-0
+        @extend %TextGood
     // Declined
     .ApplicationStatusBadge-container-declined &
-        color: base.$bad-0
+        @extend %TextBad
 
 /*
  * --- All Applications ---
@@ -62,24 +62,24 @@
     @extend %PanelBordered-3
     // Hover
     &-desktop::after
-        background-color: base.$bg-hover
+        @extend %ContentGlare
 // Application status
 .ApplicantSummaryAcceptDeclineForm-applicant-status
     .ApplicantSummaryAcceptDeclineForm-container-accepted &
-        color: base.$good-0
+        @extend %TextGood
 // Application server's name
 .TeamAvatarDetails-name.TeamAvatarDetails-name-bold
-    color: base.$fg-3
+    @extend %TextLight
 // Application timestamp
 .ApplicantGameDateDisplay-date-text
-    color: base.$fg-1
+    @extend %TextDark
 
 // Application status
 .ApplicationItemStatus-label
     .ApplicationItemStatus-container-status-1 &
-        color: base.$good-1
+        @extend %TextGoodHighlight
     .ApplicationItemStatus-container-status-0 &
-        color: base.$bad-1
+        @extend %TextBadHighlight
 
 /*
  * --- Application modal ---
@@ -87,4 +87,4 @@
 
 // Background
 .ApplyToTeam-container
-    background-color: base.$bg-3
+    @extend %Panel-2

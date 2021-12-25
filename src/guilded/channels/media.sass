@@ -1,6 +1,6 @@
 @use "../../base"
 @use "../../set"
-@use "../../borders"
+@use "../../content"
 
 /*
  * --- Media list ---
@@ -8,10 +8,10 @@
 
 // Media item
 .MediaDisplayItemV3-container
-    background-color: base.$bg-1
+    @extend %Panel-4
     // Media item hover
     &::after
-        background-color: base.$bg-hover
+        @extend %ContentGlare
 // Description
 .MediaDisplayItemV3-meta-info-wrapper
     @extend %FullBorderLight-1
@@ -20,7 +20,7 @@
 
 // Comment count
 .MediaDisplayItemMetaInfo-comment-count
-    color: base.$fg-2
+    @extend %TextMedium
 
 /*
  * --- Modal ---
@@ -28,7 +28,7 @@
 
 // Media modal background
 .MediaEditor-container-desktop
-    background-color: base.$bg-3
+    @extend %Panel-2
 // Tag input
 .GuildedTagCreator-container-input-border
     // Normally
@@ -45,14 +45,13 @@
 // Tags
 .GuildedTagCreator-container-dark .Select-value
     // Tag's background
-    @extend %SetBorderDark-0
-    background-color: base.$bg-1
+    @extend %OverridePanelMildlyBordered-4
     // Tag's text
     &-label
-        color: base.$fg-2
+        @extend %TextMedium
 // "Tags (optional)" label
 .TextFieldLabel-container-size-sm
-    color: base.$fg-1
+    @extend %TextDark
 
 /*
  * --- Media view ---
@@ -60,18 +59,18 @@
 
 // Image preview
 .MediaSplitView-media
-    background-color: base.$bg-0
+    @extend %Panel-5
 
 // Media side panel
 .MediaInfoPane-container
-    background-color: base.$bg-3
+    @extend %Panel-2
 
 // Media view exit
 .BackLink-container-desktop
     // Exit icon
     .BackLink-icon
-        fill: base.$fg-1
+        @extend %SvgDark
         transition-duration: base.$transition
     // Exit icon hover
     &:hover .BackLink-icon
-        fill: base.$fg-2
+        @extend %SvgMedium

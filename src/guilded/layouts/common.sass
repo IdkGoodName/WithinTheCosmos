@@ -1,6 +1,6 @@
 @use "../../base"
+@use "../../content"
 @use "../../set"
-@use "../../borders"
 
 /*
  * -=- Banners -=-
@@ -9,7 +9,7 @@
 // Archive info bar, bot role warning
 .BannerWithButton
     &-icon
-        fill: base.$fg-0
+        @extend %SvgDarker
     &-container
         @extend %OverrideContentBordered-4
         &-theme-warning
@@ -28,19 +28,19 @@
 
 // Text
 .GH1-container
-    color: base.$fg-3
+    @extend %TextLight
 .GH2-container
-    color: base.$fg-2
+    @extend %TextMedium
 .GH3-container
-    color: base.$fg-1
+    @extend %TextDark
 
 .GuildedText-container-type
     &-heading1
-        color: base.$fg-3
+        @extend %TextLight
     &-heading4
-        color: base.$fg-3
+        @extend %TextLight
     &-subtext
-        color: base.$fg-1
+        @extend %TextDark
 
 // Link/Hyperlink
 .MediaUploaderDropImageInstructions-browse-link,
@@ -68,12 +68,10 @@
 .LinkRenderer
     // Link normally
     &, &:visited, &:focus
-        color: var(--NihilityLink)
+        @extend %TextLink
     // Link clicked and hovered over
-    &:hover, &:active,
-    &:hover .MarkRenderer-read-only,
-    &:active .MarkRenderer-read-only
-        color: var(--NihilityLinkHover)
+    &:hover, &:active
+        @extend %TextLinkHighlight
 
 /*
  * --- Custom animations ---
@@ -132,14 +130,14 @@
             background-color: rgba(base.$bg-hover, 0.1)
         // Text
         .GH2-container
-            color: base.$fg-2
+            @extend %TextMedium
         &-selected .GH2-container
-            color: base.$fg-3
+            @extend %TextLight
         // Icon
         .SimpleIconTabMenuHeaderItem-icon
-            fill: base.$fg-2
+            @extend %SvgMedium
         &-selected .SimpleIconTabMenuHeaderItem-icon
-            fill: base.$fg-3
+            @extend %SvgLight
 // Tab highlighter
 .SimpleIconTabMenuHeaderItem-container-selected::after,
 .HorizontalTab-highlighter
@@ -182,7 +180,7 @@
  */
 
 .CalloutBadge-container
-    color: base.$fg-1
+    @extend %TextDark
     background: base.$bg-0 !important
     border: solid 1px base.$border-light-1 !important
 
@@ -196,7 +194,7 @@
     //     display: none
     // Override all colours for badges
     &-container:not(.UserFlairRow-icon)
-        color: base.$fg-1
+        @extend %TextDark
         background: base.$bg-1 !important
         border: solid 1px base.$border-light-1 !important
 // [MEMBER]
@@ -282,7 +280,7 @@
     // Background
     &-container,
     &-container-theme-dark
-        background-color: base.$bg-0
+        @extend %Panel-5
     // Progress
     &-progress
         background-color: base.$progress

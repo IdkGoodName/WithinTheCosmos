@@ -1,6 +1,6 @@
 @use "../../base"
 @use "../../set"
-@use "../../borders"
+@use "../../content"
 
 /*
  * --- Calendar ---
@@ -10,28 +10,28 @@
 .FullSizedCalendar
     // Week day header
     &WeekdayHeader-day
-        color: base.$fg-1
+        @extend %TextDark
     // Calendar days and weeks
     &-week
-        background-color: base.$bg-5
+        @extend %Panel-0
     &-day
         @extend %PanelBordered-0
         // Day numbers
         .FullSizedCalendarDayHeader-date
-            color: base.$fg-2
+            @extend %TextMedium
     // Event creation
     &Day-container-desktop.FullSizedCalendarDay-container-can-create
         @include set.transition(background-color)
         &:hover
             background-color: base.$bg-6
     &Day-new-event-icon
-        fill: base.$fg-1
+        @extend %SvgDark
         @include set.transition(opacity)
     // Calendar special days
     &Day-container-in-past,
     &Day-container-different-month
         background-color: base.$bg-3
-        color: base.$fg-1
+        color: base.$fg-0
         // Don't make text stand out
         .FullSizedCalendarDayHeader-date
             color: base.$fg-0
@@ -43,19 +43,19 @@
             color: white
     // Event name
     &Event-name
-        color: base.$fg-2
+        @extend %TextMedium
     &Event-details
-        color: base.$fg-1
+        @extend %TextDark
     // Unread event
     &Event-container-unread:not(&Event-container-full-day)
-        background-color: base.$bg-1
+        @extend %Panel-4
     // Whole day calendar
     &Event-container-full-day
         .FullSizedCalendarEvent-details, .FullSizedCalendarEvent-name
-            color: base.$fg-3
+            @extend %TextLight
     // Event hover
     &Event-container-with-start-time.FullSizedCalendarEvent-container-desktop::after
-        background-color: base.$bg-hover
+        @extend %ContentGlare
 
 // Buttons
 .ToggleControl-container
@@ -66,20 +66,20 @@
         color: var(--NihilityTheme0)
         background-color: base.$bg-1
     &-selected:focus, &-selected:active
-        color: var(--NihilityTheme0)
+        @extend %TextTheme
 // Month switching
 .DateSwitcher
     &-month-name
-        color: base.$fg-3
+        @extend %TextLight
     &-button
-        fill: base.$fg-1
+        @extend %SvgDark
 
 // Upcoming
 .UpcomingCalendar
     &Day-container, &-container
-        background-color: base.$bg-1
+        @extend %Panel-4
     &Event-container-desktop:hover
-        background-color: base.$bg-3
+        @extend %Panel-2
 
 /*
  * --- Calendar Pop-up ---
@@ -87,7 +87,7 @@
 
 // Date input pop-up
 .DateInput-menu
-    //background-color: base.$bg-2
+    //@extend %Panel-3
     @extend %FullBorderLight-2
 .DayPicker
     // Month name
@@ -95,18 +95,18 @@
         color: base.$fg-3
         background-color: base.$bg-2
     &-arrow
-        fill: base.$fg-1
+        @extend %SvgDark
     // Week day
     &-day-label
-        color: base.$fg-1
+        @extend %TextDark
     // Day
     &-day
-        background-color: base.$bg-5
+        @extend %Panel-0
         @include set.transition(background-color)
         &-contents
             color: base.$fg-2 !important
     &-day-next-month
-        background-color: base.$bg-2
+        @extend %Panel-3
         .DayPicker-day-contents
             color: base.$fg-0 !important
     &-day:hover
@@ -114,7 +114,7 @@
     // Day numbers
     &-container-desktop &-day:hover &-day-contents,
     &-container-desktop &-day-selected.DayPicker-day:hover &-day-contents
-        background-color: transparent
+        @extend %PanelTransparent
     &-day-selected &-day-contents
         background-color: var(--game-color)
         color: #FFF !important
@@ -126,57 +126,57 @@
 // Pop-up top-level
 .TransientMenu-container-style-card
     overflow: hidden
-    background-color: base.$bg-3
+    @extend %Panel-2
 // Pop up banner
 .GlassySplashHeader
     &-image-wrapper &-image
         mask-image: linear-gradient(to bottom, black, transparent 112px)
     // Remove its highlighting
     .EventCard-container:hover &-container
-        background-color: transparent
+        @extend %PanelTransparent
 /*
  * --- View ---
  */
 
 // Header
 .EventTemporalChannelDisplay-container
-    background-color: base.$bg-1
+    @extend %Panel-4
     --border-color: #{base.$bg-0}
 // Details
 .TeamEventDetails
     &-post-metadata, &-status, &-item
-        background-color: base.$bg-2
+        @extend %Panel-3
 .EventCardMetadata
     // Container
     &-container-size-lg
-        background-color: base.$bg-2
+        @extend %Panel-3
     // Icon
     &-icon
-        fill: base.$fg-1
+        @extend %SvgDark
 
 // Description
 .TeamEventDescription
     // Icon
     &-icon
-        fill: base.$fg-1
+        @extend %SvgDark
     // Text
     &-placeholder
         --body-text-color: #{base.$fg-2}
 
 .EventAttendanceHeader-status
     &-going
-        color: base.$fg-2
+        @extend %TextMedium
     &:not(:first-child)
-        color: base.$fg-1
+        @extend %TextDark
         &::before
             background-color: base.$fg-1
 
 .EventRsvpsHeader
     // See all link
     &-attendance-see-all
-        color: var(--NihilityLink)
+        @extend %TextLink
     &-container-desktop:not(&-container-rsvps-disabled):hover &-attendance-see-all
-        color: var(--NihilityLinkHover)
+        @extend %TextLinkHighlight
     // Maybe, invited, declined
     &-container-desktop:not(&-container-rsvps-disabled):hover &-attendance .EventAttendanceHeader-status
-        color: base.$fg-2
+        @extend %TextMedium
