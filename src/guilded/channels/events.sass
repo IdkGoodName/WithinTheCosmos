@@ -43,7 +43,19 @@
             color: white
     // Event name
     &Event-name
-        color: base.$fg-3
+        color: base.$fg-2
+    &Event-details
+        color: base.$fg-1
+    // Unread event
+    &Event-container-unread:not(&Event-container-full-day)
+        background-color: base.$bg-1
+    // Whole day calendar
+    &Event-container-full-day
+        .FullSizedCalendarEvent-details, .FullSizedCalendarEvent-name
+            color: base.$fg-3
+    // Event hover
+    &Event-container-with-start-time.FullSizedCalendarEvent-container-desktop::after
+        background-color: base.$bg-hover
 
 // Buttons
 .ToggleControl-container
@@ -149,7 +161,7 @@
         fill: base.$fg-1
     // Text
     &-placeholder
-        --nihility-local-fg: #{base.$fg-2}
+        --body-text-color: #{base.$fg-2}
 
 .EventAttendanceHeader-status
     &-going

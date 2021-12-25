@@ -22,7 +22,7 @@
 .ChannelWrapper-container
     background-color: base.$bg-3
     color: base.$fg-3
-    --nihility-local-fg: #{base.$fg-2}
+    --body-text-color: #{base.$fg-2}
 
 // Text
 .LastReplyDisplayContent-message-summary,
@@ -31,7 +31,7 @@
 .ChannelWrapper-container,
 .BlockQuoteLineRenderer,
 .ParagraphRenderer
-    color: var(--nihility-local-fg)
+    color: var(--body-text-color)
     @include set.transition(color)
 
 
@@ -63,11 +63,11 @@
     &:not(&-editing):not(&-threads-disabled)
         @include set.transition(background)
     &.ChatV2Message-container-type-default
-        color: var(--nihility-local-fg)
+        color: var(--body-text-color)
     // Hovered message
     &:not(&-editing):hover, &.ChatV2Message-container-replying
         background-color: base.$bg-5
-        --nihility-local-fg: #{base.$fg-3}
+        --body-text-color: #{base.$fg-3}
     // Right click active
     &-active
         background-color: base.$bg-5
@@ -95,7 +95,7 @@
     // Right clicked
     &-active:not(&-editing)
         background-color: base.$bg-5
-        --nihility-local-fg: #{base.$fg-3}
+        --body-text-color: #{base.$fg-3}
     
     // Removes messages' margin
     & + &:not(&-with-header):not(&-type-system)
