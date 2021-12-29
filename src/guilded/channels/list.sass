@@ -9,10 +9,13 @@
 // Item
 .TeamListItemIndentWrapper-container,
 .TeamListItemWrapper-container
-    @extend %PanelBordered-3
     // Item hover
     &-unfocused::after
         @extend %ContentGlare
+.TeamListItemIndentWrapper-container
+    background-color: transparent
+.TeamListItemWrapper-container
+    @extend %PanelBordered-3
 // Item handle
 .TeamListItemControls-handle
     svg

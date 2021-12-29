@@ -22,36 +22,9 @@
 .MediaDisplayItemMetaInfo-comment-count
     @extend %TextMedium
 
-/*
- * --- Modal ---
- */
-
 // Media modal background
 .MediaEditor-container-desktop
     @extend %Panel-2
-// Tag input
-.GuildedTagCreator-container-input-border
-    // Normally
-    .Select-control
-        border-bottom-color: base.$fg-1 !important
-        @include set.transition(border-bottom)
-    // Hover
-    &:hover .Select-control
-        border-bottom-color: base.$fg-2 !important
-    // Focused
-    .Select.is-focused .Select-control
-        border-bottom-color: var(--NihilityTheme2) !important
-
-// Tags
-.GuildedTagCreator-container-dark .Select-value
-    // Tag's background
-    @extend %OverridePanelMildlyBordered-4
-    // Tag's text
-    &-label
-        @extend %TextMedium
-// "Tags (optional)" label
-.TextFieldLabel-container-size-sm
-    @extend %TextDark
 
 /*
  * --- Media view ---
