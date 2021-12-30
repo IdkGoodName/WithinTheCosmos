@@ -58,6 +58,11 @@
     // Hover
     &-container-desktop:hover
         @extend %SetBorderLight-3
+    // Focused
+    &-container-focused, &-container-focused:hover
+        @extend %SetBorderThemeDull
+        &::placeholder
+            color: var(--NihilityTheme1)
     
     // Label
     &-typeahead-suggestion, &-floating-label
@@ -99,7 +104,7 @@
         @extend %SetBorderLight-3
     // Big form input focus
     &:focus
-        border-color: var(--NihilityTheme2)
+        @extend %SetBorderThemeDull
 
 
 // Form input word count
@@ -124,11 +129,11 @@
 .GuildedTagCreator-container-input-border
     // Normally
     .Select-control
-        border-bottom-color: base.$fg-1 !important
+        border-bottom-color: base.$border-light-2 !important
         @include set.transition(border-bottom)
     // Hover
     &:hover .Select-control
-        border-bottom-color: base.$fg-2 !important
+        border-bottom-color: base.$border-light-3 !important
     // Focused
     .Select.is-focused .Select-control
         border-bottom-color: var(--NihilityTheme2) !important
