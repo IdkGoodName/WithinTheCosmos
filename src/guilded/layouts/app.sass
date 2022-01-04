@@ -6,8 +6,36 @@
  * --=======================--
  *    App panels and layout
  * --=======================--
- */ 
-    
+ */
+
+/*
+ * -=- Titlebars -=-
+ */
+
+.WindowsTitleBar
+    &-container
+        @extend %Panel-5
+    // Buttons
+    &-maximize-button
+        .WindowsTitleBar-button-content
+            border-color: base.$fg-0
+        &:hover .WindowsTitleBar-button-content
+            border-color: base.$fg-2
+    &-minimize-button
+        .WindowsTitleBar-button-content
+            background-color: base.$fg-0
+        &:hover .WindowsTitleBar-button-content
+            background-color: base.$fg-2
+    &-button:hover
+        @extend %Panel-3
+    &-close-button
+        &:hover
+            @extend %Panel-3
+        // Icon
+        .WindowsTitleBar-button-content
+            @extend %SvgDarker
+        &:hover .WindowsTitleBar-button-content
+            @extend %SvgBadHighlight
 /*
  * -=- Legacy nav bar -=-
  */
@@ -80,7 +108,7 @@
 /*
  * --- Servers and tabs ---
  */
-    
+
 // Server list hovered server
 .NavV4SelectorRow-container::after
     @extend %ContentGlare
@@ -169,7 +197,7 @@ body
 // Default group icon
 //.GroupAvatar-container-non-base
 //    font-size: 1.3em
-        
+
 // The border around status and group's emote
 .GroupAvatarBadge-container-reaction,
 .LoggedInUserAvatar-online-status
@@ -269,7 +297,7 @@ body
  * --- Channels ---
  */
 
-// 
+//
 .TeamNavMenu-container,
 // Channel list
 .TeamPageNavV3-container,
@@ -423,7 +451,7 @@ body
 
 // Member list section (roles)
 .TeamPageSidebarMembers-roles:not(:first-child)
-    margin-top: base.$spacing-5
+    margin-top: base.$spacing-6
 
 .ChannelListHeader
     // Member list
@@ -437,7 +465,7 @@ body
     // Member list role amount
     &-amount
         color: base.$fg-1
-        padding: 0 base.$spacing-1
+        padding: 0 base.$spacing-2
         background-color: base.$bg-0
         border-radius: base.$radius-2
 
@@ -493,7 +521,7 @@ body
     // Hover
     &-container-actionable::after
         @extend %ContentGlare
-    
+
     // Last activity at
     &-last-at
         @extend %TextDark
@@ -501,7 +529,7 @@ body
     // Last activity at hover
     &-container-actionable:hover &-last-at
         @extend %TextLight
-    
+
     // Reply count
     &-reply-row &-num-replies
         @extend %TextDark

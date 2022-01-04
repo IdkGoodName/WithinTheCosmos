@@ -63,7 +63,7 @@
         @extend %SetBorderThemeDull
         &::placeholder
             color: var(--NihilityTheme1)
-    
+
     // Label
     &-typeahead-suggestion, &-floating-label
         @extend %TextDark
@@ -74,7 +74,7 @@
 
         &:hover
             @extend %SetBorderBad
-        
+
         .TextInputWithLabel-floating-label,
         &:hover .TextInputWithLabel-floating-label
             @extend %SetBorderBad
@@ -93,7 +93,6 @@
     &-valid
         @extend %SvgGood
 
-
 // Big form input
 .TextAreaInput-text-area
     border-color: base.$border-light-2
@@ -105,7 +104,6 @@
     // Big form input focus
     &:focus
         @extend %SetBorderThemeDull
-
 
 // Form input word count
 .CharacterCount
@@ -123,7 +121,6 @@
     // Label too many symbols
     &-container-invalid-max
         @extend %TextBad
-
 
 // Tag input
 .GuildedTagCreator-container-input-border
@@ -317,7 +314,7 @@
         &.RadioOptionPanel-container-selected
             border:
                 color: var(--NihilityTheme0)
-                width: 1px 
+                width: 1px
     // Channel type selected icon
     &-selected .RadioOptionPanel-icon
         @extend %SvgTheme
@@ -354,7 +351,7 @@
             @extend %TextDark
         // Label's arrow in editor
         .Select-arrow
-            border-top-color: base.$fg-1
+            border-top-color: base.$fg-0
     // Form selector arrow
     .Select-arrow
         border-top-color: var(--NihilityTheme0)
@@ -367,8 +364,7 @@
     // Form select menu
     &.GuildedSelect-container-dark .Select-menu-outer,
     &.GuildedSelect-container-light .Select-menu-outer
-        @extend %OverridePanelBordered-4
-
+        @extend %OverrideContentMildlyBordered-4
 
 // Form selector focused
 .GuildedSelect-container.GuildedSelect-container-dark .Select.is-focused .Select-control
@@ -382,7 +378,8 @@
     // Form selector options
     &-menu
         @extend %Panel-2
-        padding: base.$spacing-0
+        padding: base.$spacing-1
+        border-radius: base.$radius-0
         &-outer
             opacity: base.$floating-opacity
             @extend %OverridePanelBordered-4
@@ -401,7 +398,9 @@
         .GuildedSelect-container &.is-selected,
         .GuildedSelect-container.GuildedSelect-container-dark &.is-selected,
         .GuildedSelect-container.GuildedSelect-container-light &.is-selected
-            @extend %PanelBordered-0
+            background-color: base.$bg-5
+            border: solid 1px base.$border-light-0
+                left: solid 2px var(--NihilityTheme0)
         // Focused
         &.is-focused
             @extend %ContentBordered-0
@@ -412,7 +411,9 @@
         .GuildedSelect-container &.is-selected.is-focused,
         .GuildedSelect-container.GuildedSelect-container-dark &.is-selected.is-focused,
         .GuildedSelect-container.GuildedSelect-container-light &.is-selected.is-focused
-            @extend %ContentBordered-0
+            background-color: base.$bg-6
+            border: solid 1px base.$border-light-1
+                left: solid 2px var(--NihilityTheme1)
     // No results found - code container/blocks
     .GuildedSelect-container.GuildedSelect-container-light &-noresults,
     .GuildedSelect-container.GuildedSelect-container-dark &-noresults,
@@ -518,7 +519,7 @@
     // Gilded button text
     &-button-content
         @include set.font-color(var(--NihilityTheme0))
-    
+
     // Hollow gilded
     &-container.FormConfirmButtonV2-container-hollow
         background: none
@@ -535,25 +536,25 @@
         @include button-typed(rgba(base.$bad-0, 0.15), base.$bad-0)
     &-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete:hover
         @include button-typed(rgba(base.$bad-0, 0.25), base.$bad-1)
-    
+
     // Success button
     &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-success
         @include button-typed(rgba(base.$good-0, 0.15), base.$good-0)
     &-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-success:hover
         @include button-typed(rgba(base.$good-0, 0.25), base.$good-1)
-    
+
     // Delete hollow
     &-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-delete
         @include button-typed-hollow(base.$bad-0, base.$bad-0)
     &-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-delete:hover
         @include button-typed-hollow(base.$bad-1, base.$bad-1)
-    
+
     // Success hollow
     &-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-success
         @include button-typed-hollow(base.$good-0, base.$good-0)
     &-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-success:hover
         @include button-typed-hollow(base.$good-1, base.$good-1)
-    
+
     // Normal hollow
     &-container.FormConfirmButtonV2-container-type-bleached
         @include button-typed-hollow(base.$border-light-2, base.$normal-0)
