@@ -15,6 +15,11 @@
 .WindowsTitleBar
     &-container
         @extend %Panel-5
+    // Title
+    &-logo
+        .LogoAndWordmarkV2-container
+            fill: var(--NihilityTheme0)
+            opacity: 50%
     // Buttons
     &-maximize-button
         .WindowsTitleBar-button-content
@@ -150,6 +155,46 @@
 // Search focused
 .SearchBarV2-container-unfocused::after
     @extend %ContentGlare
+
+// Results
+.TeamSearchBar-search-results
+    @extend %ContentBordered-2
+// Result item
+.TeamSearchShallowResult
+    &-container::before
+        @extend %ContentGlare
+    &-container-focused
+        @extend %Panel-1
+    // Channel icon
+    &-icon-content-type
+        @extend %SvgDark
+    // Content
+    &-title
+        @extend %TextMedium
+    &Subtitle-container
+        @extend %TextDark
+    // In ...
+    &Description-container
+        @extend %TextDarker
+
+    // Type icon
+    &-icon-search-category
+        background-color: base.$bg-1 !important
+        // Colour based on type
+        .icon-content
+            fill: base.$blue
+        .icon-team-find
+            fill: base.$yellow
+        .icon-hashtag-new
+            fill: base.$green
+        .icon-profile
+            fill: base.$cyan
+    &-container-focused &-icon-search-category
+        background-color: base.$bg-2
+
+// Search result type icon
+.AvatarIcon-container
+    @extend %SvgMedium
 
 .SearchBarV2-container
     // Search icon

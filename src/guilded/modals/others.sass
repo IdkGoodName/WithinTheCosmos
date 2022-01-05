@@ -204,6 +204,19 @@
     // Unread activity menu item
     &-container.ChannelActivityItem-container-unread
         @extend %Panel-4
+    // Type icons
+    &-icon
+        // Wrapper
+        .AvatarIcon-container
+            background-color: base.$bg-0 !important
+        // Icon types
+        .icon-reply-filled-no-padding,
+        .icon-toolbar-mention
+            fill: base.$yellow
+        .icon-calendar-new
+            fill: base.$red
+        .icon-toolbar-emoji
+            fill: base.$blue
 
 /*
  * --- Channel Switcher ---
