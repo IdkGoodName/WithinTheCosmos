@@ -1,5 +1,6 @@
 @use "./base"
 @use "./set"
+@use "sass:color"
 
 /*
  * -=- Content -=-
@@ -190,6 +191,10 @@
 /*
  * --- Panels ---
  */
+
+@mixin PanelBordered($bg, $border)
+    background-color: $bg
+    border: solid 1px $border
 
 // Panels with dark border
 %PanelBordered-0
@@ -391,3 +396,19 @@
 %OverrideContentMildlyBordered-5
     background-color: base.$bg-0
     border-color: base.$border-light-0
+
+/*
+ * --- Content Type Panels ---
+ */
+
+@mixin PanelType($colour)
+    background-color: color.mix(base.$bg-1, $colour, 88%)
+    border-color: rgba($colour, 0.25)
+%PanelWarning
+    @include PanelType(base.$warning)
+%PanelInfo
+    @include PanelType(base.$info)
+%PanelCaution
+    @include PanelType(base.$bad-1)
+%PanelSuccess
+    @include PanelType(base.$good-1)

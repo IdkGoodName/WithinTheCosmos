@@ -1,6 +1,7 @@
 @use "../../base"
 @use "../../content"
 @use "../../set"
+@use "sass:color"
 
 /*
  * -=- Banners -=-
@@ -9,18 +10,99 @@
 // Archive info bar, bot role warning
 .BannerWithButton
     &-icon
-        @extend %SvgDarker
+        @extend %SvgMedium
     &-container
         @extend %OverrideContentBordered-4
         &-theme-warning
-            .GuildedText-container-type-subtextBodyWhite
-                color: base.$warning
-            .BannerWithButton-icon
-                fill: base.$warning
+            @extend %PanelWarning
+        &-theme-info
+            @extend %PanelInfo
+        &-theme-error
+            @extend %PanelCaution
+            // .GuildedText-container-type-subtextBodyWhite
+            //     color: base.$warning
+            // .BannerWithButton-icon
+            //     fill: base.$warning
 // "Nicknames are visible to everyone in the server"
 .ChangeNicknameOverlay-info
-    color: base.$warning
-    @extend %OverrideContentBordered-4
+    @extend %TextMedium
+    @extend %PanelWarning
+
+/*
+ * --- Status ---
+ */
+
+// Status
+.StatusMessage-container
+    @extend %TextMedium
+    // Status info
+    &-type-info
+        // Pops up and vanishes (No mic detected)
+        &.StatusMessage-container-ephemeral,
+        // Always there (Published on)
+        &.StatusMessage-container-persistent
+            @extend %PanelBordered-0
+    // Status hover
+    &-desktop.StatusMessage-container-clickable::after
+        @extend %ContentGlare
+    &-ephemeral
+        @extend %PanelBordered-4
+        // Copy invite alert
+        &.StatusMessage-container-type-success
+            @extend %PanelSuccess
+            // @extend %Panel-4
+            // @extend %TextGood
+            // // Icon
+            // .StatusMessage-icon
+            //     @extend %SvgGood
+        // Invalid URL
+        &.StatusMessage-container-type-error
+            @extend %PanelCaution
+            // @extend %Panel-4
+            // @extend %TextBad
+            // // Icon
+            // .StatusMessage-icon
+            //     @extend %SvgBad
+    &-persistent
+        // Persistent "Published bla bla bla" header
+        &.PostDisplayV2-publish-banner
+            @extend %PanelInfo
+
+// Status text
+.StatusMessage
+    // Icon
+    &-icon
+        @extend %SvgMedium
+
+// Connecting
+.NetworkReconnectionDisplay
+    // Loading bar
+    &-container, &-container-reconnecting
+        @extend %Panel-5
+    // Connected
+    &-container
+        .NetworkReconnectionDisplay-icon
+            @extend %SvgGood
+        .NetworkReconnectionDisplay-text
+            @extend %TextGood
+
+// Status message as a banner
+.StatusMessage-container-persistent
+    // Message
+    .StatusMessage-content
+        @extend %TextLight
+    // Make it dark with a border
+    &.StatusMessage-container-type-banner
+        background: base.$bg-0
+        border-bottom: solid 1px base.$active
+        .StatusMessage-content
+            color: base.$active
+    // Same with stream mode, but purple
+    &.StatusMessage-container-banner-type-streamer-mode
+        background: base.$bg-0
+        border-bottom: solid 1px base.$stream
+        .StatusMessage-content
+            color: base.$stream
 
 /*
  * -=- Text -=-

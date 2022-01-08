@@ -395,12 +395,20 @@
 .ChatChannelInputPublic-container
     @extend %ContentBordered-1
 
+.ChatChannelArchivedControl-container
+    @include content.PanelBordered(base.$bg-4, base.$border-light-1)
+
 // Doc editor
 .DocEditor-container .DocEditor-content-input,
-// List item editor
-.TeamListItemWrapper-container .Editor-container
+// List item message editor
+.TeamListItemsInput-editor
     @extend %PanelTransparent
     border: none
+
+// List item note editor
+.TeamListItemNoteEditor-editor
+    @extend %ContentBordered-2
+
 // Forum reply editor
 .TeamThreadPostEditor-editor .Editor-container
     @extend %Panel-2

@@ -1,6 +1,7 @@
 @use "../../base"
 @use "../../set"
 @use "../../content"
+@use "sass:color"
 
 /*
  * --=======================--
@@ -413,7 +414,6 @@ body
     @extend %TextDark
 
 // Channel card
-.TeamChannelItemContents-container-unread .TeamChannelItemContents-name,
 .TeamChannelItemContents-container-channel-content .TeamChannelItemContents-name,
 .TeamChannelItemContents-container:not(.TeamChannelItemContents-container-selected):hover .TeamChannelItemContents-name
     @extend %TextMedium
@@ -431,6 +431,20 @@ body
 .TeamNavSectionItem-container.TeamNavSectionItem-container-selected
     @extend %ContentMildlyBordered-2
     @include set.transition(background-color, border-color)
+// Unread channel
+.TeamChannelItemContents-container-unread
+    .TeamChannelItemContents-name
+        color: color.mix(base.$mark, base.$fg-2, 35%)
+    .ChannelIcon-icon-primary,
+    .ChannelIcon-icon-background
+        fill: color.adjust(color.mix(base.$mark, base.$fg-2, 35%), $lightness: -20%)
+// Unread hovered channel
+.TeamChannelItemContents-container.TeamChannelItemContents-container-unread:hover
+    .TeamChannelItemContents-name
+        color: color.mix(base.$mark, base.$fg-2, 15%)
+    .ChannelIcon-icon-primary,
+    .ChannelIcon-icon-background
+        fill: color.adjust(color.mix(base.$mark, base.$fg-2, 15%), $lightness: -20%)
 // Sub-icon/global icon
 .ChannelIcon-icon-selected .ChannelIcon-icon-background,
 .ChannelIcon-icon-background
