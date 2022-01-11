@@ -130,11 +130,9 @@
 .CustomFormIndividualResults-toggle-expand,
 .LandingPageV3InternalLinkColumn-link,
 .UserSettingsEmailPage-select-button,
-.CustomFormControls-edit-response,
 .ChatV2MessageEditHelper-action,
 .HoverContext-container-linkify,
 .TeamSettingsWebhookPage-link,
-.PrismTokenUrlRenderer-link,
 .LandingFooterSEOLinks-link,
 .InlineTextLink-container,
 .CardGames-overflow-link,
@@ -164,7 +162,7 @@
     @include set.transition(border-radius, base.$bounce)
 
     .ChatV2Message-header:hover &
-        border-radius: base.$radius-2
+        @extend %RadiusSmall
 
 .PlayerCardProfilePicture-avatar
     @include set.transition(border-radius, base.$bounce)
@@ -175,7 +173,7 @@
     .SidebarUsersRoleInfo-user:hover &,
     // Doc bouncing
     .DocReader-header:hover &
-        border-radius: base.$radius-2
+        @extend %RadiusSmall
 
 // Favourite server bouncing
 .NavV4BadgedItem-image, .NavV4BadgedItem-icon-wrapper
@@ -183,7 +181,7 @@
     @include set.transition(border-radius, base.$bounce)
 
     .NavV4BadgedItem-container:hover &
-        border-radius: base.$radius-2
+        @extend %RadiusSmall
 
 // Group icon bouncing
 .GroupAvatar-container-non-base,
@@ -198,7 +196,7 @@
     .GroupSelector-container .NavSelectorItem-container-active &,
     // Group in preview
     .GroupSelectorPreview-container &
-        border-radius: base.$radius-2
+        @extend %RadiusSmall
 
 .GroupAvatar-container-non-base
     @extend %ContentMildlyBordered-2

@@ -53,7 +53,7 @@
 // Rounds the modal - :not() makes sure that the modal isn't "Unsaved changes" and similar
 .ModalV2-container:not(.ModalV2-container-has-header),
 .ModalV2-container:not(.ModalV2-container-has-header) .ModalV2-modal-content
-    border-radius: base.$radius-4
+    @extend %RadiusHigh
 // Modal close button
 .ModalV2CloseButton-container
     @extend %SvgDark

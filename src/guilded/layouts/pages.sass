@@ -42,7 +42,7 @@
         right: 0
     // Avatar
     &-picture
-        border-radius: base.$radius-4
+        @extend %RadiusHigh
 
 /*
  * --- Posts ---
@@ -77,7 +77,7 @@
 
 // Post
 .UserProfilePostPanel-container
-    border-radius: base.$radius-2
+    @extend %RadiusSmall
     @extend %PanelBordered-3
     // Post highlighted(currently all)
     &-highlight

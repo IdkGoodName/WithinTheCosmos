@@ -75,7 +75,7 @@
     // Replying
     &:not(&-editing).ChatV2Message-container-replying
         @include define-message-type(base.$replying)
-        
+
     // Mentioned message
     &:not(&-editing):not(&-replying):not(&-private).ChatV2Message-container-mentioned
         @include define-message-type(base.$mentioned)
@@ -96,7 +96,7 @@
     &-active:not(&-editing)
         @extend %Panel-0
         --body-text-color: #{base.$fg-3}
-    
+
     // Removes messages' margin
     & + &:not(&-with-header):not(&-type-system)
         margin-top: 0
@@ -225,9 +225,9 @@
 // Pinned message
 .ChatV2PinnedMessage-message-wrapper
     @extend %Panel-2
-    border-radius: base.$radius-2
+    @extend %RadiusSmall
     .ChatV2Message-container
-        border-radius: base.$radius-2
+        @extend %RadiusSmall
 
 // "Private message" label
 .PrivateMessageLabel

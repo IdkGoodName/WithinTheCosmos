@@ -9,6 +9,16 @@
 %ContentGlare
     background-color: base.$bg-hover
 
+@mixin BasicLink
+    @extend %TextLink
+    &:hover
+        @extend %TextLinkHighlight
+@mixin Link
+    &, &:visited, &:focus
+        @extend %TextLink
+    &:hover &:active
+        @extend %TextLinkHighlight
+
 /*
  * -=- Foreground & Background -=-
  */
@@ -412,3 +422,22 @@
     @include PanelType(base.$bad-1)
 %PanelSuccess
     @include PanelType(base.$good-1)
+%PanelTheme
+    background-color: var(--NihilityTheme0)
+%PanelThemeDull
+    background-color: var(--NihilityTheme1)
+
+/*
+ * -=- Radius -=-
+ */
+
+%RadiusMinimal
+    border-radius: base.$radius-0
+%RadiusLow
+    border-radius: base.$radius-1
+%RadiusSmall
+    border-radius: base.$radius-2
+%RadiusMedium
+    border-radius: base.$radius-3
+%RadiusHigh
+    border-radius: base.$radius-4

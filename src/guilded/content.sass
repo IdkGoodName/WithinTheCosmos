@@ -156,9 +156,13 @@
         @extend %Panel-5
         color: base.$fg-code
 
-// Old inline code
-.PrismTokenInlineRenderer-container-type-code
-    @extend .MarkRenderer-inline-code
+.PrismToken
+    // Embed inline code
+    &InlineRenderer-container-type-code
+        @extend .MarkRenderer-inline-code
+    // Embed link
+    &UrlRenderer-link
+        @include content.Link
 
 // Template parameters
 .TemplateParameter-container,
@@ -195,7 +199,7 @@
 .RawVideoPlayer-video,
 // Video overlay
 .GradientOverlay-container.GradientOverlay-container-subtle-2
-    border-radius: base.$radius-2
+    @extend %RadiusSmall
 
 // Selected images and videos
 .MediaRenderer-content-selected
@@ -310,7 +314,7 @@
 .ChatEmbedContent-image,
 .OpenGraphEmbedImage-image,
 .ChatEmbedContent-thumbnail-image
-    border-radius: base.$radius-0
+    @extend %RadiusMinimal
 
 // Footer background
 .ChatEmbedFooter-container,
@@ -350,7 +354,7 @@
 
 // Form
 .FormsRenderer
-    border-radius: base.$radius-2
+    @extend %RadiusSmall
     &-selected
         border-color: var(--NihilitySelect)
 .CustomFormWrapper-container-standalone
@@ -383,7 +387,7 @@
 
 // Whole container
 .ChatChannelInput-container
-    border-radius: base.$radius-3
+    @extend %RadiusMedium
 
 // Forum editor
 .Editor-container

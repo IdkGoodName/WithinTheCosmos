@@ -269,12 +269,15 @@
     // Item voted for
     &-vote-icon
         @extend %SvgLight
-// Successful voting
-.CustomFormControls-success
-    &-message
-        @extend %TextGood
-    &-icon
-        @extend %SvgGood
+.CustomFormControls
+    // Successful voting
+    &-success
+        &-message
+            @extend %TextGood
+        &-icon
+            @extend %SvgGood
+    &-edit-response
+        @include content.BasicLink
 // Question X
 .CustomFormSummaryResultSection-header
     @extend %TextDark

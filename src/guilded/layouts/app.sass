@@ -93,7 +93,7 @@
             border-radius: 50%
             @include set.transition(border-radius, base.$bounce)
         .GroupSelector-add-group:hover &
-            border-radius: base.$radius-2
+            @extend %RadiusSmall
     // Server list add text
     &-name
         @include set.transition(color)
@@ -488,7 +488,7 @@ body
         padding: 0
 
 .SidebarInfoItem-container
-    border-radius: base.$radius-3
+    @extend %RadiusMedium
 
 .SimpleIconTabMenuHeaderItem
     // Member/thread list tab hover
