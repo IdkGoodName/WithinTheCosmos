@@ -94,16 +94,21 @@
         @extend %SvgGood
 
 // Big form input
-.TextAreaInput-text-area
-    border-color: base.$border-light-2
-    color: base.$fg-2
-    @include set.transition(border-color)
-    // Big form input hover
-    &:hover
-        @extend %SetBorderLight-3
-    // Big form input focus
-    &:focus
-        @extend %SetBorderThemeDull
+.TextAreaInput
+    &-text-area
+        border-color: base.$border-light-2
+        color: base.$fg-2
+        @include set.transition(border-color)
+        // Big form input hover
+        &:hover
+            @extend %SetBorderLight-3
+        // Big form input focus
+        &:focus
+            @extend %SetBorderThemeDull
+    &-container &-text-area::placeholder
+        @extend %TextMedium
+    &-container-error &-text-area
+        @extend %SetBorderBad
 
 // Form input word count
 .CharacterCount
@@ -505,6 +510,10 @@
     // : delimeter
     &-delimiter
         @extend %TextDark
+
+.TimeInput-error, .DateInput-error
+    .FormBoxAndLabel-box
+        @extend %SetBorderBad
 // Timezone label
 .TimeFieldWrapper-timezone-label
     @extend %TextDark
