@@ -171,14 +171,18 @@
     // Slider off
     &-container .SwitchInput-slide
         @extend %PanelBad
+        width: 37px
+        height: 20px
+        border-radius: 10px
+        flex-shrink: 0
     // Slider on
     &-container-on .SwitchInput-slide
         @extend %PanelGood
     // Slider thumb
     &-tab
         @extend %Panel-2
-        // White shadow
-        box-shadow: base.$shadow
+        top: 2px
+        left: 2px
         // Disabled
         .SwitchInput-container-disabled &
             @extend %Panel-4
@@ -339,6 +343,7 @@
     // Form selector
     .Select-control
         border-color: base.$border-light-2 !important
+        @include set.transition(border-color)
     // Form selector hover
     &.GuildedSelect-container-dark:hover .Select .Select-control,
     &:hover .Select .Select-control
@@ -354,21 +359,25 @@
             border-top-color: base.$fg-0
     // Form selector arrow
     .Select-arrow
-        border-top-color: var(--NihilityTheme0)
+        border-top-color: base.$fg-0 !important
+        @include set.transition(border-top-color)
     // Form selector placeholder
     .Select-placeholder
         @extend %TextDark
     // Form selector value
     .Select-value-label
-        @extend %TextMedium
+        color: base.$fg-2 !important
     // Form select menu
     &.GuildedSelect-container-dark .Select-menu-outer,
     &.GuildedSelect-container-light .Select-menu-outer
         @extend %OverrideContentMildlyBordered-4
 
 // Form selector focused
-.GuildedSelect-container.GuildedSelect-container-dark .Select.is-focused .Select-control
-    border-color: var(--NihilityTheme2) !important
+.GuildedSelect-container.GuildedSelect-container-dark .Select.is-focused
+    .Select-control
+        border: solid 1px var(--NihilityTheme2) !important
+    .Select-arrow
+        border-top-color: var(--NihilityTheme2) !important
 
 // Form selector icon
 .GuildedSelectIcon-container
@@ -423,6 +432,15 @@
     &.is-open > &-control &-arrow
         border-top-color: base.$fg-2
 
+// Icon menu
+.IconMenuInput-container
+    &-gray, &-white,
+        .IconMenuInput-chevron-down, .IconMenuInput-selected-value-icon
+            @extend %SvgDark
+    &-desktop:hover
+        .IconMenuInput-chevron-down, .IconMenuInput-selected-value-icon
+            @extend %SvgMedium
+
 /*
  * --- Numeric ---
  */
@@ -464,20 +482,21 @@
  * --- Timed ---
  */
 
-// Date input
+// Date & Time input
 .FormBoxAndLabel
     &-box
-        border-color: base.$fg-0
+        border-color: base.$border-light-2
+        border-radius: base.$radius-2
         @include set.transition(border-color)
     &-container-focused &-box,
     &-container-desktop:hover &-box
-        @extend %SetBorderLight-2
+        @extend %SetBorderLight-3
     // Icon
     &-form-icon
         @extend %SvgDark
     // Text inside input
     &-main-text
-        @extend %TextLight
+        @extend %TextMedium
 // Time input
 .TimeInput
     // Part selected

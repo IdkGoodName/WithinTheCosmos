@@ -151,11 +151,10 @@
 .CopyableTextbox
     // The container itself
     &-container
-        @extend %Panel-4
-        border-color: base.$fg-0
+        @extend %ContentRoughBordered-4
         @include set.transition(border-color)
     &-container-desktop:hover
-        border-color: base.$fg-0
+        @extend %SetBorderLight-3
     // Link
     &-url-wrapper-text
         @extend %TextLink

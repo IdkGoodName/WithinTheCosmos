@@ -28,7 +28,7 @@
         // Hover
         &::after
             @extend %ContentGlare
-        
+
         // Viewing older messages
         &-type-viewing-older-messages,
         // Unread messages
@@ -39,7 +39,7 @@
         // New mentions
         &-type-new-mentions
             background-color: base.$bg-0 !important
-        
+
         // New mentions and new forum replies
         &-type-new-replies,
         &-type-new-mentions
@@ -48,7 +48,7 @@
             // New mentions icon
             .ChatChannelAlertBar-icon-click-wrapper .ChatChannelAlertBar-icon
                 fill: base.$mention
-        
+
         // Unread messages
         &-type-unread-messages
             color: base.$active !important
@@ -249,7 +249,7 @@
     &Icon-container:focus
         @extend %Panel-1
         border: solid 1px var(--NihilityTheme0)
-    
+
     // Bottom bar
     &Footer-container,
     // Top bar
@@ -275,12 +275,6 @@
 
 .ReactionPickerNavbarItem-active
     border-bottom-color: var(--NihilityTheme0)
-
-// Footer skintone's arrow
-.IconMenuInput-container
-    &-gray, &-white,
-        .IconMenuInput-chevron-down, .IconMenuInput-selected-value-icon
-            @extend %SvgDark
 
 /*
  * --- Misc menus ---

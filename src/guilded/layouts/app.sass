@@ -144,12 +144,12 @@
  */
 
 // Server search
-.TeamSearchBar-search-bar-input,
-.SearchBarV2-container.SearchBarV2-container-focused
+.SearchBarV2-container.SearchBarV2-container-focused,
+.TeamSearchBar-search-bar-input
     @extend %Panel-0
 // In-server search, emote search
-.SearchBarInput-container-bordered,
 .SearchBarV2-container-unfocused::after,
+.SearchBarInput-container-bordered,
 .SearchBarV2-container
     border-radius: 10px
     @extend %OverrideContentBordered-darker
@@ -261,10 +261,10 @@ body
 .NavV4Footer-container
     @extend %Panel-4
 
-// User card's content
-.NavV4Footer-right,
-.NavV4Footer-footer-content
-    border-top-right-radius: base.$radius-3
+// // User card's content
+// .NavV4Footer-right,
+// .NavV4Footer-footer-content
+//     border-top-right-radius: base.$radius-3
 
 // User card's name
 .LoggedInUserAvatar-name
