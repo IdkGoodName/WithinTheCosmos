@@ -1,4 +1,4 @@
-@use "./base"
+@use "./variables"
 @use "./set"
 @use "sass:color"
 
@@ -7,7 +7,7 @@
  */
 
 %ContentGlare
-    background-color: base.$bg-hover
+    background-color: variables.$bg-hover
 
 @mixin BasicLink
     @extend %TextLink
@@ -25,13 +25,13 @@
 
 // Text
 %TextDarker
-    color: base.$fg-0
+    color: variables.$fg-0
 %TextDark
-    color: base.$fg-1
+    color: variables.$fg-1
 %TextMedium
-    color: base.$fg-2
+    color: variables.$fg-2
 %TextLight
-    color: base.$fg-3
+    color: variables.$fg-3
 
 %TextLink
     color: var(--NihilityLink)
@@ -44,31 +44,31 @@
 %TextThemeBleached
     color: var(--NihilityTheme2)
 %TextNormal
-    color: base.$normal-0
+    color: variables.$normal-0
 %TextNormalHighlight
-    color: base.$normal-1
+    color: variables.$normal-1
 %TextBad
-    color: base.$bad-0
+    color: variables.$bad-0
 %TextBadHighlight
-    color: base.$bad-1
+    color: variables.$bad-1
 %TextNeutral
-    color: base.$neutral-0
+    color: variables.$neutral-0
 %TextNeutralHighlight
-    color: base.$neutral-1
+    color: variables.$neutral-1
 %TextGood
-    color: base.$good-0
+    color: variables.$good-0
 %TextGoodHighlight
-    color: base.$good-1
+    color: variables.$good-1
 
 // Svg
 %SvgDarker
-    fill: base.$fg-0
+    fill: variables.$fg-0
 %SvgDark
-    fill: base.$fg-1
+    fill: variables.$fg-1
 %SvgMedium
-    fill: base.$fg-2
+    fill: variables.$fg-2
 %SvgLight
-    fill: base.$fg-3
+    fill: variables.$fg-3
 
 %SvgLink
     fill: var(--NihilityLink)
@@ -81,31 +81,31 @@
 %SvgThemeBleached
     fill: var(--NihilityTheme2)
 %SvgNormal
-    fill: base.$normal-0
+    fill: variables.$normal-0
 %SvgNormalHighlight
-    fill: base.$normal-1
+    fill: variables.$normal-1
 %SvgBad
-    fill: base.$bad-0
+    fill: variables.$bad-0
 %SvgBadHighlight
-    fill: base.$bad-1
+    fill: variables.$bad-1
 %SvgNeutral
-    fill: base.$neutral-0
+    fill: variables.$neutral-0
 %SvgNeutralHighlight
-    fill: base.$neutral-1
+    fill: variables.$neutral-1
 %SvgGood
-    fill: base.$good-0
+    fill: variables.$good-0
 %SvgGoodHighlight
-    fill: base.$good-1
+    fill: variables.$good-1
 
 // Text & SVG
 %FontDarker
-    @include set.font-color(base.$fg-0)
+    @include set.font-color(variables.$fg-0)
 %FontDark
-    @include set.font-color(base.$fg-1)
+    @include set.font-color(variables.$fg-1)
 %FontMedium
-    @include set.font-color(base.$fg-2)
+    @include set.font-color(variables.$fg-2)
 %FontLight
-    @include set.font-color(base.$fg-3)
+    @include set.font-color(variables.$fg-3)
 
 %FontLink
     @include set.font-color(var(--NihilityLink))
@@ -118,41 +118,41 @@
 %FontThemeBleached
     @include set.font-color(var(--NihilityTheme2))
 %FontNormal
-    @include set.font-color(base.$normal-0)
+    @include set.font-color(variables.$normal-0)
 %FontNormalHighlight
-    @include set.font-color(base.$normal-1)
+    @include set.font-color(variables.$normal-1)
 %FontBad
-    @include set.font-color(base.$bad-0)
+    @include set.font-color(variables.$bad-0)
 %FontBadHighlight
-    @include set.font-color(base.$bad-1)
+    @include set.font-color(variables.$bad-1)
 %FontNeutral
-    @include set.font-color(base.$neutral-0)
+    @include set.font-color(variables.$neutral-0)
 %FontNeutralHighlight
-    @include set.font-color(base.$neutral-1)
+    @include set.font-color(variables.$neutral-1)
 %FontGood
-    @include set.font-color(base.$good-0)
+    @include set.font-color(variables.$good-0)
 %FontGoodHighlight
-    @include set.font-color(base.$good-1)
+    @include set.font-color(variables.$good-1)
 
 // Background
 %Panel-0
-    background-color: base.$bg-5
+    background-color: variables.$bg-5
 %Panel-1
-    background-color: base.$bg-4
+    background-color: variables.$bg-4
 %Panel-2
-    background-color: base.$bg-3
+    background-color: variables.$bg-3
 %Panel-3
-    background-color: base.$bg-2
+    background-color: variables.$bg-2
 %Panel-4
-    background-color: base.$bg-1
+    background-color: variables.$bg-1
 %Panel-5
-    background-color: base.$bg-0
+    background-color: variables.$bg-0
 %PanelTransparent
     background-color: transparent
 %PanelBad
-    background-color: base.$bad-0
+    background-color: variables.$bad-0
 %PanelGood
-    background-color: base.$good-0
+    background-color: variables.$good-0
 
 /*
  * -=- Bordered -=-
@@ -160,30 +160,30 @@
 
 // Borders
 %FullBorderLight-0
-    border: solid 1px base.$border-light-0
+    border: solid 1px variables.$border-light-0
 %FullBorderLight-1
-    border: solid 1px base.$border-light-1
+    border: solid 1px variables.$border-light-1
 %FullBorderLight-2
-    border: solid 1px base.$border-light-2
+    border: solid 1px variables.$border-light-2
 %FullBorderLight-3
-    border: solid 1px base.$border-light-3
+    border: solid 1px variables.$border-light-3
 %SetBorderLight-0
-    border-color: base.$border-light-0
+    border-color: variables.$border-light-0
 %SetBorderLight-1
-    border-color: base.$border-light-1
+    border-color: variables.$border-light-1
 %SetBorderLight-2
-    border-color: base.$border-light-2
+    border-color: variables.$border-light-2
 %SetBorderLight-3
-    border-color: base.$border-light-3
+    border-color: variables.$border-light-3
 
 %FullBorderDark-0
-    border: solid 1px base.$border-dark-0
+    border: solid 1px variables.$border-dark-0
 %FullBorderDark-1
-    border: solid 1px base.$border-dark-1
+    border: solid 1px variables.$border-dark-1
 %SetBorderDark-0
-    border-color: base.$border-dark-0
+    border-color: variables.$border-dark-0
 %SetBorderDark-1
-    border-color: base.$border-dark-1
+    border-color: variables.$border-dark-1
 
 %FullBorderTransparent
     border: solid 1px transparent
@@ -192,9 +192,9 @@
 %SetBorderThemeDull
     border-color: var(--NihilityTheme1)
 %SetBorderGood
-    border-color: base.$good-0
+    border-color: variables.$good-0
 %SetBorderBad
-    border-color: base.$bad-0
+    border-color: variables.$bad-0
 %SetBorderTransparent
     border-color: transparent
 
@@ -208,79 +208,79 @@
 
 // Panels with dark border
 %PanelBordered-0
-    background-color: base.$bg-5
-    border: solid 1px base.$border-dark-1
+    background-color: variables.$bg-5
+    border: solid 1px variables.$border-dark-1
 %PanelBordered-1
-    background-color: base.$bg-4
-    border: solid 1px base.$border-dark-1
+    background-color: variables.$bg-4
+    border: solid 1px variables.$border-dark-1
 %PanelBordered-2
-    background-color: base.$bg-3
-    border: solid 1px base.$border-dark-1
+    background-color: variables.$bg-3
+    border: solid 1px variables.$border-dark-1
 %PanelBordered-3
-    background-color: base.$bg-2
-    border: solid 1px base.$border-dark-1
+    background-color: variables.$bg-2
+    border: solid 1px variables.$border-dark-1
 %PanelBordered-4
-    background-color: base.$bg-1
-    border: solid 1px base.$border-dark-1
+    background-color: variables.$bg-1
+    border: solid 1px variables.$border-dark-1
 %PanelBordered-5
-    background-color: base.$bg-0
-    border: solid 1px base.$border-dark-1
+    background-color: variables.$bg-0
+    border: solid 1px variables.$border-dark-1
 %OverridePanelBordered-0
-    background-color: base.$bg-5
-    border-color: base.$border-dark-1
+    background-color: variables.$bg-5
+    border-color: variables.$border-dark-1
 %OverridePanelBordered-0
-    background-color: base.$bg-4
-    border-color: base.$border-dark-1
+    background-color: variables.$bg-4
+    border-color: variables.$border-dark-1
 %OverridePanelBordered-2
-    background-color: base.$bg-3
-    border-color: base.$border-dark-1
+    background-color: variables.$bg-3
+    border-color: variables.$border-dark-1
 %OverridePanelBordered-3
-    background-color: base.$bg-2
-    border-color: base.$border-dark-1
+    background-color: variables.$bg-2
+    border-color: variables.$border-dark-1
 %OverridePanelBordered-4
-    background-color: base.$bg-1
-    border-color: base.$border-dark-1
+    background-color: variables.$bg-1
+    border-color: variables.$border-dark-1
 %OverridePanelBordered-5
-    background-color: base.$bg-0
-    border-color: base.$border-dark-1
+    background-color: variables.$bg-0
+    border-color: variables.$border-dark-1
 
 // Panel with mild border
 %PanelMildlyBordered-0
-    background-color: base.$bg-5
-    border: solid 1px base.$border-dark-0
+    background-color: variables.$bg-5
+    border: solid 1px variables.$border-dark-0
 %PanelMildlyBordered-2
-    background-color: base.$bg-4
-    border: solid 1px base.$border-dark-0
+    background-color: variables.$bg-4
+    border: solid 1px variables.$border-dark-0
 %PanelMildlyBordered-2
-    background-color: base.$bg-3
-    border: solid 1px base.$border-dark-0
+    background-color: variables.$bg-3
+    border: solid 1px variables.$border-dark-0
 %PanelMildlyBordered-3
-    background-color: base.$bg-2
-    border: solid 1px base.$border-dark-0
+    background-color: variables.$bg-2
+    border: solid 1px variables.$border-dark-0
 %PanelMildlyBordered-4
-    background-color: base.$bg-1
-    border: solid 1px base.$border-dark-0
+    background-color: variables.$bg-1
+    border: solid 1px variables.$border-dark-0
 %PanelMildlyBordered-5
-    background-color: base.$bg-0
-    border: solid 1px base.$border-dark-0
+    background-color: variables.$bg-0
+    border: solid 1px variables.$border-dark-0
 %OverridePanelMildlyBordered-0
-    background-color: base.$bg-5
-    border-color: base.$border-dark-0
+    background-color: variables.$bg-5
+    border-color: variables.$border-dark-0
 %OverridePanelMildlyBordered-2
-    background-color: base.$bg-4
-    border-color: base.$border-dark-0
+    background-color: variables.$bg-4
+    border-color: variables.$border-dark-0
 %OverridePanelMildlyBordered-2
-    background-color: base.$bg-3
-    border-color: base.$border-dark-0
+    background-color: variables.$bg-3
+    border-color: variables.$border-dark-0
 %OverridePanelMildlyBordered-3
-    background-color: base.$bg-2
-    border-color: base.$border-dark-0
+    background-color: variables.$bg-2
+    border-color: variables.$border-dark-0
 %OverridePanelMildlyBordered-4
-    background-color: base.$bg-1
-    border-color: base.$border-dark-0
+    background-color: variables.$bg-1
+    border-color: variables.$border-dark-0
 %OverridePanelMildlyBordered-5
-    background-color: base.$bg-0
-    border-color: base.$border-dark-0
+    background-color: variables.$bg-0
+    border-color: variables.$border-dark-0
 
 /*
  * --- Content ---
@@ -288,140 +288,140 @@
 
 // Content with rough border
 %ContentRoughBordered-0
-    background-color: base.$bg-5
-    border: solid 1px base.$border-light-2
+    background-color: variables.$bg-5
+    border: solid 1px variables.$border-light-2
 %ContentRoughBordered-1
-    background-color: base.$bg-4
-    border: solid 1px base.$border-light-2
+    background-color: variables.$bg-4
+    border: solid 1px variables.$border-light-2
 %ContentRoughBordered-2
-    background-color: base.$bg-3
-    border: solid 1px base.$border-light-2
+    background-color: variables.$bg-3
+    border: solid 1px variables.$border-light-2
 %ContentRoughBordered-3
-    background-color: base.$bg-2
-    border: solid 1px base.$border-light-2
+    background-color: variables.$bg-2
+    border: solid 1px variables.$border-light-2
 %ContentRoughBordered-4
-    background-color: base.$bg-1
-    border: solid 1px base.$border-light-2
+    background-color: variables.$bg-1
+    border: solid 1px variables.$border-light-2
 %ContentRoughBordered-5
-    background-color: base.$bg-0
-    border: solid 1px base.$border-light-2
+    background-color: variables.$bg-0
+    border: solid 1px variables.$border-light-2
 %OverrideContentRoughBordered-0
-    background-color: base.$bg-5
-    border-color: base.$border-light-2
+    background-color: variables.$bg-5
+    border-color: variables.$border-light-2
 %OverrideContentRoughBordered-1
-    background-color: base.$bg-4
-    border-color: base.$border-light-2
+    background-color: variables.$bg-4
+    border-color: variables.$border-light-2
 %OverrideContentRoughBordered-2
-    background-color: base.$bg-3
-    border-color: base.$border-light-2
+    background-color: variables.$bg-3
+    border-color: variables.$border-light-2
 %OverrideContentRoughBordered-3
-    background-color: base.$bg-2
-    border-color: base.$border-light-2
+    background-color: variables.$bg-2
+    border-color: variables.$border-light-2
 %OverrideContentRoughBordered-4
-    background-color: base.$bg-1
-    border-color: base.$border-light-2
+    background-color: variables.$bg-1
+    border-color: variables.$border-light-2
 %OverrideContentRoughBordered-5
-    background-color: base.$bg-0
-    border-color: base.$border-light-2
+    background-color: variables.$bg-0
+    border-color: variables.$border-light-2
 %OverrideContentRoughBordered-darker
-    background-color: base.$bg-0
-    border-color: base.$border-light-2
+    background-color: variables.$bg-0
+    border-color: variables.$border-light-2
 
 // Content with normal border
 %ContentBordered-0
-    background-color: base.$bg-5
-    border: solid 1px base.$border-light-1
+    background-color: variables.$bg-5
+    border: solid 1px variables.$border-light-1
 %ContentBordered-1
-    background-color: base.$bg-4
-    border: solid 1px base.$border-light-1
+    background-color: variables.$bg-4
+    border: solid 1px variables.$border-light-1
 %ContentBordered-2
-    background-color: base.$bg-3
-    border: solid 1px base.$border-light-1
+    background-color: variables.$bg-3
+    border: solid 1px variables.$border-light-1
 %ContentBordered-3
-    background-color: base.$bg-2
-    border: solid 1px base.$border-light-1
+    background-color: variables.$bg-2
+    border: solid 1px variables.$border-light-1
 %ContentBordered-4
-    background-color: base.$bg-1
-    border: solid 1px base.$border-light-1
+    background-color: variables.$bg-1
+    border: solid 1px variables.$border-light-1
 %ContentBordered-5
-    background-color: base.$bg-0
-    border: solid 1px base.$border-light-1
+    background-color: variables.$bg-0
+    border: solid 1px variables.$border-light-1
 %OverrideContentBordered-0
-    background-color: base.$bg-5
-    border-color: base.$border-light-1
+    background-color: variables.$bg-5
+    border-color: variables.$border-light-1
 %OverrideContentBordered-1
-    background-color: base.$bg-4
-    border-color: base.$border-light-1
+    background-color: variables.$bg-4
+    border-color: variables.$border-light-1
 %OverrideContentBordered-2
-    background-color: base.$bg-3
-    border-color: base.$border-light-1
+    background-color: variables.$bg-3
+    border-color: variables.$border-light-1
 %OverrideContentBordered-3
-    background-color: base.$bg-2
-    border-color: base.$border-light-1
+    background-color: variables.$bg-2
+    border-color: variables.$border-light-1
 %OverrideContentBordered-4
-    background-color: base.$bg-1
-    border-color: base.$border-light-1
+    background-color: variables.$bg-1
+    border-color: variables.$border-light-1
 %OverrideContentBordered-5
-    background-color: base.$bg-0
-    border-color: base.$border-light-1
+    background-color: variables.$bg-0
+    border-color: variables.$border-light-1
 %OverrideContentBordered-darker
-    background-color: base.$bg-0
-    border-color: base.$border-light-1
+    background-color: variables.$bg-0
+    border-color: variables.$border-light-1
 
 // Content with mild border
 %ContentMildlyBordered-0
-    background-color: base.$bg-5
-    border: solid 1px base.$border-light-0
+    background-color: variables.$bg-5
+    border: solid 1px variables.$border-light-0
 %ContentMildlyBordered-2
-    background-color: base.$bg-4
-    border: solid 1px base.$border-light-0
+    background-color: variables.$bg-4
+    border: solid 1px variables.$border-light-0
 %ContentMildlyBordered-2
-    background-color: base.$bg-3
-    border: solid 1px base.$border-light-0
+    background-color: variables.$bg-3
+    border: solid 1px variables.$border-light-0
 %ContentMildlyBordered-3
-    background-color: base.$bg-2
-    border: solid 1px base.$border-light-0
+    background-color: variables.$bg-2
+    border: solid 1px variables.$border-light-0
 %ContentMildlyBordered-4
-    background-color: base.$bg-1
-    border: solid 1px base.$border-light-0
+    background-color: variables.$bg-1
+    border: solid 1px variables.$border-light-0
 %ContentMildlyBordered-5
-    background-color: base.$bg-0
-    border: solid 1px base.$border-light-0
+    background-color: variables.$bg-0
+    border: solid 1px variables.$border-light-0
 
 %OverrideContentMildlyBordered-0
-    background-color: base.$bg-5
-    border-color: base.$border-light-0
+    background-color: variables.$bg-5
+    border-color: variables.$border-light-0
 %OverrideContentMildlyBordered-2
-    background-color: base.$bg-4
-    border-color: base.$border-light-0
+    background-color: variables.$bg-4
+    border-color: variables.$border-light-0
 %OverrideContentMildlyBordered-2
-    background-color: base.$bg-3
-    border-color: base.$border-light-0
+    background-color: variables.$bg-3
+    border-color: variables.$border-light-0
 %OverrideContentMildlyBordered-3
-    background-color: base.$bg-2
-    border-color: base.$border-light-0
+    background-color: variables.$bg-2
+    border-color: variables.$border-light-0
 %OverrideContentMildlyBordered-4
-    background-color: base.$bg-1
-    border-color: base.$border-light-0
+    background-color: variables.$bg-1
+    border-color: variables.$border-light-0
 %OverrideContentMildlyBordered-5
-    background-color: base.$bg-0
-    border-color: base.$border-light-0
+    background-color: variables.$bg-0
+    border-color: variables.$border-light-0
 
 /*
  * --- Content Type Panels ---
  */
 
 @mixin PanelType($colour)
-    background-color: color.mix(base.$bg-1, $colour, 88%)
+    background-color: color.mix(variables.$bg-1, $colour, 88%)
     border-color: rgba($colour, 0.25)
 %PanelWarning
-    @include PanelType(base.$warning)
+    @include PanelType(variables.$warning)
 %PanelInfo
-    @include PanelType(base.$info)
+    @include PanelType(variables.$info)
 %PanelCaution
-    @include PanelType(base.$bad-1)
+    @include PanelType(variables.$bad-1)
 %PanelSuccess
-    @include PanelType(base.$good-1)
+    @include PanelType(variables.$good-1)
 %PanelTheme
     background-color: var(--NihilityTheme0)
 %PanelThemeDull
@@ -432,12 +432,12 @@
  */
 
 %RadiusMinimal
-    border-radius: base.$radius-0
+    border-radius: variables.$radius-0
 %RadiusLow
-    border-radius: base.$radius-1
+    border-radius: variables.$radius-1
 %RadiusSmall
-    border-radius: base.$radius-2
+    border-radius: variables.$radius-2
 %RadiusMedium
-    border-radius: base.$radius-3
+    border-radius: variables.$radius-3
 %RadiusHigh
-    border-radius: base.$radius-4
+    border-radius: variables.$radius-4

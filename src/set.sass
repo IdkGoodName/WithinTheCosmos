@@ -1,4 +1,4 @@
-@use "./base"
+@use "./variables"
 
 // Sets both color and fill
 @mixin font-color($color)
@@ -8,5 +8,5 @@
 // For setting transition in a lot of places
 @mixin transition($property, $fn: ease-out)
     transition-property: $property
-    transition-duration: base.$transition
+    transition-duration: variables.$transition
     transition-timing-function: $fn

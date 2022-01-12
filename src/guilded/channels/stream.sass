@@ -1,4 +1,4 @@
-@use "../../base"
+@use "../../variables"
 @use "../../content"
 
 // Whole container
@@ -44,7 +44,7 @@
 
 // Hover outline
 .StreamPlayer-container:hover .StreamPlayer-inset-border
-    border-color: base.$active
+    border-color: variables.$active
 // The user pill
 .StreamPlayerMemberDisplay-pill
     @extend %Panel-5
@@ -55,10 +55,10 @@
 // Livestream badge in groups and servers
 .LiveStreamBadge-indicator
     // We have no way of selecting the live badge
-    background: base.$stream !important
+    background: variables.$stream !important
 // Livestream outline in the voice user list
 .VoiceChannelGroupUser-avatar-streaming::after
-    background: base.$stream
+    background: variables.$stream
 
 /*
  * --- Modes ---

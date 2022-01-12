@@ -1,4 +1,4 @@
-@use "../../base"
+@use "../../variables"
 @use "../../set"
 @use "../../content"
 
@@ -8,7 +8,7 @@
 
 // Dashed border
 .UploadMediaBox-container
-    border-color: rgba(base.$fg-0, 0.3)
+    border-color: rgba(variables.$fg-0, 0.3)
 
 // Media upload
 .MediaUploaderDropImageInstructions
@@ -65,7 +65,7 @@
     @extend %TextGood
 // Upload avatar container
 .NewTeamUpsellIcon-container
-    border-color: base.$fg-0
+    border-color: variables.$fg-0
 // Upload avatar icon
 .NewTeamUpsellIcon-icon
     @extend %SvgMedium
@@ -114,7 +114,7 @@
         &-green
             @extend %PanelGood
         &-grey
-            background-color: base.$fg-2
+            background-color: variables.$fg-2
 // Accept invite and join Y server
 .SocialContextHeader-header-text
     @extend %TextMedium
@@ -207,15 +207,15 @@
     &-icon
         // Wrapper
         .AvatarIcon-container
-            background-color: base.$bg-0 !important
+            background-color: variables.$bg-0 !important
         // Icon types
         .icon-reply-filled-no-padding,
         .icon-toolbar-mention
-            fill: base.$yellow
+            fill: variables.$yellow
         .icon-calendar-new
-            fill: base.$red
+            fill: variables.$red
         .icon-toolbar-emoji
-            fill: base.$blue
+            fill: variables.$blue
 
 /*
  * --- Channel Switcher ---
@@ -224,8 +224,8 @@
 // Channel switcher
 .ChatChannelSwitcherOverlay
     &-container
-        background-color: base.$bg-3
-        color: base.$fg-1
+        background-color: variables.$bg-3
+        color: variables.$fg-1
     &Footer-container
         @extend %Panel-4
 // Channel switcher channel
@@ -260,7 +260,7 @@
         @extend %Panel-3
         // Progress
         &-highlight
-            background: base.$progress
+            background: variables.$progress
     // Percentage label
     &-value,
     // The name of the poll item

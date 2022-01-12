@@ -1,4 +1,4 @@
-@use "../../base"
+@use "../../variables"
 @use "../../set"
 @use "../../content"
 
@@ -12,7 +12,7 @@
 
 // Section tabs
 .PersistentActionMenu-menu-section
-    padding: 0 base.$spacing-2
+    padding: 0 variables.$spacing-2
 
 // Tabs
 .OptionsMenu-container-desktop .OptionsMenu-options-control
@@ -28,7 +28,7 @@
 .DesktopOptionsControlItemTemplate-label-text
     @extend %TextDark
 .DesktopOptionsControlItemTemplate-container
-    border-radius: base.$radius-1
+    border-radius: variables.$radius-1
     padding: 6px 12px
     @extend %FullBorderTransparent
     // Tab hover
@@ -45,7 +45,7 @@
 
 // Gilded tab
 .DesktopOptionsControlItemTemplate-container-type-gilded .DesktopOptionsControlItemTemplate-label-text
-    color: base.$gold
+    color: variables.$gold
 
 /*
  * -=- User settings -=-
@@ -140,7 +140,7 @@
     @extend %Panel-4
 // Twitch integration
 .TeamSettingsAddIntegration-container-type-twitch .TeamSettingsAddIntegration-icon
-    fill: base.$stream
+    fill: variables.$stream
 
 /*
  * --- Groups ---

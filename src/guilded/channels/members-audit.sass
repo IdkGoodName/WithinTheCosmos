@@ -1,4 +1,4 @@
-@use "../../base"
+@use "../../variables"
 @use "../../set"
 @use "../../fake"
 @use "../../content"
@@ -9,11 +9,11 @@
 
 // Select all checkbox
 .SelectToggleIcon-container
-    border-color: base.$fg-0
+    border-color: variables.$fg-0
     // Select all checkbox hover
     &-clickable:hover
         @extend %SetBorderLight-2
-        background-color: rgba(base.$bg-hover, 0.1)
+        background-color: rgba(variables.$bg-hover, 0.1)
 // Select all checkmark
 .SelectToggleIcon-checkmark
     @extend %SvgTheme
@@ -60,7 +60,7 @@
         @extend %ContentBordered-4
 // Filter menu hover
 .ItemManagerFilterOption-container:hover
-    background-color: base.$bg-lighter
+    background-color: variables.$bg-lighter
 
 
 .SearchBarInput

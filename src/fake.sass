@@ -1,11 +1,11 @@
-@use "./base"
+@use "./variables"
 @use "./content"
 
-$pill-bg: rgba(base.$fg-3, 0.1)
+$pill-bg: rgba(variables.$fg-3, 0.1)
 
 %FakeMention
     background-color: $pill-bg
-    color: base.$fg-3
+    color: variables.$fg-3
     font-weight: bold
     // Guilded native
     padding: 0 4px
@@ -26,5 +26,5 @@ $pill-bg: rgba(base.$fg-3, 0.1)
         size: 10px
         weight: bold
     text-transform: uppercase
-    background-color: base.$bg-2
-    border: solid 1px base.$border-light-1
+    background-color: variables.$bg-2
+    border: solid 1px variables.$border-light-1

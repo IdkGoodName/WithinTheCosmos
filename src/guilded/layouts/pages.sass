@@ -1,4 +1,4 @@
-@use "../../base"
+@use "../../variables"
 @use "../../set"
 @use "../../content"
 
@@ -38,7 +38,7 @@
 .UserProfilePictureControl
     // Status icon
     &-online-status
-        border-color: base.$bg-1
+        border-color: variables.$bg-1
         right: 0
     // Avatar
     &-picture
@@ -159,20 +159,20 @@
 
 .ChatChannelListItem
     &-container
-        --border-color: #{base.$bg-1}
+        --border-color: #{variables.$bg-1}
     // Selected DMs
     &-container-selected
         @extend %Panel-0
-        --border-color: #{base.$bg-3}
+        --border-color: #{variables.$bg-3}
     // Hovered DMs
     &-container:not(&-container-selected):hover
         @extend %Panel-2
-        --border-color: #{base.$bg-2}
+        --border-color: #{variables.$bg-2}
     // Remove DMs crossmark
     &-container:not(&-container-selected):hover &-remove-icon,
     &-container-selected &-remove-icon
         background-color: transparent
-        fill: base.$fg-1
+        fill: variables.$fg-1
         @include set.transition(fill)
         // Remove DMs crossmark hover
         &:hover
@@ -191,7 +191,7 @@
 
 // User typing in DMs
 .TypingIndicator-container
-    background-color: base.$bg-6
+    background-color: variables.$bg-6
 
 // Removed DMs background
 .ChatSummary-container
@@ -230,7 +230,7 @@
         @extend %Panel-2
     // Video
     &Header-video-mask
-        background-image: linear-gradient(to bottom, rgba(base.$bg-3, 0.85) 20%, rgba(0, 0, 0, 0) 65%, rgba(base.$bg-3, 0.95))
+        background-image: linear-gradient(to bottom, rgba(variables.$bg-3, 0.85) 20%, rgba(0, 0, 0, 0) 65%, rgba(variables.$bg-3, 0.95))
 // Tournament card
 .TournamentCard-container
     @extend %Panel-0
@@ -253,12 +253,12 @@
     &-container
         @extend %Panel-2
     &-api-callout
-        color: base.$info
+        color: variables.$info
 .RestApiDocs
     &Table-row
         @extend %PanelBordered-4
     &SchemaItem-verb
-        color: base.$action
+        color: variables.$action
 
 /*
  * -=- Explore -=-
@@ -270,7 +270,7 @@
 // Sidebar page list
 .NavbarNavIcon-container
     &:hover
-        background-color: rgba(base.$bg-hover, 0.1)
+        background-color: rgba(variables.$bg-hover, 0.1)
     // Selected
     &-selected
         @extend %Panel-2
@@ -332,10 +332,10 @@
 .PercentageBar
     // Empty
     &-backplate-div
-        background-color: base.$bg-1 !important
+        background-color: variables.$bg-1 !important
     // Progress
     &-progress-div
-        background-color: base.$progress !important
+        background-color: variables.$progress !important
     // Progressbar
     &-container-type-success .PercentageBar-progress-div
         @extend %SetBorderDark-1
@@ -384,25 +384,25 @@
 .LandingPageNavBar-container-theme-gilded
     @extend %Panel-0
 .LogoAndWordmarkV2-container-theme-dark
-    fill: base.$gold
+    fill: variables.$gold
 .LandingPageNavBarLinks-container-theme-dark .LandingPageNavBarLinks-link
     &, &:focus, &:active, &:visited, &:hover
-        color: base.$gold
+        color: variables.$gold
 .JobLandingHeader
     &-container::before
         @extend .LandingPageNavBar-container-theme-gilded
     &-title
-        color: base.$gold
+        color: variables.$gold
     &-description
-        color: base.$gold
+        color: variables.$gold
 .JobOpeningHeader
     &-icon
-        fill: base.$gold
+        fill: variables.$gold
     &-container
-        color: base.$gold
+        color: variables.$gold
         @extend .JobLandingHeader-container
         .ParagraphRenderer
-            color: base.$gold
+            color: variables.$gold
 
 %JobsSectionHeading
     @extend %TextLight
@@ -425,11 +425,11 @@
         &-icon, svg
             @extend %SvgDark
         &:hover svg
-            fill: base.$gold
+            fill: variables.$gold
         &-fill-light-blue:hover svg
-            fill: base.$blue
+            fill: variables.$blue
         &-fill-green:hover svg
-            fill: base.$green
+            fill: variables.$green
         &-title
             @extend %JobsItemHeading
         &-subtext
@@ -444,7 +444,7 @@
         @extend %JobsSectionDescription
 .JobsPerk
     &-icon
-        fill: base.$gold
+        fill: variables.$gold
     &-name
         @extend %JobsItemHeading
     &-description

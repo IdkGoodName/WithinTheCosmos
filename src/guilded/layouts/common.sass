@@ -1,4 +1,4 @@
-@use "../../base"
+@use "../../variables"
 @use "../../content"
 @use "../../set"
 @use "sass:color"
@@ -20,9 +20,9 @@
         &-theme-error
             @extend %PanelCaution
             // .GuildedText-container-type-subtextBodyWhite
-            //     color: base.$warning
+            //     color: variables.$warning
             // .BannerWithButton-icon
-            //     fill: base.$warning
+            //     fill: variables.$warning
 // "Nicknames are visible to everyone in the server"
 .ChangeNicknameOverlay-info
     @extend %TextMedium
@@ -93,16 +93,16 @@
         @extend %TextLight
     // Make it dark with a border
     &.StatusMessage-container-type-banner
-        background: base.$bg-0
-        border-bottom: solid 1px base.$active
+        background: variables.$bg-0
+        border-bottom: solid 1px variables.$active
         .StatusMessage-content
-            color: base.$active
+            color: variables.$active
     // Same with stream mode, but purple
     &.StatusMessage-container-banner-type-streamer-mode
-        background: base.$bg-0
-        border-bottom: solid 1px base.$stream
+        background: variables.$bg-0
+        border-bottom: solid 1px variables.$stream
         .StatusMessage-content
-            color: base.$stream
+            color: variables.$stream
 
 /*
  * -=- Text -=-
@@ -159,13 +159,13 @@
 
 // Message avatar bouncing
 .ChatV2MessageHeader-avatar-wrapper, .ChatV2MessageHeader-avatar
-    @include set.transition(border-radius, base.$bounce)
+    @include set.transition(border-radius, variables.$bounce)
 
     .ChatV2Message-header:hover &
         @extend %RadiusSmall
 
 .PlayerCardProfilePicture-avatar
-    @include set.transition(border-radius, base.$bounce)
+    @include set.transition(border-radius, variables.$bounce)
 
     // Announcement & forum bouncing
     .TeamWidgetProfileDetails-container:hover &,
@@ -178,7 +178,7 @@
 // Favourite server bouncing
 .NavV4BadgedItem-image, .NavV4BadgedItem-icon-wrapper
     border-radius: 50%
-    @include set.transition(border-radius, base.$bounce)
+    @include set.transition(border-radius, variables.$bounce)
 
     .NavV4BadgedItem-container:hover &
         @extend %RadiusSmall
@@ -189,7 +189,7 @@
     border-radius: 50%
     // Inside group list
     .GroupSelector-container &
-        @include set.transition(border-radius, base.$bounce)
+        @include set.transition(border-radius, variables.$bounce)
     // Group hover
     .GroupSelectorItem-container:hover &,
     // Group selected
@@ -210,7 +210,7 @@
     // Tab
     &-container
         &:hover, &:active, &:focus
-            background-color: rgba(base.$bg-hover, 0.1)
+            background-color: rgba(variables.$bg-hover, 0.1)
         // Text
         .GH2-container
             @extend %TextMedium
@@ -224,7 +224,7 @@
 // Tab highlighter
 .SimpleIconTabMenuHeaderItem-container-selected::after,
 .HorizontalTab-highlighter
-    background-color: base.$fg-1
+    background-color: variables.$fg-1
 
 /*
  * -=- Animated -=-
@@ -232,7 +232,7 @@
 
 // Flash when scrolling to a message or a forum post
 .ScrollFlasher-container
-    background-color: base.$important
+    background-color: variables.$important
 
 /*
  * -=- Mention icons and notifications -=-
@@ -241,7 +241,7 @@
 // Mentions
 .BadgeV2-container,
 .NavIcon-dot
-    background-color: base.$mention
+    background-color: variables.$mention
 
 // Notifications
 .NavSelectorItem-container-orientation-horizontal.NavSelectorItem-container-unread,
@@ -256,7 +256,7 @@
 .TeamPostRow-container-unread,
 .NavV4ItemIcon-icon-unread
     &::before
-        background-color: base.$mark
+        background-color: variables.$mark
 
 /*
  * -=- Badges -=-
@@ -264,8 +264,8 @@
 
 .CalloutBadge-container
     @extend %TextDark
-    background: base.$bg-0 !important
-    border: solid 1px base.$border-light-1 !important
+    background: variables.$bg-0 !important
+    border: solid 1px variables.$border-light-1 !important
 
 /*
  * --- User badges ---
@@ -278,11 +278,11 @@
     // Override all colours for badges
     &-container:not(.UserFlairRow-icon)
         @extend %TextDark
-        background: base.$bg-1 !important
-        border: solid 1px base.$border-light-1 !important
+        background: variables.$bg-1 !important
+        border: solid 1px variables.$border-light-1 !important
 // [MEMBER]
 .GroupMembershipBadge-container
-   color: base.$verified
+   color: variables.$verified
 
 /*
  * --- Channel & Settings badges ---
@@ -296,16 +296,16 @@
 .ScreenHeader-label,
 // [BETA] in channel creation
 .RadiosField-option-details-header-badge
-    color: base.$info
-    background: base.$bg-2 !important
+    color: variables.$info
+    background: variables.$bg-2 !important
 
 // [LIVE]
 // .TeamChannelItemContents-label-wrapper
 //     .CalloutBadge-container
-//         color: base.$stream
+//         color: variables.$stream
 // Group reorder [DEFAULT]
 .GroupSettingsPanel-name-wrapper .CalloutBadge-container
-    color: base.$blue
+    color: variables.$blue
 
 /*
  * --- Tournament badges ---
@@ -316,9 +316,9 @@
     &-in-progress, &-unpublished
         @extend %ContentBordered-5
     &-in-progress
-        color: base.$active
+        color: variables.$active
     &-unpublished
-        color: base.$waiting
+        color: variables.$waiting
 
 /*
  * -=- Bars -=-
@@ -358,10 +358,10 @@
 .TypeaheadMenu-list,
 .FormsRenderer
     // Firefox scrollbar
-    scrollbar-color: base.$bar transparent !important
+    scrollbar-color: variables.$bar transparent !important
     // Webkit/Chromium/Blink scrollbar
     &::-webkit-scrollbar-thumb
-        background: base.$bar !important
+        background: variables.$bar !important
 
 // Upload/XP progress bar
 .GoldenProgressBar
@@ -371,4 +371,4 @@
         @extend %Panel-5
     // Progress
     &-progress
-        background-color: base.$progress
+        background-color: variables.$progress

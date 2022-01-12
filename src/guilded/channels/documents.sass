@@ -1,4 +1,4 @@
-@use "../../base"
+@use "../../variables"
 @use "../../set"
 @use "../../content"
 @use "../../fake"
@@ -22,7 +22,7 @@
 // Add [DRAFT] badge
 .TeamDocs-drafts-docs-display .DocSummaryInfo-title::after
     content: 'draft'
-    color: base.$waiting
+    color: variables.$waiting
     @extend %FakeBadge
 
 
@@ -49,7 +49,7 @@
     @extend %TextMedium
 // Remove tag
 .TagsDisplayV2-delete-icon
-    background-color: base.$fg-1
+    background-color: variables.$fg-1
     @include set.transition(background-color)
     &:hover
         @extend %PanelBad

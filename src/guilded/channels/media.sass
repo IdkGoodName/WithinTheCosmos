@@ -1,4 +1,4 @@
-@use "../../base"
+@use "../../variables"
 @use "../../set"
 @use "../../content"
 
@@ -43,7 +43,7 @@
     // Exit icon
     .BackLink-icon
         @extend %SvgDark
-        transition-duration: base.$transition
+        transition-duration: variables.$transition
     // Exit icon hover
     &:hover .BackLink-icon
         @extend %SvgMedium

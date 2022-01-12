@@ -1,4 +1,4 @@
-@use "../../base"
+@use "../../variables"
 @use "../../set"
 @use "../../content"
 
@@ -52,7 +52,7 @@
         @extend %TextDark
 
 .ToggleControl-container.ToggleControl-container-highlighted
-    border-color: base.$fg-0
+    border-color: variables.$fg-0
 
 .OverviewWidgetItemWrapper-container-type-filled,
 .TeamOverviewContentItemCard-container
@@ -98,11 +98,11 @@
 // Carousel blurs
 .CarouselList-container-size-sm .CarouselList-blur-light.CarouselList-left-blur,
 .CarouselList-blur-light.CarouselList-left-blur
-    background-image: linear-gradient(to left, rgba(base.$bg-3, 0), base.$bg-3 100%)
+    background-image: linear-gradient(to left, rgba(variables.$bg-3, 0), variables.$bg-3 100%)
 
 .CarouselList-container-size-sm .CarouselList-blur-light.CarouselList-right-blur,
 .CarouselList-blur-light.CarouselList-right-blur
-    background-image: linear-gradient(to right, rgba(base.$bg-3, 0), base.$bg-3 100%)
+    background-image: linear-gradient(to right, rgba(variables.$bg-3, 0), variables.$bg-3 100%)
 
 // Carousel arrow
 .CarouselList-controls-arrow

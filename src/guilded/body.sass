@@ -1,15 +1,15 @@
-@use "../base"
+@use "../variables"
 @use "../content"
 
 :root
-    $rgba-theme-0       : rgba(base.$theme-0, 0.6)
-    --NihilityTheme0    : #{base.$theme-0}
-    --NihilityTheme1    : #{base.$theme-1}
-    --NihilityTheme2    : #{base.$theme-2}
+    $rgba-theme-0       : rgba(variables.$theme-0, 0.6)
+    --NihilityTheme0    : #{variables.$theme-0}
+    --NihilityTheme1    : #{variables.$theme-1}
+    --NihilityTheme2    : #{variables.$theme-2}
     --NihilityThemeFg   : #000
     --NihilitySelect    : #{$rgba-theme-0}
-    --NihilityLink      : #{base.$fg-link}
-    --NihilityLinkHover : #{base.$fg-link-hover}
+    --NihilityLink      : #{variables.$fg-link}
+    --NihilityLinkHover : #{variables.$fg-link-hover}
 
 body
     @extend %Panel-4
@@ -19,9 +19,9 @@ body,
 .ChannelWrapper-container,
 .ChatChannelMessagesList-container,
 .SlateEditor-container-type-default
-    --body-text-color: #{base.$fg-2}
+    --body-text-color: #{variables.$fg-2}
     --game-color: var(--NihilityTheme0)
-    --border-color: #{base.$bg-1}
+    --border-color: #{variables.$bg-1}
     @extend %TextMedium
 // Change selection
 ::selection
@@ -29,5 +29,5 @@ body,
     color: white
 // Change variables
 .AppV2-container-minimal-nav
-    --left-v4-nav-color: #{base.$bg-0}
-    --nav-v4-sidebar-background-color: #{base.$bg-0}
+    --left-v4-nav-color: #{variables.$bg-0}
+    --nav-v4-sidebar-background-color: #{variables.$bg-0}

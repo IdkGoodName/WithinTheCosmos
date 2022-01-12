@@ -1,4 +1,4 @@
-@use "../../base"
+@use "../../variables"
 @use "../../content"
 
 /*
@@ -39,8 +39,8 @@
 // Forum post
 .TeamThreadPostPanelDisplay-container
     @extend %PanelBordered-3
-    border-radius: base.$radius-3
-    --border-color: #{base.$bg-1}
+    border-radius: variables.$radius-3
+    --border-color: #{variables.$bg-1}
 
 // Reply SVG
 .ReplyingToUserHeader-icon
@@ -64,7 +64,7 @@
 .Scrubber-handle
     // Side handle
     &-wrapper &
-        background-color: base.$mark
+        background-color: variables.$mark
     // Side handle hovered over
     &-wrapper:hover &
         background-color: var(--NihilityTheme1)

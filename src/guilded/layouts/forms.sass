@@ -1,5 +1,5 @@
 @use "sass:color"
-@use "../../base"
+@use "../../variables"
 @use "../../set"
 @use "../../content"
 
@@ -53,7 +53,7 @@
     &-container
         @extend %SetBorderLight-2
     &-container-has-value &-input-element
-        -webkit-text-fill-color: base.$fg-2
+        -webkit-text-fill-color: variables.$fg-2
         @extend %TextMedium
     // Hover
     &-container-desktop:hover
@@ -87,8 +87,8 @@
 .ValidityIndicator-container
     // Invalid
     &-invalid
-        border-color: base.$bad-0
-        fill: base.$bad-0
+        border-color: variables.$bad-0
+        fill: variables.$bad-0
     // Valid
     &-valid
         @extend %SvgGood
@@ -96,8 +96,8 @@
 // Big form input
 .TextAreaInput
     &-text-area
-        border-color: base.$border-light-2
-        color: base.$fg-2
+        border-color: variables.$border-light-2
+        color: variables.$fg-2
         @include set.transition(border-color)
         // Big form input hover
         &:hover
@@ -116,13 +116,13 @@
     &-circle
         // Background
         &-background
-            stroke: base.$bg-1
+            stroke: variables.$bg-1
         // Character count
         &-valid, &-invalid-min
-            stroke: base.$good-0
+            stroke: variables.$good-0
         // Too many symbols
         &-invalid-max
-            stroke: base.$bad-0
+            stroke: variables.$bad-0
     // Label too many symbols
     &-container-invalid-max
         @extend %TextBad
@@ -131,11 +131,11 @@
 .GuildedTagCreator-container-input-border
     // Normally
     .Select-control
-        border-bottom-color: base.$border-light-2 !important
+        border-bottom-color: variables.$border-light-2 !important
         @include set.transition(border-bottom)
     // Hover
     &:hover .Select-control
-        border-bottom-color: base.$border-light-3 !important
+        border-bottom-color: variables.$border-light-3 !important
     // Focused
     .Select.is-focused .Select-control
         border-bottom-color: var(--NihilityTheme2) !important
@@ -357,12 +357,12 @@
         @extend %TextMedium
     // Form selector
     .Select-control
-        border-color: base.$border-light-2 !important
+        border-color: variables.$border-light-2 !important
         @include set.transition(border-color)
     // Form selector hover
     &.GuildedSelect-container-dark:hover .Select .Select-control,
     &:hover .Select .Select-control
-        border-color: base.$border-light-3 !important
+        border-color: variables.$border-light-3 !important
 
     // Code container stuff
     &-option-color-gray
@@ -371,17 +371,17 @@
             @extend %TextDark
         // Label's arrow in editor
         .Select-arrow
-            border-top-color: base.$fg-0
+            border-top-color: variables.$fg-0
     // Form selector arrow
     .Select-arrow
-        border-top-color: base.$fg-0 !important
+        border-top-color: variables.$fg-0 !important
         @include set.transition(border-top-color)
     // Form selector placeholder
     .Select-placeholder
         @extend %TextDark
     // Form selector value
     .Select-value-label
-        color: base.$fg-2 !important
+        color: variables.$fg-2 !important
     // Form select menu
     &.GuildedSelect-container-dark .Select-menu-outer,
     &.GuildedSelect-container-light .Select-menu-outer
@@ -402,15 +402,15 @@
     // Form selector options
     &-menu
         @extend %Panel-2
-        padding: base.$spacing-1
-        border-radius: base.$radius-0
+        padding: variables.$spacing-1
+        border-radius: variables.$radius-0
         &-outer
-            opacity: base.$floating-opacity
+            opacity: variables.$floating-opacity
             @extend %OverridePanelBordered-4
 
     // Form selector option
     &-option
-        border-radius: base.$radius-0
+        border-radius: variables.$radius-0
         @extend %TextMedium
         border: solid 1px transparent
         // Normally
@@ -422,8 +422,8 @@
         .GuildedSelect-container &.is-selected,
         .GuildedSelect-container.GuildedSelect-container-dark &.is-selected,
         .GuildedSelect-container.GuildedSelect-container-light &.is-selected
-            background-color: base.$bg-5
-            border: solid 1px base.$border-light-0
+            background-color: variables.$bg-5
+            border: solid 1px variables.$border-light-0
                 left: solid 2px var(--NihilityTheme0)
         // Focused
         &.is-focused
@@ -435,8 +435,8 @@
         .GuildedSelect-container &.is-selected.is-focused,
         .GuildedSelect-container.GuildedSelect-container-dark &.is-selected.is-focused,
         .GuildedSelect-container.GuildedSelect-container-light &.is-selected.is-focused
-            background-color: base.$bg-6
-            border: solid 1px base.$border-light-1
+            background-color: variables.$bg-6
+            border: solid 1px variables.$border-light-1
                 left: solid 2px var(--NihilityTheme1)
     // No results found - code container/blocks
     .GuildedSelect-container.GuildedSelect-container-light &-noresults,
@@ -445,7 +445,7 @@
         @extend %Panel-2
     // Label's arrow acitve in editor
     &.is-open > &-control &-arrow
-        border-top-color: base.$fg-2
+        border-top-color: variables.$fg-2
 
 
 // --- ICON DROPDOWN ---
@@ -470,14 +470,14 @@
             @extend %Panel-5
         // Current volume
         .RangeSlider-selected-rail
-            background: base.$progress
+            background: variables.$progress
 .RangeSliderStep
     &-label
         @extend %TextDarker
     &-step-type-gilded
         @extend %Panel-4
     &-step-filled
-        background-color: color.adjust(base.$progress, $whiteness: 10%)
+        background-color: color.adjust(variables.$progress, $whiteness: 10%)
 .KnobAndLabel-label
     @extend %TextMedium
 // Video volume rail
@@ -485,15 +485,15 @@
     &-rail,
     &-container-type-light &-rail,
     &-container-type-light:hover &-rail
-        background-color: rgba(base.$bg-2, 0.7)
+        background-color: rgba(variables.$bg-2, 0.7)
     &-selected-rail,
     &-container-type-light &-selected-rail,
     &-container-type-light:hover &-selected-rail
-        background-color: rgba(base.$progress, 0.9)
+        background-color: rgba(variables.$progress, 0.9)
 // Video volume knob
 .SliderKnob-container
-    background-color: base.$bg-1
-    box-shadow: base.$shadow
+    background-color: variables.$bg-1
+    box-shadow: variables.$shadow
 
 /*
  * --- Timed ---
@@ -502,8 +502,8 @@
 // Date & Time input
 .FormBoxAndLabel
     &-box
-        border-color: base.$border-light-2
-        border-radius: base.$radius-2
+        border-color: variables.$border-light-2
+        border-radius: variables.$radius-2
         @include set.transition(border-color)
     &-container-focused &-box,
     &-container-desktop:hover &-box
@@ -535,7 +535,7 @@
  */
 
 @mixin button-typed($border-colour, $text-colour)
-    background: base.$shading-1
+    background: variables.$shading-1
     border: solid 1px $border-colour
     .FormConfirmButtonV2-button-content
         @include set.font-color($text-colour)
@@ -548,7 +548,7 @@
     // Gilded button
     &-container.FormConfirmButtonV2-container-type-gilded
         box-shadow: none
-        background: base.$bg-0
+        background: variables.$bg-0
         @extend %SetBorderLight-1
     // Gilded button hover
     &-container-desktop.FormConfirmButtonV2-container-filled:hover
@@ -563,43 +563,43 @@
     // Hollow gilded
     &-container.FormConfirmButtonV2-container-hollow
         background: none
-        @include button-typed(base.$border-light-2, var(--NihilityTheme0))
+        @include button-typed(variables.$border-light-2, var(--NihilityTheme0))
     // Hollow gilded hover
     &-container-desktop.FormConfirmButtonV2-container-hollow:hover
-        @include button-typed(base.$border-light-2, var(--NihilityTheme1))
+        @include button-typed(variables.$border-light-2, var(--NihilityTheme1))
     // Hollow gilded text
     &-container-hollow &-button-content
         @extend %FontTheme
 
     // Delete button
     &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete
-        @include button-typed(rgba(base.$bad-0, 0.15), base.$bad-0)
+        @include button-typed(rgba(variables.$bad-0, 0.15), variables.$bad-0)
     &-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete:hover
-        @include button-typed(rgba(base.$bad-0, 0.25), base.$bad-1)
+        @include button-typed(rgba(variables.$bad-0, 0.25), variables.$bad-1)
 
     // Success button
     &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-success
-        @include button-typed(rgba(base.$good-0, 0.15), base.$good-0)
+        @include button-typed(rgba(variables.$good-0, 0.15), variables.$good-0)
     &-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-success:hover
-        @include button-typed(rgba(base.$good-0, 0.25), base.$good-1)
+        @include button-typed(rgba(variables.$good-0, 0.25), variables.$good-1)
 
     // Delete hollow
     &-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-delete
-        @include button-typed-hollow(base.$bad-0, base.$bad-0)
+        @include button-typed-hollow(variables.$bad-0, variables.$bad-0)
     &-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-delete:hover
-        @include button-typed-hollow(base.$bad-1, base.$bad-1)
+        @include button-typed-hollow(variables.$bad-1, variables.$bad-1)
 
     // Success hollow
     &-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-success
-        @include button-typed-hollow(base.$good-0, base.$good-0)
+        @include button-typed-hollow(variables.$good-0, variables.$good-0)
     &-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-success:hover
-        @include button-typed-hollow(base.$good-1, base.$good-1)
+        @include button-typed-hollow(variables.$good-1, variables.$good-1)
 
     // Normal hollow
     &-container.FormConfirmButtonV2-container-type-bleached
-        @include button-typed-hollow(base.$border-light-2, base.$normal-0)
+        @include button-typed-hollow(variables.$border-light-2, variables.$normal-0)
     &-container-desktop.FormConfirmButtonV2-container-type-bleached.FormConfirmButtonV2-container-hollow:hover
-        @include button-typed-hollow(base.$border-light-2, base.$normal-1)
+        @include button-typed-hollow(variables.$border-light-2, variables.$normal-1)
 
     // Disabled
     &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled,
@@ -611,7 +611,7 @@
     // Disabled hollow
     &-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-disabled,
     &-container.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-disabled:hover
-        @include button-typed-hollow(base.$fg-0, base.$fg-0)
+        @include button-typed-hollow(variables.$fg-0, variables.$fg-0)
 /*
  * --- Colours (Role colours) ---
  */
@@ -622,7 +622,7 @@
     @extend %SetBorderThemeDull
 // Colour hover
 .ColorInputOption-container-size-lg .ColorInputOption-container-dot:not(.ColorInputOption-container-dot-selected):hover
-    border-color: base.$fg-0
+    border-color: variables.$fg-0
 // Role description
 .TeamRolesListInstructions-container
     @extend %TextDark

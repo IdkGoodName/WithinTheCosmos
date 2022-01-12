@@ -1,4 +1,4 @@
-@use "../base"
+@use "../variables"
 @use "../content"
 
 /*
@@ -71,24 +71,24 @@
 .Img-skeleton
     // Unloaded images
     &-rounded-square, &-circle, &-square
-        opacity: base.$skeleton-opacity
+        opacity: variables.$skeleton-opacity
 // Loading video
 .DynamicMediaLoader-container
-    background-color: base.$skeleton-0
+    background-color: variables.$skeleton-0
 // Loading team banner
 .TeamPageBanner-skeleton
-    background: base.$skeleton-1
+    background: variables.$skeleton-1
 // Loading group icon
 .GroupSelectorSkeleton-group
-    background: base.$skeleton-0
+    background: variables.$skeleton-0
     border-radius: 50%
 
 // Loading channel icon
 .TeamChannelsListSkeleton-icon
-    background: base.$skeleton-0
+    background: variables.$skeleton-0
 // Loading channel name
 .SkeletonPlaceholder-container-no-children
-    background: base.$skeleton-0
+    background: variables.$skeleton-0
 
 .OverviewWidgetSkeleton
     // Loading announcement
@@ -100,19 +100,19 @@
     &-box, &-feed-item,
     // Loading text
     &-text, &-subtitle, &-paragraph
-        background: base.$skeleton-1
+        background: variables.$skeleton-1
 
 // Input skeletons(?)
 .DraftInputSkeleton-container-type-simple,
 .DraftInputSkeleton-container,
 .DraftInputSkeleton-control,
 .DraftInputSkeleton-text
-    background: base.$skeleton-0
+    background: variables.$skeleton-0
 
 // Form skeletons(?)
 .CustomFormSkeleton-question,
 .CustomFormSkeleton-answer
-    background: base.$skeleton-0
+    background: variables.$skeleton-0
 
 // Content embed loading
 .ContentEmbedCardLoading-container
@@ -126,7 +126,7 @@
 // Tournaments, explore servers, etc. cards and titles
 .ExploreSkeleton
     &-title, &-card
-        background: base.$skeleton-1
+        background: variables.$skeleton-1
 
 .ChannelActivityDisplay-item
-    --border-color: #{base.$skeleton-0}
+    --border-color: #{variables.$skeleton-0}

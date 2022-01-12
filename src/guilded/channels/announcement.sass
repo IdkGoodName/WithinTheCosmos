@@ -1,4 +1,4 @@
-@use "../../base"
+@use "../../variables"
 @use "../../set"
 @use "../../content"
 
@@ -31,9 +31,9 @@
 
 // Replies preview
 .LastReplyDisplay-container
-    --body-text-color: #{base.$fg-2}
+    --body-text-color: #{variables.$fg-2}
     &:hover
-        --body-text-color: #{base.$fg-3}
+        --body-text-color: #{variables.$fg-3}
 // Preview text
 .LastReplyDisplayContent-message-summary
     @include set.transition(color)

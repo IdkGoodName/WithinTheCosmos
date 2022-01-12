@@ -1,4 +1,4 @@
-@use "../../base"
+@use "../../variables"
 @use "../../set"
 @use "../../content"
 @use "sass:color"
@@ -24,14 +24,14 @@
     // Buttons
     &-maximize-button
         .WindowsTitleBar-button-content
-            border-color: base.$fg-0
+            border-color: variables.$fg-0
         &:hover .WindowsTitleBar-button-content
-            border-color: base.$fg-2
+            border-color: variables.$fg-2
     &-minimize-button
         .WindowsTitleBar-button-content
-            background-color: base.$fg-0
+            background-color: variables.$fg-0
         &:hover .WindowsTitleBar-button-content
-            background-color: base.$fg-2
+            background-color: variables.$fg-2
     &-button:hover
         @extend %Panel-3
     &-close-button
@@ -49,7 +49,7 @@
 // Whole bar
 .Navbar-container
     @extend %Panel-5
-    --border-color: #{base.$bg-0}
+    --border-color: #{variables.$bg-0}
 // Guilded logo
 .LogoAndWordmarkV2-container-theme-light
     @extend %SvgDark
@@ -58,7 +58,7 @@
     @extend %SvgThemeBleached
 // User card
 .NavbarUserControls-container
-    --border-color: #{base.$bg-0}
+    --border-color: #{variables.$bg-0}
 
 /*
  * --- Buttons ---
@@ -91,7 +91,7 @@
         // Group add icon
         .GroupSelector-add-group &
             border-radius: 50%
-            @include set.transition(border-radius, base.$bounce)
+            @include set.transition(border-radius, variables.$bounce)
         .GroupSelector-add-group:hover &
             @extend %RadiusSmall
     // Server list add text
@@ -100,13 +100,13 @@
         @extend %TextMedium
 // Server list add
 .InlineAddItemControl-container
-    --inline-add-icon-background-color: #{base.$bg-3}
+    --inline-add-icon-background-color: #{variables.$bg-3}
     // Hover
     &:hover, &-flavor-background-highlight.InlineAddItemControl-container-desktop:hover
         // Server list add icon hover
         .InlineAddItemControl-add-icon
-            background-color: base.$bg-5
-            fill: base.$fg-3
+            background-color: variables.$bg-5
+            fill: variables.$fg-3
         // Server list add text hover
         .InlineAddItemControl-name
             @extend %TextLight
@@ -180,18 +180,18 @@
 
     // Type icon
     &-icon-search-category
-        background-color: base.$bg-1 !important
+        background-color: variables.$bg-1 !important
         // Colour based on type
         .icon-content
-            fill: base.$blue
+            fill: variables.$blue
         .icon-team-find
-            fill: base.$yellow
+            fill: variables.$yellow
         .icon-hashtag-new
-            fill: base.$green
+            fill: variables.$green
         .icon-profile
-            fill: base.$cyan
+            fill: variables.$cyan
     &-container-focused &-icon-search-category
-        background-color: base.$bg-2
+        background-color: variables.$bg-2
 
 // Search result type icon
 .AvatarIcon-container
@@ -225,17 +225,17 @@
 
 // Sets group list width
 body
-    --group-selector-width: #{base.$icon-size + 16px}
+    --group-selector-width: #{variables.$icon-size + 16px}
 // Group list
 .NavV4Sidebar-container,
 .GroupSelector-container,
 // Group list in group editing
 .GroupSelectorPreview-minimal-nav
     @extend %Panel-4
-    --border-color: #{base.$bg-0}
+    --border-color: #{variables.$bg-0}
 // Group
 .GroupSelectorItem-container
-    --avatar-size: #{base.$icon-size}
+    --avatar-size: #{variables.$icon-size}
 
 .NavSelectorItem-container .GroupAvatar-container
     font-size: 1.2em
@@ -251,7 +251,7 @@ body
 
 // Group settings background
 .CreateGroupLivePreview-LiveView
-    background: base.$bg-0
+    background: variables.$bg-0
 
 /*
  * --- User card ---
@@ -264,7 +264,7 @@ body
 // // User card's content
 // .NavV4Footer-right,
 // .NavV4Footer-footer-content
-//     border-top-right-radius: base.$radius-3
+//     border-top-right-radius: variables.$radius-3
 
 // User card's name
 .LoggedInUserAvatar-name
@@ -297,7 +297,7 @@ body
 
 // More button (1) sign
 .CircleBadgeV2-container
-    background-color: base.$important
+    background-color: variables.$important
 
 .NavV4Footer-footer-content,
 .NavV4Footer-right,
@@ -321,7 +321,7 @@ body
     @extend %TextMedium
 // Server header hover
 .TeamNavHeader-options-carat::after
-    background-color: base.$bg-hover
+    background-color: variables.$bg-hover
     @include set.transition(opacity)
 // Server header caret
 .TeamNavHeader-options-carat.TeamNavTeamOptionsCarat-icon
@@ -389,7 +389,7 @@ body
 
 // Sets PFP border
 .ScreenHeader-icon-wrapper
-    --border-color: #{base.$bg-0}
+    --border-color: #{variables.$bg-0}
 
 // Screen header
 .ScreenHeader
@@ -423,7 +423,7 @@ body
     @extend %FullBorderTransparent
     // Channel hovered
     &::after
-        background-color: base.$bg-hover
+        background-color: variables.$bg-hover
         @include set.transition(opacity)
 // Channel selected
 // Because transparent border overrides it otherwise
@@ -434,22 +434,22 @@ body
 // Unread channel
 .TeamChannelItemContents-container-unread
     .TeamChannelItemContents-name
-        color: color.mix(base.$mark, base.$fg-2, 35%)
+        color: color.mix(variables.$mark, variables.$fg-2, 35%)
     .ChannelIcon-icon-primary,
     .ChannelIcon-icon-background
-        fill: color.adjust(color.mix(base.$mark, base.$fg-2, 35%), $lightness: -20%)
+        fill: color.adjust(color.mix(variables.$mark, variables.$fg-2, 35%), $lightness: -20%)
 // Unread hovered channel
 .TeamChannelItemContents-container.TeamChannelItemContents-container-unread:hover
     .TeamChannelItemContents-name
-        color: color.mix(base.$mark, base.$fg-2, 15%)
+        color: color.mix(variables.$mark, variables.$fg-2, 15%)
     .ChannelIcon-icon-primary,
     .ChannelIcon-icon-background
-        fill: color.adjust(color.mix(base.$mark, base.$fg-2, 15%), $lightness: -20%)
+        fill: color.adjust(color.mix(variables.$mark, variables.$fg-2, 15%), $lightness: -20%)
 // Sub-icon/global icon
 .ChannelIcon-icon-selected .ChannelIcon-icon-background,
 .ChannelIcon-icon-background
-    background-color: base.$bg-0
-    fill: base.$fg-1
+    background-color: variables.$bg-0
+    fill: variables.$fg-1
 // Selected channel icons
 .ChannelIcon-icon-selected,
 .ChannelIcon-icon-selected .ChannelIcon-icon,
@@ -496,7 +496,7 @@ body
         @extend %Panel-2
     // Member/thread list active tab
     &-container-selected::after
-        background-color: base.$fg-1
+        background-color: variables.$fg-1
     // Member/thread list tab icon
     &-icon
         @extend %SvgDark
@@ -510,7 +510,7 @@ body
 
 // Member list section (roles)
 .TeamPageSidebarMembers-roles:not(:first-child)
-    margin-top: base.$spacing-6
+    margin-top: variables.$spacing-6
 
 .ChannelListHeader
     // Member list
@@ -523,10 +523,10 @@ body
             @extend %TextMedium
     // Member list role amount
     &-amount
-        color: base.$fg-1
-        padding: 0 base.$spacing-2
-        background-color: base.$bg-0
-        border-radius: base.$radius-2
+        color: variables.$fg-1
+        padding: 0 variables.$spacing-2
+        background-color: variables.$bg-0
+        border-radius: variables.$radius-2
 
 // Member list user hover
 .SidebarUsersRoleInfo-user::after
@@ -604,4 +604,4 @@ body
 // Voice channel click guide
 .NuxTargetGlowie-container
     &, &::after
-        background-image: radial-gradient(circle at 50% 50%, rgba(base.$important,0), rgba(base.$important,0) 39%, base.$important)
+        background-image: radial-gradient(circle at 50% 50%, rgba(variables.$important,0), rgba(variables.$important,0) 39%, variables.$important)

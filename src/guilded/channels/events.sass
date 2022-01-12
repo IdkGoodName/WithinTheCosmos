@@ -1,4 +1,4 @@
-@use "../../base"
+@use "../../variables"
 @use "../../set"
 @use "../../content"
 
@@ -23,20 +23,20 @@
     &Day-container-desktop.FullSizedCalendarDay-container-can-create
         @include set.transition(background-color)
         &:hover
-            background-color: base.$bg-6
+            background-color: variables.$bg-6
     &Day-new-event-icon
         @extend %SvgDark
         @include set.transition(opacity)
     // Calendar special days
     &Day-container-in-past,
     &Day-container-different-month
-        background-color: base.$bg-3
-        color: base.$fg-0
+        background-color: variables.$bg-3
+        color: variables.$fg-0
         // Don't make text stand out
         .FullSizedCalendarDayHeader-date
-            color: base.$fg-0
+            color: variables.$fg-0
     &Day-container-today
-        background-color: base.$bg-6
+        background-color: variables.$bg-6
         // Highlight the date
         .FullSizedCalendarDayHeader-date
             background-color: var(--game-color)
@@ -64,7 +64,7 @@
 .ToggleControlButton-container.ToggleControlButton-container
     &-desktop:hover, &-selected
         color: var(--NihilityTheme0)
-        background-color: base.$bg-1
+        background-color: variables.$bg-1
     &-selected:focus, &-selected:active
         @extend %TextTheme
 // Month switching
@@ -92,8 +92,8 @@
 .DayPicker
     // Month name
     &-header
-        color: base.$fg-3
-        background-color: base.$bg-2
+        color: variables.$fg-3
+        background-color: variables.$bg-2
     &-arrow
         @extend %SvgDark
     // Week day
@@ -104,13 +104,13 @@
         @extend %Panel-0
         @include set.transition(background-color)
         &-contents
-            color: base.$fg-2 !important
+            color: variables.$fg-2 !important
     &-day-next-month
         @extend %Panel-3
         .DayPicker-day-contents
-            color: base.$fg-0 !important
+            color: variables.$fg-0 !important
     &-day:hover
-        background-color: base.$bg-6
+        background-color: variables.$bg-6
     // Day numbers
     &-container-desktop &-day:hover &-day-contents,
     &-container-desktop &-day-selected.DayPicker-day:hover &-day-contents
@@ -141,7 +141,7 @@
 // Header
 .EventTemporalChannelDisplay-container
     @extend %Panel-4
-    --border-color: #{base.$bg-0}
+    --border-color: #{variables.$bg-0}
 // Details
 .TeamEventDetails
     &-post-metadata, &-status, &-item
@@ -161,7 +161,7 @@
         @extend %SvgDark
     // Text
     &-placeholder
-        --body-text-color: #{base.$fg-2}
+        --body-text-color: #{variables.$fg-2}
 
 .EventAttendanceHeader-status
     &-going
@@ -169,7 +169,7 @@
     &:not(:first-child)
         @extend %TextDark
         &::before
-            background-color: base.$fg-1
+            background-color: variables.$fg-1
 
 .EventRsvpsHeader
     // See all link

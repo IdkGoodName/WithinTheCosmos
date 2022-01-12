@@ -1,4 +1,4 @@
-@use "../base"
+@use "../variables"
 
 // Code line
 .CodeLineRenderer
@@ -8,55 +8,55 @@
 .PrismTokenGenericLanguageRenderer
     // Special
     &-punctuation, &-operator
-        color: base.$fg-1
+        color: variables.$fg-1
     &-atrule, &-atrule-line, &-keyword, &-tag
-        color: base.$code-keyword
+        color: variables.$code-keyword
     &-preprocessor, &-macro, &-comment, &-prolog, &-doctype, &-cdata
-        color: base.$fg-0
+        color: variables.$fg-0
     &-annotation
-        color: base.$code-special
+        color: variables.$code-special
     &-important
-        color: base.$important
-    
+        color: variables.$important
+
     // DIFF
     &-deleted, &-deleted-sign
-        color: base.$code-deleted
+        color: variables.$code-deleted
     &-deleted-arrow
-        color: base.$code-deleted
+        color: variables.$code-deleted
     &-inserted, &-inserted-sign
-        color: base.$code-inserted
+        color: variables.$code-inserted
     &-inserted-arrow
-        color: base.$code-inserted
+        color: variables.$code-inserted
     &-diff
-        color: base.$code-changed
+        color: variables.$code-changed
     &-coord
-        color: base.$fg-1
-    
+        color: variables.$fg-1
+
     // Values
     &-template-string, &-string
-        color: base.$code-string
+        color: variables.$code-string
     &-attr-value, &-number, &-boolean, &-regex
-        color: base.$code-value
+        color: variables.$code-value
     &-null
-        color: base.$code-special
+        color: variables.$code-special
 
     // Named
     &-selector
-        color: base.$code-name
+        color: variables.$code-name
     &-property, &-property-line
-        color: base.$code-property
+        color: variables.$code-property
     &-class-name, &-builtin
-        color: base.$code-class-name
+        color: variables.$code-class-name
     &-function
-        color: base.$code-function
+        color: variables.$code-function
     &-variable
-        color: base.$code-variable
+        color: variables.$code-variable
     &-less-variable, &-variable-line
-        color: base.$code-class-name
+        color: variables.$code-class-name
 
     // Formatting
     &-bold, &-italic
-        color: base.$fg-format
+        color: variables.$fg-format
     &-underline
         text-decoration: underline solid
     &-strike
@@ -69,13 +69,13 @@
 
     // Code
     &-code, &-code-block
-        background-color: base.$bg-0
+        background-color: variables.$bg-0
     &-code
-        color: base.$fg-code
+        color: variables.$fg-code
 
     // Blocks
     &-blockquote, &-list
-        color: base.$fg-1
+        color: variables.$fg-1
     &-title
         font-weight: bolder
-        color: base.$fg-3
+        color: variables.$fg-3

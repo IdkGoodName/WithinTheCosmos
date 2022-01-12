@@ -1,4 +1,4 @@
-@use "../base"
+@use "../variables"
 @use "../set"
 @use "../content"
 @use "../fake"
@@ -93,18 +93,18 @@
  */
 
 .BlockQuoteContainerRenderer
-    background-color: base.$shading-1
+    background-color: variables.$shading-1
     border:
         left-color: var(--game-color)
-        left-width: base.$radius-1
-        radius: base.$radius-0
+        left-width: variables.$radius-1
+        radius: variables.$radius-0
     overflow: hidden
     &.SlateContainerRenderer.slate-margin-lg
-        padding: base.$spacing-2
-            left: base.$spacing-3
+        padding: variables.$spacing-2
+            left: variables.$spacing-3
     // Darker
     .ChatMessageThread-thread-parent-message &
-        background-color: base.$shading-2
+        background-color: variables.$shading-2
 
 /*
  * --- Code block ---
@@ -127,7 +127,7 @@
 .CodeContainerRenderer
     &-language-indicator
         .CalloutBadge-container
-            color: base.$fg-code
+            color: variables.$fg-code
     &-header
         @extend %Panel-4
 
@@ -150,11 +150,11 @@
 .MarkRenderer
     // Bold text
     &-bold
-        color: base.$fg-format
+        color: variables.$fg-format
     // Inline code
     &-inline-code, &-inline-code-v2
         @extend %Panel-5
-        color: base.$fg-code
+        color: variables.$fg-code
 
 .PrismToken
     // Embed inline code
@@ -177,8 +177,8 @@
 // Spoilers
 .SpoilerRenderer-container
     @extend %Panel-5
-    border-radius: base.$radius-2
-    padding: 0 base.$spacing-side base.$spacing-top base.$spacing-side
+    border-radius: variables.$radius-2
+    padding: 0 variables.$spacing-side variables.$spacing-top variables.$spacing-side
 
 // Override bold/italic highlighting
 .LinkRenderer
@@ -208,26 +208,26 @@
 .RawVideoPlayer
     // Play arrow
     &-play-icon
-        fill: base.$bg-1
-        filter: drop-shadow(base.$shadow)
+        fill: variables.$bg-1
+        filter: drop-shadow(variables.$shadow)
 // Video buttons
 .TeamStreamPlayerButton-container,
 .TeamStreamVolumeControl-volume-icon,
 .TeamStreamVolumeControl-volume-icon-wrapper:hover .TeamStreamVolumeControl-volume-icon
-    fill: base.$bg-1
-    filter: drop-shadow(base.$shadow)
+    fill: variables.$bg-1
+    filter: drop-shadow(variables.$shadow)
 
 // Image caption
 .MediaCaptionLineRenderer
     @extend %TextDark
 // Caption itself
 .MediaRenderer-caption
-    border-color: base.$border-light-1
+    border-color: variables.$border-light-1
 // Image caption being edited
 .MediaRenderer-caption-selected,
 .MediaRenderer-caption-has-text,
 .MediaRenderer-caption-placeholder
-    background-color: base.$shading-1
+    background-color: variables.$shading-1
 
 // Don't show it on the image caption that isn't being edited
 .MediaRenderer-read-only
@@ -238,11 +238,11 @@
 .MediaCaptionLineRenderer .MarkRenderer
     // Bold text
     &-bold
-        color: color.adjust(base.$fg-format, base.$blackness: 20%)
+        color: color.adjust(variables.$fg-format, variables.$blackness: 20%)
     // Inline code
     &-inline-code, &-inline-code-v2
         @extend %Panel-5
-        color: color.adjust(base.$fg-code, base.$blackness: 20%)
+        color: color.adjust(variables.$fg-code, variables.$blackness: 20%)
 
 
 /*
@@ -252,8 +252,8 @@
 .ContentEmbed
     // Content info not loaded
     &CardError-container
-        background-color: base.$bg-3
-        color: base.$fg-1
+        background-color: variables.$bg-3
+        color: variables.$fg-1
     // Container selected in editor
     &Renderer-container-selected
         border-color: var(--NihilitySelect)
@@ -274,7 +274,7 @@
         //mask-image: linear-gradient(to bottom, black, transparent 95%)
         //&::after
         //display: none
-        background: linear-gradient(to bottom, transparent, base.$bg-3 20px)
+        background: linear-gradient(to bottom, transparent, variables.$bg-3 20px)
 
 /*
  * --- Embeds ---
@@ -286,11 +286,11 @@
 .TeamEmbedCard-container
     @extend %Panel-3
     border:
-        radius: base.$radius-2
-        color: base.$border-light-1
+        radius: variables.$radius-2
+        color: variables.$border-light-1
     overflow: hidden
     &:not([style])
-        border-left: solid 1px base.$border-light-1
+        border-left: solid 1px variables.$border-light-1
 
 // Embed
 .ChatEmbed,
@@ -298,12 +298,12 @@
     &Content
         // Hovered over
         &-container::after
-            background-color: base.$bg-hover
-            border-radius: base.$radius-2
+            background-color: variables.$bg-hover
+            border-radius: variables.$radius-2
         &-description
             @extend %TextMedium
     &-content:not([style])
-        border-left: solid 1px base.$border-light-1
+        border-left: solid 1px variables.$border-light-1
 
 .OpenGraphEmbedContent-domain
     @extend %TextDark
@@ -319,8 +319,8 @@
 // Footer background
 .ChatEmbedFooter-container,
 .ContentEmbedCardFooter-container
-    background-color: base.$bg-1
-    color: base.$fg-0
+    background-color: variables.$bg-1
+    color: variables.$fg-0
 
 
 /*
@@ -346,7 +346,7 @@
 
 // Member and follower seperator dot
 .TeamFollowerMemberCount-separator
-    background-color: base.$fg-0
+    background-color: variables.$fg-0
 
 /*
  * --- Polls/Forms ---
@@ -358,7 +358,7 @@
     &-selected
         border-color: var(--NihilitySelect)
 .CustomFormWrapper-container-standalone
-    background-color: base.$shading-0
+    background-color: variables.$shading-0
     @extend %SetBorderLight-1
     // Form border
     &::after
@@ -403,7 +403,7 @@
     @extend %ContentBordered-1
 
 .ChatChannelArchivedControl-container
-    @include content.PanelBordered(base.$bg-4, base.$border-light-1)
+    @include content.PanelBordered(variables.$bg-4, variables.$border-light-1)
 
 // Doc editor
 .DocEditor-container .DocEditor-content-input,
@@ -427,11 +427,11 @@
     // In doc editor
     .DocEditor-container &
         border:
-            top: solid 1px base.$border-light-1
-            left: solid 1px base.$border-light-1
-            right: solid 1px base.$border-light-1
-        padding: 0 base.$spacing-0
-        border-radius: base.$radius-1
+            top: solid 1px variables.$border-light-1
+            left: solid 1px variables.$border-light-1
+            right: solid 1px variables.$border-light-1
+        padding: 0 variables.$spacing-0
+        border-radius: variables.$radius-1
 
 // Thread pop-up
 .ChatV2MessageReplyTooltipInput
@@ -498,7 +498,7 @@
 .PostReplyQuoteButtons-option
     // Quote/Reply buttons
     &:not(:first-child):not(:first-child)::before
-        background-color: base.$fg-0
+        background-color: variables.$fg-0
     // Quote/Reply buttons active
     &, &:hover, &:visited, &:active, &:focus
         color: var(--game-color)
@@ -536,7 +536,7 @@
 
 // Selected text toolbar caret
 .SlateSelectionToolbar-caret
-    border-top-color: base.$bg-0
+    border-top-color: variables.$bg-0
 
 // Toolbar icons
 .SlateEditor-send-icon.SlateEditor-send-icon-disabled,
@@ -574,23 +574,23 @@
 // The picker
 .AbstractTypeaheadPlugin-container,
 .TypeaheadDrawer-container
-    opacity: base.$floating-opacity
-    background-color: base.$bg-3
+    opacity: variables.$floating-opacity
+    background-color: variables.$bg-3
     border:
-        color: base.$border-light-2
-        radius: base.$radius-2
+        color: variables.$border-light-2
+        radius: variables.$radius-2
 
 .SlateTypeaheadMenuHeader
     // Picker's header
     &-container
-        background-color: base.$bg-2
-        //border-bottom: solid 1px base.$border-light-2
-        color: base.$fg-1
+        background-color: variables.$bg-2
+        //border-bottom: solid 1px variables.$border-light-2
+        color: variables.$fg-1
     // Picker's search icon (@, #)
     &-searchTerm
         @extend %FakeMention
 .TypeaheadMenu-list
-    padding: base.$spacing-0
+    padding: variables.$spacing-0
 
 // Template parameter icon
 .TemplateParameterMenuItem-icon
@@ -598,12 +598,12 @@
 
 // Item hovered over
 .MenuItemEnabled-container
-    border-radius: base.$radius-1
+    border-radius: variables.$radius-1
     border: solid 1px transparent
     &::after
         @extend %ContentGlare
     &-highlighted
-        background-color: rgba(base.$bg-hover, 0.1)
+        background-color: rgba(variables.$bg-hover, 0.1)
         @extend %FullBorderLight-1
         .TemplateParameterMenuItem-icon
             @extend %SvgMedium

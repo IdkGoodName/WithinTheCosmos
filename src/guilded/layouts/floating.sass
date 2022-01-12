@@ -1,4 +1,4 @@
-@use "../../base"
+@use "../../variables"
 @use "../../set"
 @use "../../content"
 @use "sass:color"
@@ -18,12 +18,12 @@
     &-icon
         @extend %SvgMedium
     &-leading-icon-private-thread
-        fill: color.adjust(base.$private, base.$whiteness: 25%)
+        fill: color.adjust(variables.$private, variables.$whiteness: 25%)
 
     // Any alert bar
     &-container
-        @include set.font-color(base.$fg-2)
-        background-color: base.$bg-0 !important
+        @include set.font-color(variables.$fg-2)
+        background-color: variables.$bg-0 !important
         @extend %SetBorderDark-0
         // Hover
         &::after
@@ -38,24 +38,24 @@
         &-type-new-replies,
         // New mentions
         &-type-new-mentions
-            background-color: base.$bg-0 !important
+            background-color: variables.$bg-0 !important
 
         // New mentions and new forum replies
         &-type-new-replies,
         &-type-new-mentions
-            color: base.$mention !important
-            fill: base.$mention !important
+            color: variables.$mention !important
+            fill: variables.$mention !important
             // New mentions icon
             .ChatChannelAlertBar-icon-click-wrapper .ChatChannelAlertBar-icon
-                fill: base.$mention
+                fill: variables.$mention
 
         // Unread messages
         &-type-unread-messages
-            color: base.$active !important
-            fill: base.$active !important
+            color: variables.$active !important
+            fill: variables.$active !important
             // Unread messages icon
             .ChatChannelAlertBar-icon-click-wrapper .ChatChannelAlertBar-icon
-                fill: base.$active
+                fill: variables.$active
 
 /*
  * -=- Tooltips -=-
@@ -67,16 +67,16 @@
     &-text-wrapper
         @extend %Panel-4
         border: solid 2px
-            color: base.$border-dark-1
-        opacity: base.$floating-opacity
+            color: variables.$border-dark-1
+        opacity: variables.$floating-opacity
     // Arrow/Pointer
     &-arrow
         @extend %Panel-5
 
 // Keybinds
 .Glyph-container
-    background-color: base.$bg-5
-    color: base.$fg-2
+    background-color: variables.$bg-5
+    color: variables.$fg-2
 
 /*
  * -=- Reactions -=-
@@ -92,7 +92,7 @@
     @extend %ContentBordered-4
 
 .ReactionPickerButton-container-type-content
-    transition-duration: base.$transition
+    transition-duration: variables.$transition
 
     // When reaction is hovered over
     &:hover
@@ -101,14 +101,14 @@
 // Text after the reaction button
 .ReactionPickerButton-container-with-label::after
     @extend %TextDark
-    transition-duration: base.$transition
+    transition-duration: variables.$transition
 
 // Reaction icon
 .ReactionPickerButton
     // Normally
     &-container &-icon
         @extend %FontMedium
-        transition-duration: base.$transition
+        transition-duration: variables.$transition
     // Hover
     &-container:hover &-icon
         @extend %FontLight
@@ -120,14 +120,14 @@
     &.ReactionBadge-container-active
         // Normal active reaction
         .ReactionBadge-container-content
-            background-color: mix(base.$bg-1, base.$active, 90%)
-            border-color: rgba(base.$active, 0.1)
+            background-color: mix(variables.$bg-1, variables.$active, 90%)
+            border-color: rgba(variables.$active, 0.1)
             // Active reaction label
             .ReactionBadge-count
-                color: base.$active
+                color: variables.$active
         // Active reaction hover
         &.ReactionBadge-container:not(.ReactionBadge-container-disabled):hover .ReactionBadge-container-content
-            background-color: mix(base.$bg-1, base.$active, 95%)
+            background-color: mix(variables.$bg-1, variables.$active, 95%)
 
 /*
  * -=- Team cards -=-
@@ -209,19 +209,19 @@
     // Menu item download app highlighted
     &-highlighted
         background-color: transparent
-        fill: base.$important
+        fill: variables.$important
         // Text
         .ContextMenuItem-label
-            color: base.$important
+            color: variables.$important
         // Icon
         .ContextMenuIcon-container-icon
-            color: base.$important
+            color: variables.$important
 
 // Highlighted
 .ContextMenuItem-container.ContextMenuItem-highlighted
     .ContextMenuItem-icon, .ContextMenuItem-label
-        color: base.$highlight
-        fill: base.$highlight
+        color: variables.$highlight
+        fill: variables.$highlight
 
 // Overflow icon
 .ContextMenuTrigger
@@ -282,7 +282,7 @@
 
 // Server search wrapper
 .MinimalNavSearchBar-search-results
-    opacity: base.$floating-opacity
+    opacity: variables.$floating-opacity
 .GlobalSearchResult
     // Server search
     &s

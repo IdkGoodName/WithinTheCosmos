@@ -1,4 +1,4 @@
-@use "../../base"
+@use "../../variables"
 @use "../../set"
 @use "../../content"
 
@@ -79,7 +79,7 @@
     @extend %TextDark
 // Keybind recorder
 .HotkeyRecorder-container
-    border-color: base.$fg-0
+    border-color: variables.$fg-0
     // Currently recording
     &.HotkeyRecorder-container-recording
         @extend %SetBorderLight-2
@@ -117,8 +117,8 @@
 
 // Voice header toggle buttons
 .VoiceConnectionDisplayButtons-button
-    background-color: base.$bg-1
-    fill: base.$fg-2
+    background-color: variables.$bg-1
+    fill: variables.$fg-2
 
 // Voice header toggle button hover
 .SVGIconWithTooltip-container-clickable:hover
@@ -152,17 +152,17 @@
         &-good &-icon
             @extend %SvgGood
         &-good .GuildedText-container
-            color: base.$good-1 !important
+            color: variables.$good-1 !important
         // Not bad, but neither a good connection
         &-warn &-icon
             @extend %SvgNeutral
         &-warn .GuildedText-container
-            color: base.$neutral-1 !important
+            color: variables.$neutral-1 !important
         // Bad connection
         &-bad &-icon
             @extend %SvgBad
         &-bad .GuildedText-container
-            color: base.$bad-1 !important
+            color: variables.$bad-1 !important
         // Transition
         &-icon
             @include set.transition(fill)

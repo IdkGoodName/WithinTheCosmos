@@ -1,4 +1,4 @@
-@use "../../base"
+@use "../../variables"
 @use "../../set"
 @use "../../content"
 @use "sass:color"
@@ -20,9 +20,9 @@
 .SidebarInfoItem-container,
 .LayeredPageContent-content,
 .ChannelWrapper-container
-    background-color: base.$bg-3
-    color: base.$fg-3
-    --body-text-color: #{base.$fg-2}
+    background-color: variables.$bg-3
+    color: variables.$fg-3
+    --body-text-color: #{variables.$fg-2}
 
 // Text
 .LastReplyDisplayContent-message-summary,
@@ -44,19 +44,19 @@
     &::after
         background-color: $colour
     &:hover::after
-        background-color: color.adjust($colour, $whiteness: base.$hover-brightness)
+        background-color: color.adjust($colour, $whiteness: variables.$hover-brightness)
     // Reactions
     .ReactionBadge-container.ReactionBadge-container-active
         // Normal active reaction
         .ReactionBadge-container-content
-            background-color: mix(base.$bg-1, $colour, 85%)
+            background-color: mix(variables.$bg-1, $colour, 85%)
             border-color: rgba($colour, 0.1)
             // Active reaction label
             .ReactionBadge-count
                 color: $colour
         // Active reaction hover
         &.ReactionBadge-container:not(.ReactionBadge-container-disabled):hover .ReactionBadge-container-content
-            background-color: mix(base.$bg-1, $colour, 90%)
+            background-color: mix(variables.$bg-1, $colour, 90%)
 
 .ChatV2Message-container
     // Message
@@ -67,35 +67,35 @@
     // Hovered message
     &:not(&-editing):hover, &.ChatV2Message-container-replying
         @extend %Panel-0
-        --body-text-color: #{base.$fg-3}
+        --body-text-color: #{variables.$fg-3}
     // Right click active
     &-active
         @extend %Panel-0
 
     // Replying
     &:not(&-editing).ChatV2Message-container-replying
-        @include define-message-type(base.$replying)
+        @include define-message-type(variables.$replying)
 
     // Mentioned message
     &:not(&-editing):not(&-replying):not(&-private).ChatV2Message-container-mentioned
-        @include define-message-type(base.$mentioned)
+        @include define-message-type(variables.$mentioned)
 
     // Private reply
     &:not(&-editing):not(&-replying):not(&-mentioned):not(&-private-other).ChatV2Message-container-private,
     // Private mention
     &:not(&-editing):not(&-replying):not(&-private-other).ChatV2Message-container-private
-        @include define-message-type(base.$private)
+        @include define-message-type(variables.$private)
 
     // Private reply mod view
     &:not(&-editing):not(&-replying):not(&-mentioned):not(&-private).ChatV2Message-container-private-other,
     // Private mention mod view
     &:not(&-editing):not(&-replying):not(&-private).ChatV2Message-container-private-other
-        @include define-message-type(base.$private-mod-view)
+        @include define-message-type(variables.$private-mod-view)
 
     // Right clicked
     &-active:not(&-editing)
         @extend %Panel-0
-        --body-text-color: #{base.$fg-3}
+        --body-text-color: #{variables.$fg-3}
 
     // Removes messages' margin
     & + &:not(&-with-header):not(&-type-system)
@@ -121,13 +121,13 @@
         @extend %TextDark
     // Seconds left
     &-cooldown-text
-        color: base.$warning
+        color: variables.$warning
 
 // Failed to send
 .ChatV2Message-retry-control
-    fill: base.$warning
+    fill: variables.$warning
     .SVGIcon-icon
-        fill: base.$warning
+        fill: variables.$warning
 
 // Replying to
 .ChatChannelInputStatusBar
@@ -150,7 +150,7 @@
         @extend %SvgDark
         @include set.transition(fill)
         &-enabled
-            fill: color.adjust(base.$private, base.$whiteness: 25%)
+            fill: color.adjust(variables.$private, variables.$whiteness: 25%)
     &-container:hover:not(&-container-disabled) &-icon:not(&-icon-enabled)
         @extend %SvgMedium
 .ReplyPingButton-ping
@@ -158,7 +158,7 @@
         @extend %SvgDark
         @include set.transition(fill)
     &-enabled &-icon
-        fill: color.adjust(base.$mention, base.$whiteness: 25%)
+        fill: color.adjust(variables.$mention, variables.$whiteness: 25%)
 
 .ChatChannelInput-editor
     border: none
@@ -169,7 +169,7 @@
     &, &-highlighted
         // Reply line
         &::after
-            border-color: base.$fg-0
+            border-color: variables.$fg-0
             opacity: 30%
             height: 24px
         &:first-child::after
@@ -245,7 +245,7 @@
 .WordDividerLine
     // Normal
     &-line
-        background-color: base.$bg-6
+        background-color: variables.$bg-6
         &:last-child
             width: 600px
     &-container-word-style-chat &-word,
@@ -254,10 +254,10 @@
     // New messages
     &-container-type-alert
         .WordDividerLine-line
-            background: base.$important
+            background: variables.$important
     &-container-type-alert
         .WordDividerLine-word
-            color: base.$important
+            color: variables.$important
 
 /*
  * --- Threads ---
@@ -275,7 +275,7 @@
 // Threaded message
 .ChatMessageThread-container
     @extend %PanelBordered-3
-    --border-color: #{base.$bg-5}
+    --border-color: #{variables.$bg-5}
     // Threaded message hover
     &::after
         display: none
@@ -321,8 +321,8 @@
     // Buttons hovered over
     &-wrapper:hover .QuickActionBar-action,
     &:hover
-        background-color: base.$bg-3
-        fill: base.$fg-3
+        background-color: variables.$bg-3
+        fill: variables.$fg-3
         // Change the fill of the SVG icon
         .SVGIcon-container
             @extend %SvgLight
@@ -349,12 +349,12 @@
             @extend %Panel-0
 // Message delete menu fading
 .ChatChannelMessages-delete-message::after
-    background: linear-gradient(to bottom, transparent, base.$bg-3 75px)
+    background: linear-gradient(to bottom, transparent, variables.$bg-3 75px)
     // Doesn't work
     // @include set.transition(background)
     // When the message gets hovered over, change the fading too
     .ChatV2Message-container:not(.ChatV2Message-container-editing):hover &
-        background: linear-gradient(to bottom, transparent, base.$bg-5 75px)
+        background: linear-gradient(to bottom, transparent, variables.$bg-5 75px)
 
 /*
  * --- Thread menu ---
@@ -366,7 +366,7 @@
     // Base
     &-content-wrapper
         @extend %OverridePanelMildlyBordered-3
-        opacity: base.$floating-opacity
+        opacity: variables.$floating-opacity
     // Arrow/Pointer
     &-arrow
         @extend %OverridePanelMildlyBordered-3
