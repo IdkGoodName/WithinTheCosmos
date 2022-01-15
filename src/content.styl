@@ -399,8 +399,10 @@ $OverrideContentMildlyBordered-5
  */
 
 PanelType(colour)
-    background-color: mix(bg-1, colour, 88%)
-    border-color: alpha(colour, 0.25)
+    background-color: bg-1
+    border: solid 2px alpha(colour, 0.75)
+    color: colour
+    fill: colour
 $PanelWarning
     PanelType(warning)
 $PanelInfo

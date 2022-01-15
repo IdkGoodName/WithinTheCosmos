@@ -6,6 +6,15 @@
  * -=- Banners -=-
  */
 
+BannerWithButtonType(toExtend, colour)
+    @extends {toExtend}
+
+    .GuildedText-container-type-subtextBodyWhite
+        color: colour
+    .BannerWithButton-icon
+        fill: colour
+
+
 // Archive info bar, bot role warning
 .BannerWithButton
     &-icon
@@ -13,18 +22,13 @@
     &-container
         @extends $OverrideContentBordered-4
         &-theme-warning
-            @extends $PanelWarning
+            BannerWithButtonType($PanelWarning, warning)
         &-theme-info
-            @extends $PanelInfo
+            BannerWithButtonType($PanelInfo, info)
         &-theme-error
-            @extends $PanelCaution
-            // .GuildedText-container-type-subtextBodyWhite
-            //     color: warning
-            // .BannerWithButton-icon
-            //     fill: warning
+            BannerWithButtonType($PanelCaution, bad-1)
 // "Nicknames are visible to everyone in the server"
 .ChangeNicknameOverlay-info
-    @extends $TextMedium
     @extends $PanelWarning
 
 /*
@@ -49,11 +53,9 @@
         // Copy invite alert
         &.StatusMessage-container-type-success
             @extends $PanelSuccess
-            // @extends $Panel-4
-            // @extends $TextGood
-            // // Icon
-            // .StatusMessage-icon
-            //     @extends $SvgGood
+            // Icon
+            .StatusMessage-icon
+                @extends $SvgGood
         // Invalid URL
         &.StatusMessage-container-type-error
             @extends $PanelCaution
@@ -62,6 +64,12 @@
             // // Icon
             // .StatusMessage-icon
             //     @extends $SvgBad
+        // No mic detected
+        &.StatusMessage-container-type-info
+            @extend $PanelInfo
+        // Add-on custom
+        &.StatusMessage-container-type-warning
+            @extend $PanelWarning
     &-persistent
         // Persistent "Published bla bla bla" header
         &.PostDisplayV2-publish-banner
