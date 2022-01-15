@@ -1,13 +1,18 @@
+[![Banner](https://raw.githubusercontent.com/IdkGoodName/WithinTheCosmos/main/assets/banner.png)](https://guilded.gg/)
+
 # Within the Cosmos
 
 Cool-looking theme with multiple colour schemes.
-**"Within the Space" is for:**
-- Guilded
 
-**"Within the Space" is possibly coming soon for:**
-- GTK
+**Support table:**
 
-[![Guilded](https://raw.githubusercontent.com/IdkGoodName/WithinTheSpace/main/screenshots/Guilded.png)](https://guilded.gg/)
+| Platform        | Supported | Coming Soon | Possibly In The Future |
+|-----------------|:---------:|:-----------:|:----------------------:|
+| Guilded         |     X     |             |                        |
+| GTK             |           |      X      |                        |
+| VSC             |           |             |           X            |
+| Revolt          |           |             |           X            |
+| JetBrains Fleet |           |             |           X            |
 
 ## Installing this theme
 
