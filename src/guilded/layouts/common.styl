@@ -147,10 +147,10 @@
 .LinkRenderer
     // Link normally
     &, &:visited, &:focus
-        @extends $TextLink
+        @extends $TextThemeDull
     // Link clicked and hovered over
     &:hover, &:active
-        @extends $TextLinkHighlight
+        @extends $TextThemeBleached
 
 /*
  * --- Custom animations ---
@@ -304,7 +304,7 @@
 //         color: stream
 // Group reorder [DEFAULT]
 .GroupSettingsPanel-name-wrapper .CalloutBadge-container
-    color: blue
+    color: $blue
 
 /*
  * --- Tournament badges ---

@@ -74,11 +74,11 @@
     @extends $SvgLight
 // Upload avatar plus sign
 .NewTeamUpsellIcon-plus-icon
-    background: var(--NihilityTheme0)
+    background: var(--accent-0)
     @extends $SvgMedium
 // Upload avatar plus sign hover
 .NewTeamUpsellIcon-container:hover .NewTeamUpsellIcon-plus-icon
-    background: var(--NihilityTheme1)
+    background: var(--accent-1)
     @extends $SvgLight
 
 // Games selected
@@ -157,9 +157,9 @@
         @extends $SetBorderLight-3
     // Link
     &-url-wrapper-text
-        @extends $TextLink
+        @extends $TextThemeDull
     &-container-desktop:hover &-url-wrapper-text
-        @extends $TextLinkHighlight
+        @extends $TextThemeBleached
 // Copy invite button hover
 .SocialShareButtonV2-container-desktop:hover::after
     @extends $ContentGlare
@@ -211,11 +211,11 @@
         // Icon types
         .icon-reply-filled-no-padding,
         .icon-toolbar-mention
-            fill: yellow
+            fill: $yellow
         .icon-calendar-new
-            fill: red
+            fill: $red
         .icon-toolbar-emoji
-            fill: blue
+            fill: $blue
 
 /*
  * --- Channel Switcher ---

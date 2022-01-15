@@ -137,7 +137,7 @@
         border-bottom-color: border-light-3 !important
     // Focused
     .Select.is-focused .Select-control
-        border-bottom-color: var(--NihilityTheme2) !important
+        border-bottom-color: var(--accent-2) !important
 // Tags
 .GuildedTagCreator-container-dark .Select-value
     // Tag's background
@@ -275,7 +275,7 @@ $CheckboxChecked
 $CheckboxCheckedHover
     @extends $SetBorderThemeDull
 $CheckboxCheck
-    fill: var(--NihilityThemeFg)
+    fill: var(--accent-foreground)
 
 // --- CHECKBOX & CHECKBOX RADIO ---
 
@@ -389,9 +389,9 @@ $CheckboxCheck
 // Form selector focused
 .GuildedSelect-container.GuildedSelect-container-dark .Select.is-focused
     .Select-control
-        border: solid 1px var(--NihilityTheme2) !important
+        border: solid 1px var(--accent-2) !important
     .Select-arrow
-        border-top-color: var(--NihilityTheme2) !important
+        border-top-color: var(--accent-2) !important
 
 // Form selector icon
 .GuildedSelectIcon-container
@@ -423,7 +423,7 @@ $CheckboxCheck
         .GuildedSelect-container.GuildedSelect-container-light &.is-selected
             background-color: bg-5
             border: solid 1px border-light-0
-            border-left: solid 2px var(--NihilityTheme0)
+            border-left: solid 2px var(--accent-0)
         // Focused
         &.is-focused
             @extends $ContentBordered-0
@@ -436,7 +436,7 @@ $CheckboxCheck
         .GuildedSelect-container.GuildedSelect-container-light &.is-selected.is-focused
             background-color: bg-6
             border: solid 1px border-light-1
-            border-left: solid 2px var(--NihilityTheme1)
+            border-left: solid 2px var(--accent-1)
     // No results found - code container/blocks
     .GuildedSelect-container.GuildedSelect-container-light &-noresults,
     .GuildedSelect-container.GuildedSelect-container-dark &-noresults,
@@ -517,7 +517,7 @@ $CheckboxCheck
 .TimeInput
     // Part selected
     &-input:focus
-        background-color: var(--NihilitySelect)
+        background-color: var(--accent-selection)
     // : delimeter
     &-delimiter
         @extends $TextDark
@@ -554,18 +554,18 @@ button-typed-hollow(border-colour, text-colour)
         box-shadow: none
         @extends $SetBorderLight-2
         .FormConfirmButtonV2-button-content
-            font-color(var(--NihilityTheme1))
+            font-color(var(--accent-1))
     // Gilded button text
     &-button-content
-        font-color(var(--NihilityTheme0))
+        font-color(var(--accent-0))
 
     // Hollow gilded
     &-container.FormConfirmButtonV2-container-hollow
         background: none
-        button-typed(border-light-2, var(--NihilityTheme0))
+        button-typed(border-light-2, var(--accent-0))
     // Hollow gilded hover
     &-container-desktop.FormConfirmButtonV2-container-hollow:hover
-        button-typed(border-light-2, var(--NihilityTheme1))
+        button-typed(border-light-2, var(--accent-1))
     // Hollow gilded text
     &-container-hollow &-button-content
         @extends $FontTheme
@@ -617,7 +617,7 @@ button-typed-hollow(border-colour, text-colour)
 
 // Selected colour
 .ColorInputOption-container-dot-selected
-    border-color: var(--NihilityTheme1)
+    border-color: var(--accent-1)
     @extends $SetBorderThemeDull
 // Colour hover
 .ColorInputOption-container-size-lg .ColorInputOption-container-dot:not(.ColorInputOption-container-dot-selected):hover

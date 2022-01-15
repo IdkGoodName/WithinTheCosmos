@@ -42,7 +42,7 @@
         &-subtext3
             @extends $TextMedium
     &-color-gilded1
-        @extends $TextLink
+        @extends $TextThemeDull
 
 // Not loaded
 .LayeredPageContent-fetch-error
@@ -181,10 +181,10 @@
 .LinkRenderer
     &, &:visited, &:focus
         .MarkRenderer-read-only
-            @extends $TextLink
+            @extends $TextThemeDull
     &:active, &:hover
         .MarkRenderer-read-only
-            @extends $TextLinkHighlight
+            @extends $TextThemeBleached
 
 /*
  * --- Images ---
@@ -200,7 +200,7 @@
 
 // Selected images and videos
 .MediaRenderer-content-selected
-    border-color: var(--NihilitySelect)
+    border-color: var(--accent-selection)
 
 .RawVideoPlayer
     // Play arrow
@@ -253,7 +253,7 @@
         color: fg-1
     // Container selected in editor
     &Renderer-container-selected
-        border-color: var(--NihilitySelect)
+        border-color: var(--accent-selection)
     // Channel name
     &CardFooter-channel-name
         @extends $FakeMention
@@ -352,7 +352,7 @@
 .FormsRenderer
     @extends $RadiusSmall
     &-selected
-        border-color: var(--NihilitySelect)
+        border-color: var(--accent-selection)
 .CustomFormWrapper-container-standalone
     background-color: shading-0
     @extends $SetBorderLight-1

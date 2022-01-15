@@ -83,7 +83,7 @@
     &-highlight
         // Until it gets fixed, remove the highlight
         border-top: none
-        //border-top-color: var(--NihilityTheme0)
+        //border-top-color: var(--accent-0)
 // Post author's name
 .UserName-container,
 .TeamMemberBubble-name,
@@ -359,7 +359,7 @@
     // Focused
     &.TextInputWithLabel-container-focused,
     &.TextInputWithLabel-container-focused:hover
-        border-color: var(--NihilityTheme0) !important
+        border-color: var(--accent-0) !important
 // Add background to it as well
 .SelectMenu-container
     @extends $Panel-0
@@ -384,24 +384,24 @@
 .LandingPageNavBar-container-theme-gilded
     @extends $Panel-0
 .LogoAndWordmarkV2-container-theme-dark
-    fill: gold
+    fill: $gold
 .LandingPageNavBarLinks-container-theme-dark .LandingPageNavBarLinks-link
     &, &:focus, &:active, &:visited, &:hover
-        color: gold
+        color: $gold
 .JobLandingHeader
     &-container::before
         @extends .LandingPageNavBar-container-theme-gilded
     &-title
-        color: gold
+        color: $gold
     &-description
-        color: gold
+        color: $gold
 .JobOpeningHeader
     &-icon
-        fill: gold
+        fill: $gold
     &-container
-        color: gold
+        color: $gold
         .ParagraphRenderer
-            color: gold
+            color: $gold
 
 $JobsSectionHeading
     @extends $TextLight
@@ -424,11 +424,11 @@ $JobsItemDescription
         &-icon, svg
             @extends $SvgDark
         &:hover svg
-            fill: gold
+            fill: $gold
         &-fill-light-blue:hover svg
-            fill: blue
+            fill: $blue
         &-fill-green:hover svg
-            fill: green
+            fill: $green
         &-title
             @extends $JobsItemHeading
         &-subtext
@@ -443,7 +443,7 @@ $JobsItemDescription
         @extends $JobsSectionDescription
 .JobsPerk
     &-icon
-        fill: gold
+        fill: $gold
     &-name
         @extends $JobsItemHeading
     &-description

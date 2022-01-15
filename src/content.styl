@@ -9,14 +9,14 @@ $ContentGlare
     background-color: bg-hover
 
 BasicLink()
-    @extends $TextLink
+    @extends $TextThemeDull
     &:hover
-        @extends $TextLinkHighlight
+        @extends $TextThemeBleached
 Link()
     &, &:visited, &:focus
-        @extends $TextLink
+        @extends $TextThemeDull
     &:hover &:active
-        @extends $TextLinkHighlight
+        @extends $TextThemeBleached
 
 /*
  * -=- Foreground & Background -=-
@@ -32,16 +32,12 @@ $TextMedium
 $TextLight
     color: fg-3
 
-$TextLink
-    color: var(--NihilityLink)
-$TextLinkHighlight
-    color: var(--NihilityLinkHover)
 $TextTheme
-    color: var(--NihilityTheme0)
+    color: var(--accent-0)
 $TextThemeDull
-    color: var(--NihilityTheme1)
+    color: var(--accent-1)
 $TextThemeBleached
-    color: var(--NihilityTheme2)
+    color: var(--accent-2)
 $TextNormal
     color: normal-0
 $TextNormalHighlight
@@ -69,16 +65,12 @@ $SvgMedium
 $SvgLight
     fill: fg-3
 
-$SvgLink
-    fill: var(--NihilityLink)
-$SvgLinkHighlight
-    fill: var(--NihilityLinkHover)
 $SvgTheme
-    fill: var(--NihilityTheme0)
+    fill: var(--accent-0)
 $SvgThemeDull
-    fill: var(--NihilityTheme1)
+    fill: var(--accent-1)
 $SvgThemeBleached
-    fill: var(--NihilityTheme2)
+    fill: var(--accent-2)
 $SvgNormal
     fill: normal-0
 $SvgNormalHighlight
@@ -106,16 +98,12 @@ $FontMedium
 $FontLight
     font-color(fg-3)
 
-$FontLink
-    font-color(var(--NihilityLink))
-$FontLinkHighlight
-    font-color(var(--NihilityLinkHover))
 $FontTheme
-    font-color(var(--NihilityTheme0))
+    font-color(var(--accent-0))
 $FontThemeDull
-    font-color(var(--NihilityTheme1))
+    font-color(var(--accent-1))
 $FontThemeBleached
-    font-color(var(--NihilityTheme2))
+    font-color(var(--accent-2))
 $FontNormal
     font-color(normal-0)
 $FontNormalHighlight
@@ -187,9 +175,9 @@ $SetBorderDark-1
 $FullBorderTransparent
     border: solid 1px transparent
 $SetBorderTheme
-    border-color: var(--NihilityTheme0)
+    border-color: var(--accent-0)
 $SetBorderThemeDull
-    border-color: var(--NihilityTheme1)
+    border-color: var(--accent-1)
 $SetBorderGood
     border-color: good-0
 $SetBorderBad
@@ -422,9 +410,9 @@ $PanelCaution
 $PanelSuccess
     PanelType(good-1)
 $PanelTheme
-    background-color: var(--NihilityTheme0)
+    background-color: var(--accent-0)
 $PanelThemeDull
-    background-color: var(--NihilityTheme1)
+    background-color: var(--accent-1)
 
 /*
  * -=- Radius -=-

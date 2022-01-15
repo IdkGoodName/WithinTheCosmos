@@ -1,16 +1,14 @@
 @require "../variables"
 @require "../content"
 
-rgba-theme-0 = alpha(theme-0, 0.6)
+rgba-accent-0 = alpha(accent-0, 0.6)
 
 :root
-    --NihilityTheme0    : theme-0
-    --NihilityTheme1    : theme-1
-    --NihilityTheme2    : theme-2
-    --NihilityThemeFg   : #000
-    --NihilitySelect    : rgba-theme-0
-    --NihilityLink      : fg-link
-    --NihilityLinkHover : fg-link-hover
+    --accent-0    : accent-0
+    --accent-1    : accent-1
+    --accent-2    : accent-2
+    --accent-foreground   : #000
+    --accent-selection    : rgba-accent-0
 
 body
     @extends $Panel-4
@@ -21,12 +19,12 @@ body,
 .ChatChannelMessagesList-container,
 .SlateEditor-container-type-default
     --body-text-color: fg-2
-    --game-color: var(--NihilityTheme0)
+    --game-color: var(--accent-0)
     --border-color: bg-1
     @extends $TextMedium
 // Change selection
 ::selection
-    background-color: var(--NihilitySelect)
+    background-color: var(--accent-selection)
     color: white
 // Change variables
 .AppV2-container-minimal-nav

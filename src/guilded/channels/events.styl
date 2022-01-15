@@ -40,7 +40,7 @@
         // Highlight the date
         .FullSizedCalendarDayHeader-date
             background-color: var(--game-color)
-            color: var(--NihilityThemeFg)
+            color: var(--accent-foreground)
     // Event name
     &Event-name
         @extends $TextMedium
@@ -63,7 +63,7 @@
     overflow: hidden
 .ToggleControlButton-container.ToggleControlButton-container
     &-desktop:hover, &-selected
-        color: var(--NihilityTheme0)
+        color: var(--accent-0)
         background-color: bg-1
     &-selected:focus, &-selected:active
         @extends $TextTheme
@@ -174,9 +174,9 @@
 .EventRsvpsHeader
     // See all link
     &-attendance-see-all
-        @extends $TextLink
+        @extends $TextThemeDull
     &-container-desktop:not(&-container-rsvps-disabled):hover &-attendance-see-all
-        @extends $TextLinkHighlight
+        @extends $TextThemeBleached
     // Maybe, invited, declined
     &-container-desktop:not(&-container-rsvps-disabled):hover &-attendance .EventAttendanceHeader-status
         @extends $TextMedium
