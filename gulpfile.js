@@ -4,14 +4,15 @@ const stylus = require("stylus");
 const gulp = require("gulp");
 const path = require("path");
 
-gulp.task("default", async cb => {
+gulp.task("default", () => {
     const { s, m } = minimist(process.argv.slice(2));
     const schemePath = path.join(__dirname, "./src/schemes", s) + ".styl";
 
     // Compiles all SASS files to CSS
-    gulp.src(`./src/modules/${m || "*"}.styl`)
+    return gulp
+        .src(`./src/modules/${m || "*"}.styl`)
         .pipe(styl(schemePath))
-        .pipe(gulp.dest(`./use`));
+        .pipe(gulp.dest(`./use/${s}`));
 });
 
 function styl(schemePath) {
@@ -25,7 +26,5 @@ function styl(schemePath) {
                 file.contents = Buffer.from(css);
                 callback(null, file);
             });
-
-        return "";
     });
 }
