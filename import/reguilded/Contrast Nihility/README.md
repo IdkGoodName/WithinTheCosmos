@@ -1,6 +1,6 @@
-# Absolute Nihility
+# Contrast Nihility
 
-Really dark colour scheme of ["Within the Cosmos"](https://github.com/IdkGoodName/WithinTheCosmos) theme for Guilded.
+Really dark colour scheme of ["Within the Cosmos"](https://github.com/IdkGoodName/WithinTheCosmos) theme for Guilded. This is an alternative version of Absolute Nihility with a little more contrast.
 
 ## Setting Colours
 
@@ -14,5 +14,5 @@ There is also `--accent-selection` for selection and `--accent-foreground` to se
 
 > **Code Highlighting:** `IMPORTED BY DEFAULT`
 > ```css
-> @import url("https://idkgoodname.github.io/WithinTheSpace/use/AbsoluteNihility/guilded-code.css");
+> @import url("https://idkgoodname.github.io/WithinTheCosmos/use/ContrastNihility/guilded-code.css");
 > ```

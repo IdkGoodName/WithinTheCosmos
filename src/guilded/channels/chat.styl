@@ -65,11 +65,11 @@ define-message-type(colour)
         color: var(--body-text-color)
     // Hovered message
     &:not(&-editing):hover, &.ChatV2Message-container-replying
-        @extends $Panel-0
+        @extends $Panel-1
         --body-text-color: fg-3
     // Right click active
     &-active
-        @extends $Panel-0
+        @extends $Panel-1
 
     // Replying
     &:not(&-editing).ChatV2Message-container-replying

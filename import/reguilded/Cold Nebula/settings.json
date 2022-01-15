@@ -1,0 +1,27 @@
+{
+    "accent-0": {
+        "name": "Accent (Normal)",
+        "value": "#609dec",
+        "type": "color"
+    },
+    "accent-1": {
+        "name": "Accent (Dull)",
+        "value": "#77c3f7",
+        "type": "color"
+    },
+    "accent-2": {
+        "name": "Accent (Bleached)",
+        "value": "#aad8f7",
+        "type": "color"
+    },
+    "accent-selection": {
+        "name": "Accent (Selection)",
+        "value": "rgba(96, 157, 236, 0.6)",
+        "type": "color"
+    },
+    "accent-foreground": {
+        "name": "Foreground on accented panels",
+        "value": "#fff",
+        "type": "color"
+    }
+}

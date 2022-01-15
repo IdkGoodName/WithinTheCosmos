@@ -1,10 +1,10 @@
-# Within the Space
+# Within the Cosmos
 
 Cool-looking theme with multiple colour schemes.
-**"Within the Space" supports these platforms and projects:**
+**"Within the Space" is for:**
 - Guilded
 
-**Possibly coming soon for:**
+**"Within the Space" is possibly coming soon for:**
 - GTK
 
 [![Guilded](https://raw.githubusercontent.com/IdkGoodName/WithinTheSpace/main/screenshots/Guilded.png)](https://guilded.gg/)
@@ -16,14 +16,26 @@ Cool-looking theme with multiple colour schemes.
 > - Extract it on your desktop or anywhere where you want
 > - Go to user settings and then `Themes` settings tab
 > - Press on `Import` themes tab
-> - Click on `Import` button and select extracted folder.
+> - Click on `Import` button and select extracted folder
 
 ## Importing
 
 > ### Guilded
 > **Absolute Nihility:**
 > ```css
-> @import url("https://idkgoodname.github.io/WithinTheSpace/use/AbsoluteNihility/guilded.css");
+> @import url("https://idkgoodname.github.io/WithinTheCosmos/use/AbsoluteNihility/guilded.css");
 > /* Additional */
-> @import url("https://idkgoodname.github.io/WithinTheSpace/use/AbsoluteNihility/guilded-code.css");
+> @import url("https://idkgoodname.github.io/WithinTheCosmos/use/AbsoluteNihility/guilded-code.css");
+> ```
+> **Contrast Nihility:**
+> ```css
+> @import url("https://idkgoodname.github.io/WithinTheCosmos/use/ContrastNihility/guilded.css");
+> /* Additional */
+> @import url("https://idkgoodname.github.io/WithinTheCosmos/use/ContrastNihility/guilded-code.css");
+> ```
+> **Cold Nebula:**
+> ```css
+> @import url("https://idkgoodname.github.io/WithinTheCosmos/use/ColdNebula/guilded.css");
+> /* Additional */
+> @import url("https://idkgoodname.github.io/WithinTheCosmos/use/ColdNebula/guilded-code.css");
 > ```
