@@ -1,0 +1,442 @@
+@require "./variables"
+@require "./set"
+
+/*
+ * -=- Content -=-
+ */
+
+$ContentGlare
+    background-color: bg-hover
+
+BasicLink()
+    @extends $TextLink
+    &:hover
+        @extends $TextLinkHighlight
+Link()
+    &, &:visited, &:focus
+        @extends $TextLink
+    &:hover &:active
+        @extends $TextLinkHighlight
+
+/*
+ * -=- Foreground & Background -=-
+ */
+
+// Text
+$TextDarker
+    color: fg-0
+$TextDark
+    color: fg-1
+$TextMedium
+    color: fg-2
+$TextLight
+    color: fg-3
+
+$TextLink
+    color: var(--NihilityLink)
+$TextLinkHighlight
+    color: var(--NihilityLinkHover)
+$TextTheme
+    color: var(--NihilityTheme0)
+$TextThemeDull
+    color: var(--NihilityTheme1)
+$TextThemeBleached
+    color: var(--NihilityTheme2)
+$TextNormal
+    color: normal-0
+$TextNormalHighlight
+    color: normal-1
+$TextBad
+    color: bad-0
+$TextBadHighlight
+    color: bad-1
+$TextNeutral
+    color: neutral-0
+$TextNeutralHighlight
+    color: neutral-1
+$TextGood
+    color: good-0
+$TextGoodHighlight
+    color: good-1
+
+// Svg
+$SvgDarker
+    fill: fg-0
+$SvgDark
+    fill: fg-1
+$SvgMedium
+    fill: fg-2
+$SvgLight
+    fill: fg-3
+
+$SvgLink
+    fill: var(--NihilityLink)
+$SvgLinkHighlight
+    fill: var(--NihilityLinkHover)
+$SvgTheme
+    fill: var(--NihilityTheme0)
+$SvgThemeDull
+    fill: var(--NihilityTheme1)
+$SvgThemeBleached
+    fill: var(--NihilityTheme2)
+$SvgNormal
+    fill: normal-0
+$SvgNormalHighlight
+    fill: normal-1
+$SvgBad
+    fill: bad-0
+$SvgBadHighlight
+    fill: bad-1
+$SvgNeutral
+    fill: neutral-0
+$SvgNeutralHighlight
+    fill: neutral-1
+$SvgGood
+    fill: good-0
+$SvgGoodHighlight
+    fill: good-1
+
+// Text & SVG
+$FontDarker
+    font-color(fg-0)
+$FontDark
+    font-color(fg-1)
+$FontMedium
+    font-color(fg-2)
+$FontLight
+    font-color(fg-3)
+
+$FontLink
+    font-color(var(--NihilityLink))
+$FontLinkHighlight
+    font-color(var(--NihilityLinkHover))
+$FontTheme
+    font-color(var(--NihilityTheme0))
+$FontThemeDull
+    font-color(var(--NihilityTheme1))
+$FontThemeBleached
+    font-color(var(--NihilityTheme2))
+$FontNormal
+    font-color(normal-0)
+$FontNormalHighlight
+    font-color(normal-1)
+$FontBad
+    font-color(bad-0)
+$FontBadHighlight
+    font-color(bad-1)
+$FontNeutral
+    font-color(neutral-0)
+$FontNeutralHighlight
+    font-color(neutral-1)
+$FontGood
+    font-color(good-0)
+$FontGoodHighlight
+    font-color(good-1)
+
+// Background
+$Panel-0
+    background-color: bg-5
+$Panel-1
+    background-color: bg-4
+$Panel-2
+    background-color: bg-3
+$Panel-3
+    background-color: bg-2
+$Panel-4
+    background-color: bg-1
+$Panel-5
+    background-color: bg-0
+$PanelTransparent
+    background-color: transparent
+$PanelBad
+    background-color: bad-0
+$PanelGood
+    background-color: good-0
+
+/*
+ * -=- Bordered -=-
+ */
+
+// Borders
+$FullBorderLight-0
+    border: solid 1px border-light-0
+$FullBorderLight-1
+    border: solid 1px border-light-1
+$FullBorderLight-2
+    border: solid 1px border-light-2
+$FullBorderLight-3
+    border: solid 1px border-light-3
+$SetBorderLight-0
+    border-color: border-light-0
+$SetBorderLight-1
+    border-color: border-light-1
+$SetBorderLight-2
+    border-color: border-light-2
+$SetBorderLight-3
+    border-color: border-light-3
+
+$FullBorderDark-0
+    border: solid 1px border-dark-0
+$FullBorderDark-1
+    border: solid 1px border-dark-1
+$SetBorderDark-0
+    border-color: border-dark-0
+$SetBorderDark-1
+    border-color: border-dark-1
+
+$FullBorderTransparent
+    border: solid 1px transparent
+$SetBorderTheme
+    border-color: var(--NihilityTheme0)
+$SetBorderThemeDull
+    border-color: var(--NihilityTheme1)
+$SetBorderGood
+    border-color: good-0
+$SetBorderBad
+    border-color: bad-0
+$SetBorderTransparent
+    border-color: transparent
+
+/*
+ * --- Panels ---
+ */
+
+PanelBordered(bg-col, border-col)
+    background-color: bg-col
+    border: solid 1px border-col
+
+// Panels with dark border
+$PanelBordered-0
+    background-color: bg-5
+    border: solid 1px border-dark-1
+$PanelBordered-1
+    background-color: bg-4
+    border: solid 1px border-dark-1
+$PanelBordered-2
+    background-color: bg-3
+    border: solid 1px border-dark-1
+$PanelBordered-3
+    background-color: bg-2
+    border: solid 1px border-dark-1
+$PanelBordered-4
+    background-color: bg-1
+    border: solid 1px border-dark-1
+$PanelBordered-5
+    background-color: bg-0
+    border: solid 1px border-dark-1
+$OverridePanelBordered-0
+    background-color: bg-5
+    border-color: border-dark-1
+$OverridePanelBordered-0
+    background-color: bg-4
+    border-color: border-dark-1
+$OverridePanelBordered-2
+    background-color: bg-3
+    border-color: border-dark-1
+$OverridePanelBordered-3
+    background-color: bg-2
+    border-color: border-dark-1
+$OverridePanelBordered-4
+    background-color: bg-1
+    border-color: border-dark-1
+$OverridePanelBordered-5
+    background-color: bg-0
+    border-color: border-dark-1
+
+// Panel with mild border
+$PanelMildlyBordered-0
+    background-color: bg-5
+    border: solid 1px border-dark-0
+$PanelMildlyBordered-2
+    background-color: bg-4
+    border: solid 1px border-dark-0
+$PanelMildlyBordered-2
+    background-color: bg-3
+    border: solid 1px border-dark-0
+$PanelMildlyBordered-3
+    background-color: bg-2
+    border: solid 1px border-dark-0
+$PanelMildlyBordered-4
+    background-color: bg-1
+    border: solid 1px border-dark-0
+$PanelMildlyBordered-5
+    background-color: bg-0
+    border: solid 1px border-dark-0
+$OverridePanelMildlyBordered-0
+    background-color: bg-5
+    border-color: border-dark-0
+$OverridePanelMildlyBordered-2
+    background-color: bg-4
+    border-color: border-dark-0
+$OverridePanelMildlyBordered-2
+    background-color: bg-3
+    border-color: border-dark-0
+$OverridePanelMildlyBordered-3
+    background-color: bg-2
+    border-color: border-dark-0
+$OverridePanelMildlyBordered-4
+    background-color: bg-1
+    border-color: border-dark-0
+$OverridePanelMildlyBordered-5
+    background-color: bg-0
+    border-color: border-dark-0
+
+/*
+ * --- Content ---
+ */
+
+// Content with rough border
+$ContentRoughBordered-0
+    background-color: bg-5
+    border: solid 1px border-light-2
+$ContentRoughBordered-1
+    background-color: bg-4
+    border: solid 1px border-light-2
+$ContentRoughBordered-2
+    background-color: bg-3
+    border: solid 1px border-light-2
+$ContentRoughBordered-3
+    background-color: bg-2
+    border: solid 1px border-light-2
+$ContentRoughBordered-4
+    background-color: bg-1
+    border: solid 1px border-light-2
+$ContentRoughBordered-5
+    background-color: bg-0
+    border: solid 1px border-light-2
+$OverrideContentRoughBordered-0
+    background-color: bg-5
+    border-color: border-light-2
+$OverrideContentRoughBordered-1
+    background-color: bg-4
+    border-color: border-light-2
+$OverrideContentRoughBordered-2
+    background-color: bg-3
+    border-color: border-light-2
+$OverrideContentRoughBordered-3
+    background-color: bg-2
+    border-color: border-light-2
+$OverrideContentRoughBordered-4
+    background-color: bg-1
+    border-color: border-light-2
+$OverrideContentRoughBordered-5
+    background-color: bg-0
+    border-color: border-light-2
+$OverrideContentRoughBordered-darker
+    background-color: bg-0
+    border-color: border-light-2
+
+// Content with normal border
+$ContentBordered-0
+    background-color: bg-5
+    border: solid 1px border-light-1
+$ContentBordered-1
+    background-color: bg-4
+    border: solid 1px border-light-1
+$ContentBordered-2
+    background-color: bg-3
+    border: solid 1px border-light-1
+$ContentBordered-3
+    background-color: bg-2
+    border: solid 1px border-light-1
+$ContentBordered-4
+    background-color: bg-1
+    border: solid 1px border-light-1
+$ContentBordered-5
+    background-color: bg-0
+    border: solid 1px border-light-1
+$OverrideContentBordered-0
+    background-color: bg-5
+    border-color: border-light-1
+$OverrideContentBordered-1
+    background-color: bg-4
+    border-color: border-light-1
+$OverrideContentBordered-2
+    background-color: bg-3
+    border-color: border-light-1
+$OverrideContentBordered-3
+    background-color: bg-2
+    border-color: border-light-1
+$OverrideContentBordered-4
+    background-color: bg-1
+    border-color: border-light-1
+$OverrideContentBordered-5
+    background-color: bg-0
+    border-color: border-light-1
+$OverrideContentBordered-darker
+    background-color: bg-0
+    border-color: border-light-1
+
+// Content with mild border
+$ContentMildlyBordered-0
+    background-color: bg-5
+    border: solid 1px border-light-0
+$ContentMildlyBordered-2
+    background-color: bg-4
+    border: solid 1px border-light-0
+$ContentMildlyBordered-2
+    background-color: bg-3
+    border: solid 1px border-light-0
+$ContentMildlyBordered-3
+    background-color: bg-2
+    border: solid 1px border-light-0
+$ContentMildlyBordered-4
+    background-color: bg-1
+    border: solid 1px border-light-0
+$ContentMildlyBordered-5
+    background-color: bg-0
+    border: solid 1px border-light-0
+
+$OverrideContentMildlyBordered-0
+    background-color: bg-5
+    border-color: border-light-0
+$OverrideContentMildlyBordered-2
+    background-color: bg-4
+    border-color: border-light-0
+$OverrideContentMildlyBordered-2
+    background-color: bg-3
+    border-color: border-light-0
+$OverrideContentMildlyBordered-3
+    background-color: bg-2
+    border-color: border-light-0
+$OverrideContentMildlyBordered-4
+    background-color: bg-1
+    border-color: border-light-0
+$OverrideContentMildlyBordered-5
+    background-color: bg-0
+    border-color: border-light-0
+
+/*
+ * --- Content Type Panels ---
+ */
+
+PanelType(colour)
+    background-color: mix(bg-1, colour, 88%)
+    border-color: alpha(colour, 0.25)
+$PanelWarning
+    PanelType(warning)
+$PanelInfo
+    PanelType(info)
+$PanelCaution
+    PanelType(bad-1)
+$PanelSuccess
+    PanelType(good-1)
+$PanelTheme
+    background-color: var(--NihilityTheme0)
+$PanelThemeDull
+    background-color: var(--NihilityTheme1)
+
+/*
+ * -=- Radius -=-
+ */
+
+$RadiusMinimal
+    border-radius: radius-0
+$RadiusLow
+    border-radius: radius-1
+$RadiusSmall
+    border-radius: radius-2
+$RadiusMedium
+    border-radius: radius-3
+$RadiusHigh
+    border-radius: radius-4

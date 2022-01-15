@@ -1,0 +1,617 @@
+@require "../variables"
+@require "../set"
+@require "../content"
+@require "../fake"
+
+
+@require "./channels/announcement"
+@require "./channels/applications"
+@require "./channels/chat"
+@require "./channels/documents"
+@require "./channels/events"
+@require "./channels/forum"
+@require "./channels/list"
+@require "./channels/media"
+@require "./channels/members-audit"
+@require "./channels/overview"
+@require "./channels/schedule"
+@require "./channels/stream"
+@require "./channels/voice"
+
+/*
+ * --========================--
+ *    Channel content styles
+ * --========================--
+ */
+
+/*
+ *
+ * -=- Misc -=-
+ *
+ */
+
+.GuildedText-container
+    &-type
+        // For server invite titles,
+        &-heading2
+            @extends $TextLight
+        // For level titles, message thread pop up text
+        &-subtext2
+            @extends $TextDark
+        // Status messages
+        &-subtext3
+            @extends $TextMedium
+    &-color-gilded1
+        @extends $TextLink
+
+// Not loaded
+.LayeredPageContent-fetch-error
+    @extends $Panel-2
+
+// Not found/Not loaded
+.NullStateV2,
+.TabEmptyState
+    &-title
+        @extends $TextLight
+    &-container-size-md &-title,
+    &-subtitle
+        @extends $TextMedium
+/*
+ *
+ * -=- Formatting -=-
+ *
+ */
+
+/*
+ * --- Paragraph ---
+ */
+
+// Paragraph with only emotes
+.ParagraphRenderer-only-reaction
+    font-size: 200%
+    // If there is only emote paragraph above, remove margin
+    & + &
+        margin-top: 0 !important
+// Emote
+.ReactionRenderer-child
+    padding: 0
+    border: 0
+.ReactionRenderer-image
+    top: 0
+
+/*
+ * --- Title ---
+ */
+
+.SlateHeadingRenderer
+    @extends $TextLight
+
+
+/*
+ * --- Quote block ---
+ */
+
+.BlockQuoteContainerRenderer
+    background-color: shading-1
+    border-left-color: var(--game-color)
+    border-left-width: radius-1
+    border-radius: radius-0
+    overflow: hidden
+    &.SlateContainerRenderer.slate-margin-lg
+        padding: spacing-2 spacing-2 spacing-2 spacing-3
+    // Darker
+    .ChatMessageThread-thread-parent-message &
+        background-color: shading-2
+
+/*
+ * --- Code block ---
+ */
+
+// Whole code block
+.CodeContainerRenderer-container,
+// Code block in Markdown plain text
+.PrismTokenCodeBlockRenderer-container
+    @extends $Panel-5
+    // Make sure Markdown code block also gets it
+    code
+        font-family: 'Courier', monospace
+
+// Code block line
+.CodeLineRenderer
+    @extends $PanelTransparent
+
+// Code block
+.CodeContainerRenderer
+    &-language-indicator
+        .CalloutBadge-container
+            color: fg-code
+    &-header
+        @extends $Panel-4
+
+/*
+ * --- Lists ---
+ */
+
+.UnorderedListRenderer
+    // Every odd nest
+    &, & & &, & & & & &
+        list-style-type: square
+    // Every even nest
+    & &, & & & &, & & & & & &
+        list-style-type: circle
+
+/*
+ * --- Formatting marks ---
+ */
+
+.MarkRenderer
+    // Bold text
+    &-bold
+        color: fg-format
+    // Inline code
+    &-inline-code, &-inline-code-v2
+        @extends $Panel-5
+        color: fg-code
+
+.PrismToken
+    // Embed inline code
+    &InlineRenderer-container-type-code
+        @extends .MarkRenderer-inline-code
+    // Embed link
+    &UrlRenderer-link
+        Link()
+
+// Template parameters
+.TemplateParameter-container,
+// Channel mentions
+.ChannelPill-container
+    @extends $TextLight
+    background-color: alpha(fg-3, 0.1)
+// Template icon
+.TemplateParameter-icon
+    @extends $SvgDark
+
+// Spoilers
+.SpoilerRenderer-container
+    @extends $Panel-5
+    border-radius: radius-2
+    padding: 0 spacing-side spacing-top spacing-side
+
+// Override bold/italic highlighting
+.LinkRenderer
+    &, &:visited, &:focus
+        .MarkRenderer-read-only
+            @extends $TextLink
+    &:active, &:hover
+        .MarkRenderer-read-only
+            @extends $TextLinkHighlight
+
+/*
+ * --- Images ---
+ */
+
+// Images and videos
+.MediaRenderer-content,
+// Inner video
+.RawVideoPlayer-video,
+// Video overlay
+.GradientOverlay-container.GradientOverlay-container-subtle-2
+    @extends $RadiusSmall
+
+// Selected images and videos
+.MediaRenderer-content-selected
+    border-color: var(--NihilitySelect)
+
+.RawVideoPlayer
+    // Play arrow
+    &-play-icon
+        fill: bg-1
+        filter: drop-shadow(shadow)
+// Video buttons
+.TeamStreamPlayerButton-container,
+.TeamStreamVolumeControl-volume-icon,
+.TeamStreamVolumeControl-volume-icon-wrapper:hover .TeamStreamVolumeControl-volume-icon
+    fill: bg-1
+    filter: drop-shadow(shadow)
+
+// Image caption
+.MediaCaptionLineRenderer
+    @extends $TextDark
+// Caption itself
+.MediaRenderer-caption
+    border-color: border-light-1
+// Image caption being edited
+.MediaRenderer-caption-selected,
+.MediaRenderer-caption-has-text,
+.MediaRenderer-caption-placeholder
+    background-color: shading-1
+
+// Don't show it on the image caption that isn't being edited
+.MediaRenderer-read-only
+    @extends $PanelTransparent
+    @extends $SetBorderTransparent
+
+// Formatting in caption
+.MediaCaptionLineRenderer .MarkRenderer
+    // Bold text
+    &-bold
+        color: shade(fg-format, 20%)
+    // Inline code
+    &-inline-code, &-inline-code-v2
+        @extends $Panel-5
+        color: shade(fg-code, 20%)
+
+
+/*
+ * --- Content info ---
+ */
+
+.ContentEmbed
+    // Content info not loaded
+    &CardError-container
+        background-color: bg-3
+        color: fg-1
+    // Container selected in editor
+    &Renderer-container-selected
+        border-color: var(--NihilitySelect)
+    // Channel name
+    &CardFooter-channel-name
+        @extends $FakeMention
+
+// Content info
+.DefaultContentEmbedCard-content
+    // Wrapper
+    &-wrapper
+        @extends $OverrideContentBordered-2
+        // Hovered over
+        &:not(&-disabled)::after
+            @extends $ContentGlare
+    // Fading
+    &-fade-overflow::after
+        //mask-image: linear-gradient(to bottom, black, transparent 95%)
+        //&::after
+        //display: none
+        background: linear-gradient(to bottom, transparent, bg-3 20px)
+
+/*
+ * --- Embeds ---
+ */
+
+// Embed itself
+.ChatEmbed-container,
+.OpenGraphEmbed-content,
+.TeamEmbedCard-container
+    @extends $Panel-3
+    border-radius: radius-2
+    border-color: border-light-1
+    overflow: hidden
+    &:not([style])
+        border-left: solid 1px border-light-1
+
+// Embed
+.ChatEmbed,
+.OpenGraphEmbed
+    &Content
+        // Hovered over
+        &-container::after
+            background-color: bg-hover
+            border-radius: radius-2
+        &-description
+            @extends $TextMedium
+    &-content:not([style])
+        border-left: solid 1px border-light-1
+
+.OpenGraphEmbedContent-domain
+    @extends $TextDark
+    // Domain icon
+    &-icon
+        @extends $SvgDark
+
+.ChatEmbedContent-image,
+.OpenGraphEmbedImage-image,
+.ChatEmbedContent-thumbnail-image
+    @extends $RadiusMinimal
+
+// Footer background
+.ChatEmbedFooter-container,
+.ContentEmbedCardFooter-container
+    background-color: bg-1
+    color: fg-0
+
+
+/*
+ * --- Server invites ---
+ */
+
+.TeamEmbedCard
+    // Server's description
+    &-description
+        @extends $TextMedium
+    // Server invite hover
+    &-container::after
+        @extends $ContentGlare
+
+.TournamentInviteEmbedCard-container
+    @extends $Panel-4
+    &::after
+        @extends $ContentGlare
+
+// Member and follower count
+.EmphasizedLabel-container-type-subtle
+    @extends $TextDark
+
+// Member and follower seperator dot
+.TeamFollowerMemberCount-separator
+    background-color: fg-0
+
+/*
+ * --- Polls/Forms ---
+ */
+
+// Form
+.FormsRenderer
+    @extends $RadiusSmall
+    &-selected
+        border-color: var(--NihilitySelect)
+.CustomFormWrapper-container-standalone
+    background-color: shading-0
+    @extends $SetBorderLight-1
+    // Form border
+    &::after
+        border: none
+
+// Form's title
+.CustomFormHeader-title
+    @extends $TextLight
+// Form's description
+.CustomFormHeader-description
+    @extends $TextMedium
+
+/*
+ * --- Misc ---
+ */
+
+.ReplyingToUserHeader-post-link
+    @extends $TextDarker
+
+
+/*
+ *
+ * -=- Rich Text Input -=-
+ *
+ */
+
+// Whole container
+.ChatChannelInput-container
+    @extends $RadiusMedium
+
+// Forum editor
+.Editor-container
+    @extends $ContentBordered-1
+
+// Chat input
+.ChatChannelInput-container .ChatChannelInput-editor,
+.ChannelTitleInput-container,
+.ChatChannelInput-editor,
+// No write editor
+.ChatChannelInput-no-permissions,
+.ChatChannelInputPublic-container
+    @extends $ContentBordered-1
+
+.ChatChannelArchivedControl-container
+    PanelBordered(bg-4, border-light-1)
+
+// Doc editor
+.DocEditor-container .DocEditor-content-input,
+// List item message editor
+.TeamListItemsInput-editor
+    @extends $PanelTransparent
+    border: none
+
+// List item note editor
+.TeamListItemNoteEditor-editor
+    @extends $ContentBordered-2
+
+// Forum reply editor
+.TeamThreadPostEditor-editor .Editor-container
+    @extends $Panel-2
+
+// Editor toolbar
+.SlateToolbarStrip
+    @extends $SetBorderLight-1
+    border-top: none
+    // In doc editor
+    .DocEditor-container &
+        border-top: solid 1px border-light-1
+        border-left: solid 1px border-light-1
+        border-right: solid 1px border-light-1
+        padding: 0 spacing-0
+        border-radius: radius-1
+
+// Thread pop-up
+.ChatV2MessageReplyTooltipInput
+    // Content editor
+    &-container .Editor-container
+        @extends $Panel-2
+    // Title editor
+    &-title-container
+        @extends $ContentBordered-2
+
+// Border after +
+.ChatV2MessageReplyTooltipInput-title-icon::after,
+.SlateInsertToolbar-container::after,
+.ChannelTitleInput-icon::after
+    display: none
+
+// Change text in no write allowed inputs
+.ChatChannelInput-no-permissions,
+.ChatChannelInputPublic-container
+    @extends $TextDark
+.ChatChannelInputPublic-header
+    @extends $TextMedium
+
+/*
+ * --- Forums and Profile ---
+ */
+
+// Input
+.TeamThreadReplyCreator-unexpanded-wrapper,
+.DraftInputWithTitleV2-title-wrapper,
+.CollapsedInput-container
+    @extends $ContentBordered-1
+
+// Make it stand-out less
+.CollapsedInput-container.ContentMetadataInlineReplyDisplay-collapsed-input
+    @extends $ContentBordered-2
+
+.TeamThreadReplyCreator-container-desktop .TeamThreadReplyCreator-unexpanded-wrapper,
+.DraftInputWithTitleV2-container-desktop.DraftInputWithTitleV2-container-unexpanded,
+.CollapsedInput-container
+    // Input hover
+    &::after
+        @extends $ContentGlare
+
+// Input text
+.DraftInputWithTitleV2-input::placeholder
+    @extends $TextMedium
+
+// Write a reply
+.TeamThreadReplyCreator-title
+    @extends $TextLight
+
+// Cancel button
+.CancelText-container
+    @extends $TextDark
+    // Cancel button hovered
+    &:hover
+        @extends $TextMedium
+
+// Comment input small
+.CollapsedInput-container-size-sm
+    @extends $TextDark
+
+.PostReplyQuoteButtons-option
+    // Quote/Reply buttons
+    &:not(:first-child):not(:first-child)::before
+        background-color: fg-0
+    // Quote/Reply buttons active
+    &, &:hover, &:visited, &:active, &:focus
+        color: var(--game-color)
+
+
+// Leave a comment/Share
+.ShareContentTrigger-text,
+.ContentMetadataReplyInfo-reply-text
+    @extends $TextDark
+    transition(color)
+
+.ShareContentTrigger-container-desktop:hover .ShareContentTrigger-text,
+.ContentMetadataReplyInfo-repliers:hover .ContentMetadataReplyInfo-reply-text
+    @extends $TextMedium
+
+// Leave a comment/Share icon
+.ShareContentTrigger-icon,
+.ContentMetadataReplyInfo-icon
+    @extends $SvgDark
+    transition(fill)
+
+.ShareContentTrigger-container-desktop:hover .ShareContentTrigger-icon,
+.ContentMetadataReplyInfo-repliers:hover .ContentMetadataReplyInfo-icon
+    @extends $SvgMedium
+
+
+/*
+ * --- Toolbar ---
+ */
+
+// Selected text toolbar picker
+.SlateSelectionToolbar-toolbar
+    @extends $Panel-5
+    box-shadow: 0 0 16px 2px black
+
+// Selected text toolbar caret
+.SlateSelectionToolbar-caret
+    border-top-color: bg-0
+
+// Toolbar icons
+.SlateEditor-send-icon.SlateEditor-send-icon-disabled,
+.ReactionPickerButton-icon,
+.SlateEditor-clear-icon,
+.SlateToolbarIcon-icon,
+.SlateToolbarMenuIcon
+    @extends $SvgDark
+    transition(fill)
+
+// Hovered over toolbar icon
+.SlateToolbarIcon-wrapper:hover .SlateToolbarIcon-icon,
+.SlateEditor-reactions-control:hover,
+.ReactionPickerButton-icon:hover,
+.SlateToolbarMenuIcon-container:hover,
+.SlateToolbarMenuIcon:hover,
+.SlateToolbarMenuIcon *:hover .SlateToolbarMenuIcon-carat,
+.SlateToolbarMenuIcon *:hover .SlateToolbarMenuIcon-icon
+    @extends $SvgLight
+
+// Active toolbar icon
+.SlateEditor-send-icon,
+.SlateToolbarIcon-icon-active
+    @extends $SvgMedium
+
+// Drop arrow for toolbar icons
+.SlateToolbarMenuIcon-carat
+    @extends $SvgDark
+
+
+/*
+ * --- Mention/emote picker ---
+ */
+
+// The picker
+.AbstractTypeaheadPlugin-container,
+.TypeaheadDrawer-container
+    opacity: floating-opacity
+    background-color: bg-3
+    border-color: border-light-2
+    border-radius: radius-2
+
+.SlateTypeaheadMenuHeader
+    // Picker's header
+    &-container
+        background-color: bg-2
+        //border-bottom: solid 1px border-light-2
+        color: fg-1
+    // Picker's search icon (@, #)
+    &-searchTerm
+        @extends $FakeMention
+.TypeaheadMenu-list
+    padding: spacing-0
+
+// Template parameter icon
+.TemplateParameterMenuItem-icon
+    @extends $SvgDark
+
+// Item hovered over
+.MenuItemEnabled-container
+    border-radius: radius-1
+    border: solid 1px transparent
+    &::after
+        @extends $ContentGlare
+    &-highlighted
+        background-color: alpha(bg-hover, 0.1)
+        @extends $FullBorderLight-1
+        .TemplateParameterMenuItem-icon
+            @extends $SvgMedium
+
+.MentionMenuItem
+    // Item's icon
+    &-broadcast
+        @extends $SvgDark
+        // Picked item's icon
+        .MenuItemEnabled-container-highlighted &
+            @extends $SvgMedium
+    // Item's description
+    &-description
+        @extends $TextDark
+        // Picked item's description
+        .MenuItemEnabled-container-highlighted &
+            @extends $TextMedium

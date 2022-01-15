@@ -1,0 +1,78 @@
+@require "../../variables"
+@require "../../content"
+
+/*
+ * --- Forum post list ---
+ */
+
+.TeamPostRow-container
+    @extends $PanelBordered-3
+    &-unread
+        @extends $Panel-4
+    // Forum post hover
+    &-desktop::after
+        @extends $ContentGlare
+
+.TeamWidgetCommentCount
+    // Comment count icon
+    &-icon
+        @extends $SvgDark
+    // Comment count text
+    &-container-size-lg &-label
+        @extends $TextDark
+
+// Author and date
+.TeamPostRow-options-wrapper
+    @extends $TextDark
+
+
+/*
+ * --- Post view ---
+ */
+
+// Outer forum post
+.TeamThreadPostPanel-container
+    @extends $PanelTransparent
+
+// Post editor background
+.TeamThreadPostEditor-container,
+// Forum post
+.TeamThreadPostPanelDisplay-container
+    @extends $PanelBordered-3
+    border-radius: radius-3
+    --border-color: bg-1
+
+// Reply SVG
+.ReplyingToUserHeader-icon
+    @extends $SvgDark
+
+// Reply index
+.ReplyPanel-reply-num
+    @extends $TextDark
+    // Hovered over
+    .ReplyPanel-options-wrapper:hover &
+        @extends $TextMedium
+
+// Side handle rail
+.Scrubber-rail
+    @extends $Panel-5
+
+// Unread side rail
+.Scrubber-highlight-rail
+    @extends $Panel-3
+
+.Scrubber-handle
+    // Side handle
+    &-wrapper &
+        background-color: mark
+    // Side handle hovered over
+    &-wrapper:hover &
+        background-color: var(--NihilityTheme1)
+
+.ScrubberLabel
+    // Side handle label post index/posts count
+    &-value
+        @extends $TextMedium
+    // Side handle label date
+    &-label
+        @extends $TextDark

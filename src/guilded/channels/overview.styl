@@ -1,0 +1,124 @@
+@require "../../variables"
+@require "../../set"
+@require "../../content"
+
+/*
+ * --- Widget ---
+ */
+
+// About section hover
+.OverviewWidgetItemWrapper-container-clickable::after
+    @extends $ContentGlare
+
+// Info icon
+.IconAndLabel-icon
+    @extends $SvgDark
+
+// Handle input focused
+.OverviewWidgetItemEditable-container:focus.OverviewWidgetItemEditable-container
+    @extends $SetBorderTheme
+
+/*
+ * --- Banner and header ---
+ */
+
+.TeamOverviewBanner
+    // The whole container of it
+    &-container
+        border-bottom: none
+    // The mask that makes it fade in
+    &-banner
+        mask-image: linear-gradient(to bottom, #000, #000 calc(100% - 40%), rgba(0, 0, 0, 0) calc(100% - 5px), rgba(0, 0, 0, 0))
+
+.TeamOverviewRoot
+    // Whole panel below the banner, including description
+    &-container
+        z-index: 2
+    // Description below the name of the server
+    &-description
+        @extends $TextMedium
+
+/*
+ * --- Showcase ---
+ */
+
+// No announcements
+.TabEmptyState-title
+    // Title
+    &-title
+        @extends $TextMedium
+    // Description
+    &-subtitle
+        @extends $TextDark
+
+.ToggleControl-container.ToggleControl-container-highlighted
+    border-color: fg-0
+
+.OverviewWidgetItemWrapper-container-type-filled,
+.TeamOverviewContentItemCard-container
+    @extends $PanelBordered-3
+    // Content showcase hover
+    &::after
+        @extends $ContentGlare
+
+// Showcase text
+.TeamOverviewContentItemCard
+    // Content showcase title
+    &-title
+        font-weight: bold
+    &-title, &-subtitle
+        @extends $TextMedium
+    // Content showcase sub-title
+    &-subtitle2
+        @extends $TextDark
+
+// See all
+.TeamOverviewSectionHeader-cta-text
+    @extends $TextDark
+    transition(color)
+    // See all hover
+    &:hover
+        @extends $TextMedium
+
+// Showcase event buttons
+.ToggleControlButton
+    &-container, &-icon
+        @extends $FontDark
+
+.ToggleControlButton-container.ToggleControlButton-container
+    // Showcase event buttons hover
+    &-desktop:hover .ToggleControlButton-icon,
+    &-selected .ToggleControlButton-icon
+        @extends $SvgMedium
+
+/*
+ * --- Carousel/Scrollable list ---
+ */
+
+// Carousel blurs
+.CarouselList-container-size-sm .CarouselList-blur-light.CarouselList-left-blur,
+.CarouselList-blur-light.CarouselList-left-blur
+    background-image: linear-gradient(to left, alpha(bg-3, 0), bg-3 100%)
+
+.CarouselList-container-size-sm .CarouselList-blur-light.CarouselList-right-blur,
+.CarouselList-blur-light.CarouselList-right-blur
+    background-image: linear-gradient(to right, alpha(bg-3, 0), bg-3 100%)
+
+// Carousel arrow
+.CarouselList-controls-arrow
+    transition: 1s
+    @extends $SvgMedium
+
+// Leaderboard
+.TeamOverviewLeaderboardSection-leaderboard-container
+    @extends $Panel-3
+// Leaderboard game name
+.GameIconAndGameName-container-style-header .GameIconAndGameName-game-name
+    @extends $TextLight
+// Leaderboard header
+.LeaderboardHeader
+    &-title, &-name, &-stats-header
+        @extends $TextLight
+// Leaderboard stats and numbers
+.LeaderboardRow-stat
+    @extends $TextMedium

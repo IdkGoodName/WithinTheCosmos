@@ -1,0 +1,34 @@
+@require "../variables"
+@require "../content"
+
+rgba-theme-0 = alpha(theme-0, 0.6)
+
+:root
+    --NihilityTheme0    : theme-0
+    --NihilityTheme1    : theme-1
+    --NihilityTheme2    : theme-2
+    --NihilityThemeFg   : #000
+    --NihilitySelect    : rgba-theme-0
+    --NihilityLink      : fg-link
+    --NihilityLinkHover : fg-link-hover
+
+body
+    @extends $Panel-4
+
+// Variable definition/redefinition
+body,
+.ChannelWrapper-container,
+.ChatChannelMessagesList-container,
+.SlateEditor-container-type-default
+    --body-text-color: fg-2
+    --game-color: var(--NihilityTheme0)
+    --border-color: bg-1
+    @extends $TextMedium
+// Change selection
+::selection
+    background-color: var(--NihilitySelect)
+    color: white
+// Change variables
+.AppV2-container-minimal-nav
+    --left-v4-nav-color: bg-0
+    --nav-v4-sidebar-background-color: bg-0

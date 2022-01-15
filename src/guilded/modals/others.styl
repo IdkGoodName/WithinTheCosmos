@@ -1,0 +1,308 @@
+@require "../../variables"
+@require "../../set"
+@require "../../content"
+
+/*
+ * -=- Message plus menus -=-
+ */
+
+// Dashed border
+.UploadMediaBox-container
+    border-color: alpha(fg-0, 0.3)
+
+// Media upload
+.MediaUploaderDropImageInstructions
+    // Upload icon
+    &-icon
+        @extends $SvgMedium
+    // Drop media
+    &-drop-image-text
+        @extends $TextMedium
+    // Or browse your files
+    &-or-browse-text
+        @extends $TextDark
+// Media upload paste
+.MediaUploaderPasteInstructions
+    &-container
+        @extends $PanelBordered-3
+    // Icon
+    &-link-icon
+        @extends $SvgDark
+    // Text
+    &-paste-instructions
+        @extends $TextDark
+
+/*
+ * -=- Create Server -=-
+ */
+
+// Tiled background
+.OnboardingExperience-background
+    @extends $Panel-5
+// Background's tile
+.LandingPageV3WhimsicalIcon-icon
+    @extends $TextDarker
+    opacity: 15%
+    transition(opacity)
+    // Background's tile
+    &:hover
+        opacity: 45%
+// Creation container
+.FullScreenFlowStageWrapper-contents-wrapper
+    @extends $Panel-2
+// Enter your server name above
+.TextInputWithLabel-container-label-retracted .TextInputWithLabel-floating-label-validity
+    @extends $TextDarker
+// Server name is too short
+.TextInputWithLabel-container.TextInputWithLabel-container-invalid .TextInputWithLabel-floating-label,
+.TextInputWithLabel-container.TextInputWithLabel-container-invalid:hover .TextInputWithLabel-floating-label
+    @extends $TextBad
+// Server name is too short icon
+.ValidityIndicator-container-invalid
+    @extends $SvgBad
+// Server name looks good
+.TextInputWithLabel-container-valid .TextInputWithLabel-floating-label-validity
+    @extends $TextGood
+// Upload avatar container
+.NewTeamUpsellIcon-container
+    border-color: fg-0
+// Upload avatar icon
+.NewTeamUpsellIcon-icon
+    @extends $SvgMedium
+// Upload avatar icon hover
+.NewTeamUpsellIcon-container:hover .NewTeamUpsellIcon-icon
+    @extends $SvgLight
+// Upload avatar plus sign
+.NewTeamUpsellIcon-plus-icon
+    background: var(--NihilityTheme0)
+    @extends $SvgMedium
+// Upload avatar plus sign hover
+.NewTeamUpsellIcon-container:hover .NewTeamUpsellIcon-plus-icon
+    background: var(--NihilityTheme1)
+    @extends $SvgLight
+
+// Games selected
+.ItemChooser-info
+    @extends $TextDark
+// Game
+.ItemChooserItemWrapper-container
+    @extends $OverridePanelBordered-2
+    // Game hover
+    &:hover
+        @extends $Panel-0
+
+/*
+ * -=- Join through invite -=-
+ */
+
+// Invite page background
+.InvitePage-container
+    @extends $Panel-5
+// The information area of the invite
+.InvitePage-panel
+    @extends $Panel-2
+
+// Accept invite
+.GuildedText-container-type-bigBody
+    @extends $TextDark
+.MemberCountPill
+    // X members, Y online pills
+    &-container
+        @extends $Panel-0
+    // Member count circle
+    &-circle
+        &-green
+            @extends $PanelGood
+        &-grey
+            background-color: fg-2
+// Accept invite and join Y server
+.SocialContextHeader-header-text
+    @extends $TextMedium
+// This is how you'll appear to your teammates
+.AcceptTeamInviteControl-user-profile-preview
+    @extends $TextDark
+
+/*
+ * -=- Other -=-
+ */
+
+// Fixes media preview clipping through the screen
+.MediaSplitView-container-desktop
+    height: 100%
+.MediaSplitView-container
+    width: 100%
+
+// Group settings icon
+.AddGroupOverlayDisplay-settings-icon
+    @extends $SvgDark
+    transition(fill)
+    // Group settings hover
+    &:hover
+        @extends $SvgMedium
+
+/*
+ * --- Invite ---
+ */
+
+// Copy invite title
+.CopyToClipboardControlV2-title
+    @extends $TextLight
+// Invite input
+.CopyableTextbox
+    // The container itself
+    &-container
+        @extends $ContentRoughBordered-4
+        transition(border-color)
+    &-container-desktop:hover
+        @extends $SetBorderLight-3
+    // Link
+    &-url-wrapper-text
+        @extends $TextLink
+    &-container-desktop:hover &-url-wrapper-text
+        @extends $TextLinkHighlight
+// Copy invite button hover
+.SocialShareButtonV2-container-desktop:hover::after
+    @extends $ContentGlare
+
+/*
+ * --- Images ---
+ */
+
+// Open original
+.MaximizedImageOverlay-open-original
+    @extends $TextDark
+    // Active
+    &:hover, &:active, &:focus
+        @extends $TextMedium
+// Image share icon
+.MaximizedImageOverlay-share-icon
+    @extends $SvgDark
+    transition(transition)
+    // Hover
+    &:hover
+        @extends $SvgMedium
+
+/*
+ * --- Activity list ---
+ */
+
+// Activity menu
+.ChannelActivityDisplay
+    &-group-header,
+    &-container
+        @extends $Panel-2
+    &-item
+        @extends $PanelBordered-3
+// Activity menu content
+.ChannelActivityItem
+    // Text
+    &-header
+        @extends $TextLight
+    &-footer
+        @extends $TextDark
+    // Unread activity menu item
+    &-container.ChannelActivityItem-container-unread
+        @extends $Panel-4
+    // Type icons
+    &-icon
+        // Wrapper
+        .AvatarIcon-container
+            background-color: bg-0 !important
+        // Icon types
+        .icon-reply-filled-no-padding,
+        .icon-toolbar-mention
+            fill: yellow
+        .icon-calendar-new
+            fill: red
+        .icon-toolbar-emoji
+            fill: blue
+
+/*
+ * --- Channel Switcher ---
+ */
+
+// Channel switcher
+.ChatChannelSwitcherOverlay
+    &-container
+        background-color: bg-3
+        color: fg-1
+    &Footer-container
+        @extends $Panel-4
+// Channel switcher channel
+.ChatChannelSwitcherRow
+    &-container
+        @extends $TextMedium
+        // Header of the channels
+        &-header
+            @extends $TextDark
+        // Selected
+        &-selected
+            @extends $Panel-0
+        // Hovered over
+        &:not(&-header)::after
+            @extends $ContentGlare
+
+/*
+ * --- Role Picker ---
+ */
+
+.ToggleRoleControl-container
+    @extends $PanelBordered-3
+
+/*
+ * -=- Form view -=-
+ */
+
+// Poll percentage
+.HorizontalPercentageBar
+    // Percentage bar
+    &-bar
+        @extends $Panel-3
+        // Progress
+        &-highlight
+            background: progress
+    // Percentage label
+    &-value,
+    // The name of the poll item
+    &-label
+        @extends $TextLight
+    // Item voted for
+    &-vote-icon
+        @extends $SvgLight
+.CustomFormControls
+    // Successful voting
+    &-success
+        &-message
+            @extends $TextGood
+        &-icon
+            @extends $SvgGood
+    &-edit-response
+        BasicLink()
+// Question X
+.CustomFormSummaryResultSection-header
+    @extends $TextDark
+// Text response in a form
+.CustomFormSummaryTextResponse-container
+    @extends $Panel-3
+    border-left: 0
+
+// Individual response header
+.CollapsibleItemHeader
+    &-container
+        @extends $Panel-4
+        // Hover
+        &-desktop::after
+            @extends $ContentGlare
+    // Date
+    &-subtitle
+        @extends $TextDark
+        transition(color)
+    &-container:hover &-subtitle
+        @extends $TextLight
+// Individual response container
+.CustomFormIndividualResponse-result-display
+    @extends $Panel-3
+// Individual response message input text
+.TextAreaFieldDisplayRenderer-container
+    @extends $TextMedium
+    cursor: text

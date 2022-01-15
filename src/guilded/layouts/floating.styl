@@ -1,0 +1,299 @@
+@require "../../variables"
+@require "../../set"
+@require "../../content"
+
+/*
+ * --==========================--
+ *    Floating boxes and menus
+ * --==========================--
+ */
+
+/*
+ * -=- New messages / Alert bar -=-
+ */
+
+.ChatChannelAlertBar
+    // Alert bar icon
+    &-icon
+        @extends $SvgMedium
+    &-leading-icon-private-thread
+        fill: tint(private, 25%)
+
+    // Any alert bar
+    &-container
+        font-color(fg-2)
+        background-color: bg-0 !important
+        @extends $SetBorderDark-0
+        // Hover
+        &::after
+            @extends $ContentGlare
+
+        // Viewing older messages
+        &-type-viewing-older-messages,
+        // Unread messages
+        &-type-unread-messages,
+        // New messages
+        &-type-new-messages,
+        &-type-new-replies,
+        // New mentions
+        &-type-new-mentions
+            background-color: bg-0 !important
+
+        // New mentions and new forum replies
+        &-type-new-replies,
+        &-type-new-mentions
+            color: mention !important
+            fill: mention !important
+            // New mentions icon
+            .ChatChannelAlertBar-icon-click-wrapper .ChatChannelAlertBar-icon
+                fill: mention
+
+        // Unread messages
+        &-type-unread-messages
+            color: active !important
+            fill: active !important
+            // Unread messages icon
+            .ChatChannelAlertBar-icon-click-wrapper .ChatChannelAlertBar-icon
+                fill: active
+
+/*
+ * -=- Tooltips -=-
+ */
+
+// Tooltip
+.HoverContextTooltip
+    // Base
+    &-text-wrapper
+        @extends $Panel-4
+        border: solid 2px border-dark-1
+        opacity: floating-opacity
+    // Arrow/Pointer
+    &-arrow
+        @extends $Panel-5
+
+// Keybinds
+.Glyph-container
+    background-color: bg-5
+    color: fg-2
+
+/*
+ * -=- Reactions -=-
+ */
+
+// Reaction normally
+.ReactionPickerButton-container-type-content,
+.ReactionBadge-container-content
+    @extends $ContentMildlyBordered-4
+// Reaction hovered
+.ReactionBadge-container-content:hover,
+.ReactionBadge-container:not(.ReactionBadge-container-disabled):not(.ReactionBadge-container-active):hover .ReactionBadge-container-content
+    @extends $ContentBordered-4
+
+.ReactionPickerButton-container-type-content
+    transition-duration: transition
+
+    // When reaction is hovered over
+    &:hover
+        @extends $Panel-5
+
+// Text after the reaction button
+.ReactionPickerButton-container-with-label::after
+    @extends $TextDark
+    transition-duration: transition
+
+// Reaction icon
+.ReactionPickerButton
+    // Normally
+    &-container &-icon
+        @extends $FontMedium
+        transition-duration: transition
+    // Hover
+    &-container:hover &-icon
+        @extends $FontLight
+// Reaction counter
+.ReactionBadge-container
+    &:not(&-disabled):hover .ReactionBadge-count
+        @extends $TextLight
+    // Active
+    &.ReactionBadge-container-active
+        // Normal active reaction
+        .ReactionBadge-container-content
+            background-color: mix(bg-1, active, 90%)
+            border-color: alpha(active, 0.1)
+            // Active reaction label
+            .ReactionBadge-count
+                color: active
+        // Active reaction hover
+        &.ReactionBadge-container:not(.ReactionBadge-container-disabled):hover .ReactionBadge-container-content
+            background-color: mix(bg-1, active, 95%)
+
+/*
+ * -=- Team cards -=-
+ */
+
+// Role card's background
+.TeamRoleCardOverlay-container,
+// Profile card's background
+.ProfileHoverCardV2Overlay-container
+    @extends $Panel-0
+
+// Section's header
+.UserAttributionDisplay-header,
+.UserTeamXpDisplay-level-display .GuildedText-container // Level
+    @extends $TextLight
+
+// Total XP needed
+.UserTeamXpDisplay-level-display .GuildedText-container.GuildedText-container-type-subtext2
+    @extends $TextDark
+    // XP user has
+    .GuildedText-container-weight-bold
+        @extends $TextMedium
+
+// Socials
+.OverviewWidgetItem
+    // Icon
+    &-icon
+        @extends $SvgDark
+    // Text
+    &-text, &-input
+        @extends $TextMedium
+
+// Background for buttons
+.TeamRoleCardOverlay-menu,
+.ProfileHoverCardV2Overlay-action-menu
+    @extends $Panel-2
+
+/*
+ * --- Menu ---
+ */
+
+// Menu container
+.TransientMenu-container-style-default
+    @extends $OverrideContentRoughBordered-4
+
+// Plus menu
+.ContextMenuItem-container
+    &-section-type-rows
+        // Description
+        .ContextMenuItem-body
+            @extends $TextDark
+    &:hover
+        // Description
+        .ContextMenuItem-body
+            @extends $TextMedium
+// Button
+.ContextMenu
+    // Icon
+    &-content
+        @extends $SvgDark
+    // Text
+    &Item-label
+        @extends $TextMedium
+// Menu item
+.ContextMenuItem
+    &-container
+        @extends $FontMedium
+        // Text and icon on hover
+        &:hover
+            // Text
+            .ContextMenuItem-label
+                @extends $TextLight
+            // Icon
+            .ContextMenuIcon-container-icon
+                @extends $SvgLight
+        // Menu item hover glare
+        &::after
+            @extends $ContentGlare
+    // Menu item download app highlighted
+    &-highlighted
+        background-color: transparent
+        fill: important
+        // Text
+        .ContextMenuItem-label
+            color: important
+        // Icon
+        .ContextMenuIcon-container-icon
+            color: important
+
+// Highlighted
+.ContextMenuItem-container.ContextMenuItem-highlighted
+    .ContextMenuItem-icon, .ContextMenuItem-label
+        color: highlight
+        fill: highlight
+
+// Overflow icon
+.ContextMenuTrigger
+    &-container &-icon
+        @extends $SvgDark
+        transition(fill)
+    &-container-desktop:hover &-icon
+        @extends $SvgMedium
+
+/*
+ * --- Emote picker ---
+ */
+
+// Emote picker
+.ReactionPicker
+    &-container
+        @extends $FullBorderLight-1
+    // Emote picker content
+    &-content
+        @extends $Panel-2
+    // Emote icon
+    &Icon-container
+        @extends $FullBorderTransparent
+    &Icon-container:hover,
+    &Icon-container:focus
+        @extends $Panel-1
+        border: solid 1px var(--NihilityTheme0)
+
+    // Bottom bar
+    &Footer-container,
+    // Top bar
+    &Navbar-container
+        @extends $OverrideContentBordered-3
+
+    // Emote name in grid
+    &-section-label
+        @extends $TextLight
+    // Emote name in footbar
+    &Preview-reaction-name
+        @extends $TextMedium
+    // Emote server title
+    &Preview-team
+        @extends $TextDark
+    // Emote picker tab's icon
+    &NavbarItem-icon
+        @extends $SvgDark
+        .ReactionPickerNavbarItem:hover &
+            @extends $SvgMedium
+        .ReactionPickerNavbarItem-active &
+            @extends $SvgLight
+
+.ReactionPickerNavbarItem-active
+    border-bottom-color: var(--NihilityTheme0)
+
+/*
+ * --- Misc menus ---
+ */
+
+// Server search wrapper
+.MinimalNavSearchBar-search-results
+    opacity: floating-opacity
+.GlobalSearchResult
+    // Server search
+    &s
+        &-container
+            @extends $Panel-3
+        // Public servers header
+        &-header
+            @extends $TextDark
+    // Server search item
+    &-container-desktop
+        // Server search item focused
+        &.GlobalSearchResult-container-focused
+            @extends $Panel-2
+        // Hovered over
+        &::after
+            @extends $ContentGlare

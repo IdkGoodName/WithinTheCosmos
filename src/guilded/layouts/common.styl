@@ -1,0 +1,373 @@
+@require "../../variables"
+@require "../../content"
+@require "../../set"
+
+/*
+ * -=- Banners -=-
+ */
+
+// Archive info bar, bot role warning
+.BannerWithButton
+    &-icon
+        @extends $SvgMedium
+    &-container
+        @extends $OverrideContentBordered-4
+        &-theme-warning
+            @extends $PanelWarning
+        &-theme-info
+            @extends $PanelInfo
+        &-theme-error
+            @extends $PanelCaution
+            // .GuildedText-container-type-subtextBodyWhite
+            //     color: warning
+            // .BannerWithButton-icon
+            //     fill: warning
+// "Nicknames are visible to everyone in the server"
+.ChangeNicknameOverlay-info
+    @extends $TextMedium
+    @extends $PanelWarning
+
+/*
+ * --- Status ---
+ */
+
+// Status
+.StatusMessage-container
+    @extends $TextMedium
+    // Status info
+    &-type-info
+        // Pops up and vanishes (No mic detected)
+        &.StatusMessage-container-ephemeral,
+        // Always there (Published on)
+        &.StatusMessage-container-persistent
+            @extends $PanelBordered-0
+    // Status hover
+    &-desktop.StatusMessage-container-clickable::after
+        @extends $ContentGlare
+    &-ephemeral
+        @extends $PanelBordered-4
+        // Copy invite alert
+        &.StatusMessage-container-type-success
+            @extends $PanelSuccess
+            // @extends $Panel-4
+            // @extends $TextGood
+            // // Icon
+            // .StatusMessage-icon
+            //     @extends $SvgGood
+        // Invalid URL
+        &.StatusMessage-container-type-error
+            @extends $PanelCaution
+            // @extends $Panel-4
+            // @extends $TextBad
+            // // Icon
+            // .StatusMessage-icon
+            //     @extends $SvgBad
+    &-persistent
+        // Persistent "Published bla bla bla" header
+        &.PostDisplayV2-publish-banner
+            @extends $PanelInfo
+
+// Status text
+.StatusMessage
+    // Icon
+    &-icon
+        @extends $SvgMedium
+
+// Connecting
+.NetworkReconnectionDisplay
+    // Loading bar
+    &-container, &-container-reconnecting
+        @extends $Panel-5
+    // Connected
+    &-container
+        .NetworkReconnectionDisplay-icon
+            @extends $SvgGood
+        .NetworkReconnectionDisplay-text
+            @extends $TextGood
+
+// Status message as a banner
+.StatusMessage-container-persistent
+    // Message
+    .StatusMessage-content
+        @extends $TextLight
+    // Make it dark with a border
+    &.StatusMessage-container-type-banner
+        background: bg-0
+        border-bottom: solid 1px active
+        .StatusMessage-content
+            color: active
+    // Same with stream mode, but purple
+    &.StatusMessage-container-banner-type-streamer-mode
+        background: bg-0
+        border-bottom: solid 1px stream
+        .StatusMessage-content
+            color: stream
+
+/*
+ * -=- Text -=-
+ */
+
+// Text
+.GH1-container
+    @extends $TextLight
+.GH2-container
+    @extends $TextMedium
+.GH3-container
+    @extends $TextDark
+
+.GuildedText-container-type
+    &-heading1
+        @extends $TextLight
+    &-heading4
+        @extends $TextLight
+    &-subtext
+        @extends $TextDark
+
+// Link/Hyperlink
+.MediaUploaderDropImageInstructions-browse-link,
+.TeamListItemsCompletedHeader-show-complete,
+.CustomFormIndividualResults-toggle-expand,
+.LandingPageV3InternalLinkColumn-link,
+.UserSettingsEmailPage-select-button,
+.ChatV2MessageEditHelper-action,
+.HoverContext-container-linkify,
+.TeamSettingsWebhookPage-link,
+.LandingFooterSEOLinks-link,
+.InlineTextLink-container,
+.CardGames-overflow-link,
+.LandingFooterApps-link,
+.EventCardMetadata-link,
+.ChatEmbedContent-link,
+.ChatEmbedAuthor-link,
+.EmbedCardFooter-link,
+.CancelText-container,
+.CardList-label-link,
+.StatusMessage-link,
+.RouteLink-linkify,
+.LinkRenderer
+    // Link normally
+    &, &:visited, &:focus
+        @extends $TextLink
+    // Link clicked and hovered over
+    &:hover, &:active
+        @extends $TextLinkHighlight
+
+/*
+ * --- Custom animations ---
+ */
+
+// Message avatar bouncing
+.ChatV2MessageHeader-avatar-wrapper, .ChatV2MessageHeader-avatar
+    transition(border-radius, bounce)
+
+    .ChatV2Message-header:hover &
+        @extends $RadiusSmall
+
+.PlayerCardProfilePicture-avatar
+    transition(border-radius, bounce)
+
+    // Announcement & forum bouncing
+    .TeamWidgetProfileDetails-container:hover &,
+    // Member list avatar bouncing
+    .SidebarUsersRoleInfo-user:hover &,
+    // Doc bouncing
+    .DocReader-header:hover &
+        @extends $RadiusSmall
+
+// Favourite server bouncing
+.NavV4BadgedItem-image, .NavV4BadgedItem-icon-wrapper
+    border-radius: 50%
+    transition(border-radius, bounce)
+
+    .NavV4BadgedItem-container:hover &
+        @extends $RadiusSmall
+
+// Group icon bouncing
+.GroupAvatar-container-non-base,
+.GroupAvatar-icon
+    border-radius: 50%
+    // Inside group list
+    .GroupSelector-container &
+        transition(border-radius, bounce)
+    // Group hover
+    .GroupSelectorItem-container:hover &,
+    // Group selected
+    .GroupSelector-container .NavSelectorItem-container-active &,
+    // Group in preview
+    .GroupSelectorPreview-container &
+        @extends $RadiusSmall
+
+.GroupAvatar-container-non-base
+    @extends $ContentMildlyBordered-2
+
+/*
+ * --- Tab buttons ---
+ */
+
+.HorizontalTab,
+.SimpleIconTabMenuHeaderItem
+    // Tab
+    &-container
+        &:hover, &:active, &:focus
+            background-color: alpha(bg-hover, 0.1)
+        // Text
+        .GH2-container
+            @extends $TextMedium
+        &-selected .GH2-container
+            @extends $TextLight
+        // Icon
+        .SimpleIconTabMenuHeaderItem-icon
+            @extends $SvgMedium
+        &-selected .SimpleIconTabMenuHeaderItem-icon
+            @extends $SvgLight
+// Tab highlighter
+.SimpleIconTabMenuHeaderItem-container-selected::after,
+.HorizontalTab-highlighter
+    background-color: fg-1
+
+/*
+ * -=- Animated -=-
+ */
+
+// Flash when scrolling to a message or a forum post
+.ScrollFlasher-container
+    background-color: important
+
+/*
+ * -=- Mention icons and notifications -=-
+ */
+
+// Mentions
+.BadgeV2-container,
+.NavIcon-dot
+    background-color: mention
+
+// Notifications
+.NavSelectorItem-container-orientation-horizontal.NavSelectorItem-container-unread,
+.NavSelectorItem-container-orientation-vertical.NavSelectorItem-container-unread,
+.ChannelActivityItem-container.ChannelActivityItem-container-unread,
+.NavV4BadgedItem-container-unread .NavV4BadgedItem-icon-wrapper,
+.TeamOverviewContentItemCard-container-unread,
+.TeamChannelItemContents-container-unread,
+.FullSizedCalendarEvent-container-unread,
+.TeamAnnouncementItem-container-unread,
+.NavV4SelectorRow-container-unread,
+.TeamPostRow-container-unread,
+.NavV4ItemIcon-icon-unread
+    &::before
+        background-color: mark
+
+/*
+ * -=- Badges -=-
+ */
+
+.CalloutBadge-container
+    @extends $TextDark
+    background: bg-0 !important
+    border: solid 1px border-light-1 !important
+
+/*
+ * --- User badges ---
+ */
+
+.UserBadge
+    // // If there is an icon in the badge, remove the name
+    // &-image ~ &-name
+    //     display: none
+    // Override all colours for badges
+    &-container:not(.UserFlairRow-icon)
+        @extends $TextDark
+        background: bg-1 !important
+        border: solid 1px border-light-1 !important
+// [MEMBER]
+.GroupMembershipBadge-container
+   color: verified
+
+/*
+ * --- Channel & Settings badges ---
+ */
+
+// [BETA] in settings
+.PersistentActionMenuItem-container .CalloutBadge-container,
+// [BETA] in channel list
+.TeamChannelItemContents-label,
+// [BETA] in screen header
+.ScreenHeader-label,
+// [BETA] in channel creation
+.RadiosField-option-details-header-badge
+    color: info
+    background: bg-2 !important
+
+// [LIVE]
+// .TeamChannelItemContents-label-wrapper
+//     .CalloutBadge-container
+//         color: stream
+// Group reorder [DEFAULT]
+.GroupSettingsPanel-name-wrapper .CalloutBadge-container
+    color: blue
+
+/*
+ * --- Tournament badges ---
+ */
+
+// Status badge
+.TournamentStatusBadge-container-status
+    &-in-progress, &-unpublished
+        @extends $ContentBordered-5
+    &-in-progress
+        color: active
+    &-unpublished
+        color: waiting
+
+/*
+ * -=- Bars -=-
+ */
+
+// Container scrollbar
+.GuildedSelect-container.GuildedSelect-container-dark .Select-menu-outer .Select-menu,
+.SlateEditor-container-type-reaction .SlateEditor-editor,
+.SlateEditor-container-type-simple .SlateEditor-editor,
+.UserAliasAdditionalInfoDisplayWrapper-container,
+.TeamSettingsListItems-container-desktop:hover,
+.ChatChannelSwitcherOverlay-results-container,
+.Sheet-container-scrollable .Sheet-content,
+.OnboardingTeamGameInfoStage-form-wrapper,
+.ItemChooser-items-wrapper-scrollable,
+.VoiceChannelDisplay-container-child,
+.NestedSettingsWrapper-second-child,
+.CodeContainerRenderer-container,
+.ChannelPinnedMessages-container,
+.TournamentsPortalPage-container,
+.ReactionPickerNavbar-container,
+.TeamMemberRolesDisplay-list,
+.ChatChannelList-items:hover,
+.Scrollable-container:hover,
+.OptionsMenu-option-content,
+.TeamNavMenu-wrapper:hover,
+.TextAreaInput-text-area,
+.ChatV2Sidebar-container,
+.UserProfileV3-container,
+.SimpleDrawer-container,
+.ReactionPicker-content,
+.ChatChannelList-items,
+.ModalV2-modal-content,
+.InsertGifPicker-gifs,
+.Scrollable-container,
+.ReactionPicker-list,
+.TypeaheadMenu-list,
+.FormsRenderer
+    // Firefox scrollbar
+    scrollbar-color: bar transparent !important
+    // Webkit/Chromium/Blink scrollbar
+    &::-webkit-scrollbar-thumb
+        background: bar !important
+
+// Upload/XP progress bar
+.GoldenProgressBar
+    // Background
+    &-container,
+    &-container-theme-dark
+        @extends $Panel-5
+    // Progress
+    &-progress
+        background-color: progress

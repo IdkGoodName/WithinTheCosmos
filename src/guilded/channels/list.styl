@@ -1,0 +1,112 @@
+@require "../../variables"
+@require "../../set"
+@require "../../content"
+
+/*
+ * --- Item list ---
+ */
+
+// Item
+.TeamListItemIndentWrapper-container,
+.TeamListItemWrapper-container
+    // Item hover
+    &-unfocused::after
+        @extends $ContentGlare
+.TeamListItemIndentWrapper-container
+    background-color: transparent
+.TeamListItemWrapper-container
+    @extends $PanelBordered-3
+// Item handle
+.TeamListItemControls-handle
+    svg
+        @extends $SvgDark
+    &:hover svg
+        @extends $SvgMedium
+// Note and thread indicators
+.TeamListItemAction-container-clickable
+    svg
+        @extends $SvgDark
+    &:hover svg
+        @extends $SvgMedium
+// Note highlighted
+.TeamListItemAction-container-highlight
+    svg
+        fill: important
+    &:hover svg
+        @extends $SvgLight
+// Thread indicator
+.TeamListItemAction-container
+    @extends $TextDark
+    &:hover
+        @extends $TextMedium
+
+.TeamListItemsInput
+    // Add item slate
+    &-editor.Editor-container
+        @extends $Panel-3
+    // Add item icon
+    &-icon
+        svg
+            @extends $SvgThemeDull
+        &:hover svg
+            @extends $SvgThemeBleached
+// Editor in a list item being edited
+.TeamListItem-message
+    @extends $Panel-3
+    border: none
+
+// Add item add note
+.TeamListItemNoteEditor-button
+    @extends $TextDark
+    &:hover
+        @extends $TextMedium
+        // Icon hover
+        svg
+            @extends $SvgMedium
+    // Icon
+    svg
+        @extends $SvgDark
+
+// X completed
+.TeamListItemsCompletedHeader-count
+    @extends $TextDark
+    transition(color)
+    // X completed hover
+    .TeamListItemsCompletedHeader-container:hover &
+        @extends $TextMedium
+
+// Editor focused
+.TeamListItemWrapper-container-focused
+    @extends $SetBorderThemeDull
+// Fill background when the list is being dragged
+.ReorderIndentable-blockout
+    @extends $Panel-4
+
+/*
+ * --- Item note ---
+ */
+
+// Whole container
+.TeamListItemNote-container
+    @extends $SetBorderDark-0
+
+.TeamListItemDetails
+    // Timestamp dots
+    &-message-count::before, &-created-at::before
+        @extends $TextDarker
+    // Timestamp
+    &-created-at
+        @extends $TextDark
+        transition(color)
+        // Timestamp hover
+        &:hover
+            @extends $TextMedium
+// Note
+.SingleContentEditor-display
+    @extends $Panel-0
+    &:hover .ContentMetadataCreationInfo-from-now
+        @extends $TextMedium
+// Note timestamp
+.ContentMetadataCreationInfo-from-now
+    @extends $TextDark
+    transition(color)

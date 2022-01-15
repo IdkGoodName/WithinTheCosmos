@@ -1,0 +1,456 @@
+@require "../../variables"
+@require "../../set"
+@require "../../content"
+
+/*
+ * --===============--
+ *    Guilded pages
+ * --===============--
+ */
+
+/*
+ * -=- Profiles -=-
+ */
+
+// Profile content
+.UserProfileV3-container
+    @extends $Panel-2
+
+// Tab header
+.NavV4SectionSidebarOptionGroup-header
+    @extends $TextDark
+.NavV4SectionSidebarOption
+    // Tab icon
+    &-icon
+        @extends $SvgDark
+        // Active
+        .NavV4SectionSidebarOption-container-active &
+            @extends $SvgMedium
+    // Tab text
+    &-label
+        @extends $TextMedium
+        // Active
+        .NavV4SectionSidebarOption-container-active &
+            @extends $TextLight
+    // Hover
+    &-container-inactive::after
+        @extends $ContentGlare
+.UserProfilePictureControl
+    // Status icon
+    &-online-status
+        border-color: bg-1
+        right: 0
+    // Avatar
+    &-picture
+        @extends $RadiusHigh
+
+/*
+ * --- Posts ---
+ */
+
+// Tagline
+.OverviewWidgetItem-text-paragraph
+    @extends $TextMedium
+
+// Profile setting buttons
+.UserProfileActionRow-button-icon
+    @extends $SvgMedium
+
+// Game overview arrow
+.OverviewPageWidgetHeader-container-desktop .OverviewPageWidgetHeader-link-icon
+    @extends $SvgDark
+    transition(fill)
+    // Game overview arrow hovered
+    &:hover
+        @extends $SvgMedium
+// Game
+.UserGameSummaryCard-container
+    @extends $Panel-4
+// Game property
+.UserInfoSummaryItem
+    // Label
+    &-label
+        @extends $TextDark
+    // Value
+    &-summary-content
+        @extends $TextMedium
+
+// Post
+.UserProfilePostPanel-container
+    @extends $RadiusSmall
+    @extends $PanelBordered-3
+    // Post highlighted(currently all)
+    &-highlight
+        // Until it gets fixed, remove the highlight
+        border-top: none
+        //border-top-color: var(--NihilityTheme0)
+// Post author's name
+.UserName-container,
+.TeamMemberBubble-name,
+.UserBasicInfoDisplay-name,
+.TeamWidgetProfileDetails-name
+    @extends $TextLight
+// No more posts text
+.NullState-container
+    @extends $TextDark
+// No more posts SVG
+.GuildedBotAvatar-container
+    @extends $SvgDark
+
+/*
+ * --- Games ---
+ */
+
+// Game
+.PlayerAliasCard-container-type-game
+    @extends $Panel-4
+// Game border
+.CardWrapper-container:not(.CardWrapper-container-highlighted)::after
+    @extends $SetBorderDark-1
+// Game header
+.PlayerCard
+    // Container
+    &-container
+        @extends $PanelTransparent
+    // Game's name
+    &GameInfo-name
+        @extends $TextLight
+// Game header player's name
+.GameAliasDisplay-container
+    @extends $TextDark
+    transition(color)
+    // Name hover
+    &:hover
+        @extends $TextThemeBleached
+// Game info
+.PlayerAliasCard-container-type-game .PlayerAliasCard-info
+    @extends $PanelTransparent
+// Game info no accounts linked
+.UserSocialPresence-no-other-links
+    @extends $TextDark
+// Game info handle
+.UserRichSocialLink
+    // Icon
+    &-avatar
+        @extends $SvgDark
+    // Text
+    &-handle
+        @extends $TextMedium
+    // Details
+    &-metadata
+        @extends $TextDark
+
+/*
+ * --- Friends ---
+ */
+
+// A button when hovering over friends
+.FriendsList-actions .FriendList-action-icon
+    @extends $Panel-3
+
+/*
+ * -=- DMs -=-
+ */
+
+// Side bar
+.ChatChannelList-container,
+.WebAppV2-sidebar
+    @extends $Panel-4
+
+.ChatChannelListItem
+    &-container
+        --border-color: bg-1
+    // Selected DMs
+    &-container-selected
+        @extends $Panel-0
+        --border-color: bg-3
+    // Hovered DMs
+    &-container:not(&-container-selected):hover
+        @extends $Panel-2
+        --border-color: bg-2
+    // Remove DMs crossmark
+    &-container:not(&-container-selected):hover &-remove-icon,
+    &-container-selected &-remove-icon
+        background-color: transparent
+        fill: fg-1
+        transition(fill)
+        // Remove DMs crossmark hover
+        &:hover
+            @extends $SvgLight
+    // Selected DMs content
+    &Info-container-selected
+        // Name
+        .ChatChannelListItemInfo-name
+            @extends $TextLight
+        // Text
+        .ChatChannelListItemInfo-latest-message
+            @extends $TextMedium
+        // Timestamp
+        .ChatChannelListItemInfo-last-at
+            @extends $TextDark
+
+// User typing in DMs
+.TypingIndicator-container
+    background-color: bg-6
+
+// Removed DMs background
+.ChatSummary-container
+    @extends $Panel-2
+
+/*
+ * -=- Tournaments -=-
+ */
+
+/*
+ * --- Sidebar ---
+ */
+
+// Sidebar
+.NavV4SectionSidebar-container
+    @extends $PanelTransparent
+
+// Selected tab
+.NavV4SectionSidebarOption-container-active
+    @extends $Panel-0
+    // Selected tab icon
+    .NavV4SectionSidebarOption-icon
+        @extends $SvgLight
+    // Selected tab text
+    .NavV4SectionSidebarOption-label
+        @extends $TextLight
+
+/*
+ * --- Content ---
+ */
+
+// Tournament page
+.TournamentsPortal
+    // Container
+    &Page-container
+        @extends $Panel-2
+    // Video
+    &Header-video-mask
+        background-image: linear-gradient(to bottom, alpha(bg-3, 0.85) 20%, rgba(0, 0, 0, 0) 65%, alpha(bg-3, 0.95))
+// Tournament card
+.TournamentCard-container
+    @extends $Panel-0
+// Information icon
+.TournamentSummaryItem
+    &-container-size-sm &-icon
+        @extends $SvgDark
+    // Information text
+    &-text
+        @extends $TextMedium
+// This group is archived
+.GroupUpsell-container-archived
+    @extends $Panel-2
+
+/*
+ * -=- Flow -=-
+ */
+
+.ApiDocs
+    &-container
+        @extends $Panel-2
+    &-api-callout
+        color: info
+.RestApiDocs
+    &Table-row
+        @extends $PanelBordered-4
+    &SchemaItem-verb
+        color: action
+
+/*
+ * -=- Explore -=-
+ */
+
+// Background of explore pages
+.ExplorePage-container
+    @extends $Panel-2
+// Sidebar page list
+.NavbarNavIcon-container
+    &:hover
+        background-color: alpha(bg-hover, 0.1)
+    // Selected
+    &-selected
+        @extends $Panel-2
+
+// Find a server tabs
+.IconNavMenuButton-icon
+    @extends $SvgDark
+    transition(fill)
+    .IconNavMenuButton-container-desktop:hover &
+        @extends $SvgMedium
+// Find a server tabs containers
+.IconNavMenuButton-container
+    transition(color)
+    &, &:visited, &:active, &:focus
+        @extends $TextDark
+    &:hover
+        @extends $TextMedium
+
+.CardList
+    // Title
+    &-label
+        @extends $TextLight
+// "A new way to scrim" Description
+.TitleAndDescriptionPanel-description
+    @extends $TextDark
+// No scrims description
+.ScrimFinderRecentMatches-none
+    @extends $TextDark
+// Scrim team
+.ScrimFinderLeaderboardTeam
+    &-name
+        @extends $TextLight
+    // Index
+    &-rank
+        @extends $TextDark
+
+// Post card
+.ContentCard
+    &-container
+        @extends $Panel-2
+    // Footer
+    &-metas
+        @extends $Panel-3
+        // Footer hover
+        &::after
+            @extends $ContentGlare
+
+// Profile post card
+.ProfilePostCard
+    &-title
+        @extends $TextLight
+    &-metas-time
+        @extends $TextDark
+        transition(color)
+        .ContentCard-container:hover &
+            @extends $TextLight
+
+// Invite progressbar
+.PercentageBar
+    // Empty
+    &-backplate-div
+        background-color: bg-1 !important
+    // Progress
+    &-progress-div
+        background-color: progress !important
+    // Progressbar
+    &-container-type-success .PercentageBar-progress-div
+        @extends $SetBorderDark-1
+// Invite text
+.RequirementProgressBar-unsatisfied-text
+    @extends $TextDark
+
+// Explore servers and players game selector
+.TypeaheadInput-container-dropdown .TypeaheadInput-typeahead-options-list,
+.TypeaheadMenu-container
+    @extends $OverridePanelBordered-0
+    .SelectMenuItem-label
+        @extends $TextMedium
+
+// Game selector input
+.TextInputWithLabel-container-dropdown
+    @extends $SetBorderLight-2
+    // Hover
+    &.TextInputWithLabel-container-desktop:hover
+        @extends $SetBorderLight-2
+    // Focused
+    &.TextInputWithLabel-container-focused,
+    &.TextInputWithLabel-container-focused:hover
+        border-color: var(--NihilityTheme0) !important
+// Add background to it as well
+.SelectMenu-container
+    @extends $Panel-0
+// Game selector item
+.SelectMenuItem-container
+    &-desktop:hover
+        @extends $Panel-2
+        .SelectMenuItem-label
+            @extends $TextLight
+    &-selected
+        @extends $Panel-3
+        .SelectMenuItem-label
+            @extends $TextLight
+    // Game selector first item
+    &-border-bottom
+        @extends $SetBorderDark-1
+
+/*
+ * -=- Jobs -=-
+ */
+
+.LandingPageNavBar-container-theme-gilded
+    @extends $Panel-0
+.LogoAndWordmarkV2-container-theme-dark
+    fill: gold
+.LandingPageNavBarLinks-container-theme-dark .LandingPageNavBarLinks-link
+    &, &:focus, &:active, &:visited, &:hover
+        color: gold
+.JobLandingHeader
+    &-container::before
+        @extends .LandingPageNavBar-container-theme-gilded
+    &-title
+        color: gold
+    &-description
+        color: gold
+.JobOpeningHeader
+    &-icon
+        fill: gold
+    &-container
+        color: gold
+        .ParagraphRenderer
+            color: gold
+
+$JobsSectionHeading
+    @extends $TextLight
+$JobsSectionDescription
+    @extends $TextMedium
+$JobsItemHeading
+    @extends $TextMedium
+$JobsItemDescription
+    @extends $TextDark
+// Jobs
+.JobLandingOpenings
+    &-heading
+        @extends $JobsSectionHeading
+    &-description
+        @extends $JobsSectionDescription
+    &-job
+        @extends $Panel-2
+        &:hover
+            @extends $Panel-0
+        &-icon, svg
+            @extends $SvgDark
+        &:hover svg
+            fill: gold
+        &-fill-light-blue:hover svg
+            fill: blue
+        &-fill-green:hover svg
+            fill: green
+        &-title
+            @extends $JobsItemHeading
+        &-subtext
+            @extends $JobsItemDescription
+// Perks
+.JobsPerks
+    &-container
+        @extends $Panel-2
+    &-header
+        @extends $JobsSectionHeading
+    &-description
+        @extends $JobsSectionDescription
+.JobsPerk
+    &-icon
+        fill: gold
+    &-name
+        @extends $JobsItemHeading
+    &-description
+        @extends $JobsItemDescription
+// Learn more
+.JobLearnMore
+    &-header
+        @extends $JobsSectionHeading
+    &-description
+        @extends $JobsSectionDescription

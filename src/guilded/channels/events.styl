@@ -1,0 +1,182 @@
+@require "../../variables"
+@require "../../set"
+@require "../../content"
+
+/*
+ * --- Calendar ---
+ */
+
+// Day cards
+.FullSizedCalendar
+    // Week day header
+    &WeekdayHeader-day
+        @extends $TextDark
+    // Calendar days and weeks
+    &-week
+        @extends $Panel-0
+    &-day
+        @extends $PanelBordered-0
+        // Day numbers
+        .FullSizedCalendarDayHeader-date
+            @extends $TextMedium
+    // Event creation
+    &Day-container-desktop.FullSizedCalendarDay-container-can-create
+        transition(background-color)
+        &:hover
+            background-color: bg-6
+    &Day-new-event-icon
+        @extends $SvgDark
+        transition(opacity)
+    // Calendar special days
+    &Day-container-in-past,
+    &Day-container-different-month
+        background-color: bg-3
+        color: fg-0
+        // Don't make text stand out
+        .FullSizedCalendarDayHeader-date
+            color: fg-0
+    &Day-container-today
+        background-color: bg-6
+        // Highlight the date
+        .FullSizedCalendarDayHeader-date
+            background-color: var(--game-color)
+            color: var(--NihilityThemeFg)
+    // Event name
+    &Event-name
+        @extends $TextMedium
+    &Event-details
+        @extends $TextDark
+    // Unread event
+    &Event-container-unread:not(&Event-container-full-day)
+        @extends $Panel-4
+    // Whole day calendar
+    &Event-container-full-day
+        .FullSizedCalendarEvent-details, .FullSizedCalendarEvent-name
+            @extends $TextLight
+    // Event hover
+    &Event-container-with-start-time.FullSizedCalendarEvent-container-desktop::after
+        @extends $ContentGlare
+
+// Buttons
+.ToggleControl-container
+    @extends $SetBorderLight-2
+    overflow: hidden
+.ToggleControlButton-container.ToggleControlButton-container
+    &-desktop:hover, &-selected
+        color: var(--NihilityTheme0)
+        background-color: bg-1
+    &-selected:focus, &-selected:active
+        @extends $TextTheme
+// Month switching
+.DateSwitcher
+    &-month-name
+        @extends $TextLight
+    &-button
+        @extends $SvgDark
+
+// Upcoming
+.UpcomingCalendar
+    &Day-container, &-container
+        @extends $Panel-4
+    &Event-container-desktop:hover
+        @extends $Panel-2
+
+/*
+ * --- Calendar Pop-up ---
+ */
+
+// Date input pop-up
+.DateInput-menu
+    //@extends $Panel-3
+    @extends $FullBorderLight-2
+.DayPicker
+    // Month name
+    &-header
+        color: fg-3
+        background-color: bg-2
+    &-arrow
+        @extends $SvgDark
+    // Week day
+    &-day-label
+        @extends $TextDark
+    // Day
+    &-day
+        @extends $Panel-0
+        transition(background-color)
+        &-contents
+            color: fg-2 !important
+    &-day-next-month
+        @extends $Panel-3
+        .DayPicker-day-contents
+            color: fg-0 !important
+    &-day:hover
+        background-color: bg-6
+    // Day numbers
+    &-container-desktop &-day:hover &-day-contents,
+    &-container-desktop &-day-selected.DayPicker-day:hover &-day-contents
+        @extends $PanelTransparent
+    &-day-selected &-day-contents
+        background-color: var(--game-color)
+        color: #FFF !important
+
+/*
+ * --- Pop up ---
+ */
+
+// Pop-up top-level
+.TransientMenu-container-style-card
+    overflow: hidden
+    @extends $Panel-2
+// Pop up banner
+.GlassySplashHeader
+    &-image-wrapper &-image
+        mask-image: linear-gradient(to bottom, black, transparent 112px)
+    // Remove its highlighting
+    .EventCard-container:hover &-container
+        @extends $PanelTransparent
+/*
+ * --- View ---
+ */
+
+// Header
+.EventTemporalChannelDisplay-container
+    @extends $Panel-4
+    --border-color: bg-0
+// Details
+.TeamEventDetails
+    &-post-metadata, &-status, &-item
+        @extends $Panel-3
+.EventCardMetadata
+    // Container
+    &-container-size-lg
+        @extends $Panel-3
+    // Icon
+    &-icon
+        @extends $SvgDark
+
+// Description
+.TeamEventDescription
+    // Icon
+    &-icon
+        @extends $SvgDark
+    // Text
+    &-placeholder
+        --body-text-color: fg-2
+
+.EventAttendanceHeader-status
+    &-going
+        @extends $TextMedium
+    &:not(:first-child)
+        @extends $TextDark
+        &::before
+            background-color: fg-1
+
+.EventRsvpsHeader
+    // See all link
+    &-attendance-see-all
+        @extends $TextLink
+    &-container-desktop:not(&-container-rsvps-disabled):hover &-attendance-see-all
+        @extends $TextLinkHighlight
+    // Maybe, invited, declined
+    &-container-desktop:not(&-container-rsvps-disabled):hover &-attendance .EventAttendanceHeader-status
+        @extends $TextMedium

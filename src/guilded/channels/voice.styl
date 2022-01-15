@@ -1,0 +1,170 @@
+@require "../../variables"
+@require "../../set"
+@require "../../content"
+
+// Whole container
+.VoiceChannelDisplay-container
+    @extends $Panel-2
+
+/*
+ * --- Voice room list ---
+ */
+
+.VoiceChannelGroupHeader
+    // Voice room
+    &-container-interactable
+        transition(background)
+    // Voice room icon
+    &-icon
+        @extends $SvgDark
+
+// Voice room caret
+.DropdownCaratV2-container
+    @extends $SvgDark
+    // Voice room caret hover
+    &-desktop:hover
+        @extends $SvgMedium
+
+// Voice room hovered over
+.VoiceChannelGroupHeader-container-interactable:hover
+    @extends $Panel-0
+    &:hover .VoiceChannelGroupHeader
+        // Voice room name hover
+        &-text
+            @extends $TextMedium
+        // Voice room icon hover
+        &-icon
+            @extends $SvgMedium
+
+/*
+ * --- Labels ---
+ */
+
+// X/Y allowed label
+.LimitLabel-container
+    @extends $Panel-5
+
+// Current user count
+.GuildedText-container-type-heading6
+    @extends $TextMedium
+
+// Max user count
+.LimitLabel-limit
+    @extends $TextDark
+
+/*
+ * --- Voice settings ---
+ */
+
+// Hotkey label
+.HotkeyDisplay
+    &-container
+        @extends $SetBorderDark-0
+    &-key
+        @extends $PanelTransparent
+// + before the key
+.HotkeysDisplay-key-wrapper:not(:first-child)::before
+    @extends $TextDark
+// Edit keybinds
+.TextButton-container-type-light
+    @extends $TextLink
+    transition(color)
+    &.TextButton-container-desktop:hover
+        @extends $TextLinkHighlight
+// Keybind in the settings
+.ItemKeybindInput-container
+    @extends $Panel-3
+// Sub-text
+.GuildedText-container-type-subtextHeading
+    @extends $TextDark
+// Keybind recorder
+.HotkeyRecorder-container
+    border-color: fg-0
+    // Currently recording
+    &.HotkeyRecorder-container-recording
+        @extends $SetBorderLight-2
+// Add another
+.ItemKeybindInput-container-multiple-entities-allowed .ItemKeybindInput-subtext-wrapper
+    // + Add keybind
+    .ItemKeybindInput-plus-sign, .ItemKeybindInput-subtext
+        @extends $FontDark
+    // Hover
+    &:hover .ItemKeybindInput-plus-sign, &:hover .ItemKeybindInput-subtext
+        @extends $FontMedium
+
+/*
+ * --- Voice card ---
+ */
+
+.VoiceConnectionDisplayPanelContents
+    // Whole container
+    &-container
+        @extends $Panel-5
+    // Voice header
+    &-info-wrapper
+        border-bottom: 0
+        // Voice header hover
+        &::after
+            @extends $ContentGlare
+
+.VoiceConnectionDisplayInfo
+    // Voice header info display
+    &-container
+        @extends $PanelTransparent
+    // Voice header info icon
+    &-icon
+        @extends $SvgDark
+
+// Voice header toggle buttons
+.VoiceConnectionDisplayButtons-button
+    background-color: bg-1
+    fill: fg-2
+
+// Voice header toggle button hover
+.SVGIconWithTooltip-container-clickable:hover
+    @extends $SvgLight
+
+// Voice participant list
+.VoiceConnectionDisplayPanelContents-participants
+    @extends $Panel-4
+
+// Voice participant
+.VoiceChannelGroupUser-container
+    // Hover
+    &:hover
+        @extends $Panel-2
+    // Right clicked
+    &.VoiceChannelGroupUser-container-active
+        @extends $Panel-3
+
+// Voice participants icon
+.VoiceConnectionDisplayParticipants-participants-icon
+    @extends $SvgDarker
+
+// Invite icon
+.SVGIconWithTooltip-container
+    @extends $SvgDark
+
+// Connection
+.VoiceConnectionDisplayInfo
+    &-connection
+        // Good connection
+        &-good &-icon
+            @extends $SvgGood
+        &-good .GuildedText-container
+            color: good-1 !important
+        // Not bad, but neither a good connection
+        &-warn &-icon
+            @extends $SvgNeutral
+        &-warn .GuildedText-container
+            color: neutral-1 !important
+        // Bad connection
+        &-bad &-icon
+            @extends $SvgBad
+        &-bad .GuildedText-container
+            color: bad-1 !important
+        // Transition
+        &-icon
+            transition(fill)
+    &-container .GuildedText-container
+        transition(color)

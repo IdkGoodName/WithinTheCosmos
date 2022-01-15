@@ -1,0 +1,71 @@
+@require "../../variables"
+@require "../../set"
+@require "../../content"
+@require "../../fake"
+
+/*
+ * --- Document list ---
+ */
+
+// Document in the list
+.DocDisplayItem-container
+    @extends $Panel-2
+
+// Document in the list info
+.ReplyPanel-container-viewing,
+.DocSummaryInfo-container
+    @extends $PanelBordered-3
+
+// "Drafts" title
+.DocsDisplayV2-title
+    @extends $TextLight
+// Add [DRAFT] badge
+.TeamDocs-drafts-docs-display .DocSummaryInfo-title::after
+    content: 'draft'
+    color: waiting
+    @extends $FakeBadge
+
+
+/*
+ * --- Text ---
+ */
+
+.GuildedText-container-type-heading3
+    @extends $TextLight
+
+.DocSummaryInfo-subtitle
+    @extends $TextDark
+
+
+/*
+ * --- Tags ---
+ */
+
+// Tag creation label
+.GuildedTagCreatorPanel-title
+    @extends $TextDark
+// Tag creation
+.GuildedTagCreator-container
+    @extends $TextMedium
+// Remove tag
+.TagsDisplayV2-delete-icon
+    background-color: fg-1
+    transition(background-color)
+    &:hover
+        @extends $PanelBad
+
+.TagDisplayItemV2
+    // Tag's background
+    &-container
+        @extends $OverrideContentMildlyBordered-4
+    // Tag's text
+    &-tag
+        @extends $TextMedium
+
+
+/*
+ * --- Post a comment and reactions ---
+ */
+
+.RepliesAddon-header-text
+    @extends $TextLight

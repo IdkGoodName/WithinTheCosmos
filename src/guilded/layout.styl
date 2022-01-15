@@ -1,0 +1,85 @@
+@require "../variables"
+@require "../content"
+
+@require "./layouts/app"
+@require "./layouts/common"
+@require "./layouts/draggables"
+@require "./layouts/floating"
+@require "./layouts/forms"
+@require "./layouts/pages"
+
+@require "./modals/all"
+@require "./modals/others"
+@require "./modals/settings"
+
+/*
+ * -=- Misc -=-
+ */
+
+/*
+ * --- Upload ---
+ */
+
+// Upload image
+.ImageUploaderButton
+    // Container
+    &-container
+        @extends $PanelBordered-4
+        // Hover
+        &::after
+            @extends $ContentGlare
+    // Icon
+    &-icon
+        @extends $SvgMedium
+    // Text
+    &-text
+        @extends $TextMedium
+
+.CreateGroupOverlayWrapper-upload-avatar
+    @extends $PanelBordered-4
+    .SVGIcon-icon
+        @extends $SvgMedium
+    &:hover
+        @extends $Panel-2
+
+/*
+ * -=- Widget -=-
+ */
+
+// Wrapper
+.TeamCardDisplay-container,
+.CardWrapper-container
+    @extends $Panel-2
+
+// Server
+.TeamCardHeader
+    // Name
+    &-team-name
+        @extends $TextLight
+    // Description
+    &-description
+        @extends $TextMedium
+
+// Info
+.EmphasizedLabel-container
+    @extends $TextDark
+
+.EmbedCardFooter
+    // Footer
+    &-container
+        @extends $Panel-4
+    // Guilded's icon
+    &-logomark
+        @extends $SvgTheme
+
+/*
+ * -=- Icons -=-
+ */
+
+/*
+ * --- Team badges ---
+ */
+
+// Verified badge
+#icon-verified-badge path:first-child
+    fill: verified

@@ -15,8 +15,10 @@
   },
   "homepage": "https://github.com/IdkGoodName/AbsoluteNihility#readme",
   "devDependencies": {
+    "accord": "^0.30.0",
     "gulp": "^4.0.2",
-    "gulp-sass": "^5.0.0",
-    "sass": "^1.45.1"
+    "minimist": "^1.2.5",
+    "stylus": "^0.56.0",
+    "through2": "^4.0.2"
   }
 }

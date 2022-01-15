@@ -1,0 +1,52 @@
+@require "../../variables"
+@require "../../set"
+@require "../../content"
+
+// Whole container
+.AvailabilityDisplay-container
+    @extends $Panel-2
+
+.AvailabilityDisplayHeader
+    // Container arrow
+    &-button
+        @extends $PanelBordered-2
+        // Container arrow hover
+        &::after
+            @extends $ContentGlare
+    // Container arrow's icon
+    &-button
+        @extends $SvgMedium
+    // Current and other days
+    &-day-today, &-day
+        @extends $Panel-0
+    // Tomorrow/alternative day
+    &-day-alt
+        @extends $Panel-2
+    // Day
+    &-date
+        @extends $TextLight
+    // Timezone and date
+    &-timezone,
+    &-subtitle
+        @extends $TextDark
+        transition(color)
+        // Hover
+        &:hover
+            @extends $TextMedium
+// Time
+.AvailabilityDisplayTimeAxis-label
+    @extends $TextMedium
+// Current time line
+.AvailabilityDayHour-now-line
+    background-color: active
+
+.AvailabilityDisplayDaysPlaceholder
+    // Others' area
+    &-day, &-day-today
+        @extends $Panel-1
+    // Others' area tomorrow/alternative day
+    &-day-alt
+        @extends $Panel-1
+    // Lighter/creation area
+    &-create
+        @extends $Panel-0

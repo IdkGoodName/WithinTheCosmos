@@ -1,0 +1,54 @@
+@require "../../variables"
+@require "../../set"
+@require "../../content"
+
+.ContentMetadataCreationInfo-from-now-link
+    &, &:visited, &:active, &:focus
+        @extends $TextDark
+    &:hover
+        @extends $TextMedium
+
+// Unread announcement
+.TeamAnnouncementItem-container-unread .TeamAnnouncementItem-widget-wrapper
+    @extends $Panel-4
+
+/*
+ * --- Role label ---
+ */
+
+
+// Role name
+.TeamWidgetProfileRank-rank-name
+    @extends $TextDark
+    transition(color)
+    // Role name hover
+    &:hover
+        @extends $TextMedium
+
+/*
+ * --- Comment section ---
+ */
+
+// Replies preview
+.LastReplyDisplay-container
+    --body-text-color: fg-2
+    &:hover
+        --body-text-color: fg-3
+// Preview text
+.LastReplyDisplayContent-message-summary
+    transition(color)
+// View more
+.CircleImageStack-label
+    @extends $TextDark
+    // View more hovered over
+    .CircleImageStack-container-actionable:hover &
+        @extends $TextMedium
+
+.LastReplyDisplay
+    // Timestamp
+    &Content-timestamp
+        @extends $TextDark
+        transition: color 0.2s
+    // Comment hovered over should make time stamp brighter
+    &-container:hover &Content-container &Content-timestamp
+        @extends $TextMedium

@@ -1,0 +1,641 @@
+@require "../../variables"
+@require "../../set"
+@require "../../content"
+
+/*
+ * --=======================--
+ *    Custom & Native forms
+ * --=======================--
+ */
+
+/*
+ * -=- Basic -=-
+ */
+
+// Section name
+.FormSection-section-header
+    @extends $TextLight
+
+// Custom form header name ("Question 1")
+.FormSection-section-header-style-result
+    @extends $TextDark
+
+// Form "(optional)"
+.FormFieldLabel-optional
+    @extends $TextDarker
+    transition(color)
+    // Hover
+    &:hover
+        @extends $TextMedium
+
+/*
+ * -=- Sections & Types -=-
+ */
+
+// Streamer mode
+.FormSection-container-section-background-inset
+    @extends $PanelBordered-3
+// Settings account info
+.DefaultReadonlyEditableForm-container
+    @extends $PanelBordered-4
+
+/*
+ * -=- Fields -=-
+ */
+
+/*
+ * --- Text ---
+ */
+
+.TextInputWithLabel
+    // Form input
+    &-container
+        @extends $SetBorderLight-2
+    &-container-has-value &-input-element
+        -webkit-text-fill-color: fg-2
+        @extends $TextMedium
+    // Hover
+    &-container-desktop:hover
+        @extends $SetBorderLight-3
+    // Focused
+    &-container-focused, &-container-focused:hover
+        @extends $SetBorderThemeDull
+        &::placeholder
+            @extends $FontThemeDull
+
+    // Label
+    &-typeahead-suggestion, &-floating-label
+        @extends $TextDark
+
+    // Form input label invalid
+    &-container.TextInputWithLabel-container-invalid
+        @extends $SetBorderBad
+
+        &:hover
+            @extends $SetBorderBad
+
+        .TextInputWithLabel-floating-label,
+        &:hover .TextInputWithLabel-floating-label
+            @extends $SetBorderBad
+
+// Form input valid
+.TextInputWithLabel-container-valid.TextInputWithLabel-container-focused
+    @extends $SetBorderGood
+
+// Form input icon
+.ValidityIndicator-container
+    // Invalid
+    &-invalid
+        border-color: bad-0
+        fill: bad-0
+    // Valid
+    &-valid
+        @extends $SvgGood
+
+// Big form input
+.TextAreaInput
+    &-text-area
+        border-color: border-light-2
+        color: fg-2
+        transition(border-color)
+        // Big form input hover
+        &:hover
+            @extends $SetBorderLight-3
+        // Big form input focus
+        &:focus
+            @extends $SetBorderThemeDull
+    &-container &-text-area::placeholder
+        @extends $TextMedium
+    &-container-error &-text-area
+        @extends $SetBorderBad
+
+// Form input word count
+.CharacterCount
+    // Circle
+    &-circle
+        // Background
+        &-background
+            stroke: bg-1
+        // Character count
+        &-valid, &-invalid-min
+            stroke: good-0
+        // Too many symbols
+        &-invalid-max
+            stroke: bad-0
+    // Label too many symbols
+    &-container-invalid-max
+        @extends $TextBad
+
+// Tag input
+.GuildedTagCreator-container-input-border
+    // Normally
+    .Select-control
+        border-bottom-color: border-light-2 !important
+        transition(border-bottom)
+    // Hover
+    &:hover .Select-control
+        border-bottom-color: border-light-3 !important
+    // Focused
+    .Select.is-focused .Select-control
+        border-bottom-color: var(--NihilityTheme2) !important
+// Tags
+.GuildedTagCreator-container-dark .Select-value
+    // Tag's background
+    @extends $OverridePanelMildlyBordered-4
+    // Tag's text
+    &-label
+        @extends $TextMedium
+// "Tags (optional)" label
+.TextFieldLabel-container-size-sm
+    @extends $TextDark
+
+/*
+ * --- Toggles ---
+ */
+
+// Toggle/switch field
+.ToggleFieldWrapper
+    // Toggle field title
+    &-label
+        @extends $TextBad
+        font-weight: bold
+        transition(color)
+    // Toggle field toggled title
+    &-label-active
+        @extends $TextGood
+    // Moderator view tooltip icon
+    &-tooltip-icon
+        @extends $SvgMedium
+    // All day checkmark icon
+    &-icon
+        @extends $SvgDark
+
+.SwitchInput
+    // Slider off
+    &-container .SwitchInput-slide
+        @extends $PanelBad
+        width: 37px
+        height: 20px
+        border-radius: 10px
+        flex-shrink: 0
+    // Slider on
+    &-container-on .SwitchInput-slide
+        @extends $PanelGood
+    // Slider thumb
+    &-tab
+        @extends $Panel-2
+        top: 2px
+        left: 2px
+        // Disabled
+        .SwitchInput-container-disabled &
+            @extends $Panel-4
+
+.TriStateInputWrapper-container
+    @extends $SetBorderLight-1
+
+.TriStateInputButton-container
+    // Types
+    &-type
+        // All
+        &-on,
+        &-passThrough,
+        &-off
+            @extends $Panel-5
+        // All selected
+        &-on.TriStateInputButton-container-selected,
+        &-passThrough.TriStateInputButton-container-selected,
+        &-off.TriStateInputButton-container-selected
+            @extends $Panel-2
+        // Permission allowed
+        &-on
+            // Icon
+            .TriStateInputButton-icon
+                @extends $SvgDarker
+            // Icon hover
+            &:hover .TriStateInputButton-icon
+                @extends $SvgDark
+            // Selected
+            &.TriStateInputButton-container-selected
+                // Selected icon
+                .TriStateInputButton-icon
+                    @extends $SvgGood
+                // Selected hover
+                &:hover .TriStateInputButton-icon
+                    @extends $SvgGoodHighlight
+        // Permission inherit
+        &-passThrough
+            // Icon
+            .TriStateInputButton-icon
+                @extends $SvgDarker
+            // Icon hover
+            &:hover .TriStateInputButton-icon
+                @extends $SvgDark
+            // Selected
+            &.TriStateInputButton-container-selected
+                // Selected icon
+                .TriStateInputButton-icon
+                    @extends $SvgNeutral
+                // Selected hover
+                &:hover .TriStateInputButton-icon
+                    @extends $SvgNeutralHighlight
+        // Permission denied
+        &-off
+            // Icon
+            .TriStateInputButton-icon
+                @extends $SvgDarker
+            // Icon hover
+            &:hover .TriStateInputButton-icon
+                @extends $SvgDark
+            // Selected
+            &.TriStateInputButton-container-selected
+                // Selected icon
+                .TriStateInputButton-icon
+                    @extends $SvgBad
+                // Selected hover
+                &:hover .TriStateInputButton-icon
+                    @extends $SvgBadHighlight
+    // States
+    &-disabled
+        opacity: 1
+        .TriStateInputButton-icon
+            opacity: 0.3
+    &-highlighted:not(.TriStateInputButton-container-selected)
+        @extends $Panel-1
+
+/*
+ * --- Option-based ---
+ */
+
+$CheckboxUnchecked
+    @extends $SetBorderLight-2
+$CheckboxUncheckedHover
+    @extends $SetBorderThemeDull
+$CheckboxChecked
+    @extends $PanelTheme
+$CheckboxCheckedHover
+    @extends $SetBorderThemeDull
+$CheckboxCheck
+    fill: var(--NihilityThemeFg)
+
+// --- CHECKBOX & CHECKBOX RADIO ---
+
+.CheckboxV2
+    &-checkmark
+        @extends $CheckboxCheck
+    // Checkmark box
+    &-box
+        @extends $CheckboxUnchecked
+    &-box:not(&-box-circular)
+        @extends $RadiusSmall
+    &-container-desktop:hover &-box
+        @extends $CheckboxUncheckedHover
+    &-container-checked &-box
+        @extends $CheckboxChecked
+    &-container-checked:hover &-box
+        @extends $CheckboxCheckedHover
+    // Name
+    &-label-wrapper
+        @extends $TextBad
+    &-label
+        transition(color)
+    &-container-desktop:hover &-label
+        @extends $TextBad
+    &-container-checked &-label
+        @extends $TextGood
+    &-container-checked:hover &-label
+        @extends $TextGood
+    // Description
+    &-description
+        @extends $TextDark
+    &-container-checked &-description
+        @extends $TextMedium
+
+
+// --- CHECKBOX RADIO PANELS ---
+
+.RadioOptionPanel
+    // Panel's label overrides the unchecked
+    &-label
+        @extends $TextBad
+    // Container
+    &-container
+        @extends $PanelBordered-3
+    &-container:not(&-container-disabled)::after
+        @extends $ContentGlare
+    &-container-selected
+        @extends $Panel-4
+
+.CheckboxPanel
+    &-container
+        @extends $PanelBordered-3
+    // Hover
+    &-container.CheckboxPanel-container-clickable.CheckboxPanel-container-flavor-default:hover
+        @extends $Panel-2
+    &-container-selected
+        @extends $Panel-4
+    // Selected hover
+    &-container-selected.CheckboxPanel-container-clickable.CheckboxPanel-container-flavor-default:hover
+        @extends $Panel-3
+
+    // Checkmark
+    &-container-clickable:hover, &-container-clickable:hover
+        .CheckmarkIcon-circle
+            @extends $CheckboxUncheckedHover
+
+.CheckmarkIcon
+    &-circle
+        @extends $CheckboxUnchecked
+    &-container-selected &-circle
+        @extends $CheckboxChecked
+
+// --- SELECTION DROPDOWN ---
+
+.GuildedSelect-container
+    // Label
+    &.GuildedSelect-container-dark:not(&-has-label-type) .GuildedSelect-label
+        @extends $TextMedium
+    // Form selector
+    .Select-control
+        border-color: border-light-2 !important
+        transition(border-color)
+    // Form selector hover
+    &.GuildedSelect-container-dark:hover .Select .Select-control,
+    &:hover .Select .Select-control
+        border-color: border-light-3 !important
+
+    // Code container stuff
+    &-option-color-gray
+        // Label in editor
+        .GuildedSelect-default-option-wrapper
+            @extends $TextDark
+        // Label's arrow in editor
+        .Select-arrow
+            border-top-color: fg-0
+    // Form selector arrow
+    .Select-arrow
+        border-top-color: fg-0 !important
+        transition(border-top-color)
+    // Form selector placeholder
+    .Select-placeholder
+        @extends $TextDark
+    // Form selector value
+    .Select-value-label
+        color: fg-2 !important
+    // Form select menu
+    &.GuildedSelect-container-dark .Select-menu-outer,
+    &.GuildedSelect-container-light .Select-menu-outer
+        @extends $OverrideContentMildlyBordered-4
+
+// Form selector focused
+.GuildedSelect-container.GuildedSelect-container-dark .Select.is-focused
+    .Select-control
+        border: solid 1px var(--NihilityTheme2) !important
+    .Select-arrow
+        border-top-color: var(--NihilityTheme2) !important
+
+// Form selector icon
+.GuildedSelectIcon-container
+    @extends $SvgDark
+
+.Select
+    // Form selector options
+    &-menu
+        @extends $Panel-2
+        padding: spacing-1
+        border-radius: radius-0
+        &-outer
+            opacity: floating-opacity
+            @extends $OverridePanelBordered-4
+
+    // Form selector option
+    &-option
+        border-radius: radius-0
+        @extends $TextMedium
+        border: solid 1px transparent
+        // Normally
+        .GuildedSelect-container.GuildedSelect-container-dark &,
+        .GuildedSelect-container.GuildedSelect-container-light &
+            @extends $TextMedium
+        // Already selected
+        &.is-selected,
+        .GuildedSelect-container &.is-selected,
+        .GuildedSelect-container.GuildedSelect-container-dark &.is-selected,
+        .GuildedSelect-container.GuildedSelect-container-light &.is-selected
+            background-color: bg-5
+            border: solid 1px border-light-0
+            border-left: solid 2px var(--NihilityTheme0)
+        // Focused
+        &.is-focused
+            @extends $ContentBordered-0
+            .GuildedSelect-container.GuildedSelect-container-dark &,
+            .GuildedSelect-container.GuildedSelect-container-light &
+                @extends $TextLight
+        &.is-selected.is-focused,
+        .GuildedSelect-container &.is-selected.is-focused,
+        .GuildedSelect-container.GuildedSelect-container-dark &.is-selected.is-focused,
+        .GuildedSelect-container.GuildedSelect-container-light &.is-selected.is-focused
+            background-color: bg-6
+            border: solid 1px border-light-1
+            border-left: solid 2px var(--NihilityTheme1)
+    // No results found - code container/blocks
+    .GuildedSelect-container.GuildedSelect-container-light &-noresults,
+    .GuildedSelect-container.GuildedSelect-container-dark &-noresults,
+    &-noresults
+        @extends $Panel-2
+    // Label's arrow acitve in editor
+    &.is-open > &-control &-arrow
+        border-top-color: fg-2
+
+
+// --- ICON DROPDOWN ---
+
+.IconMenuInput-container
+    &-gray, &-white,
+        .IconMenuInput-chevron-down, .IconMenuInput-selected-value-icon
+            @extends $SvgDark
+    &-desktop:hover
+        .IconMenuInput-chevron-down, .IconMenuInput-selected-value-icon
+            @extends $SvgMedium
+
+/*
+ * --- Numeric ---
+ */
+
+// Voice volume slider
+.RangeSlider
+    &-container-type-gilded
+        // Background
+        .RangeSlider-rail
+            @extends $Panel-5
+        // Current volume
+        .RangeSlider-selected-rail
+            background: progress
+.RangeSliderStep
+    &-label
+        @extends $TextDarker
+    &-step-type-gilded
+        @extends $Panel-4
+    &-step-filled
+        background-color: tint(progress, 10%)
+.KnobAndLabel-label
+    @extends $TextMedium
+// Video volume rail
+.RangeSlider
+    &-rail,
+    &-container-type-light &-rail,
+    &-container-type-light:hover &-rail
+        background-color: alpha(bg-2, 0.7)
+    &-selected-rail,
+    &-container-type-light &-selected-rail,
+    &-container-type-light:hover &-selected-rail
+        background-color: alpha(progress, 0.9)
+// Video volume knob
+.SliderKnob-container
+    background-color: bg-1
+    box-shadow: shadow
+
+/*
+ * --- Timed ---
+ */
+
+// Date & Time input
+.FormBoxAndLabel
+    &-box
+        border-color: border-light-2
+        border-radius: radius-2
+        transition(border-color)
+    &-container-focused &-box,
+    &-container-desktop:hover &-box
+        @extends $SetBorderLight-3
+    // Icon
+    &-form-icon
+        @extends $SvgDark
+    // Text inside input
+    &-main-text
+        @extends $TextMedium
+// Time input
+.TimeInput
+    // Part selected
+    &-input:focus
+        background-color: var(--NihilitySelect)
+    // : delimeter
+    &-delimiter
+        @extends $TextDark
+
+.TimeInput-error, .DateInput-error
+    .FormBoxAndLabel-box
+        @extends $SetBorderBad
+// Timezone label
+.TimeFieldWrapper-timezone-label
+    @extends $TextDark
+
+/*
+ * --- Buttons ---
+ */
+
+button-typed(border-colour, text-colour)
+    background: shading-1
+    border: solid 1px border-colour
+    .FormConfirmButtonV2-button-content
+        font-color(text-colour)
+button-typed-hollow(border-colour, text-colour)
+    border: solid 1px border-colour
+    .FormConfirmButtonV2-button-content
+        font-color(text-colour)
+
+.FormConfirmButtonV2
+    // Gilded button
+    &-container.FormConfirmButtonV2-container-type-gilded
+        box-shadow: none
+        background: bg-0
+        @extends $SetBorderLight-1
+    // Gilded button hover
+    &-container-desktop.FormConfirmButtonV2-container-filled:hover
+        box-shadow: none
+        @extends $SetBorderLight-2
+        .FormConfirmButtonV2-button-content
+            font-color(var(--NihilityTheme1))
+    // Gilded button text
+    &-button-content
+        font-color(var(--NihilityTheme0))
+
+    // Hollow gilded
+    &-container.FormConfirmButtonV2-container-hollow
+        background: none
+        button-typed(border-light-2, var(--NihilityTheme0))
+    // Hollow gilded hover
+    &-container-desktop.FormConfirmButtonV2-container-hollow:hover
+        button-typed(border-light-2, var(--NihilityTheme1))
+    // Hollow gilded text
+    &-container-hollow &-button-content
+        @extends $FontTheme
+
+    // Delete button
+    &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete
+        button-typed(alpha(bad-0, 0.15), bad-0)
+    &-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete:hover
+        button-typed(alpha(bad-0, 0.25), bad-1)
+
+    // Success button
+    &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-success
+        button-typed(alpha(good-0, 0.15), good-0)
+    &-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-success:hover
+        button-typed(alpha(good-0, 0.25), good-1)
+
+    // Delete hollow
+    &-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-delete
+        button-typed-hollow(bad-0, bad-0)
+    &-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-delete:hover
+        button-typed-hollow(bad-1, bad-1)
+
+    // Success hollow
+    &-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-success
+        button-typed-hollow(good-0, good-0)
+    &-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-success:hover
+        button-typed-hollow(good-1, good-1)
+
+    // Normal hollow
+    &-container.FormConfirmButtonV2-container-type-bleached
+        button-typed-hollow(border-light-2, normal-0)
+    &-container-desktop.FormConfirmButtonV2-container-type-bleached.FormConfirmButtonV2-container-hollow:hover
+        button-typed-hollow(border-light-2, normal-1)
+
+    // Disabled
+    &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled,
+    &-container.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled:hover
+        @extends $OverrideContentBordered-5
+        .FormConfirmButtonV2-button-content
+            @extends $FontDarker
+
+    // Disabled hollow
+    &-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-disabled,
+    &-container.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-disabled:hover
+        button-typed-hollow(fg-0, fg-0)
+/*
+ * --- Colours (Role colours) ---
+ */
+
+// Selected colour
+.ColorInputOption-container-dot-selected
+    border-color: var(--NihilityTheme1)
+    @extends $SetBorderThemeDull
+// Colour hover
+.ColorInputOption-container-size-lg .ColorInputOption-container-dot:not(.ColorInputOption-container-dot-selected):hover
+    border-color: fg-0
+// Role description
+.TeamRolesListInstructions-container
+    @extends $TextDark
+
+/*
+ * --- Others ---
+ */
+
+// Reorder groups
+.GroupSettingsPanel-avatar
+    font-size: 22px
+
+/*
+ * -=- Related -=-
+
+.DropdownPanel-container
+    @extends $Panel-3

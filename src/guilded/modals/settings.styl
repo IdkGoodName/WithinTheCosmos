@@ -1,0 +1,212 @@
+@require "../../variables"
+@require "../../set"
+@require "../../content"
+
+/*
+ * -=- Settings -=-
+ */
+
+// Options
+.OptionsMenuPageWrapper-container
+    @extends $Panel-2
+
+// Section tabs
+.PersistentActionMenu-menu-section
+    padding: 0 spacing-2
+
+// Tabs
+.OptionsMenu-container-desktop .OptionsMenu-options-control
+    @extends $Panel-5
+// Tab section header
+.DesktopOptionsControlOptionHeader-container
+    padding: 0 20px
+// Tabs section header title
+.DesktopOptionsControlOptionHeader-header-text
+    @extends $TextMedium
+
+// Tab text
+.DesktopOptionsControlItemTemplate-label-text
+    @extends $TextDark
+.DesktopOptionsControlItemTemplate-container
+    border-radius: radius-1
+    padding: 6px 12px
+    @extends $FullBorderTransparent
+    // Tab hover
+    &:hover::after
+        @extends $ContentGlare
+    // Tab hover text
+    &:hover .DesktopOptionsControlItemTemplate-label-text
+        @extends $TextLight
+    // Tab active
+    &-active
+        @extends $ContentMildlyBordered-3
+        .DesktopOptionsControlItemTemplate-label-text
+            @extends $TextMedium
+
+// Gilded tab
+.DesktopOptionsControlItemTemplate-container-type-gilded .DesktopOptionsControlItemTemplate-label-text
+    color: gold
+
+/*
+ * -=- User settings -=-
+ */
+
+// 2FA thing
+.PersistentUpsell-container-flavor-settings
+    @extends $Panel-4
+// Connections/integrations
+.SocialLinkPanel-header
+    @extends $Panel-4
+.UserSettings
+    // Email settings header
+    &EmailPage-header
+        @extends $TextLight
+    // User settings subscription info
+    &ServerSubscriptionsUpsell-container
+        @extends $PanelBordered-3
+// Server to subscribe to
+.ServerSubscriptionBar-container
+    @extends $PanelBordered-3
+// Payment
+.UserSettingsPayments-header
+    @extends $TextLight
+.UserPaymentsHistory-none,
+.PanelList-container-none
+    @extends $TextMedium
+.PaymentInstrumentSelector-add-method:hover
+    @extends $TextLinkHighlight
+
+/*
+ * -=- Server Settings -=-
+ */
+
+// Channel or category notifications header
+.GuildedTableHeader-column-header-group, .GuildedTableHeader-column-header
+    @extends $TextMedium
+// Placeholder
+.GuildedTableField-empty-text
+    @extends $TextDark
+// Category/channel hover
+.GuildedTableRowInputWrapper-container-desktop::after
+    @extends $ContentGlare
+// Category/channel icon
+.GuildedTableRowInputWrapper-icon
+    @extends $SvgDark
+// Category/channel title
+.GuildedTableRowInputWrapper-name
+    @extends $TextMedium
+// X channels
+.GuildedTableRowInputWrapper-description
+    @extends $SvgDark
+// Remove icon
+.GuildedTableRowNotificationOverridesInput-remove
+    @extends $TextBad
+
+// Content(flow)
+.UserCTAPanel-container
+    @extends $PanelBordered-4
+// // Content inner(flow)
+// .UserCTAPanel-container-style-bordered
+//     border: 0
+// Content inner(flow) 2
+.UserCTAPanel-container-style-bordered .UserCTAPanel-contents:not(.UserCTAPanel-container-disabled)
+    @extends $PanelTransparent
+.UserCTAPanel-container-style-bordered .UserCTAPanel-contents:not(.UserCTAPanel-container-disabled):hover
+    @extends $Panel-4
+    transition(background)
+// Flow connection
+.PanelList-option-connector
+    @extends $Panel-5
+// Flow's title
+.PanelInfo-title
+    @extends $TextLight
+// Flow's description
+.PanelInfo-description
+    @extends $TextDark
+// Flow's icon
+.BotFlowDisplay-icon
+    @extends $SvgDark
+
+/*
+ * -=- Settings Tabs -=-
+ */
+
+/*
+ * --- Integrations ---
+ */
+
+// Team integrations
+.TeamSettingsAddIntegration-container
+    @extends $Panel-4
+// Twitch integration
+.TeamSettingsAddIntegration-container-type-twitch .TeamSettingsAddIntegration-icon
+    fill: stream
+
+/*
+ * --- Groups ---
+ */
+
+// Group
+.GroupSettingsPanel-container
+    @extends $Panel-4
+    // Group hover
+    &:hover
+        @extends $Panel-5
+// Group gripper
+.GroupSettingsPanel-icon
+    @extends $SvgDark
+
+/*
+ * --- Subscriptions ---
+ */
+
+// Subscriptions bg
+.ServerSubscriptionsSetupUpsell-content
+    @extends $Panel-0
+// Subscription points
+.GuildedText-container-type-subtextBodyWhite
+    @extends $TextMedium
+// Subscription enabling
+.ModalWrapper-container.ModalWrapper-container-required:not(.ModalWrapper-background-style-transparent)
+    background: rgba(0, 0, 0, 0.6)
+
+/*
+ * --- Roles ---
+ */
+
+// Role list item selected
+.TeamSettingsPermissionsItem-container-selected
+    @extends $Panel-0
+// Role list item hover
+.TeamSettingsPermissionsItem-container-desktop .TeamSettingsPermissionsItem-content::after
+    @extends $ContentGlare
+// Add role
+.TeamSettingsAddButton
+    &-icon
+        @extends $SvgDark
+        transition(fill)
+    &-text
+        @extends $TextDark
+        transition(color)
+// Add role hover
+.TeamSettingsAddButton-container:hover
+    // Icon
+    .TeamSettingsAddButton-icon
+        @extends $SvgMedium
+    // Text
+    .TeamSettingsAddButton-text
+        @extends $TextMedium
+
+// Permission syncing
+.TeamChannelRoleSyncControl
+    &-container
+        @extends $PanelBordered-3
+    // Syncing text
+    &-info
+        @extends $TextMedium
+    &-category-name
+        @extends $TextLight
+        font-weight: bold
+    // Synced icon
+    &-icon
+        @extends $SvgDark

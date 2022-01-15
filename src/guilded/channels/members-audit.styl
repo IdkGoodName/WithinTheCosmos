@@ -1,0 +1,88 @@
+@require "../../variables"
+@require "../../set"
+@require "../../fake"
+@require "../../content"
+
+/*
+ * --- Content ---
+ */
+
+// Select all checkbox
+.SelectToggleIcon-container
+    border-color: fg-0
+    // Select all checkbox hover
+    &-clickable:hover
+        @extends $SetBorderLight-2
+        background-color: alpha(bg-hover, 0.1)
+// Select all checkmark
+.SelectToggleIcon-checkmark
+    @extends $SvgTheme
+
+.ItemManagerListItem
+    // Selected member
+    &-checkmark-icon
+        @extends $SvgTheme
+    &-container-selectable::after
+        border-color: var(--NihilityTheme0)
+// Selected sorting
+.ItemManagerColumnHeader-container-sortable.ItemManagerColumnHeader-active
+    @extends $TextTheme
+    // Arrow
+    .ItemManagerColumnHeader-icon
+        @extends $SvgTheme
+
+/*
+ * --- Filter ---
+ */
+
+// Filter icon
+.ItemManagerFilterButton-icon
+    @extends $SvgDark
+    transition(fill)
+
+.ItemManagerFilterButton-container
+    // Filter icon hover
+    &:not(&-active):hover .ItemManagerFilterButton-icon
+        @extends $SvgMedium
+    // Filter settings clicked
+    &-open .ItemManagerFilterButton-icon
+        @extends $SvgLight
+
+.ItemManagerFilterWrapper
+    &-header
+        @extends $OverrideContentBordered-3
+    // Filter settings
+    &-container
+        @extends $Panel-2
+        border: none
+    // Filter settings search
+    &-search
+        @extends $ContentBordered-4
+// Filter menu hover
+.ItemManagerFilterOption-container:hover
+    background-color: bg-lighter
+
+
+.SearchBarInput
+    // Search bar
+    &-input
+        @extends $TextMedium
+        // Placeholder
+        &::placeholder
+            @extends $TextDark
+    // Filter settings search icon
+    &-icon
+        @extends $SvgMedium
+
+/*
+ * -=- Audit log -=-
+ */
+
+.TeamAuditLogAction-icon
+    @extends $SvgDarker
+
+.ChannelEntityNameDisplay
+    &-container
+        @extends $FakeMention
+    &-icon
+        @extends $SvgDark

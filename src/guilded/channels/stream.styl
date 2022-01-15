@@ -1,0 +1,76 @@
+@require "../../variables"
+@require "../../content"
+
+// Whole container
+.StreamChannelDisplay-container,
+.StreamsDisplayV2-container
+    @extends $Panel-5
+// Stacked and unstacked streaming displays
+.StreamChannel-display,
+.StreamChannel-container-stacked .StreamChannel-display
+    @extends $SetBorderDark-1
+
+// Streaming button
+.SVGIconWithTooltip-container-flavor-hover-bleach
+    @extends $Panel-4
+    // Streaming button icon
+    .SVGIconWithTooltip-icon
+        @extends $SvgDark
+    // Streaming button icon hover
+    &:hover .SVGIconWithTooltip-icon
+        @extends $SvgMedium
+
+// Join streaming channel
+.StreamsEmptyState-title
+    @extends $TextMedium
+.StreamsEmptyState-subtitle
+    @extends $TextDark
+
+// Leave streaming channel
+.SVGIconWithTooltip-container-flavor-filled-remove
+    @extends $PanelBad
+    .SVGIcon-icon
+        fill: black
+
+.StreamDisplayActionButton-container
+    // Mini buttons
+    &-right, &-left
+        .StreamDisplayActionButton-container-content
+            @extends $SvgDark
+    // Mini buttons active
+    &:hover, &-active
+        .StreamDisplayActionButton-container-content
+            @extends $SvgMedium
+
+// Hover outline
+.StreamPlayer-container:hover .StreamPlayer-inset-border
+    border-color: active
+// The user pill
+.StreamPlayerMemberDisplay-pill
+    @extends $Panel-5
+// Muted or deaf icon
+.StreamPlayerIndicators-button
+    @extends $Panel-5
+
+// Livestream badge in groups and servers
+.LiveStreamBadge-indicator
+    // We have no way of selecting the live badge
+    background: stream !important
+// Livestream outline in the voice user list
+.VoiceChannelGroupUser-avatar-streaming::after
+    background: stream
+
+/*
+ * --- Modes ---
+ */
+
+// Fullscreen stream + chat modal
+.StreamTheaterViewer-container
+    width: 100%
+    height: 100%
+// Fullscreen stream + chat sidebar
+.StreamTheaterViewer-sidebar
+    height: 100%
+// Fullscreen stream + chat member list
+.PageSidebarWrapper-container
+    height: 100%

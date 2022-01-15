@@ -1,0 +1,12 @@
+@require "./variables"
+
+// Sets both color and fill
+font-color(colour)
+    color: colour
+    fill: colour
+
+// For setting transition in a lot of places
+transition(prop, fn = ease-out)
+    transition-property: prop
+    transition-duration: transition
+    transition-timing-function: fn

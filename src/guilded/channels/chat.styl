@@ -1,0 +1,403 @@
+@require "../../variables"
+@require "../../set"
+@require "../../content"
+
+/*
+ * --- Messages ---
+ */
+
+// Thread header
+.TemporalChannelInstructions
+    // Title
+    &-header
+        @extends $TextMedium
+    // Description
+    &-optimistic, &-instructions
+        @extends $TextDark
+
+// Chat area
+.SidebarInfoItem-container,
+.LayeredPageContent-content,
+.ChannelWrapper-container
+    background-color: bg-3
+    color: fg-3
+    --body-text-color: fg-2
+
+// Text
+.LastReplyDisplayContent-message-summary,
+.SystemMessageRendererWrapper-container,
+.LayeredPageContent-content,
+.ChannelWrapper-container,
+.BlockQuoteLineRenderer,
+.ParagraphRenderer
+    color: var(--body-text-color)
+    transition(color)
+
+
+define-message-type(colour)
+    background-color: alpha(colour, 0.05)
+    // Hover
+    &:hover
+        background-color: alpha(colour, 0.02)
+    // Side
+    &::after
+        background-color: colour
+    &:hover::after
+        background-color: tint(colour, hover-brightness)
+    // Reactions
+    .ReactionBadge-container.ReactionBadge-container-active
+        // Normal active reaction
+        .ReactionBadge-container-content
+            background-color: mix(bg-1, colour, 85%)
+            border-color: alpha(colour, 0.1)
+            // Active reaction label
+            .ReactionBadge-count
+                color: colour
+        // Active reaction hover
+        &.ReactionBadge-container:not(.ReactionBadge-container-disabled):hover .ReactionBadge-container-content
+            background-color: mix(bg-1, colour, 90%)
+
+.ChatV2Message-container
+    // Message
+    &:not(&-editing):not(&-threads-disabled)
+        transition(background)
+    &.ChatV2Message-container-type-default
+        color: var(--body-text-color)
+    // Hovered message
+    &:not(&-editing):hover, &.ChatV2Message-container-replying
+        @extends $Panel-0
+        --body-text-color: fg-3
+    // Right click active
+    &-active
+        @extends $Panel-0
+
+    // Replying
+    &:not(&-editing).ChatV2Message-container-replying
+        define-message-type(replying)
+
+    // Mentioned message
+    &:not(&-editing):not(&-replying):not(&-private).ChatV2Message-container-mentioned
+        define-message-type(mentioned)
+
+    // Private reply
+    &:not(&-editing):not(&-replying):not(&-mentioned):not(&-private-other).ChatV2Message-container-private,
+    // Private mention
+    &:not(&-editing):not(&-replying):not(&-private-other).ChatV2Message-container-private
+        define-message-type(private)
+
+    // Private reply mod view
+    &:not(&-editing):not(&-replying):not(&-mentioned):not(&-private).ChatV2Message-container-private-other,
+    // Private mention mod view
+    &:not(&-editing):not(&-replying):not(&-private).ChatV2Message-container-private-other
+        define-message-type(private-mod-view)
+
+    // Right clicked
+    &-active:not(&-editing)
+        @extends $Panel-0
+        --body-text-color: fg-3
+
+    // Removes messages' margin
+    & + &:not(&-with-header):not(&-type-system)
+        margin-top: 0
+
+// (edited)
+.EditedMarker-container
+    @extends $TextDark
+    transition(color)
+    // (edited) hover
+    .ChatV2Message-container.ChatV2Message-container-type-default:hover &
+        @extends $TextMedium
+
+/*
+ * --- Message input ---
+ */
+
+// Slow mode
+.SlowModeInfoLabel
+    &-icon
+        @extends $SvgDarker
+    &-container
+        @extends $TextDark
+    // Seconds left
+    &-cooldown-text
+        color: warning
+
+// Failed to send
+.ChatV2Message-retry-control
+    fill: warning
+    .SVGIcon-icon
+        fill: warning
+
+// Replying to
+.ChatChannelInputStatusBar
+    // Box
+    &-container
+        @extends $ContentBordered-4
+    // Label
+    &-replying-to-text
+        @extends $TextDark
+
+    // Close icon
+    &Buttons
+        &-close-icon
+            @extends $SvgDark
+            transition(fill)
+        &-hover:hover &-close-icon
+            @extends $SvgBad
+.PrivateReplyButton
+    &-icon
+        @extends $SvgDark
+        transition(fill)
+        &-enabled
+            fill: tint(private, 25%)
+    &-container:hover:not(&-container-disabled) &-icon:not(&-icon-enabled)
+        @extends $SvgMedium
+.ReplyPingButton-ping
+    &-icon
+        @extends $SvgDark
+        transition(fill)
+    &-enabled &-icon
+        fill: tint(mention, 25%)
+
+.ChatChannelInput-editor
+    border: none
+
+// Reply headers
+.ChatV2MessageReplyHeader-container
+    // Reply header
+    &, &-highlighted
+        // Reply line
+        &::after
+            border-color: fg-0
+            opacity: 30%
+            height: 24px
+        &:first-child::after
+            height: 12px
+    // Reply header line thread
+    &-thread::after, &-thread:first-child::after
+        height: 44px
+
+.ChatV2MessageReplyHeader
+    // Text in the reply
+    &-message-summary
+        // Non-deleted summary
+        &:not(&-deleted)
+            transition(color)
+            &:hover
+                @extends $TextMedium
+    // Username in the reply
+    &-user-info .UserBasicInfoDisplay-name-and-status-wrapper
+        font-weight: bolder
+
+// Message editing actions
+.ChatV2MessageEditHelper-container
+    @extends $TextDark
+
+/*
+ * --- Special messages ---
+ */
+
+// Pinned message
+.ChatV2MessageContents-container-pinned .ChatV2MessageContents-display
+    @extends $PanelTransparent
+
+// Event message icon
+.SystemMessageRendererWrapper-container .SystemMessageRendererWrapper-icon
+    @extends $SvgDark
+
+// Pinned message label
+.PinnedByMessage
+    // Text
+    &-word
+        @extends $TextDark
+    // Icon
+    &-icon
+        @extends $SvgDark
+// Pinned messages list
+.ChannelPinnedMessages
+    // "Pinned messages" title
+    &-header
+        @extends $TextDark
+    // Box
+    &-container
+        @extends $Panel-4
+// Pinned message
+.ChatV2PinnedMessage-message-wrapper
+    @extends $Panel-2
+    @extends $RadiusSmall
+    .ChatV2Message-container
+        @extends $RadiusSmall
+
+// "Private message" label
+.PrivateMessageLabel
+    // Eye icon
+    &-icon
+        @extends $SvgDark
+    // Text
+    &-container .GuildedText-container
+        @extends $TextDark
+
+/*
+ * --- Divider ---
+ */
+
+.WordDividerLine
+    // Normal
+    &-line
+        background-color: bg-6
+        &:last-child
+            width: 600px
+    &-container-word-style-chat &-word,
+    &-word
+        @extends $TextDark
+    // New messages
+    &-container-type-alert
+        .WordDividerLine-line
+            background: important
+    &-container-type-alert
+        .WordDividerLine-word
+            color: important
+
+/*
+ * --- Threads ---
+ */
+
+// Thread label
+.ChatMessageThread
+    // Text
+    &-thread-header
+        @extends $TextDark
+    // Icon
+    &-icon-chat-thread
+        @extends $SvgDark
+
+// Threaded message
+.ChatMessageThread-container
+    @extends $PanelBordered-3
+    --border-color: bg-5
+    // Threaded message hover
+    &::after
+        display: none
+
+.LastReplyDisplay-container
+    // Thread reply bar
+    &::before
+        background-color: var(--NihilityTheme0)
+    // Thread reply bar when the user is in it
+    &.LastReplyDisplay-container-participant:not(&-unread)::before
+        background-color: var(--NihilityTheme2)
+
+// Threaded message's arrow
+.LastReplyDisplay-icon-chevron
+    @extends $TextThemeDull
+
+/*
+ * --- Header ---
+ */
+
+// Timestamp
+.ChatV2MessageTimestamp-container.ChatV2MessageHeader-timestamp,
+.ChatV2MessageTimestamp-container.SystemMessageRendererWrapper-timestamp
+    @extends $TextDark
+    transition(color)
+    // Timestamp hovered
+    .ChatV2Message-container.ChatV2Message-container-type-default:hover &,
+    .ChatV2Message-container.ChatV2Message-container-type-system:hover &
+        @extends $TextMedium
+
+/*
+ * --- Menu ---
+ */
+
+
+// Message hover menu
+.QuickActionBar-container
+    @extends $PanelBordered-4
+
+// Message hover menu icons
+.QuickActionBar-action
+    @extends $SvgMedium
+    // Buttons hovered over
+    &-wrapper:hover .QuickActionBar-action,
+    &:hover
+        background-color: bg-3
+        fill: fg-3
+        // Change the fill of the SVG icon
+        .SVGIcon-container
+            @extends $SvgLight
+    // Change the fill of the SVG icon
+    .SVGIcon-container
+        @extends $SvgMedium
+    // Delete icon
+    &-wrapper.QuickActionBar-action-wrapper-destructive
+        .QuickActionBar-action
+            @extends $SvgBad
+        // Delete icon hover
+        &:hover .QuickActionBar-action
+            @extends $SvgBadHighlight
+
+// Remove hover from the message in deletion menu
+.ConfirmationOverlay-item .ChatV2Message-container
+    // Since it doesn't work for ::after, don't add it here
+    // .ChatChannelMessages-delete-message
+    //     transition(background-color)
+    // Give it to contents
+    &:hover
+        @extends $PanelTransparent
+        .ChatChannelMessages-delete-message
+            @extends $Panel-0
+// Message delete menu fading
+.ChatChannelMessages-delete-message::after
+    background: linear-gradient(to bottom, transparent, bg-3 75px)
+    // Doesn't work
+    // transition(background)
+    // When the message gets hovered over, change the fading too
+    .ChatV2Message-container:not(.ChatV2Message-container-editing):hover &
+        background: linear-gradient(to bottom, transparent, bg-5 75px)
+
+/*
+ * --- Thread menu ---
+ */
+
+
+// Message thread menu
+.ChatV2MessageReplyTooltip
+    // Base
+    &-content-wrapper
+        @extends $OverridePanelMildlyBordered-3
+        opacity: floating-opacity
+    // Arrow/Pointer
+    &-arrow
+        @extends $OverridePanelMildlyBordered-3
+    // Message thread menu header
+    &Header
+        // Icon
+        &-icon
+            @extends $SvgDark
+        // Message thread add a title
+        &-add-title
+            &, &:visited, &:active, &:focus
+                @extends $TextDark
+            // Hovered
+            &:hover
+                @extends $TextMedium
+
+// Message thread menu send
+.SlateEditor-send-icon
+    @extends $SvgThemeBleached
+    // Message thread menu cannot send
+    &.SlateEditor-send-icon-disabled
+        @extends $SvgDarker
+
+.ContentEditableInput
+    &-placeholder-text, &-input, &-actual-text-display
+        @extends $TextMedium
+
+// Thread menu title input placeholder
+.ChannelTitleInput-input-placeholder
+    @extends $TextDarker
+
+// Thread menu title input icon
+.ChannelTitleInput-icon,
+.ChatV2MessageReplyTooltipInput-title-icon
+    @extends $SvgMedium

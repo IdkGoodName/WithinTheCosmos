@@ -1,0 +1,49 @@
+@require "../../variables"
+@require "../../set"
+@require "../../content"
+
+/*
+ * --- Media list ---
+ */
+
+// Media item
+.MediaDisplayItemV3-container
+    @extends $Panel-4
+    // Media item hover
+    &::after
+        @extends $ContentGlare
+// Description
+.MediaDisplayItemV3-meta-info-wrapper
+    @extends $FullBorderLight-1
+    border-top: none
+    border-radius: 0px 0px 8px 8px
+
+// Comment count
+.MediaDisplayItemMetaInfo-comment-count
+    @extends $TextMedium
+
+// Media modal background
+.MediaEditor-container-desktop
+    @extends $Panel-2
+
+/*
+ * --- Media view ---
+ */
+
+// Image preview
+.MediaSplitView-media
+    @extends $Panel-5
+
+// Media side panel
+.MediaInfoPane-container
+    @extends $Panel-2
+
+// Media view exit
+.BackLink-container-desktop
+    // Exit icon
+    .BackLink-icon
+        @extends $SvgDark
+        transition-duration: transition
+    // Exit icon hover
+    &:hover .BackLink-icon
+        @extends $SvgMedium
