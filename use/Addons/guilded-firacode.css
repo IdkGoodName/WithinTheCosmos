@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "Fira Code";
+    src: url(/use/Addons/FiraCode-SemiBold.ttf);
+    src: url(/use/Addons/FiraCode-SemiBold.woff2) format("woff2"), url(/use/Addons/FiraCode-SemiBold.woff) format("woff"),
+        url(/use/Addons/FiraCode-SemiBold.ttf) format("truetype");
+
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Fira Code";
+    src: url(/use/Addons/FiraCode-Regular.ttf);
+    src: url(/use/Addons/FiraCode-Regular.woff2) format("woff2"), url(/use/Addons/FiraCode-Regular.woff) format("woff"),
+        url(/use/Addons/FiraCode-Regular.ttf) format("truetype");
+
+    font-weight: normal;
+}
+.PrismTokenInlineRenderer-container-type-code,
+.PrismTokenCodeBlockRenderer-container code,
+.CodeContainerRenderer-container code,
+.MarkRenderer-inline-code-v2,
+.MarkRenderer-inline-code,
+.CodeLineRenderer {
+    font-family: "Fira Code", monospace;
+}

@@ -429,6 +429,11 @@ body
 .TeamNavSectionItem-container.TeamNavSectionItem-container-selected
     @extends $ContentMildlyBordered-2
     transition(background-color, border-color)
+.TeamChannelItemContents-container-selected
+    .TeamChannelItemContents-icon
+        @extend $SvgLight
+    .TeamChannelItemContents-name
+        @extend $TextLight
 // Unread channel
 .TeamChannelItemContents-container-unread
     .TeamChannelItemContents-name
@@ -443,11 +448,12 @@ body
     .ChannelIcon-icon-primary,
     .ChannelIcon-icon-background
         fill: shade(mix(mark, fg-2, 15%), 20%)
+.ChannelIcon-icon-secondary
+    fill: fg-1
 // Sub-icon/global icon
 .ChannelIcon-icon-selected .ChannelIcon-icon-background,
 .ChannelIcon-icon-background
     background-color: bg-0
-    fill: fg-1
 // Selected channel icons
 .ChannelIcon-icon-selected,
 .ChannelIcon-icon-selected .ChannelIcon-icon,

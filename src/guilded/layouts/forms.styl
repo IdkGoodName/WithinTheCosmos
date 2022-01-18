@@ -156,11 +156,13 @@
 // Toggle/switch field
 .ToggleFieldWrapper
     // Toggle field title
+    &-container-size-sm &-label,
     &-label
         @extends $TextBad
         font-weight: bold
         transition(color)
     // Toggle field toggled title
+    &-container-size-sm &-label.ToggleFieldWrapper-label-active,
     &-label-active
         @extends $TextGood
     // Moderator view tooltip icon
@@ -171,11 +173,14 @@
         @extends $SvgDark
 
 .SwitchInput
+    &-container
+        width: 34px
+        height: 17px
     // Slider off
     &-container .SwitchInput-slide
         @extends $PanelBad
-        width: 37px
-        height: 20px
+        width: 34px
+        height: 17px
         border-radius: 10px
         flex-shrink: 0
     // Slider on
@@ -186,6 +191,8 @@
         @extends $Panel-2
         top: 2px
         left: 2px
+        width: 13px
+        height: 13px
         // Disabled
         .SwitchInput-container-disabled &
             @extends $Panel-4
