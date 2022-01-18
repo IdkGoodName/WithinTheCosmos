@@ -1,6 +1,6 @@
-# Absolute Nihility
+# Cold Nebula
 
-Really dark colour scheme of ["Within the Cosmos"](https://github.com/IdkGoodName/WithinTheCosmos) theme for Guilded.
+Dark and cool colour scheme of ["Within the Cosmos"](https://github.com/IdkGoodName/WithinTheCosmos) theme for Guilded.
 
 ## Setting Colours
 
@@ -14,7 +14,7 @@ There is also `--accent-selection` for selection and `--accent-foreground` to se
 
 > **Code Highlighting:** `IMPORTED BY DEFAULT`
 > ```css
-> @import url("https://idkgoodname.github.io/WithinTheSpace/use/AbsoluteNihility/guilded-code.css");
+> @import url("https://idkgoodname.github.io/WithinTheCosmos/use/DarkVortex/guilded-code.css");
 > ```
 > **[Fira Code](https://github.com/tonsky/FiraCode) for inline code:**
 > ```css

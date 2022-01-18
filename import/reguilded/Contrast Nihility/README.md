@@ -16,3 +16,7 @@ There is also `--accent-selection` for selection and `--accent-foreground` to se
 > ```css
 > @import url("https://idkgoodname.github.io/WithinTheCosmos/use/ContrastNihility/guilded-code.css");
 > ```
+> **[Fira Code](https://github.com/tonsky/FiraCode) for inline code:**
+> ```css
+> @import url("https://idkgoodname.github.io/WithinTheCosmos/use/Addons/guilded-firacode.css");
+> ```

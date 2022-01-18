@@ -2,7 +2,7 @@
 
 # Within the Cosmos
 
-Cool-looking theme with multiple colour schemes.
+Space theme with multiple colour schemes!
 
 **Support table:**
 
@@ -14,6 +14,21 @@ Cool-looking theme with multiple colour schemes.
 | Revolt          |           |             |           X            |
 | JetBrains Fleet |           |             |           X            |
 
+**Current available colour schemes:**
+- Absolute Nihility (Guilded)
+  - Contrast Nihility (Guilded)
+- Cold Nebula (Guilded)
+- Dark Vortex (Guilded)
+- Solar Light (Guilded)
+
+**Available additions:**
+- [Fira Code font](https://github.com/tonsky/FiraCode)
+  - **Guilded:**
+
+    ```css
+    @import url("https://idkgoodname.github.io/WithinTheCosmos/use/Addons/guilded-firacode.css");
+    ```
+
 ## Installing this theme
 
 > ### ReGuilded 0.0.4+
@@ -22,25 +37,3 @@ Cool-looking theme with multiple colour schemes.
 > - Go to user settings and then `Themes` settings tab
 > - Press on `Import` themes tab
 > - Click on `Import` button and select extracted folder
-
-## Importing
-
-> ### Guilded
-> **Absolute Nihility:**
-> ```css
-> @import url("https://idkgoodname.github.io/WithinTheCosmos/use/AbsoluteNihility/guilded.css");
-> /* Additional */
-> @import url("https://idkgoodname.github.io/WithinTheCosmos/use/AbsoluteNihility/guilded-code.css");
-> ```
-> **Contrast Nihility:**
-> ```css
-> @import url("https://idkgoodname.github.io/WithinTheCosmos/use/ContrastNihility/guilded.css");
-> /* Additional */
-> @import url("https://idkgoodname.github.io/WithinTheCosmos/use/ContrastNihility/guilded-code.css");
-> ```
-> **Cold Nebula:**
-> ```css
-> @import url("https://idkgoodname.github.io/WithinTheCosmos/use/ColdNebula/guilded.css");
-> /* Additional */
-> @import url("https://idkgoodname.github.io/WithinTheCosmos/use/ColdNebula/guilded-code.css");
-> ```
