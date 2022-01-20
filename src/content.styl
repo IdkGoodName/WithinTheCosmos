@@ -17,6 +17,14 @@ Link()
         @extends $TextThemeDull
     &:hover &:active
         @extends $TextThemeBleached
+SetScrollbar()
+    @extends $Scrollbar
+    &::-webkit-scrollbar-thumb
+        @extends $ScrollbarWebkit
+$Scrollbar
+    scrollbar-color: bar transparent !important
+$ScrollbarWebkit
+    background: bar !important
 
 /*
  * -=- Foreground & Background -=-
@@ -174,6 +182,8 @@ $SetBorderDark-1
 
 $FullBorderTransparent
     border: solid 1px transparent
+$FullBorderTheme
+    border: solid 1px var(--accent-0)
 $SetBorderTheme
     border-color: var(--accent-0)
 $SetBorderThemeDull

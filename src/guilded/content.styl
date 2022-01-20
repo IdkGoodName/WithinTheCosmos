@@ -112,6 +112,7 @@
 // Code block in Markdown plain text
 .PrismTokenCodeBlockRenderer-container
     @extends $Panel-5
+    SetScrollbar()
     // Make sure Markdown code block also gets it
     code
         font-family: 'Courier', monospace
@@ -351,6 +352,7 @@
 // Form
 .FormsRenderer
     @extends $RadiusSmall
+    SetScrollable()
     &-selected
         border-color: var(--accent-selection)
 .CustomFormWrapper-container-standalone
@@ -388,6 +390,11 @@
 // Forum editor
 .Editor-container
     @extends $ContentBordered-1
+
+.SlateEditor
+    &-container-type-reaction &-editor,
+    &-container-type-simple &-editor
+        SetScrollbar()
 
 // Chat input
 .ChatChannelInput-container .ChatChannelInput-editor,
@@ -585,6 +592,7 @@
         @extends $FakeMention
 .TypeaheadMenu-list
     padding: spacing-0
+    SetScrollbar()
 
 // Template parameter icon
 .TemplateParameterMenuItem-icon

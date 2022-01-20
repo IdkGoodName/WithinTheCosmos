@@ -98,6 +98,7 @@
         border-color: border-light-2
         color: fg-2
         transition(border-color)
+        SetScrollbar()
         // Big form input hover
         &:hover
             @extends $SetBorderLight-3
@@ -174,13 +175,13 @@
 
 .SwitchInput
     &-container
-        width: 34px
-        height: 17px
+        width: 33.5px
+        height: 16.5px
     // Slider off
     &-container .SwitchInput-slide
         @extends $PanelBad
-        width: 34px
-        height: 17px
+        width: 33.5px
+        height: 16.5px
         border-radius: 10px
         flex-shrink: 0
     // Slider on
@@ -191,8 +192,8 @@
         @extends $Panel-2
         top: 2px
         left: 2px
-        width: 13px
-        height: 13px
+        width: 12.5px
+        height: 12.5px
         // Disabled
         .SwitchInput-container-disabled &
             @extends $Panel-4
@@ -331,6 +332,17 @@ $CheckboxCheck
         @extends $ContentGlare
     &-container-selected
         @extends $Panel-4
+    // Channel selection
+    &-icon
+        @extends $SvgDark
+    &-container:hover
+        @extend $SvgMedium
+    &-container-selected &-icon
+        @extend $SvgTheme
+    &-container-selection-border.RadioOptionPanel-container-selected
+        @extends $FullBorderTheme
+    &-container-selection-border:not(.RadioOptionPanel-container-selected):hover
+        @extend $SetBorderLight-0
 
 .CheckboxPanel
     &-container
@@ -394,11 +406,14 @@ $CheckboxCheck
         @extends $OverrideContentMildlyBordered-4
 
 // Form selector focused
-.GuildedSelect-container.GuildedSelect-container-dark .Select.is-focused
-    .Select-control
-        border: solid 1px var(--accent-2) !important
-    .Select-arrow
-        border-top-color: var(--accent-2) !important
+.GuildedSelect-container.GuildedSelect-container-dark
+    .Select-menu-outer .Select-menu
+        SetScrollbar()
+    .Select.is-focused
+        .Select-control
+            border: solid 1px var(--accent-2) !important
+        .Select-arrow
+            border-top-color: var(--accent-2) !important
 
 // Form selector icon
 .GuildedSelectIcon-container

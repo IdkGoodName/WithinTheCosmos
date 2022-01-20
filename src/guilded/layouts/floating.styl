@@ -240,6 +240,8 @@
     // Emote picker content
     &-content
         @extends $Panel-2
+    &-content, &-list
+        SetScrollbar()
     // Emote icon
     &Icon-container
         @extends $FullBorderTransparent
@@ -253,6 +255,7 @@
     // Top bar
     &Navbar-container
         @extends $OverrideContentBordered-3
+        SetScrollbar()
 
     // Emote name in grid
     &-section-label

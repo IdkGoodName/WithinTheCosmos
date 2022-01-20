@@ -82,8 +82,11 @@
     @extends $SvgLight
 
 // Games selected
-.ItemChooser-info
-    @extends $TextDark
+.ItemChooser
+    &-info
+        @extends $TextDark
+    &-items-wrapper-scrollable
+        SetScrollbar()
 // Game
 .ItemChooserItemWrapper-container
     @extends $OverridePanelBordered-2
@@ -226,6 +229,8 @@
     &-container
         background-color: bg-3
         color: fg-1
+    &-results-container
+        SetScrollbar()
     &Footer-container
         @extends $Panel-4
 // Channel switcher channel

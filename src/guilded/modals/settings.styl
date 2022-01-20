@@ -15,8 +15,11 @@
     padding: 0 spacing-2
 
 // Tabs
-.OptionsMenu-container-desktop .OptionsMenu-options-control
-    @extends $Panel-5
+.OptionsMenu
+    &-container-desktop .OptionsMenu-options-control
+        @extends $Panel-5
+    &-option-content
+        SetScrollbar()
 // Tab section header
 .DesktopOptionsControlOptionHeader-container
     padding: 0 20px
