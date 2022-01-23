@@ -93,10 +93,14 @@
             transition(border-radius, bounce)
         .GroupSelector-add-group:hover &
             @extends $RadiusSmall
+    &-container.InlineAddItemControl-container-desktop:hover &-add-icon
+        @extends $SvgLight
     // Server list add text
     &-name
         transition(color)
         @extends $TextMedium
+    &-container.InlineAddItemControl-container-desktop:hover &-name
+        @extends $TextLight
 // Server list add
 .InlineAddItemControl-container
     --inline-add-icon-background-color: bg-3
@@ -115,9 +119,10 @@
  */
 
 // Server list hovered server
-.NavV4SelectorRow-container::after
-    @extends $ContentGlare
-    transition(opacity)
+.NavV4SelectorRow
+    &-container::after
+        @extends $ContentGlare
+        transition(opacity)
 // Server list selected server
 .NavSelectorItem-container-active .NavSelectorItem-contents::after
     @extends $SetBorderLight-2
@@ -137,6 +142,13 @@
     // Server list favourite hover
     &:hover
         @extends $SvgLight
+
+// Server list item content
+.NavV4TeamSelectorRow
+    &-team-name
+        @extends $TextMedium
+    &-member-count
+        @extends $TextDark
 
 /*
  * -=- Search -=-
@@ -275,7 +287,7 @@ body
 .LoggedInUserStatus
     // User card's status
     &-content-with-status, &-container
-        @extends $TextDark
+        color: fg-1
         transition(color)
         // Hover
         &:hover
@@ -379,8 +391,6 @@ body
 
 // Screen header icon
 .ScreenHeader-icon,
-.TeamNavSectionItem-icon,
-.ChannelIcon-icon-primary,
 .TeamChannelItemContents-action-icon,
 .ScreenHeader-icon-wrapper-size-lg .ScreenHeader-icon
     @extends $SvgDark
@@ -411,54 +421,117 @@ body
 .ChannelHeaderMoreOptionsMenu-header
     @extends $TextDark
 
-// Channel card
-.TeamChannelItemContents-container-channel-content .TeamChannelItemContents-name,
-.TeamChannelItemContents-container:not(.TeamChannelItemContents-container-selected):hover .TeamChannelItemContents-name
-    @extends $TextMedium
-// Channel
-.TeamChannelItemContents-container,
-.TeamNavSectionItem-container
+.ChannelListHeader-container-type-category .ChannelListHeader-text
+    @extends $TextDark
+
+$ChannelHoverGlare
+    background-color: bg-hover
+    transition(opacity)
+ChannelNormal()
     @extends $FullBorderTransparent
-    // Channel hovered
+    transition-multiple(background-color, border-color)
     &::after
-        background-color: bg-hover
-        transition(opacity)
-// Channel selected
-// Because transparent border overrides it otherwise
-.TeamChannelItemContents-container.TeamChannelItemContents-container-selected,
-.TeamNavSectionItem-container.TeamNavSectionItem-container-selected
+        @extends $ChannelHoverGlare
+ChannelContent(className, textPlaceholder, svgPlaceholder)
+    .ChannelIcon-icon-primary,
+    .ChannelIcon-icon-secondary,
+    {className}-icon
+        @extends {svgPlaceholder}
+    {className}-name
+        @extends {textPlaceholder}
+ChannelSelected()
     @extends $ContentMildlyBordered-2
     transition(background-color, border-color)
-.TeamChannelItemContents-container-selected
-    .TeamChannelItemContents-icon
-        @extend $SvgLight
-    .TeamChannelItemContents-name
-        @extend $TextLight
-// Unread channel
-.TeamChannelItemContents-container-unread
-    .TeamChannelItemContents-name
-        color: mix(mark, fg-2, 35%)
-    .ChannelIcon-icon-primary,
-    .ChannelIcon-icon-background
-        fill: shade(mix(mark, fg-2, 35%), 20%)
-// Unread hovered channel
-.TeamChannelItemContents-container.TeamChannelItemContents-container-unread:hover
-    .TeamChannelItemContents-name
-        color: mix(mark, fg-2, 15%)
-    .ChannelIcon-icon-primary,
-    .ChannelIcon-icon-background
-        fill: shade(mix(mark, fg-2, 15%), 20%)
+ChannelSelectedContent()
+    &-container-selected &-icon
+        @extends $SvgLight
+    &-container-selected
+        .ChannelIcon-icon-primary,
+        .ChannelIcon-icon-secondary
+            @extends $SvgLight
+    &-container-selected &-name
+        @extends $TextLight
+
+SetChannel(className)
+    ChannelSelectedContent()
+    &-container
+        ChannelNormal()
+        ChannelContent(className, "$TextDark", "$SvgDark")
+
+    &-name
+        transition(color)
+    &-icon
+        transition(fill)
+    &-container-selected
+        ChannelSelected()
+    &-container:not(&-container-selected):hover
+        ChannelContent(className, "$TextMedium", "$SvgMedium")
+// Sections
+.TeamNavSectionItem
+    SetChannel(".TeamNavSectionItem")
+// Channel
+.TeamChannelItemContents
+    SetChannel(".TeamChannelItemContents")
+    // Unread
+    &-container-unread
+        .TeamChannelItemContents-name
+            color: mix(mark, fg-2, 35%)
+        .ChannelIcon-icon-primary,
+        .ChannelIcon-icon-secondary
+            fill: shade(mix(mark, fg-2, 35%), 20%)
+    // Unread hover
+    &-container-unread:hover
+        .TeamChannelItemContents-name
+            color: mix(mark, fg-2, 15%)
+        .ChannelIcon-icon-primary,
+        .ChannelIcon-icon-secondary
+            fill: shade(mix(mark, fg-2, 15%), 20%)
+
+.ChannelIcon-icon-primary,
 .ChannelIcon-icon-secondary
-    fill: fg-1
-// Sub-icon/global icon
+    transition(fill)
+    @extends $SvgDark
+// Sub-icon background
 .ChannelIcon-icon-selected .ChannelIcon-icon-background,
 .ChannelIcon-icon-background
     background-color: bg-0
-// Selected channel icons
-.ChannelIcon-icon-selected,
-.ChannelIcon-icon-selected .ChannelIcon-icon,
-.TeamNavSectionItem-container-selected .TeamNavSectionItem-icon
-    @extends $FontLight
+
+// // Channel card
+// .TeamChannelItemContents-container-channel-content .TeamChannelItemContents-name,
+// .TeamChannelItemContents-container:not(.TeamChannelItemContents-container-selected):hover .TeamChannelItemContents-name
+//     @extends $TextMedium
+// // Channel
+// .TeamChannelItemContents-container,
+// .TeamNavSectionItem-container
+//     @extends $FullBorderTransparent
+//     // Channel hovered
+//     &::after
+//         background-color: bg-hover
+//         transition(opacity)
+// // Channel selected
+// // Because transparent border overrides it otherwise
+// .TeamChannelItemContents-container.TeamChannelItemContents-container-selected,
+// .TeamNavSectionItem-container.TeamNavSectionItem-container-selected
+//     @extends $ContentMildlyBordered-2
+//     transition(background-color, border-color)
+// .TeamChannelItemContents-container-selected
+//     .TeamChannelItemContents-icon
+//         @extend $SvgLight
+//     .TeamChannelItemContents-name
+//         @extend $TextLight
+// // Unread hovered channel
+// .TeamChannelItemContents-container.TeamChannelItemContents-container-unread:hover
+// .ChannelIcon-icon-secondary
+//     fill: fg-1
+// // Sub-icon/global icon
+// .ChannelIcon-icon-selected .ChannelIcon-icon-background,
+// .ChannelIcon-icon-background
+//     background-color: bg-0
+// // Selected channel icons
+// .ChannelIcon-icon-selected,
+// .ChannelIcon-icon-selected .ChannelIcon-icon,
+// .TeamNavSectionItem-container-selected .TeamNavSectionItem-icon
+//     @extends $FontLight
 
 // Invite others
 .ChannelUpsell-container

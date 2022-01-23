@@ -7,6 +7,7 @@ font-color(colour)
 
 // For setting transition in a lot of places
 transition(prop, fn = ease-out)
-    transition-property: prop
-    transition-duration: transition
-    transition-timing-function: fn
+    transition: prop $transition-period fn
+transition-multiple()
+    transition: $transition-period ease-out
+    transition-property: arguments

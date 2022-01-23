@@ -67,14 +67,25 @@
         @extends $Panel-4
         border: solid 2px border-dark-1
         opacity: floating-opacity
-    // Arrow/Pointer
+    // Pointer
     &-arrow
         @extends $Panel-5
+
+    &-text,
+    &-container-ephemeral &-text
+        @extends $TextMedium
 
 // Keybinds
 .Glyph-container
     background-color: bg-5
     color: fg-2
+
+// Reaction tooltip
+.ReactionTooltip
+    &-container
+        @extends $TextMedium
+    &-count, &-reaction-name
+        @extends $TextLight
 
 /*
  * -=- Reactions -=-
@@ -135,7 +146,7 @@
 .TeamRoleCardOverlay-container,
 // Profile card's background
 .ProfileHoverCardV2Overlay-container
-    @extends $Panel-0
+    @extends $ContentMildlyBordered-0
 
 // Section's header
 .UserAttributionDisplay-header,
@@ -161,7 +172,7 @@
 // Background for buttons
 .TeamRoleCardOverlay-menu,
 .ProfileHoverCardV2Overlay-action-menu
-    @extends $Panel-2
+    @extends $Panel-0
 
 /*
  * --- Menu ---

@@ -565,6 +565,8 @@ button-typed-hollow(border-colour, text-colour)
     .FormConfirmButtonV2-button-content
         font-color(text-colour)
 
+blue-glow = tint($blue, 20%)
+
 .FormConfirmButtonV2
     // Gilded button
     &-container.FormConfirmButtonV2-container-type-gilded
@@ -604,6 +606,20 @@ button-typed-hollow(border-colour, text-colour)
     &-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-success:hover
         button-typed(alpha(good-0, 0.25), good-1)
 
+    // White button
+    &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-white,
+    &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-whiteBg
+        button-typed(alpha(fg-3, 0.15), fg-3)
+    &-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-white:hover,
+    &-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-whiteBg:hover
+        button-typed(alpha(fg-3, 0.25), fg-3)
+
+    // Stripe button
+    &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-stripe
+        button-typed(alpha($blue, 0.15), $blue)
+    &-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-stripe:hover
+        button-typed(alpha($blue, 0.25), blue-glow)
+
     // Delete hollow
     &-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-delete
         button-typed-hollow(bad-0, bad-0)
@@ -616,11 +632,17 @@ button-typed-hollow(border-colour, text-colour)
     &-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-success:hover
         button-typed-hollow(good-1, good-1)
 
-    // Normal hollow
+    // Bleached hollow
     &-container.FormConfirmButtonV2-container-type-bleached
         button-typed-hollow(border-light-2, normal-0)
     &-container-desktop.FormConfirmButtonV2-container-type-bleached.FormConfirmButtonV2-container-hollow:hover
         button-typed-hollow(border-light-2, normal-1)
+
+    // Monochrome hollow
+    &-container.FormConfirmButtonV2-container-type-monochrome
+        button-typed-hollow(fg-3, fg-3)
+    &-container-desktop.FormConfirmButtonV2-container-type-monochroem.FormConfirmButtonV2-container-hollow:hover
+        button-typed-hollow(white, white)
 
     // Disabled
     &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled,

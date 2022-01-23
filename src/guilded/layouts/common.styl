@@ -228,6 +228,10 @@ BannerWithButtonType(toExtend, colour)
             @extends $SvgMedium
         &-selected .SimpleIconTabMenuHeaderItem-icon
             @extends $SvgLight
+.HorizontalTab-container
+    &:hover, &:active, &:focus
+        .HorizontalTab-tab-text
+            @extends $TextLight
 // Tab highlighter
 .SimpleIconTabMenuHeaderItem-container-selected::after,
 .HorizontalTab-highlighter
