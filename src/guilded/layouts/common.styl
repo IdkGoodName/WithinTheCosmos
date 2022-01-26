@@ -130,6 +130,33 @@ BannerWithButtonType(toExtend, colour)
         @extends $TextLight
     &-subtext
         @extends $TextDark
+// SVGs
+.SVGIconWithTooltip
+    &-container
+        @extends $SvgDark
+        // Normal clickable
+        &-clickable:hover
+            @extends $SvgLight
+            .SVGIconWithTooltip-icon
+                @extends $SvgLight
+            .SVGIconWithTooltip-inline-text
+                @extends $TextLight
+        // Buttons
+        &-flavor-hover-bleach
+            @extends $Panel-4
+            .SVGIconWithTooltip-icon
+                @extends $SvgDark
+            .SVGIconWithTooltip-inline-text
+                @extends $TextDark
+            &:hover .SVGIconWithTooltip-icon
+                @extends $SvgMedium
+            &:hover .SVGIconWithTooltip-inline-text
+                @extends $TextMedium
+        // Delete
+        &-flavor-filled-remove
+            @extends $PanelBad
+            .SVGIcon-icon
+                fill: black
 
 // Link/Hyperlink
 .MediaUploaderDropImageInstructions-browse-link,
@@ -266,8 +293,7 @@ BannerWithButtonType(toExtend, colour)
 .NavV4SelectorRow-container-unread,
 .TeamPostRow-container-unread,
 .NavV4ItemIcon-icon-unread
-    &::before
-        background-color: mark
+    SetNotification()
 
 /*
  * -=- Badges -=-

@@ -277,11 +277,14 @@
 $CheckboxUnchecked
     @extends $SetBorderLight-2
 $CheckboxUncheckedHover
-    @extends $SetBorderThemeDull
+    border-color: var(--accent-1)
+    background-color: var(--accent-transparent)
 $CheckboxChecked
-    @extends $PanelTheme
+    background-color: var(--accent-0)
+    border-color: var(--accent-1)
 $CheckboxCheckedHover
-    @extends $SetBorderThemeDull
+    background-color: var(--accent-1)
+    border-color: var(--accent-2)
 $CheckboxCheck
     fill: var(--accent-foreground)
 
@@ -290,9 +293,26 @@ $CheckboxCheck
 .CheckboxV2
     &-checkmark
         @extends $CheckboxCheck
+        // Make it actual radio
+        .RadioOptionPanel-container &,
+        .RadioInput-container &
+            fill: transparent
+            width: 10px
+            height: 10px
+            background-color: var(--accent-foreground)
+            border-radius: 50%
+            // Align to center horizontally
+            transform: none
+            display: inline-block
+            margin: 0 auto
     // Checkmark box
     &-box
         @extends $CheckboxUnchecked
+        // Align it center vertically in radio
+        .RadioOptionPanel-container &,
+        .RadioInput-container &
+            display: flex
+            align-items: center
     &-box:not(&-box-circular)
         @extends $RadiusSmall
     &-container-desktop:hover &-box
@@ -357,15 +377,28 @@ $CheckboxCheck
         @extends $Panel-3
 
     // Checkmark
-    &-container-clickable:hover, &-container-clickable:hover
+    &-container-clickable:hover
         .CheckmarkIcon-circle
             @extends $CheckboxUncheckedHover
 
 .CheckmarkIcon
     &-circle
         @extends $CheckboxUnchecked
-    &-container-selected &-circle
-        @extends $CheckboxChecked
+    &-container-clickable:hover
+        .CheckmarkIcon-circle
+            @extends $CheckboxUncheckedHover
+        .CheckmarkIcon-icon
+            @extends $CheckboxCheck
+    &-container-selected
+        .CheckmarkIcon-circle
+            @extends $CheckboxChecked
+        .CheckmarkIcon-icon
+            @extends $CheckboxCheck
+    &-container-clickable:hover.CheckmarkIcon-container-selected
+        .CheckmarkIcon-circle
+            @extends $CheckboxCheckedHover
+        .CheckmarkIcon-icon
+            @extends $CheckboxCheck
 
 // --- SELECTION DROPDOWN ---
 
@@ -514,7 +547,9 @@ $CheckboxCheck
 // Video volume knob
 .SliderKnob-container
     background-color: bg-1
-    box-shadow: shadow
+    border: solid 2px progress
+    .RangeSlider-knob[style="left: 0%;"] &
+        border-color: fg-1
 
 /*
  * --- Timed ---

@@ -12,10 +12,19 @@
     // Item hover
     &-unfocused::after
         @extends $ContentGlare
-.TeamListItemIndentWrapper-container
-    background-color: transparent
 .TeamListItemWrapper-container
+    @extends $Panel-3
+// Item's indent
+.TeamListItemIndentWrapper-container
     @extends $PanelBordered-3
+    &-unread
+        SetNotification()
+// Item creation
+.TeamListItemsInput-container-new-item
+    @extends $PanelBordered-3
+// Item creation focused
+.TeamListItemsInput-container-new-item.TeamListItemWrapper-container-focused
+    @extends $SetBorderThemeDull
 // Item handle
 .TeamListItemControls-handle
     svg
@@ -75,9 +84,6 @@
     .TeamListItemsCompletedHeader-container:hover &
         @extends $TextMedium
 
-// Editor focused
-.TeamListItemWrapper-container-focused
-    @extends $SetBorderThemeDull
 // Fill background when the list is being dragged
 .ReorderIndentable-blockout
     @extends $Panel-4

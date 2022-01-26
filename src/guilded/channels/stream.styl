@@ -10,27 +10,11 @@
 .StreamChannel-container-stacked .StreamChannel-display
     @extends $SetBorderDark-1
 
-// Streaming button
-.SVGIconWithTooltip-container-flavor-hover-bleach
-    @extends $Panel-4
-    // Streaming button icon
-    .SVGIconWithTooltip-icon
-        @extends $SvgDark
-    // Streaming button icon hover
-    &:hover .SVGIconWithTooltip-icon
-        @extends $SvgMedium
-
 // Join streaming channel
 .StreamsEmptyState-title
     @extends $TextMedium
 .StreamsEmptyState-subtitle
     @extends $TextDark
-
-// Leave streaming channel
-.SVGIconWithTooltip-container-flavor-filled-remove
-    @extends $PanelBad
-    .SVGIcon-icon
-        fill: black
 
 .StreamDisplayActionButton-container
     // Mini buttons

@@ -118,18 +118,37 @@
  * --- Servers and tabs ---
  */
 
-// Server list hovered server
+// Server list server
 .NavV4SelectorRow
-    &-container::after
-        @extends $ContentGlare
-        transition(opacity)
-// Server list selected server
-.NavSelectorItem-container-active .NavSelectorItem-contents::after
-    @extends $SetBorderLight-2
+    &-container
+        local-spacing = spacing-0 - 1px
+        margin: 0 local-spacing
+        @extends $FullBorderTransparent
+        // Hover
+        &::after
+            transition(opacity)
+        &:hover
+            @extends $ContentMildlyBordered-4
+        // Has notifications
+        &-unread
+            &::before
+                @extends $Notification
+                left: -(local-spacing) - 5px
+            .NavV4TeamSelectorRow-team-name
+                color: mark-text
+            &:hover .NavV4TeamSelectorRow-team-name
+                color: mark-text-hover
+    // The ring around the server
+    &-container-icon-outline:hover &-icon-container::after
+        opacity: 0
+    &-container-icon-outline.NavV4SelectorRow-container-active &-icon-container::after
+        border: solid 2px active
+        opacity: 1
 
-// Server list switcher buttons
-.NavV4SelectorRow-svg-icon
-    @extends $SvgMedium
+    // Server list switcher buttons
+    &-svg-icon
+        @extends $SvgMedium
+
 .NavV4TeamSelectorBottomOptionsList-label
     @extends $TextMedium
 // Server list revealer
@@ -248,8 +267,18 @@ body
 .GroupSelectorItem-container
     --avatar-size: icon-size
 
-.NavSelectorItem-container .GroupAvatar-container
-    font-size: 1.2em
+// Groups and legacy nav servers
+.NavSelectorItem
+    &-container .GroupAvatar-container
+        font-size: 1.2em
+    // Don't show it on hovered groups
+    &-container-highlighted:not(&-container-active) &-contents,
+    &-container-desktop:not(&-container-active):hover &-contents
+        &::after
+            opacity: 0
+    // Actual active border
+    &-container-active &-contents::after
+        border: solid 2px alpha(mix(active, fg-0, 50%), 70%)
 
 // Default group icon
 //.GroupAvatar-container-non-base
@@ -475,17 +504,17 @@ SetChannel(className)
     // Unread
     &-container-unread
         .TeamChannelItemContents-name
-            color: mix(mark, fg-2, 35%)
+            color: mark-text
         .ChannelIcon-icon-primary,
         .ChannelIcon-icon-secondary
-            fill: shade(mix(mark, fg-2, 35%), 20%)
+            fill: shade(mark-text, 20%)
     // Unread hover
     &-container-unread:hover
         .TeamChannelItemContents-name
-            color: mix(mark, fg-2, 15%)
+            color: mark-text-hover
         .ChannelIcon-icon-primary,
         .ChannelIcon-icon-secondary
-            fill: shade(mix(mark, fg-2, 15%), 20%)
+            fill: shade(mark-text-hover, 20%)
 
 .ChannelIcon-icon-primary,
 .ChannelIcon-icon-secondary

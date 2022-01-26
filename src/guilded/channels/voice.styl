@@ -16,6 +16,8 @@
     // Voice room
     &-container-interactable
         transition(background)
+    &-container.VoiceChannelGroupHeader-container-active
+        @extends $Panel-3
     // Voice room icon
     &-icon
         @extends $SvgDark
@@ -38,6 +40,14 @@
         &-icon
             @extends $SvgMedium
 
+.VoiceChannelCreateGroupButton
+    &-container:not(&-disabled):hover
+        @extends $Panel-0
+        .VoiceChannelCreateGroupButton-text
+            @extends $TextMedium
+        .VoiceChannelCreateGroupButton-icon
+            @extends $SvgMedium
+
 /*
  * --- Labels ---
  */
@@ -52,7 +62,7 @@
 
 // Max user count
 .LimitLabel-limit
-    @extends $TextDark
+    color: fg-1
 
 /*
  * --- Voice settings ---
@@ -122,10 +132,6 @@
     background-color: bg-1
     fill: fg-2
 
-// Voice header toggle button hover
-.SVGIconWithTooltip-container-clickable:hover
-    @extends $SvgLight
-
 // Voice participant list
 .VoiceConnectionDisplayPanelContents-participants
     @extends $Panel-4
@@ -142,10 +148,6 @@
 // Voice participants icon
 .VoiceConnectionDisplayParticipants-participants-icon
     @extends $SvgDarker
-
-// Invite icon
-.SVGIconWithTooltip-container
-    @extends $SvgDark
 
 // Connection
 .VoiceConnectionDisplayInfo

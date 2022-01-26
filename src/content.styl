@@ -1,12 +1,21 @@
 @require "./variables"
 @require "./set"
 
+mark-text = mix(mark, fg-2, 35%)
+mark-text-hover = mix(mark, fg-2, 15%)
+
 /*
  * -=- Content -=-
  */
 
 $ContentGlare
     background-color: bg-hover
+
+SetNotification()
+    &::before
+        @extends $Notification
+$Notification
+    background-color: mark
 
 BasicLink()
     @extends $TextThemeDull
@@ -369,7 +378,7 @@ $OverrideContentBordered-darker
 $ContentMildlyBordered-0
     background-color: bg-5
     border: solid 1px border-light-0
-$ContentMildlyBordered-2
+$ContentMildlyBordered-1
     background-color: bg-4
     border: solid 1px border-light-0
 $ContentMildlyBordered-2
@@ -410,7 +419,7 @@ $OverrideContentMildlyBordered-5
 
 PanelType(colour)
     background-color: bg-1
-    border: solid 2px alpha(colour, 0.75)
+    border: solid 1px alpha(colour, 0.75)
     color: colour
     fill: colour
 $PanelWarning
