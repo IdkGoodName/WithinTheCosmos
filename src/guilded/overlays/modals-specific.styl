@@ -137,8 +137,7 @@
 
 // Group settings icon
 .AddGroupOverlayDisplay-settings-icon
-    @extends $SvgDark
-    transition(fill)
+    @extends $SvgDarkTransition
     // Group settings hover
     &:hover
         @extends $SvgMedium
@@ -300,8 +299,7 @@
             @extends $ContentGlare
     // Date
     &-subtitle
-        @extends $TextDark
-        transition(color)
+        @extends $TextDarkTransition
     &-container:hover &-subtitle
         @extends $TextLight
 // Individual response container

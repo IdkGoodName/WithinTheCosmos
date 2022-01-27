@@ -21,7 +21,7 @@
             @extends $TextMedium
     // Event creation
     &Day-container-desktop.FullSizedCalendarDay-container-can-create
-        transition(background-color)
+        @extends $TransitionBackground
         &:hover
             background-color: bg-6
     &Day-new-event-icon
@@ -34,7 +34,7 @@
         color: fg-0
         // Don't make text stand out
         .FullSizedCalendarDayHeader-date
-            color: fg-0
+            @extends $TextDarker
     &Day-container-today
         background-color: bg-6
         // Highlight the date

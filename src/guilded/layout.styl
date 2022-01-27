@@ -1,46 +1,52 @@
 @require "../variables"
 @require "../content"
 
-@require "./layouts/app"
+@require "./layouts/navigation"
+@require "./layouts/team"
 @require "./layouts/common"
 @require "./layouts/draggables"
 @require "./layouts/floating"
 @require "./layouts/forms"
 @require "./layouts/pages"
 
-@require "./modals/all"
-@require "./modals/others"
-@require "./modals/settings"
+@require "./overlays/modals"
+@require "./overlays/floating"
+@require "./overlays/settings"
+@require "./overlays/modals-specific"
 
 /*
- * -=- Misc -=-
+ * -=- Titlebars -=-
  */
 
-/*
- * --- Upload ---
- */
-
-// Upload image
-.ImageUploaderButton
-    // Container
+.WindowsTitleBar
     &-container
-        @extends $PanelBordered-4
-        // Hover
-        &::after
-            @extends $ContentGlare
-    // Icon
-    &-icon
-        @extends $SvgMedium
-    // Text
-    &-text
-        @extends $TextMedium
-
-.CreateGroupOverlayWrapper-upload-avatar
-    @extends $PanelBordered-4
-    .SVGIcon-icon
-        @extends $SvgMedium
-    &:hover
-        @extends $Panel-2
+        @extends $Panel-5
+    // Title
+    &-logo
+        .LogoAndWordmarkV2-container
+            fill: var(--accent-0)
+            opacity: 50%
+    // Buttons
+    &-maximize-button
+        .WindowsTitleBar-button-content
+            border-color: fg-0
+        &:hover .WindowsTitleBar-button-content
+            border-color: fg-2
+    &-minimize-button
+        .WindowsTitleBar-button-content
+            background-color: fg-0
+        &:hover .WindowsTitleBar-button-content
+            background-color: fg-2
+    &-button:hover
+        @extends $Panel-3
+    &-close-button
+        &:hover
+            @extends $Panel-3
+        // Icon
+        .WindowsTitleBar-button-content
+            @extends $SvgDarker
+        &:hover .WindowsTitleBar-button-content
+            @extends $SvgBadHighlight
 
 /*
  * -=- Widget -=-

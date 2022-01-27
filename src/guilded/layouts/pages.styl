@@ -59,8 +59,7 @@
 
 // Game overview arrow
 .OverviewPageWidgetHeader-container-desktop .OverviewPageWidgetHeader-link-icon
-    @extends $SvgDark
-    transition(fill)
+    @extends $SvgDarkTransition
     // Game overview arrow hovered
     &:hover
         @extends $SvgMedium
@@ -104,22 +103,23 @@
 
 // Game
 .PlayerAliasCard-container-type-game
-    @extends $Panel-4
+    @extends $Panel-3
 // Game border
 .CardWrapper-container:not(.CardWrapper-container-highlighted)::after
-    @extends $SetBorderDark-1
+    @extends $SetBorderLight-1
 // Game header
 .PlayerCard
-    // Container
     &-container
         @extends $PanelTransparent
     // Game's name
     &GameInfo-name
         @extends $TextLight
+    &-banner
+        opacity: 0.4
+
 // Game header player's name
 .GameAliasDisplay-container
-    @extends $TextDark
-    transition(color)
+    @extends $TextDarkTransition
     // Name hover
     &:hover
         @extends $TextThemeBleached
@@ -283,13 +283,12 @@
 
 // Find a server tabs
 .IconNavMenuButton-icon
-    @extends $SvgDark
-    transition(fill)
+    @extends $SvgDarkTransition
     .IconNavMenuButton-container-desktop:hover &
         @extends $SvgMedium
 // Find a server tabs containers
 .IconNavMenuButton-container
-    transition(color)
+    @extends $TransitionColour
     &, &:visited, &:active, &:focus
         @extends $TextDark
     &:hover
@@ -329,8 +328,7 @@
     &-title
         @extends $TextLight
     &-metas-time
-        @extends $TextDark
-        transition(color)
+        @extends $TextDarkTransition
         .ContentCard-container:hover &
             @extends $TextLight
 

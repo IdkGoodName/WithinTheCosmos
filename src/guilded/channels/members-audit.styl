@@ -23,7 +23,7 @@
     &-checkmark-icon
         @extends $SvgTheme
     &-container-selectable::after
-        border-color: var(--accent-0)
+        @extends $SetBorderTheme
 // Selected sorting
 .ItemManagerColumnHeader-container-sortable.ItemManagerColumnHeader-active
     @extends $TextTheme
@@ -37,8 +37,7 @@
 
 // Filter icon
 .ItemManagerFilterButton-icon
-    @extends $SvgDark
-    transition(fill)
+    @extends $SvgDarkTransition
 
 .ItemManagerFilterButton-container
     // Filter icon hover

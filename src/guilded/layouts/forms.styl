@@ -1,6 +1,7 @@
 @require "../../variables"
 @require "../../set"
 @require "../../content"
+@require "../guilded-variables"
 
 /*
  * --=======================--
@@ -274,20 +275,6 @@
  * --- Option-based ---
  */
 
-$CheckboxUnchecked
-    @extends $SetBorderLight-2
-$CheckboxUncheckedHover
-    border-color: var(--accent-1)
-    background-color: var(--accent-transparent)
-$CheckboxChecked
-    background-color: var(--accent-0)
-    border-color: var(--accent-1)
-$CheckboxCheckedHover
-    background-color: var(--accent-1)
-    border-color: var(--accent-2)
-$CheckboxCheck
-    fill: var(--accent-foreground)
-
 // --- CHECKBOX & CHECKBOX RADIO ---
 
 .CheckboxV2
@@ -325,7 +312,7 @@ $CheckboxCheck
     &-label-wrapper
         @extends $TextBad
     &-label
-        transition(color)
+        @extends $TransitionColour
     &-container-desktop:hover &-label
         @extends $TextBad
     &-container-checked &-label
@@ -380,25 +367,6 @@ $CheckboxCheck
     &-container-clickable:hover
         .CheckmarkIcon-circle
             @extends $CheckboxUncheckedHover
-
-.CheckmarkIcon
-    &-circle
-        @extends $CheckboxUnchecked
-    &-container-clickable:hover
-        .CheckmarkIcon-circle
-            @extends $CheckboxUncheckedHover
-        .CheckmarkIcon-icon
-            @extends $CheckboxCheck
-    &-container-selected
-        .CheckmarkIcon-circle
-            @extends $CheckboxChecked
-        .CheckmarkIcon-icon
-            @extends $CheckboxCheck
-    &-container-clickable:hover.CheckmarkIcon-container-selected
-        .CheckmarkIcon-circle
-            @extends $CheckboxCheckedHover
-        .CheckmarkIcon-icon
-            @extends $CheckboxCheck
 
 // --- SELECTION DROPDOWN ---
 
@@ -696,7 +664,6 @@ blue-glow = tint($blue, 20%)
 
 // Selected colour
 .ColorInputOption-container-dot-selected
-    border-color: var(--accent-1)
     @extends $SetBorderThemeDull
 // Colour hover
 .ColorInputOption-container-size-lg .ColorInputOption-container-dot:not(.ColorInputOption-container-dot-selected):hover

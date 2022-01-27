@@ -15,7 +15,7 @@
 .VoiceChannelGroupHeader
     // Voice room
     &-container-interactable
-        transition(background)
+        @extends $TransitionBackground
     &-container.VoiceChannelGroupHeader-container-active
         @extends $Panel-3
     // Voice room icon
@@ -62,7 +62,7 @@
 
 // Max user count
 .LimitLabel-limit
-    color: fg-1
+    @extends $TextDark
 
 /*
  * --- Voice settings ---
@@ -169,6 +169,6 @@
             color: bad-1 !important
         // Transition
         &-icon
-            transition(fill)
+            @extends $TransitionFill
     &-container .GuildedText-container
         transition(color)

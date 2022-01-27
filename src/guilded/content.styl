@@ -17,6 +17,7 @@
 @require "./channels/schedule"
 @require "./channels/stream"
 @require "./channels/voice"
+@require "./channels/content-components"
 
 /*
  * --========================--
@@ -509,8 +510,7 @@
 // Leave a comment/Share
 .ShareContentTrigger-text,
 .ContentMetadataReplyInfo-reply-text
-    @extends $TextDark
-    transition(color)
+    @extends $TextDarkTransition
 
 .ShareContentTrigger-container-desktop:hover .ShareContentTrigger-text,
 .ContentMetadataReplyInfo-repliers:hover .ContentMetadataReplyInfo-reply-text
@@ -519,8 +519,7 @@
 // Leave a comment/Share icon
 .ShareContentTrigger-icon,
 .ContentMetadataReplyInfo-icon
-    @extends $SvgDark
-    transition(fill)
+    @extends $SvgDarkTransition
 
 .ShareContentTrigger-container-desktop:hover .ShareContentTrigger-icon,
 .ContentMetadataReplyInfo-repliers:hover .ContentMetadataReplyInfo-icon
@@ -546,8 +545,7 @@
 .SlateEditor-clear-icon,
 .SlateToolbarIcon-icon,
 .SlateToolbarMenuIcon
-    @extends $SvgDark
-    transition(fill)
+    @extends $SvgDarkTransition
 
 // Hovered over toolbar icon
 .SlateToolbarIcon-wrapper:hover .SlateToolbarIcon-icon,

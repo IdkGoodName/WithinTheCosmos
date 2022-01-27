@@ -193,13 +193,13 @@ BannerWithButtonType(toExtend, colour)
 
 // Message avatar bouncing
 .ChatV2MessageHeader-avatar-wrapper, .ChatV2MessageHeader-avatar
-    transition(border-radius, bounce)
+    @extends $TransitionBounce
 
     .ChatV2Message-header:hover &
         @extends $RadiusSmall
 
 .PlayerCardProfilePicture-avatar
-    transition(border-radius, bounce)
+    @extends $TransitionBounce
 
     // Announcement & forum bouncing
     .TeamWidgetProfileDetails-container:hover &,
@@ -212,7 +212,7 @@ BannerWithButtonType(toExtend, colour)
 // Favourite server bouncing
 .NavV4BadgedItem-image, .NavV4BadgedItem-icon-wrapper
     border-radius: 50%
-    transition(border-radius, bounce)
+    @extends $TransitionBounce
 
     .NavV4BadgedItem-container:hover &
         @extends $RadiusSmall
@@ -223,7 +223,7 @@ BannerWithButtonType(toExtend, colour)
     border-radius: 50%
     // Inside group list
     .GroupSelector-container &
-        transition(border-radius, bounce)
+        @extends $TransitionBounce
     // Group hover
     .GroupSelectorItem-container:hover &,
     // Group selected
@@ -294,68 +294,6 @@ BannerWithButtonType(toExtend, colour)
 .TeamPostRow-container-unread,
 .NavV4ItemIcon-icon-unread
     SetNotification()
-
-/*
- * -=- Badges -=-
- */
-
-.CalloutBadge-container
-    @extends $TextDark
-    background: bg-0 !important
-    border: solid 1px border-light-1 !important
-
-/*
- * --- User badges ---
- */
-
-.UserBadge
-    // // If there is an icon in the badge, remove the name
-    // &-image ~ &-name
-    //     display: none
-    // Override all colours for badges
-    &-container:not(.UserFlairRow-icon)
-        @extends $TextDark
-        background: bg-1 !important
-        border: solid 1px border-light-1 !important
-// [MEMBER]
-.GroupMembershipBadge-container
-   color: verified
-
-/*
- * --- Channel & Settings badges ---
- */
-
-// [BETA] in settings
-.PersistentActionMenuItem-container .CalloutBadge-container,
-// [BETA] in channel list
-.TeamChannelItemContents-label,
-// [BETA] in screen header
-.ScreenHeader-label,
-// [BETA] in channel creation
-.RadiosField-option-details-header-badge
-    color: info
-    background: bg-2 !important
-
-// [LIVE]
-// .TeamChannelItemContents-label-wrapper
-//     .CalloutBadge-container
-//         color: stream
-// Group reorder [DEFAULT]
-.GroupSettingsPanel-name-wrapper .CalloutBadge-container
-    color: $blue
-
-/*
- * --- Tournament badges ---
- */
-
-// Status badge
-.TournamentStatusBadge-container-status
-    &-in-progress, &-unpublished
-        @extends $ContentBordered-5
-    &-in-progress
-        color: active
-    &-unpublished
-        color: waiting
 
 /*
  * -=- Bars -=-

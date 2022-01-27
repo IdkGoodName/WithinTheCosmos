@@ -64,10 +64,10 @@
 .Scrubber-handle
     // Side handle
     &-wrapper &
-        background-color: mark
+        @extends $Notification
     // Side handle hovered over
     &-wrapper:hover &
-        background-color: var(--accent-1)
+        @extends $PanelThemeDull
 
 .ScrubberLabel
     // Side handle label post index/posts count

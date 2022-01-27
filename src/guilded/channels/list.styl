@@ -78,8 +78,7 @@
 
 // X completed
 .TeamListItemsCompletedHeader-count
-    @extends $TextDark
-    transition(color)
+    @extends $TextDarkTransition
     // X completed hover
     .TeamListItemsCompletedHeader-container:hover &
         @extends $TextMedium
@@ -102,8 +101,7 @@
         @extends $TextDarker
     // Timestamp
     &-created-at
-        @extends $TextDark
-        transition(color)
+        @extends $TextDarkTransition
         // Timestamp hover
         &:hover
             @extends $TextMedium
@@ -114,5 +112,4 @@
         @extends $TextMedium
 // Note timestamp
 .ContentMetadataCreationInfo-from-now
-    @extends $TextDark
-    transition(color)
+    @extends $TextDarkTransition

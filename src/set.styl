@@ -5,9 +5,14 @@ font-color(colour)
     color: colour
     fill: colour
 
-// For setting transition in a lot of places
-transition(prop, fn = ease-out)
-    transition: prop $transition-period fn
-transition-multiple()
-    transition: $transition-period ease-out
-    transition-property: arguments
+transition(args..., duration = global-transition-period, fn = ease-out)
+    transition: args duration fn
+
+$TransitionColour
+    transition(color)
+$TransitionFill
+    transition(fill)
+$TransitionBackground
+    transition(background)
+$TransitionBounce
+    transition(border-radius, fn: bounce)

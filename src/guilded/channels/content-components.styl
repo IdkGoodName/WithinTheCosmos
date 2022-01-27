@@ -1,0 +1,218 @@
+@require "../../variables"
+@require "../guilded-variables"
+
+/*
+ * -=- Editor menus -=-
+ */
+
+//---- Emote picker ----//
+
+.ReactionPicker
+    &-container
+        @extends $FullBorderLight-1
+    // Emote picker content
+    &-content
+        @extends $Panel-2
+    &-content, &-list
+        SetScrollbar()
+    // Emote icon
+    &Icon-container
+        @extends $FullBorderTransparent
+        &:hover,
+        &:focus
+            background-color: var(--accent-transparent)
+            border: solid 1px var(--accent-0)
+
+    // Bottom bar
+    &Footer-container,
+    // Top bar
+    &Navbar-container
+        @extends $OverrideContentBordered-3
+
+    // Emote name in grid
+    &-section-label
+        @extends $TextLight
+    // Emote name in footbar
+    &Preview-reaction-name
+        @extends $TextMedium
+    // Emote server title
+    &Preview-team
+        @extends $TextDark
+    // Emote picker tab's icon
+    &NavbarItem-icon
+        @extends $SvgDark
+        .ReactionPickerNavbarItem:hover &
+            @extends $SvgMedium
+        .ReactionPickerNavbarItem-active &
+            @extends $SvgLight
+
+.ReactionPickerNavbarItem-active
+    border-bottom-color: var(--accent-0)
+
+/*
+ * -=- Reactions -=-
+ */
+
+// Reaction normally
+.ReactionPickerButton-container-type-content,
+.ReactionBadge-container-content
+    @extends $ContentMildlyBordered-4
+// Reaction hovered
+.ReactionBadge-container-content:hover,
+.ReactionBadge-container:not(.ReactionBadge-container-disabled):not(.ReactionBadge-container-active):hover .ReactionBadge-container-content
+    @extends $ContentBordered-4
+
+.ReactionPickerButton-container-type-content
+    transition-duration: global-transition-period
+
+    // When reaction is hovered over
+    &:hover
+        @extends $Panel-5
+
+// Text after the reaction button
+.ReactionPickerButton-container-with-label::after
+    @extends $TextDark
+    transition-duration: global-transition-period
+
+// Reaction icon
+.ReactionPickerButton
+    // Normally
+    &-container &-icon
+        @extends $FontMedium
+        transition-duration: global-transition-period
+    // Hover
+    &-container:hover &-icon
+        @extends $FontLight
+// Reaction counter
+.ReactionBadge-container
+    &:not(&-disabled):hover .ReactionBadge-count
+        @extends $TextLight
+    // Active
+    &.ReactionBadge-container-active
+        // Normal active reaction
+        .ReactionBadge-container-content
+            background-color: mix(bg-1, active, 90%)
+            border-color: alpha(active, 0.1)
+            // Active reaction label
+            .ReactionBadge-count
+                color: active
+        // Active reaction hover
+        &.ReactionBadge-container:not(.ReactionBadge-container-disabled):hover .ReactionBadge-container-content
+            background-color: mix(bg-1, active, 95%)
+
+/*
+ * -=- Image Upload -=-
+ */
+
+// Upload image
+.ImageUploaderButton
+    // Container
+    &-container
+        @extends $PanelBordered-4
+        // Hover
+        &::after
+            @extends $ContentGlare
+    // Icon
+    &-icon
+        @extends $SvgMedium
+    // Text
+    &-text
+        @extends $TextMedium
+
+.CreateGroupOverlayWrapper-upload-avatar
+    @extends $PanelBordered-4
+    .SVGIcon-icon
+        @extends $SvgMedium
+    &:hover
+        @extends $Panel-2
+
+/*
+ * -=- List and radio checkmarks -=-
+ */
+
+.CheckmarkIcon
+    &-circle
+        @extends $CheckboxUnchecked
+    &-container-clickable:hover
+        .CheckmarkIcon-circle
+            @extends $CheckboxUncheckedHover
+        .CheckmarkIcon-icon
+            @extends $CheckboxCheck
+    &-container-selected
+        .CheckmarkIcon-circle
+            @extends $CheckboxChecked
+        .CheckmarkIcon-icon
+            @extends $CheckboxCheck
+    &-container-clickable:hover.CheckmarkIcon-container-selected
+        .CheckmarkIcon-circle
+            @extends $CheckboxCheckedHover
+        .CheckmarkIcon-icon
+            @extends $CheckboxCheck
+    // Disabled
+    &-container-disabled
+        .CheckmarkIcon-circle
+            @extends $CheckboxUncheckedDisabled
+        .CheckmarkIcon-icon
+            @extends $CheckboxCheck
+
+/*
+ * -=- Badges -=-
+ */
+
+.CalloutBadge-container
+    @extends $TextDark
+    background: bg-0 !important
+    border: solid 1px border-light-1 !important
+
+/*
+ * --- User badges ---
+ */
+
+.UserBadge
+    // // If there is an icon in the badge, remove the name
+    // &-image ~ &-name
+    //     display: none
+    // Override all colours for badges
+    &-container:not(.UserFlairRow-icon)
+        @extends $TextDark
+        background: bg-1 !important
+        border: solid 1px border-light-1 !important
+// [MEMBER]
+.GroupMembershipBadge-container
+   color: verified
+
+/*
+ * --- Channel & Settings badges ---
+ */
+
+// [BETA] in settings
+.PersistentActionMenuItem-container .CalloutBadge-container,
+// [BETA] in channel list
+.TeamChannelItemContents-label,
+// [BETA] in screen header
+.ScreenHeader-label,
+// [BETA] in channel creation
+.RadiosField-option-details-header-badge
+    color: info
+    background: bg-2 !important
+
+// [LIVE]
+// .TeamChannelItemContents-label-wrapper
+//     .CalloutBadge-container
+//         color: stream
+// Group reorder [DEFAULT]
+.GroupSettingsPanel-name-wrapper .CalloutBadge-container
+    color: $blue
+
+/*
+ * --- Tournament badges ---
+ */
+
+// Status badge
+.TournamentStatusBadge-container-status
+    &-in-progress, &-unpublished
+        @extends $ContentBordered-5
+    &-in-progress
+        color: active
+    &-unpublished
+        color: waiting

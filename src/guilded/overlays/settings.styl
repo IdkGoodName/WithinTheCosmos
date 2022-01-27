@@ -116,7 +116,7 @@
     @extends $PanelTransparent
 .UserCTAPanel-container-style-bordered .UserCTAPanel-contents:not(.UserCTAPanel-container-disabled):hover
     @extends $Panel-4
-    transition(background)
+    @extends $TransitionBackground
 // Flow connection
 .PanelList-option-connector
     @extends $Panel-5
@@ -186,11 +186,9 @@
 // Add role
 .TeamSettingsAddButton
     &-icon
-        @extends $SvgDark
-        transition(fill)
+        @extends $SvgDarkTransition
     &-text
-        @extends $TextDark
-        transition(color)
+        @extends $TextDarkTransition
 // Add role hover
 .TeamSettingsAddButton-container:hover
     // Icon

@@ -1,0 +1,97 @@
+@require "../guilded-variables"
+
+/*
+ * -=- Context Menu -=-
+ */
+
+// Menu container
+.TransientMenu-container-style-default
+    @extends $OverrideContentRoughBordered-4
+
+// Plus menu
+.ContextMenuItem-container
+    &-section-type-rows
+        // Description
+        .ContextMenuItem-body
+            @extends $TextDark
+    &:hover
+        // Description
+        .ContextMenuItem-body
+            @extends $TextMedium
+// Button
+.ContextMenu
+    // Icon
+    &-content
+        @extends $SvgDark
+    // Text
+    &Item-label
+        @extends $TextMedium
+// Menu item
+.ContextMenuItem
+    &-container
+        @extends $FontMedium
+        // Text and icon on hover
+        &:hover
+            // Text
+            .ContextMenuItem-label
+                @extends $TextLight
+            // Icon
+            .ContextMenuIcon-container-icon
+                @extends $SvgLight
+        // Menu item hover glare
+        &::after
+            @extends $ContentGlare
+    // Menu item download app highlighted
+    &-highlighted
+        background-color: transparent
+        fill: important
+        // Text
+        .ContextMenuItem-label
+            color: important
+        // Icon
+        .ContextMenuIcon-container-icon
+            color: important
+
+// Highlighted
+.ContextMenuItem-container.ContextMenuItem-highlighted
+    .ContextMenuItem-icon, .ContextMenuItem-label
+        color: highlight
+        fill: highlight
+
+// Overflow icon
+.ContextMenuTrigger
+    &-container &-icon
+        @extends $SvgDarkTransition
+    &-container-desktop:hover &-icon
+        @extends $SvgMedium
+
+/*
+ * -=- Tooltips -=-
+ */
+
+// Tooltip
+.HoverContextTooltip
+    // Base
+    &-text-wrapper
+        @extends $Panel-4
+        border: solid 2px border-dark-1
+        opacity: floating-opacity
+    // Pointer
+    &-arrow
+        @extends $Panel-5
+
+    &-text,
+    &-container-ephemeral &-text
+        @extends $TextMedium
+
+// Keybinds
+.Glyph-container
+    background-color: bg-5
+    color: fg-2
+
+// Reaction tooltip
+.ReactionTooltip
+    &-container
+        @extends $TextMedium
+    &-count, &-reaction-name
+        @extends $TextLight

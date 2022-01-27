@@ -19,8 +19,7 @@
 
 // Role name
 .TeamWidgetProfileRank-rank-name
-    @extends $TextDark
-    transition(color)
+    @extends $TextDarkTransition
     // Role name hover
     &:hover
         @extends $TextMedium
@@ -36,7 +35,7 @@
         --body-text-color: fg-3
 // Preview text
 .LastReplyDisplayContent-message-summary
-    transition(color)
+    @extends $TransitionColour
 // View more
 .CircleImageStack-label
     @extends $TextDark
