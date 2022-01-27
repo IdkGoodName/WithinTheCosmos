@@ -19,6 +19,11 @@
         "value": "rgba(96, 157, 236, 0.6)",
         "type": "color"
     },
+    "accent-transparent": {
+        "name": "Accent (Almost Transparent)",
+        "value": "rgba(96, 157, 236, 0.15)",
+        "type": "color"
+    },
     "accent-foreground": {
         "name": "Foreground on accented panels",
         "value": "#fff",
