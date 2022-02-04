@@ -1,6 +1,9 @@
-[![Banner](https://raw.githubusercontent.com/IdkGoodName/WithinTheCosmos/main/assets/banner.png)](https://guilded.gg/)
-
-# Within the Cosmos
+<div align="center">
+  <a href="https://guilded.gg/">
+    <img alt="Banner" src="https://raw.githubusercontent.com/IdkGoodName/WithinTheCosmos/main/assets/banner.png">
+  </a>
+  <h1>Within the Cosmos</h1>
+</div>
 
 Space theme with multiple colour schemes!
 

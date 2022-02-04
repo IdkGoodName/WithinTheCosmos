@@ -5,5 +5,7 @@
 
     "author": "R40Mp0Wd",
     "version": "Rolling",
+    "banner": "./CNBanner.png",
+    "images": ["./CNScreenshot0.png", "./CNScreenshot1.png", "./CNScreenshot2.png"],
     "repoUrl": "https://github.com/IdkGoodName/WithinTheSpace"
 }

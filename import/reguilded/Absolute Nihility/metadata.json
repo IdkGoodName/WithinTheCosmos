@@ -5,5 +5,7 @@
 
     "author": "R40Mp0Wd",
     "version": "Rolling",
+    "banner": "./ANBanner.png",
+    "images": ["./ANScreenshot0.png", "./ANScreenshot1.png", "./ANScreenshot2.png"],
     "repoUrl": "https://github.com/IdkGoodName/WithinTheSpace"
 }
