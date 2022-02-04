@@ -5,18 +5,21 @@
  * --- Settings ---
  */
 
-// Highlighted text
-.TeamRecruitmentStatus-status
-    // Open
-    .TeamRecruitmentStatus-container-status-open &
-        @extends $TextGood
-    // Closed
-    .TeamRecruitmentStatus-container-status-closed &
-        @extends $TextBad
+.TeamRecruitmentStatus
+    // Highlighted text
+    &-status
+        // Open
+        .TeamRecruitmentStatus-container-status-open &
+            @extends $TextGood
+        // Closed
+        .TeamRecruitmentStatus-container-status-closed &
+            @extends $TextBad
+    &-toggle
+        @extends $SvgDark
 
 // Application selector wrapper
 .TeamApplicationInlineLink-container
-    @extends $PanelBordered-3
+    @extends $ContentMildlyBordered-3
 
 /*
  * --- View ---

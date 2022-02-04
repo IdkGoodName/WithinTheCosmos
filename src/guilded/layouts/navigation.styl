@@ -56,7 +56,7 @@
         &::after
             transition(opacity)
         &:hover
-            @extends $ContentMildlyBordered-4
+            @extends $FullBorderLight-1
         // Has notifications
         &-unread
             &::before
@@ -139,13 +139,13 @@
 // Server search
 .SearchBarV2-container.SearchBarV2-container-focused,
 .TeamSearchBar-search-bar-input
-    @extends $Panel-0
+    @extends $Panel-1
 // In-server search, emote search
 .SearchBarV2-container-unfocused::after,
 .SearchBarInput-container-bordered,
 .SearchBarV2-container
     border-radius: 10px
-    @extends $OverrideContentBordered-darker
+    @extends $OverrideContentBordered-2
 // Search focused
 .SearchBarV2-container-unfocused::after
     @extends $ContentGlare

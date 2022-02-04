@@ -6,12 +6,23 @@
  */
 
 .TeamPostRow-container
-    @extends $PanelBordered-3
+    @extends $ContentMildlyBordered-2
     &-unread
-        @extends $Panel-4
+        @extends $ContentBordered-2
+        SetNotification()
+        .TeamPostRow-title
+            color: mark-text
+        &:hover .TeamPostRow-title
+            color: mark-text-hover
     // Forum post hover
     &-desktop::after
         @extends $ContentGlare
+
+.TeamForumsThreadsDisplay-list
+    & &-item
+        margin-top: spacing-2
+        &:first-child
+            margin-top: 0
 
 .TeamWidgetCommentCount
     // Comment count icon
@@ -38,7 +49,7 @@
 .TeamThreadPostEditor-container,
 // Forum post
 .TeamThreadPostPanelDisplay-container
-    @extends $PanelBordered-3
+    @extends $ContentMildlyBordered-2
     border-radius: radius-3
     --border-color: bg-1
 

@@ -56,7 +56,7 @@
 
 .OverviewWidgetItemWrapper-container-type-filled,
 .TeamOverviewContentItemCard-container
-    @extends $PanelBordered-3
+    @extends $ContentMildlyBordered-2
     // Content showcase hover
     &::after
         @extends $ContentGlare
@@ -71,10 +71,12 @@
     // Content showcase sub-title
     &-subtitle2
         @extends $TextDark
+    &-container-unread
+        SetNotification()
     &-container-unread &-title
-        color: mark-text
+        @extends $TextMark
     &-container-unread:hover &-title
-        color: mark-text-hover
+        @extends $TextMarkHover
 
 // See all
 .TeamOverviewSectionHeader-cta-text
@@ -101,11 +103,11 @@
 // Carousel blurs
 .CarouselList-container-size-sm .CarouselList-blur-light.CarouselList-left-blur,
 .CarouselList-blur-light.CarouselList-left-blur
-    background-image: linear-gradient(to left, alpha(bg-3, 0), bg-3 100%)
+    background-image: linear-gradient(to left, alpha(bg-1, 0), bg-1 100%)
 
 .CarouselList-container-size-sm .CarouselList-blur-light.CarouselList-right-blur,
 .CarouselList-blur-light.CarouselList-right-blur
-    background-image: linear-gradient(to right, alpha(bg-3, 0), bg-3 100%)
+    background-image: linear-gradient(to right, alpha(bg-1, 0), bg-1 100%)
 
 // Carousel arrow
 .CarouselList-controls-arrow
@@ -114,7 +116,7 @@
 
 // Leaderboard
 .TeamOverviewLeaderboardSection-leaderboard-container
-    @extends $Panel-3
+    @extends $ContentMildlyBordered-2
 // Leaderboard game name
 .GameIconAndGameName-container-style-header .GameIconAndGameName-game-name
     @extends $TextLight

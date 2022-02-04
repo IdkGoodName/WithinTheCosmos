@@ -8,7 +8,7 @@
 
 // Options
 .OptionsMenuPageWrapper-container
-    @extends $Panel-2
+    @extends $PanelTransparent
 
 // Section tabs
 .PersistentActionMenu-menu-section
@@ -17,7 +17,7 @@
 // Tabs
 .OptionsMenu
     &-container-desktop .OptionsMenu-options-control
-        @extends $Panel-5
+        @extends $PanelTransparent
     &-option-content
         SetScrollbar()
 // Tab section header
@@ -47,32 +47,44 @@
             @extends $TextMedium
 
 // Gilded tab
-.DesktopOptionsControlItemTemplate-container-type-gilded .DesktopOptionsControlItemTemplate-label-text
-    color: $gold
+.DesktopOptionsControlItemTemplate
+    &-container-type-gilded &-label-text
+        color: $gold
+    &-container-type-gilded&-container-active &-label-text
+        color: tint($gold, 40%)
 
 /*
  * -=- User settings -=-
  */
 
-// 2FA thing
-.PersistentUpsell-container-flavor-settings
-    @extends $Panel-4
+// 2FA
+.PersistentUpsell
+    &-container-flavor-settings
+        @extends $ContentMildlyBordered-2
+    &-title
+        @extends $TextLight
+    &-subtitle
+        @extends $TextDark
 // Connections/integrations
 .SocialLinkPanel-header
-    @extends $Panel-4
+    @extends $ContentMildlyBordered-2
 .UserSettings
-    // Email settings header
-    &EmailPage-header
-        @extends $TextLight
+    &ConnectionsPage,
+    &SecurityPage,
+    &BillingPage,
+    &EmailPage,
+    &Payments
+        &-header
+            @extends $TextLight
     // User settings subscription info
     &ServerSubscriptionsUpsell-container
-        @extends $PanelBordered-3
+        @extends $ContentMildlyBordered-2
+.UserPrivacySettingsPage-header
+    @extends $TextLight
 // Server to subscribe to
 .ServerSubscriptionBar-container
-    @extends $PanelBordered-3
+    @extends $ContentMildlyBordered-2
 // Payment
-.UserSettingsPayments-header
-    @extends $TextLight
 .UserPaymentsHistory-none,
 .PanelList-container-none
     @extends $TextMedium
@@ -82,6 +94,13 @@
 /*
  * -=- Server Settings -=-
  */
+
+.TeamSettings
+    &IntegrationsPage,
+    &InvitesPage,
+    &RolesList
+        &-header
+            @extends $TextLight
 
 // Channel or category notifications header
 .GuildedTableHeader-column-header-group, .GuildedTableHeader-column-header
@@ -107,7 +126,7 @@
 
 // Content(flow)
 .UserCTAPanel-container
-    @extends $PanelBordered-4
+    @extends $ContentMildlyBordered-2
 // // Content inner(flow)
 // .UserCTAPanel-container-style-bordered
 //     border: 0
@@ -115,11 +134,11 @@
 .UserCTAPanel-container-style-bordered .UserCTAPanel-contents:not(.UserCTAPanel-container-disabled)
     @extends $PanelTransparent
 .UserCTAPanel-container-style-bordered .UserCTAPanel-contents:not(.UserCTAPanel-container-disabled):hover
-    @extends $Panel-4
+    @extends $Panel-2
     @extends $TransitionBackground
 // Flow connection
 .PanelList-option-connector
-    @extends $Panel-5
+    background-color: border-light-1
 // Flow's title
 .PanelInfo-title
     @extends $TextLight
@@ -140,7 +159,7 @@
 
 // Team integrations
 .TeamSettingsAddIntegration-container
-    @extends $Panel-4
+    @extends $ContentMildlyBordered-2
 // Twitch integration
 .TeamSettingsAddIntegration-container-type-twitch .TeamSettingsAddIntegration-icon
     fill: stream
@@ -151,10 +170,10 @@
 
 // Group
 .GroupSettingsPanel-container
-    @extends $Panel-4
+    @extends $ContentMildlyBordered-2
     // Group hover
     &:hover
-        @extends $Panel-5
+        @extends $Panel-1
 // Group gripper
 .GroupSettingsPanel-icon
     @extends $SvgDark
@@ -163,9 +182,24 @@
  * --- Subscriptions ---
  */
 
-// Subscriptions bg
-.ServerSubscriptionsSetupUpsell-content
-    @extends $Panel-0
+.ServerSubscriptionsSetupUpsell
+    // Image
+    &-header
+        filter: guilded-subscriptions-transform
+    // Subscriptions bg
+    &-content
+        @extends $Panel-2
+    // Points
+    &List-icon
+        &-swap
+            fill: $blue
+        &-plus
+            fill: $purple
+        &-currency
+            fill: $green
+        // Info icon
+        &-fees
+            @extends $SvgDark
 // Subscription points
 .GuildedText-container-type-subtextBodyWhite
     @extends $TextMedium
@@ -178,8 +212,10 @@
  */
 
 // Role list item selected
-.TeamSettingsPermissionsItem-container-selected
-    @extends $Panel-0
+.TeamSettingsPermissionsItem-container
+    @extends $FullBorderTransparent
+    &-selected
+        @extends $ContentMildlyBordered-2
 // Role list item hover
 .TeamSettingsPermissionsItem-container-desktop .TeamSettingsPermissionsItem-content::after
     @extends $ContentGlare
@@ -201,7 +237,7 @@
 // Permission syncing
 .TeamChannelRoleSyncControl
     &-container
-        @extends $PanelBordered-3
+        @extends $ContentMildlyBordered-2
     // Syncing text
     &-info
         @extends $TextMedium

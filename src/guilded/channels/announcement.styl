@@ -9,8 +9,10 @@
         @extends $TextMedium
 
 // Unread announcement
-.TeamAnnouncementItem-container-unread .TeamAnnouncementItem-widget-wrapper
-    @extends $Panel-4
+.TeamAnnouncementItem-container-unread
+    SetNotification()
+    .TeamAnnouncementItem-widget-wrapper
+        @extends $ContentBordered-2
 
 /*
  * --- Role label ---
@@ -37,11 +39,14 @@
 .LastReplyDisplayContent-message-summary
     @extends $TransitionColour
 // View more
-.CircleImageStack-label
-    @extends $TextDark
-    // View more hovered over
-    .CircleImageStack-container-actionable:hover &
-        @extends $TextMedium
+.CircleImageStack
+    &-label
+        @extends $TextDark
+        // View more hovered over
+        .CircleImageStack-container-actionable:hover &
+            @extends $TextMedium
+    &-image
+        @extends $Panel-3
 
 .LastReplyDisplay
     // Timestamp

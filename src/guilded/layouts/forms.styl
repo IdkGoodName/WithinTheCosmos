@@ -9,9 +9,26 @@
  * --=======================--
  */
 
+$FormDropdown
+    border: solid 1px transparent
+    border-radius: radius-0
+$FormDropdownFocused
+    @extends $ContentBordered-1
+$FormDropdownActive
+    background-color: bg-4
+    border: solid 1px border-light-1
+    border-left: solid 2px var(--accent-0)
+$FormDropdownActiveFocused
+    background-color: bg-4
+    border: solid 1px border-light-1
+    border-left: solid 2px var(--accent-0)
+
 /*
  * -=- Basic -=-
  */
+
+.Form-header
+    @extends $TextLight
 
 // Section name
 .FormSection-section-header
@@ -35,10 +52,10 @@
 
 // Streamer mode
 .FormSection-container-section-background-inset
-    @extends $PanelBordered-3
+    @extends $ContentMildlyBordered-3
 // Settings account info
 .DefaultReadonlyEditableForm-container
-    @extends $PanelBordered-4
+    @extends $ContentMildlyBordered-3
 
 /*
  * -=- Fields -=-
@@ -93,16 +110,48 @@
     &-valid
         @extends $SvgGood
 
+// Form input with a typeahead
+.TextInputWithLabel
+    &-container-dropdown
+        @extends $ContentBordered-2
+        border-radius: radius-2
+        // Hover
+        &.TextInputWithLabel-container-desktop:hover
+            @extends $SetBorderLight-2
+        // Focused
+        &.TextInputWithLabel-container-focused,
+        &.TextInputWithLabel-container-focused:hover
+            border-color: var(--accent-0) !important
+    &-container-dropdown &-floating-label
+        @extends $TextMedium
+// Form input with a typeahead menu
+.SelectMenu-container
+    @extends $Panel-3
+.SelectMenuItem-container
+    @extends $FormDropdown
+    &-desktop:hover
+        @extends $FormDropdownFocused
+        .SelectMenuItem-label
+            @extends $TextLight
+    &-selected
+        @extends $FormDropdownFocused
+        .SelectMenuItem-label
+            @extends $TextLight
+    // Game selector first item
+    &-border-bottom
+        @extends $SetBorderLight-0
+
 // Big form input
 .TextAreaInput
     &-text-area
-        border-color: border-light-2
+        border-color: border-light-1
+        background-color: bg-3
         color: fg-2
         transition(border-color)
         SetScrollbar()
         // Big form input hover
         &:hover
-            @extends $SetBorderLight-3
+            @extends $SetBorderLight-2
         // Big form input focus
         &:focus
             @extends $SetBorderThemeDull
@@ -117,7 +166,7 @@
     &-circle
         // Background
         &-background
-            stroke: bg-1
+            stroke: bg-0
         // Character count
         &-valid, &-invalid-min
             stroke: good-0
@@ -205,16 +254,19 @@
 .TriStateInputButton-container
     // Types
     &-type
+        &-passThrough
+            border-left: none
+            border-right: none
         // All
         &-on,
         &-passThrough,
         &-off
-            @extends $Panel-5
+            @extends $Panel-3
         // All selected
         &-on.TriStateInputButton-container-selected,
         &-passThrough.TriStateInputButton-container-selected,
         &-off.TriStateInputButton-container-selected
-            @extends $Panel-2
+            @extends $Panel-1
         // Permission allowed
         &-on
             // Icon
@@ -269,7 +321,7 @@
         .TriStateInputButton-icon
             opacity: 0.3
     &-highlighted:not(.TriStateInputButton-container-selected)
-        @extends $Panel-1
+        @extends $Panel-2
 
 /*
  * --- Option-based ---
@@ -334,11 +386,11 @@
         @extends $TextBad
     // Container
     &-container
-        @extends $PanelBordered-3
+        @extends $ContentMildlyBordered-2
     &-container:not(&-container-disabled)::after
         @extends $ContentGlare
     &-container-selected
-        @extends $Panel-4
+        @extends $ContentMildlyBordered-1
     // Channel selection
     &-icon
         @extends $SvgDark
@@ -353,20 +405,26 @@
 
 .CheckboxPanel
     &-container
-        @extends $PanelBordered-3
+        @extends $ContentMildlyBordered-2
     // Hover
     &-container.CheckboxPanel-container-clickable.CheckboxPanel-container-flavor-default:hover
-        @extends $Panel-2
+        @extends $Panel-1
     &-container-selected
-        @extends $Panel-4
+        @extends $Panel-1
     // Selected hover
     &-container-selected.CheckboxPanel-container-clickable.CheckboxPanel-container-flavor-default:hover
-        @extends $Panel-3
+        @extends $Panel-0
 
     // Checkmark
     &-container-clickable:hover
         .CheckmarkIcon-circle
             @extends $CheckboxUncheckedHover
+
+    // Searchable list items
+    &-container&-container-clickable&-container-flavor-transparent:hover::after
+        @extends $ContentGlare
+    &-container-clickable:focus .CheckmarkIcon-circle
+        border: solid 2px var(--accent-1)
 
 // --- SELECTION DROPDOWN ---
 
@@ -376,12 +434,14 @@
         @extends $TextMedium
     // Form selector
     .Select-control
-        border-color: border-light-2 !important
+        border-color: border-light-1 !important
+        background-color: bg-3 !important
         transition(border-color)
     // Form selector hover
     &.GuildedSelect-container-dark:hover .Select .Select-control,
     &:hover .Select .Select-control
-        border-color: border-light-3 !important
+        border-color: border-light-2 !important
+        background-color: bg-3
 
     // Code container stuff
     &-option-color-gray
@@ -412,9 +472,9 @@
         SetScrollbar()
     .Select.is-focused
         .Select-control
-            border: solid 1px var(--accent-2) !important
+            border: solid 1px var(--accent-0) !important
         .Select-arrow
-            border-top-color: var(--accent-2) !important
+            border-top-color: var(--accent-0) !important
 
 // Form selector icon
 .GuildedSelectIcon-container
@@ -423,7 +483,7 @@
 .Select
     // Form selector options
     &-menu
-        @extends $Panel-2
+        @extends $Panel-3
         padding: spacing-1
         border-radius: radius-0
         &-outer
@@ -432,9 +492,8 @@
 
     // Form selector option
     &-option
-        border-radius: radius-0
         @extends $TextMedium
-        border: solid 1px transparent
+        @extends $FormDropdown
         // Normally
         .GuildedSelect-container.GuildedSelect-container-dark &,
         .GuildedSelect-container.GuildedSelect-container-light &
@@ -444,12 +503,10 @@
         .GuildedSelect-container &.is-selected,
         .GuildedSelect-container.GuildedSelect-container-dark &.is-selected,
         .GuildedSelect-container.GuildedSelect-container-light &.is-selected
-            background-color: bg-5
-            border: solid 1px border-light-0
-            border-left: solid 2px var(--accent-0)
+            @extends $FormDropdownActive
         // Focused
         &.is-focused
-            @extends $ContentBordered-0
+            @extends $FormDropdownFocused
             .GuildedSelect-container.GuildedSelect-container-dark &,
             .GuildedSelect-container.GuildedSelect-container-light &
                 @extends $TextLight
@@ -457,14 +514,12 @@
         .GuildedSelect-container &.is-selected.is-focused,
         .GuildedSelect-container.GuildedSelect-container-dark &.is-selected.is-focused,
         .GuildedSelect-container.GuildedSelect-container-light &.is-selected.is-focused
-            background-color: bg-6
-            border: solid 1px border-light-1
-            border-left: solid 2px var(--accent-1)
+            @extends $FormDropdownActiveFocused
     // No results found - code container/blocks
     .GuildedSelect-container.GuildedSelect-container-light &-noresults,
     .GuildedSelect-container.GuildedSelect-container-dark &-noresults,
     &-noresults
-        @extends $Panel-2
+        @extends $Panel-3
     // Label's arrow acitve in editor
     &.is-open > &-control &-arrow
         border-top-color: fg-2
@@ -559,7 +614,7 @@
  */
 
 button-typed(border-colour, text-colour)
-    background: shading-1
+    background: bg-2
     border: solid 1px border-colour
     .FormConfirmButtonV2-button-content
         font-color(text-colour)
@@ -574,7 +629,7 @@ blue-glow = tint($blue, 20%)
     // Gilded button
     &-container.FormConfirmButtonV2-container-type-gilded
         box-shadow: none
-        background: bg-0
+        background: bg-2
         @extends $SetBorderLight-1
     // Gilded button hover
     &-container-desktop.FormConfirmButtonV2-container-filled:hover
@@ -659,18 +714,41 @@ blue-glow = tint($blue, 20%)
     &-container.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-disabled:hover
         button-typed-hollow(fg-0, fg-0)
 /*
- * --- Colours (Role colours) ---
+ * --- Visual ---
  */
 
-// Selected colour
-.ColorInputOption-container-dot-selected
-    @extends $SetBorderThemeDull
-// Colour hover
-.ColorInputOption-container-size-lg .ColorInputOption-container-dot:not(.ColorInputOption-container-dot-selected):hover
-    border-color: fg-0
+// Role colour
+.ColorInputOption
+    // Colour
+    &-container-dot
+        &-selected
+            @extends $SetBorderThemeDull
+    &-container-size-lg &-container-dot
+        border-radius: radius-3
+    &-container-size-sm &-container-dot
+        border-radius: radius-2
+    // Colour hover
+    &-hover-container:hover &-container-dot:not(&-container-dot-selected),
+    &-container-size-lg &-container-dot:not(&-container-dot-selected):hover
+        border-color: border-light-3
+.CustomColorInputOption
+    &-default
+        background: linear-gradient(135deg, var(--accent-0) 0%, var(--accent-2) 100%)
+    &-container
+        border-radius: radius-3
+    &-container &-icon
+        fill: var(--accent-foreground)
+// PFP and banner upload
+.ImageInput
+    &-label
+        @extends $TextMedium
+    &-instructions
+        @extends $TextDark
+
 // Role description
 .TeamRolesListInstructions-container
     @extends $TextDark
+
 
 /*
  * --- Others ---
@@ -682,6 +760,7 @@ blue-glow = tint($blue, 20%)
 
 /*
  * -=- Related -=-
+ */
 
-.DropdownPanel-container
-    @extends $Panel-3
+// .DropdownPanel-container
+//     @extends $Panel-3

@@ -23,7 +23,7 @@
     &-container
         font-color(fg-2)
         background-color: bg-0 !important
-        @extends $SetBorderDark-0
+        @extends $SetBorderLight-2
         // Hover
         &::after
             @extends $ContentGlare
@@ -44,6 +44,7 @@
         &-type-new-mentions
             color: mention !important
             fill: mention !important
+            border-color: alpha(mention, 0.5)
             // New mentions icon
             .ChatChannelAlertBar-icon-click-wrapper .ChatChannelAlertBar-icon
                 fill: mention
@@ -52,6 +53,7 @@
         &-type-unread-messages
             color: active !important
             fill: active !important
+            border-color: alpha(active, 0.5)
             // Unread messages icon
             .ChatChannelAlertBar-icon-click-wrapper .ChatChannelAlertBar-icon
                 fill: active

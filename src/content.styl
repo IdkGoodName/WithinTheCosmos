@@ -1,8 +1,8 @@
 @require "./variables"
 @require "./set"
 
-mark-text = mix(mark, fg-2, 35%)
-mark-text-hover = mix(mark, fg-2, 15%)
+mark-text = mix(mark, fg-2, 45%)
+mark-text-hover = mix(mark, fg-2, 25%)
 
 /*
  * -=- Content -=-
@@ -55,6 +55,10 @@ $TextMediumTransition
 $TextLight
     color: fg-3
 
+$TextMark
+    color: mark-text
+$TextMarkHover
+    color: mark-text-hover
 $TextTheme
     color: var(--accent-0)
 $TextThemeDull
@@ -93,6 +97,10 @@ $SvgMedium
 $SvgLight
     fill: fg-3
 
+$SvgMark
+    fill: shade(mark-text, 20%)
+$SvgMarkHover
+    fill: shade(mark-text-hover, 20%)
 $SvgTheme
     fill: var(--accent-0)
 $SvgThemeDull

@@ -14,7 +14,7 @@
 
 // Profile content
 .UserProfileV3-container
-    @extends $Panel-2
+    @extends $Panel-4
     SetScrollbar()
 
 // Tab header
@@ -64,8 +64,24 @@
     &:hover
         @extends $SvgMedium
 // Game
-.UserGameSummaryCard-container
-    @extends $Panel-4
+.UserGameSummaryCard
+    &-container
+        @extends $Panel-2
+        border-radius: radius-2
+        position: relative
+        z-index: 49
+        &::after
+            content: ""
+            position: absolute
+            top: 0
+            bottom: 0
+            left: 0
+            right: 0
+            border: solid 1px border-light-0
+            border-radius: radius-2
+            z-index: 50
+    &-game-summary
+        border: none
 // Game property
 .UserInfoSummaryItem
     // Label
@@ -78,11 +94,11 @@
 // Post
 .UserProfilePostPanel-container
     @extends $RadiusSmall
-    @extends $PanelBordered-3
+    @extends $ContentMildlyBordered-2
     // Post highlighted(currently all)
     &-highlight
         // Until it gets fixed, remove the highlight
-        border-top: none
+        border-top: solid 1px border-light-0
         //border-top-color: var(--accent-0)
 // Post author's name
 .UserName-container,
@@ -103,10 +119,10 @@
 
 // Game
 .PlayerAliasCard-container-type-game
-    @extends $Panel-3
+    @extends $Panel-2
 // Game border
 .CardWrapper-container:not(.CardWrapper-container-highlighted)::after
-    @extends $SetBorderLight-1
+    @extends $SetBorderLight-0
 // Game header
 .PlayerCard
     &-container
@@ -147,7 +163,7 @@
 
 // A button when hovering over friends
 .FriendsList-actions .FriendList-action-icon
-    @extends $Panel-3
+    @extends $Panel-2
 
 /*
  * -=- DMs -=-
@@ -165,13 +181,14 @@
 .ChatChannelListItem
     &-container
         --border-color: bg-1
+        border: solid 1px transparent
     // Selected DMs
-    &-container-selected
-        @extends $Panel-0
+    &-container&-container-selected
+        @extends $ContentMildlyBordered-2
         --border-color: bg-3
     // Hovered DMs
     &-container:not(&-container-selected):hover
-        @extends $Panel-2
+        @extends $ContentMildlyBordered-3
         --border-color: bg-2
     // Remove DMs crossmark
     &-container:not(&-container-selected):hover &-remove-icon,
@@ -232,14 +249,14 @@
 .TournamentsPortal
     // Container
     &Page-container
-        @extends $Panel-2
+        @extends $Panel-4
         SetScrollbar()
     // Video
     &Header-video-mask
-        background-image: linear-gradient(to bottom, alpha(bg-3, 0.85) 20%, rgba(0, 0, 0, 0) 65%, alpha(bg-3, 0.95))
+        background-image: linear-gradient(to bottom, alpha(bg-1, 0.85) 20%, rgba(0, 0, 0, 0) 65%, alpha(bg-1, 0.95))
 // Tournament card
 .TournamentCard-container
-    @extends $Panel-0
+    @extends $ContentMildlyBordered-2
 // Information icon
 .TournamentSummaryItem
     &-container-size-sm &-icon
@@ -272,7 +289,7 @@
 
 // Background of explore pages
 .ExplorePage-container
-    @extends $Panel-2
+    @extends $Panel-4
 // Sidebar page list
 .NavbarNavIcon-container
     &:hover
@@ -350,36 +367,9 @@
 // Explore servers and players game selector
 .TypeaheadInput-container-dropdown .TypeaheadInput-typeahead-options-list,
 .TypeaheadMenu-container
-    @extends $OverridePanelBordered-0
+    @extends $OverrideContentBordered-3
     .SelectMenuItem-label
         @extends $TextMedium
-
-// Game selector input
-.TextInputWithLabel-container-dropdown
-    @extends $SetBorderLight-2
-    // Hover
-    &.TextInputWithLabel-container-desktop:hover
-        @extends $SetBorderLight-2
-    // Focused
-    &.TextInputWithLabel-container-focused,
-    &.TextInputWithLabel-container-focused:hover
-        border-color: var(--accent-0) !important
-// Add background to it as well
-.SelectMenu-container
-    @extends $Panel-0
-// Game selector item
-.SelectMenuItem-container
-    &-desktop:hover
-        @extends $Panel-2
-        .SelectMenuItem-label
-            @extends $TextLight
-    &-selected
-        @extends $Panel-3
-        .SelectMenuItem-label
-            @extends $TextLight
-    // Game selector first item
-    &-border-bottom
-        @extends $SetBorderDark-1
 
 /*
  * -=- Jobs -=-
@@ -422,9 +412,9 @@ $JobsItemDescription
     &-description
         @extends $JobsSectionDescription
     &-job
-        @extends $Panel-2
+        @extends $ContentMildlyBordered-2
         &:hover
-            @extends $Panel-0
+            @extends $Panel-1
         &-icon, svg
             @extends $SvgDark
         &:hover svg

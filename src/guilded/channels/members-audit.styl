@@ -9,27 +9,38 @@
 
 // Select all checkbox
 .SelectToggleIcon-container
-    border-color: fg-0
+    @extends $SetBorderLight-2
     // Select all checkbox hover
     &-clickable:hover
-        @extends $SetBorderLight-2
+        @extends $SetBorderLight-3
         background-color: alpha(bg-hover, 0.1)
 // Select all checkmark
 .SelectToggleIcon-checkmark
     @extends $SvgTheme
 
+// Header
+.ItemManagerColumnHeader
+    &-container-sortable
+        @extends $TextDarkTransition
+    &-container-sortable:not(&-active):not(&-display):hover
+        @extends $TextMedium
+    // Selected sorting
+    &-container-sortable.ItemManagerColumnHeader-active
+        @extends $TextTheme
+        // Arrow
+        .ItemManagerColumnHeader-icon
+            @extends $SvgTheme
+.ItemManagerHeader-container
+    border-bottom-color: border-light-0
+
 .ItemManagerListItem
+    &-container:not(:last-child)
+        border-bottom-color: border-light-0
     // Selected member
     &-checkmark-icon
         @extends $SvgTheme
     &-container-selectable::after
         @extends $SetBorderTheme
-// Selected sorting
-.ItemManagerColumnHeader-container-sortable.ItemManagerColumnHeader-active
-    @extends $TextTheme
-    // Arrow
-    .ItemManagerColumnHeader-icon
-        @extends $SvgTheme
 
 /*
  * --- Filter ---

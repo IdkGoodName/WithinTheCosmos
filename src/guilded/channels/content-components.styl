@@ -83,6 +83,8 @@
     // Hover
     &-container:hover &-icon
         @extends $FontLight
+    &-container-with-label:hover::after
+        @extends $TextMedium
 // Reaction counter
 .ReactionBadge-container
     &:not(&-disabled):hover .ReactionBadge-count
@@ -143,7 +145,7 @@
             @extends $CheckboxChecked
         .CheckmarkIcon-icon
             @extends $CheckboxCheck
-    &-container-clickable:hover.CheckmarkIcon-container-selected
+    &-container-clickable.CheckmarkIcon-container-selected:hover,
         .CheckmarkIcon-circle
             @extends $CheckboxCheckedHover
         .CheckmarkIcon-icon
@@ -155,6 +157,11 @@
         .CheckmarkIcon-icon
             @extends $CheckboxCheck
 
+.CheckboxPanel-container-clickable.CheckboxPanel-container-selected:hover
+    .CheckmarkIcon-circle
+        @extends $CheckboxChecked
+    .CheckmarkIcon-icon
+        @extends $CheckboxCheck
 /*
  * -=- Badges -=-
  */

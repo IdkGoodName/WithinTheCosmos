@@ -3,7 +3,7 @@
 @require "../content"
 @require "../fake"
 
-
+@require "./channels/any-channel"
 @require "./channels/announcement"
 @require "./channels/applications"
 @require "./channels/chat"
@@ -52,6 +52,8 @@
 // Not found/Not loaded
 .NullStateV2,
 .TabEmptyState
+    &-image
+        filter: guilded-null-image-transform
     &-title
         @extends $TextLight
     &-container-size-md &-title,
@@ -283,9 +285,8 @@
 .ChatEmbed-container,
 .OpenGraphEmbed-content,
 .TeamEmbedCard-container
-    @extends $Panel-3
+    @extends $OverrideContentBordered-3
     border-radius: radius-2
-    border-color: border-light-1
     overflow: hidden
     &:not([style])
         border-left: solid 1px border-light-1
@@ -317,6 +318,7 @@
 // Footer background
 .ChatEmbedFooter-container,
 .ContentEmbedCardFooter-container
+    border-top: solid 1px border-dark-1
     background-color: bg-1
     color: fg-0
 
@@ -357,8 +359,7 @@
     &-selected
         border-color: var(--accent-selection)
 .CustomFormWrapper-container-standalone
-    background-color: shading-0
-    @extends $SetBorderLight-1
+    @extends $PanelBordered-3
     // Form border
     &::after
         border: none
@@ -390,7 +391,7 @@
 
 // Forum editor
 .Editor-container
-    @extends $ContentBordered-1
+    @extends $ContentBordered-2
 
 .SlateEditor
     &-container-type-reaction &-editor,
@@ -418,11 +419,11 @@
 
 // List item note editor
 .TeamListItemNoteEditor-editor
-    @extends $ContentBordered-2
+    @extends $ContentBordered-1
 
 // Forum reply editor
 .TeamThreadPostEditor-editor .Editor-container
-    @extends $Panel-2
+    @extends $Panel-1
 
 // Editor toolbar
 .SlateToolbarStrip
@@ -466,11 +467,11 @@
 .TeamThreadReplyCreator-unexpanded-wrapper,
 .DraftInputWithTitleV2-title-wrapper,
 .CollapsedInput-container
-    @extends $ContentBordered-1
+    @extends $ContentBordered-2
 
 // Make it stand-out less
 .CollapsedInput-container.ContentMetadataInlineReplyDisplay-collapsed-input
-    @extends $ContentBordered-2
+    @extends $ContentBordered-1
 
 .TeamThreadReplyCreator-container-desktop .TeamThreadReplyCreator-unexpanded-wrapper,
 .DraftInputWithTitleV2-container-desktop.DraftInputWithTitleV2-container-unexpanded,

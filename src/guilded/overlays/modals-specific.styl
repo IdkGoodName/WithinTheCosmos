@@ -153,10 +153,11 @@
 .CopyableTextbox
     // The container itself
     &-container
-        @extends $ContentRoughBordered-4
+        @extends $ContentBordered-2
         transition(border-color)
+        border-radius: radius-2
     &-container-desktop:hover
-        @extends $SetBorderLight-3
+        @extends $SetBorderLight-2
     // Link
     &-url-wrapper-text
         @extends $TextThemeDull
@@ -192,9 +193,9 @@
 .ChannelActivityDisplay
     &-group-header,
     &-container
-        @extends $Panel-2
+        @extends $Panel-4
     &-item
-        @extends $PanelBordered-3
+        @extends $ContentMildlyBordered-2
 // Activity menu content
 .ChannelActivityItem
     // Text
@@ -204,13 +205,21 @@
         @extends $TextDark
     // Unread activity menu item
     &-container.ChannelActivityItem-container-unread
-        @extends $Panel-4
+        @extends $ContentBordered-2
+        SetNotification()
+        .ChannelActivityItem-header
+            @extends $TextMark
+            font-weight: bold
+        &:hover .ChannelActivityItem-header
+            @extends $TextMarkHover
     // Type icons
     &-icon
         // Wrapper
         .AvatarIcon-container
             background-color: bg-0 !important
         // Icon types
+        .icon-application
+            fill: $gold
         .icon-reply-filled-no-padding,
         .icon-toolbar-mention
             fill: $yellow
@@ -226,12 +235,12 @@
 // Channel switcher
 .ChatChannelSwitcherOverlay
     &-container
-        background-color: bg-3
+        background-color: bg-1
         color: fg-1
     &-results-container
         SetScrollbar()
     &Footer-container
-        @extends $Panel-4
+        @extends $Panel-5
 // Channel switcher channel
 .ChatChannelSwitcherRow
     &-container
@@ -241,17 +250,19 @@
             @extends $TextDark
         // Selected
         &-selected
-            @extends $Panel-0
-        // Hovered over
-        &:not(&-header)::after
-            @extends $ContentGlare
+            @extends $ContentMildlyBordered-2
+        &:not(&-header)
+            margin: 0 spacing-2
+            // Hovered over
+            &::after
+                @extends $ContentGlare
 
 /*
  * --- Role Picker ---
  */
 
 .ToggleRoleControl-container
-    @extends $PanelBordered-3
+    @extends $ContentMildlyBordered-3
 
 /*
  * -=- Form view -=-

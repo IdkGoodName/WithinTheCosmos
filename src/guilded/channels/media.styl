@@ -8,7 +8,7 @@
 
 // Media item
 .MediaDisplayItemV3-container
-    @extends $Panel-4
+    @extends $Panel-2
     // Media item hover
     &::after
         @extends $ContentGlare
@@ -36,7 +36,7 @@
 
 // Media side panel
 .MediaInfoPane-container
-    @extends $Panel-2
+    @extends $Panel-4
 
 // Media view exit
 .BackLink-container-desktop
@@ -47,3 +47,8 @@
     // Exit icon hover
     &:hover .BackLink-icon
         @extends $SvgMedium
+
+// Information
+.MediaTitle
+    &Description-description
+        @extends $TextDark

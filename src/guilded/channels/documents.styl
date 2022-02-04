@@ -12,7 +12,6 @@
     @extends $Panel-2
 
 // Document in the list info
-.ReplyPanel-container-viewing,
 .DocSummaryInfo-container
     @extends $PanelBordered-3
 
@@ -29,6 +28,11 @@
 /*
  * --- Text ---
  */
+
+.DocViewer-reader-editor
+    padding: spacing-3 spacing-5
+    border-radius: radius-2
+    @extends $ContentMildlyBordered-2
 
 .GuildedText-container-type-heading3
     @extends $TextLight
@@ -69,3 +73,7 @@
 
 .RepliesAddon-header-text
     @extends $TextLight
+
+// Comment
+.ReplyPanel-container-viewing
+    @extends $ContentMildlyBordered-2

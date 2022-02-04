@@ -20,7 +20,7 @@ BannerWithButtonType(toExtend, colour)
     &-icon
         @extends $SvgMedium
     &-container
-        @extends $OverrideContentBordered-4
+        @extends $OverrideContentBordered-3
         &-theme-warning
             BannerWithButtonType($PanelWarning, warning)
         &-theme-info
@@ -284,14 +284,8 @@ BannerWithButtonType(toExtend, colour)
 // Notifications
 .NavSelectorItem-container-orientation-horizontal.NavSelectorItem-container-unread,
 .NavSelectorItem-container-orientation-vertical.NavSelectorItem-container-unread,
-.ChannelActivityItem-container.ChannelActivityItem-container-unread,
 .NavV4BadgedItem-container-unread .NavV4BadgedItem-icon-wrapper,
-.TeamOverviewContentItemCard-container-unread,
-.TeamChannelItemContents-container-unread,
-.FullSizedCalendarEvent-container-unread,
-.TeamAnnouncementItem-container-unread,
 .NavV4SelectorRow-container-unread,
-.TeamPostRow-container-unread,
 .NavV4ItemIcon-icon-unread
     SetNotification()
 

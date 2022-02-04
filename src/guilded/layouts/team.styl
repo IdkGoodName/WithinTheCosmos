@@ -1,3 +1,5 @@
+@require "../../set"
+
 /*
  * -=- Channels -=-
  */
@@ -69,30 +71,24 @@ SetChannel(className)
         @extends $TransitionColour
     &-icon
         @extends $TransitionFill
-    &-container&-container-selected
-        ChannelSelected()
+    // Hover
     &-container:not(&-container-selected):hover
         ChannelContent(className, "$TextMedium", "$SvgMedium")
+    // Selected
+    &-container&-container-selected
+        ChannelSelected()
+    // Unread
+    &-container-unread
+        ChannelContent(className, "$TextMark", "$SvgMark")
+        SetNotification()
+        &:hover
+            ChannelContent(className, "$TextMarkHover", "$SvgMarkHover")
 // Section
 .TeamNavSectionItem
     SetChannel(".TeamNavSectionItem")
 // Channel
 .TeamChannelItemContents
     SetChannel(".TeamChannelItemContents")
-    // Unread
-    &-container-unread
-        .TeamChannelItemContents-name
-            color: mark-text
-        .ChannelIcon-icon-primary,
-        .ChannelIcon-icon-secondary
-            fill: shade(mark-text, 20%)
-    // Unread hover
-    &-container-unread:hover
-        .TeamChannelItemContents-name
-            color: mark-text-hover
-        .ChannelIcon-icon-primary,
-        .ChannelIcon-icon-secondary
-            fill: shade(mark-text-hover, 20%)
 
 .ChannelIcon-icon-primary,
 .ChannelIcon-icon-secondary
@@ -197,7 +193,7 @@ SetChannel(className)
 
 // Member list section (roles)
 .TeamPageSidebarMembers-roles:not(:first-child)
-    margin-top: spacing-6
+    margin-top: spacing-7
 
 .ChannelListHeader
     // Member list
