@@ -145,7 +145,7 @@
             @extends $CheckboxChecked
         .CheckmarkIcon-icon
             @extends $CheckboxCheck
-    &-container-clickable.CheckmarkIcon-container-selected:hover,
+    &-container-clickable.CheckmarkIcon-container-selected:hover
         .CheckmarkIcon-circle
             @extends $CheckboxCheckedHover
         .CheckmarkIcon-icon
@@ -154,6 +154,11 @@
     &-container-disabled
         .CheckmarkIcon-circle
             @extends $CheckboxUncheckedDisabled
+        .CheckmarkIcon-icon
+            @extends $CheckboxCheck
+    &-container-disabled&-container-selected
+        .CheckmarkIcon-circle
+            @extends $CheckboxCheckedDisabled
         .CheckmarkIcon-icon
             @extends $CheckboxCheck
 

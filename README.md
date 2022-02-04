@@ -19,9 +19,7 @@ Space theme with multiple colour schemes!
 
 **Current available colour schemes:**
 - Absolute Nihility (Guilded)
-  - Contrast Nihility (Guilded)
 - Cold Nebula (Guilded)
-- Dark Vortex (Guilded)
 - Solar Light (Guilded)
 
 **Available additions:**
