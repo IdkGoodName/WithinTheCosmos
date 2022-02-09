@@ -54,7 +54,7 @@
         @extends $FullBorderTransparent
         // Hover
         &::after
-            transition(opacity)
+            transition: opacity
         &:hover
             @extends $FullBorderLight-1
         // Has notifications
@@ -245,7 +245,7 @@
     // User card's status
     &-content-with-status, &-container
         color: fg-1
-        transition(color)
+        transition: color
         // Hover
         &:hover
             @extends $TextMedium
@@ -334,7 +334,7 @@ body
 // Server header hover
 .TeamNavHeader-options-carat::after
     background-color: bg-hover
-    transition(opacity)
+    transition: opacity
 // Server header caret
 .TeamNavHeader-options-carat.TeamNavTeamOptionsCarat-icon
     @extends $SvgMedium

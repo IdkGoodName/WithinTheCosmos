@@ -136,37 +136,36 @@
     &-circle
         @extends $CheckboxUnchecked
     &-container-clickable:hover
-        .CheckmarkIcon-circle
+        & ^[0]-circle
             @extends $CheckboxUncheckedHover
-        .CheckmarkIcon-icon
+        & ^[0]-icon
             @extends $CheckboxCheck
     &-container-selected
-        .CheckmarkIcon-circle
+        & ^[0]-circle
             @extends $CheckboxChecked
-        .CheckmarkIcon-icon
+        & ^[0]-icon
             @extends $CheckboxCheck
     &-container-clickable.CheckmarkIcon-container-selected:hover
-        .CheckmarkIcon-circle
+        & ^[0]-circle
             @extends $CheckboxCheckedHover
-        .CheckmarkIcon-icon
+        & ^[0]-icon
             @extends $CheckboxCheck
     // Disabled
     &-container-disabled
-        .CheckmarkIcon-circle
+        & ^[0]-circle
             @extends $CheckboxUncheckedDisabled
-        .CheckmarkIcon-icon
-            @extends $CheckboxCheck
     &-container-disabled&-container-selected
-        .CheckmarkIcon-circle
+        & ^[0]-circle
             @extends $CheckboxCheckedDisabled
-        .CheckmarkIcon-icon
+        & ^[0]-icon
             @extends $CheckboxCheck
 
 .CheckboxPanel-container-clickable.CheckboxPanel-container-selected:hover
-    .CheckmarkIcon-circle
-        @extends $CheckboxChecked
-    .CheckmarkIcon-icon
-        @extends $CheckboxCheck
+    .CheckmarkIcon
+        &-circle
+            @extends $CheckboxChecked
+        &-icon
+            @extends $CheckboxCheck
 /*
  * -=- Badges -=-
  */

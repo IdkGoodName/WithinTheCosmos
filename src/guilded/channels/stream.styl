@@ -19,22 +19,23 @@
 .StreamDisplayActionButton-container
     // Mini buttons
     &-right, &-left
-        .StreamDisplayActionButton-container-content
+        & ^[0]-content
             @extends $SvgDark
     // Mini buttons active
     &:hover, &-active
-        .StreamDisplayActionButton-container-content
+        & ^[0]-content
             @extends $SvgMedium
 
 // Hover outline
-.StreamPlayer-container:hover .StreamPlayer-inset-border
-    border-color: active
-// The user pill
-.StreamPlayerMemberDisplay-pill
-    @extends $Panel-5
-// Muted or deaf icon
-.StreamPlayerIndicators-button
-    @extends $Panel-5
+.StreamPlayer
+    &-container:hover &-inset-border
+        border-color: active
+    // The user pill
+    &MemberDisplay-pill
+        @extends $Panel-5
+    // Muted or deaf icon
+    &Indicators-button
+        @extends $Panel-5
 
 // Livestream badge in groups and servers
 .LiveStreamBadge-indicator

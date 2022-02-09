@@ -4,15 +4,20 @@
 font-color(colour)
     color: colour
     fill: colour
+background-gradient()
+    background: linear-gradient(arguments)
 
-transition(args..., duration = global-transition-period, fn = ease-out)
-    transition: args duration fn
+transition()
+    fn = @transition-timing-function || ease-out
+    duration = @transition-duration || global-transition-period
+    transition: arguments duration fn
 
 $TransitionColour
-    transition(color)
+    transition: color
 $TransitionFill
-    transition(fill)
+    transition: fill
 $TransitionBackground
-    transition(background)
+    transition: background
 $TransitionBounce
-    transition(border-radius, fn: bounce)
+    transition: border-radius
+    transition-timing-function: bounce

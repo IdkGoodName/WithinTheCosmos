@@ -8,15 +8,16 @@
  */
 
 // Select all checkbox
-.SelectToggleIcon-container
-    @extends $SetBorderLight-2
-    // Select all checkbox hover
-    &-clickable:hover
-        @extends $SetBorderLight-3
-        background-color: alpha(bg-hover, 0.1)
-// Select all checkmark
-.SelectToggleIcon-checkmark
-    @extends $SvgTheme
+.SelectToggleIcon
+    &-container
+        @extends $SetBorderLight-2
+        // Select all checkbox hover
+        &-clickable:hover
+            @extends $SetBorderLight-3
+            background-color: alpha(bg-hover, 0.1)
+
+    &-checkmark
+        @extends $SvgTheme
 
 // Header
 .ItemManagerColumnHeader
@@ -25,10 +26,10 @@
     &-container-sortable:not(&-active):not(&-display):hover
         @extends $TextMedium
     // Selected sorting
-    &-container-sortable.ItemManagerColumnHeader-active
+    &-container-sortable^[0]-active
         @extends $TextTheme
         // Arrow
-        .ItemManagerColumnHeader-icon
+        & ^[0]-icon
             @extends $SvgTheme
 .ItemManagerHeader-container
     border-bottom-color: border-light-0
@@ -47,16 +48,16 @@
  */
 
 // Filter icon
-.ItemManagerFilterButton-icon
-    @extends $SvgDarkTransition
-
-.ItemManagerFilterButton-container
-    // Filter icon hover
-    &:not(&-active):hover .ItemManagerFilterButton-icon
-        @extends $SvgMedium
-    // Filter settings clicked
-    &-open .ItemManagerFilterButton-icon
-        @extends $SvgLight
+.ItemManagerFilterButton
+    &-icon
+        @extends $SvgDarkTransition
+    &-container
+        // Filter icon hover
+        &:not(&-active):hover ^[0]-icon
+            @extends $SvgMedium
+        // Filter settings clicked
+        &-open ^[0]-icon
+            @extends $SvgLight
 
 .ItemManagerFilterWrapper
     &-header

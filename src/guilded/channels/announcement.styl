@@ -9,10 +9,11 @@
         @extends $TextMedium
 
 // Unread announcement
-.TeamAnnouncementItem-container-unread
-    SetNotification()
-    .TeamAnnouncementItem-widget-wrapper
-        @extends $ContentBordered-2
+.TeamAnnouncementItem
+    &-container-unread
+        SetNotification()
+        & ^[0]-widget-wrapper
+            @extends $ContentBordered-2
 
 /*
  * --- Role label ---

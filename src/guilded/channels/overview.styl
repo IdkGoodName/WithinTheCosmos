@@ -101,18 +101,15 @@
  */
 
 // Carousel blurs
-.CarouselList-container-size-sm .CarouselList-blur-light.CarouselList-left-blur,
-.CarouselList-blur-light.CarouselList-left-blur
-    background-image: linear-gradient(to left, alpha(bg-1, 0), bg-1 100%)
-
-.CarouselList-container-size-sm .CarouselList-blur-light.CarouselList-right-blur,
-.CarouselList-blur-light.CarouselList-right-blur
-    background-image: linear-gradient(to right, alpha(bg-1, 0), bg-1 100%)
-
-// Carousel arrow
-.CarouselList-controls-arrow
-    transition: 1s
-    @extends $SvgMedium
+.CarouselList
+    for side in left right
+        &-container-size-sm &-blur-light&-{side}-blur,
+        &-blur-light&-{side}-blur
+            background-gradient: to side, alpha(bg-1, 0), bg-1 100%
+    // Carousel arrow
+    &-controls-arrow
+        transition: 1s
+        @extends $SvgMedium
 
 // Leaderboard
 .TeamOverviewLeaderboardSection-leaderboard-container

@@ -114,7 +114,7 @@
 .CodeContainerRenderer-container,
 // Code block in Markdown plain text
 .PrismTokenCodeBlockRenderer-container
-    @extends $Panel-5
+    @extends $PanelBordered-5
     SetScrollbar()
     // Make sure Markdown code block also gets it
     code
@@ -275,7 +275,7 @@
         //mask-image: linear-gradient(to bottom, black, transparent 95%)
         //&::after
         //display: none
-        background: linear-gradient(to bottom, transparent, bg-3 20px)
+        background-gradient: to bottom, transparent, bg-3, 20px
 
 /*
  * --- Embeds ---
@@ -285,11 +285,12 @@
 .ChatEmbed-container,
 .OpenGraphEmbed-content,
 .TeamEmbedCard-container
-    @extends $OverrideContentBordered-3
+    @extends $OverridePanelBordered-3
     border-radius: radius-2
+    border-style: solid
     overflow: hidden
     &:not([style])
-        border-left: solid 1px border-light-1
+        border-left: solid 1px border-dark-1
 
 // Embed
 .ChatEmbed,
@@ -302,7 +303,7 @@
         &-description
             @extends $TextMedium
     &-content:not([style])
-        border-left: solid 1px border-light-1
+        border-left: solid 1px border-ldark-1
 
 .OpenGraphEmbedContent-domain
     @extends $TextDark

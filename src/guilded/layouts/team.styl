@@ -36,10 +36,10 @@
 // Channel and section common stuff
 $ChannelHoverGlare
     background-color: bg-hover
-    transition(opacity)
+    transition: opacity
 ChannelNormal()
     border: solid 1px transparent
-    transition(background-color)
+    transition: background-color
     &::after
         @extends $ChannelHoverGlare
 ChannelContent(className, textPlaceholder, svgPlaceholder)

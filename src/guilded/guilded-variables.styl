@@ -1,7 +1,9 @@
 @require "../variables"
+@require "../set"
 
 $CheckboxUnchecked
-    @extends $SetBorderLight-2
+    border-color: border-light-2
+    transition: background, border-color
 $CheckboxUncheckedHover
     border-color: var(--accent-1)
     background-color: var(--accent-transparent)
@@ -9,9 +11,11 @@ $CheckboxUncheckedDisabled
     border-color: fg-1
 
 $CheckboxChecked
+    //background-gradient: to bottom right, var(--accent-0), var(--accent-2) 130%
     background-color: var(--accent-0)
     border-color: var(--accent-1)
 $CheckboxCheckedHover
+    //background-gradient: to bottom right, var(--accent-0), var(--accent-2) 100%
     background-color: var(--accent-1)
     border-color: var(--accent-2)
 $CheckboxCheckedDisabled

@@ -26,7 +26,7 @@
             background-color: bg-6
     &Day-new-event-icon
         @extends $SvgDark
-        transition(opacity)
+        transition: opacity
     // Calendar special days
     &Day-container-in-past,
     &Day-container-different-month
@@ -66,7 +66,7 @@
 .ToggleControlButton-container.ToggleControlButton-container
     &-desktop:hover, &-selected
         color: var(--accent-0)
-        background-color: bg-1
+        background-color: bg-3
     &-selected:focus, &-selected:active
         @extends $TextTheme
 // Month switching
@@ -104,7 +104,7 @@
     // Day
     &-day
         @extends $Panel-0
-        transition(background-color)
+        transition: background-color
         &-contents
             color: fg-2 !important
     &-day-next-month

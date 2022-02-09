@@ -35,6 +35,14 @@ BannerWithButtonType(toExtend, colour)
  * --- Status ---
  */
 
+StatusMessageType(colour)
+    background-color: bg-0
+    border-left: solid 3px colour
+    // transition: border-left
+    // transition-duration: 0.1s
+    // &:hover
+    //     border-left-width: 9px
+
 // Status
 .StatusMessage-container
     @extends $TextMedium
@@ -49,16 +57,20 @@ BannerWithButtonType(toExtend, colour)
     &-desktop.StatusMessage-container-clickable::after
         @extends $ContentGlare
     &-ephemeral
-        @extends $PanelBordered-4
+        box-sizing: border-box
+        background-color: bg-0
+        border: solid 1px border-light-0
         // Copy invite alert
         &.StatusMessage-container-type-success
-            @extends $PanelSuccess
+            StatusMessageType(good-0)
+            //@extends $PanelSuccess
             // Icon
             .StatusMessage-icon
                 @extends $SvgGood
         // Invalid URL
         &.StatusMessage-container-type-error
-            @extends $PanelCaution
+            StatusMessageType(bad-0)
+            //@extends $PanelCaution
             // @extends $Panel-4
             // @extends $TextBad
             // // Icon
@@ -66,10 +78,12 @@ BannerWithButtonType(toExtend, colour)
             //     @extends $SvgBad
         // No mic detected
         &.StatusMessage-container-type-info
-            @extend $PanelInfo
+            StatusMessageType(info)
+            //@extend $PanelInfo
         // Add-on custom
         &.StatusMessage-container-type-warning
-            @extend $PanelWarning
+            StatusMessageType(info)
+            //@extend $PanelWarning
     &-persistent
         // Persistent "Published bla bla bla" header
         &.PostDisplayV2-publish-banner

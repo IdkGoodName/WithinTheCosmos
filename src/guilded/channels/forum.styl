@@ -5,18 +5,22 @@
  * --- Forum post list ---
  */
 
-.TeamPostRow-container
-    @extends $ContentMildlyBordered-2
-    &-unread
-        @extends $ContentBordered-2
-        SetNotification()
-        .TeamPostRow-title
-            color: mark-text
-        &:hover .TeamPostRow-title
-            color: mark-text-hover
-    // Forum post hover
-    &-desktop::after
-        @extends $ContentGlare
+.TeamPostRow
+    &-container
+        @extends $ContentMildlyBordered-2
+        &-unread
+            @extends $ContentBordered-2
+            SetNotification()
+            & ^[0]-title
+                color: mark-text
+            &:hover ^[0]-title
+                color: mark-text-hover
+        // Forum post hover
+        &-desktop::after
+            @extends $ContentGlare
+// Author and date
+.TeamPostRow-options-wrapper
+    @extends $TextDark
 
 .TeamForumsThreadsDisplay-list
     & &-item
@@ -32,9 +36,6 @@
     &-container-size-lg &-label
         @extends $TextDark
 
-// Author and date
-.TeamPostRow-options-wrapper
-    @extends $TextDark
 
 
 /*
@@ -64,26 +65,27 @@
     .ReplyPanel-options-wrapper:hover &
         @extends $TextMedium
 
-// Side handle rail
-.Scrubber-rail
-    @extends $Panel-5
 
-// Unread side rail
-.Scrubber-highlight-rail
-    @extends $Panel-3
+.Scrubber
+    // Side handle rail
+    &-rail
+        @extends $Panel-5
+    // Unread side rail
+    &-highlight-rail
+        @extends $Panel-3
 
-.Scrubber-handle
-    // Side handle
-    &-wrapper &
-        @extends $Notification
-    // Side handle hovered over
-    &-wrapper:hover &
-        @extends $PanelThemeDull
-
-.ScrubberLabel
-    // Side handle label post index/posts count
-    &-value
-        @extends $TextMedium
-    // Side handle label date
-    &-label
-        @extends $TextDark
+    &-handle
+        // Side handle
+        &-wrapper ^[1]
+            @extends $Notification
+        // Side handle hovered over
+        &-wrapper:hover ^[1]
+            @extends $PanelThemeDull
+    // Reply x/y
+    &Label
+        // Side handle label post index/posts count
+        &-value
+            @extends $TextMedium
+        // Side handle label date
+        &-label
+            @extends $TextDark

@@ -9,10 +9,10 @@
     // Highlighted text
     &-status
         // Open
-        .TeamRecruitmentStatus-container-status-open &
+        & ^[0]-container-status-open &
             @extends $TextGood
         // Closed
-        .TeamRecruitmentStatus-container-status-closed &
+        & ^[0]-container-status-closed &
             @extends $TextBad
     &-toggle
         @extends $SvgDark
@@ -37,24 +37,26 @@
 .FormResultDisplayFieldWrapper-field-header-icon
     @extends $SvgDark
 // Application info
-.ApplicantSummaryCard-container
-    .ApplicantSummaryCard-votes, .ApplicantSummaryCard-buttons-applied-date
-        @extends $Panel-4
+.ApplicantSummaryCard
+    &-container
+        & ^[0]-votes, & ^[0]-buttons-applied-date
+            @extends $Panel-4
 // Application status
-.ApplicationStatusBadge-icon
-    // Accepted
-    .ApplicationStatusBadge-container-accepted &
-        @extends $SvgGood
-    // Declined
-    .ApplicationStatusBadge-container-declined &
-        @extends $SvgBad
-.ApplicationStatusBadge-text
-    // Accepted
-    .ApplicationStatusBadge-container-accepted &
-        @extends $TextGood
-    // Declined
-    .ApplicationStatusBadge-container-declined &
-        @extends $TextBad
+.ApplicationStatusBadge
+    &-icon
+        // Accepted
+        & ^[0]-container-accepted &
+            @extends $SvgGood
+        // Declined
+        & ^[0]-container-declined &
+            @extends $SvgBad
+    &-text
+        // Accepted
+        & ^[0]-container-accepted &
+            @extends $TextGood
+        // Declined
+        & ^[0]-container-declined &
+            @extends $TextBad
 
 /*
  * --- All Applications ---
@@ -78,11 +80,12 @@
     @extends $TextDark
 
 // Application status
-.ApplicationItemStatus-label
-    .ApplicationItemStatus-container-status-1 &
-        @extends $TextGoodHighlight
-    .ApplicationItemStatus-container-status-0 &
-        @extends $TextBadHighlight
+.ApplicationItemStatus
+    &-label
+        & ^[0]-container-status-1 &
+            @extends $TextGoodHighlight
+        & ^[0]-container-status-0 &
+            @extends $TextBadHighlight
 
 /*
  * --- Application modal ---

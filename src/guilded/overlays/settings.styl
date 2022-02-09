@@ -6,9 +6,6 @@
  * -=- Settings -=-
  */
 
-// Options
-.OptionsMenuPageWrapper-container
-    @extends $PanelTransparent
 
 // Section tabs
 .PersistentActionMenu-menu-section
@@ -20,6 +17,9 @@
         @extends $PanelTransparent
     &-option-content
         SetScrollbar()
+    // Options page
+    &PageWrapper-container
+        @extends $PanelTransparent
 // Tab section header
 .DesktopOptionsControlOptionHeader-container
     padding: 0 20px

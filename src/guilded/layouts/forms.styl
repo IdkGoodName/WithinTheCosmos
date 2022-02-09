@@ -41,7 +41,7 @@ $FormDropdownActiveFocused
 // Form "(optional)"
 .FormFieldLabel-optional
     @extends $TextDarker
-    transition(color)
+    transition: color
     // Hover
     &:hover
         @extends $TextMedium
@@ -147,7 +147,7 @@ $FormDropdownActiveFocused
         border-color: border-light-1
         background-color: bg-3
         color: fg-2
-        transition(border-color)
+        transition: border-color
         SetScrollbar()
         // Big form input hover
         &:hover
@@ -182,7 +182,7 @@ $FormDropdownActiveFocused
     // Normally
     .Select-control
         border-bottom-color: border-light-2 !important
-        transition(border-bottom)
+        transition: border-bottom
     // Hover
     &:hover .Select-control
         border-bottom-color: border-light-3 !important
@@ -211,7 +211,7 @@ $FormDropdownActiveFocused
     &-label
         @extends $TextBad
         font-weight: bold
-        transition(color)
+        transition: color
     // Toggle field toggled title
     &-container-size-sm &-label.ToggleFieldWrapper-label-active,
     &-label-active
@@ -228,15 +228,21 @@ $FormDropdownActiveFocused
         width: 33.5px
         height: 16.5px
     // Slider off
-    &-container .SwitchInput-slide
+    &-container &-slide
         @extends $PanelBad
+        // // Shiny effect
+        // background-gradient: to bottom right, bad-0, shade(bad-0, 20%) 90%
+        // border: solid 1px alpha(bad-1, 50%)
         width: 33.5px
         height: 16.5px
         border-radius: 10px
         flex-shrink: 0
     // Slider on
-    &-container-on .SwitchInput-slide
+    &-container-on &-slide
         @extends $PanelGood
+        // // Shiny effect
+        // background-gradient: to bottom right, good-0, shade(good-0, 20%) 90%
+        // border-color: alpha(good-1, 50%)
     // Slider thumb
     &-tab
         @extends $Panel-2
@@ -376,6 +382,9 @@ $FormDropdownActiveFocused
         @extends $TextDark
     &-container-checked &-description
         @extends $TextMedium
+    // Sizes
+    &-container-size-md &-box &-checkmark
+        height: 18px
 
 
 // --- CHECKBOX RADIO PANELS ---
@@ -436,12 +445,12 @@ $FormDropdownActiveFocused
     .Select-control
         border-color: border-light-1 !important
         background-color: bg-3 !important
-        transition(border-color)
+        transition: border-color
     // Form selector hover
-    &.GuildedSelect-container-dark:hover .Select .Select-control,
-    &:hover .Select .Select-control
-        border-color: border-light-2 !important
-        background-color: bg-3
+    &.GuildedSelect-container-dark:hover, &:hover
+        .Select .Select-control
+            border-color: border-light-2 !important
+            background-color: bg-3
 
     // Code container stuff
     &-option-color-gray
@@ -451,10 +460,12 @@ $FormDropdownActiveFocused
         // Label's arrow in editor
         .Select-arrow
             border-top-color: fg-0
+    &-no-border .Select-control
+        background-color: transparent !important
     // Form selector arrow
     .Select-arrow
         border-top-color: fg-0 !important
-        transition(border-top-color)
+        transition: border-top-color
     // Form selector placeholder
     .Select-placeholder
         @extends $TextDark
@@ -462,19 +473,22 @@ $FormDropdownActiveFocused
     .Select-value-label
         color: fg-2 !important
     // Form select menu
-    &.GuildedSelect-container-dark .Select-menu-outer,
-    &.GuildedSelect-container-light .Select-menu-outer
+    &&-dark .Select-menu-outer
         @extends $OverrideContentMildlyBordered-4
 
-// Form selector focused
-.GuildedSelect-container.GuildedSelect-container-dark
-    .Select-menu-outer .Select-menu
-        SetScrollbar()
-    .Select.is-focused
-        .Select-control
-            border: solid 1px var(--accent-0) !important
-        .Select-arrow
-            border-top-color: var(--accent-0) !important
+    // Form selector focused
+    &&-dark
+        .Select-menu-outer .Select-menu
+            SetScrollbar()
+        .Select.is-focused
+            .Select-control
+                border: solid 1px var(--accent-0) !important
+            .Select-arrow
+                border-top-color: var(--accent-0) !important
+    &-no-border&-dark,
+    &-no-border
+        .Select.is-focused .Select-control
+            border-color: transparent !important
 
 // Form selector icon
 .GuildedSelectIcon-container
@@ -495,28 +509,23 @@ $FormDropdownActiveFocused
         @extends $TextMedium
         @extends $FormDropdown
         // Normally
-        .GuildedSelect-container.GuildedSelect-container-dark &,
-        .GuildedSelect-container.GuildedSelect-container-light &
+        .GuildedSelect-container.GuildedSelect-container-dark &
             @extends $TextMedium
         // Already selected
         &.is-selected,
         .GuildedSelect-container &.is-selected,
-        .GuildedSelect-container.GuildedSelect-container-dark &.is-selected,
-        .GuildedSelect-container.GuildedSelect-container-light &.is-selected
+        .GuildedSelect-container.GuildedSelect-container-dark &.is-selected
             @extends $FormDropdownActive
         // Focused
         &.is-focused
             @extends $FormDropdownFocused
-            .GuildedSelect-container.GuildedSelect-container-dark &,
-            .GuildedSelect-container.GuildedSelect-container-light &
+            .GuildedSelect-container.GuildedSelect-container-dark &
                 @extends $TextLight
         &.is-selected.is-focused,
         .GuildedSelect-container &.is-selected.is-focused,
-        .GuildedSelect-container.GuildedSelect-container-dark &.is-selected.is-focused,
-        .GuildedSelect-container.GuildedSelect-container-light &.is-selected.is-focused
+        .GuildedSelect-container.GuildedSelect-container-dark &.is-selected.is-focused
             @extends $FormDropdownActiveFocused
     // No results found - code container/blocks
-    .GuildedSelect-container.GuildedSelect-container-light &-noresults,
     .GuildedSelect-container.GuildedSelect-container-dark &-noresults,
     &-noresults
         @extends $Panel-3
@@ -583,7 +592,7 @@ $FormDropdownActiveFocused
     &-box
         border-color: border-light-2
         border-radius: radius-2
-        transition(border-color)
+        transition: border-color
     &-container-focused &-box,
     &-container-desktop:hover &-box
         @extends $SetBorderLight-3
@@ -602,9 +611,10 @@ $FormDropdownActiveFocused
     &-delimiter
         @extends $TextDark
 
-.TimeInput-error, .DateInput-error
-    .FormBoxAndLabel-box
-        @extends $SetBorderBad
+.TimeInput, .DateInput
+    &-error
+        .FormBoxAndLabel-box
+            @extends $SetBorderBad
 // Timezone label
 .TimeFieldWrapper-timezone-label
     @extends $TextDark
@@ -613,106 +623,111 @@ $FormDropdownActiveFocused
  * --- Buttons ---
  */
 
-button-typed(border-colour, text-colour)
+// Name functions
+button-filled-selector(type)
+    "&-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-" + type
+button-filled-hover-selector(type)
+    "&-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-" + type + ":hover"
+button-hollow-selector(type)
+    "&-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-" + type
+button-hollow-hover-selector(type)
+    "&-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-" + type + ":hover"
+// Body mixins
+button-filled-body(border-colour, text-colour)
     background: bg-2
     border: solid 1px border-colour
     .FormConfirmButtonV2-button-content
         font-color(text-colour)
-button-typed-hollow(border-colour, text-colour)
+button-hollow-body(border-colour, text-colour)
     border: solid 1px border-colour
     .FormConfirmButtonV2-button-content
         font-color(text-colour)
+
+// Combined mixins
+button-define(type, primary-colour, highlight-colour)
+    // Filled
+    {button-filled-selector(type)}
+        button-filled-body(alpha(primary-colour, 0.15), primary-colour)
+    {button-filled-hover-selector(type)}
+        button-filled-body(alpha(primary-colour, 0.25), highlight-colour)
+    // Hollow
+    {button-hollow-selector(type)}
+        button-hollow-body(primary-colour, primary-colour)
+    {button-hollow-hover-selector(type)}
+        button-hollow-body(highlight-colour, highlight-colour)
+
 
 blue-glow = tint($blue, 20%)
 
 .FormConfirmButtonV2
     // Gilded button
-    &-container.FormConfirmButtonV2-container-type-gilded
+    &-container&-container-type-gilded
         box-shadow: none
         background: bg-2
         @extends $SetBorderLight-1
     // Gilded button hover
-    &-container-desktop.FormConfirmButtonV2-container-filled:hover
+    &-container-desktop&-container-filled:hover
         box-shadow: none
         @extends $SetBorderLight-2
-        .FormConfirmButtonV2-button-content
+        & ^[0]-button-content
             font-color(var(--accent-1))
     // Gilded button text
     &-button-content
         font-color(var(--accent-0))
 
     // Hollow gilded
-    &-container.FormConfirmButtonV2-container-hollow
+    &-container&-container-hollow
         background: none
-        button-typed(border-light-2, var(--accent-0))
+        button-filled-body(border-light-2, var(--accent-0))
     // Hollow gilded hover
-    &-container-desktop.FormConfirmButtonV2-container-hollow:hover
-        button-typed(border-light-2, var(--accent-1))
+    &-container-desktop&-container-hollow:hover
+        button-filled-body(border-light-2, var(--accent-1))
     // Hollow gilded text
     &-container-hollow &-button-content
         @extends $FontTheme
 
     // Delete button
-    &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete
-        button-typed(alpha(bad-0, 0.15), bad-0)
-    &-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-delete:hover
-        button-typed(alpha(bad-0, 0.25), bad-1)
+    button-define("delete", bad-0, bad-1)
 
     // Success button
-    &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-success
-        button-typed(alpha(good-0, 0.15), good-0)
-    &-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-success:hover
-        button-typed(alpha(good-0, 0.25), good-1)
-
-    // White button
-    &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-white,
-    &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-whiteBg
-        button-typed(alpha(fg-3, 0.15), fg-3)
-    &-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-white:hover,
-    &-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-whiteBg:hover
-        button-typed(alpha(fg-3, 0.25), fg-3)
+    button-define("success", good-0, good-1)
 
     // Stripe button
-    &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-stripe
-        button-typed(alpha($blue, 0.15), $blue)
-    &-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-type-stripe:hover
-        button-typed(alpha($blue, 0.25), blue-glow)
+    button-define("stripe", $blue, blue-glow)
 
-    // Delete hollow
-    &-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-delete
-        button-typed-hollow(bad-0, bad-0)
-    &-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-delete:hover
-        button-typed-hollow(bad-1, bad-1)
+    // White buttons
+    $WhiteButtonFilled
+        button-filled-body(alpha(fg-2, 0.15), fg-2)
+    $WhiteButtonFilledHover
+        button-filled-body(alpha(fg-2, 0.25), fg-3)
+    $WhiteButtonHollow
+        button-hollow-body(border-light-2, fg-2)
+    $WhiteButtonHollowHover
+        button-hollow-body(border-light-2, fg-3)
 
-    // Success hollow
-    &-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-success
-        button-typed-hollow(good-0, good-0)
-    &-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-success:hover
-        button-typed-hollow(good-1, good-1)
-
-    // Bleached hollow
-    &-container.FormConfirmButtonV2-container-type-bleached
-        button-typed-hollow(border-light-2, normal-0)
-    &-container-desktop.FormConfirmButtonV2-container-type-bleached.FormConfirmButtonV2-container-hollow:hover
-        button-typed-hollow(border-light-2, normal-1)
-
-    // Monochrome hollow
-    &-container.FormConfirmButtonV2-container-type-monochrome
-        button-typed-hollow(fg-3, fg-3)
-    &-container-desktop.FormConfirmButtonV2-container-type-monochroem.FormConfirmButtonV2-container-hollow:hover
-        button-typed-hollow(white, white)
+    for btnType in "white" "whiteBg" "bleached" "monochrome"
+        // Filled
+        {button-filled-selector(btnType)}
+            @extends $WhiteButtonFilled
+        {button-filled-hover-selector(btnType)}
+            @extends $WhiteButtonFilledHover
+        // Hollow
+        {button-hollow-selector(btnType)}
+            @extends $WhiteButtonHollow
+        {button-hollow-hover-selector(btnType)}
+            @extends $WhiteButtonHollowHover
 
     // Disabled
-    &-container.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled,
-    &-container.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-filled.FormConfirmButtonV2-container-disabled:hover
+    &-container&-container-filled&-container-disabled,
+    &-container&-container-desktop&-container-filled&-container-disabled:hover
         @extends $OverrideContentBordered-5
-        .FormConfirmButtonV2-button-content
+        & ^[0]-button-content
             @extends $FontDarker
 
     // Disabled hollow
-    &-container.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-disabled,
-    &-container.FormConfirmButtonV2-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-disabled:hover
-        button-typed-hollow(fg-0, fg-0)
+    &-container&-container-hollow&-container-disabled,
+    &-container&-container-desktop&-container-hollow&-container-disabled:hover
+        button-hollow-body(border-light-1, fg-0)
 /*
  * --- Visual ---
  */
@@ -733,7 +748,7 @@ blue-glow = tint($blue, 20%)
         border-color: border-light-3
 .CustomColorInputOption
     &-default
-        background: linear-gradient(135deg, var(--accent-0) 0%, var(--accent-2) 100%)
+        background-gradient: 135deg, var(--accent-0) 0%, var(--accent-2) 100%
     &-container
         border-radius: radius-3
     &-container &-icon
@@ -764,3 +779,9 @@ blue-glow = tint($blue, 20%)
 
 // .DropdownPanel-container
 //     @extends $Panel-3
+.SimpleToggle
+    &-label
+        @extends $TextBad
+        font-weight: bold
+    &-container-on &-label
+        @extends $TextGood

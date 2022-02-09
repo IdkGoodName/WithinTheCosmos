@@ -22,9 +22,9 @@
 // Item creation
 .TeamListItemsInput-container-new-item
     @extends $ContentMildlyBordered-2
-// Item creation focused
-.TeamListItemsInput-container-new-item.TeamListItemWrapper-container-focused
-    @extends $SetBorderThemeDull
+    // Item creation focused
+    &.TeamListItemWrapper-container-focused
+        @extends $SetBorderThemeDull
 // Item handle
 .TeamListItemControls-handle
     svg

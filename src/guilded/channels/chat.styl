@@ -23,7 +23,7 @@
 .BlockQuoteLineRenderer,
 .ParagraphRenderer
     color: var(--body-text-color)
-    transition(color)
+    transition: color
 
 
 define-message-type(colour)
@@ -241,10 +241,10 @@ define-message-type(colour)
         @extends $TextDark
     // New messages
     &-container-type-alert
-        .WordDividerLine-line
+        & ^[0]-line
             background: important
     &-container-type-alert
-        .WordDividerLine-word
+        & ^[0]-word
             color: important
 
 /*
@@ -336,12 +336,12 @@ define-message-type(colour)
             @extends $Panel-0
 // Message delete menu fading
 .ChatChannelMessages-delete-message::after
-    background: linear-gradient(to bottom, transparent, bg-3 75px)
+    background-gradient: to bottom, transparent, bg-3, 75px
     // Doesn't work
     // @extends $TransitionBackground
     // When the message gets hovered over, change the fading too
     .ChatV2Message-container:not(.ChatV2Message-container-editing):hover &
-        background: linear-gradient(to bottom, transparent, bg-5 75px)
+        background-gradient: to bottom, transparent, bg-5, 75px
 
 /*
  * --- Thread menu ---

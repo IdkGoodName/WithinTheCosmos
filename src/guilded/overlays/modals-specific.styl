@@ -24,7 +24,7 @@
 // Media upload paste
 .MediaUploaderPasteInstructions
     &-container
-        @extends $PanelBordered-3
+        @extends $PanelBordered-5
     // Icon
     &-link-icon
         @extends $SvgDark
@@ -43,7 +43,7 @@
 .LandingPageV3WhimsicalIcon-icon
     @extends $TextDarker
     opacity: 15%
-    transition(opacity)
+    transition: opacity
     // Background's tile
     &:hover
         opacity: 45%
@@ -98,12 +98,13 @@
  * -=- Join through invite -=-
  */
 
-// Invite page background
-.InvitePage-container
-    @extends $Panel-5
-// The information area of the invite
-.InvitePage-panel
-    @extends $Panel-2
+.InvitePage
+    // Invite page background
+    &-container
+        @extends $Panel-5
+    // The information area of the invite
+    &-panel
+        @extends $Panel-2
 
 // Accept invite
 .GuildedText-container-type-bigBody
@@ -130,10 +131,10 @@
  */
 
 // Fixes media preview clipping through the screen
-.MediaSplitView-container-desktop
-    height: 100%
 .MediaSplitView-container
     width: 100%
+    &-desktop
+        height: 100%
 
 // Group settings icon
 .AddGroupOverlayDisplay-settings-icon
@@ -154,7 +155,7 @@
     // The container itself
     &-container
         @extends $ContentBordered-2
-        transition(border-color)
+        transition: border-color
         border-radius: radius-2
     &-container-desktop:hover
         @extends $SetBorderLight-2
@@ -180,7 +181,7 @@
 // Image share icon
 .MaximizedImageOverlay-share-icon
     @extends $SvgDark
-    transition(transition)
+    transition: transition
     // Hover
     &:hover
         @extends $SvgMedium

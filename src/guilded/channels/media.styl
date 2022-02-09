@@ -7,16 +7,17 @@
  */
 
 // Media item
-.MediaDisplayItemV3-container
-    @extends $Panel-2
-    // Media item hover
-    &::after
-        @extends $ContentGlare
-// Description
-.MediaDisplayItemV3-meta-info-wrapper
-    @extends $FullBorderLight-1
-    border-top: none
-    border-radius: 0px 0px 8px 8px
+.MediaDisplayItemV3
+    &-container
+        @extends $Panel-2
+        // Media item hover
+        &::after
+            @extends $ContentGlare
+    // Description
+    &-meta-info-wrapper
+        @extends $FullBorderLight-1
+        border-top: none
+        border-radius: 0px 0px 8px 8px
 
 // Comment count
 .MediaDisplayItemMetaInfo-comment-count
@@ -39,14 +40,15 @@
     @extends $Panel-4
 
 // Media view exit
-.BackLink-container-desktop
-    // Exit icon
-    .BackLink-icon
-        @extends $SvgDark
-        transition-duration: transition
-    // Exit icon hover
-    &:hover .BackLink-icon
-        @extends $SvgMedium
+.BackLink
+    &-container-desktop
+        // Exit icon
+        & ^[0]-icon
+            @extends $SvgDark
+            transition-duration: transition
+        // Exit icon hover
+        &:hover ^[0]-icon
+            @extends $SvgMedium
 
 // Information
 .MediaTitle

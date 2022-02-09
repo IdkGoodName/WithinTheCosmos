@@ -33,7 +33,7 @@
         // Text and icon on hover
         &:hover
             // Text
-            .ContextMenuItem-label
+            & ^[0]-label
                 @extends $TextLight
             // Icon
             .ContextMenuIcon-container-icon
@@ -46,17 +46,17 @@
         background-color: transparent
         fill: important
         // Text
-        .ContextMenuItem-label
+        & ^[0]-label
             color: important
         // Icon
         .ContextMenuIcon-container-icon
             color: important
 
-// Highlighted
-.ContextMenuItem-container.ContextMenuItem-highlighted
-    .ContextMenuItem-icon, .ContextMenuItem-label
-        color: highlight
-        fill: highlight
+    // Highlighted
+    &-container&-highlighted
+        & ^[0]-icon, & ^[0]-label
+            color: highlight
+            fill: highlight
 
 // Overflow icon
 .ContextMenuTrigger

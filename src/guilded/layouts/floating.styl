@@ -46,7 +46,7 @@
             fill: mention !important
             border-color: alpha(mention, 0.5)
             // New mentions icon
-            .ChatChannelAlertBar-icon-click-wrapper .ChatChannelAlertBar-icon
+            & ^[0]-icon-click-wrapper ^[0]-icon
                 fill: mention
 
         // Unread messages
@@ -55,7 +55,7 @@
             fill: active !important
             border-color: alpha(active, 0.5)
             // Unread messages icon
-            .ChatChannelAlertBar-icon-click-wrapper .ChatChannelAlertBar-icon
+            & ^[0]-icon-click-wrapper ^[0]-icon
                 fill: active
 
 /*
