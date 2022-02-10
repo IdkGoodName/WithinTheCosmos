@@ -4,7 +4,6 @@
     "files": "theme.css",
 
     "author": "R40Mp0Wd",
-    "version": "Rolling",
     "banner": "./SLBanner.png",
     "images": ["./SLScreenshot0.png", "./SLScreenshot1.png", "./SLScreenshot2.png"],
     "repoUrl": "https://github.com/IdkGoodName/WithinTheSpace"
