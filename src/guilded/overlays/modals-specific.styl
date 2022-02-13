@@ -159,11 +159,18 @@
         border-radius: radius-2
     &-container-desktop:hover
         @extends $SetBorderLight-2
+    // Copy button
+    &-container-type-text &-copy-button
+        @extends $TextMediumTransition
     // Link
     &-url-wrapper-text
         @extends $TextThemeDull
-    &-container-desktop:hover &-url-wrapper-text
-        @extends $TextThemeBleached
+        ^[0]-container-desktop:hover &
+            @extends $TextThemeBleached
+        ^[0]-container-type-text &
+            @extends $TextMediumTransition
+        ^[0]-container-type-text^[0]-container-desktop:hover &
+            @extends $TextLight
 // Copy invite button hover
 .SocialShareButtonV2-container-desktop:hover::after
     @extends $ContentGlare
@@ -264,6 +271,16 @@
 
 .ToggleRoleControl-container
     @extends $ContentMildlyBordered-3
+
+/*
+ * --- Webhook ---
+ */
+
+.ManageWebhookOverlay
+    &-container
+        @extends $TextNormal
+        & ^[0]-image-input-label
+            @extends $TextDark
 
 /*
  * -=- Form view -=-

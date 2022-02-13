@@ -12,7 +12,7 @@ gulp.task("default", () => {
     return gulp
         .src(`./src/modules/${m || "*"}.styl`)
         .pipe(styl(schemePath))
-        .pipe(gulp.dest(`./use/${s}`));
+        .pipe(gulp.dest(`./use/${s}`, { overwrite: true }));
 });
 
 function styl(schemePath) {

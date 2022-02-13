@@ -137,13 +137,22 @@ StatusMessageType(colour)
 .GH3-container
     @extends $TextDark
 
-.GuildedText-container-type
-    &-heading1
-        @extends $TextLight
-    &-heading4
-        @extends $TextLight
-    &-subtext
-        @extends $TextDark
+.GuildedText-container
+    &-type
+        &-heading1,
+        &-heading2,
+        &-heading3,
+        &-heading4
+            @extends $TextLight
+        &-subheading
+            @extends $TextLight
+        &-subtext
+            @extends $TextDark
+    &-color
+        &-bodyWhite
+            color: var(--body-text-color)
+        &-errorRed
+            @extends $TextBad
 // SVGs
 .SVGIconWithTooltip
     &-container

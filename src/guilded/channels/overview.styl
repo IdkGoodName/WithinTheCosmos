@@ -13,6 +13,19 @@
 // Info icon
 .IconAndLabel-icon
     @extends $SvgDark
+.SectionedIconLabel
+    &-icon
+        @extends $SvgDarkTransition
+        ^[0]-container-desktop:hover &
+            @extends $SvgMedium
+    &-label
+        @extends $TextDark
+    // Division
+    &-left, &-right
+        background-color: border-light-1
+    // Hover glare
+    &-container-desktop::after
+        @extends $ContentGlare
 
 // Handle input focused
 .OverviewWidgetItemEditable-container:focus.OverviewWidgetItemEditable-container

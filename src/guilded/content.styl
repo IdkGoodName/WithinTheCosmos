@@ -16,8 +16,9 @@
 @require "./channels/overview"
 @require "./channels/schedule"
 @require "./channels/stream"
-@require "./channels/voice"
 @require "./channels/content-components"
+@require "./channels/voice"
+@require "./channels/subscriptions"
 
 /*
  * --========================--
@@ -275,7 +276,7 @@
         //mask-image: linear-gradient(to bottom, black, transparent 95%)
         //&::after
         //display: none
-        background-gradient: to bottom, transparent, bg-3, 20px
+        background-gradient: to bottom, transparent, bg-3 20px
 
 /*
  * --- Embeds ---
@@ -420,7 +421,8 @@
 
 // List item note editor
 .TeamListItemNoteEditor-editor
-    @extends $ContentBordered-1
+    background-color: bg-4
+    //@extends $ContentBordered-1
 
 // Forum reply editor
 .TeamThreadPostEditor-editor .Editor-container
@@ -468,11 +470,11 @@
 .TeamThreadReplyCreator-unexpanded-wrapper,
 .DraftInputWithTitleV2-title-wrapper,
 .CollapsedInput-container
-    @extends $ContentBordered-2
+    @extends $ContentMildlyBordered-2
 
 // Make it stand-out less
 .CollapsedInput-container.ContentMetadataInlineReplyDisplay-collapsed-input
-    @extends $ContentBordered-1
+    @extends $ContentMildlyBordered-1
 
 .TeamThreadReplyCreator-container-desktop .TeamThreadReplyCreator-unexpanded-wrapper,
 .DraftInputWithTitleV2-container-desktop.DraftInputWithTitleV2-container-unexpanded,
@@ -550,19 +552,20 @@
     @extends $SvgDarkTransition
 
 // Hovered over toolbar icon
-.SlateToolbarIcon-wrapper:hover .SlateToolbarIcon-icon,
-.SlateEditor-reactions-control:hover,
-.ReactionPickerButton-icon:hover,
-.SlateToolbarMenuIcon-container:hover,
-.SlateToolbarMenuIcon:hover,
+.ReactionPickerButton-container:hover .ReactionPickerButton-icon,
 .SlateToolbarMenuIcon *:hover .SlateToolbarMenuIcon-carat,
-.SlateToolbarMenuIcon *:hover .SlateToolbarMenuIcon-icon
-    @extends $SvgLight
+.SlateToolbarMenuIcon *:hover .SlateToolbarMenuIcon-icon,
+.SlateToolbarIcon-wrapper:hover .SlateToolbarIcon-icon,
+.SlateToolbarMenuIcon-container:hover,
+.SlateEditor-reactions-control:hover,
+.SlateToolbarMenuIcon:hover
+    @extends $SvgMedium
 
 // Active toolbar icon
-.SlateEditor-send-icon,
-.SlateToolbarIcon-icon-active
-    @extends $SvgMedium
+.ReactionPickerButton-container-active .ReactionPickerButton-icon,
+.SlateToolbarIcon-icon-active,
+.SlateEditor-send-icon
+    @extends $SvgLight
 
 // Drop arrow for toolbar icons
 .SlateToolbarMenuIcon-carat

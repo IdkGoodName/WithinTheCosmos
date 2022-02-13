@@ -27,6 +27,7 @@
     &Footer-container,
     // Top bar
     &Navbar-container
+        overflow-x: hidden
         @extends $OverrideContentBordered-3
 
     // Emote name in grid
@@ -56,11 +57,15 @@
 // Reaction normally
 .ReactionPickerButton-container-type-content,
 .ReactionBadge-container-content
-    @extends $ContentMildlyBordered-4
+    @extends $PanelBordered-3
+    .PostMetadata-reactions &
+        @extends $ContentMildlyBordered-3
 // Reaction hovered
 .ReactionBadge-container-content:hover,
 .ReactionBadge-container:not(.ReactionBadge-container-disabled):not(.ReactionBadge-container-active):hover .ReactionBadge-container-content
-    @extends $ContentBordered-4
+    @extends $PanelBordered-4
+    .PostMetadata-reactions &
+        @extends $ContentBordered-2
 
 .ReactionPickerButton-container-type-content
     transition-duration: global-transition-period
@@ -70,21 +75,13 @@
         @extends $Panel-5
 
 // Text after the reaction button
-.ReactionPickerButton-container-with-label::after
-    @extends $TextDark
-    transition-duration: global-transition-period
-
-// Reaction icon
-.ReactionPickerButton
-    // Normally
-    &-container &-icon
-        @extends $FontMedium
+.ReactionPickerButton-container-with-label
+    &::after
+        @extends $TextDark
         transition-duration: global-transition-period
-    // Hover
-    &-container:hover &-icon
-        @extends $FontLight
-    &-container-with-label:hover::after
+    &:hover::after
         @extends $TextMedium
+
 // Reaction counter
 .ReactionBadge-container
     &:not(&-disabled):hover .ReactionBadge-count
@@ -227,3 +224,17 @@
         color: active
     &-unpublished
         color: waiting
+
+/*
+ * -=- Inputs -=-
+ */
+
+/*
+ * --- Copy input ---
+ */
+
+.TextButton
+    &-container&-container-type-default
+        @extends $TextMedium
+    &-container-desktop:hover&-container-type-default
+        @extends $TextLight
