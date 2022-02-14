@@ -288,12 +288,12 @@ $FormDropdownActiveFocused
         &-on,
         &-passThrough,
         &-off
-            @extends $Panel-2
+            @extends $Panel-3
         // All selected
         &-on.TriStateInputButton-container-selected,
         &-passThrough.TriStateInputButton-container-selected,
         &-off.TriStateInputButton-container-selected
-            @extends $Panel-1
+            @extends $Panel-2
         // Permission allowed
         &-on
             // Icon
@@ -348,7 +348,7 @@ $FormDropdownActiveFocused
         .TriStateInputButton-icon
             opacity: 0.3
     &-highlighted:not(.TriStateInputButton-container-selected)
-        @extends $Panel-0
+        @extends $Panel-1
 
 /*
  * --- Option-based ---
@@ -473,16 +473,6 @@ $FormDropdownActiveFocused
             border-color: border-light-1 !important
             background-color: bg-4 !important
 
-    // Code container stuff
-    &-option-color-gray
-        // Label in editor
-        .GuildedSelect-default-option-wrapper
-            @extends $TextDark
-        // Label's arrow in editor
-        .Select-arrow
-            border-top-color: fg-0
-    &-no-border .Select-control
-        background-color: transparent !important
     // Form selector arrow
     .Select-arrow
         border-top-color: fg-0 !important
@@ -507,10 +497,25 @@ $FormDropdownActiveFocused
                 background-color: bg-4 !important
             .Select-arrow
                 border-top-color: var(--accent-0) !important
+    // Code container stuff
+    &-option-color-gray
+        // Label in editor
+        .GuildedSelect-default-option-wrapper
+            @extends $TextDark
+        // Label's arrow in editor
+        .Select-arrow
+            border-top-color: fg-0
     &-no-border&-dark,
     &-no-border
         .Select.is-focused .Select-control
             border-color: transparent !important
+    &-no-border&-dark .Select.is-focused .Select-control,
+    &-no-border&-dark:hover .Select .Select-control,
+    &-no-border .Select.is-focused .Select-control,
+    &-no-border:hover .Select .Select-control,
+    &-no-border&-dark .Select-control,
+    &-no-border .Select-control
+        background-color: transparent !important
 
 // Form selector icon
 .GuildedSelectIcon-container

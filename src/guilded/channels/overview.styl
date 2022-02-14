@@ -1,6 +1,7 @@
 @require "../../variables"
 @require "../../set"
 @require "../../content"
+@require "../guilded-variables"
 
 /*
  * --- Widget ---
@@ -9,23 +10,6 @@
 // About section hover
 .OverviewWidgetItemWrapper-container-clickable::after
     @extends $ContentGlare
-
-// Info icon
-.IconAndLabel-icon
-    @extends $SvgDark
-.SectionedIconLabel
-    &-icon
-        @extends $SvgDarkTransition
-        ^[0]-container-desktop:hover &
-            @extends $SvgMedium
-    &-label
-        @extends $TextDark
-    // Division
-    &-left, &-right
-        background-color: border-light-1
-    // Hover glare
-    &-container-desktop::after
-        @extends $ContentGlare
 
 // Handle input focused
 .OverviewWidgetItemEditable-container:focus.OverviewWidgetItemEditable-container
@@ -65,7 +49,9 @@
         @extends $TextDark
 
 .ToggleControl-container.ToggleControl-container-highlighted
-    border-color: fg-0
+    border-color: var(--accent-1)
+    .EventStatusToggle-container &
+        @extends $SetBorderTransparent
 
 .OverviewWidgetItemWrapper-container-type-filled,
 .TeamOverviewContentItemCard-container
@@ -87,9 +73,9 @@
     &-container-unread
         SetNotification()
     &-container-unread &-title
-        @extends $TextMark
+        @extends $TextNotification
     &-container-unread:hover &-title
-        @extends $TextMarkHover
+        @extends $TextNotificationHover
 
 // See all
 .TeamOverviewSectionHeader-cta-text
@@ -103,26 +89,9 @@
     &-container, &-icon
         @extends $FontDark
 
-.ToggleControlButton-container.ToggleControlButton-container
-    // Showcase event buttons hover
-    &-desktop:hover .ToggleControlButton-icon,
-    &-selected .ToggleControlButton-icon
-        @extends $SvgMedium
-
 /*
  * --- Carousel/Scrollable list ---
  */
-
-// Carousel blurs
-.CarouselList
-    for side in left right
-        &-container-size-sm &-blur-light&-{side}-blur,
-        &-blur-light&-{side}-blur
-            background-gradient: to side, alpha(bg-1, 0), bg-1 100%
-    // Carousel arrow
-    &-controls-arrow
-        transition: 1s
-        @extends $SvgMedium
 
 // Leaderboard
 .TeamOverviewLeaderboardSection-leaderboard-container

@@ -1,21 +1,16 @@
 @require "./variables"
 @require "./set"
 
-mark-text = mix(mark, fg-2, 45%)
-mark-text-hover = mix(mark, fg-2, 25%)
+notification-text = mix(notification, fg-2, 45%)
+notification-text-hover = mix(notification, fg-2, 25%)
 
 /*
  * -=- Content -=-
  */
 
-$ContentGlare
-    background-color: bg-hover
 
-SetNotification()
-    &::before
-        @extends $Notification
 $Notification
-    background-color: mark
+    background-color: notification
 
 BasicLink()
     @extends $TextThemeDull
@@ -55,10 +50,10 @@ $TextMediumTransition
 $TextLight
     color: fg-3
 
-$TextMark
-    color: mark-text
-$TextMarkHover
-    color: mark-text-hover
+$TextNotification
+    color: notification-text
+$TextNotificationHover
+    color: notification-text-hover
 $TextTheme
     color: var(--accent-0)
 $TextThemeDull
@@ -97,10 +92,10 @@ $SvgMedium
 $SvgLight
     fill: fg-3
 
-$SvgMark
-    fill: shade(mark-text, 20%)
-$SvgMarkHover
-    fill: shade(mark-text-hover, 20%)
+$SvgNotification
+    fill: shade(notification-text, 20%)
+$SvgNotificationHover
+    fill: shade(notification-text-hover, 20%)
 $SvgTheme
     fill: var(--accent-0)
 $SvgThemeDull

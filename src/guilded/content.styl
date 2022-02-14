@@ -2,6 +2,7 @@
 @require "../set"
 @require "../content"
 @require "../fake"
+@require "./guilded-variables"
 
 @require "./channels/any-channel"
 @require "./channels/announcement"
@@ -35,16 +36,30 @@
 .GuildedText-container
     &-type
         // For server invite titles,
-        &-heading2
+        &-title,
+        &-heading1,
+        &-heading2,
+        &-heading3,
+        &-heading4,
             @extends $TextLight
-        // For level titles, message thread pop up text
-        &-subtext2
-            @extends $TextDark
-        // Status messages
-        &-subtext3
+        &-heading5,
+        &-heading6
             @extends $TextMedium
+        // For level titles, message thread pop up text
+        &-subtext1,
+        &-subtext2,
+        &-subtext3,
+        &-subtextHeading
+            @extends $TextDark
+        &-subtextBodyWhite
+            @extends $TextMedium
+        // Misc
+        &-bigBody
+            @extends $TextDark
     &-color-gilded1
         @extends $TextThemeDull
+    &-color-gray
+        @extends $TextDark
 
 // Not loaded
 .LayeredPageContent-fetch-error
@@ -170,8 +185,8 @@
 .TemplateParameter-container,
 // Channel mentions
 .ChannelPill-container
-    @extends $TextLight
-    background-color: alpha(fg-3, 0.1)
+    @extends $TextMedium
+    background-color: alpha(bg-hover, 0.2)
 // Template icon
 .TemplateParameter-icon
     @extends $SvgDark
@@ -259,9 +274,18 @@
     // Container selected in editor
     &Renderer-container-selected
         border-color: var(--accent-selection)
-    // Channel name
+
+    &CardHeader-icon
+        @extends $SvgDark
+    &CardHeader-container
+        @extends $TextMedium
     &CardFooter-channel-name
         @extends $FakeMention
+
+.ListItemEmbedCard-assigned-to-wrapper
+    @extends $TextDark
+.CalendarEventEmbedCard-time
+    @extends $TextDark
 
 // Content info
 .DefaultContentEmbedCard-content
@@ -286,12 +310,12 @@
 .ChatEmbed-container,
 .OpenGraphEmbed-content,
 .TeamEmbedCard-container
-    @extends $OverridePanelBordered-3
+    @extends $OverrideContentBordered-3
     border-radius: radius-2
     border-style: solid
     overflow: hidden
     &:not([style])
-        border-left: solid 1px border-dark-1
+        border-left: solid 1px border-light-1
 
 // Embed
 .ChatEmbed,
@@ -304,7 +328,7 @@
         &-description
             @extends $TextMedium
     &-content:not([style])
-        border-left: solid 1px border-ldark-1
+        border-left: solid 1px border-light-1
 
 .OpenGraphEmbedContent-domain
     @extends $TextDark
@@ -361,7 +385,7 @@
     &-selected
         border-color: var(--accent-selection)
 .CustomFormWrapper-container-standalone
-    @extends $PanelBordered-3
+    @extends $ContentBordered-3
     // Form border
     &::after
         border: none

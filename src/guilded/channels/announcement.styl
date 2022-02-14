@@ -14,6 +14,10 @@
         SetNotification()
         & ^[0]-widget-wrapper
             @extends $ContentBordered-2
+        .PostDisplayV2-title .GH1-container
+            @extends $TextNotification
+        &:hover .PostDisplayV2-title .GH1-container
+            @extends $TextNotificationHover
 
 /*
  * --- Role label ---

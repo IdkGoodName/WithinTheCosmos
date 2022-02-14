@@ -12,8 +12,15 @@
     @extends $Panel-2
 
 // Document in the list info
-.DocSummaryInfo-container
-    @extends $PanelBordered-3
+.DocSummaryInfo
+    &-container
+        @extends $PanelBordered-3
+        &-unread
+            SetNotification()
+            & ^[0]-title
+                @extends $TextNotification
+            &:hover ^[0]-title
+                @extends $TextNotificationHover
 
 // "Drafts" title
 .DocsDisplayV2-title
@@ -33,9 +40,6 @@
     padding: spacing-3 spacing-5
     border-radius: radius-2
     @extends $ContentMildlyBordered-2
-
-.GuildedText-container-type-heading3
-    @extends $TextLight
 
 .DocSummaryInfo-subtitle
     @extends $TextDark
@@ -61,7 +65,9 @@
 .TagDisplayItemV2
     // Tag's background
     &-container
-        @extends $OverrideContentMildlyBordered-4
+        @extends $OverrideContentMildlyBordered-3
+        .DocViewer-tags-display &
+            @extends $OverridePanelBordered-4
     // Tag's text
     &-tag
         @extends $TextMedium

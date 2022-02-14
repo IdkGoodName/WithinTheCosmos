@@ -1,6 +1,7 @@
 @require "../../variables"
 @require "../../set"
 @require "../../content"
+@require "../guilded-variables"
 
 // Whole container
 .VoiceChannelDisplay-container
@@ -56,10 +57,6 @@
 .LimitLabel-container
     @extends $Panel-5
 
-// Current user count
-.GuildedText-container-type-heading6
-    @extends $TextMedium
-
 // Max user count
 .LimitLabel-limit
     @extends $TextDark
@@ -86,9 +83,6 @@
 // Keybind in the settings
 .ItemKeybindInput-container
     @extends $Panel-3
-// Sub-text
-.GuildedText-container-type-subtextHeading
-    @extends $TextDark
 // Keybind recorder
 .HotkeyRecorder-container
     border-color: fg-0

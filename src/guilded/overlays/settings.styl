@@ -1,6 +1,7 @@
 @require "../../variables"
 @require "../../set"
 @require "../../content"
+@require "../guilded-variables"
 
 /*
  * -=- Settings -=-
@@ -39,20 +40,21 @@
         @extends $ContentGlare
     // Tab hover text
     &:hover .DesktopOptionsControlItemTemplate-label-text
-        @extends $TextLight
+        @extends $TextMedium
     // Tab active
-    &-active
+    &-active, &-active:hover
         @extends $ContentMildlyBordered-3
         .DesktopOptionsControlItemTemplate-label-text
-            @extends $TextMedium
+            @extends $TextLight
 
 // Gilded tab
 .DesktopOptionsControlItemTemplate
     &-container-type-gilded &-label-text
         color: $gold
-    &-container-type-gilded&-container-active &-label-text
+    &-container-type-gilded&-container-desktop &-label-text
         color: tint($gold, 40%)
-
+    &-container-type-gilded&-container-active &-label-text
+        @extends $TextLight
 /*
  * -=- User settings -=-
  */
@@ -218,9 +220,6 @@
         // Info icon
         &-fees
             @extends $SvgDark
-// Subscription points
-.GuildedText-container-type-subtextBodyWhite
-    @extends $TextMedium
 // Subscription enabling
 .ModalWrapper-container.ModalWrapper-container-required:not(.ModalWrapper-background-style-transparent)
     background: rgba(0, 0, 0, 0.6)

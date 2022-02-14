@@ -57,14 +57,14 @@
 // Reaction normally
 .ReactionPickerButton-container-type-content,
 .ReactionBadge-container-content
-    @extends $PanelBordered-3
-    .PostMetadata-reactions &
+    @extends $PanelBordered-4
+    .MediaInfoPane-post-metadata &
         @extends $ContentMildlyBordered-3
 // Reaction hovered
 .ReactionBadge-container-content:hover,
 .ReactionBadge-container:not(.ReactionBadge-container-disabled):not(.ReactionBadge-container-active):hover .ReactionBadge-container-content
-    @extends $PanelBordered-4
-    .PostMetadata-reactions &
+    @extends $PanelBordered-5
+    .MediaInfoPane-post-metadata &
         @extends $ContentBordered-2
 
 .ReactionPickerButton-container-type-content
@@ -90,14 +90,14 @@
     &.ReactionBadge-container-active
         // Normal active reaction
         .ReactionBadge-container-content
-            background-color: mix(bg-1, active, 90%)
+            background-color: mix(bg-1, active, 85%)
             border-color: alpha(active, 0.1)
             // Active reaction label
             .ReactionBadge-count
                 color: active
         // Active reaction hover
         &.ReactionBadge-container:not(.ReactionBadge-container-disabled):hover .ReactionBadge-container-content
-            background-color: mix(bg-1, active, 95%)
+            background-color: mix(bg-1, active, 90%)
 
 /*
  * -=- Image Upload -=-
@@ -238,3 +238,65 @@
         @extends $TextMedium
     &-container-desktop:hover&-container-type-default
         @extends $TextLight
+
+/*
+ * -=- Misc -=-
+ */
+
+// Overview socials
+.IconAndLabel-icon
+    @extends $SvgDark
+// Form add new field
+.SectionedIconLabel
+    &-icon
+        @extends $SvgDarkTransition
+        ^[0]-container-desktop:hover &
+            @extends $SvgMedium
+    &-label
+        @extends $TextDark
+    // Division
+    &-left, &-right
+        background-color: border-light-1
+    // Hover glare
+    &-container-desktop::after
+        @extends $ContentGlare
+
+.ToggleControlButton-container.ToggleControlButton-container
+    // Showcase event buttons hover
+    &-desktop:hover .ToggleControlButton-icon
+        @extends $SvgMedium
+    &-selected
+        .ToggleControlButton-icon
+            @extends $SvgTheme
+        // FIXME: Use for loop?
+        &[title="Going"]
+            .ToggleControlButton-icon
+                @extends $SvgGood
+        &[title="Maybe"]
+            .ToggleControlButton-icon
+                @extends $SvgNeutral
+        &[title="Declined"]
+            .ToggleControlButton-icon
+                @extends $SvgBad
+
+// Event accepted member badge
+.TeamWidgetProfileBadge
+    &-container-type
+        &-success
+            @extends $Panel-5
+            & ^[0]-icon
+                @extends $SvgGood
+        &-error
+            @extends $Panel-5
+            & ^[0]-icon
+                @extends $SvgBad
+        &-info
+            @extends $Panel-5
+            & ^[0]-icon
+                fill: info
+        &-discord
+            @extends $Panel-5
+            & ^[0]-icon
+                fill: info
+    &-icon
+        @extends $SvgLight

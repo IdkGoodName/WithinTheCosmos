@@ -1,6 +1,7 @@
 @require "../../variables"
 @require "../../set"
 @require "../../content"
+@require "../guilded-variables"
 
 /*
  * --- Calendar ---
@@ -141,17 +142,20 @@
  */
 
 // Header
-.EventTemporalChannelDisplay-container
-    @extends $Panel-4
-    --border-color: bg-0
+.EventTemporalChannelDisplay
+    &-container
+        @extends $ContentMildlyBordered-2
+        --border-color: bg-0
+    &-icon
+        @extends $SvgDark
 // Details
 .TeamEventDetails
     &-post-metadata, &-status, &-item
-        @extends $Panel-3
+        @extends $ContentMildlyBordered-3
 .EventCardMetadata
     // Container
     &-container-size-lg
-        @extends $Panel-3
+        @extends $ContentMildlyBordered-3
     // Icon
     &-icon
         @extends $SvgDark
@@ -172,6 +176,8 @@
         @extends $TextDark
         &::before
             background-color: fg-1
+.TeamEventRsvps-container
+    --border-color: bg-0
 
 .EventRsvpsHeader
     // See all link
@@ -182,3 +188,8 @@
     // Maybe, invited, declined
     &-container-desktop:not(&-container-rsvps-disabled):hover &-attendance .EventAttendanceHeader-status
         @extends $TextMedium
+
+// Invite
+.TeamEventInviteMembers
+    &-title
+        @extends $TextLight

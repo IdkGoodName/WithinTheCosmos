@@ -1,5 +1,6 @@
 @require "../../variables"
 @require "../../content"
+@require "../guilded-variables"
 
 /*
  * --- Settings ---
@@ -9,13 +10,15 @@
     // Highlighted text
     &-status
         // Open
-        & ^[0]-container-status-open &
+        ^[0]-container-status-open &
             @extends $TextGood
         // Closed
-        & ^[0]-container-status-closed &
+        ^[0]-container-status-closed &
             @extends $TextBad
     &-toggle
-        @extends $SvgDark
+        @extends $SvgDarkTransition
+        &:hover
+            @extends $SvgMedium
 
 // Application selector wrapper
 .TeamApplicationInlineLink-container

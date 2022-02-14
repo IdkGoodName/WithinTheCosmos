@@ -1,3 +1,4 @@
+@require "../../content"
 @require "../guilded-variables"
 
 /*
@@ -8,16 +9,40 @@
 .TransientMenu-container-style-default
     @extends $OverrideContentRoughBordered-4
 
-// Plus menu
-.ContextMenuItem-container
-    &-section-type-rows
-        // Description
-        .ContextMenuItem-body
-            @extends $TextDark
-    &:hover
-        // Description
-        .ContextMenuItem-body
-            @extends $TextMedium
+.ContextMenuItem
+    &-container
+        @extends $FontMedium
+
+        &-section-type-rows
+            // Description
+            & ^[0]-body
+                @extends $TextDark
+        &:not(^[0]-disabled):not(^[0]-highlighted):hover
+            // Text
+            & ^[0]-label
+                @extends $TextLight
+            // Icon
+            & ^[0]-icon
+                @extends $SvgLight
+            // Description
+            & ^[0]-body
+                @extends $TextMedium
+        // Menu item hover glare
+        &::after
+            @extends $ContentGlare
+    // Name
+    &-label
+        @extends $TextMedium
+
+    // Menu item download app highlighted
+    &-container&-highlighted
+        // Text
+        & ^[0]-label
+            color: important
+        // Icon
+        & ^[0]-icon
+            fill: important
+
 // Button
 .ContextMenu
     // Icon
@@ -26,37 +51,6 @@
     // Text
     &Item-label
         @extends $TextMedium
-// Menu item
-.ContextMenuItem
-    &-container
-        @extends $FontMedium
-        // Text and icon on hover
-        &:hover
-            // Text
-            & ^[0]-label
-                @extends $TextLight
-            // Icon
-            .ContextMenuIcon-container-icon
-                @extends $SvgLight
-        // Menu item hover glare
-        &::after
-            @extends $ContentGlare
-    // Menu item download app highlighted
-    &-highlighted
-        background-color: transparent
-        fill: important
-        // Text
-        & ^[0]-label
-            color: important
-        // Icon
-        .ContextMenuIcon-container-icon
-            color: important
-
-    // Highlighted
-    &-container&-highlighted
-        & ^[0]-icon, & ^[0]-label
-            color: highlight
-            fill: highlight
 
 // Overflow icon
 .ContextMenuTrigger

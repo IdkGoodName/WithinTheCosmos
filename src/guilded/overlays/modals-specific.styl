@@ -1,6 +1,7 @@
 @require "../../variables"
 @require "../../set"
 @require "../../content"
+@require "../guilded-variables"
 
 /*
  * -=- Message plus menus -=-
@@ -106,9 +107,6 @@
     &-panel
         @extends $Panel-2
 
-// Accept invite
-.GuildedText-container-type-bigBody
-    @extends $TextDark
 .MemberCountPill
     // X members, Y online pills
     &-container
@@ -216,10 +214,10 @@
         @extends $ContentBordered-2
         SetNotification()
         .ChannelActivityItem-header
-            @extends $TextMark
+            @extends $TextNotification
             font-weight: bold
         &:hover .ChannelActivityItem-header
-            @extends $TextMarkHover
+            @extends $TextNotificationHover
     // Type icons
     &-icon
         // Wrapper
@@ -290,7 +288,7 @@
 .HorizontalPercentageBar
     // Percentage bar
     &-bar
-        @extends $Panel-3
+        background-color: bg-inner
         // Progress
         &-highlight
             background: progress
@@ -314,10 +312,12 @@
 // Question X
 .CustomFormSummaryResultSection-header
     @extends $TextDark
+// Title
+.CustomFormResultHeader-container
+    @extends $TextLight
 // Text response in a form
 .CustomFormSummaryTextResponse-container
-    @extends $Panel-3
-    border-left: 0
+    @extends $ContentMildlyBordered-3
 
 // Individual response header
 .CollapsibleItemHeader

@@ -1,4 +1,5 @@
 @require "../../set"
+@require "../guilded-variables"
 
 /*
  * -=- Channels -=-
@@ -53,13 +54,13 @@ ChannelSelected()
     @extends $ContentMildlyBordered-2
 ChannelSelectedContent()
     &-container-selected &-icon
-        @extends $SvgMedium
+        @extends $SvgLight
     &-container-selected
         .ChannelIcon-icon-primary,
         .ChannelIcon-icon-secondary
-            @extends $SvgMedium
+            @extends $SvgLight
     &-container-selected &-name
-        @extends $TextMedium
+        @extends $TextLight
 
 SetChannel(className)
     ChannelSelectedContent()
@@ -79,10 +80,10 @@ SetChannel(className)
         ChannelSelected()
     // Unread
     &-container-unread
-        ChannelContent(className, "$TextMark", "$SvgMark")
+        ChannelContent(className, "$TextNotification", "$SvgNotification")
         SetNotification()
         &:hover
-            ChannelContent(className, "$TextMarkHover", "$SvgMarkHover")
+            ChannelContent(className, "$TextNotificationHover", "$SvgNotificationHover")
 // Section
 .TeamNavSectionItem
     SetChannel(".TeamNavSectionItem")
@@ -233,9 +234,6 @@ SetChannel(className)
     // Member list invite button
     &-wrapper
         @extends $Panel-0
-// Member list invite text
-.GuildedText-container-color-gray
-    @extends $TextDarkTransition
 // Member list invite hover
 .SidebarInviteButton-container:hover
     .SidebarInviteButton-text, .SidebarInviteButton-icon
