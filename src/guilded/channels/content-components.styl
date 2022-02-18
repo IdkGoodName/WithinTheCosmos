@@ -20,8 +20,9 @@
         @extends $FullBorderTransparent
         &:hover,
         &:focus
-            background-color: var(--accent-transparent)
-            border: solid 1px var(--accent-0)
+            @extends $ContentBordered-0
+            // background-color: var(--accent-transparent)
+            // border: solid 1px var(--accent-0)
 
     // Bottom bar
     &Footer-container,
@@ -168,7 +169,7 @@
  */
 
 .CalloutBadge-container
-    @extends $TextDark
+    @extends $TextMedium
     background: bg-0 !important
     border: solid 1px border-light-1 !important
 
@@ -182,9 +183,11 @@
     //     display: none
     // Override all colours for badges
     &-container:not(.UserFlairRow-icon)
-        @extends $TextDark
+        @extends $TextMedium
         background: bg-1 !important
         border: solid 1px border-light-1 !important
+        & ^[0]-name
+            @extends $TextMedium
 // [MEMBER]
 .GroupMembershipBadge-container
    color: verified
@@ -212,6 +215,14 @@
 .GroupSettingsPanel-name-wrapper .CalloutBadge-container
     color: $blue
 
+.ReGuildedSettings-badge
+    // [NEW] in the changelog
+    &-new
+        color: $red
+    // [ADDON] for addon settings
+    &-addon
+        color: #cc5555
+
 /*
  * --- Tournament badges ---
  */
@@ -224,6 +235,10 @@
         color: active
     &-unpublished
         color: waiting
+.TournamentBadges-badge
+    &-type
+        &-featured
+            color: important
 
 /*
  * -=- Inputs -=-
@@ -268,16 +283,16 @@
     &-selected
         .ToggleControlButton-icon
             @extends $SvgTheme
-        // FIXME: Use for loop?
-        &[title="Going"]
-            .ToggleControlButton-icon
-                @extends $SvgGood
-        &[title="Maybe"]
-            .ToggleControlButton-icon
-                @extends $SvgNeutral
-        &[title="Declined"]
-            .ToggleControlButton-icon
-                @extends $SvgBad
+
+        button-list = { name: "Going", placeholder: "$SvgGood" } { name: "Maybe", placeholder: "$SvgNeutral" } { name: "Declined", placeholder: "$SvgBad" }
+
+        for type in button-list
+            // Have to use a hack
+            name = attribute-value(type.name)
+
+            &[title={name}]
+                .ToggleControlButton-icon
+                    @extends {type.placeholder}
 
 // Event accepted member badge
 .TeamWidgetProfileBadge
@@ -300,3 +315,18 @@
                 fill: info
     &-icon
         @extends $SvgLight
+
+// Overview carousel
+.CarouselList
+    for side in left right
+        // // Fading
+        // &-container-size-sm .CarouselList-blur-light.CarouselList-{side}-blur
+        //     background-gradient: to side, alpha(bg-1, 0), bg-1 75%
+        // Arrow hover
+        &-controls-{side}:hover &-controls-arrow
+            @extends $SvgMedium
+    // Arrows
+    &-controls-arrow
+        @extends $SvgDarkTransition
+
+define-carousel-fade(bg-1)

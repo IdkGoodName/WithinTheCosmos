@@ -1,9 +1,10 @@
 @require "./variables"
 
-// Sets both color and fill
+// Custom properties
 font-color(colour)
     color: colour
     fill: colour
+
 background-gradient()
     background: linear-gradient(arguments)
 
@@ -12,6 +13,11 @@ transition()
     duration = @transition-duration || global-transition-period
     transition: arguments duration fn
 
+// Functions
+attribute-value(value)
+    '"' + value + '"'
+
+// Used mixins
 $TransitionColour
     transition: color
 $TransitionFill

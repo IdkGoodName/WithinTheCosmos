@@ -28,9 +28,12 @@
 
 define-message-type(colour)
     background-color: alpha(colour, 0.05)
+
+    define-carousel-fade(mix(bg-3, colour, 95%))
     // Hover
     &:hover
-        background-color: alpha(colour, 0.02)
+        background-color: mix(bg-4, colour, 95%) //alpha(colour, 0.02)
+        define-carousel-fade(mix(bg-4, colour, 95%))
     // Side
     &::after
         background-color: colour
@@ -55,10 +58,12 @@ define-message-type(colour)
         @extends $TransitionBackground
     &.ChatV2Message-container-type-default
         color: var(--body-text-color)
+        define-carousel-fade(bg-3)
     // Hovered message
     &:not(&-editing):hover, &.ChatV2Message-container-replying
         @extends $Panel-1
         --body-text-color: fg-3
+        define-carousel-fade(bg-4)
     // Right click active
     &-active
         @extends $Panel-1
@@ -210,6 +215,7 @@ define-message-type(colour)
     &-container
         @extends $Panel-4
         SetScrollbar()
+        --body-text-color: fg-2
 // Pinned message
 .ChatV2PinnedMessage-message-wrapper
     @extends $Panel-2

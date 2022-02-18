@@ -37,9 +37,9 @@ $FormDropdownActiveFocused
 .FormSection-section-header
     @extends $TextLight
 
-// Custom form header name ("Question 1")
-.FormSection-section-header-style-result
-    @extends $TextDark
+    // Custom form header name ("Question 1")
+    &&-style-result
+        @extends $TextDark
 
 // Label of most fields
 .FormFieldLabel
@@ -63,6 +63,12 @@ $FormDropdownActiveFocused
 .FormFieldDescription
     &-container
         @extends $TextDark
+
+.FormResultDisplayFieldWrapper-field-header
+    &-icon
+        @extends $SvgDark
+    &-text
+        @extends $TextMedium
 
 
 /*
@@ -710,10 +716,24 @@ blue-glow = tint($blue, 20%)
     // Hollow gilded
     &-container&-container-hollow
         background: none
-        button-hollow-body(var(--accent-0), var(--accent-0))
+        position: relative
+        button-hollow-body(var(--accent-transparent), var(--accent-1))
+    // Increase border's opacity
+    &-container-type-gilded&-container-hollow::before
+        content: ""
+        // Make it cover the whole space, including 1px border
+        position: absolute
+        top: -1px
+        bottom: -1px
+        right: -1px
+        left: -1px
+        // Replicate the border
+        // TODO: var(--accent-0) and opacity could be used instead
+        border-radius: 4px
+        border: solid 1px var(--accent-transparent)
     // Hollow gilded hover
     &-container-desktop&-container-hollow:hover
-        button-hollow-body(var(--accent-0), var(--accent-1))
+        button-hollow-body(var(--accent-transparent), var(--accent-1))
     // Hollow gilded text
     &-container-hollow &-button-content
         @extends $FontTheme

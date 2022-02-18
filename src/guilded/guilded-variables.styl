@@ -31,3 +31,9 @@ $ContentGlare
 SetNotification()
     &::before
         @extends $Notification
+
+define-carousel-fade(colour, size = "sm")
+    // Repeatition
+    for side in left right
+        .CarouselList-container-size-{sm} .CarouselList-blur-light.CarouselList-{side}-blur
+            background-gradient: to side, alpha(colour, 0), colour 75%

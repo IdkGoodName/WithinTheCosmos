@@ -1,8 +1,10 @@
 @require "./variables"
 @require "./set"
 
-notification-text = mix(notification, fg-2, 45%)
-notification-text-hover = mix(notification, fg-2, 25%)
+notification-text = mix(notification, fg-3, 45%)
+notification-text-hover = mix(notification, fg-3, 25%)
+mention-text = mix(mention, fg-3, 60%)
+mention-text-hover = mix(mention, fg-3, 40%)
 
 /*
  * -=- Content -=-
@@ -54,6 +56,10 @@ $TextNotification
     color: notification-text
 $TextNotificationHover
     color: notification-text-hover
+$TextMention
+    color: mention-text
+$TextMentionHover
+    color: mention-text-hover
 $TextTheme
     color: var(--accent-0)
 $TextThemeDull
@@ -96,6 +102,10 @@ $SvgNotification
     fill: shade(notification-text, 20%)
 $SvgNotificationHover
     fill: shade(notification-text-hover, 20%)
+$SvgMention
+    fill: shade(mention-text, 20%)
+$SvgMentionHover
+    fill: shade(mention-text-hover, 20%)
 $SvgTheme
     fill: var(--accent-0)
 $SvgThemeDull

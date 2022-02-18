@@ -281,6 +281,13 @@
             @extends $TextDark
 
 /*
+ * --- Message pin and deletion confirmation ---
+ */
+
+.ChatV2MessagePinOverlay-message-wrapper
+    @extends $Panel-3
+
+/*
  * -=- Form view -=-
  */
 
@@ -336,5 +343,5 @@
     @extends $Panel-3
 // Individual response message input text
 .TextAreaFieldDisplayRenderer-container
-    @extends $TextMedium
+    color: var(--body-text-color)
     cursor: text

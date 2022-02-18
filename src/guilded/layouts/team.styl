@@ -82,7 +82,7 @@ SetChannel(className)
     &-container-unread
         ChannelContent(className, "$TextNotification", "$SvgNotification")
         SetNotification()
-        &:hover
+        ^[0]-container&:hover
             ChannelContent(className, "$TextNotificationHover", "$SvgNotificationHover")
 // Section
 .TeamNavSectionItem
@@ -90,6 +90,10 @@ SetChannel(className)
 // Channel
 .TeamChannelItemContents
     SetChannel(".TeamChannelItemContents")
+.TeamChannelItemBadgedContent-container
+    ChannelContent(".TeamChannelItemContents", "$TextMention", "$SvgMention")
+    &.TeamChannelItemContents-container:hover
+        ChannelContent(".TeamChannelItemContents", "$TextMentionHover", "$SvgMentionHover")
 
 .ChannelIcon-icon-primary,
 .ChannelIcon-icon-secondary
