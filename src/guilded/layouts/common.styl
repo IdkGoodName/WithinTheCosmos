@@ -155,31 +155,31 @@ StatusMessageType(colour)
         &-errorRed
             @extends $TextBad
 // SVGs
-.SVGIconWithTooltip
-    &-container
++prefix-classes("SVGIcon")
+    .WithTooltip-container
         @extends $SvgDark
         // Normal clickable
         &-clickable:hover
             @extends $SvgLight
-            .SVGIconWithTooltip-icon
+            .WithTooltip-icon
                 @extends $SvgLight
-            .SVGIconWithTooltip-inline-text
+            .WithTooltip-inline-text
                 @extends $TextLight
         // Buttons
         &-flavor-hover-bleach
             @extends $Panel-4
-            .SVGIconWithTooltip-icon
+            .WithTooltip-icon
                 @extends $SvgDark
-            .SVGIconWithTooltip-inline-text
+            .WithTooltip-inline-text
                 @extends $TextDark
-            &:hover .SVGIconWithTooltip-icon
+            &:hover .WithTooltip-icon
                 @extends $SvgMedium
-            &:hover .SVGIconWithTooltip-inline-text
+            &:hover .WithTooltip-inline-text
                 @extends $TextMedium
         // Delete
         &-flavor-filled-remove
             @extends $PanelBad
-            .SVGIcon-icon
+            .-icon
                 fill: black
 
 // Link/Hyperlink
@@ -294,7 +294,7 @@ StatusMessageType(colour)
 
 // Flash when scrolling to a message or a forum post
 .ScrollFlasher-container
-    background-color: important
+    @extends $PanelImportant
 
 /*
  * -=- Mention icons and notifications -=-

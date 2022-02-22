@@ -220,7 +220,7 @@
 
 // Selected images and videos
 .MediaRenderer-content-selected
-    border-color: var(--accent-selection)
+    @extends $SetBorderSelection
 
 .RawVideoPlayer
     // Play arrow
@@ -273,7 +273,7 @@
         color: fg-1
     // Container selected in editor
     &Renderer-container-selected
-        border-color: var(--accent-selection)
+        @extends $SetBorderSelection
 
     &CardHeader-icon
         @extends $SvgDark
@@ -383,12 +383,12 @@
     @extends $RadiusSmall
     SetScrollable()
     &-selected
-        border-color: var(--accent-selection)
+        @extends $SetBorderSelection
 .CustomFormWrapper-container-standalone
     @extends $ContentBordered-3
     // Form border
     &::after
-        border: none
+        @extends $RemoveBorder
 
 // Form's title
 .CustomFormHeader-title
@@ -416,7 +416,7 @@
     @extends $RadiusMedium
 
 // Forum editor
-.Editor-container
+.Editor-container:not(.Editor-container-type-bare)
     @extends $ContentBordered-2
 
 .SlateEditor
@@ -441,7 +441,7 @@
 // List item message editor
 .TeamListItemsInput-editor
     @extends $PanelTransparent
-    border: none
+    @extends $RemoveBorder
 
 // List item note editor
 .TeamListItemNoteEditor-editor
@@ -559,9 +559,10 @@
  */
 
 // Selected text toolbar picker
-.SlateSelectionToolbar-toolbar
-    @extends $Panel-5
-    box-shadow: 0 0 16px 2px black
+.SlateSelectionToolbar
+    &-toolbar
+        @extends $PanelBordered-5
+        //box-shadow: 0 0 16px 2px black
 
 // Selected text toolbar caret
 .SlateSelectionToolbar-caret

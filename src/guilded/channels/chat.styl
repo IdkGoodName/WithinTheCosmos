@@ -56,12 +56,12 @@ define-message-type(colour)
     // Message
     &:not(&-editing):not(&-threads-disabled)
         @extends $TransitionBackground
-    &.ChatV2Message-container-type-default
+    &&-type-default
         color: var(--body-text-color)
         define-carousel-fade(bg-3)
     // Hovered message
     &:not(&-editing):hover, &.ChatV2Message-container-replying
-        @extends $Panel-1
+        background-color: bg-4
         --body-text-color: fg-3
         define-carousel-fade(bg-4)
     // Right click active
@@ -153,7 +153,7 @@ define-message-type(colour)
         fill: tint(mention, 25%)
 
 .ChatChannelInput-editor
-    border: none
+    @extends $RemoveBorder
 
 // Reply headers
 .ChatV2MessageReplyHeader-container
@@ -219,9 +219,9 @@ define-message-type(colour)
 // Pinned message
 .ChatV2PinnedMessage-message-wrapper
     @extends $Panel-2
-    @extends $RadiusSmall
-    .ChatV2Message-container
-        @extends $RadiusSmall
+    // @extends $RadiusSmall
+    // .ChatV2Message-container
+    //     @extends $RadiusSmall
 
 // "Private message" label
 .PrivateMessageLabel
@@ -248,10 +248,10 @@ define-message-type(colour)
     // New messages
     &-container-type-alert
         & ^[0]-line
-            background: important
+            @extends $PanelImportant
     &-container-type-alert
         & ^[0]-word
-            color: important
+            @extends $TextImportant
 
 /*
  * --- Threads ---

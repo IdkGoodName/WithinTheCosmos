@@ -701,7 +701,7 @@ blue-glow = tint($blue, 20%)
     &-container&-container-type-gilded
         box-shadow: none
         background: bg-2
-        border-color: var(--accent-transparent)
+        @extends $SetBorderThemeTransparent
         //@extends $SetBorderLight-1
     // Gilded button hover
     &-container-desktop&-container-filled:hover
@@ -797,7 +797,7 @@ blue-glow = tint($blue, 20%)
     // Colour hover
     &-hover-container:hover &-container-dot:not(&-container-dot-selected),
     &-container-size-lg &-container-dot:not(&-container-dot-selected):hover
-        border-color: border-light-3
+        @extends $SetBorderLight-3
 .CustomColorInputOption
     &-default
         background-gradient: 135deg, var(--accent-0) 0%, var(--accent-2) 100%

@@ -42,20 +42,20 @@
         & ^[0]-votes, & ^[0]-buttons-applied-date
             @extends $Panel-4
 // Application status
-.ApplicationStatusBadge
-    &-icon
++prefix-classes("ApplicationStatusBadge")
+    .-icon
         // Accepted
-        & ^[0]-container-accepted &
+        .-container-accepted &
             @extends $SvgGood
         // Declined
-        & ^[0]-container-declined &
+        .-container-declined &
             @extends $SvgBad
-    &-text
+    .-text
         // Accepted
-        & ^[0]-container-accepted &
+        .-container-accepted &
             @extends $TextGood
         // Declined
-        & ^[0]-container-declined &
+        .-container-declined &
             @extends $TextBad
 
 /*

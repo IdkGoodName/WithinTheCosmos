@@ -82,7 +82,7 @@
             border-radius: radius-2
             z-index: 50
     &-game-summary
-        border: none
+        @extends $RemoveBorder
 // Game property
 .UserInfoSummaryItem
     // Label
@@ -372,80 +372,80 @@
     .SelectMenuItem-label
         @extends $TextMedium
 
-/*
- * -=- Jobs -=-
- */
+// /*
+//  * -=- Jobs -=-
+//  */
 
-.LandingPageNavBar-container-theme-gilded
-    @extends $Panel-0
-.LogoAndWordmarkV2-container-theme-dark
-    fill: $gold
-.LandingPageNavBarLinks-container-theme-dark .LandingPageNavBarLinks-link
-    &, &:focus, &:active, &:visited, &:hover
-        color: $gold
-.JobLandingHeader
-    &-container::before
-        @extends .LandingPageNavBar-container-theme-gilded
-    &-title
-        color: $gold
-    &-description
-        color: $gold
-.JobOpeningHeader
-    &-icon
-        fill: $gold
-    &-container
-        color: $gold
-        .ParagraphRenderer
-            color: $gold
+// .LandingPageNavBar-container-theme-gilded
+//     @extends $Panel-0
+// .LogoAndWordmarkV2-container-theme-dark
+//     fill: $gold
+// .LandingPageNavBarLinks-container-theme-dark .LandingPageNavBarLinks-link
+//     &, &:focus, &:active, &:visited, &:hover
+//         color: $gold
+// .JobLandingHeader
+//     &-container::before
+//         @extends .LandingPageNavBar-container-theme-gilded
+//     &-title
+//         color: $gold
+//     &-description
+//         color: $gold
+// .JobOpeningHeader
+//     &-icon
+//         fill: $gold
+//     &-container
+//         color: $gold
+//         .ParagraphRenderer
+//             color: $gold
 
-$JobsSectionHeading
-    @extends $TextLight
-$JobsSectionDescription
-    @extends $TextMedium
-$JobsItemHeading
-    @extends $TextMedium
-$JobsItemDescription
-    @extends $TextDark
-// Jobs
-.JobLandingOpenings
-    &-heading
-        @extends $JobsSectionHeading
-    &-description
-        @extends $JobsSectionDescription
-    &-job
-        @extends $ContentMildlyBordered-2
-        &:hover
-            @extends $Panel-1
-        &-icon, svg
-            @extends $SvgDark
-        &:hover svg
-            fill: $gold
-        &-fill-light-blue:hover svg
-            fill: $blue
-        &-fill-green:hover svg
-            fill: $green
-        &-title
-            @extends $JobsItemHeading
-        &-subtext
-            @extends $JobsItemDescription
-// Perks
-.JobsPerks
-    &-container
-        @extends $Panel-2
-    &-header
-        @extends $JobsSectionHeading
-    &-description
-        @extends $JobsSectionDescription
-.JobsPerk
-    &-icon
-        fill: $gold
-    &-name
-        @extends $JobsItemHeading
-    &-description
-        @extends $JobsItemDescription
-// Learn more
-.JobLearnMore
-    &-header
-        @extends $JobsSectionHeading
-    &-description
-        @extends $JobsSectionDescription
+// $JobsSectionHeading
+//     @extends $TextLight
+// $JobsSectionDescription
+//     @extends $TextMedium
+// $JobsItemHeading
+//     @extends $TextMedium
+// $JobsItemDescription
+//     @extends $TextDark
+// // Jobs
+// .JobLandingOpenings
+//     &-heading
+//         @extends $JobsSectionHeading
+//     &-description
+//         @extends $JobsSectionDescription
+//     &-job
+//         @extends $ContentMildlyBordered-2
+//         &:hover
+//             @extends $Panel-1
+//         &-icon, svg
+//             @extends $SvgDark
+//         &:hover svg
+//             fill: $gold
+//         &-fill-light-blue:hover svg
+//             fill: $blue
+//         &-fill-green:hover svg
+//             fill: $green
+//         &-title
+//             @extends $JobsItemHeading
+//         &-subtext
+//             @extends $JobsItemDescription
+// // Perks
+// .JobsPerks
+//     &-container
+//         @extends $Panel-2
+//     &-header
+//         @extends $JobsSectionHeading
+//     &-description
+//         @extends $JobsSectionDescription
+// .JobsPerk
+//     &-icon
+//         fill: $gold
+//     &-name
+//         @extends $JobsItemHeading
+//     &-description
+//         @extends $JobsItemDescription
+// // Learn more
+// .JobLearnMore
+//     &-header
+//         @extends $JobsSectionHeading
+//     &-description
+//         @extends $JobsSectionDescription

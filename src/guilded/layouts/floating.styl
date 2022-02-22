@@ -24,7 +24,7 @@
     &-container
         font-color(fg-2)
         background-color: bg-0 !important
-        @extends $SetBorderLight-2
+        border-color: border-light-2
         // Hover
         &::after
             @extends $ContentGlare
@@ -94,6 +94,10 @@
 .TeamRoleCardOverlay-menu,
 .ProfileHoverCardV2Overlay-action-menu
     @extends $Panel-0
+
+// Button gap
+.ProfileCardMenuItem-container:not(:first-child)::before
+    display: none
 
 /*
  * -=- Guides -=-

@@ -52,7 +52,7 @@
     &-container
         local-spacing = spacing-0 - 1px
         margin: 0 local-spacing
-        @extends $FullBorderTransparent
+        border: solid 1px transparent
         // Hover
         &::after
             transition: opacity
@@ -64,9 +64,9 @@
                 @extends $Notification
                 left: -(local-spacing) - 5px
             .NavV4TeamSelectorRow-team-name
-                color: mark-text
+                @extends $TextNotification
             &:hover .NavV4TeamSelectorRow-team-name
-                color: mark-text-hover
+                @extends $TextNotificationHover
     // The ring around the server
     &-container-icon-outline:hover &-icon-container::after
         opacity: 0
@@ -245,8 +245,7 @@
 .LoggedInUserStatus
     // User card's status
     &-content-with-status, &-container
-        color: fg-1
-        transition: color
+        @extends $TextDarkTransition
         // Hover
         &:hover
             @extends $TextMedium
@@ -264,7 +263,7 @@
 
 // More button (1) sign
 .CircleBadgeV2-container
-    background-color: important
+    @extends $PanelImportant
 
 .NavV4Footer-footer-content,
 .NavV4Footer-right,

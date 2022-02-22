@@ -48,30 +48,49 @@
  */
 
 // Filter icon
-.ItemManagerFilterButton
-    &-icon
++prefix-classes("ItemManagerFilterButton")
+    .-icon
         @extends $SvgDarkTransition
-    &-container
+    .-container
         // Filter icon hover
-        &:not(&-active):hover ^[0]-icon
+        &:not(&-active):hover .-icon
             @extends $SvgMedium
         // Filter settings clicked
-        &-open ^[0]-icon
+        &-open .-icon
             @extends $SvgLight
+        // Text
+        &-active
+            @extends $TextTheme
+            &:hover
+                @extends $TextThemeDull
+                .-icon
+                    @extends $SvgThemeDull
+            .-icon
+                @extends $SvgTheme
 
 .ItemManagerFilterWrapper
     &-header
-        @extends $OverrideContentBordered-3
+        @extends $RemoveBorder
     // Filter settings
     &-container
-        @extends $Panel-2
-        border: none
+        @extends $Panel-4
+        @extends $RemoveBorder
     // Filter settings search
     &-search
-        @extends $ContentBordered-4
+        @extends $ContentMildlyBordered-2
+    // Clear hover
+    &-clear:hover
+        @extends $TextMedium
+
 // Filter menu hover
-.ItemManagerFilterOption-container:hover
-    background-color: bg-lighter
+.ItemManagerFilterOption
+    &-container
+        &:hover
+            background-color: bg-lighter
+        &-active
+            @extends $ContentMildlyBordered-2
+    &-icon
+        @extends $SvgDark
 
 
 .SearchBarInput

@@ -228,28 +228,29 @@
  * --- Roles ---
  */
 
-// Role list item selected
-.TeamSettingsPermissionsItem-container
-    @extends $FullBorderTransparent
-    &-selected
-        @extends $ContentMildlyBordered-2
-// Role list item hover
-.TeamSettingsPermissionsItem-container-desktop .TeamSettingsPermissionsItem-content::after
-    @extends $ContentGlare
-// Add role
-.TeamSettingsAddButton
-    &-icon
-        @extends $SvgDarkTransition
-    &-text
-        @extends $TextDarkTransition
-// Add role hover
-.TeamSettingsAddButton-container:hover
-    // Icon
-    .TeamSettingsAddButton-icon
-        @extends $SvgMedium
-    // Text
-    .TeamSettingsAddButton-text
-        @extends $TextMedium
++prefix-classes("TeamSettings")
+    // Role list item selected
+    .PermissionsItem-container
+        @extends $FullBorderTransparent
+        &-selected
+            @extends $ContentMildlyBordered-2
+    // Role list item hover
+    .PermissionsItem-container-desktop .PermissionsItem-content::after
+        @extends $ContentGlare
+    // Add role
+    .AddButton
+        &-icon
+            @extends $SvgDarkTransition
+        &-text
+            @extends $TextDarkTransition
+    // Add role hover
+    .AddButton-container:hover
+        // Icon
+        .AddButton-icon
+            @extends $SvgMedium
+        // Text
+        .AddButton-text
+            @extends $TextMedium
 
 // Permission syncing
 .TeamChannelRoleSyncControl

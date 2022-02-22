@@ -8,40 +8,41 @@
 // Menu container
 .TransientMenu-container-style-default
     @extends $OverrideContentRoughBordered-4
+    overflow: hidden
 
-.ContextMenuItem
-    &-container
++prefix-classes("ContextMenuItem")
+    .-container
         @extends $FontMedium
 
         &-section-type-rows
             // Description
-            & ^[0]-body
+            .-body
                 @extends $TextDark
-        &:not(^[0]-disabled):not(^[0]-highlighted):hover
+        &:not(.-disabled):not(.-highlighted):hover
             // Text
-            & ^[0]-label
+            .-label
                 @extends $TextLight
             // Icon
-            & ^[0]-icon
+            .-icon
                 @extends $SvgLight
             // Description
-            & ^[0]-body
+            .-body
                 @extends $TextMedium
         // Menu item hover glare
         &::after
             @extends $ContentGlare
     // Name
-    &-label
+    .-label
         @extends $TextMedium
 
     // Menu item download app highlighted
-    &-container&-highlighted
+    .-container.-highlighted
         // Text
-        & ^[0]-label
-            color: important
+        .-label
+            @extends $TextImportant
         // Icon
-        & ^[0]-icon
-            fill: important
+        .-icon
+            @extends $SvgImportant
 
 // Button
 .ContextMenu
@@ -67,7 +68,7 @@
 .HoverContextTooltip
     // Base
     &-text-wrapper
-        @extends $Panel-4
+        background-color: bg-0
         border: solid 2px border-dark-1
         opacity: floating-opacity
     // Pointer

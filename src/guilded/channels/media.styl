@@ -3,55 +3,56 @@
 @require "../../content"
 @require "../guilded-variables"
 
-/*
- * --- Media list ---
- */
++prefix-classes("Media")
+    /*
+     * --- Media list ---
+     */
 
-// Media item
-.MediaDisplayItemV3
-    &-container
+    // Media item
+    .DisplayItemV3
+        &-container
+            @extends $Panel-2
+            // Media item hover
+            &::after
+                @extends $ContentGlare
+        // Description
+        &-meta-info-wrapper
+            @extends $FullBorderLight-1
+            border-top: none
+            border-radius: 0px 0px 8px 8px
+
+    // Comment count
+    .DisplayItemMetaInfo-comment-count
+        @extends $TextMedium
+
+    // Media modal background
+    .Editor-container-desktop
         @extends $Panel-2
-        // Media item hover
-        &::after
-            @extends $ContentGlare
-    // Description
-    &-meta-info-wrapper
-        @extends $FullBorderLight-1
-        border-top: none
-        border-radius: 0px 0px 8px 8px
 
-// Comment count
-.MediaDisplayItemMetaInfo-comment-count
-    @extends $TextMedium
+    /*
+     * --- Media view ---
+     */
 
-// Media modal background
-.MediaEditor-container-desktop
-    @extends $Panel-2
+    // Image preview
+    .SplitView-media
+        @extends $Panel-5
 
-/*
- * --- Media view ---
- */
+    // Media side panel
+    .InfoPane-container
+        @extends $Panel-4
 
-// Image preview
-.MediaSplitView-media
-    @extends $Panel-5
-
-// Media side panel
-.MediaInfoPane-container
-    @extends $Panel-4
+    // Information
+    .Title
+        &Description-description
+            @extends $TextDark
 
 // Media view exit
-.BackLink
-    &-container-desktop
++prefix-classes("BackLink")
+    .-container-desktop
         // Exit icon
-        & ^[0]-icon
+        .-icon
             @extends $SvgDark
             transition-duration: transition
         // Exit icon hover
-        &:hover ^[0]-icon
+        &:hover .-icon
             @extends $SvgMedium
-
-// Information
-.MediaTitle
-    &Description-description
-        @extends $TextDark

@@ -16,7 +16,7 @@
 .TeamListItemWrapper-container
     @extends $Panel-2
     &-focused
-        border-color: var(--accent-1)
+        @extends $SetBorderThemeDull
 // Item's indent
 .TeamListItemIndentWrapper-container
     @extends $ContentMildlyBordered-2
@@ -43,7 +43,7 @@
 // Note highlighted
 .TeamListItemAction-container-highlight
     svg
-        fill: important
+        @extends $SvgImportant
     &:hover svg
         @extends $SvgLight
 // Thread indicator
@@ -65,7 +65,7 @@
 // Editor in a list item being edited
 .TeamListItem-message
     @extends $Panel-2
-    border: none
+    @extends $RemoveBorder
 
 // Add item add note
 .TeamListItemNoteEditor-button
@@ -86,10 +86,6 @@
     .TeamListItemsCompletedHeader-container:hover &
         @extends $TextMedium
 
-// Fill background when the list is being dragged
-.ReorderIndentable-blockout
-    @extends $Panel-5
-
 /*
  * --- Item note ---
  */
@@ -108,11 +104,16 @@
         // Timestamp hover
         &:hover
             @extends $TextMedium
+
+// Note timestamp
+.ContentMetadataCreationInfo-from-now
+    @extends $TextDarkTransition
+
+// Fill background when the list is being dragged
+.ReorderIndentable-blockout
+    @extends $Panel-5
 // Note
 .SingleContentEditor-display
     @extends $Panel-0
     &:hover .ContentMetadataCreationInfo-from-now
         @extends $TextMedium
-// Note timestamp
-.ContentMetadataCreationInfo-from-now
-    @extends $TextDarkTransition

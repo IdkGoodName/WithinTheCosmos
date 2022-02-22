@@ -8,56 +8,56 @@
  */
 
 // Day cards
-.FullSizedCalendar
++prefix-classes("FullSizedCalendar")
     // Week day header
-    &WeekdayHeader-day
+    .WeekdayHeader-day
         @extends $TextDark
     // Calendar days and weeks
-    &-week
+    .-week
         @extends $Panel-0
-    &-day
+    .-day
         @extends $PanelBordered-0
         // Day numbers
-        .FullSizedCalendarDayHeader-date
+        .DayHeader-date
             @extends $TextMedium
     // Event creation
-    &Day-container-desktop.FullSizedCalendarDay-container-can-create
+    .Day-container-desktop.Day-container-can-create
         @extends $TransitionBackground
         &:hover
             background-color: bg-6
-    &Day-new-event-icon
+    .Day-new-event-icon
         @extends $SvgDark
         transition: opacity
     // Calendar special days
-    &Day-container-in-past,
-    &Day-container-different-month
+    .Day-container-in-past,
+    .Day-container-different-month
         background-color: bg-3
         color: fg-0
         // Don't make text stand out
-        .FullSizedCalendarDayHeader-date
+        .DayHeader-date
             @extends $TextDarker
-    &Day-container-today
+    .Day-container-today
         background-color: bg-6
         // Highlight the date
-        .FullSizedCalendarDayHeader-date
+        .DayHeader-date
             background-color: var(--game-color)
             color: var(--accent-foreground)
     // Event name
-    &Event-name
+    .Event-name
         @extends $TextMedium
-    &Event-details
+    .Event-details
         @extends $TextDark
     // Unread event
-    &Event-container-unread
+    .Event-container-unread
         SetNotification()
-    &Event-container-unread:not(&Event-container-full-day)
+    .Event-container-unread:not(&Event-container-full-day)
         @extends $Panel-4
     // Whole day calendar
-    &Event-container-full-day
-        .FullSizedCalendarEvent-details, .FullSizedCalendarEvent-name
+    .Event-container-full-day
+        .Event-details, .Event-name
             @extends $TextLight
     // Event hover
-    &Event-container-with-start-time.FullSizedCalendarEvent-container-desktop::after
+    .Event-container-with-start-time.Event-container-desktop::after
         @extends $ContentGlare
 
 // Buttons
