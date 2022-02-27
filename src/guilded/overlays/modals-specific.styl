@@ -25,7 +25,7 @@
 // Media upload paste
 .MediaUploaderPasteInstructions
     &-container
-        @extends $PanelBordered-5
+        @extends $ContentRoughDark
     // Icon
     &-link-icon
         @extends $SvgDark
@@ -39,7 +39,7 @@
 
 // Tiled background
 .OnboardingExperience-background
-    @extends $Panel-5
+    @extends $PanelReallyDark
 // Background's tile
 .LandingPageV3WhimsicalIcon-icon
     @extends $TextDarker
@@ -50,7 +50,7 @@
         opacity: 45%
 // Creation container
 .FullScreenFlowStageWrapper-contents-wrapper
-    @extends $Panel-2
+    @extends $PanelMedium
 // Enter your server name above
 .TextInputWithLabel-container-label-retracted .TextInputWithLabel-floating-label-validity
     @extends $TextDarker
@@ -90,10 +90,10 @@
         SetScrollbar()
 // Game
 .ItemChooserItemWrapper-container
-    @extends $OverridePanelBordered-2
+    @extends $SetContentLight
     // Game hover
     &:hover
-        @extends $Panel-0
+        @extends $PanelLight
 
 /*
  * -=- Join through invite -=-
@@ -102,15 +102,15 @@
 .InvitePage
     // Invite page background
     &-container
-        @extends $Panel-5
+        @extends $PanelReallyDark
     // The information area of the invite
     &-panel
-        @extends $Panel-2
+        @extends $PanelMedium
 
 .MemberCountPill
     // X members, Y online pills
     &-container
-        @extends $Panel-0
+        @extends $PanelLight
     // Member count circle
     &-circle
         &-green
@@ -152,7 +152,7 @@
 .CopyableTextbox
     // The container itself
     &-container
-        @extends $ContentBordered-2
+        @extends $ContentLight
         transition: border-color
         border-radius: radius-2
     &-container-desktop:hover
@@ -199,9 +199,9 @@
 .ChannelActivityDisplay
     &-group-header,
     &-container
-        @extends $Panel-4
+        @extends $PanelDark
     &-item
-        @extends $ContentMildlyBordered-2
+        @extends $ContentLight
 // Activity menu content
 .ChannelActivityItem
     // Text
@@ -211,7 +211,7 @@
         @extends $TextDark
     // Unread activity menu item
     &-container.ChannelActivityItem-container-unread
-        @extends $ContentBordered-2
+        @extends $ContentLightHighlighted
         SetNotification()
         .ChannelActivityItem-header
             @extends $TextNotification
@@ -246,7 +246,7 @@
     &-results-container
         SetScrollbar()
     &Footer-container
-        @extends $Panel-5
+        @extends $PanelReallyDark
 // Channel switcher channel
 .ChatChannelSwitcherRow
     &-container
@@ -256,7 +256,7 @@
             @extends $TextDark
         // Selected
         &-selected
-            @extends $ContentMildlyBordered-2
+            @extends $ContentLight
         &:not(&-header)
             margin: 0 spacing-2
             // Hovered over
@@ -268,7 +268,7 @@
  */
 
 .ToggleRoleControl-container
-    @extends $ContentMildlyBordered-3
+    @extends $MildContentLight
 
 /*
  * --- Webhook ---
@@ -285,7 +285,7 @@
  */
 
 .ChatV2MessagePinOverlay-message-wrapper
-    @extends $Panel-3
+    @extends $PanelMild
 
 /*
  * -=- Form view -=-
@@ -324,12 +324,12 @@
     @extends $TextLight
 // Text response in a form
 .CustomFormSummaryTextResponse-container
-    @extends $ContentMildlyBordered-3
+    @extends $MildContentLight
 
 // Individual response header
 .CollapsibleItemHeader
     &-container
-        @extends $Panel-4
+        @extends $PanelDark
         // Hover
         &-desktop::after
             @extends $ContentGlare
@@ -340,7 +340,7 @@
         @extends $TextLight
 // Individual response container
 .CustomFormIndividualResponse-result-display
-    @extends $ContentMildlyBordered-3
+    @extends $MildContentLight
 // Individual response message input text
 .TextAreaFieldDisplayRenderer-container
     color: var(--body-text-color)

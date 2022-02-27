@@ -14,9 +14,9 @@
         @extends $TextDark
     // Calendar days and weeks
     .-week
-        @extends $Panel-0
+        @extends $PanelLight
     .-day
-        @extends $PanelBordered-0
+        @extends $SetSubContentLight
         // Day numbers
         .DayHeader-date
             @extends $TextMedium
@@ -51,7 +51,7 @@
     .Event-container-unread
         SetNotification()
     .Event-container-unread:not(&Event-container-full-day)
-        @extends $Panel-4
+        @extends $PanelDark
     // Whole day calendar
     .Event-container-full-day
         .Event-details, .Event-name
@@ -80,9 +80,9 @@
 // Upcoming
 .UpcomingCalendar
     &Day-container, &-container
-        @extends $Panel-4
+        @extends $PanelDark
     &Event-container-desktop:hover
-        @extends $Panel-2
+        @extends $PanelMedium
 
 /*
  * --- Calendar Pop-up ---
@@ -90,7 +90,7 @@
 
 // Date input pop-up
 .DateInput-menu
-    //@extends $Panel-3
+    //@extends $PanelMild
     @extends $FullBorderLight-2
 .DayPicker
     // Month name
@@ -104,12 +104,12 @@
         @extends $TextDark
     // Day
     &-day
-        @extends $Panel-0
+        @extends $PanelLight
         transition: background-color
         &-contents
             color: fg-2 !important
     &-day-next-month
-        @extends $Panel-3
+        @extends $PanelMild
         .DayPicker-day-contents
             color: fg-0 !important
     &-day:hover
@@ -129,7 +129,7 @@
 // Pop-up top-level
 .TransientMenu-container-style-card
     overflow: hidden
-    @extends $Panel-2
+    @extends $PanelMedium
 // Pop up banner
 .GlassySplashHeader
     &-image-wrapper &-image
@@ -144,18 +144,18 @@
 // Header
 .EventTemporalChannelDisplay
     &-container
-        @extends $ContentMildlyBordered-2
+        @extends $ContentLight
         --border-color: bg-0
     &-icon
         @extends $SvgDark
 // Details
 .TeamEventDetails
     &-post-metadata, &-status, &-item
-        @extends $ContentMildlyBordered-3
+        @extends $MildContentLight
 .EventCardMetadata
     // Container
     &-container-size-lg
-        @extends $ContentMildlyBordered-3
+        @extends $MildContentLight
     // Icon
     &-icon
         @extends $SvgDark

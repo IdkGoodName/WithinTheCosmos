@@ -8,9 +8,9 @@
 
 .TeamPostRow
     &-container
-        @extends $ContentMildlyBordered-2
+        @extends $ContentLight
         &-unread
-            @extends $ContentBordered-2
+            @extends $ContentLightHighlighted
             SetNotification()
             & ^[0]-title
                 color: mark-text
@@ -51,7 +51,7 @@
 .TeamThreadPostEditor-container,
 // Forum post
 .TeamThreadPostPanelDisplay-container
-    @extends $ContentMildlyBordered-2
+    @extends $ContentLight
     border-radius: radius-3
     --border-color: bg-0
 
@@ -70,7 +70,7 @@
 .Scrubber
     // Side handle rail
     &-rail
-        @extends $Panel-5
+        @extends $PanelReallyDark
     // Unread side rail
     &-highlight-rail
         @extends $Notification

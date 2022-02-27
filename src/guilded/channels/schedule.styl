@@ -6,12 +6,12 @@
 +prefix-classes("Availability")
     // Whole container
     .Display-container
-        @extends $Panel-2
+        @extends $ContentLight
 
     .DisplayHeader
         // Container arrow
         &-button
-            @extends $PanelBordered-2
+            @extends $ContentLight
             // Container arrow hover
             &::after
                 @extends $ContentGlare
@@ -20,10 +20,10 @@
             @extends $SvgMedium
         // Current and other days
         &-day-today, &-day
-            @extends $Panel-0
+            @extends $PanelLight
         // Tomorrow/alternative day
         &-day-alt
-            @extends $Panel-2
+            @extends $PanelMedium
         // Day
         &-date
             @extends $TextLight
@@ -44,10 +44,10 @@
     .DisplayDaysPlaceholder
         // Others' area
         &-day, &-day-today
-            @extends $Panel-1
+            @extends $PanelMediumHighlighted
         // Others' area tomorrow/alternative day
         &-day-alt
-            @extends $Panel-1
+            @extends $PanelMediumHighlighted
         // Lighter/creation area
         &-create
-            @extends $Panel-0
+            @extends $PanelLight

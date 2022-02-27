@@ -32,6 +32,22 @@ $Scrollbar
 $ScrollbarWebkit
     background: bar !important
 
+HasHighlightPill(spacing)
+    margin-left: spacing
+    position: relative
+GiveHighlightPill(content-height, spacing)
+    +cache("hp;" + content-height + ";" + spacing)
+        &::before
+            content: ""
+            width: spacing - 3px
+            height: content-height
+            background-color: var(--accent-1)
+            border-radius: radius-0
+
+            position: absolute
+            top: 50% - (content-height / 2)
+            left: -(spacing)
+
 /*
  * -=- Foreground & Background -=-
  */
@@ -171,17 +187,17 @@ $FontGoodHighlight
     font-color: good-1
 
 // Background
-$Panel-0
+$PanelLight
     background-color: bg-5
-$Panel-1
+$PanelMediumHighlighted
     background-color: bg-4
-$Panel-2
+$PanelMedium
     background-color: bg-3
-$Panel-3
+$PanelMild
     background-color: bg-2
-$Panel-4
+$PanelDark
     background-color: bg-1
-$Panel-5
+$PanelReallyDark
     background-color: bg-0
 $PanelTransparent
     background-color: transparent
@@ -252,207 +268,51 @@ $SetBorderTransparent
 PanelBordered(bg-col, border-col)
     background-color: bg-col
     border: solid 1px border-col
+SetPanelBordered(bg-col, border-col)
+    background-color: bg-col
+    border-color: border-col
 
-// Panels with dark border
-$PanelBordered-0
-    background-color: bg-5
-    border: solid 1px border-dark-1
-$PanelBordered-1
-    background-color: bg-4
-    border: solid 1px border-dark-1
-$PanelBordered-2
-    background-color: bg-3
-    border: solid 1px border-dark-1
-$PanelBordered-3
-    background-color: bg-2
-    border: solid 1px border-dark-1
-$PanelBordered-4
-    background-color: bg-1
-    border: solid 1px border-dark-1
-$PanelBordered-5
-    background-color: bg-0
-    border: solid 1px border-dark-1
-$OverridePanelBordered-0
-    background-color: bg-5
-    border-color: border-dark-1
-$OverridePanelBordered-0
-    background-color: bg-4
-    border-color: border-dark-1
-$OverridePanelBordered-2
-    background-color: bg-3
-    border-color: border-dark-1
-$OverridePanelBordered-3
-    background-color: bg-2
-    border-color: border-dark-1
-$OverridePanelBordered-4
-    background-color: bg-1
-    border-color: border-dark-1
-$OverridePanelBordered-5
-    background-color: bg-0
-    border-color: border-dark-1
+$SubContentDark
+    PanelBordered(bg-2, border-dark-1)
+$SetSubContentDark
+    SetPanelBordered(bg-2, border-dark-1)
+$ContentDark
+    PanelBordered(bg-1, border-dark-1)
+$SetContentDark
+    SetPanelBordered(bg-1, border-dark-1)
+$ContentRoughDark
+    PanelBordered(bg-0, border-dark-1)
+$SetContentRoughDark
+    SetPanelBordered(bg-0, border-dark-1)
 
-// Panel with mild border
-$PanelMildlyBordered-0
-    background-color: bg-5
-    border: solid 1px border-dark-0
-$PanelMildlyBordered-2
-    background-color: bg-4
-    border: solid 1px border-dark-0
-$PanelMildlyBordered-2
-    background-color: bg-3
-    border: solid 1px border-dark-0
-$PanelMildlyBordered-3
-    background-color: bg-2
-    border: solid 1px border-dark-0
-$PanelMildlyBordered-4
-    background-color: bg-1
-    border: solid 1px border-dark-0
-$PanelMildlyBordered-5
-    background-color: bg-0
-    border: solid 1px border-dark-0
-$OverridePanelMildlyBordered-0
-    background-color: bg-5
-    border-color: border-dark-0
-$OverridePanelMildlyBordered-2
-    background-color: bg-4
-    border-color: border-dark-0
-$OverridePanelMildlyBordered-2
-    background-color: bg-3
-    border-color: border-dark-0
-$OverridePanelMildlyBordered-3
-    background-color: bg-2
-    border-color: border-dark-0
-$OverridePanelMildlyBordered-4
-    background-color: bg-1
-    border-color: border-dark-0
-$OverridePanelMildlyBordered-5
-    background-color: bg-0
-    border-color: border-dark-0
+$MildContentLight
+    PanelBordered(bg-2, border-light-0)
+$SetMildContentLight
+    SetPanelBordered(bg-2, border-light-0)
+$ContentLight
+    PanelBordered(bg-3, border-light-0)
+$SetContentLight
+    SetPanelBordered(bg-3, border-light-0)
+$SubContentLight
+    PanelBordered(bg-5, border-light-0)
+$SetSubContentLight
+    SetPanelBordered(bg-5, border-light-0)
 
-/*
- * --- Content ---
- */
+$MildContentLightHighlighted
+    PanelBordered(bg-2, border-light-1)
+$SetMildContentLightHighlighted
+    SetPanelBordered(bg-2, border-light-1)
+$ContentLightHighlighted
+    PanelBordered(bg-3, border-light-1)
+$SetContentLightHighlighted
+    SetPanelBordered(bg-3, border-light-1)
+$SubContentLightHighlighted
+    PanelBordered(bg-5, border-light-1)
+$SetSubContentLightHighlighted
+    SetPanelBordered(bg-5, border-light-1)
 
-// Content with rough border
-$ContentRoughBordered-0
-    background-color: bg-5
-    border: solid 1px border-light-2
-$ContentRoughBordered-1
-    background-color: bg-4
-    border: solid 1px border-light-2
-$ContentRoughBordered-2
-    background-color: bg-3
-    border: solid 1px border-light-2
-$ContentRoughBordered-3
-    background-color: bg-2
-    border: solid 1px border-light-2
-$ContentRoughBordered-4
-    background-color: bg-1
-    border: solid 1px border-light-2
-$ContentRoughBordered-5
-    background-color: bg-0
-    border: solid 1px border-light-2
-$OverrideContentRoughBordered-0
-    background-color: bg-5
-    border-color: border-light-2
-$OverrideContentRoughBordered-1
-    background-color: bg-4
-    border-color: border-light-2
-$OverrideContentRoughBordered-2
-    background-color: bg-3
-    border-color: border-light-2
-$OverrideContentRoughBordered-3
-    background-color: bg-2
-    border-color: border-light-2
-$OverrideContentRoughBordered-4
-    background-color: bg-1
-    border-color: border-light-2
-$OverrideContentRoughBordered-5
-    background-color: bg-0
-    border-color: border-light-2
-$OverrideContentRoughBordered-darker
-    background-color: bg-0
-    border-color: border-light-2
-
-// Content with normal border
-$ContentBordered-0
-    background-color: bg-5
-    border: solid 1px border-light-1
-$ContentBordered-1
-    background-color: bg-4
-    border: solid 1px border-light-1
-$ContentBordered-2
-    background-color: bg-3
-    border: solid 1px border-light-1
-$ContentBordered-3
-    background-color: bg-2
-    border: solid 1px border-light-1
-$ContentBordered-4
-    background-color: bg-1
-    border: solid 1px border-light-1
-$ContentBordered-5
-    background-color: bg-0
-    border: solid 1px border-light-1
-$OverrideContentBordered-0
-    background-color: bg-5
-    border-color: border-light-1
-$OverrideContentBordered-1
-    background-color: bg-4
-    border-color: border-light-1
-$OverrideContentBordered-2
-    background-color: bg-3
-    border-color: border-light-1
-$OverrideContentBordered-3
-    background-color: bg-2
-    border-color: border-light-1
-$OverrideContentBordered-4
-    background-color: bg-1
-    border-color: border-light-1
-$OverrideContentBordered-5
-    background-color: bg-0
-    border-color: border-light-1
-$OverrideContentBordered-darker
-    background-color: bg-0
-    border-color: border-light-1
-
-// Content with mild border
-$ContentMildlyBordered-0
-    background-color: bg-5
-    border: solid 1px border-light-0
-$ContentMildlyBordered-1
-    background-color: bg-4
-    border: solid 1px border-light-0
-$ContentMildlyBordered-2
-    background-color: bg-3
-    border: solid 1px border-light-0
-$ContentMildlyBordered-3
-    background-color: bg-2
-    border: solid 1px border-light-0
-$ContentMildlyBordered-4
-    background-color: bg-1
-    border: solid 1px border-light-0
-$ContentMildlyBordered-5
-    background-color: bg-0
-    border: solid 1px border-light-0
-
-$OverrideContentMildlyBordered-0
-    background-color: bg-5
-    border-color: border-light-0
-$OverrideContentMildlyBordered-2
-    background-color: bg-4
-    border-color: border-light-0
-$OverrideContentMildlyBordered-2
-    background-color: bg-3
-    border-color: border-light-0
-$OverrideContentMildlyBordered-3
-    background-color: bg-2
-    border-color: border-light-0
-$OverrideContentMildlyBordered-4
-    background-color: bg-1
-    border-color: border-light-0
-$OverrideContentMildlyBordered-5
-    background-color: bg-0
-    border-color: border-light-0
+$ContentGreyHighlight
+    PanelBordered(bg-5, border-light-1)
 
 /*
  * --- Content Type Panels ---

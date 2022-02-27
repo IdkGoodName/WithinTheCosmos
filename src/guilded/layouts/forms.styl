@@ -9,19 +9,29 @@
  * --=======================--
  */
 
+form-dropdown-margin = 5px
+
 $FormDropdown
     border: solid 1px transparent
     border-radius: radius-0
+
+    margin-left: form-dropdown-margin
+    position: relative
 $FormDropdownFocused
-    @extends $ContentBordered-1
+    @extends $MildContentLightHighlighted
 $FormDropdownActive
-    background-color: bg-4
-    border: solid 1px border-light-1
-    border-left: solid 2px var(--accent-0)
+    background-color: transparent
+    border: solid 1px transparent
+    color: fg-2
+    font-weight: bold
+FormDropdownActive()
+    @extends $FormDropdownActive
+
+    GiveHighlightPill(75%, form-dropdown-margin)
 $FormDropdownActiveFocused
     background-color: bg-4
     border: solid 1px border-light-1
-    border-left: solid 2px var(--accent-0)
+    color: fg-3
 
 /*
  * -=- Basic -=-
@@ -77,10 +87,10 @@ $FormDropdownActiveFocused
 
 // Streamer mode
 .FormSection-container-section-background-inset
-    @extends $ContentMildlyBordered-3
+    @extends $MildContentLight
 // Settings account info
 .DefaultReadonlyEditableForm-container
-    @extends $ContentMildlyBordered-3
+    @extends $MildContentLight
 
 /*
  * -=- Fields -=-
@@ -138,11 +148,11 @@ $FormDropdownActiveFocused
 // Form input with a typeahead
 .TextInputWithLabel
     &-container-dropdown
-        @extends $ContentMildlyBordered-2
+        @extends $ContentLight
         border-radius: radius-2
         // Hover
         &.TextInputWithLabel-container-desktop:hover
-            @extends $OverrideContentBordered-1
+            @extends $SetSubContentLightHighlighted
         // Focused
         &.TextInputWithLabel-container-focused,
         &.TextInputWithLabel-container-focused:hover
@@ -152,7 +162,7 @@ $FormDropdownActiveFocused
         @extends $TextMedium
 // Form input with a typeahead menu
 .SelectMenu-container
-    @extends $Panel-3
+    @extends $PanelReallyDark
 .SelectMenuItem-container
     @extends $FormDropdown
     &-desktop:hover
@@ -177,7 +187,7 @@ $FormDropdownActiveFocused
         SetScrollbar()
         // Big form input hover
         &:hover
-            @extends $OverrideContentBordered-1
+            @extends $SetSubContentLightHighlighted
         // Big form input focus
         &:focus
             background-color: bg-4
@@ -219,7 +229,7 @@ $FormDropdownActiveFocused
 // Tags
 .GuildedTagCreator-container-dark .Select-value
     // Tag's background
-    @extends $OverridePanelMildlyBordered-4
+    @extends $SetContentDark
     // Tag's text
     &-label
         @extends $TextMedium
@@ -272,14 +282,14 @@ $FormDropdownActiveFocused
         // border-color: alpha(good-1, 50%)
     // Slider thumb
     &-tab
-        @extends $Panel-4
+        @extends $PanelDark
         top: 2px
         left: 2px
         width: 12.5px
         height: 12.5px
         // Disabled
         .SwitchInput-container-disabled &
-            @extends $Panel-1
+            @extends $PanelMediumHighlighted
 
 .TriStateInputWrapper-container
     @extends $SetBorderLight-0
@@ -294,12 +304,12 @@ $FormDropdownActiveFocused
         &-on,
         &-passThrough,
         &-off
-            @extends $Panel-3
+            @extends $PanelMild
         // All selected
         &-on.TriStateInputButton-container-selected,
         &-passThrough.TriStateInputButton-container-selected,
         &-off.TriStateInputButton-container-selected
-            @extends $Panel-2
+            @extends $PanelMedium
         // Permission allowed
         &-on
             // Icon
@@ -354,7 +364,7 @@ $FormDropdownActiveFocused
         .TriStateInputButton-icon
             opacity: 0.3
     &-highlighted:not(.TriStateInputButton-container-selected)
-        @extends $Panel-1
+        @extends $PanelMediumHighlighted
 
 /*
  * --- Option-based ---
@@ -422,11 +432,11 @@ $FormDropdownActiveFocused
         @extends $TextBad
     // Container
     &-container
-        @extends $ContentMildlyBordered-2
+        @extends $ContentLight
     &-container:not(&-container-disabled)::after
         @extends $ContentGlare
     &-container-selected
-        @extends $ContentMildlyBordered-1
+        @extends $ContentLight
     // Channel selection
     &-icon
         @extends $SvgDark
@@ -441,15 +451,15 @@ $FormDropdownActiveFocused
 
 .CheckboxPanel
     &-container
-        @extends $ContentMildlyBordered-2
+        @extends $ContentLight
     // Hover
     &-container.CheckboxPanel-container-clickable.CheckboxPanel-container-flavor-default:hover
-        @extends $Panel-0
+        @extends $PanelLight
     &-container-selected
-        @extends $Panel-1
+        @extends $PanelMediumHighlighted
     // Selected hover
     &-container-selected.CheckboxPanel-container-clickable.CheckboxPanel-container-flavor-default:hover
-        @extends $Panel-0
+        @extends $PanelLight
 
     // Checkmark
     &-container-clickable:hover
@@ -491,7 +501,7 @@ $FormDropdownActiveFocused
         color: fg-2 !important
     // Form select menu
     &&-dark .Select-menu-outer
-        @extends $OverrideContentMildlyBordered-4
+        @extends $SetContentRoughDark
 
     // Form selector focused
     &&-dark
@@ -530,12 +540,12 @@ $FormDropdownActiveFocused
 .Select
     // Form selector options
     &-menu
-        @extends $Panel-3
+        @extends $PanelReallyDark
         padding: spacing-1
         border-radius: radius-0
         &-outer
             opacity: floating-opacity
-            @extends $OverridePanelBordered-4
+            @extends $SetContentRoughDark
 
     // Form selector option
     &-option
@@ -548,7 +558,7 @@ $FormDropdownActiveFocused
         &.is-selected,
         .GuildedSelect-container &.is-selected,
         .GuildedSelect-container.GuildedSelect-container-dark &.is-selected
-            @extends $FormDropdownActive
+            FormDropdownActive()
         // Focused
         &.is-focused
             @extends $FormDropdownFocused
@@ -561,7 +571,7 @@ $FormDropdownActiveFocused
     // No results found - code container/blocks
     .GuildedSelect-container.GuildedSelect-container-dark &-noresults,
     &-noresults
-        @extends $Panel-3
+        @extends $PanelMild
     // Label's arrow acitve in editor
     &.is-open > &-control &-arrow
         border-top-color: fg-2
@@ -632,7 +642,7 @@ $SliderBackground
         transition: border-color, background-color
     &-container-focused &-box,
     &-container-desktop:hover &-box
-        @extends $ContentBordered-1
+        @extends $SubContentLightHighlighted
     // Icon
     &-form-icon
         @extends $SvgDark
@@ -772,7 +782,7 @@ blue-glow = tint($blue, 20%)
     // Disabled
     &-container&-container-filled&-container-disabled,
     &-container&-container-desktop&-container-filled&-container-disabled:hover
-        @extends $OverrideContentBordered-5
+        @extends $SetContentRoughDark
         & ^[0]-button-content
             @extends $FontDarker
 
@@ -830,7 +840,7 @@ blue-glow = tint($blue, 20%)
  */
 
 // .DropdownPanel-container
-//     @extends $Panel-3
+//     @extends $PanelMild
 .SimpleToggle
     &-label
         @extends $TextBad

@@ -21,7 +21,7 @@ BannerWithButtonType(toExtend, colour)
     &-icon
         @extends $SvgMedium
     &-container
-        @extends $OverrideContentBordered-3
+        @extends $SetMildContentLight
         &-theme-warning
             BannerWithButtonType($PanelWarning, warning)
         &-theme-info
@@ -53,7 +53,7 @@ StatusMessageType(colour)
         &.StatusMessage-container-ephemeral,
         // Always there (Published on)
         &.StatusMessage-container-persistent
-            @extends $PanelBordered-0
+            @extends $SubContentLight
     // Status hover
     &-desktop.StatusMessage-container-clickable::after
         @extends $ContentGlare
@@ -72,7 +72,7 @@ StatusMessageType(colour)
         &.StatusMessage-container-type-error
             StatusMessageType(bad-0)
             //@extends $PanelCaution
-            // @extends $Panel-4
+            // @extends $PanelDark
             // @extends $TextBad
             // // Icon
             // .StatusMessage-icon
@@ -100,7 +100,7 @@ StatusMessageType(colour)
 .NetworkReconnectionDisplay
     // Loading bar
     &-container, &-container-reconnecting
-        @extends $Panel-5
+        @extends $PanelReallyDark
     // Connected
     &-container
         .NetworkReconnectionDisplay-icon
@@ -167,7 +167,7 @@ StatusMessageType(colour)
                 @extends $TextLight
         // Buttons
         &-flavor-hover-bleach
-            @extends $Panel-4
+            @extends $PanelDark
             .WithTooltip-icon
                 @extends $SvgDark
             .WithTooltip-inline-text
@@ -257,7 +257,7 @@ StatusMessageType(colour)
         @extends $RadiusSmall
 
 .GroupAvatar-container-non-base
-    @extends $ContentMildlyBordered-1
+    @extends $ContentLight
 
 /*
  * --- Tab buttons ---
@@ -338,7 +338,7 @@ StatusMessageType(colour)
     // Background
     &-container,
     &-container-theme-dark
-        @extends $Panel-5
+        @extends $PanelReallyDark
     // Progress
     &-progress
         background-color: progress

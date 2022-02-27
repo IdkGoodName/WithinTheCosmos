@@ -5,7 +5,7 @@
 
 // Whole container
 .VoiceChannelDisplay-container
-    @extends $Panel-2
+    @extends $PanelMedium
     &-child
         SetScrollbar()
 
@@ -18,7 +18,7 @@
     &-container-interactable
         @extends $TransitionBackground
     &-container.VoiceChannelGroupHeader-container-active
-        @extends $Panel-3
+        @extends $PanelMild
     // Voice room icon
     &-icon
         @extends $SvgDark
@@ -32,7 +32,7 @@
 
 // Voice room hovered over
 .VoiceChannelGroupHeader-container-interactable:hover
-    @extends $Panel-0
+    @extends $PanelLight
     &:hover .VoiceChannelGroupHeader
         // Voice room name hover
         &-text
@@ -43,7 +43,7 @@
 
 .VoiceChannelCreateGroupButton
     &-container:not(&-disabled):hover
-        @extends $Panel-0
+        @extends $PanelLight
         .VoiceChannelCreateGroupButton-text
             @extends $TextMedium
         .VoiceChannelCreateGroupButton-icon
@@ -55,7 +55,7 @@
 
 // X/Y allowed label
 .LimitLabel-container
-    @extends $Panel-5
+    @extends $PanelReallyDark
 
 // Max user count
 .LimitLabel-limit
@@ -82,7 +82,7 @@
         @extends $TextThemeBleached
 // Keybind in the settings
 .ItemKeybindInput-container
-    @extends $Panel-3
+    @extends $PanelMild
 // Keybind recorder
 .HotkeyRecorder-container
     border-color: fg-0
@@ -105,7 +105,7 @@
 .VoiceConnectionDisplayPanelContents
     // Whole container
     &-container
-        @extends $Panel-5
+        @extends $PanelReallyDark
     // Voice header
     &-info-wrapper
         border-bottom: 0
@@ -128,16 +128,16 @@
 
 // Voice participant list
 .VoiceConnectionDisplayPanelContents-participants
-    @extends $Panel-4
+    @extends $PanelDark
 
 // Voice participant
 .VoiceChannelGroupUser-container
     // Hover
     &:hover
-        @extends $Panel-2
+        @extends $PanelMedium
     // Right clicked
     &.VoiceChannelGroupUser-container-active
-        @extends $Panel-3
+        @extends $PanelMild
 
 // Voice participants icon
 .VoiceConnectionDisplayParticipants-participants-icon

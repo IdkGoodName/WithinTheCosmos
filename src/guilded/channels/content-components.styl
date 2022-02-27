@@ -12,7 +12,7 @@
         @extends $FullBorderLight-1
     // Emote picker content
     &-content
-        @extends $Panel-2
+        @extends $PanelMedium
     &-content, &-list
         SetScrollbar()
     // Emote icon
@@ -20,7 +20,7 @@
         @extends $FullBorderTransparent
         &:hover,
         &:focus
-            @extends $ContentBordered-0
+            @extends $ContentGreyHighlight
             // background-color: var(--accent-transparent)
             // border: solid 1px var(--accent-0)
 
@@ -29,7 +29,7 @@
     // Top bar
     &Navbar-container
         overflow-x: hidden
-        @extends $OverrideContentBordered-3
+        @extends $SetContentDark
 
     // Emote name in grid
     &-section-label
@@ -58,22 +58,22 @@
 // Reaction normally
 .ReactionPickerButton-container-type-content,
 .ReactionBadge-container-content
-    @extends $PanelBordered-4
+    @extends $ContentDark
     .MediaInfoPane-post-metadata &
-        @extends $ContentMildlyBordered-3
+        @extends $MildContentLight
 // Reaction hovered
 .ReactionBadge-container-content:hover,
 .ReactionBadge-container:not(.ReactionBadge-container-disabled):not(.ReactionBadge-container-active):hover .ReactionBadge-container-content
-    @extends $PanelBordered-5
+    @extends $ContentRoughDark
     .MediaInfoPane-post-metadata &
-        @extends $ContentBordered-2
+        @extends $ContentLightHighlighted
 
 .ReactionPickerButton-container-type-content
     transition-duration: global-transition-period
 
     // When reaction is hovered over
     &:hover
-        @extends $Panel-5
+        @extends $PanelReallyDark
 
 // Text after the reaction button
 .ReactionPickerButton-container-with-label
@@ -108,7 +108,7 @@
 .ImageUploaderButton
     // Container
     &-container
-        @extends $PanelBordered-4
+        @extends $ContentDark
         // Hover
         &::after
             @extends $ContentGlare
@@ -120,11 +120,11 @@
         @extends $TextMedium
 
 .CreateGroupOverlayWrapper-upload-avatar
-    @extends $PanelBordered-4
+    @extends $ContentDark
     .SVGIcon-icon
         @extends $SvgMedium
     &:hover
-        @extends $Panel-2
+        @extends $PanelMedium
 
 /*
  * -=- List and radio checkmarks -=-
@@ -177,15 +177,18 @@
  * --- User badges ---
  */
 
+$Badge
+    color: fg-2
+    background: bg-1 !important
+    border: solid 1px border-light-1 !important
+
 .UserBadge
     // // If there is an icon in the badge, remove the name
     // &-image ~ &-name
     //     display: none
     // Override all colours for badges
     &-container:not(.UserFlairRow-icon)
-        @extends $TextMedium
-        background: bg-1 !important
-        border: solid 1px border-light-1 !important
+        @extends $Badge
         & ^[0]-name
             @extends $TextMedium
 // [MEMBER]
@@ -230,7 +233,7 @@
 // Status badge
 .TournamentStatusBadge-container-status
     &-in-progress, &-unpublished
-        @extends $ContentBordered-5
+        @extends $Badge
     &-in-progress
         color: active
     &-unpublished
@@ -298,19 +301,19 @@
 .TeamWidgetProfileBadge
     &-container-type
         &-success
-            @extends $Panel-5
+            @extends $PanelReallyDark
             & ^[0]-icon
                 @extends $SvgGood
         &-error
-            @extends $Panel-5
+            @extends $PanelReallyDark
             & ^[0]-icon
                 @extends $SvgBad
         &-info
-            @extends $Panel-5
+            @extends $PanelReallyDark
             & ^[0]-icon
                 fill: info
         &-discord
-            @extends $Panel-5
+            @extends $PanelReallyDark
             & ^[0]-icon
                 fill: info
     &-icon

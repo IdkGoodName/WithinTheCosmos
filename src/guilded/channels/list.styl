@@ -14,17 +14,17 @@
     &-unfocused::after
         @extends $ContentGlare
 .TeamListItemWrapper-container
-    @extends $Panel-2
+    @extends $PanelMedium
     &-focused
         @extends $SetBorderThemeDull
 // Item's indent
 .TeamListItemIndentWrapper-container
-    @extends $ContentMildlyBordered-2
+    @extends $ContentLight
     &-unread
         SetNotification()
 // Item creation
 .TeamListItemsInput-container-new-item
-    @extends $ContentMildlyBordered-2
+    @extends $ContentLight
     // Item creation focused
     &.TeamListItemWrapper-container-focused
         @extends $SetBorderThemeDull
@@ -55,7 +55,7 @@
 .TeamListItemsInput
     // Add item slate
     &-editor.Editor-container
-        @extends $Panel-2
+        @extends $PanelMedium
     // Add item icon
     &-icon
         svg
@@ -64,7 +64,7 @@
             @extends $SvgThemeBleached
 // Editor in a list item being edited
 .TeamListItem-message
-    @extends $Panel-2
+    @extends $PanelMedium
     @extends $RemoveBorder
 
 // Add item add note
@@ -111,9 +111,9 @@
 
 // Fill background when the list is being dragged
 .ReorderIndentable-blockout
-    @extends $Panel-5
+    @extends $PanelReallyDark
 // Note
 .SingleContentEditor-display
-    @extends $Panel-0
+    @extends $PanelLight
     &:hover .ContentMetadataCreationInfo-from-now
         @extends $TextMedium

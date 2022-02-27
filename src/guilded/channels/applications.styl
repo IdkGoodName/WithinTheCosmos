@@ -22,7 +22,7 @@
 
 // Application selector wrapper
 .TeamApplicationInlineLink-container
-    @extends $ContentMildlyBordered-3
+    @extends $MildContentLight
 
 /*
  * --- View ---
@@ -32,15 +32,15 @@
 .RecruitmentApplicantViewer
     // Wrapper
     &-applicant-card
-        @extends $Panel-4
+        @extends $PanelDark
     // Application values
     &-form-results
-        @extends $Panel-4
+        @extends $PanelDark
 // Application info
 .ApplicantSummaryCard
     &-container
         & ^[0]-votes, & ^[0]-buttons-applied-date
-            @extends $Panel-4
+            @extends $PanelDark
 // Application status
 +prefix-classes("ApplicationStatusBadge")
     .-icon
@@ -64,7 +64,7 @@
 
 // Application
 .ApplicantDisplayItem-container
-    @extends $PanelBordered-3
+    @extends $SubContentDark
     // Hover
     &-desktop::after
         @extends $ContentGlare
@@ -93,4 +93,4 @@
 
 // Background
 .ApplyToTeam-container
-    @extends $Panel-2
+    @extends $PanelMedium

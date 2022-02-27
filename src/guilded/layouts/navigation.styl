@@ -99,7 +99,7 @@
 
 // Favourite server list
 .NavV4FooterGlobalContextDisplay-teams-wrapper
-    @extends $Panel-4
+    @extends $PanelDark
 .NavV4BadgedItem-container
     width: auto
     // Favourite server hover
@@ -112,7 +112,7 @@
 
 // Whole bar
 .Navbar-container
-    @extends $Panel-5
+    @extends $PanelReallyDark
     --border-color: bg-0
 // Guilded logo
 .LogoAndWordmarkV2-container-theme-light
@@ -140,26 +140,26 @@
 // Server search
 .SearchBarV2-container.SearchBarV2-container-focused,
 .TeamSearchBar-search-bar-input
-    @extends $Panel-1
+    @extends $PanelMediumHighlighted
 // In-server search, emote search
 .SearchBarV2-container-unfocused::after,
 .SearchBarInput-container-bordered,
 .SearchBarV2-container
     border-radius: 10px
-    @extends $OverrideContentBordered-2
+    @extends $SetContentLight
 // Search focused
 .SearchBarV2-container-unfocused::after
     @extends $ContentGlare
 
 // Results
 .TeamSearchBar-search-results
-    @extends $ContentBordered-2
+    @extends $ContentLight
 // Result item
 .TeamSearchShallowResult
     &-container::before
         @extends $ContentGlare
     &-container-focused
-        @extends $Panel-1
+        @extends $PanelMediumHighlighted
     // Channel icon
     &-icon-content-type
         @extends $SvgDark
@@ -208,7 +208,7 @@
     // Server search
     &s
         &-container
-            @extends $Panel-3
+            @extends $PanelMild
         // Public servers header
         &-header
             @extends $TextDark
@@ -216,7 +216,7 @@
     &-container-desktop
         // Server search item focused
         &.GlobalSearchResult-container-focused
-            @extends $Panel-2
+            @extends $PanelMedium
         // Hovered over
         &::after
             @extends $ContentGlare
@@ -229,7 +229,7 @@
 
 // User card
 .NavV4Footer-container
-    @extends $Panel-4
+    @extends $PanelDark
 
 // // User card's content
 // .NavV4Footer-right,
@@ -268,7 +268,7 @@
 .NavV4Footer-footer-content,
 .NavV4Footer-right,
 .NavV4Sidebar-container
-    @extends $Panel-5
+    @extends $PanelReallyDark
 
 
 /*
@@ -283,7 +283,7 @@ body
 .GroupSelector-container,
 // Group list in group editing
 .GroupSelectorPreview-minimal-nav
-    @extends $Panel-4
+    @extends $PanelDark
     --border-color: bg-0
 // Group
 .GroupSelectorItem-container
@@ -309,7 +309,7 @@ body
 // The border around status and group's emote
 .GroupAvatarBadge-container-reaction,
 .LoggedInUserAvatar-online-status
-    @extends $Panel-4
+    @extends $PanelDark
 
 // Group settings background
 .CreateGroupLivePreview-LiveView
@@ -340,7 +340,7 @@ body
     @extends $SvgMedium
 // Server header button
 .TeamNavHeaderRowButton-container
-    @extends $Panel-0
+    @extends $PanelLight
     // Server header button hovered
     &:not(.TeamNavHeaderRowButton-container-disabled)::after
         @extends $ContentGlare

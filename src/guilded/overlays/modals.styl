@@ -2,6 +2,10 @@
 @require "../../set"
 @require "../../content"
 
+$Modal
+    border-color: border-light-1
+    background-color: alpha(bg-1, 92%)
+
 // Overlay
 .ModalWrapper-container-unstyled > .Overlay-status-context
     margin: spacing-3
@@ -9,9 +13,7 @@
 
 // Modal
 .ModalV2-container
-    border-color: border-light-1
-    background-color: alpha(bg-1, 92%)
-    //@extends $OverrideContentBordered-4
+    @extends $Modal
 
 /*
  * --- Modal with header ---
@@ -33,8 +35,7 @@
 
 // Fullscreen modal(settings)
 .ModalV2-container-fullscreen
-    @extends $ContentMildlyBordered-4
-    //opacity: floating-opacity
+    @extends $Modal
     width: 100%
     height: 100%
 // Rounds the modal - :not() makes sure that the modal isn't "Unsaved changes" and similar

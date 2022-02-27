@@ -11,7 +11,7 @@
 .TeamPageNavV3-container,
 // Channel list in group editing
 .GroupNavPreview-nav-section
-    @extends $Panel-4
+    @extends $PanelDark
 
 // Section list header
 .TeamNavSectionsList-header
@@ -51,7 +51,7 @@ ChannelContent(className, textPlaceholder, svgPlaceholder)
     {className}-name
         @extends {textPlaceholder}
 ChannelSelected()
-    @extends $ContentMildlyBordered-2
+    @extends $ContentLight
 ChannelSelectedContent()
     &-container-selected &-icon
         @extends $SvgLight
@@ -105,7 +105,7 @@ SetChannel(className)
 
 // Invite others
 .ChannelUpsell-container
-    @extends $OverridePanelMildlyBordered-4
+    @extends $SetContentDark
 
 /*
  * -=- Screen header -=-
@@ -113,7 +113,7 @@ SetChannel(className)
 
 // Channel header
 .ScreenHeader-container
-    @extends $Panel-4
+    @extends $PanelDark
     border-bottom: 0
 
 // Screen header icon
@@ -156,7 +156,7 @@ SetChannel(className)
 .SidebarWrapper-container,
 // Member list in group editing
 .CreateGroupUsersListLivePreview-members-section
-    @extends $Panel-4
+    @extends $PanelDark
 
 // Member list
 //.PageSidebarWrapper
@@ -181,7 +181,7 @@ SetChannel(className)
 .SimpleIconTabMenuHeaderItem
     // Member/thread list tab hover
     &-container:hover, &-container:active, &-container:focus
-        @extends $Panel-2
+        @extends $PanelMedium
     // Member/thread list active tab
     &-container-selected::after
         background-color: fg-1
@@ -226,7 +226,7 @@ SetChannel(className)
         @extends $SvgDark
         // Member list join voice button
         &-wrapper
-            @extends $Panel-0
+            @extends $PanelLight
     // Member list join voice hover
     &:hover &-text,
     &:hover &-icon
@@ -237,7 +237,7 @@ SetChannel(className)
     @extends $SvgDarkTransition
     // Member list invite button
     &-wrapper
-        @extends $Panel-0
+        @extends $PanelLight
 // Member list invite hover
 .SidebarInviteButton-container:hover
     .SidebarInviteButton-text, .SidebarInviteButton-icon

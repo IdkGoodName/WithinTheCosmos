@@ -9,12 +9,14 @@
 
 // Document in the list
 .DocDisplayItem-container
-    @extends $Panel-2
+    @extends $PanelMedium
+    &::after
+        @extends $SetBorderLight-1
 
 // Document in the list info
 .DocSummaryInfo
     &-container
-        @extends $PanelBordered-3
+        @extends $SubContentDark
         &-unread
             SetNotification()
             & ^[0]-title
@@ -39,7 +41,7 @@
 .DocViewer-reader-editor
     padding: spacing-3 spacing-5
     border-radius: radius-2
-    @extends $ContentMildlyBordered-2
+    @extends $ContentLight
 
 .DocSummaryInfo-subtitle
     @extends $TextDark
@@ -65,9 +67,9 @@
 .TagDisplayItemV2
     // Tag's background
     &-container
-        @extends $OverrideContentMildlyBordered-3
+        @extends $SetMildContentLight
         .DocViewer-tags-display &
-            @extends $OverridePanelBordered-4
+            @extends $SetContentDark
     // Tag's text
     &-tag
         @extends $TextMedium
@@ -82,4 +84,4 @@
 
 // Comment
 .ReplyPanel-container-viewing
-    @extends $ContentMildlyBordered-2
+    @extends $ContentLight

@@ -66,7 +66,7 @@ define-message-type(colour)
         define-carousel-fade(bg-4)
     // Right click active
     &-active
-        @extends $Panel-1
+        @extends $PanelMediumHighlighted
 
     // Replying
     &:not(&-editing).ChatV2Message-container-replying
@@ -90,7 +90,7 @@ define-message-type(colour)
 
     // Right clicked
     &-active:not(&-editing)
-        @extends $Panel-0
+        @extends $PanelLight
         --body-text-color: fg-3
 
     // Removes messages' margin
@@ -128,7 +128,7 @@ define-message-type(colour)
 .ChatChannelInputStatusBar
     // Box
     &-container
-        @extends $ContentBordered-4
+        @extends $ContentDark
     // Label
     &-replying-to-text
         @extends $TextDark
@@ -213,12 +213,12 @@ define-message-type(colour)
         @extends $TextDark
     // Box
     &-container
-        @extends $Panel-4
+        @extends $PanelDark
         SetScrollbar()
         --body-text-color: fg-2
 // Pinned message
 .ChatV2PinnedMessage-message-wrapper
-    @extends $Panel-2
+    @extends $PanelMedium
     // @extends $RadiusSmall
     // .ChatV2Message-container
     //     @extends $RadiusSmall
@@ -268,7 +268,7 @@ define-message-type(colour)
 
 // Threaded message
 .ChatMessageThread-container
-    @extends $PanelBordered-3
+    @extends $SubContentDark
     --border-color: bg-5
     // Threaded message hover
     &::after
@@ -306,7 +306,7 @@ define-message-type(colour)
 
 // Message hover menu
 .QuickActionBar-container
-    @extends $PanelBordered-4
+    @extends $ContentDark
 
 // Message hover menu icons
 .QuickActionBar-action
@@ -339,7 +339,7 @@ define-message-type(colour)
     &:hover
         @extends $PanelTransparent
         .ChatChannelMessages-delete-message
-            @extends $Panel-0
+            @extends $PanelLight
 // Message delete menu fading
 .ChatChannelMessages-delete-message::after
     background-gradient: to bottom, transparent, bg-3, 75px
@@ -358,11 +358,11 @@ define-message-type(colour)
 .ChatV2MessageReplyTooltip
     // Base
     &-content-wrapper
-        @extends $OverridePanelMildlyBordered-3
+        @extends $SetSubContentDark
         opacity: floating-opacity
     // Arrow/Pointer
     &-arrow
-        @extends $OverridePanelMildlyBordered-3
+        @extends $SetSubContentDark
     // Message thread menu header
     &Header
         // Icon

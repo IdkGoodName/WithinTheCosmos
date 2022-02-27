@@ -63,7 +63,7 @@
 
 // Not loaded
 .LayeredPageContent-fetch-error
-    @extends $Panel-2
+    @extends $PanelMedium
 
 // Not found/Not loaded
 .NullStateV2,
@@ -130,7 +130,7 @@
 .CodeContainerRenderer-container,
 // Code block in Markdown plain text
 .PrismTokenCodeBlockRenderer-container
-    @extends $PanelBordered-5
+    @extends $ContentRoughDark
     SetScrollbar()
     // Make sure Markdown code block also gets it
     code
@@ -146,7 +146,7 @@
         .CalloutBadge-container
             color: fg-code
     &-header
-        @extends $Panel-4
+        @extends $PanelDark
 
 /*
  * --- Lists ---
@@ -170,7 +170,7 @@
         color: fg-format
     // Inline code
     &-inline-code, &-inline-code-v2
-        @extends $Panel-5
+        @extends $PanelReallyDark
         color: fg-code
 
 .PrismToken
@@ -193,7 +193,7 @@
 
 // Spoilers
 .SpoilerRenderer-container
-    @extends $Panel-5
+    @extends $PanelReallyDark
     border-radius: radius-2
     padding: 0 spacing-side spacing-top spacing-side
 
@@ -258,7 +258,7 @@
         color: shade(fg-format, 20%)
     // Inline code
     &-inline-code, &-inline-code-v2
-        @extends $Panel-5
+        @extends $PanelReallyDark
         color: shade(fg-code, 20%)
 
 
@@ -291,7 +291,7 @@
 .DefaultContentEmbedCard-content
     // Wrapper
     &-wrapper
-        @extends $OverrideContentBordered-2
+        @extends $SetContentLightHighlighted
         // Hovered over
         &:not(&-disabled)::after
             @extends $ContentGlare
@@ -310,7 +310,8 @@
 .ChatEmbed-container,
 .OpenGraphEmbed-content,
 .TeamEmbedCard-container
-    @extends $OverrideContentBordered-3
+    background-color: bg-2
+    border-color: border-light-1
     border-radius: radius-2
     border-style: solid
     overflow: hidden
@@ -362,7 +363,7 @@
         @extends $ContentGlare
 
 .TournamentInviteEmbedCard-container
-    @extends $Panel-4
+    @extends $PanelDark
     &::after
         @extends $ContentGlare
 
@@ -385,7 +386,7 @@
     &-selected
         @extends $SetBorderSelection
 .CustomFormWrapper-container-standalone
-    @extends $ContentBordered-3
+    @extends $MildContentLightHighlighted
     // Form border
     &::after
         @extends $RemoveBorder
@@ -417,12 +418,14 @@
 
 // Forum editor
 .Editor-container:not(.Editor-container-type-bare)
-    @extends $ContentBordered-2
+    @extends $ContentLight
 
 .SlateEditor
-    &-container-type-reaction &-editor,
-    &-container-type-simple &-editor
-        SetScrollbar()
+    &-container-type-reaction,
+    &-container-type-simple
+        --body-text-color: fg-2
+        & ^[0]-editor
+            SetScrollbar()
 
 // Chat input
 .ChatChannelInput-container .ChatChannelInput-editor,
@@ -431,7 +434,7 @@
 // No write editor
 .ChatChannelInput-no-permissions,
 .ChatChannelInputPublic-container
-    @extends $ContentBordered-1
+    @extends $SubContentLight
 
 .ChatChannelArchivedControl-container
     PanelBordered(bg-4, border-light-1)
@@ -446,11 +449,11 @@
 // List item note editor
 .TeamListItemNoteEditor-editor
     background-color: bg-4
-    //@extends $ContentBordered-1
+    //@extends $SubContentLight
 
 // Forum reply editor
 .TeamThreadPostEditor-editor .Editor-container
-    @extends $Panel-1
+    @extends $PanelMediumHighlighted
 
 // Editor toolbar
 .SlateToolbarStrip
@@ -468,10 +471,10 @@
 .ChatV2MessageReplyTooltipInput
     // Content editor
     &-container .Editor-container
-        @extends $Panel-2
+        @extends $PanelMedium
     // Title editor
     &-title-container
-        @extends $ContentBordered-2
+        @extends $ContentLight
 
 // Border after +
 .ChatV2MessageReplyTooltipInput-title-icon::after,
@@ -494,11 +497,11 @@
 .TeamThreadReplyCreator-unexpanded-wrapper,
 .DraftInputWithTitleV2-title-wrapper,
 .CollapsedInput-container
-    @extends $ContentMildlyBordered-2
+    @extends $ContentLight
 
 // Make it stand-out less
 .CollapsedInput-container.ContentMetadataInlineReplyDisplay-collapsed-input
-    @extends $ContentMildlyBordered-1
+    @extends $ContentLight
 
 .TeamThreadReplyCreator-container-desktop .TeamThreadReplyCreator-unexpanded-wrapper,
 .DraftInputWithTitleV2-container-desktop.DraftInputWithTitleV2-container-unexpanded,
@@ -561,7 +564,7 @@
 // Selected text toolbar picker
 .SlateSelectionToolbar
     &-toolbar
-        @extends $PanelBordered-5
+        @extends $ContentRoughDark
         //box-shadow: 0 0 16px 2px black
 
 // Selected text toolbar caret

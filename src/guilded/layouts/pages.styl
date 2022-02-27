@@ -15,7 +15,7 @@
 
 // Profile content
 .UserProfileV3-container
-    @extends $Panel-4
+    @extends $PanelDark
     SetScrollbar()
 
 // Tab header
@@ -67,7 +67,7 @@
 // Game
 .UserGameSummaryCard
     &-container
-        @extends $Panel-2
+        @extends $PanelMedium
         border-radius: radius-2
         position: relative
         z-index: 49
@@ -95,7 +95,7 @@
 // Post
 .UserProfilePostPanel-container
     @extends $RadiusSmall
-    @extends $ContentMildlyBordered-2
+    @extends $ContentLight
     // Post highlighted(currently all)
     &-highlight
         // Until it gets fixed, remove the highlight
@@ -120,7 +120,7 @@
 
 // Game
 .PlayerAliasCard-container-type-game
-    @extends $Panel-2
+    @extends $PanelMedium
 // Game border
 .CardWrapper-container:not(.CardWrapper-container-highlighted)::after
     @extends $SetBorderLight-0
@@ -164,7 +164,7 @@
 
 // A button when hovering over friends
 .FriendsList-actions .FriendList-action-icon
-    @extends $Panel-2
+    @extends $PanelMedium
 
 /*
  * -=- DMs -=-
@@ -172,10 +172,10 @@
 
 // Side bar
 .WebAppV2-sidebar
-    @extends $Panel-4
+    @extends $PanelDark
 .ChatChannelList
     &-container
-        @extends $Panel-4
+        @extends $PanelDark
     &-items, &-items:hover
         SetScrollbar()
 
@@ -185,11 +185,11 @@
         border: solid 1px transparent
     // Selected DMs
     &-container&-container-selected
-        @extends $ContentMildlyBordered-2
+        @extends $ContentLight
         --border-color: bg-3
     // Hovered DMs
     &-container:not(&-container-selected):hover
-        @extends $ContentMildlyBordered-3
+        @extends $MildContentLight
         --border-color: bg-2
     // Remove DMs crossmark
     &-container:not(&-container-selected):hover &-remove-icon,
@@ -218,7 +218,7 @@
 
 // Removed DMs background
 .ChatSummary-container
-    @extends $Panel-2
+    @extends $PanelMedium
 
 /*
  * -=- Tournaments -=-
@@ -234,7 +234,7 @@
 
 // Selected tab
 .NavV4SectionSidebarOption-container-active
-    @extends $ContentMildlyBordered-0
+    @extends $SubContentLightHighlighted
     // Selected tab icon
     .NavV4SectionSidebarOption-icon
         @extends $SvgLight
@@ -250,14 +250,14 @@
 .TournamentsPortal
     // Container
     &Page-container
-        @extends $Panel-4
+        @extends $PanelDark
         SetScrollbar()
     // Video
     &Header-video-mask
         background-image: linear-gradient(to bottom, alpha(bg-1, 0.85) 20%, rgba(0, 0, 0, 0) 65%, alpha(bg-1, 0.95))
 // Tournament card
 .TournamentCard-container
-    @extends $ContentMildlyBordered-2
+    @extends $ContentLight
 // Information icon
 .TournamentSummaryItem
     &-container-size-sm &-icon
@@ -267,7 +267,7 @@
         @extends $TextMedium
 // This group is archived
 .GroupUpsell-container-archived
-    @extends $Panel-2
+    @extends $PanelMedium
 
 /*
  * -=- Flow -=-
@@ -275,12 +275,12 @@
 
 .ApiDocs
     &-container
-        @extends $Panel-2
+        @extends $PanelMedium
     &-api-callout
         color: info
 .RestApiDocs
     &Table-row
-        @extends $PanelBordered-4
+        @extends $ContentDark
     &SchemaItem-verb
         color: action
 
@@ -290,14 +290,14 @@
 
 // Background of explore pages
 .ExplorePage-container
-    @extends $Panel-4
+    @extends $PanelDark
 // Sidebar page list
 .NavbarNavIcon-container
     &:hover
         background-color: alpha(bg-hover, 0.1)
     // Selected
     &-selected
-        @extends $Panel-2
+        @extends $PanelMedium
 
 // Find a server tabs
 .IconNavMenuButton-icon
@@ -333,10 +333,10 @@
 // Post card
 .ContentCard
     &-container
-        @extends $Panel-2
+        @extends $PanelMedium
     // Footer
     &-metas
-        @extends $Panel-3
+        @extends $PanelMild
         // Footer hover
         &::after
             @extends $ContentGlare
@@ -368,7 +368,7 @@
 // Explore servers and players game selector
 .TypeaheadInput-container-dropdown .TypeaheadInput-typeahead-options-list,
 .TypeaheadMenu-container
-    @extends $OverrideContentBordered-3
+    @extends $SetMildContentLight
     .SelectMenuItem-label
         @extends $TextMedium
 
@@ -377,7 +377,7 @@
 //  */
 
 // .LandingPageNavBar-container-theme-gilded
-//     @extends $Panel-0
+//     @extends $PanelLight
 // .LogoAndWordmarkV2-container-theme-dark
 //     fill: $gold
 // .LandingPageNavBarLinks-container-theme-dark .LandingPageNavBarLinks-link
@@ -413,9 +413,9 @@
 //     &-description
 //         @extends $JobsSectionDescription
 //     &-job
-//         @extends $ContentMildlyBordered-2
+//         @extends $ContentLight
 //         &:hover
-//             @extends $Panel-1
+//             @extends $PanelMediumHighlighted
 //         &-icon, svg
 //             @extends $SvgDark
 //         &:hover svg
@@ -431,7 +431,7 @@
 // // Perks
 // .JobsPerks
 //     &-container
-//         @extends $Panel-2
+//         @extends $PanelMedium
 //     &-header
 //         @extends $JobsSectionHeading
 //     &-description

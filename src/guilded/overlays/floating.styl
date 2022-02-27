@@ -7,7 +7,7 @@
 
 // Menu container
 .TransientMenu-container-style-default
-    @extends $OverrideContentRoughBordered-4
+    @extends $SetContentRoughDark
     overflow: hidden
 
 +prefix-classes("ContextMenuItem")
@@ -15,6 +15,9 @@
         @extends $FontMedium
 
         &-section-type-rows
+            // Text
+            .-label
+                @extends $TextMedium
             // Description
             .-body
                 @extends $TextDark
@@ -60,6 +63,12 @@
     &-container-desktop:hover &-icon
         @extends $SvgMedium
 
+.ActionMenu
+    &-section:not(:first-child)
+        @extends $SetBorderLight-1
+    &Section-section-header
+        @extends $TextDark
+
 /*
  * -=- Tooltips -=-
  */
@@ -73,7 +82,7 @@
         opacity: floating-opacity
     // Pointer
     &-arrow
-        @extends $Panel-5
+        @extends $PanelReallyDark
 
     &-text,
     &-container-ephemeral &-text

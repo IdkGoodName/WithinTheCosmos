@@ -31,21 +31,31 @@
 // Tab text
 .DesktopOptionsControlItemTemplate-label-text
     @extends $TextDark
+
+settings-item-margin = 5px
 .DesktopOptionsControlItemTemplate-container
     border-radius: radius-1
     padding: 6px 12px
+    HasHighlightPill(settings-item-margin)
+
     @extends $FullBorderTransparent
-    // Tab hover
-    &:hover::after
-        @extends $ContentGlare
     // Tab hover text
-    &:hover .DesktopOptionsControlItemTemplate-label-text
-        @extends $TextMedium
-    // Tab active
-    &-active, &-active:hover
-        @extends $ContentMildlyBordered-3
+    &:hover
+        @extends $MildContentLightHighlighted
+
+        &::after
+            display: none
+
         .DesktopOptionsControlItemTemplate-label-text
-            @extends $TextLight
+            @extends $TextMedium
+    // Tab active
+    &-active
+        GiveHighlightPill(75%, settings-item-margin)
+        @extends $PanelTransparent
+
+        &, &:hover
+            .DesktopOptionsControlItemTemplate-label-text
+                @extends $TextLight
 
 // Gilded tab
 .DesktopOptionsControlItemTemplate
@@ -62,14 +72,14 @@
 // 2FA
 .PersistentUpsell
     &-container-flavor-settings
-        @extends $ContentMildlyBordered-2
+        @extends $ContentLight
     &-title
         @extends $TextLight
     &-subtitle
         @extends $TextDark
 // Connections/integrations
 .SocialLinkPanel-header
-    @extends $ContentMildlyBordered-2
+    @extends $ContentLight
 .UserSettings
     &ConnectionsPage,
     &SecurityPage,
@@ -80,12 +90,12 @@
             @extends $TextLight
     // User settings subscription info
     &ServerSubscriptionsUpsell-container
-        @extends $ContentMildlyBordered-2
+        @extends $ContentLight
 .UserPrivacySettingsPage-header
     @extends $TextLight
 // Server to subscribe to
 .ServerSubscriptionBar-container
-    @extends $ContentMildlyBordered-2
+    @extends $ContentLight
 // Payment
 .UserPaymentsHistory-none,
 .PanelList-container-none
@@ -128,7 +138,7 @@
 
 // Content(flow)
 .UserCTAPanel-container
-    @extends $ContentMildlyBordered-2
+    @extends $ContentLight
 // // Content inner(flow)
 // .UserCTAPanel-container-style-bordered
 //     border: 0
@@ -136,7 +146,7 @@
 .UserCTAPanel-container-style-bordered .UserCTAPanel-contents:not(.UserCTAPanel-container-disabled)
     @extends $PanelTransparent
 .UserCTAPanel-container-style-bordered .UserCTAPanel-contents:not(.UserCTAPanel-container-disabled):hover
-    @extends $Panel-2
+    @extends $PanelMedium
     @extends $TransitionBackground
 // Flow connection
 .PanelList-option-connector
@@ -163,7 +173,7 @@
     @extends $TextDark
 // Restorable channel
 .PanelInfoArchiveRestore
-    @extends $ContentMildlyBordered-2
+    @extends $ContentLight
     &-channel-icon
         @extends $SvgDark
     &-details
@@ -179,7 +189,7 @@
 
 // Team integrations
 .TeamSettingsAddIntegration-container
-    @extends $ContentMildlyBordered-2
+    @extends $ContentLight
 // Twitch integration
 .TeamSettingsAddIntegration-container-type-twitch .TeamSettingsAddIntegration-icon
     fill: stream
@@ -190,10 +200,10 @@
 
 // Group
 .GroupSettingsPanel-container
-    @extends $ContentMildlyBordered-2
+    @extends $ContentLight
     // Group hover
     &:hover
-        @extends $Panel-1
+        @extends $PanelMediumHighlighted
 // Group gripper
 .GroupSettingsPanel-icon
     @extends $SvgDark
@@ -208,7 +218,7 @@
         filter: guilded-subscriptions-transform
     // Subscriptions bg
     &-content
-        @extends $Panel-2
+        @extends $PanelMedium
     // Points
     &List-icon
         &-swap
@@ -233,7 +243,7 @@
     .PermissionsItem-container
         @extends $FullBorderTransparent
         &-selected
-            @extends $ContentMildlyBordered-2
+            @extends $ContentLight
     // Role list item hover
     .PermissionsItem-container-desktop .PermissionsItem-content::after
         @extends $ContentGlare
@@ -255,7 +265,7 @@
 // Permission syncing
 .TeamChannelRoleSyncControl
     &-container
-        @extends $ContentMildlyBordered-2
+        @extends $ContentLight
     // Syncing text
     &-info
         @extends $TextMedium
