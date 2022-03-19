@@ -22,9 +22,9 @@
 
     // Any alert bar
     &-container
-        font-color(fg-2)
-        background-color: bg-0 !important
-        border-color: border-light-2
+        font-color(fg-colour[2])
+        background-color: bg-colour[1] !important
+        border-color: border-light[2]
         // Hover
         &::after
             @extends $ContentGlare
@@ -38,7 +38,7 @@
         &-type-new-replies,
         // New mentions
         &-type-new-mentions
-            background-color: bg-0 !important
+            background-color: bg-colour[1] !important
 
         // New mentions and new forum replies
         &-type-new-replies,
@@ -71,7 +71,8 @@
 
 // Section's header
 .UserAttributionDisplay-header,
-.UserTeamXpDisplay-level-display .GuildedText-container // Level
+.TeamMemberRolesDisplay-header,
+.UserTeamXpDisplay-level-display .GuildedText-container
     @extends $TextLight
 
 // Total XP needed

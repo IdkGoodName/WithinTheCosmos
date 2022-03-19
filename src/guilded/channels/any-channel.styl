@@ -5,9 +5,9 @@
 // All channels
 .LayeredPageContent-content,
 .ChannelWrapper-container
-    background-color: bg-1
-    color: fg-2
-    --body-text-color: fg-2
+    background-color: bg-colour[2]
+    color: fg-colour[2]
+    --body-text-color: fg-colour[2]
 
 // Chat channel
 .ChatChannelContents-container
@@ -20,4 +20,5 @@
 .SidebarInfoItem-container
     @extends $ContentLight
 .TeamPageContentSidebarAbout-games
-    @extends $RemoveBorder
+    border: none !important
+    background-color: transparent !important

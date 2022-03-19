@@ -46,36 +46,24 @@ good-0 = #57ca7a
 good-1 = #70e99e
 
 // Background
-bg-inner = #050407
-bg-0 = #0b0909
-bg-1 = #100d14
-bg-2 = #110e16
-bg-3 = #14111a
-bg-4 = #16141d
-bg-5 = #191620
-bg-6 = #1e1b25
+bg-colour = #000 #050407 #0c0a0e #100d14 #14111a #16141d #191620 #1e1b25
 bg-hover = rgba(102, 81, 114, 0.7)
 bg-lighter = alpha(bg-hover, .1)
 
-shading-0 = rgba(0, 0, 0, .07)
-shading-1 = rgba(0,0,0,.15)
-shading-2 = rgba(0,0,0,.2)
+shading = rgba(0,0,0,.15) rgba(0,0,0,.2)
 
 skeleton-0 = #2f243a
-skeleton-1 = linear-gradient(270deg, bg-6, skeleton-0, skeleton-0, bg-6)
+skeleton-1 = linear-gradient(270deg, bg-colour[7], skeleton-0, skeleton-0, bg-colour[7])
 
 guilded-image-transform = saturate(500%) hue-rotate(15deg)
-guilded-null-image-transform = guilded-image-transform opacity(50%)
+guilded-null-image-transform = guilded-image-transform opacity(40%)
 guilded-subscriptions-transform = opacity(20%)
 
 // Text
-fg-0 = #745f85
-fg-1 = #826e8f
-fg-2 = #b5aac9
-fg-3 = #e7e7e7
+fg-colour = #745f85 #826e8f #b5aac9 #e7e7e7
 
 // Formatting
-fg-format = fg-3
+fg-format = fg-colour[3]
 fg-code = #eb6ec1
 
 // Code formatting
@@ -96,9 +84,8 @@ code-changed = #ffb95e
 code-deleted = #fe603f
 
 // Borders
-border-light-0 = rgba(234, 223, 255, 0.04)
-border-light-1 = rgba(234, 223, 255, 0.07)
-border-light-2 = rgba(234, 223, 255, 0.12)
-border-light-3 = rgba(234, 223, 255, 0.18)
-border-dark-0 = rgba(13, 11, 17, 0.10)
-border-dark-1 = rgba(13, 11, 17, 0.20)
+border-light-base = #eadfff
+border-light-dark = #0d0b11
+
+border-light = alpha(border-light-base, 0.04) alpha(border-light-base, 0.07) alpha(border-light-base, 0.12) alpha(border-light-base, 0.18)
+border-dark = alpha(border-light-dark, 0.10) alpha(border-light-dark, 0.20)

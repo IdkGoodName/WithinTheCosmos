@@ -1,10 +1,10 @@
 @require "./variables"
 @require "./set"
 
-notification-text = mix(notification, fg-3, 45%)
-notification-text-hover = mix(notification, fg-3, 25%)
-mention-text = mix(mention, fg-3, 60%)
-mention-text-hover = mix(mention, fg-3, 40%)
+notification-text = mix(notification, fg-colour[3], 45%)
+notification-text-hover = mix(notification, fg-colour[3], 25%)
+mention-text = mix(mention, fg-colour[3], 60%)
+mention-text-hover = mix(mention, fg-colour[3], 40%)
 
 /*
  * -=- Content -=-
@@ -54,19 +54,19 @@ GiveHighlightPill(content-height, spacing)
 
 // Text
 $TextDarker
-    color: fg-0
+    color: fg-colour[0]
 $TextDark
-    color: fg-1
+    color: fg-colour[1]
 $TextDarkTransition
-    color: fg-1
+    color: fg-colour[1]
     transition: color
 $TextMedium
-    color: fg-2
+    color: fg-colour[2]
 $TextMediumTransition
-    color: fg-2
+    color: fg-colour[2]
     transition: color
 $TextLight
-    color: fg-3
+    color: fg-colour[3]
 
 $TextNotification
     color: notification-text
@@ -105,16 +105,16 @@ $TextWarning
 
 // Svg
 $SvgDarker
-    fill: fg-0
+    fill: fg-colour[0]
 $SvgDark
-    fill: fg-1
+    fill: fg-colour[1]
 $SvgDarkTransition
-    fill: fg-1
+    fill: fg-colour[1]
     transition: fill
 $SvgMedium
-    fill: fg-2
+    fill: fg-colour[2]
 $SvgLight
-    fill: fg-3
+    fill: fg-colour[3]
 
 $SvgNotification
     fill: shade(notification-text, 20%)
@@ -153,13 +153,13 @@ $SvgWarning
 
 // Text & SVG
 $FontDarker
-    font-color: fg-0
+    font-color: fg-colour[0]
 $FontDark
-    font-color: fg-1
+    font-color: fg-colour[1]
 $FontMedium
-    font-color: fg-2
+    font-color: fg-colour[2]
 $FontLight
-    font-color: fg-3
+    font-color: fg-colour[3]
 
 $FontTheme
     font-color: var(--accent-0)
@@ -188,17 +188,17 @@ $FontGoodHighlight
 
 // Background
 $PanelLight
-    background-color: bg-5
+    background-color: bg-colour[6]
 $PanelMediumHighlighted
-    background-color: bg-4
+    background-color: bg-colour[5]
 $PanelMedium
-    background-color: bg-3
+    background-color: bg-colour[4]
 $PanelMild
-    background-color: bg-2
+    background-color: bg-colour[3]
 $PanelDark
-    background-color: bg-1
+    background-color: bg-colour[2]
 $PanelReallyDark
-    background-color: bg-0
+    background-color: bg-colour[1]
 $PanelTransparent
     background-color: transparent
 $PanelImportant
@@ -217,30 +217,30 @@ $RemoveBorder
 
 // Borders
 $FullBorderLight-0
-    border: solid 1px border-light-0
+    border: solid 1px border-light[0]
 $FullBorderLight-1
-    border: solid 1px border-light-1
+    border: solid 1px border-light[1]
 $FullBorderLight-2
-    border: solid 1px border-light-2
+    border: solid 1px border-light[2]
 $FullBorderLight-3
-    border: solid 1px border-light-3
+    border: solid 1px border-light[3]
 $SetBorderLight-0
-    border-color: border-light-0
+    border-color: border-light[0]
 $SetBorderLight-1
-    border-color: border-light-1
+    border-color: border-light[1]
 $SetBorderLight-2
-    border-color: border-light-2
+    border-color: border-light[2]
 $SetBorderLight-3
-    border-color: border-light-3
+    border-color: border-light[3]
 
 $FullBorderDark-0
-    border: solid 1px border-dark-0
+    border: solid 1px border-dark[0]
 $FullBorderDark-1
-    border: solid 1px border-dark-1
+    border: solid 1px border-dark[1]
 $SetBorderDark-0
-    border-color: border-dark-0
+    border-color: border-dark[0]
 $SetBorderDark-1
-    border-color: border-dark-1
+    border-color: border-dark[1]
 
 $FullBorderTransparent
     border: solid 1px transparent
@@ -273,53 +273,53 @@ SetPanelBordered(bg-col, border-col)
     border-color: border-col
 
 $SubContentDark
-    PanelBordered(bg-2, border-dark-1)
+    PanelBordered(bg-colour[3], border-dark[0])
 $SetSubContentDark
-    SetPanelBordered(bg-2, border-dark-1)
+    SetPanelBordered(bg-colour[3], border-dark[1])
 $ContentDark
-    PanelBordered(bg-1, border-dark-1)
+    PanelBordered(bg-colour[2], border-dark[1])
 $SetContentDark
-    SetPanelBordered(bg-1, border-dark-1)
+    SetPanelBordered(bg-colour[2], border-dark[1])
 $ContentRoughDark
-    PanelBordered(bg-0, border-dark-1)
+    PanelBordered(bg-colour[1], border-dark[1])
 $SetContentRoughDark
-    SetPanelBordered(bg-0, border-dark-1)
+    SetPanelBordered(bg-colour[1], border-dark[1])
 
 $MildContentLight
-    PanelBordered(bg-2, border-light-0)
+    PanelBordered(bg-colour[3], border-light[0])
 $SetMildContentLight
-    SetPanelBordered(bg-2, border-light-0)
+    SetPanelBordered(bg-colour[3], border-light[0])
 $ContentLight
-    PanelBordered(bg-3, border-light-0)
+    PanelBordered(bg-colour[4], border-light[0])
 $SetContentLight
-    SetPanelBordered(bg-3, border-light-0)
+    SetPanelBordered(bg-colour[4], border-light[0])
 $SubContentLight
-    PanelBordered(bg-5, border-light-0)
+    PanelBordered(bg-colour[6], border-light[0])
 $SetSubContentLight
-    SetPanelBordered(bg-5, border-light-0)
+    SetPanelBordered(bg-colour[6], border-light[0])
 
 $MildContentLightHighlighted
-    PanelBordered(bg-2, border-light-1)
+    PanelBordered(bg-colour[3], border-light[1])
 $SetMildContentLightHighlighted
-    SetPanelBordered(bg-2, border-light-1)
+    SetPanelBordered(bg-colour[3], border-light[1])
 $ContentLightHighlighted
-    PanelBordered(bg-3, border-light-1)
+    PanelBordered(bg-colour[4], border-light[1])
 $SetContentLightHighlighted
-    SetPanelBordered(bg-3, border-light-1)
+    SetPanelBordered(bg-colour[4], border-light[1])
 $SubContentLightHighlighted
-    PanelBordered(bg-5, border-light-1)
+    PanelBordered(bg-colour[6], border-light[1])
 $SetSubContentLightHighlighted
-    SetPanelBordered(bg-5, border-light-1)
+    SetPanelBordered(bg-colour[6], border-light[1])
 
 $ContentGreyHighlight
-    PanelBordered(bg-5, border-light-1)
+    PanelBordered(bg-colour[6], border-light[1])
 
 /*
  * --- Content Type Panels ---
  */
 
 PanelType(colour)
-    background-color: bg-1
+    background-color: bg-colour[2]
     border: solid 1px alpha(colour, 0.75)
     color: colour
     fill: colour

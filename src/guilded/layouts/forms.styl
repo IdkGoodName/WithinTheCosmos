@@ -22,16 +22,16 @@ $FormDropdownFocused
 $FormDropdownActive
     background-color: transparent
     border: solid 1px transparent
-    color: fg-2
+    color: fg-colour[2]
     font-weight: bold
 FormDropdownActive()
     @extends $FormDropdownActive
 
     GiveHighlightPill(75%, form-dropdown-margin)
 $FormDropdownActiveFocused
-    background-color: bg-4
-    border: solid 1px border-light-1
-    color: fg-3
+    background-color: bg-colour[5]
+    border: solid 1px border-light[1]
+    color: fg-colour[3]
 
 /*
  * -=- Basic -=-
@@ -105,7 +105,7 @@ $FormDropdownActiveFocused
     &-container
         @extends $SetBorderLight-2
     &-container-has-value &-input-element
-        -webkit-text-fill-color: fg-2
+        -webkit-text-fill-color: fg-colour[2]
         @extends $TextMedium
     // Hover
     &-container-desktop:hover
@@ -156,7 +156,7 @@ $FormDropdownActiveFocused
         // Focused
         &.TextInputWithLabel-container-focused,
         &.TextInputWithLabel-container-focused:hover
-            background-color: bg-4
+            background-color: bg-colour[5]
             border-color: var(--accent-1) !important
     &-container-dropdown &-floating-label
         @extends $TextMedium
@@ -180,9 +180,9 @@ $FormDropdownActiveFocused
 // Big form input
 .TextAreaInput
     &-text-area
-        border-color: border-light-0
-        background-color: bg-3
-        color: fg-2
+        border-color: border-light[0]
+        background-color: bg-colour[4]
+        color: fg-colour[2]
         transition: border-color, background-color
         SetScrollbar()
         // Big form input hover
@@ -190,7 +190,7 @@ $FormDropdownActiveFocused
             @extends $SetSubContentLightHighlighted
         // Big form input focus
         &:focus
-            background-color: bg-4
+            background-color: bg-colour[5]
             border-color: var(--accent-1)
     &-container &-text-area::placeholder
         @extends $TextDark
@@ -203,7 +203,7 @@ $FormDropdownActiveFocused
     &-circle
         // Background
         &-background
-            stroke: bg-0
+            stroke: bg-colour[1]
         // Character count
         &-valid, &-invalid-min
             stroke: good-0
@@ -218,11 +218,11 @@ $FormDropdownActiveFocused
 .GuildedTagCreator-container-input-border
     // Normally
     .Select-control
-        border-bottom-color: border-light-2 !important
+        border-bottom-color: border-light[2] !important
         transition: border-bottom
     // Hover
     &:hover .Select-control
-        border-bottom-color: border-light-3 !important
+        border-bottom-color: border-light[3] !important
     // Focused
     .Select.is-focused .Select-control
         border-bottom-color: var(--accent-1) !important
@@ -480,25 +480,25 @@ $FormDropdownActiveFocused
         @extends $TextMedium
     // Form selector
     .Select-control
-        border-color: border-light-0 !important
-        background-color: bg-3 !important
+        border-color: border-light[0] !important
+        background-color: bg-colour[4] !important
         transition: border-color, background-color
     // Form selector hover
     &.GuildedSelect-container-dark:hover, &:hover
         .Select .Select-control
-            border-color: border-light-1 !important
-            background-color: bg-4 !important
+            border-color: border-light[1] !important
+            background-color: bg-colour[5] !important
 
     // Form selector arrow
     .Select-arrow
-        border-top-color: fg-0 !important
+        border-top-color: fg-colour[0] !important
         transition: border-top-color
     // Form selector placeholder
     .Select-placeholder
         @extends $TextDark
     // Form selector value
     .Select-value-label
-        color: fg-2 !important
+        color: fg-colour[2] !important
     // Form select menu
     &&-dark .Select-menu-outer
         @extends $SetContentRoughDark
@@ -510,7 +510,7 @@ $FormDropdownActiveFocused
         .Select.is-focused
             .Select-control
                 border: solid 1px var(--accent-1) !important
-                background-color: bg-4 !important
+                background-color: bg-colour[5] !important
             .Select-arrow
                 border-top-color: var(--accent-0) !important
     // Code container stuff
@@ -520,7 +520,7 @@ $FormDropdownActiveFocused
             @extends $TextDark
         // Label's arrow in editor
         .Select-arrow
-            border-top-color: fg-0
+            border-top-color: fg-colour[0]
     &-no-border&-dark,
     &-no-border
         .Select.is-focused .Select-control
@@ -574,7 +574,7 @@ $FormDropdownActiveFocused
         @extends $PanelMild
     // Label's arrow acitve in editor
     &.is-open > &-control &-arrow
-        border-top-color: fg-2
+        border-top-color: fg-colour[2]
 
 
 // --- ICON DROPDOWN ---
@@ -592,7 +592,7 @@ $FormDropdownActiveFocused
  */
 
 $SliderBackground
-    background-color: bg-inner
+    background-color: bg-colour[0]
 
 // Voice volume slider
 .RangeSlider
@@ -617,17 +617,17 @@ $SliderBackground
     &-rail,
     &-container-type-light &-rail,
     &-container-type-light:hover &-rail
-        background-color: alpha(bg-inner, 0.7)
+        background-color: alpha(bg-colour[0], 0.7)
     &-selected-rail,
     &-container-type-light &-selected-rail,
     &-container-type-light:hover &-selected-rail
         background-color: alpha(progress, 0.9)
 // Video volume knob
 .SliderKnob-container
-    background-color: bg-1
+    background-color: bg-colour[2]
     border: solid 2px progress
     .RangeSlider-knob[style="left: 0%;"] &
-        border-color: fg-1
+        border-color: fg-colour[1]
 
 /*
  * --- Timed ---
@@ -636,8 +636,8 @@ $SliderBackground
 // Date & Time input
 .FormBoxAndLabel
     &-box
-        border-color: border-light-0
-        background-color: bg-3
+        border-color: border-light[0]
+        background-color: bg-colour[4]
         border-radius: radius-2
         transition: border-color, background-color
     &-container-focused &-box,
@@ -681,7 +681,7 @@ button-hollow-hover-selector(type)
     "&-container-desktop.FormConfirmButtonV2-container-hollow.FormConfirmButtonV2-container-type-" + type + ":hover"
 // Body mixins
 button-filled-body(border-colour, text-colour)
-    background: bg-2
+    background: bg-colour[3]
     border: solid 1px border-colour
     .FormConfirmButtonV2-button-content
         font-color(text-colour)
@@ -710,7 +710,7 @@ blue-glow = tint($blue, 20%)
     // Gilded button
     &-container&-container-type-gilded
         box-shadow: none
-        background: bg-2
+        background: bg-colour[3]
         @extends $SetBorderThemeTransparent
         //@extends $SetBorderLight-1
     // Gilded button hover
@@ -759,13 +759,13 @@ blue-glow = tint($blue, 20%)
 
     // White buttons
     $WhiteButtonFilled
-        button-filled-body(alpha(fg-2, 0.15), fg-2)
+        button-filled-body(alpha(fg-colour[2], 0.15), fg-colour[2])
     $WhiteButtonFilledHover
-        button-filled-body(alpha(fg-2, 0.25), fg-3)
+        button-filled-body(alpha(fg-colour[2], 0.25), fg-colour[3])
     $WhiteButtonHollow
-        button-hollow-body(border-light-2, fg-2)
+        button-hollow-body(border-light[2], fg-colour[2])
     $WhiteButtonHollowHover
-        button-hollow-body(border-light-2, fg-3)
+        button-hollow-body(border-light[2], fg-colour[3])
 
     for btnType in "white" "whiteBg" "bleached" "monochrome"
         // Filled
@@ -789,7 +789,7 @@ blue-glow = tint($blue, 20%)
     // Disabled hollow
     &-container&-container-hollow&-container-disabled,
     &-container&-container-desktop&-container-hollow&-container-disabled:hover
-        button-hollow-body(border-light-1, fg-0)
+        button-hollow-body(border-light[1], fg-colour[0])
 /*
  * --- Visual ---
  */

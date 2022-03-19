@@ -9,7 +9,7 @@
 
 // Dashed border
 .UploadMediaBox-container
-    border-color: alpha(fg-0, 0.3)
+    border-color: alpha(fg-colour[0], 0.3)
 
 // Media upload
 .MediaUploaderDropImageInstructions
@@ -66,7 +66,7 @@
     @extends $TextGood
 // Upload avatar container
 .NewTeamUpsellIcon-container
-    border-color: fg-0
+    border-color: fg-colour[0]
 // Upload avatar icon
 .NewTeamUpsellIcon-icon
     @extends $SvgMedium
@@ -116,7 +116,7 @@
         &-green
             @extends $PanelGood
         &-grey
-            background-color: fg-2
+            background-color: fg-colour[2]
 // Accept invite and join Y server
 .SocialContextHeader-header-text
     @extends $TextMedium
@@ -222,7 +222,7 @@
     &-icon
         // Wrapper
         .AvatarIcon-container
-            background-color: bg-0 !important
+            background-color: bg-colour[1] !important
         // Icon types
         .icon-application
             fill: $gold
@@ -233,6 +233,8 @@
             fill: $red
         .icon-toolbar-emoji
             fill: $blue
+        .icon-volume-full
+            fill: $green
 
 /*
  * --- Channel Switcher ---
@@ -241,8 +243,8 @@
 // Channel switcher
 .ChatChannelSwitcherOverlay
     &-container
-        background-color: bg-1
-        color: fg-1
+        background-color: bg-colour[2]
+        color: fg-colour[1]
     &-results-container
         SetScrollbar()
     &Footer-container
@@ -295,7 +297,7 @@
 .HorizontalPercentageBar
     // Percentage bar
     &-bar
-        background-color: bg-inner
+        background-color: bg-colour[0]
         // Progress
         &-highlight
             background: progress

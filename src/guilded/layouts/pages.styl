@@ -40,7 +40,7 @@
 .UserProfilePictureControl
     // Status icon
     &-online-status
-        border-color: bg-1
+        border-color: bg-colour[2]
         right: 0
     // Avatar
     &-picture
@@ -78,7 +78,7 @@
             bottom: 0
             left: 0
             right: 0
-            border: solid 1px border-light-0
+            border: solid 1px border-light[0]
             border-radius: radius-2
             z-index: 50
     &-game-summary
@@ -99,7 +99,7 @@
     // Post highlighted(currently all)
     &-highlight
         // Until it gets fixed, remove the highlight
-        border-top: solid 1px border-light-0
+        border-top: solid 1px border-light[0]
         //border-top-color: var(--accent-0)
 // Post author's name
 .UserName-container,
@@ -181,21 +181,21 @@
 
 .ChatChannelListItem
     &-container
-        --border-color: bg-1
+        --border-color: bg-colour[2]
         border: solid 1px transparent
     // Selected DMs
     &-container&-container-selected
         @extends $ContentLight
-        --border-color: bg-3
+        --border-color: bg-colour[4]
     // Hovered DMs
     &-container:not(&-container-selected):hover
         @extends $MildContentLight
-        --border-color: bg-2
+        --border-color: bg-colour[3]
     // Remove DMs crossmark
     &-container:not(&-container-selected):hover &-remove-icon,
     &-container-selected &-remove-icon
         background-color: transparent
-        fill: fg-1
+        fill: fg-colour[1]
         transition: fill
         // Remove DMs crossmark hover
         &:hover
@@ -214,7 +214,7 @@
 
 // User typing in DMs
 .TypingIndicator-container
-    background-color: bg-6
+    background-color: bg-colour[7]
 
 // Removed DMs background
 .ChatSummary-container
@@ -254,7 +254,7 @@
         SetScrollbar()
     // Video
     &Header-video-mask
-        background-image: linear-gradient(to bottom, alpha(bg-1, 0.85) 20%, rgba(0, 0, 0, 0) 65%, alpha(bg-1, 0.95))
+        background-image: linear-gradient(to bottom, alpha(bg-colour[2], 0.85) 20%, rgba(0, 0, 0, 0) 65%, alpha(bg-colour[2], 0.95))
 // Tournament card
 .TournamentCard-container
     @extends $ContentLight
@@ -354,7 +354,7 @@
 .PercentageBar
     // Empty
     &-backplate-div
-        background-color: bg-1 !important
+        background-color: bg-colour[2] !important
     // Progress
     &-progress-div
         background-color: progress !important

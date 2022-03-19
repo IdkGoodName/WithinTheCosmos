@@ -91,14 +91,14 @@
     &.ReactionBadge-container-active
         // Normal active reaction
         .ReactionBadge-container-content
-            background-color: mix(bg-1, active, 85%)
+            background-color: mix(bg-colour[2], active, 85%)
             border-color: alpha(active, 0.1)
             // Active reaction label
             .ReactionBadge-count
                 color: active
         // Active reaction hover
         &.ReactionBadge-container:not(.ReactionBadge-container-disabled):hover .ReactionBadge-container-content
-            background-color: mix(bg-1, active, 90%)
+            background-color: mix(bg-colour[2], active, 90%)
 
 /*
  * -=- Image Upload -=-
@@ -165,22 +165,48 @@
         &-icon
             @extends $CheckboxCheck
 /*
- * -=- Badges -=-
+ * -=- Badges & Pills -=-
+ */
+
+/*
+ * --- General purpose badge ---
  */
 
 .CalloutBadge-container
     @extends $TextMedium
-    background: bg-0 !important
-    border: solid 1px border-light-1 !important
+    background: bg-colour[1] !important
+    border: solid 1px border-dark[0] !important
+
+/*
+ * --- Pills ---
+ */
+
+.TeamMemberRolePill
+    &-container
+        border-radius: radius-1
+        border: solid 1px border-dark[0] !important
+        background-color: bg-colour[2]
+    &-name
+        @extends $TextMedium
+    &-remove-icon
+        @extends $SvgBad
+
+// Add role
+.TeamAddRoleButton-container .CircularPlusButton
+    &-container
+        @extends $SvgMedium
+    &-container-size-md
+        @extends $SetContentDark
+
 
 /*
  * --- User badges ---
  */
 
 $Badge
-    color: fg-2
-    background: bg-1 !important
-    border: solid 1px border-light-1 !important
+    color: fg-colour[2]
+    background: bg-colour[1] !important
+    border: solid 1px border-dark[0] !important
 
 .UserBadge
     // // If there is an icon in the badge, remove the name
@@ -208,7 +234,7 @@ $Badge
 // [BETA] in channel creation
 .RadiosField-option-details-header-badge
     color: info
-    background: bg-2 !important
+    background: bg-colour[0] !important
 
 // [LIVE]
 // .TeamChannelItemContents-label-wrapper
@@ -274,7 +300,7 @@ $Badge
         @extends $TextDark
     // Division
     &-left, &-right
-        background-color: border-light-1
+        background-color: border-light[1]
     // Hover glare
     &-container-desktop::after
         @extends $ContentGlare
@@ -324,7 +350,7 @@ $Badge
     for side in left right
         // // Fading
         // &-container-size-sm .CarouselList-blur-light.CarouselList-{side}-blur
-        //     background-gradient: to side, alpha(bg-1, 0), bg-1 75%
+        //     background-gradient: to side, alpha(bg-colour[2], 0), bg-colour[2] 75%
         // Arrow hover
         &-controls-{side}:hover &-controls-arrow
             @extends $SvgMedium
@@ -332,4 +358,4 @@ $Badge
     &-controls-arrow
         @extends $SvgDarkTransition
 
-define-carousel-fade(bg-1)
+define-carousel-fade(bg-colour[2])

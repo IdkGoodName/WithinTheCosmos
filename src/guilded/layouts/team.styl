@@ -101,7 +101,7 @@ SetChannel(className)
 // Sub-icon background
 .ChannelIcon-icon-selected .ChannelIcon-icon-background,
 .ChannelIcon-icon-background
-    background-color: bg-0
+    background-color: bg-colour[1]
 
 // Invite others
 .ChannelUpsell-container
@@ -124,7 +124,7 @@ SetChannel(className)
 
 // Sets PFP border
 .ScreenHeader-icon-wrapper
-    --border-color: bg-0
+    --border-color: bg-colour[1]
 
 // Screen header
 .ScreenHeader
@@ -184,7 +184,7 @@ SetChannel(className)
         @extends $PanelMedium
     // Member/thread list active tab
     &-container-selected::after
-        background-color: fg-1
+        background-color: fg-colour[1]
     // Member/thread list tab icon
     &-icon
         @extends $SvgDark
@@ -211,9 +211,9 @@ SetChannel(className)
             @extends $TextMedium
     // Member list role amount
     &-amount
-        color: fg-1
+        color: fg-colour[1]
         padding: 0 spacing-2
-        background-color: bg-0
+        background-color: bg-colour[1]
         border-radius: radius-2
 
 // Member list user hover

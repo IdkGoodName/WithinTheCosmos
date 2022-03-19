@@ -37,7 +37,7 @@ BannerWithButtonType(toExtend, colour)
  */
 
 StatusMessageType(colour)
-    background-color: bg-0
+    background-color: bg-colour[1]
     border-left: solid 3px colour
     // transition: border-left
     // transition-duration: 0.1s
@@ -59,8 +59,8 @@ StatusMessageType(colour)
         @extends $ContentGlare
     &-ephemeral
         box-sizing: border-box
-        background-color: bg-0
-        border: solid 1px border-light-0
+        background-color: bg-colour[1]
+        border: solid 1px border-light[0]
         // Copy invite alert
         &.StatusMessage-container-type-success
             StatusMessageType(good-0)
@@ -115,13 +115,13 @@ StatusMessageType(colour)
         @extends $TextLight
     // Make it dark with a border
     &.StatusMessage-container-type-banner
-        background: bg-0
+        background: bg-colour[1]
         border-bottom: solid 1px active
         .StatusMessage-content
             color: active
     // Same with stream mode, but purple
     &.StatusMessage-container-banner-type-streamer-mode
-        background: bg-0
+        background: bg-colour[1]
         border-bottom: solid 1px stream
         .StatusMessage-content
             color: stream
@@ -286,7 +286,7 @@ StatusMessageType(colour)
 // Tab highlighter
 .SimpleIconTabMenuHeaderItem-container-selected::after,
 .HorizontalTab-highlighter
-    background-color: fg-1
+    background-color: fg-colour[1]
 
 /*
  * -=- Animated -=-

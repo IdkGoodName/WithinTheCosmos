@@ -3,12 +3,8 @@
 // Code highlight
 .PrismTokenGenericLanguageRenderer
     // Special
-    &-punctuation, &-operator
-        color: fg-1
     &-atrule, &-atrule-line, &-keyword, &-tag
         color: code-keyword
-    &-preprocessor, &-macro, &-comment, &-prolog, &-doctype, &-cdata
-        color: fg-0
     &-annotation
         color: code-special
     &-important
@@ -25,8 +21,6 @@
         color: code-inserted
     &-diff
         color: code-changed
-    &-coord
-        color: fg-1
 
     // Values
     &-template-string, &-string
@@ -64,14 +58,5 @@
         color: var(--accent-2)
 
     // Code
-    &-code, &-code-block
-        background-color: bg-0
     &-code
         color: fg-code
-
-    // Blocks
-    &-blockquote, &-list
-        color: fg-1
-    &-title
-        font-weight: bolder
-        color: fg-3

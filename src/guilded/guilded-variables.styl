@@ -2,13 +2,13 @@
 @require "../set"
 
 $CheckboxUnchecked
-    border-color: border-light-2
+    border-color: border-light[2]
     transition: background, border-color
 $CheckboxUncheckedHover
     border-color: var(--accent-1)
     background-color: var(--accent-transparent)
 $CheckboxUncheckedDisabled
-    border-color: fg-1
+    border-color: fg-colour[1]
 
 $CheckboxChecked
     //background-gradient: to bottom right, var(--accent-0), var(--accent-2) 130%
@@ -19,8 +19,8 @@ $CheckboxCheckedHover
     background-color: var(--accent-1)
     border-color: var(--accent-2)
 $CheckboxCheckedDisabled
-    background-color: fg-2
-    border-color: fg-1
+    background-color: fg-colour[2]
+    border-color: fg-colour[1]
 
 $CheckboxCheck
     fill: var(--accent-foreground)

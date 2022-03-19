@@ -29,11 +29,11 @@
 define-message-type(colour)
     background-color: alpha(colour, 0.05)
 
-    define-carousel-fade(mix(bg-3, colour, 95%))
+    define-carousel-fade(mix(bg-colour[4], colour, 95%))
     // Hover
     &:hover
-        background-color: mix(bg-4, colour, 95%) //alpha(colour, 0.02)
-        define-carousel-fade(mix(bg-4, colour, 95%))
+        background-color: mix(bg-colour[5], colour, 95%) //alpha(colour, 0.02)
+        define-carousel-fade(mix(bg-colour[5], colour, 95%))
     // Side
     &::after
         background-color: colour
@@ -43,14 +43,14 @@ define-message-type(colour)
     .ReactionBadge-container.ReactionBadge-container-active
         // Normal active reaction
         .ReactionBadge-container-content
-            background-color: mix(bg-1, colour, 85%)
+            background-color: mix(bg-colour[2], colour, 85%)
             border-color: alpha(colour, 0.1)
             // Active reaction label
             .ReactionBadge-count
                 color: colour
         // Active reaction hover
         &.ReactionBadge-container:not(.ReactionBadge-container-disabled):hover .ReactionBadge-container-content
-            background-color: mix(bg-1, colour, 90%)
+            background-color: mix(bg-colour[2], colour, 90%)
 
 .ChatV2Message-container
     // Message
@@ -58,12 +58,12 @@ define-message-type(colour)
         @extends $TransitionBackground
     &&-type-default
         color: var(--body-text-color)
-        define-carousel-fade(bg-3)
+        define-carousel-fade(bg-colour[4])
     // Hovered message
     &:not(&-editing):hover, &.ChatV2Message-container-replying
-        background-color: bg-4
-        --body-text-color: fg-3
-        define-carousel-fade(bg-4)
+        background-color: bg-colour[5]
+        --body-text-color: fg-colour[3]
+        define-carousel-fade(bg-colour[5])
     // Right click active
     &-active
         @extends $PanelMediumHighlighted
@@ -91,7 +91,7 @@ define-message-type(colour)
     // Right clicked
     &-active:not(&-editing)
         @extends $PanelLight
-        --body-text-color: fg-3
+        --body-text-color: fg-colour[3]
 
     // Removes messages' margin
     & + &:not(&-with-header):not(&-type-system)
@@ -161,7 +161,7 @@ define-message-type(colour)
     &, &-highlighted
         // Reply line
         &::after
-            border-color: fg-0
+            border-color: fg-colour[0]
             opacity: 30%
             height: 24px
         &:first-child::after
@@ -202,6 +202,7 @@ define-message-type(colour)
 .PinnedByMessage
     // Text
     &-word
+        @extends $SubContentDark
         @extends $TextDark
     // Icon
     &-icon
@@ -215,7 +216,7 @@ define-message-type(colour)
     &-container
         @extends $PanelDark
         SetScrollbar()
-        --body-text-color: fg-2
+        --body-text-color: fg-colour[2]
 // Pinned message
 .ChatV2PinnedMessage-message-wrapper
     @extends $PanelMedium
@@ -239,7 +240,7 @@ define-message-type(colour)
 .WordDividerLine
     // Normal
     &-line
-        background-color: bg-6
+        background-color: bg-colour[7]
         &:last-child
             width: 600px
     &-container-word-style-chat &-word,
@@ -269,7 +270,7 @@ define-message-type(colour)
 // Threaded message
 .ChatMessageThread-container
     @extends $SubContentDark
-    --border-color: bg-5
+    --border-color: bg-colour[6]
     // Threaded message hover
     &::after
         display: none
@@ -314,8 +315,8 @@ define-message-type(colour)
     // Buttons hovered over
     &-wrapper:hover .QuickActionBar-action,
     &:hover
-        background-color: bg-3
-        fill: fg-3
+        background-color: bg-colour[4]
+        fill: fg-colour[3]
         // Change the fill of the SVG icon
         .SVGIcon-container
             @extends $SvgLight
@@ -342,12 +343,12 @@ define-message-type(colour)
             @extends $PanelLight
 // Message delete menu fading
 .ChatChannelMessages-delete-message::after
-    background-gradient: to bottom, transparent, bg-3, 75px
+    background-gradient: to bottom, transparent, bg-colour[4], 75px
     // Doesn't work
     // @extends $TransitionBackground
     // When the message gets hovered over, change the fading too
     .ChatV2Message-container:not(.ChatV2Message-container-editing):hover &
-        background-gradient: to bottom, transparent, bg-5, 75px
+        background-gradient: to bottom, transparent, bg-colour[6], 75px
 
 /*
  * --- Thread menu ---

@@ -111,7 +111,7 @@
  */
 
 .BlockQuoteContainerRenderer
-    background-color: shading-1
+    background-color: shading[0]
     border-left-color: var(--game-color)
     border-left-width: radius-1
     border-radius: radius-0
@@ -120,7 +120,7 @@
         padding: spacing-2 spacing-2 spacing-2 spacing-3
     // Darker
     .ChatMessageThread-thread-parent-message &
-        background-color: shading-2
+        background-color: shading[1]
 
 /*
  * --- Code block ---
@@ -147,6 +147,22 @@
             color: fg-code
     &-header
         @extends $PanelDark
+
+// Highlighted tokens
+.PrismTokenGenericLanguageRenderer
+    &-punctuation, &-operator
+        @extends $TextDark
+    &-preprocessor, &-macro, &-comment, &-prolog, &-doctype, &-cdata
+        @extends $TextDarker
+    // DIFF
+    &-coord
+        @extends $TextDark
+    // Markdown
+    &-blockquote, &-list
+        @extends $TextDark
+    &-title
+        font-weight: bolder
+        color: fg-colour[3]
 
 /*
  * --- Lists ---
@@ -225,13 +241,13 @@
 .RawVideoPlayer
     // Play arrow
     &-play-icon
-        fill: bg-1
+        fill: bg-colour[2]
         filter: drop-shadow(shadow)
 // Video buttons
 .TeamStreamPlayerButton-container,
 .TeamStreamVolumeControl-volume-icon,
 .TeamStreamVolumeControl-volume-icon-wrapper:hover .TeamStreamVolumeControl-volume-icon
-    fill: bg-1
+    fill: bg-colour[2]
     filter: drop-shadow(shadow)
 
 // Image caption
@@ -239,12 +255,12 @@
     @extends $TextDark
 // Caption itself
 .MediaRenderer-caption
-    border-color: border-light-1
+    border-color: border-light[1]
 // Image caption being edited
 .MediaRenderer-caption-selected,
 .MediaRenderer-caption-has-text,
 .MediaRenderer-caption-placeholder
-    background-color: shading-1
+    background-color: shading[0]
 
 // Don't show it on the image caption that isn't being edited
 .MediaRenderer-read-only
@@ -269,8 +285,8 @@
 .ContentEmbed
     // Content info not loaded
     &CardError-container
-        background-color: bg-3
-        color: fg-1
+        background-color: bg-colour[4]
+        color: fg-colour[1]
     // Container selected in editor
     &Renderer-container-selected
         @extends $SetBorderSelection
@@ -300,7 +316,7 @@
         //mask-image: linear-gradient(to bottom, black, transparent 95%)
         //&::after
         //display: none
-        background-gradient: to bottom, transparent, bg-3 20px
+        background-gradient: to bottom, transparent, bg-colour[4] 20px
 
 /*
  * --- Embeds ---
@@ -310,13 +326,13 @@
 .ChatEmbed-container,
 .OpenGraphEmbed-content,
 .TeamEmbedCard-container
-    background-color: bg-2
-    border-color: border-light-1
+    background-color: bg-colour[3]
+    border-color: border-light[1]
     border-radius: radius-2
     border-style: solid
     overflow: hidden
     &:not([style])
-        border-left: solid 1px border-light-1
+        border-left: solid 1px border-light[1]
 
 // Embed
 .ChatEmbed,
@@ -329,7 +345,7 @@
         &-description
             @extends $TextMedium
     &-content:not([style])
-        border-left: solid 1px border-light-1
+        border-left: solid 1px border-light[1]
 
 .OpenGraphEmbedContent-domain
     @extends $TextDark
@@ -345,9 +361,9 @@
 // Footer background
 .ChatEmbedFooter-container,
 .ContentEmbedCardFooter-container
-    border-top: solid 1px border-dark-1
-    background-color: bg-1
-    color: fg-0
+    border-top: solid 1px border-dark[1]
+    background-color: bg-colour[2]
+    color: fg-colour[0]
 
 
 /*
@@ -373,7 +389,7 @@
 
 // Member and follower seperator dot
 .TeamFollowerMemberCount-separator
-    background-color: fg-0
+    background-color: fg-colour[0]
 
 /*
  * --- Polls/Forms ---
@@ -423,7 +439,7 @@
 .SlateEditor
     &-container-type-reaction,
     &-container-type-simple
-        --body-text-color: fg-2
+        --body-text-color: fg-colour[2]
         & ^[0]-editor
             SetScrollbar()
 
@@ -437,7 +453,7 @@
     @extends $SubContentLight
 
 .ChatChannelArchivedControl-container
-    PanelBordered(bg-4, border-light-1)
+    PanelBordered(bg-colour[5], border-light[1])
 
 // Doc editor
 .DocEditor-container .DocEditor-content-input,
@@ -448,7 +464,7 @@
 
 // List item note editor
 .TeamListItemNoteEditor-editor
-    background-color: bg-4
+    background-color: bg-colour[5]
     //@extends $SubContentLight
 
 // Forum reply editor
@@ -461,9 +477,9 @@
     border-top: none
     // In doc editor
     .DocEditor-container &
-        border-top: solid 1px border-light-1
-        border-left: solid 1px border-light-1
-        border-right: solid 1px border-light-1
+        border-top: solid 1px border-light[1]
+        border-left: solid 1px border-light[1]
+        border-right: solid 1px border-light[1]
         padding: 0 spacing-0
         border-radius: radius-1
 
@@ -532,7 +548,7 @@
 .PostReplyQuoteButtons-option
     // Quote/Reply buttons
     &:not(:first-child):not(:first-child)::before
-        background-color: fg-0
+        background-color: fg-colour[0]
     // Quote/Reply buttons active
     &, &:hover, &:visited, &:active, &:focus
         color: var(--game-color)
@@ -569,7 +585,7 @@
 
 // Selected text toolbar caret
 .SlateSelectionToolbar-caret
-    border-top-color: bg-0
+    border-top-color: bg-colour[1]
 
 // Toolbar icons
 .SlateEditor-send-icon.SlateEditor-send-icon-disabled,
@@ -608,16 +624,16 @@
 .AbstractTypeaheadPlugin-container,
 .TypeaheadDrawer-container
     opacity: floating-opacity
-    background-color: bg-3
-    border-color: border-light-2
+    background-color: bg-colour[4]
+    border-color: border-light[2]
     border-radius: radius-2
 
 .SlateTypeaheadMenuHeader
     // Picker's header
     &-container
-        background-color: bg-2
-        //border-bottom: solid 1px border-light-2
-        color: fg-1
+        background-color: bg-colour[3]
+        //border-bottom: solid 1px border-light[2]
+        color: fg-colour[1]
     // Picker's search icon (@, #)
     &-searchTerm
         @extends $FakeMention
