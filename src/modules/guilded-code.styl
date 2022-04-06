@@ -1,5 +1,17 @@
 @require "../variables"
 
+code-keyword = #fe603f
+code-special = #74f8d4
+code-important = #000
+code-deleted = #fe603f
+code-inserted = #bcec6a
+code-changed = #ffb95e
+code-string = #fc7d98
+code-value = #c998f9
+code-name = #9c74f8
+code-property = #74a6f8
+code-class-name = #ffb95e
+
 // Code highlight
 .PrismTokenGenericLanguageRenderer
     // Special
@@ -8,7 +20,7 @@
     &-annotation
         color: code-special
     &-important
-        color: important
+        color: code-important
 
     // DIFF
     &-deleted, &-deleted-sign
@@ -45,8 +57,6 @@
         color: code-class-name
 
     // Formatting
-    &-bold, &-italic
-        color: fg-format
     &-underline
         text-decoration: underline solid
     &-strike

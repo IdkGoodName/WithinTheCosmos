@@ -449,28 +449,36 @@ $FormDropdownActiveFocused
     &-container-selection-border:not(.RadioOptionPanel-container-selected):hover
         @extend $SetBorderLight-0
 
+.SearchAndSelectControl-num-selected
+    @extends $TextDark
 .CheckboxPanel
     &-container
         @extends $ContentLight
-    // Hover
-    &-container.CheckboxPanel-container-clickable.CheckboxPanel-container-flavor-default:hover
-        @extends $PanelLight
-    &-container-selected
-        @extends $PanelMediumHighlighted
-    // Selected hover
-    &-container-selected.CheckboxPanel-container-clickable.CheckboxPanel-container-flavor-default:hover
-        @extends $PanelLight
 
-    // Checkmark
-    &-container-clickable:hover
-        .CheckmarkIcon-circle
-            @extends $CheckboxUncheckedHover
+        &&-flavor-gray
+            @extends $ContentLight
 
-    // Searchable list items
-    &-container&-container-clickable&-container-flavor-transparent:hover::after
-        @extends $ContentGlare
-    &-container-clickable:focus .CheckmarkIcon-circle
-        border: solid 2px var(--accent-1)
+        // Hover
+        &&-clickable&-flavor-default:hover,
+        &&-clickable&-size-sm:hover
+            @extends $PanelLight
+        &-selected
+            @extends $PanelMediumHighlighted
+        // Selected hover
+        &-selected&-clickable&-flavor-default:hover
+            @extends $PanelLight
+
+        // Checkmark
+        &-clickable:hover
+            .CheckmarkIcon-circle
+                @extends $CheckboxUncheckedHover
+
+        // Searchable list items
+        &&-clickable&--flavor-transparent:hover::after
+            @extends $ContentGlare
+        &-clickable:focus
+            .CheckmarkIcon-circle
+                border: solid 2px var(--accent-1)
 
 // --- SELECTION DROPDOWN ---
 

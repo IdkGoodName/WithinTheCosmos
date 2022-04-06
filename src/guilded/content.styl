@@ -163,6 +163,8 @@
     &-title
         font-weight: bolder
         color: fg-colour[3]
+    &-bold, &-italic
+        color: fg-colour[3]
 
 /*
  * --- Lists ---
@@ -271,7 +273,7 @@
 .MediaCaptionLineRenderer .MarkRenderer
     // Bold text
     &-bold
-        color: shade(fg-format, 20%)
+        color: shade(fg-colour[3], 20%)
     // Inline code
     &-inline-code, &-inline-code-v2
         @extends $PanelReallyDark
@@ -445,6 +447,7 @@
 
 // Chat input
 .ChatChannelInput-container .ChatChannelInput-editor,
+.Editor-container.ChatV2MessageContents-editor,
 .ChannelTitleInput-container,
 .ChatChannelInput-editor,
 // No write editor
@@ -463,7 +466,7 @@
     @extends $RemoveBorder
 
 // List item note editor
-.TeamListItemNoteEditor-editor
+.Editor-container.TeamListItemNoteEditor-editor
     background-color: bg-colour[5]
     //@extends $SubContentLight
 
