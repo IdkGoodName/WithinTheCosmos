@@ -140,6 +140,21 @@
     // Group settings hover
     &:hover
         @extends $SvgMedium
+// Group list
+.GroupCard
+    &-contents
+        @extends $ContentLight
+        & ^[0]-group-description-text
+            @extends $TextDark
+    &Banner
+        &-group-image &-image-right-border::after
+            display: none
+.TeamMembersPill-container
+    @extends $ContentDark
+
+// Banned member
+.ManageUserBanOverlay-UserProfile-container
+    @extends $ContentLight
 
 /*
  * --- Invite ---
@@ -337,9 +352,7 @@
             @extends $ContentGlare
     // Date
     &-subtitle
-        @extends $TextDarkTransition
-    &-container:hover &-subtitle
-        @extends $TextLight
+        @extends $TextDark
 // Individual response container
 .CustomFormIndividualResponse-result-display
     @extends $MildContentLight

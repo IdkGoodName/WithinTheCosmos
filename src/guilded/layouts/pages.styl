@@ -50,6 +50,9 @@
  * --- Posts ---
  */
 
+.UserProfilePostsDisplay-container .PostDisplay-container:not(:first-child)
+    margin-top: spacing-2
+
 // Tagline
 .OverviewWidgetItem-text-paragraph
     @extends $TextMedium
@@ -346,9 +349,7 @@
     &-title
         @extends $TextLight
     &-metas-time
-        @extends $TextDarkTransition
-        .ContentCard-container:hover &
-            @extends $TextLight
+        @extends $TextDark
 
 // Invite progressbar
 .PercentageBar

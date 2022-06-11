@@ -101,7 +101,7 @@ define-message-type(colour)
 .EditedMarker-container
     @extends $TextDarkTransition
     // (edited) hover
-    .ChatV2Message-container.ChatV2Message-container-type-default:hover &
+    &:hover
         @extends $TextMedium
 
 /*
@@ -169,6 +169,11 @@ define-message-type(colour)
     // Reply header line thread
     &-thread::after, &-thread:first-child::after
         height: 44px
+
+// Threaded message line
+.ChatV2MessageContents-container-thread::after
+    border-color: fg-colour[0]
+    opacity: 30%
 
 .ChatV2MessageReplyHeader
     // Text in the reply
@@ -296,9 +301,12 @@ define-message-type(colour)
 .ChatV2MessageTimestamp-container.SystemMessageRendererWrapper-timestamp
     @extends $TextDarkTransition
     // Timestamp hovered
-    .ChatV2Message-container.ChatV2Message-container-type-default:hover &,
-    .ChatV2Message-container.ChatV2Message-container-type-system:hover &
+    &:hover
         @extends $TextMedium
+
+// Side timestamp
+.ChatV2MessageTimestamp-flavor-chat-contents
+    @extends $TextDark
 
 /*
  * --- Menu ---

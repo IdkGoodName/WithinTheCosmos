@@ -185,17 +185,24 @@
 .MarkRenderer
     // Bold text
     &-bold
-        color: fg-format
+        @extends $TextLight
     // Inline code
     &-inline-code, &-inline-code-v2
         @extends $PanelReallyDark
         color: fg-code
 
 .PrismToken
-    // Embed inline code
+    // Embed/Markdown plain text inline code
     &InlineRenderer-container-type-code
         @extends .MarkRenderer-inline-code
-    // Embed link
+        // Inline code consistency
+        padding: 0 4px 2px 4px
+        border-radius: 2px
+
+        // Specifically in embeds
+        .ChatEmbed-container &
+            @extends $PanelDarkest
+    // Embed/Markdown plain text link
     &UrlRenderer-link
         Link()
 
@@ -366,6 +373,13 @@
     border-top: solid 1px border-dark[1]
     background-color: bg-colour[2]
     color: fg-colour[0]
+
+// Content
+.ChatEmbedContent
+    &-title, &-field-name
+        @extends $TextLight
+    &-container
+        @extends $TextNormal
 
 
 /*
