@@ -802,6 +802,11 @@ blue-glow = tint($blue, 20%)
  * --- Visual ---
  */
 
+$ColourSelector
+    background-gradient: 135deg, var(--accent-0) 0%, var(--accent-2) 100%
+$ColourSelectorPlus
+    fill: var(--accent-foreground)
+
 // Role colour
 .ColorInputOption
     // Colour
@@ -818,11 +823,15 @@ blue-glow = tint($blue, 20%)
         @extends $SetBorderLight-3
 .CustomColorInputOption
     &-default
-        background-gradient: 135deg, var(--accent-0) 0%, var(--accent-2) 100%
+        @extends $ColourSelector
     &-container
         border-radius: radius-3
     &-container &-icon
-        fill: var(--accent-foreground)
+        @extends $ColourSelectorPlus
+.CustomGradientInputOption-dot
+    @extends $ColourSelector
+.GradientStopColorSelector-icon
+    @extends $ColourSelectorPlus
 // PFP and banner upload
 .ImageInput
     &-label

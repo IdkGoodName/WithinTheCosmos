@@ -192,16 +192,20 @@
         color: fg-code
 
 .PrismToken
-    // Embed/Markdown plain text inline code
-    &InlineRenderer-container-type-code
-        @extends .MarkRenderer-inline-code
-        // Inline code consistency
-        padding: 0 4px 2px 4px
-        border-radius: 2px
+    &InlineRenderer-container-type
+        // Embed/Markdown plain text inline code
+        &-code
+            @extends .MarkRenderer-inline-code
+            // Inline code consistency
+            padding: 0 4px 2px 4px
+            border-radius: 2px
 
-        // Specifically in embeds
-        .ChatEmbed-container &
-            @extends $PanelDarkest
+            // Specifically in embeds
+            .ChatEmbed-container &
+                @extends $PanelDarkest
+        // Embed/Markdown plain text bold
+        &-bold
+            @extends $TextLight
     // Embed/Markdown plain text link
     &UrlRenderer-link
         Link()
@@ -232,7 +236,7 @@
             @extends $TextThemeBleached
 
 /*
- * --- Images ---
+ * --- Images & Files ---
  */
 
 // Images and videos
@@ -286,6 +290,11 @@
         @extends $PanelReallyDark
         color: shade(fg-code, 20%)
 
+.FileUploadRenderer
+    &-container
+        @extends $SetContentDark
+    &-file-size
+        @extends $TextDark
 
 /*
  * --- Content info ---
@@ -381,6 +390,19 @@
     &-container
         @extends $TextNormal
 
++prefix-classes("ChatEmbed")
+    .Author
+        &-text
+            @extends $TextLight
+            font-weight: normal
+        &-link
+            Link()
+        &-icon
+            icon-size = 22px
+            flex-basis: icon-size
+            width: icon-size
+            height: icon-size
+            border-radius: 100%
 
 /*
  * --- Server invites ---

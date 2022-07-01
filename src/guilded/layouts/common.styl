@@ -197,7 +197,6 @@ StatusMessageType(colour)
 .LandingFooterApps-link,
 .EventCardMetadata-link,
 .ChatEmbedContent-link,
-.ChatEmbedAuthor-link,
 .EmbedCardFooter-link,
 .CancelText-container,
 .CardList-label-link,
@@ -241,23 +240,27 @@ StatusMessageType(colour)
     .NavV4BadgedItem-container:hover &
         @extends $RadiusSmall
 
-// Group icon bouncing
-.GroupAvatar-container-non-base,
-.GroupAvatar-icon
-    border-radius: 50%
-    // Inside group list
-    .GroupSelector-container &
-        @extends $TransitionBounce
-    // Group hover
-    .GroupSelectorItem-container:hover &,
-    // Group selected
-    .GroupSelector-container .NavSelectorItem-container-active &,
-    // Group in preview
-    .GroupSelectorPreview-container &
-        @extends $RadiusSmall
+.GroupAvatar
+    // Group icon bouncing
+    &TextLabel
+        &-base-layer
+            @extends $RadiusRounded
+            // Inside group list
+            .GroupSelector-container &
+                @extends $TransitionBounce
+            // Group in preview
+            .GroupSelectorPreview-container &
+                @extends $RadiusSmall
+        &-filled-layer
+            @extends $TransitionBounce
+            @extends $RadiusRounded
+        &-filled-layer&-filled-layer-active
+            @extends $RadiusSmall
+    &-container
+        @extends $RadiusRounded
+    &-container-non-base
+        @extends $PanelMild
 
-.GroupAvatar-container-non-base
-    @extends $ContentLight
 
 /*
  * --- Tab buttons ---
