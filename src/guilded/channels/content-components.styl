@@ -181,12 +181,26 @@
  * --- Pills ---
  */
 
+$RolePill
+    border-radius: radius-1
+    border: solid 1px border-light[0] !important
+    background: bg-colour[3]
+
 .TeamMemberRolePill
     &-container
-        border-radius: radius-1
-        border: solid 1px border-dark[0] !important
-        background: bg-colour[2]
+        @extends $RolePill
     &-name
+        @extends $TextMedium
+    &-remove-icon
+        @extends $SvgBad
+
+.UserAliasesListDisplayPill
+    &-container
+        @extends $RolePill
+        &-hoverable&:hover
+            background: bg-colour[4] !important
+            border: solid 1px border-light[1] !important
+    &-label
         @extends $TextMedium
     &-remove-icon
         @extends $SvgBad

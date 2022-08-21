@@ -838,6 +838,22 @@ $ColourSelectorPlus
         @extends $TextMedium
     &-instructions
         @extends $TextDark
+// Custom form image upload
+.EmptyMediaBox
+    &-container
+        @extends $SetContentDark
+        &::after
+            @extends $ContentGlare
+        // Text
+        .GuildedText-container
+            @extends $TextDarkTransition
+        &:hover .GuildedText-container
+            @extends $TextMedium
+    // Icon
+    &-icon
+        @extends $SvgDarkTransition
+        ^[0]-container:hover &
+            @extends $SvgMedium
 
 // Role description
 .TeamRolesListInstructions-container

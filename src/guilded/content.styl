@@ -56,10 +56,13 @@
         // Misc
         &-bigBody
             @extends $TextDark
-    &-color-gilded1
-        @extends $TextThemeDull
-    &-color-gray
-        @extends $TextDark
+    &-color
+        &-gilded1
+            @extends $TextThemeDull
+        &-gray
+            @extends $TextDark
+        &-white
+            @extends $TextLight
 
 // Not loaded
 .LayeredPageContent-fetch-error
@@ -295,6 +298,10 @@
         @extends $SetContentDark
     &-file-size
         @extends $TextDark
+    &-file-icon
+        @extends $SvgDark
+    &-icon-download-container:hover
+        @extends $SvgMedium
 
 /*
  * --- Content info ---

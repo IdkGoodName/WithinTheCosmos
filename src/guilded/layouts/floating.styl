@@ -66,8 +66,8 @@
 // Role card's background
 .TeamRoleCardOverlay-container,
 // Profile card's background
-.ProfileHoverCardV2Overlay-container
-    @extends $ContentLightHighlighted
+.ProfileHoverCardOverlay-container
+    @extends $ContentDark
 
 // Section's header
 .UserAttributionDisplay-header,
@@ -91,15 +91,35 @@
     &-text, &-input
         @extends $TextMedium
 
-// Background for buttons
-.TeamRoleCardOverlay-menu,
-.ProfileHoverCardV2Overlay-action-menu,
-.ProfileHoverCardV2Overlay-container .ProfileHoverCardV2Overlay-action-menu
-    @extends $PanelMedium
+.TeamRoleCardOverlay
+    // Background for buttons
+    &-menu
+        @extends $PanelDark
+    // Member count
+    &-info-count
+        @extends $ContentLight
 
 // Button gap
 .ProfileCardMenuItem-container:not(:first-child)::before
     display: none
+
+// Bubble actions
+.ActionBubbleButton
+    // Icon
+    &-icon
+        @extends $SvgDarkTransition
+        &-container
+            @extends $ContentLight
+    &-label
+        @extends $TextDarkTransition
+    // Hover
+    &-container:hover:not(&-disabled)
+        & ^[0]-icon
+            @extends $SvgMedium
+            &-container
+                @extends $PanelMediumHighlighted
+        & ^[0]-label
+            @extends $TextMedium
 
 /*
  * -=- Guides -=-

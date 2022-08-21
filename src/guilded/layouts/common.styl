@@ -256,6 +256,12 @@ StatusMessageType(colour)
             @extends $RadiusRounded
         &-filled-layer&-filled-layer-active
             @extends $RadiusSmall
+    &-icon
+        @extends $RadiusSmall
+        @extends $TransitionBounce
+        ^[0]-container-inactive-grayscale &,
+        ^[0]-container:hover &
+            @extends $RadiusRounded
     &-container
         @extends $RadiusRounded
     &-container-non-base
