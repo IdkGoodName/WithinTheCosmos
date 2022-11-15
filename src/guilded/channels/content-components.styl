@@ -9,7 +9,8 @@
 
 .ReactionPicker
     &-container
-        @extends $FullBorderLight-1
+        // TODO: Have border without it making content invisible
+        // @extends $FullBorderLight-1
     // Emote picker content
     &-content
         @extends $PanelMedium
@@ -41,15 +42,18 @@
     &Preview-team
         @extends $TextDark
     // Emote picker tab's icon
-    &NavbarItem-icon
-        @extends $SvgDark
-        .ReactionPickerNavbarItem:hover &
-            @extends $SvgMedium
-        .ReactionPickerNavbarItem-active &
-            @extends $SvgLight
+    &NavbarItem
+        &-icon
+            @extends $SvgDark
+            .ReactionPickerNavbarItem:hover &
+                @extends $SvgMedium
+            .ReactionPickerNavbarItem-active &
+                @extends $SvgLight
+        &-active &-imgContainer
+            ServerSelectBorder(1px)
 
-.ReactionPickerNavbarItem-active
-    border-bottom-color: var(--accent-0)
+// .ReactionPickerNavbarItem-active
+//     border-bottom-color: var(--accent-0)
 
 /*
  * -=- Reactions -=-
@@ -365,6 +369,8 @@ $Badge
         // // Fading
         // &-container-size-sm .CarouselList-blur-light.CarouselList-{side}-blur
         //     background-gradient: to side, alpha(bg-colour[2], 0), bg-colour[2] 75%
+        &-blur-light.CarouselList-{side}-blur
+            background-gradient: to side, alpha(bg-colour[2], 0), bg-colour[2] 100%
         // Arrow hover
         &-controls-{side}:hover &-controls-arrow
             @extends $SvgMedium

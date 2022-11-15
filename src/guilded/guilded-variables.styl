@@ -28,6 +28,9 @@ $CheckboxCheck
 $ContentGlare
     background-color: bg-hover
 
+ServerSelectBorder(size)
+    border: solid size alpha(mix(active, fg-colour[0], 50%), 70%)
+
 SetNotification()
     &::before
         @extends $Notification

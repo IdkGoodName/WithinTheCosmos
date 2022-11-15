@@ -1,0 +1,32 @@
+// Group list
+.GroupCard
+    &-contents
+        @extends $ContentLight
+        & ^[0]-group-description-text
+            @extends $TextDark
+    &Banner
+        &-group-image &-image-right-border::after
+            display: none
+.TeamMembersPill-container
+    @extends $ContentDark
+
+.ExplorePageV2-content-container
+    @extends $PanelDark
+
+.TeamCardV3
+    @extends $RadiusMedium
+    @extends $PanelMedium
+    &::before
+        SetBorderOverlay(border-light[0], radius-3)
+    &:hover
+        @extends $PanelMediumHighlighted
+    &-header &-description
+        @extends $TextDark
+
+.TeamExplore
+    &-whimsical-icon
+        opacity: 0.1
+    &-search
+        @extends $MildContentLight
+        &:hover
+            @extends $PanelMediumHighlighted

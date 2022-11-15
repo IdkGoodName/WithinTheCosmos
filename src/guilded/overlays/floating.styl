@@ -46,6 +46,18 @@
         // Icon
         .-icon
             @extends $SvgImportant
+    // Delete action
+    .-destructive-action .-label
+        @extends $TextBad
+    .-container:not(.-disabled):not(.-highlighted):hover.-destructive-action
+        .-label
+            @extends $TextBadHighlight
+        .-icon
+            @extends $SvgBadHighlight
+
+.ContextMenuIcon
+    &-container-destructive-action
+        @extends $SvgBad
 
 // Button
 .ContextMenu
