@@ -1,0 +1,23 @@
+@require "../../variables"
+@require "../../set"
+@require "../../content"
+
+.DeepSearchOverlay
+    &-container
+        @extends $PanelDark
+        @extends $TextDark
+    &-search-input.Editor-container
+        @extends $ContentTransparent
+    &Footer-content-icon, &Footer-content-command
+        @extends $ContentRoughDark
+
+.DeepSearchResult
+    &Row-container
+        @extends $FullBorderTransparent
+        &-selected
+            @extends $ContentLight
+        &-hovered::after
+            @extends $ContentGlare
+    &Info-preview
+        @extends $MildContentLight
+        @extends $TextMedium

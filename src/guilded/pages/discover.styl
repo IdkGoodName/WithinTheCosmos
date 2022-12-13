@@ -8,20 +8,26 @@
         &-group-image &-image-right-border::after
             display: none
 .TeamMembersPill-container
-    @extends $ContentDark
+    @extends $SubContentDark
 
 .ExplorePageV2-content-container
     @extends $PanelDark
 
 .TeamCardV3
-    @extends $RadiusMedium
-    @extends $PanelMedium
-    &::before
-        SetBorderOverlay(border-light[0], radius-3)
-    &:hover
-        @extends $PanelMediumHighlighted
     &-header &-description
         @extends $TextDark
+
+.TeamCardV3, .BotCard-container
+    @extends $RadiusMedium
+    @extends $PanelMedium
+    &:hover
+        @extends $PanelMediumHighlighted
+    &::before
+        SetBorderOverlay(border-light[0], radius-3)
+
+.BotCard-tags-container .BotCard-tag
+    @extends $SubContentDark
+    @extends $TextDark
 
 .TeamExplore
     &-whimsical-icon

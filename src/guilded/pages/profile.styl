@@ -1,0 +1,160 @@
+@require "../../variables"
+@require "../../set"
+@require "../../content"
+@require "../guilded-variables"
+
+// Profile content
+.UserProfileV3-container
+    @extends $PanelDark
+    SetScrollbar()
+
+// Tab header
+.NavV4SectionSidebarOptionGroup-header
+    @extends $TextDark
+.NavV4SectionSidebarOption
+    // Tab icon
+    &-icon
+        @extends $SvgDark
+        // Active
+        .NavV4SectionSidebarOption-container-active &
+            @extends $SvgMedium
+    // Tab text
+    &-label
+        @extends $TextMedium
+        // Active
+        .NavV4SectionSidebarOption-container-active &
+            @extends $TextLight
+    // Hover
+    &-container-inactive::after
+        @extends $ContentGlare
+.UserProfilePictureControl
+    // Status icon
+    &-online-status
+        border-color: bg-colour[2]
+        right: 0
+    // Avatar
+    &-picture
+        @extends $RadiusHigh
+
+/*
+ * --- Posts ---
+ */
+
+.UserProfilePostsDisplay-container .PostDisplay-container:not(:first-child)
+    margin-top: spacing-2
+
+// Tagline
+.OverviewWidgetItem-text-paragraph
+    @extends $TextMedium
+
+// Profile setting buttons
+.UserProfileActionRow-button-icon
+    @extends $SvgMedium
+
+// Game overview arrow
+.OverviewPageWidgetHeader-container-desktop .OverviewPageWidgetHeader-link-icon
+    @extends $SvgDarkTransition
+    // Game overview arrow hovered
+    &:hover
+        @extends $SvgMedium
+// Game
+.UserGameSummaryCard
+    &-container
+        @extends $PanelMedium
+        border-radius: radius-2
+        position: relative
+        z-index: 49
+        &::after
+            content: ""
+            position: absolute
+            top: 0
+            bottom: 0
+            left: 0
+            right: 0
+            border: solid 1px border-light[0]
+            border-radius: radius-2
+            z-index: 50
+    &-game-summary
+        @extends $RemoveBorder
+// Game property
+.UserInfoSummaryItem
+    // Label
+    &-label
+        @extends $TextDark
+    // Value
+    &-summary-content
+        @extends $TextMedium
+
+// Post
+.UserProfilePostPanel-container
+    @extends $RadiusSmall
+    @extends $ContentLight
+    // Post highlighted(currently all)
+    &-highlight
+        // Until it gets fixed, remove the highlight
+        border-top: solid 1px border-light[0]
+        //border-top-color: var(--accent-0)
+// Post author's name
+.UserName-container,
+.TeamMemberBubble-name,
+.UserBasicInfoDisplay-name,
+.TeamWidgetProfileDetails-name
+    @extends $TextLight
+// No more posts text
+.NullState-container
+    @extends $TextDark
+// No more posts SVG
+.GuildedBotAvatar-container
+    @extends $SvgDark
+
+/*
+ * --- Games ---
+ */
+
+// Game
+.PlayerAliasCard-container-type-game
+    @extends $PanelMedium
+// Game border
+.CardWrapper-container:not(.CardWrapper-container-highlighted)::after
+    @extends $SetBorderLight-0
+// Game header
+.PlayerCard
+    &-container
+        @extends $PanelTransparent
+    // Game's name
+    &GameInfo-name
+        @extends $TextLight
+    &-banner
+        opacity: 0.4
+
+// Game header player's name
+.GameAliasDisplay-container
+    @extends $TextDarkTransition
+    // Name hover
+    &:hover
+        @extends $TextThemeBleached
+// Game info
+.PlayerAliasCard-container-type-game .PlayerAliasCard-info
+    @extends $PanelTransparent
+// Game info no accounts linked
+.UserSocialPresence-no-other-links
+    @extends $TextDark
+// Game info handle
+.UserRichSocialLink
+    // Icon
+    &-avatar
+        @extends $SvgDark
+    // Text
+    &-handle
+        @extends $TextMedium
+    // Details
+    &-metadata
+        @extends $TextDark
+
+/*
+ * --- Friends ---
+ */
+
+// A button when hovering over friends
+.FriendsList-actions .FriendList-action-icon
+    @extends $PanelMedium

@@ -54,8 +54,12 @@
         &-subtextBodyWhite
             @extends $TextMedium
         // Misc
+        &-body2
+            @extends $TextDark
         &-bigBody
             @extends $TextDark
+        &-code
+            @extends $InlineCode
     &-color
         &-gilded1
             @extends $TextThemeDull
@@ -133,7 +137,7 @@
 .CodeContainerRenderer-container,
 // Code block in Markdown plain text
 .PrismTokenCodeBlockRenderer-container
-    @extends $ContentRoughDark
+    @extends $PanelDarkest
     SetScrollbar()
     // Make sure Markdown code block also gets it
     code
@@ -149,7 +153,7 @@
         .CalloutBadge-container
             color: fg-code
     &-header
-        @extends $PanelDark
+        @extends $PanelReallyDark
 
 // Highlighted tokens
 .PrismTokenGenericLanguageRenderer
@@ -191,17 +195,14 @@
         @extends $TextLight
     // Inline code
     &-inline-code, &-inline-code-v2
-        @extends $PanelReallyDark
-        color: fg-code
+        @extends $InlineCode
 
 .PrismToken
     &InlineRenderer-container-type
         // Embed/Markdown plain text inline code
         &-code
-            @extends .MarkRenderer-inline-code
             // Inline code consistency
-            padding: 0 4px 2px 4px
-            border-radius: 2px
+            @extends $InlineCode
 
             // Specifically in embeds
             .ChatEmbed-container &

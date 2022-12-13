@@ -215,7 +215,7 @@ $PanelGood
  */
 
 SetBorderOverlay(colour, radius)
-    +cache("set-border" + colour + ";" + radius)
+    +cache("set-border;" + colour + ";" + radius)
         display: block
         content: ""
         position: absolute
@@ -226,6 +226,8 @@ SetBorderOverlay(colour, radius)
         background: transparent
         border: solid 1px colour
         border-radius: radius
+        z-index: 5
+        pointer-events: none
 
 $RemoveBorder
     border: none
@@ -328,6 +330,10 @@ $SetSubContentLightHighlighted
 
 $ContentGreyHighlight
     PanelBordered(bg-colour[6], border-light[1])
+
+$ContentTransparent
+    background-color: transparent
+    border: none
 
 /*
  * --- Content Type Panels ---
