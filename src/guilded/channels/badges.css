@@ -1,0 +1,5 @@
+.CalloutBadge-container[style="background: rgb(108, 186, 80);"]{color:rgb(108,186,80)!important;}
+.CalloutBadge-container[style="background: rgb(255, 107, 107);"] {color:rgb(255,107,107)!important;}
+.CalloutBadge-container[style="background: rgb(51, 90, 158);"] {color:rgb(110,155,231)!important;}
+.CalloutBadge-container[style="background: rgb(216, 147, 50);"] {color:rgb(216,147,50)!important;}
+.UserBadge-image~.UserBadge-name{color:#f5c400!important;}

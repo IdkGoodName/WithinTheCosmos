@@ -1,5 +1,6 @@
 @require "../../variables"
 @require "../guilded-variables"
+@require "./badges.css"
 
 /*
  * -=- Editor menus -=-
@@ -180,6 +181,9 @@
     background: bg-colour[0] !important
     border: solid 1px border-dark[1] !important
     @extends $TextMedium
+// Stylus ruins it
+// .CalloutBadge-container[style="background: rgb(108, 186, 80);"]
+//     color: $green !important
 
 /*
  * --- Pills ---
@@ -231,10 +235,11 @@ $Badge
     // &-image ~ &-name
     //     display: none
     // Override all colours for badges
-    &-container:not(.UserFlairRow-icon)
+    &-container:not(.UserFlairRow-icon)[style]
         @extends $Badge
         & ^[0]-name
             @extends $TextMedium
+
 // [MEMBER]
 .GroupMembershipBadge-container
    color: verified

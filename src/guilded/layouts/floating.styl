@@ -16,17 +16,17 @@
 .ChatChannelAlertBar
     // Alert bar icon
     &-icon
-        @extends $SvgMedium
+        @extends $SvgDark
     &-leading-icon-private-thread
         fill: tint(private, 25%)
 
     // Any alert bar
     &-container
         font-color(fg-colour[2])
-        background-color: bg-colour[1] !important
+        background-color: bg-colour[0] !important
         border-color: border-light[2]
         // Hover
-        &::after
+        &::after, &:not(&-banner)::after
             @extends $ContentGlare
 
         // Viewing older messages
@@ -50,6 +50,8 @@
             & ^[0]-icon-click-wrapper ^[0]-icon
                 fill: mention
 
+        &-type-new-messages ^[0]-icon
+            @extends $SvgDark
         // Unread messages
         &-type-unread-messages
             color: active !important

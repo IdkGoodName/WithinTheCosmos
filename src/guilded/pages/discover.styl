@@ -25,7 +25,8 @@
     &::before
         SetBorderOverlay(border-light[0], radius-3)
 
-.BotCard-tags-container .BotCard-tag
+.BotCard-tags-container .BotCard-tag,
+.BotInfoBody-tags-container .BotInfoBody-tag
     @extends $SubContentDark
     @extends $TextDark
 
@@ -36,3 +37,10 @@
         @extends $MildContentLight
         &:hover
             @extends $PanelMediumHighlighted
+
+/*
+ * --- Modals ---
+ */
+
+.BotInfoBody-container
+    @extends $ContentLight

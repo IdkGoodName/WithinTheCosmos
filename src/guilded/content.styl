@@ -118,13 +118,14 @@
  */
 
 .BlockQuoteContainerRenderer
-    background-color: shading[0]
-    border-left-color: var(--game-color)
-    border-left-width: radius-1
+    //background-color: shading[0]
+    background-color: transparent
+    border-left-color: border-light[3]
+    border-left-width: radius-2
     border-radius: radius-0
     overflow: hidden
     &.SlateContainerRenderer.slate-margin-lg
-        padding: spacing-2 spacing-2 spacing-2 spacing-3
+        padding: spacing-3 spacing-3 spacing-3 spacing-4
     // Darker
     .ChatMessageThread-thread-parent-message &
         background-color: shading[1]
@@ -204,9 +205,9 @@
             // Inline code consistency
             @extends $InlineCode
 
-            // Specifically in embeds
-            .ChatEmbed-container &
-                @extends $PanelDarkest
+            // // Specifically in embeds
+            // .ChatEmbed-container &
+            //     @extends $PanelDarkest
         // Embed/Markdown plain text bold
         &-bold
             @extends $TextLight
@@ -352,7 +353,7 @@
 .ChatEmbed-container,
 .OpenGraphEmbed-content,
 .TeamEmbedCard-container
-    background-color: bg-colour[3]
+    background-color: bg-colour[4]
     border-color: border-light[1]
     border-radius: radius-2
     border-style: solid
@@ -388,7 +389,7 @@
 .ChatEmbedFooter-container,
 .ContentEmbedCardFooter-container
     border-top: solid 1px border-dark[1]
-    background-color: bg-colour[2]
+    background-color: bg-colour[3]
     color: fg-colour[0]
 
 // Content
@@ -497,7 +498,7 @@
 // No write editor
 .ChatChannelInput-no-permissions,
 .ChatChannelInputPublic-container
-    @extends $SubContentLight
+    @extends $ContentLightHighlighted
 
 .ChatChannelArchivedControl-container
     PanelBordered(bg-colour[5], border-light[1])

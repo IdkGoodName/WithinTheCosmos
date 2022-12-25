@@ -19,6 +19,7 @@ function styl(schemePath) {
     return through.obj((file, encoding, callback) => {
         stylus(file.contents.toString(), { filename: file.path, compress: true })
             .import(schemePath)
+            .set("include css", true)
             .render((err, css) => {
                 if (err) callback(err.toString());
 

@@ -294,6 +294,17 @@
     @extends $PanelMild
 
 /*
+ * --- Reaction list ---
+ */
+
+.TeamMemberListRow-container
+    @extends $PanelMedium
+    &::before
+        SetBorderOverlay(border-light[0], 4px)
+    &::after
+        @extends $ContentGlare
+
+/*
  * -=- Form view -=-
  */
 
