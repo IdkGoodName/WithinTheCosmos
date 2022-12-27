@@ -39,7 +39,7 @@
 
 // Tiled background
 .OnboardingExperience-background
-    @extends $PanelReallyDark
+    @extends $PanelDarkest
 // Background's tile
 .LandingPageV3WhimsicalIcon-icon
     @extends $TextDarker
@@ -47,7 +47,7 @@
     transition: opacity
     // Background's tile
     &:hover
-        opacity: 45%
+        opacity: 35%
 // Creation container
 .FullScreenFlowStageWrapper-contents-wrapper
     @extends $PanelMedium
@@ -76,11 +76,10 @@
 // Upload avatar plus sign
 .NewTeamUpsellIcon-plus-icon
     background: var(--accent-0)
-    @extends $SvgMedium
+    @extends $SvgThemeContrast
 // Upload avatar plus sign hover
 .NewTeamUpsellIcon-container:hover .NewTeamUpsellIcon-plus-icon
     background: var(--accent-1)
-    @extends $SvgLight
 
 // Games selected
 .ItemChooser

@@ -32,6 +32,7 @@
     &Navbar-container
         overflow-x: hidden
         @extends $SetContentDark
+        @extends $TextDark
 
     // Emote name in grid
     &-section-label
@@ -228,7 +229,7 @@ $RolePill
 $Badge
     color: fg-colour[2]
     background: bg-colour[1] !important
-    border: solid 1px border-dark[0] !important
+    border: solid 1px border-dark[1] !important
 
 .UserBadge
     // // If there is an icon in the badge, remove the name
@@ -239,6 +240,12 @@ $Badge
         @extends $Badge
         & ^[0]-name
             @extends $TextMedium
+
+// Depend on the context
+.ProfileHoverCardHeader-badges, .UserProfileName-user-badges
+    // CSS wants me to be super specific about it
+    .UserBadge-container:not(.UserFlairRow-icon)[style]
+        background-color: bg-colour[0] !important
 
 // [MEMBER]
 .GroupMembershipBadge-container
@@ -301,11 +308,13 @@ $Badge
  */
 
 .TextButton
-    &-container&-container-type-default
-        @extends $TextMedium
-    &-container-desktop:hover&-container-type-default
-        @extends $TextLight
-
+    &-container
+        &-type-v4
+            BasicLink()
+        &&-type-default
+            @extends $TextMedium
+        &-desktop:hover&-type-default
+            @extends $TextLight
 /*
  * -=- Misc -=-
  */

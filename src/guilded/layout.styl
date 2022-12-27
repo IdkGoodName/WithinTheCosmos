@@ -24,7 +24,7 @@
 
 .WindowsTitleBar
     &-container
-        @extends $PanelReallyDark
+        @extends $PanelDarkest
     // Title
     &-logo
         .LogoAndWordmarkV2-container
@@ -93,4 +93,7 @@
 
 // Verified badge
 #icon-verified-badge path:first-child
-    fill: verified
+    @extends $SvgTheme
+
+#icon-verified-badge path:last-child
+    @extends $SvgThemeContrast

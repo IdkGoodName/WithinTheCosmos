@@ -30,11 +30,13 @@
 .UserProfilePictureControl
     // Status icon
     &-online-status
-        border-color: bg-colour[2]
+        border-color: bg-colour[0]
         right: 0
-    // Avatar
-    &-picture
-        @extends $RadiusHigh
+    // Makes square avatars, but removing it for consistency with messages,
+    // which have round avatars
+    // // Avatar
+    // &-picture
+    //     @extends $RadiusHigh
 
 /*
  * --- Posts ---

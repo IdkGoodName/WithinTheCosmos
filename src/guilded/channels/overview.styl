@@ -23,9 +23,6 @@
     // The whole container of it
     &-container
         border-bottom: none
-    // The mask that makes it fade in
-    &-banner
-        mask-image: linear-gradient(to bottom, #000, #000 calc(100% - 40%), rgba(0, 0, 0, 0) calc(100% - 5px), rgba(0, 0, 0, 0))
 
 .TeamOverviewRoot
     // Whole panel below the banner, including description
@@ -88,6 +85,13 @@
 .ToggleControlButton
     &-container, &-icon
         @extends $FontDark
+
+// Manage games
+.TeamGameCard
+    &-banner
+        opacity: 10%
+    &-name
+        @extends $TextLight
 
 /*
  * --- Carousel/Scrollable list ---

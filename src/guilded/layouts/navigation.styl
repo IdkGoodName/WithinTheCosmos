@@ -222,7 +222,6 @@
             @extends $ContentGlare
 
 
-
 /*
  * -=- User card -=-
  */
@@ -324,6 +323,20 @@ body
  * -=- Header -=-
  */
 
+
+.TeamPageNavV3-header
+    box-shadow: none
+
+.TeamBanner-image-banner
+    opacity: 45%
+    // Parent has the height of 160px to stretch the image consistently in tourneys and servers
+    // We will do that to add masking better for the theme
+    height: 160px
+// The parent of the .TeamBanner-image-banner component
+.TeamNavHeader-banner
+    height: 100%
+    mask-image: linear-gradient(to bottom, black, black calc(100% - 305px), rgba(0, 0, 0, 0) calc(100% - 5px), rgba(0, 0, 0, 0))
+
 // Tourney header
 .TournamentNavHeader-container
     @extends $PanelTransparent
@@ -336,9 +349,10 @@ body
 .TeamNavGroupHeader-name
     @extends $TextMedium
 // Server header hover
-.TeamNavHeader-options-carat::after
-    background-color: bg-hover
-    transition: opacity
+.TeamNavHeader
+    &-options-carat::after,
+    &-header-columns-with-carat &-options-carat::after
+        @extends $ContentGlare
 // Server header caret
 .TeamNavHeader-options-carat.TeamNavTeamOptionsCarat-icon
     @extends $SvgMedium
