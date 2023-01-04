@@ -68,8 +68,20 @@
 // Role card's background
 .TeamRoleCardOverlay-container,
 // Profile card's background
-.ProfileHoverCardOverlay-container
-    @extends $ContentDark
+.ProfileHoverCard
+    &Overlay-container
+        @extends $ContentDark
+        --border-color: bg-colour[1]
+        --bg-color: bg-colour[1]
+    &Header-profile-picture
+        padding: spacing-2
+        width: 104px
+        height: 104px
+        @extends $PanelDark
+.PlayerCardProfilePicture
+    &-container-size-xlg &-indicator
+        bottom: 6px
+        right: 6px
 
 // Section's header
 .UserAttributionDisplay-header,

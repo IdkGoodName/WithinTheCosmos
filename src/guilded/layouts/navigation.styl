@@ -328,14 +328,14 @@ body
     box-shadow: none
 
 .TeamBanner-image-banner
-    opacity: 45%
+    opacity: 30%
     // Parent has the height of 160px to stretch the image consistently in tourneys and servers
     // We will do that to add masking better for the theme
     height: 160px
 // The parent of the .TeamBanner-image-banner component
 .TeamNavHeader-banner
     height: 100%
-    mask-image: linear-gradient(to bottom, black, black calc(100% - 305px), rgba(0, 0, 0, 0) calc(100% - 5px), rgba(0, 0, 0, 0))
+    mask-image: linear-gradient(to bottom, black, black 0%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0))
 
 // Tourney header
 .TournamentNavHeader-container

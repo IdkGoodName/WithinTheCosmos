@@ -9,6 +9,12 @@
 .TeamPostRow
     &-container
         @extends $ContentLight
+        // Re-layout
+        display: grid
+        // The last one/second one (we re-layout it to only be time) will be 10px in size
+        grid-template-columns: 1fr spacing-6
+        grid-gap: spacing-1 spacing-2
+
         &-unread
             @extends $ContentLightHighlighted
             SetNotification()
@@ -19,6 +25,61 @@
         // Forum post hover
         &-desktop::after
             @extends $ContentGlare
+    // Relayout
+    &-header
+        grid-row: 1
+    &-sticky ~ &-header &-title
+        color: var(--accent-0)
+    &-container:hover &-sticky ~ &-header &-title
+        color: var(--accent-1)
+    &-title-wrapper
+        flex-direction: row
+        gap: spacing-3
+    &-sticky ~ &-header &-title-wrapper::after
+        content: "(pinned)"
+        @extends $TextDark
+    &-creator
+        grid-row: 2
+        grid-column: 1
+    &-comment-count-wrapper
+        grid-row: 3
+        grid-column: 1
+        margin-top: spacing-1
+    &-options-wrapper
+        grid-row: 3
+        grid-column: 2
+        align-items: flex-start
+        flex-direction: column-reverse
+    &-last-participant
+        display: none
+    // Unread
+    &-container-unread &-title
+        @extends $TextNotification
+    &-container&-container-unread:hover &-title
+        @extends $TextNotificationHover
+// Border-ify that
+.VerticalSelectionIndicator-container
+    &-orientation-vertical&-size-md.TeamPostRow-sticky
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        width: auto
+        background-color: transparent
+        border: solid 1px var(--accent-0)
+        border-radius: spacing-0
+        opacity: 50%
+// Forum post list with the same layout look more cluttered
+// But announcements with the same layout as forums look too big
+.PinnedAnnouncement-container
+    .TeamPostRow
+        &-comment-count-wrapper
+            grid-row: 2
+            grid-column: 2
+        &-options-wrapper
+            grid-row: 1
+            grid-column: 2
 // Author and date
 .TeamPostRow-options-wrapper
     @extends $TextDark
@@ -36,8 +97,6 @@
     // Comment count text
     &-container-size-lg &-label
         @extends $TextDark
-
-
 
 /*
  * --- Post view ---

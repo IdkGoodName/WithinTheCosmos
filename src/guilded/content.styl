@@ -417,18 +417,84 @@
  * --- Server invites ---
  */
 
+.TeamCardV2
+    &-container
+        .TeamBanner-image-banner
+            height: 80px
+            opacity: 100%
+            .StretchFadeBackground-stretch-bg
+                -webkit-mask-image: none
+                mask-image: none
+    &-content
+        grid-template-columns: 1fr
+        padding: spacing-7 spacing-7
+    &-avatar
+        padding: spacing-2
+        border-radius: 100%
+        width: 100px
+        height: 100px
+        grid-row: 1
+        grid-column: 1
+        @extends $PanelMedium
+        svg
+            border-radius: 100%
+    &-header
+        grid-row: 2
+        grid-column: 1
+    &-games
+        margin-top: spacing-0
+        grid-row: 3
+        grid-column: 1
+
+
 .TeamEmbedCard
     // Server's description
     &-description
         @extends $TextMedium
     // Server invite hover
-    &-container::after
-        @extends $ContentGlare
+    &-container
+        &::after
+            @extends $ContentGlare
+    &-content
+        padding: spacing-3 spacing-6
+    &-title
+        padding: spacing-2 spacing-3 0 spacing-2
+        margin-bottom: 0
+        margin-left: 114px
+        border-top-left-radius: radius-2
+        border-top-right-radius: radius-2
+        @extends $PanelMild
+    &-info-wrapper
+        flex-direction: row-reverse
+    &-info
+        padding: 0 spacing-3
+        @extends $PanelMild
+    &-image
+        width: 90px
+        height: 90px
+        padding: spacing-2
+        border-radius: 100%
+        margin-left: 0
+        margin-right: spacing-6
+        @extends $PanelMild
 
-.TournamentInviteEmbedCard-container
-    @extends $PanelDark
-    &::after
-        @extends $ContentGlare
+// .TournamentBanner-banner .StretchFadeBackground-stretch-bg,
+.TeamEmbedCard-container .GradientBackground-container-type-quarter-left
+    -webkit-mask-image: none
+    mask-image: none
+.TeamAvatarWithGameIcon-team-image
+    width: 100%
+    height: 100%
+    border-radius: 100%
+
+.TournamentAvatar-container
+    border-radius: 100%
+
+.TournamentInviteEmbedCard
+    &-container
+        @extends $PanelDark
+        &::after
+            @extends $ContentGlare
 
 // Member and follower count
 .EmphasizedLabel-container-type-subtle

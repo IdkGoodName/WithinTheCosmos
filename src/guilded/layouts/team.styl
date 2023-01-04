@@ -178,26 +178,16 @@ SetChannel(className)
 .SidebarInfoItem-container
     @extends $RadiusMedium
 
-.SimpleIconTabMenuHeaderItem
-    // Member/thread list tab hover
-    &-container:hover, &-container:active, &-container:focus
-        @extends $PanelMedium
-    // Member/thread list active tab
-    &-container-selected::after
-        background-color: fg-colour[1]
-    // Member/thread list tab icon
-    &-icon
-        @extends $SvgDark
-    // Member/thread list active tab icon
-    &-icon
-        @extends $SvgMedium
-
 /*
  * --- Member list ---
  */
 
 .TeamPageSidebarMembersV2-row
     --border-color: bg-colour[2]
+    &:hover
+        --border-color: bg-colour[3]
+    &::after
+        @extends $ContentGlare
 // Member list section (roles)
 .TeamPageSidebarMembers-roles:not(:first-child)
     margin-top: spacing-7
