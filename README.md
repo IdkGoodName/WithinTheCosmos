@@ -3,19 +3,47 @@
     <img alt="Banner" src="https://raw.githubusercontent.com/IdkGoodName/WithinTheCosmos/main/assets/banner.png">
   </a>
   <h1>Within the Cosmos</h1>
+  <h4>Dye your apps with different buckets of Within the Cosmos paint!</h4>
 </div>
 
-Space theme with multiple colour schemes!
+## Screenshots
+
+![Scheme examples](https://raw.githubusercontent.com/IdkGoodName/WithinTheCosmos/main/assets/banner.png)
+
+![Absolute Nihility Banner](https://raw.githubusercontent.com/IdkGoodName/WithinTheCosmos/main/assets/Nihility.png)
+![Absolute Nihility Screenshot 0](https://raw.githubusercontent.com/IdkGoodName/WithinTheCosmos/main/assets/Ss0-Nihility.png)
+
+![Absolute Nihility Screenshot 1](https://raw.githubusercontent.com/IdkGoodName/WithinTheCosmos/main/assets/Ss1.png)
+
+(Absolute Nihility)
+
+![Cold Nebula Banner](https://raw.githubusercontent.com/IdkGoodName/WithinTheCosmos/main/assets/Nebula.png)
+
+![Cold Nebula Screenshot 0](https://raw.githubusercontent.com/IdkGoodName/WithinTheCosmos/main/assets/Ss0-Nebula.png)
+
+![Cold Nebula Screenshot 2](https://raw.githubusercontent.com/IdkGoodName/WithinTheCosmos/main/assets/Ss2.png)
+
+(Cold Nebula)
+
+![Solar Light Banner](https://raw.githubusercontent.com/IdkGoodName/WithinTheCosmos/main/assets/Solar.png)
+
+![Solar Light Screenshot 0](https://raw.githubusercontent.com/IdkGoodName/WithinTheCosmos/main/assets/Ss0-Solar.png)
+
+![Solar Light Screenshot 3](https://raw.githubusercontent.com/IdkGoodName/WithinTheCosmos/main/assets/Ss3.png)
+
+(Solar Light)
+
+## Information
 
 **Support table:**
 
-| Platform        | Supported | Coming Soon | Possibly In The Future |
-|-----------------|:---------:|:-----------:|:----------------------:|
-| Guilded         |     X     |             |                        |
-| GTK             |           |      X      |                        |
-| VSC             |           |             |           X            |
-| Revolt          |           |             |           X            |
-| JetBrains Fleet |           |             |           X            |
+| Platform        | Supported | Coming Soon | Possibly In The Future | Not planned anymore |
+|-----------------|:---------:|:-----------:|:----------------------:|:-------------------:|
+| Guilded         |     X     |             |                        |                     |
+| GTK             |           |             |           X            |                     |
+| VSC             |           |             |           X            |                     |
+| Revolt          |           |             |                        |          X          |
+| JetBrains Fleet |           |             |                        |          X          |
 
 **Current available colour schemes:**
 - Absolute Nihility (Guilded)
