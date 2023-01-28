@@ -103,9 +103,15 @@ SetChannel(className)
 .ChannelIcon-icon-background
     background-color: bg-colour[1]
 
+$ChannelNotificationUpsell
+    background-color: bg-colour[0]
+    border: solid 1px alpha($green, 0.5)
+
 // Invite others
 .ChannelUpsell-container
-    @extends $SetContentDark
+    @extends $ChannelNotificationUpsell
+.SetupUpsell-container
+    @extends $ChannelNotificationUpsell
 
 /*
  * -=- Screen header -=-

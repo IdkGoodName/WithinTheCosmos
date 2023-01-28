@@ -245,7 +245,7 @@ define-message-type(colour)
 .WordDividerLine
     // Normal
     &-line
-        background-color: bg-colour[7]
+        background-color: border-light[3]
         &:last-child
             width: 600px
     &-container-word-style-chat &-word,
@@ -295,6 +295,22 @@ define-message-type(colour)
 /*
  * --- Header ---
  */
+
+.ChatV2MessageHeader
+    &-info
+        display: grid
+    &-user-badges
+        grid-row: 1
+        grid-column: 1
+    &-name
+        grid-row: 1
+        grid-column: 2
+    &-status-custom-reaction
+        grid-row: 1
+        grid-column: 3
+    &-timestamp
+        grid-row: 1
+        grid-column: 4
 
 // Timestamp
 .ChatV2MessageTimestamp-container.ChatV2MessageHeader-timestamp,

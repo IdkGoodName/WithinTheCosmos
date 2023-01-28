@@ -477,6 +477,9 @@
         margin-left: 0
         margin-right: spacing-6
         @extends $PanelMild
+    &-image-banner.StretchFadeBackground-container-type-half-left .StretchFadeBackground-stretch-bg
+        mask-image: none
+        -webkit-mask-image: none
 
 // .TournamentBanner-banner .StretchFadeBackground-stretch-bg,
 .TeamEmbedCard-container .GradientBackground-container-type-quarter-left
@@ -666,25 +669,6 @@
     // Quote/Reply buttons active
     &, &:hover, &:visited, &:active, &:focus
         color: var(--game-color)
-
-
-// Leave a comment/Share
-.ShareContentTrigger-text,
-.ContentMetadataReplyInfo-reply-text
-    @extends $TextDarkTransition
-
-.ShareContentTrigger-container-desktop:hover .ShareContentTrigger-text,
-.ContentMetadataReplyInfo-repliers:hover .ContentMetadataReplyInfo-reply-text
-    @extends $TextMedium
-
-// Leave a comment/Share icon
-.ShareContentTrigger-icon,
-.ContentMetadataReplyInfo-icon
-    @extends $SvgDarkTransition
-
-.ShareContentTrigger-container-desktop:hover .ShareContentTrigger-icon,
-.ContentMetadataReplyInfo-repliers:hover .ContentMetadataReplyInfo-icon
-    @extends $SvgMedium
 
 
 /*

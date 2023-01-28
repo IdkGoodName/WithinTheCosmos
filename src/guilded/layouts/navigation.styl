@@ -327,15 +327,16 @@ body
 .TeamPageNavV3-header
     box-shadow: none
 
-.TeamBanner-image-banner
-    opacity: 30%
-    // Parent has the height of 160px to stretch the image consistently in tourneys and servers
-    // We will do that to add masking better for the theme
-    height: 160px
 // The parent of the .TeamBanner-image-banner component
 .TeamNavHeader-banner
     height: 100%
     mask-image: linear-gradient(to bottom, black, black 0%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0))
+
+    .TeamBanner-image-banner
+        opacity: 30%
+        // Parent has the height of 160px to stretch the image consistently in tourneys and servers
+        // We will do that to add masking better for the theme
+        height: 160px
 
 // Tourney header
 .TournamentNavHeader-container

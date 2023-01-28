@@ -28,7 +28,7 @@
     .Day-container-desktop.Day-container-can-create
         @extends $TransitionBackground
         &:hover
-            background-color: bg-colour[7]
+            @extends $PanelLight
     .Day-new-event-icon
         @extends $SvgDark
         transition: opacity
@@ -41,7 +41,7 @@
         .DayHeader-date
             @extends $TextDarker
     .Day-container-today
-        background-color: bg-colour[7]
+        @extends $PanelLight
         // Highlight the date
         .DayHeader-date
             background-color: var(--game-color)
@@ -117,7 +117,7 @@
         .DayPicker-day-contents
             color: fg-colour[0] !important
     &-day:hover
-        background-color: bg-colour[7]
+        @extends $PanelLight
     // Day numbers
     &-container-desktop &-day:hover &-day-contents,
     &-container-desktop &-day-selected.DayPicker-day:hover &-day-contents

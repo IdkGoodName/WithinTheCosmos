@@ -124,10 +124,22 @@
         @extends $SvgDarkTransition
         &-container
             @extends $ContentLight
+    &-flavor-gold &-icon
+        @extends $SvgTheme
+    &-flavor-gold:hover &-icon
+        @extends $SvgThemeDull
+    &-flavor-gold, &-flavor-gold:hover
+        & ^[0]-icon-container
+            background: bg-colour[4]
+    // Labels
     &-label
         @extends $TextDarkTransition
+    &-flavor-gold &-label
+        @extends $TextTheme
+    &-flavor-gold:hover &-label
+        @extends $TextThemeDull
     // Hover
-    &-container:hover:not(&-disabled)
+    &-container:not(&-disabled):not(&-flavor-gold):hover:not(&-disabled)
         & ^[0]-icon
             @extends $SvgMedium
             &-container

@@ -388,7 +388,7 @@ $FormDropdownActiveFocused
             display: inline-block
             margin: 0 auto
     // Checkmark box
-    &-box
+    &-box, &-container-unchecked&-container-desktop:not(:hover) &-box
         @extends $CheckboxUnchecked
         // Align it center vertically in radio
         .RadioOptionPanel-container &,
@@ -702,28 +702,46 @@ button-hollow-body(border-colour, text-colour)
 button-define(type, primary-colour, highlight-colour)
     // Filled
     {button-filled-selector(type)}
-        button-filled-body(alpha(primary-colour, 0.15), primary-colour)
+        button-filled-body(alpha(primary-colour, 0.25), primary-colour)
     {button-filled-hover-selector(type)}
-        button-filled-body(alpha(primary-colour, 0.25), highlight-colour)
+        button-filled-body(alpha(primary-colour, 0.45), highlight-colour)
     // Hollow
     {button-hollow-selector(type)}
-        button-hollow-body(primary-colour, primary-colour)
+        button-hollow-body(alpha(primary-colour, 0.6), primary-colour)
     {button-hollow-hover-selector(type)}
-        button-hollow-body(primary-colour, highlight-colour)
+        button-hollow-body(alpha(primary-colour, 0.8), highlight-colour)
 
 
 blue-glow = tint($blue, 20%)
 
 .FormConfirmButtonV2
+    &-container
+        border-radius: radius-2
+        position: relative
     // Gilded button
     &-container&-container-type-gilded
         box-shadow: none
         background: bg-colour[3]
-        @extends $SetBorderThemeTransparent
-        //@extends $SetBorderLight-1
+        // @extends $SetBorderThemeTransparent
+        // @extends $SetBorderLight-1
+        @extends $SetBorderTransparent
+        &:not(^[0]-container-hollow)::before
+            content: ""
+            position: absolute
+            top: -1px
+            bottom: -1px
+            left: -1px
+            right: -1px
+            border-radius: radius-2
+            border: solid 1px var(--accent-0)
+            background-color: transparent
+            opacity: 0.25
+            transition: opacity
     // Gilded button hover
     &-container-desktop&-container-filled:hover
         box-shadow: none
+        &::before
+            opacity: 0.45
         //@extends $SetBorderLight-2
         & ^[0]-button-content
             font-color(var(--accent-1))
@@ -735,7 +753,7 @@ blue-glow = tint($blue, 20%)
     &-container&-container-hollow
         background: none
         position: relative
-        button-hollow-body(var(--accent-transparent), var(--accent-1))
+        button-hollow-body(transparent, var(--accent-0))
     // Increase border's opacity
     &-container-type-gilded&-container-hollow::before
         content: ""
@@ -747,11 +765,15 @@ blue-glow = tint($blue, 20%)
         left: -1px
         // Replicate the border
         // TODO: var(--accent-0) and opacity could be used instead
-        border-radius: 4px
-        border: solid 1px var(--accent-transparent)
+        border-radius: radius-2
+        border: solid 1px var(--accent-0)
+        opacity: 60%
+        transition: opacity
+    &-container-type-gilded&-container-hollow:hover::before
+        opacity: 80%
     // Hollow gilded hover
     &-container-desktop&-container-hollow:hover
-        button-hollow-body(var(--accent-transparent), var(--accent-1))
+        button-hollow-body(transparent, var(--accent-1))
     // Hollow gilded text
     &-container-hollow &-button-content
         @extends $FontTheme
@@ -788,6 +810,8 @@ blue-glow = tint($blue, 20%)
             @extends $WhiteButtonHollowHover
 
     // Disabled
+    &-container&-container-type-gilded&-container-disabled:not(&-container-hollow)::before
+        display: none
     &-container&-container-filled&-container-disabled,
     &-container&-container-desktop&-container-filled&-container-disabled:hover
         @extends $SetContentRoughDark

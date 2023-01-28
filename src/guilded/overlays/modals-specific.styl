@@ -213,6 +213,8 @@
     &-footer
         @extends $TextDark
     // Unread activity menu item
+    &-container::after
+        @extends $ContentGlare
     &-container.ChannelActivityItem-container-unread
         @extends $ContentLightHighlighted
         SetNotification()

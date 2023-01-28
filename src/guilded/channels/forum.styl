@@ -102,9 +102,50 @@
  * --- Post view ---
  */
 
-// Outer forum post
-.TeamThreadPostPanel-container
-    @extends $PanelTransparent
+// The title of the thread, its lock icon
+.TeamThread-container
+    .ContentDetailsHeader
+        &-container
+            grid-template-columns: 1fr
+            grid-template-areas: "notification" "name"
+        &-content-icon-svg
+            @extends $PanelCaution
+            grid-row: 1
+            grid-column: 1
+            grid-area: notification
+            margin-right: 0
+            margin-bottom: spacing-4
+            padding: spacing-3 spacing-5
+            width: 100%
+            height: fit-content
+            border-radius: radius-2
+            &::after
+                margin-left: spacing-5
+                content: "This thread has been locked. You cannot make any new replies."
+            .SVGIcon-icon
+                width: 32px
+                height: 32px
+                @extends $SvgBadHighlight
+        &-name-skeleton
+            grid-row: 2
+            grid-column: 1
+            grid-area: name
+
+.TeamThreadPost
+    // Outer forum post
+    &Panel-container
+        @extends $PanelTransparent
+    // Post itself
+    // &PanelDisplay
+    //     &-container
+    //         grid-template-areas: "profile content options" "profile content ." ". metadata timestamp"
+    &Timestamp
+        &-separator
+            background-color: fg-colour[0]
+        &-created-at, &-edited
+            @extends $TextDark
+            &:hover
+                @extends $TextMedium
 
 // Post editor background
 .TeamThreadPostEditor-container,
