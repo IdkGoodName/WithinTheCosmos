@@ -460,6 +460,8 @@ define-carousel-fade(bg-colour[2])
         // Content
         .PostDisplayV2-draft-display
             padding: spacing-2 spacing-4
+        .PostMetadata-container
+            padding: spacing-3 spacing-4 spacing-4 spacing-4
 
 // Footer
 .PostMetadata
@@ -467,11 +469,8 @@ define-carousel-fade(bg-colour[2])
         display: grid
         grid-template-columns: 1fr auto
         height: min-content
-        padding: spacing-3 spacing-4 spacing-4 spacing-4
+        padding: spacing-3 0 spacing-4 0
         grid-template-areas: "replyInfo replyInfo" "reply reply" "reactions timestamp"
-        &.DocViewer-post-metadata
-            padding-left: 0
-            padding-right: 0
         .ContentMetadataReplyInfo-share
             position: relative
             margin-left: 0

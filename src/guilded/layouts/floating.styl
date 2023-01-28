@@ -128,7 +128,7 @@
         @extends $SvgTheme
     &-flavor-gold:hover &-icon
         @extends $SvgThemeDull
-    &-flavor-gold, &-flavor-gold:hover
+    &-flavor-gold, &-container:hover:not(&-disabled)&-flavor-gold
         & ^[0]-icon-container
             background: bg-colour[4]
     // Labels

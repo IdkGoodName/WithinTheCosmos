@@ -45,7 +45,11 @@ BannerWithButtonType(toExtend, colour)
 
 StatusMessageType(colour)
     background-color: bg-colour[1]
-    border-left: solid 3px colour
+    border: solid 1px alpha(colour, 0.25)
+    color: colour
+    transition: border
+    &:hover
+        border-color: alpha(colour, 0.45)
     // transition: border-left
     // transition-duration: 0.1s
     // &:hover
