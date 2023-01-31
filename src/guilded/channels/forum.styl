@@ -29,9 +29,9 @@
     &-header
         grid-row: 1
     &-sticky ~ &-header &-title
-        color: var(--accent-0)
-    &-container:hover &-sticky ~ &-header &-title
-        color: var(--accent-1)
+        color: var(--game-color)
+    // &-container:hover &-sticky ~ &-header &-title
+    //     color: var(--accent-1)
     &-title-wrapper
         flex-direction: row
         gap: spacing-3
@@ -57,19 +57,7 @@
         @extends $TextNotification
     &-container&-container-unread:hover &-title
         @extends $TextNotificationHover
-// Border-ify that
-.VerticalSelectionIndicator-container
-    &-orientation-vertical&-size-md.TeamPostRow-sticky
-        position: absolute
-        top: 0
-        bottom: 0
-        left: 0
-        right: 0
-        width: auto
-        background-color: transparent
-        border: solid 1px var(--accent-0)
-        border-radius: spacing-0
-        opacity: 50%
+
 // Forum post list with the same layout look more cluttered
 // But announcements with the same layout as forums look too big
 .PinnedAnnouncement-container
@@ -95,7 +83,8 @@
     &-icon
         @extends $SvgDark
     // Comment count text
-    &-container-size-lg &-label
+    &-container-size-lg &-label,
+    &-container-size-xlg &-label
         @extends $TextDark
 
 /*
@@ -190,3 +179,27 @@
         // Side handle label date
         &-label
             @extends $TextDark
+
+/*
+ * --- Both ---
+ */
+
+// Border-ify that
+.VerticalSelectionIndicator-container
+    &-orientation-vertical&-size-md.TeamThreadPostPanelDisplay-sticky-indicator,
+    &-orientation-vertical&-size-md.TeamPostRow-sticky
+        position: absolute
+        width: auto
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        background-color: transparent
+        border: solid 1px var(--game-color)
+        opacity: 50%
+    // Pinned post view sidebar
+    &-orientation-vertical&-size-md.TeamThreadPostPanelDisplay-sticky-indicator
+        border-radius: radius-2
+    // Forum list pinned post sidebar
+    &-orientation-vertical&-size-md.TeamPostRow-sticky
+        border-radius: radius-0

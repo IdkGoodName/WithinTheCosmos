@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://guilded.gg/">
-    <img alt="Banner" src="https://raw.githubusercontent.com/IdkGoodName/WithinTheCosmos/main/assets/banner.png">
+    <img alt="Banner" src="https://raw.githubusercontent.com/IdkGoodName/WithinTheCosmos/main/assets/Nihility.png">
   </a>
   <h1>Within the Cosmos</h1>
   <h4>Dye your apps with different buckets of Within the Cosmos paint!</h4>
@@ -8,7 +8,7 @@
 
 ## Screenshots
 
-![Scheme examples](https://raw.githubusercontent.com/IdkGoodName/WithinTheCosmos/main/assets/banner.png)
+![Scheme examples](https://raw.githubusercontent.com/IdkGoodName/WithinTheCosmos/main/assets/Schemes.png)
 
 ![Absolute Nihility Banner](https://raw.githubusercontent.com/IdkGoodName/WithinTheCosmos/main/assets/Nihility.png)
 ![Absolute Nihility Screenshot 0](https://raw.githubusercontent.com/IdkGoodName/WithinTheCosmos/main/assets/Ss0-Nihility.png)

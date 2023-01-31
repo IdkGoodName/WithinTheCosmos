@@ -26,6 +26,8 @@
     &-container
         --border-color: bg-colour[2]
         border: solid 1px transparent
+        &-unread::before
+            @extends $Notification
     // Selected DMs
     &-container&-container-selected
         @extends $ContentLight
@@ -54,6 +56,11 @@
         // Timestamp
         .ChatChannelListItemInfo-last-at
             @extends $TextDark
+    // Unread DMs
+    &-container-unread
+        .ChatChannelListItemInfo
+            &-latest-message, &-name
+                @extends $TextLight
 
 // User typing in DMs
 .TypingIndicator-container

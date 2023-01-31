@@ -259,14 +259,12 @@
 .RawVideoPlayer
     // Play arrow
     &-play-icon
-        fill: bg-colour[2]
-        filter: drop-shadow(shadow)
+        @extends $VideoPlayerButton
 // Video buttons
 .TeamStreamPlayerButton-container,
 .TeamStreamVolumeControl-volume-icon,
 .TeamStreamVolumeControl-volume-icon-wrapper:hover .TeamStreamVolumeControl-volume-icon
-    fill: bg-colour[2]
-    filter: drop-shadow(shadow)
+    @extends $VideoPlayerButton
 
 // Image caption
 .MediaCaptionLineRenderer
@@ -667,8 +665,10 @@
     &:not(:first-child):not(:first-child)::before
         background-color: fg-colour[0]
     // Quote/Reply buttons active
-    &, &:hover, &:visited, &:active, &:focus
-        color: var(--game-color)
+    &, &:visited, &:active, &:focus
+        @extends $TextTheme
+    &:hover
+        @extends $TextThemeDull
 
 
 /*
