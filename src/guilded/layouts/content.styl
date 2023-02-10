@@ -1,0 +1,117 @@
+@require "../../variables"
+@require "../../content"
+@require "../../set"
+@require "../guilded-variables"
+
+/*
+ * -=- Tabs & Toggles -=-
+ */
+
+$TabContainer
+    @extends $FullBorderLight-2
+    border-radius: radius-2
+$TabHover
+    @extends $PanelMild
+$TabSelected
+    @extends $PanelMedium
+$TabSelectedHover
+    @extends $PanelMediumHighlighted
+
+$TabText
+    @extends $TextDarkTransition
+$TabTextHover
+    @extends $TextMedium
+$TabTextSelected
+    @extends $TextTheme
+$TabTextSelectedHover
+    @extends $TextTheme
+
+$TabIcon
+    @extends $SvgDarkTransition
+$TabIconHover
+    @extends $SvgMedium
+$TabIconSelected
+    @extends $SvgTheme
+$TabIconSelectedHover
+    @extends $SvgTheme
+
+.SimpleIconTabMenuHeader
+    // Tab list
+    &-container
+        @extends $TabContainer
+    // Tabs themselves
+    &Item
+        &-container
+            &:hover, &:active, &:focus
+                @extends $TabHover
+                & ^[1]-icon
+                    @extends $TabIconHover
+            &-selected
+                @extends $TabSelected
+                & ^[1]-icon
+                    @extends $TabIconSelected
+
+            &&-selected:hover, &&-selected:active, &&-selected:focus
+                @extends $TabSelectedHover
+                & ^[1]-icon
+                    @extends $TabIconSelectedHover
+
+            &-selected::after
+                display: none
+        // Icons
+        &-icon
+            @extends $TabIcon
+
+.HorizontalTab
+    &Menu
+        &-tabs
+            @extends $TabContainer
+            width: min-content
+            &-container:not(&-container-wrapped)
+                // 44px (default) + 2px (border we added)
+                height: 46px
+    &-highlighter
+        display: none
+    &-container
+        .GH2-container
+            @extends $TabText
+        &:hover
+            @extends $TabHover
+            .GH2-container
+                @extends $TabTextHover
+
+        &-selected
+            @extends $TabSelected
+            .GH2-container
+                @extends $TabTextSelected
+
+        &&-selected:hover
+            @extends $TabSelectedHover
+            .GH2-container
+                @extends $TabTextSelectedHover
+        
+
+// .HorizontalTab,
+// .SimpleIconTabMenuHeaderItem
+//     // Tab
+//     &-container
+//         &:hover, &:active, &:focus
+//             background-color: alpha(bg-hover, 0.1)
+//         // Text
+//         .GH2-container
+//             @extends $TextMedium
+//         &-selected .GH2-container
+//             @extends $TextLight
+//         // Icon
+//         .SimpleIconTabMenuHeaderItem-icon
+//             @extends $SvgMedium
+//         &-selected .SimpleIconTabMenuHeaderItem-icon
+//             @extends $SvgLight
+// .HorizontalTab-container
+//     &:hover, &:active, &:focus
+//         .HorizontalTab-tab-text
+//             @extends $TextLight
+// // Tab highlighter
+// .SimpleIconTabMenuHeaderItem-container-selected::after,
+// .HorizontalTab-highlighter
+//     background-color: alpha(fg-colour[0], 0.3)

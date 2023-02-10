@@ -154,15 +154,22 @@
         @extends $SvgDark
 // Details
 .TeamEventDetails
-    &-post-metadata, &-status, &-item
+    &-status
         @extends $MildContentLight
+    &-post-metadata, &-item
+        @extends $ContentLight
 .EventCardMetadata
     // Container
     &-container-size-lg
-        @extends $MildContentLight
+        @extends $ContentLight
     // Icon
     &-icon
         @extends $SvgDark
+    &-link
+        Link()
+@media only screen and (min-width: 770px)
+    .EventCardMetadata-link:hover
+        @extends $TextThemeBleached
 
 // Description
 .TeamEventDescription
@@ -186,7 +193,7 @@
 .EventRsvpsHeader
     // See all link
     &-attendance-see-all
-        @extends $TextThemeDull
+        @extends $TextThemeDullTransition
     &-container-desktop:not(&-container-rsvps-disabled):hover &-attendance-see-all
         @extends $TextThemeBleached
     // Maybe, invited, declined

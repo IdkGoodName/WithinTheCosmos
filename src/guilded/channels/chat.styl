@@ -88,11 +88,6 @@ define-message-type(colour)
     &:not(&-editing):not(&-replying):not(&-private).ChatV2Message-container-private-other
         define-message-type(private-mod-view)
 
-    // Right clicked
-    &-active:not(&-editing)
-        @extends $PanelLight
-        --body-text-color: fg-colour[3]
-
     // Removes messages' margin
     & + &:not(&-with-header):not(&-type-system)
         margin-top: 0

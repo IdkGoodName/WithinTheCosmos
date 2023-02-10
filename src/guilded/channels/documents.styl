@@ -38,10 +38,14 @@
  * --- Text ---
  */
 
-.DocViewer-reader-editor
-    padding: spacing-3 spacing-5
-    border-radius: radius-2
-    @extends $ContentLight
+.DocViewer
+    &-container
+        margin: 0
+        max-width: none
+    &-reader-editor
+        padding: spacing-3 spacing-5
+        border-radius: radius-2
+        @extends $ContentLight
 
 .DocSummaryInfo-subtitle
     @extends $TextDark

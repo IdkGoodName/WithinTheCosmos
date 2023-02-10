@@ -446,25 +446,31 @@ define-carousel-fade(bg-colour[2])
  * -=- Posts -=-
  */
 
-.ReplyPanel
+.ReplyPanel, .PostDisplayV2
     // Content
     &-container
         // User header
         .TeamWidgetProfileDetails
             &-container
                 padding: spacing-3 spacing-4 spacing-2 spacing-4
-            &-profile-picture
-                &, &-skeleton
-                    width: 32px
-                    height: 32px
         // Content
         .PostDisplayV2-draft-display
             padding: spacing-2 spacing-4
+.ReplyPanel-container .TeamWidgetProfileDetails-profile-picture
+    &, &-skeleton
+        width: 32px
+        height: 32px
+
+.PostDisplayV2-title
+    padding: 0 spacing-4
+
 .PostMetadata-container
+    &.TeamEventDetails-post-metadata
+        padding: spacing-3 spacing-5
+    .OverviewWidgetItemWrapper-container &,
+    &.PostDisplayV2-metadata,
     .ReplyPanel-container &
         padding: spacing-3 spacing-4 spacing-4 spacing-4
-    .OverviewWidgetItemWrapper-container &
-        padding: spacing-3 spacing-5 spacing-4 spacing-5
     .TeamThreadPostPanelDisplay-metadata&
         padding-bottom: 0
 
@@ -492,13 +498,13 @@ define-carousel-fade(bg-colour[2])
                     top: 50%
                     transform: translateX(-50%)
         .ShareContentTrigger-text
-            @extends $TextTheme
+            @extends $TextThemeDullTransition
         .ShareContentTrigger-container-desktop:hover .ShareContentTrigger-text
-            @extends $TextThemeDull
+            @extends $TextThemeBleached
         .ShareContentTrigger-icon
-            @extends $SvgTheme
+            @extends $SvgThemeDullTransition
         .ShareContentTrigger-container-desktop:hover .ShareContentTrigger-icon
-            @extends $SvgThemeDull
+            @extends $SvgThemeBleached
     &-reactions
         grid-area: reactions
         // grid-row: 2

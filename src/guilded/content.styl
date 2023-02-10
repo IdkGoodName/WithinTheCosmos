@@ -234,11 +234,17 @@
 // Override bold/italic highlighting
 .LinkRenderer
     &, &:visited, &:focus
+        @extends $TextThemeDullTransition
         .MarkRenderer-read-only
-            @extends $TextThemeDull
+            @extends $TextThemeDullTransition
     &:active, &:hover
+        @extends $TextThemeBleached
         .MarkRenderer-read-only
             @extends $TextThemeBleached
+
+@media only screen and (min-width: 770px)
+    .LinkRenderer:hover
+        @extends $TextThemeBleached
 
 /*
  * --- Images & Files ---
@@ -580,7 +586,6 @@
 // List item note editor
 .Editor-container.TeamListItemNoteEditor-editor
     background-color: bg-colour[5]
-    //@extends $SubContentLight
 
 // Forum reply editor
 .TeamThreadPostEditor-editor .Editor-container
@@ -651,10 +656,10 @@
 
 // Cancel button
 .CancelText-container
-    @extends $TextDark
+    @extends $TextThemeDullTransition
     // Cancel button hovered
     &:hover
-        @extends $TextMedium
+        @extends $TextThemeBleached
 
 // Comment input small
 .CollapsedInput-container-size-sm
@@ -666,9 +671,9 @@
         background-color: fg-colour[0]
     // Quote/Reply buttons active
     &, &:visited, &:active, &:focus
-        @extends $TextTheme
+        @extends $TextThemeDullTransition
     &:hover
-        @extends $TextThemeDull
+        @extends $TextThemeBleached
 
 
 /*

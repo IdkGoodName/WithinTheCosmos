@@ -58,13 +58,6 @@ StatusMessageType(colour)
 // Status
 .StatusMessage-container
     @extends $TextMedium
-    // Status info
-    &-type-info
-        // Pops up and vanishes (No mic detected)
-        &.StatusMessage-container-ephemeral,
-        // Always there (Published on)
-        &.StatusMessage-container-persistent
-            @extends $SubContentLight
     // Status hover
     &-desktop.StatusMessage-container-clickable::after
         @extends $ContentGlare
@@ -206,20 +199,12 @@ StatusMessageType(colour)
 .InlineTextLink-container,
 .CardGames-overflow-link,
 .LandingFooterApps-link,
-.EventCardMetadata-link,
 .ChatEmbedContent-link,
 .EmbedCardFooter-link,
-.CancelText-container,
 .CardList-label-link,
 .StatusMessage-link,
-.RouteLink-linkify,
-.LinkRenderer
-    // Link normally
-    &, &:visited, &:focus
-        @extends $TextThemeDull
-    // Link clicked and hovered over
-    &:hover, &:active
-        @extends $TextThemeBleached
+.RouteLink-linkify
+    Link()
 
 /*
  * --- Custom animations ---
@@ -277,50 +262,6 @@ StatusMessageType(colour)
         @extends $RadiusRounded
     &-container-non-base
         @extends $PanelMild
-
-
-/*
- * --- Tab buttons ---
- */
-
-.HorizontalTab,
-.SimpleIconTabMenuHeaderItem
-    // Tab
-    &-container
-        &:hover, &:active, &:focus
-            background-color: alpha(bg-hover, 0.1)
-        // Text
-        .GH2-container
-            @extends $TextMedium
-        &-selected .GH2-container
-            @extends $TextLight
-        // Icon
-        .SimpleIconTabMenuHeaderItem-icon
-            @extends $SvgMedium
-        &-selected .SimpleIconTabMenuHeaderItem-icon
-            @extends $SvgLight
-.HorizontalTab-container
-    &:hover, &:active, &:focus
-        .HorizontalTab-tab-text
-            @extends $TextLight
-// Tab highlighter
-.SimpleIconTabMenuHeaderItem-container-selected::after,
-.HorizontalTab-highlighter
-    background-color: alpha(fg-colour[0], 0.3)
-
-// .SimpleIconTabMenuHeaderItem
-//     // Member/thread list tab hover
-//     &-container:hover, &-container:active, &-container:focus
-//         @extends $PanelMedium
-//     // Member/thread list active tab
-//     &-container-selected::after
-//         background-color: fg-colour[1]
-//     // Member/thread list tab icon
-//     &-icon
-//         @extends $SvgDark
-//     // Member/thread list active tab icon
-//     &-icon
-//         @extends $SvgMedium
 
 /*
  * -=- Animated -=-

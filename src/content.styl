@@ -15,12 +15,12 @@ $Notification
     background-color: notification
 
 BasicLink()
-    @extends $TextThemeDull
+    @extends $TextThemeDullTransition
     &:hover
         @extends $TextThemeBleached
 Link()
     &, &:visited, &:focus
-        @extends $TextThemeDull
+        @extends $TextThemeDullTransition
     &:hover &:active
         @extends $TextThemeBleached
 SetScrollbar()
@@ -80,6 +80,9 @@ $TextTheme
     color: var(--accent-0)
 $TextThemeDull
     color: var(--accent-1)
+$TextThemeDullTransition
+    color: var(--accent-1)
+    transition: color
 $TextThemeBleached
     color: var(--accent-2)
 $TextThemeContrast
@@ -130,6 +133,9 @@ $SvgTheme
     fill: var(--accent-0)
 $SvgThemeDull
     fill: var(--accent-1)
+$SvgThemeDullTransition
+    fill: var(--accent-1)
+    transition: fill
 $SvgThemeBleached
     fill: var(--accent-2)
 $SvgThemeContrast
@@ -191,22 +197,23 @@ $FontGoodHighlight
     font-color: good-1
 
 // Background
-$PanelLight
-    background-color: bg-colour[6]
-$PanelMediumHighlighted
-    background-color: bg-colour[5]
-$PanelMedium
-    background-color: bg-colour[4]
-$PanelMild
-    background-color: bg-colour[3]
-$PanelDark
-    background-color: bg-colour[2]
-$PanelReallyDark
-    background-color: bg-colour[1]
 $PanelDarkest
     background-color: bg-colour[0]
+$PanelReallyDark
+    background-color: bg-colour[1]
+$PanelDark
+    background-color: bg-colour[2]
+$PanelMild
+    background-color: bg-colour[3]
+$PanelMedium
+    background-color: bg-colour[4]
+$PanelMediumHighlighted
+    background-color: bg-colour[5]
+$PanelLight
+    background-color: bg-colour[6]
 $PanelTransparent
     background-color: transparent
+
 $PanelImportant
     background-color: important
 $PanelBad
@@ -315,9 +322,9 @@ $ContentLight
 $SetContentLight
     SetPanelBordered(bg-colour[4], border-light[0])
 $SubContentLight
-    PanelBordered(bg-colour[6], border-light[0])
+    PanelBordered(bg-colour[5], border-light[0])
 $SetSubContentLight
-    SetPanelBordered(bg-colour[6], border-light[0])
+    SetPanelBordered(bg-colour[5], border-light[0])
 
 $MildContentLightHighlighted
     PanelBordered(bg-colour[3], border-light[1])
@@ -328,9 +335,9 @@ $ContentLightHighlighted
 $SetContentLightHighlighted
     SetPanelBordered(bg-colour[4], border-light[1])
 $SubContentLightHighlighted
-    PanelBordered(bg-colour[6], border-light[1])
+    PanelBordered(bg-colour[5], border-light[1])
 $SetSubContentLightHighlighted
-    SetPanelBordered(bg-colour[6], border-light[1])
+    SetPanelBordered(bg-colour[5], border-light[1])
 
 $ContentGreyHighlight
     PanelBordered(bg-colour[6], border-light[1])

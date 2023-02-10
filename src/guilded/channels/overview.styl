@@ -100,6 +100,7 @@
 // Leaderboard
 .TeamOverviewLeaderboardSection-leaderboard-container
     @extends $ContentLight
+    border-radius: radius-2
 // Leaderboard game name
 .GameIconAndGameName-container-style-header .GameIconAndGameName-game-name
     @extends $TextLight
@@ -110,3 +111,8 @@
 // Leaderboard stats and numbers
 .LeaderboardRow-stat
     @extends $TextMedium
+
+.TeamMemberBubble
+    &-container
+        &&-has-name::after
+            @extends $ContentGlare
