@@ -1,0 +1,62 @@
+@require "../guilded-variables"
+
+/*
+ * -=- New messages / Alert bar -=-
+ */
+
+.ChatChannelAlertBar
+    // Alert bar icon
+    &-icon
+        @extends $SvgDark
+    &-leading-icon-private-thread
+        fill: tint(private, 25%)
+
+    // Any alert bar
+    &-container
+        font-color(fg-colour[2])
+        background-color: bg-colour[0] !important
+        border-color: border-light[2]
+        // Hover
+        &::after, &:not(&-banner)::after
+            @extends $ContentGlare
+
+        // Viewing older messages
+        &-type-viewing-older-messages,
+        // Unread messages
+        &-type-unread-messages,
+        // New messages
+        &-type-new-messages,
+        &-type-new-replies,
+        // New mentions
+        &-type-new-mentions
+            background-color: bg-colour[1] !important
+
+        // New mentions and new forum replies
+        &-type-new-replies,
+        &-type-new-mentions
+            color: mention !important
+            fill: mention !important
+            border-color: alpha(mention, 0.5)
+            // New mentions icon
+            & ^[0]-icon-click-wrapper ^[0]-icon
+                fill: mention
+
+        &-type-new-messages ^[0]-icon
+            @extends $SvgDark
+        // Unread messages
+        &-type-unread-messages
+            color: active !important
+            fill: active !important
+            border-color: alpha(active, 0.5)
+            // Unread messages icon
+            & ^[0]-icon-click-wrapper ^[0]-icon
+                fill: active
+
+/*
+ * -=- Guides -=-
+ */
+
+// Voice channel click guide
+.NuxTargetGlowie-container
+    &, &::after
+        background-image: radial-gradient(circle at 50% 50%, alpha(important,0), alpha(important,0) 39%, important)

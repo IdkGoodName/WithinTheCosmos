@@ -1,0 +1,213 @@
+@require "../../set"
+@require "../../variables"
+@require "../guilded-variables"
+
+/*
+ * -=- Groups -=-
+ */
+
+// Sets group list width
+body
+    --group-selector-width: icon-size + 16px
+// Group list
+.NavV4Sidebar-container,
+.GroupSelector-container,
+// Group list in group editing
+.GroupSelectorPreview-minimal-nav
+    @extends $PanelDark
+    --border-color: bg-colour[1]
+// Group
+.GroupSelectorItem-container
+    --avatar-size: icon-size
+
+// Groups and legacy nav servers
+.NavSelectorItem
+    &-container .GroupAvatar-container
+        font-size: 1.2em
+    // Don't show it on hovered groups
+    &-container-highlighted:not(&-container-active) &-contents,
+    &-container-desktop:not(&-container-active):hover &-contents
+        &::after
+            opacity: 0
+    // Actual active border
+    &-container-active &-contents::after
+        ServerSelectBorder(2px)
+
+.GroupAvatarTextLabel
+    &-base-layer
+        @extends $SetMildContentLight
+
+// Default group icon
+//.GroupAvatar-container-non-base
+//    font-size: 1.3em
+
+// The border around status and group's emote
+.GroupAvatarBadge-container-reaction,
+.LoggedInUserAvatar-online-status
+    @extends $PanelDark
+
+// Group settings background
+.CreateGroupLivePreview-LiveView
+    background: bg-colour[1]
+
+/*
+ * -=- Channel List Server Header -=-
+ */
+
+.TeamPageNavV3-header
+    box-shadow: none
+
+// The parent of the .TeamBanner-image-banner component
+.TeamNavHeader-banner
+    height: 100%
+    mask-image: linear-gradient(to bottom, black, black 0%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0))
+
+    .TeamBanner-image-banner
+        opacity: 30%
+        // Parent has the height of 160px to stretch the image consistently in tourneys and servers
+        // We will do that to add masking better for the theme
+        height: 160px
+
+// Tourney header
+.TournamentNavHeader-container
+    @extends $PanelTransparent
+    box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.5)
+    z-index: 105
+// Server header name
+.PageNavAvatarName-name-text
+    @extends $TextLight
+// Server header group name
+.TeamNavGroupHeader-name
+    @extends $TextMedium
+// Server header hover
+.TeamNavHeader
+    &-options-carat::after,
+    &-header-columns-with-carat &-options-carat::after
+        @extends $ContentGlare
+// Server header caret
+.TeamNavHeader-options-carat.TeamNavTeamOptionsCarat-icon
+    @extends $SvgMedium
+// Server header button
+.TeamNavHeaderRowButton-container
+    @extends $PanelLight
+    // Server header button hovered
+    &:not(.TeamNavHeaderRowButton-container-disabled)::after
+        @extends $ContentGlare
+// Server header button icon
+.TeamNavHeaderRowButton-icon
+    @extends $SvgMedium
+// Server header button text
+.TeamNavHeaderRowButton-text
+    @extends $TextMedium
+
+/*
+ * -=- Channels -=-
+ */
+
+//
+.TeamNavMenu-container,
+// Channel list
+.TeamPageNavV3-container,
+// Channel list in group editing
+.GroupNavPreview-nav-section
+    @extends $PanelDark
+
+// Section list header
+.TeamNavSectionsList-header
+    display: none
+// Channel list header
+.TeamChannelsList-container .ChannelListHeader-container-type-default
+    // Don't display the text
+    .ChannelListHeader-text
+        display: none
+    // Add 3 dots instead
+    &::before
+        position: relative
+        content: '. . .'
+        text-align: center
+        margin-left: auto
+        margin-right: auto
+        @extends $TextDark
+
+// Category's name
+.ChannelListHeader-container-type-category .ChannelListHeader-text
+    @extends $TextDark
+
+// Channel and section common stuff
+$ChannelHoverGlare
+    background-color: bg-hover
+    transition: opacity
+ChannelNormal()
+    border: solid 1px transparent
+    transition: background-color
+    &::after
+        @extends $ChannelHoverGlare
+ChannelContent(className, textPlaceholder, svgPlaceholder)
+    .ChannelIcon-icon-primary,
+    .ChannelIcon-icon-secondary,
+    {className}-icon
+        @extends {svgPlaceholder}
+    {className}-name
+        @extends {textPlaceholder}
+ChannelSelected()
+    @extends $ContentLight
+ChannelSelectedContent()
+    &-container-selected &-icon
+        @extends $SvgLight
+    &-container-selected
+        .ChannelIcon-icon-primary,
+        .ChannelIcon-icon-secondary
+            @extends $SvgLight
+    &-container-selected &-name
+        @extends $TextLight
+
+SetChannel(className)
+    ChannelSelectedContent()
+    &-container
+        ChannelNormal()
+        ChannelContent(className, "$TextDark", "$SvgDark")
+
+    &-name
+        @extends $TransitionColour
+    &-icon
+        @extends $TransitionFill
+    // Hover
+    &-container:not(&-container-selected):hover
+        ChannelContent(className, "$TextMedium", "$SvgMedium")
+    // Selected
+    &-container&-container-selected
+        ChannelSelected()
+    // Unread
+    &-container-unread
+        ChannelContent(className, "$TextNotification", "$SvgNotification")
+        SetNotification()
+        ^[0]-container&:hover
+            ChannelContent(className, "$TextNotificationHover", "$SvgNotificationHover")
+// Section
+.TeamNavSectionItem
+    SetChannel(".TeamNavSectionItem")
+// Channel
+.TeamChannelItemContents
+    SetChannel(".TeamChannelItemContents")
+.TeamChannelItemBadgedContent-container
+    ChannelContent(".TeamChannelItemContents", "$TextMention", "$SvgMention")
+    &.TeamChannelItemContents-container:hover
+        ChannelContent(".TeamChannelItemContents", "$TextMentionHover", "$SvgMentionHover")
+
+.ChannelIcon-icon-primary,
+.ChannelIcon-icon-secondary
+    @extends $SvgDarkTransition
+// Sub-icon background
+.ChannelIcon-icon-selected .ChannelIcon-icon-background,
+.ChannelIcon-icon-background
+    background-color: bg-colour[1]
+
+$ChannelNotificationUpsell
+    background-color: bg-colour[0]
+    border: solid 1px alpha($green, 0.5)
+
+// Invite others
+.ChannelUpsell-container
+    @extends $ChannelNotificationUpsell
+.SetupUpsell-container
+    @extends $ChannelNotificationUpsell

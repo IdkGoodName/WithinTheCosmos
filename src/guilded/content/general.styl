@@ -1,0 +1,275 @@
+@require "../guilded-variables"
+
+/*
+ * -=- Text -=-
+ */
+
+// Text
+.GH1-container
+    @extends $TextLight
+.GH2-container
+    @extends $TextMedium
+.GH3-container
+    @extends $TextDark
+
+.GuildedText-container
+    &-type
+        // For server invite titles,
+        &-title,
+        &-heading1,
+        &-heading2,
+        &-heading3,
+        &-heading4
+            @extends $TextLight
+        &-subheading
+            @extends $TextLight
+        &-heading5,
+        &-heading6
+            @extends $TextMedium
+        // For level titles, message thread pop up text
+        &-subtext,
+        &-subtext1,
+        &-subtext2,
+        &-subtext3,
+        &-subtextHeading
+            @extends $TextDark
+        &-subtextBodyWhite
+            @extends $TextMedium
+        // Misc
+        &-body2
+            @extends $TextDark
+        &-bigBody
+            @extends $TextDark
+        &-code
+            @extends $InlineCode
+    &-color
+        &-bodyWhite
+            color: var(--body-text-color)
+        &-errorRed
+            @extends $TextBad
+        &-gilded1
+            @extends $TextThemeDull
+        &-gray
+            @extends $TextDark
+        &-white
+            @extends $TextLight
+// SVGs
++prefix-classes("SVGIcon")
+    .WithTooltip-container
+        @extends $SvgDark
+        // Normal clickable
+        &-clickable:hover
+            @extends $SvgLight
+            .WithTooltip-icon
+                @extends $SvgLight
+            .WithTooltip-inline-text
+                @extends $TextLight
+        // Buttons
+        &-flavor-hover-bleach
+            @extends $PanelDark
+            .WithTooltip-icon
+                @extends $SvgDark
+            .WithTooltip-inline-text
+                @extends $TextDark
+            &:hover .WithTooltip-icon
+                @extends $SvgMedium
+            &:hover .WithTooltip-inline-text
+                @extends $TextMedium
+        // Delete
+        &-flavor-filled-remove
+            @extends $PanelBad
+            .-icon
+                fill: black
+
+// Link/Hyperlink
+.MediaUploaderDropImageInstructions-browse-link,
+.TeamListItemsCompletedHeader-show-complete,
+.CustomFormIndividualResults-toggle-expand,
+.LandingPageV3InternalLinkColumn-link,
+.UserSettingsEmailPage-select-button,
+.ChatV2MessageEditHelper-action,
+.HoverContext-container-linkify,
+.TeamSettingsWebhookPage-link,
+.LandingFooterSEOLinks-link,
+.InlineTextLink-container,
+.CardGames-overflow-link,
+.LandingFooterApps-link,
+.ChatEmbedContent-link,
+.EmbedCardFooter-link,
+.CardList-label-link,
+.StatusMessage-link,
+.RouteLink-linkify
+    Link()
+
+/*
+ * -=- Tabs & Toggles -=-
+ */
+
+$TabContainer
+    @extends $FullBorderLight-2
+    border-radius: radius-2
+$TabHover
+    @extends $PanelMild
+$TabSelected
+    @extends $PanelMedium
+$TabSelectedHover
+    @extends $PanelMediumHighlighted
+
+$TabText
+    @extends $TextDarkTransition
+$TabTextHover
+    @extends $TextMedium
+$TabTextSelected
+    @extends $TextTheme
+$TabTextSelectedHover
+    @extends $TextTheme
+
+$TabIcon
+    @extends $SvgDarkTransition
+$TabIconHover
+    @extends $SvgMedium
+$TabIconSelected
+    @extends $SvgTheme
+$TabIconSelectedHover
+    @extends $SvgTheme
+
+.SimpleIconTabMenuHeader
+    // Tab list
+    &-container
+        @extends $TabContainer
+    // Tabs themselves
+    &Item
+        &-container
+            &:hover, &:active, &:focus
+                @extends $TabHover
+                & ^[1]-icon
+                    @extends $TabIconHover
+            &-selected
+                @extends $TabSelected
+                & ^[1]-icon
+                    @extends $TabIconSelected
+
+            &&-selected:hover, &&-selected:active, &&-selected:focus
+                @extends $TabSelectedHover
+                & ^[1]-icon
+                    @extends $TabIconSelectedHover
+
+            &-selected::after
+                display: none
+        // Icons
+        &-icon
+            @extends $TabIcon
+
+.HorizontalTab
+    &Menu
+        &-tabs
+            @extends $TabContainer
+            width: max-content
+            &-container:not(&-container-wrapped)
+                // 44px (default) + 2px (border we added)
+                height: 46px
+    &-highlighter
+        display: none
+    &-container
+        .GH2-container
+            @extends $TabText
+        &:hover
+            @extends $TabHover
+            .GH2-container
+                @extends $TabTextHover
+
+        &-selected
+            @extends $TabSelected
+            .GH2-container
+                @extends $TabTextSelected
+
+        &&-selected:hover
+            @extends $TabSelectedHover
+            .GH2-container
+                @extends $TabTextSelectedHover
+
+/*
+ * -=- Icons -=-
+ */
+
+/*
+ * --- Team badges ---
+ */
+
+// Verified badge
+#icon-verified-badge path:first-child
+    @extends $SvgTheme
+
+#icon-verified-badge path:last-child
+    @extends $SvgThemeContrast
+
+/*
+ * --- Custom animations ---
+ */
+
+// Message avatar bouncing
+.ChatV2MessageHeader-avatar-wrapper, .ChatV2MessageHeader-avatar
+    @extends $TransitionBounce
+
+    .ChatV2Message-header:hover &
+        @extends $RadiusSmall
+
+.PlayerCardProfilePicture-avatar
+    @extends $TransitionBounce
+
+    // Announcement & forum bouncing
+    .TeamWidgetProfileDetails-container:hover &,
+    // Member list avatar bouncing
+    .SidebarUsersRoleInfo-user:hover &,
+    // Doc bouncing
+    .DocReader-header:hover &
+        @extends $RadiusSmall
+
+// Favourite server bouncing
+.NavV4BadgedItem-image, .NavV4BadgedItem-icon-wrapper
+    border-radius: 50%
+    @extends $TransitionBounce
+
+    .NavV4BadgedItem-container:hover &
+        @extends $RadiusSmall
+
+.GroupAvatar
+    // Group icon bouncing
+    &TextLabel
+        &-base-layer
+            @extends $RadiusRounded
+            // Inside group list
+            .GroupSelector-container &
+                @extends $TransitionBounce
+            // Group in preview
+            .GroupSelectorPreview-container &
+                @extends $RadiusSmall
+        &-filled-layer
+            @extends $TransitionBounce
+            @extends $RadiusRounded
+        &-filled-layer&-filled-layer-active
+            @extends $RadiusSmall
+    &-icon
+        @extends $RadiusSmall
+        @extends $TransitionBounce
+        ^[0]-container-inactive-grayscale &,
+        ^[0]-container:hover &
+            @extends $RadiusRounded
+    &-container
+        @extends $RadiusRounded
+    &-container-non-base
+        @extends $PanelMild
+
+/*
+ * -=- Progress -=-
+ */
+
+// Upload/XP progress bar
+.GoldenProgressBar
+    // Background
+    &-container,
+    &-container-theme-dark
+        @extends $PanelReallyDark
+    // Progress
+    &-progress
+        background-color: progress

@@ -7,7 +7,6 @@
  * -=- Settings -=-
  */
 
-
 // Section tabs
 .PersistentActionMenu-menu-section
     padding: 0 spacing-2
@@ -136,31 +135,6 @@ settings-item-margin = 5px
 .GuildedTableRowNotificationOverridesInput-remove
     @extends $TextBad
 
-// Content(flow)
-.UserCTAPanel-container
-    @extends $ContentLight
-// // Content inner(flow)
-// .UserCTAPanel-container-style-bordered
-//     border: 0
-// Content inner(flow) 2
-.UserCTAPanel-container-style-bordered .UserCTAPanel-contents:not(.UserCTAPanel-container-disabled)
-    @extends $PanelTransparent
-.UserCTAPanel-container-style-bordered .UserCTAPanel-contents:not(.UserCTAPanel-container-disabled):hover
-    @extends $PanelMedium
-    @extends $TransitionBackground
-// Flow connection
-.PanelList-option-connector
-    background-color: border-light[1]
-// Flow's title
-.PanelInfo-title
-    @extends $TextLight
-// Flow's description
-.PanelInfo-description
-    @extends $TextDark
-// Flow's icon
-.BotFlowDisplay-icon
-    @extends $SvgDark
-
 /*
  * -=- All Channels Settings -=-
  */
@@ -180,7 +154,7 @@ settings-item-margin = 5px
         @extends $TextDark
 
 /*
- * -=- Settings Tabs -=-
+ * -=- Settings Pages -=-
  */
 
 /*
@@ -275,3 +249,24 @@ settings-item-margin = 5px
     // Synced icon
     &-icon
         @extends $SvgDark
+
+/*
+ * -=- Settings Sub-modals -=-
+ */
+
+// Group settings icon
+.AddGroupOverlayDisplay-settings-icon
+    @extends $SvgDarkTransition
+    // Group settings hover
+    &:hover
+        @extends $SvgMedium
+
+// Banned member
+.ManageUserBanOverlay-UserProfile-container
+    @extends $ContentLight
+
+.ManageWebhookOverlay
+    &-container
+        @extends $TextNormal
+        & ^[0]-image-input-label
+            @extends $TextDark

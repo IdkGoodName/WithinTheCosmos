@@ -1,12 +1,12 @@
 {
     "accent-0": {
         "name": "Accent (Normal)",
-        "value": "#f19548",
+        "value": "#f18648",
         "type": "color"
     },
     "accent-1": {
         "name": "Accent (Dull)",
-        "value": "#ffbc65",
+        "value": "#ffa365",
         "type": "color"
     },
     "accent-2": {
@@ -16,16 +16,11 @@
     },
     "accent-selection": {
         "name": "Accent (Selection)",
-        "value": "rgba(241, 149, 72, 0.6)",
-        "type": "color"
-    },
-    "accent-transparent": {
-        "name": "Accent (Almost Transparent)",
-        "value": "rgba(241, 149, 72, 0.15)",
+        "value": "rgba(241, 134, 72, 0.6)",
         "type": "color"
     },
     "accent-foreground": {
-        "name": "Foreground on accented panels",
+        "name": "Contrasting colour for accent colour (e.g., verified icon's tick's colour)",
         "value": "#000",
         "type": "color"
     }

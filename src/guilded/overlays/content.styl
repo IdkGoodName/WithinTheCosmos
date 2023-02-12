@@ -1,0 +1,150 @@
+@require "../guilded-variables"
+
+/*
+ * -=- Form view -=-
+ */
+
+// Poll percentage
+.HorizontalPercentageBar
+    // Percentage bar
+    &-bar
+        // background-color: bg-colour[0]
+        @extends $PanelDarkest
+        // Progress
+        &-highlight
+            background: progress
+    // Percentage label
+    &-value,
+    // The name of the poll item
+    &-label
+        @extends $TextLight
+    // Item voted for
+    &-vote-icon
+        @extends $SvgLight
+.CustomFormControls
+    // Successful voting
+    &-success
+        &-message
+            @extends $TextGood
+        &-icon
+            @extends $SvgGood
+    &-edit-response
+        BasicLink()
+// Question X
+.CustomFormSummaryResultSection-header
+    @extends $TextDark
+// Title
+.CustomFormResultHeader-container
+    @extends $TextLight
+// Text response in a form
+.CustomFormSummaryTextResponse-container
+    @extends $MildContentLight
+
+// Individual response header
+.CollapsibleItemHeader
+    &-container
+        @extends $PanelDark
+        // Hover
+        &-desktop::after
+            @extends $ContentGlare
+    // Date
+    &-subtitle
+        @extends $TextDark
+// Individual response container
+.CustomFormIndividualResponse-result-display
+    @extends $MildContentLight
+// Individual response message input text
+.TextAreaFieldDisplayRenderer-container
+    color: var(--body-text-color)
+    cursor: text
+
+/*
+ * -=- Media -=-
+ */
+
+/*
+ * --- Message plus menus ---
+ */
+
+// Dashed border
+.UploadMediaBox-container
+    border-color: alpha(fg-colour[0], 0.3)
+
+// Media upload
+.MediaUploaderDropImageInstructions
+    // Upload icon
+    &-icon
+        @extends $SvgMedium
+    // Drop media
+    &-drop-image-text
+        @extends $TextMedium
+    // Or browse your files
+    &-or-browse-text
+        @extends $TextDark
+// Media upload paste
+.MediaUploaderPasteInstructions
+    &-container
+        @extends $ContentRoughDark
+    // Icon
+    &-link-icon
+        @extends $SvgDark
+    // Text
+    &-paste-instructions
+        @extends $TextDark
+
+/*
+ * --- Image full view ---
+ */
+
+// Open original
+.MaximizedImageOverlay-open-original
+    @extends $TextDark
+    // Active
+    &:hover, &:active, &:focus
+        @extends $TextMedium
+// Image share icon
+.MaximizedImageOverlay-share-icon
+    @extends $SvgDark
+    transition: transition
+    // Hover
+    &:hover
+        @extends $SvgMedium
+
+/*
+ * --- Media channel media ---
+ */
+
+// Fixes media preview clipping through the screen
+.MediaSplitView-container
+    width: 100%
+    &-desktop
+        height: 100%
+
+/*
+ * -=- Other -=-
+ */
+
+/*
+ * --- Role Picker ---
+ */
+
+.ToggleRoleControl-container
+    @extends $MildContentLight
+
+/*
+ * --- Reaction & Role member list ---
+ */
+
+.TeamMemberListRow-container
+    @extends $PanelMedium
+    &::before
+        SetBorderOverlay(border-light[0], 4px)
+    &::after
+        @extends $ContentGlare
+
+/*
+ * --- Message pin and deletion confirmation ---
+ */
+
+.ChatV2MessagePinOverlay-message-wrapper
+    @extends $PanelMild

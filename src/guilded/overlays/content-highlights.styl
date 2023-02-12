@@ -1,0 +1,24 @@
+@require "../guilded-variables"
+
+/*
+ * -=- Draggable item overlay -=-
+ */
+
+.DraggableContext
+    // Channel dragging line
+    &-target
+        @extends $SetBorderTheme
+    // Group highlight
+    &-drop-target-style::after
+        background-color: alpha(important, 0.1)
+    // Channel drag shadow
+    //&-portal
+
+/*
+ * -=- Content Markers -=-
+ */
+
+// When you click on a message link or click on a forum topic and get scrolled to a forum topic reply
+// This flashes for a moment before disappearing
+.ScrollFlasher-container
+    @extends $PanelImportant

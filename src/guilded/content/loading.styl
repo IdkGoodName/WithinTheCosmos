@@ -1,0 +1,132 @@
+@require "../variables"
+@require "../guilded-variables"
+
+/*
+ * -=- Skeletons & Loading styles -=-
+ */
+
+/*
+ * --- Loading dots ---
+ */
+
+// Loading dot container
+// .LoadingAnimationMicro-container
+//     width: 40px
+
+// Loading dots
+.LoadingAnimationMicro-container-dark .LoadingAnimationMicro-bar,
+.LoadingAnimationMicro-bar
+    // Increase its width
+    @extends $PanelTheme
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3)
+        animation-name: oldLoad
+    // In channel typing, add different animation
+    .ChatChannelInputTypingIndicator-container &
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3)
+            animation-name: animateTyping
+// Loading animation
+@keyframes oldLoad
+    0%
+        opacity: 0
+        transform: translateY(32px)
+    25%
+        opacity: 0
+    50%
+        opacity: 1
+        transform: translateY(0)
+    100%
+        opacity: 0
+        transform: translateY(0)
+// Typing animation
+@keyframes animateTyping
+    0%
+        opacity: 0
+        transform: scale(0, 0)
+    50%
+        opacity: 1
+        transform: scale(1, 1)
+    100%
+        opacity: 0
+
+/*
+ * --- Loading/connecting bar ---
+ */
+
+// Loading hairline
+.LoadingHairline-container-is-active
+    background-gradient: 270deg, var(--accent-0), var(--accent-2), var(--accent-0), var(--accent-2), var(--accent-0), var(--accent-2), var(--accent-0), var(--accent-2), var(--accent-0), var(--accent-2), var(--accent-0), var(--accent-2), var(--accent-0), var(--accent-2), var(--accent-0), var(--accent-2), var(--accent-0), var(--accent-2), var(--accent-0), var(--accent-2), var(--accent-0), var(--accent-2), var(--accent-0), var(--accent-2)
+
+/*
+ * --- Loading/connecting content ---
+ */
+
+.Img-skeleton
+    // Unloaded images
+    &-rounded-square, &-circle, &-square
+        opacity: skeleton-opacity
+// Loading video
+.DynamicMediaLoader-container
+    @extends $PanelSkeleton
+// Loading team banner
+.TeamPageBanner-skeleton
+    background: skeleton-1
+// Loading group icon
+.GroupSelectorSkeleton-group
+    background: skeleton-0
+    border-radius: 50%
+
+// Loading channel icon
+.TeamChannelsListSkeleton-icon
+    @extends $PanelSkeleton
+// Loading channel name
+.SkeletonPlaceholder-container-no-children
+    @extends $PanelSkeleton
+
+.OverviewWidgetSkeleton
+    // Loading announcement
+    &-container, &-container-type-filled, &-container-announcement
+        @extends $ContentLight
+    // Loading avatar
+    &-profile-picture, &-icon,
+    // Loading others
+    &-box, &-feed-item,
+    // Loading text
+    &-text, &-subtitle, &-paragraph
+        background: skeleton-1
+
+// Input skeletons(?)
+.DraftInputSkeleton-container-type-simple,
+.DraftInputSkeleton-container,
+.DraftInputSkeleton-control,
+.DraftInputSkeleton-text
+    @extends $PanelSkeleton
+
+// Form skeletons(?)
+.CustomFormSkeleton-question,
+.CustomFormSkeleton-answer
+    @extends $PanelSkeleton
+
+// Content embed loading
+.ContentEmbedCardLoading-container
+    @extends $SetContentLight
+
+// Forum skeletons(?)
+// .TeamThreadPostPanelDisplay
+//     &-container, &-container-reply
+//         @extends $SubContentDark
+
+// Tournaments, explore servers, etc. cards and titles
+.ExploreSkeleton
+    &-title, &-card
+        background: skeleton-1
+
+// Bot and server discovery card skeletons
+.ExploreCardsSkeleton-card
+    @extends $PanelSkeleton
+
+.ChannelActivityDisplay-item
+    --border-color: skeleton-0

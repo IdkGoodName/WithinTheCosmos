@@ -2,9 +2,12 @@
     "id": "solarLight",
     "name": "Solar Light",
     "files": "theme.css",
-
     "author": "R40Mp0Wd",
-    "banner": "./SLBanner.png",
-    "images": ["./SLScreenshot0.png", "./SLScreenshot1.png", "./SLScreenshot2.png"],
+    "banner": "./Banner.png",
+    "images": [
+        "./Screenshot0.png",
+        "./Screenshot1.png",
+        "./Screenshot2.png"
+    ],
     "repoUrl": "https://github.com/IdkGoodName/WithinTheSpace"
 }

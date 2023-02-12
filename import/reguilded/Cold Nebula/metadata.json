@@ -2,9 +2,12 @@
     "id": "coldNebula",
     "name": "Cold Nebula",
     "files": "theme.css",
-
     "author": "R40Mp0Wd",
-    "banner": "./CNBanner.png",
-    "images": ["./CNScreenshot0.png", "./CNScreenshot1.png", "./CNScreenshot2.png"],
+    "banner": "./Banner.png",
+    "images": [
+        "./Screenshot0.png",
+        "./Screenshot1.png",
+        "./Screenshot2.png"
+    ],
     "repoUrl": "https://github.com/IdkGoodName/WithinTheSpace"
 }

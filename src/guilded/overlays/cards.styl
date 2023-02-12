@@ -1,0 +1,102 @@
+@require "../guilded-variables"
+
+/*
+ * -=- Server Stuff Cards -=-
+ */
+
+// Role card's background
+.TeamRoleCard,
+// Profile card's background
+.ProfileHoverCard
+    &Overlay-container
+        @extends $ContentDark
+        --border-color: bg-colour[1]
+        --bg-color: bg-colour[1]
+
+// Section's header
+.UserAttributionDisplay-header,
+.TeamMemberRolesDisplay-header,
+.UserTeamXpDisplay-level-display .GuildedText-container
+    @extends $TextLight
+
+.TeamMemberRolesDisplay-list
+    SetScrollbar()
+
+/*
+ * --- Member Card ---
+ */
+
+.ProfileHoverCard
+    &Header-profile-picture
+        padding: spacing-2
+        width: 104px
+        height: 104px
+        @extends $PanelDark
+.PlayerCardProfilePicture
+    &-container-size-xlg &-indicator
+        bottom: 6px
+        right: 6px
+
+// Total XP needed
+.UserTeamXpDisplay-level-display .GuildedText-container.GuildedText-container-type-subtext2
+    @extends $TextDark
+    // XP user has
+    .GuildedText-container-weight-bold
+        @extends $TextMedium
+
+// Socials
+.OverviewWidgetItem
+    // Icon
+    &-icon
+        @extends $SvgDark
+    // Text
+    &-text, &-input
+        @extends $TextMedium
+
+// Bubble actions
+.ActionBubbleButton
+    // Icon
+    &-icon
+        @extends $SvgDarkTransition
+        &-container
+            @extends $ContentLight
+    &-flavor-gold &-icon
+        @extends $SvgTheme
+    &-flavor-gold:hover &-icon
+        @extends $SvgThemeDull
+    &-flavor-gold, &-container:hover:not(&-disabled)&-flavor-gold
+        & ^[0]-icon-container
+            background: bg-colour[4]
+    // Labels
+    &-label
+        @extends $TextDarkTransition
+    &-flavor-gold &-label
+        @extends $TextTheme
+    &-flavor-gold:hover &-label
+        @extends $TextThemeDull
+    // Hover
+    &-container:not(&-disabled):not(&-flavor-gold):hover:not(&-disabled)
+        & ^[0]-icon
+            @extends $SvgMedium
+            &-container
+                @extends $PanelMediumHighlighted
+        & ^[0]-label
+            @extends $TextMedium
+
+/*
+ * --- Role Card ---
+ */
+
+.TeamRoleCardOverlay
+    &-container
+        @extends $ContentRoughDark
+    // Background for buttons
+    &-menu
+        @extends $PanelDark
+    // Member count
+    &-info-count
+        @extends $ContentLight
+
+// Button gap
+.ProfileCardMenuItem-container:not(:first-child)::before
+    display: none

@@ -1,0 +1,56 @@
+@require "../../variables"
+@require "../../set"
+@require "../../content"
+@require "../guilded-variables"
+
+/*
+ * -=- API -=-
+ */
+
+.RestApiDocs
+    &-container
+        @extends $PanelMedium
+    &-sidebar
+        SetScrollbar()
+    &-logo
+        opacity: 35%
+    &-content
+        @extends $TextMedium
+    // Endpoint header
+    &-api-callout
+        color: info
+    &SchemaItem-verb
+        color: action
+    // Required permissions
+    &PermissionItem-container
+        @extends $ContentDark
+    // Events
+    &WebSocketsSection
+        &-name
+            @extends $InlineCode
+    // Tables
+    &TableRow-container
+        @extends $SubContentDark
+        border-bottom-color: bg-colour[4]
+        &:nth-child(2n)
+            @extends $ContentDark
+        &-flavor-dark
+            @extends $TextMedium
+
+.GuildedTableBase-row-container
+    SetScrollbar()
+
+.Collapsible
+    &Group-container
+        @extends $PanelMediumHighlighted
+        position: relative
+        &::before
+            SetBorderOverlay(border-light[0], 4px)
+        &-flavor-grey
+            @extends $PanelMediumHighlighted
+    &ItemHeader-container
+        @extends $PanelDark
+        ^[0]Group-container-flavor-grey &
+            @extends $PanelDark
+        &-desktop::after
+            @extends $ContentGreyHighlight

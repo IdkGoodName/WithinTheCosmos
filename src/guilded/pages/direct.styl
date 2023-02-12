@@ -1,0 +1,65 @@
+@require "../../variables"
+@require "../../set"
+@require "../../content"
+@require "../guilded-variables"
+
+/*
+ * -=- DMs -=-
+ */
+
+// Side bar
+.WebAppV2-sidebar
+    @extends $PanelDark
+.ChatChannelList
+    &-container
+        @extends $PanelDark
+    &-items, &-items:hover
+        SetScrollbar()
+
+.ChatChannelListItem
+    &-container
+        --border-color: bg-colour[2]
+        border: solid 1px transparent
+        &-unread::before
+            @extends $Notification
+    // Selected DMs
+    &-container&-container-selected
+        @extends $ContentLight
+        --border-color: bg-colour[4]
+    // Hovered DMs
+    &-container:not(&-container-selected):hover
+        @extends $MildContentLight
+        --border-color: bg-colour[3]
+    // Remove DMs crossmark
+    &-container:not(&-container-selected):hover &-remove-icon,
+    &-container-selected &-remove-icon
+        background-color: transparent
+        fill: fg-colour[1]
+        transition: fill
+        // Remove DMs crossmark hover
+        &:hover
+            @extends $SvgLight
+    // Selected DMs content
+    &Info-container-selected
+        // Name
+        .ChatChannelListItemInfo-name
+            @extends $TextLight
+        // Text
+        .ChatChannelListItemInfo-latest-message
+            @extends $TextMedium
+        // Timestamp
+        .ChatChannelListItemInfo-last-at
+            @extends $TextDark
+    // Unread DMs
+    &-container-unread
+        .ChatChannelListItemInfo
+            &-latest-message, &-name
+                @extends $TextLight
+
+// User typing in DMs
+.TypingIndicator-container
+    @extends $PanelDarkest
+
+// Removed DMs background
+.ChatSummary-container
+    @extends $PanelMedium

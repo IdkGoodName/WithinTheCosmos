@@ -1,0 +1,204 @@
+@require "../guilded-variables"
+
+/*
+ * -=- Manage Bots -=-
+ */
+
+.TeamBotsManager
+    &Sidebar
+        &-container
+            @extends $PanelDark
+        // Bot list
+        &Bot
+            &-container
+                @extends $FullBorderTransparent
+                &:hover
+                    @extends $MildContentLight
+                &&-selected
+                    @extends $ContentLight
+            // Status Dots
+            &-status
+                @extends $PanelNormal
+            &-container&-container-enabled &-status
+                @extends $PanelGood
+        // Explore more bots
+        &Link
+            &-icon-wrapper
+                @extends $MildContentLight
+            &-icon
+                @extends $SvgDarkTransition
+            &-title
+                @extends $TextDarkTransition
+            &-container:hover
+                & ^[2]-icon-wrapper
+                    @extends $PanelMedium
+                & ^[2]-icon
+                    @extends $SvgMedium
+                & ^[2]-title
+                    @extends $TextMedium
+    // Home page
+    &EmptyState
+        &-container
+            @extends $MildContentLight
+        &DefaultBot-container
+            @extends $ContentLight
+    // Flow tabs
+    &BotFlows-form-switch
+        @extends $ContentLight
+    // API
+    &BotApi
+        &-publish
+            @extends $ContentLight
+        // "API has arrived"
+        &-cta
+            @extends $ContentLight
+            &-icon
+                @extends $SvgDarker
+                opacity: 25%
+
+// Content(flow)
+.UserCTAPanel-container
+    @extends $ContentLight
+// // Content inner(flow)
+// .UserCTAPanel-container-style-bordered
+//     border: 0
+// Content inner(flow) 2
+.UserCTAPanel-container-style-bordered .UserCTAPanel-contents:not(.UserCTAPanel-container-disabled)
+    @extends $PanelTransparent
+.UserCTAPanel-container-style-bordered .UserCTAPanel-contents:not(.UserCTAPanel-container-disabled):hover
+    @extends $PanelMedium
+    @extends $TransitionBackground
+// Flow connection
+.PanelList-option-connector
+    background-color: border-light[1]
+// Flow's title
+.PanelInfo-title
+    @extends $TextLight
+// Flow's description
+.PanelInfo-description
+    @extends $TextDark
+// Flow's icon
+.BotFlowDisplay-icon
+    @extends $SvgDark
+
+/*
+ * -=- Create Server -=-
+ */
+
+// Tiled background
+.OnboardingExperience-background
+    @extends $PanelDarkest
+// Background's tile
+.LandingPageV3WhimsicalIcon-icon
+    @extends $TextDarker
+    opacity: 15%
+    transition: opacity
+    // Background's tile
+    &:hover
+        opacity: 35%
+// Creation container
+.FullScreenFlowStageWrapper-contents-wrapper
+    @extends $PanelMedium
+// Enter your server name above
+.TextInputWithLabel-container-label-retracted .TextInputWithLabel-floating-label-validity
+    @extends $TextDarker
+// Server name is too short
+.TextInputWithLabel-container.TextInputWithLabel-container-invalid .TextInputWithLabel-floating-label,
+.TextInputWithLabel-container.TextInputWithLabel-container-invalid:hover .TextInputWithLabel-floating-label
+    @extends $TextBad
+// Server name is too short icon
+.ValidityIndicator-container-invalid
+    @extends $SvgBad
+// Server name looks good
+.TextInputWithLabel-container-valid .TextInputWithLabel-floating-label-validity
+    @extends $TextGood
+// Upload avatar container
+.NewTeamUpsellIcon-container
+    border-color: fg-colour[0]
+// Upload avatar icon
+.NewTeamUpsellIcon-icon
+    @extends $SvgMedium
+// Upload avatar icon hover
+.NewTeamUpsellIcon-container:hover .NewTeamUpsellIcon-icon
+    @extends $SvgLight
+// Upload avatar plus sign
+.NewTeamUpsellIcon-plus-icon
+    background: var(--accent-0)
+    @extends $SvgThemeContrast
+// Upload avatar plus sign hover
+.NewTeamUpsellIcon-container:hover .NewTeamUpsellIcon-plus-icon
+    background: var(--accent-1)
+
+// Games selected
+.ItemChooser
+    &-info
+        @extends $TextDark
+    &-items-wrapper-scrollable
+        SetScrollbar()
+// Game
+.ItemChooserItemWrapper-container
+    @extends $SetContentLight
+    // Game hover
+    &:hover
+        @extends $PanelLight
+
+/*
+ * -=- Join through invite -=-
+ */
+
+.InvitePage
+    // Invite page background
+    &-container
+        @extends $PanelReallyDark
+    // The information area of the invite
+    &-panel
+        @extends $PanelMedium
+
+.MemberCountPill
+    // X members, Y online pills
+    &-container
+        @extends $PanelLight
+    // Member count circle
+    &-circle
+        &-green
+            @extends $PanelGood
+        &-grey
+            background-color: fg-colour[2]
+// Accept invite and join Y server
+.SocialContextHeader-header-text
+    @extends $TextMedium
+// This is how you'll appear to your teammates
+.AcceptTeamInviteControl-user-profile-preview
+    @extends $TextDark
+
+/*
+ * -=- Create Invite -=-
+ */
+
+// Copy invite title
+.CopyToClipboardControlV2-title
+    @extends $TextLight
+// Invite input
+.CopyableTextbox
+    // The container itself
+    &-container
+        @extends $ContentLight
+        transition: border-color
+        border-radius: radius-2
+    &-container-desktop:hover
+        @extends $SetBorderLight-2
+    // Copy button
+    &-container-type-text &-copy-button
+        @extends $TextMediumTransition
+    // Link
+    &-url-wrapper-text
+        @extends $TextThemeDullTransition
+        ^[0]-container-desktop:hover &
+            @extends $TextThemeBleached
+        ^[0]-container-type-text &
+            @extends $TextMediumTransition
+        ^[0]-container-type-text^[0]-container-desktop:hover &
+            @extends $TextLight
+// Copy invite button hover
+.SocialShareButtonV2-container-desktop:hover::after
+    @extends $ContentGlare

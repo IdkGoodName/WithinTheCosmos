@@ -1,3 +1,12 @@
+@require "../../variables"
+@require "../../set"
+@require "../../content"
+@require "../guilded-variables"
+
+/*
+ * -=- Bot & Server Discovery -=-
+ */
+
 // Group list
 .GroupCard
     &-contents
@@ -21,9 +30,11 @@
     @extends $RadiusMedium
     @extends $PanelMedium
     &:hover
+        background-image: none
         @extends $PanelMediumHighlighted
     &::before
         SetBorderOverlay(border-light[0], radius-3)
+
 
 .BotCard-tags-container .BotCard-tag,
 .BotInfoBody-tags-container .BotInfoBody-tag
@@ -42,5 +53,143 @@
  * --- Modals ---
  */
 
-.BotInfoBody-container
+.BotInfo
+    &Body-container
+        @extends $ContentLight
+    &HeaderBanner-container
+        @extends $PanelTransparent
+
+/*
+ * -=- Tournaments -=-
+ */
+
+/*
+ * --- Sidebar ---
+ */
+
+// Sidebar
+.NavV4SectionSidebar-container
+    @extends $PanelTransparent
+
+// Selected tab
+.NavV4SectionSidebarOption-container-active
+    @extends $SubContentLightHighlighted
+    // Selected tab icon
+    .NavV4SectionSidebarOption-icon
+        @extends $SvgLight
+    // Selected tab text
+    .NavV4SectionSidebarOption-label
+        @extends $TextLight
+
+/*
+ * --- Content ---
+ */
+
+// Tournament page
+.TournamentsPortal
+    // Container
+    &Page-container
+        @extends $PanelDark
+        SetScrollbar()
+    // Video
+    &Header-video-mask
+        background-image: linear-gradient(to bottom, alpha(bg-colour[2], 0.85) 20%, rgba(0, 0, 0, 0) 65%, alpha(bg-colour[2], 0.95))
+// Tournament card
+.TournamentCard-container
     @extends $ContentLight
+// Information icon
+.TournamentSummaryItem
+    &-container-size-sm &-icon
+        @extends $SvgDark
+    // Information text
+    &-text
+        @extends $TextMedium
+// This group is archived
+.GroupUpsell-container-archived
+    @extends $PanelMedium
+
+/*
+ * -=- Old Explore -=-
+ */
+
+// Background of explore pages
+.ExplorePage-container
+    @extends $PanelDark
+// Sidebar page list
+.NavbarNavIcon-container
+    &:hover
+        background-color: alpha(bg-hover, 0.1)
+    // Selected
+    &-selected
+        @extends $PanelMedium
+
+// Find a server tabs
+.IconNavMenuButton-icon
+    @extends $SvgDarkTransition
+    .IconNavMenuButton-container-desktop:hover &
+        @extends $SvgMedium
+// Find a server tabs containers
+.IconNavMenuButton-container
+    @extends $TransitionColour
+    &, &:visited, &:active, &:focus
+        @extends $TextDark
+    &:hover
+        @extends $TextMedium
+
+.CardList
+    // Title
+    &-label
+        @extends $TextLight
+// "A new way to scrim" Description
+.TitleAndDescriptionPanel-description
+    @extends $TextDark
+// No scrims description
+.ScrimFinderRecentMatches-none
+    @extends $TextDark
+// Scrim team
+.ScrimFinderLeaderboardTeam
+    &-name
+        @extends $TextLight
+    // Index
+    &-rank
+        @extends $TextDark
+
+// Post card
+.ContentCard
+    &-container
+        @extends $PanelMedium
+    // Footer
+    &-metas
+        @extends $PanelMild
+        // Footer hover
+        &::after
+            @extends $ContentGlare
+
+// Profile post card
+.ProfilePostCard
+    &-title
+        @extends $TextLight
+    &-metas-time
+        @extends $TextDark
+
+// Invite progressbar
+.PercentageBar
+    // Empty
+    &-backplate-div
+        background-color: bg-colour[2] !important
+    // Progress
+    &-progress-div
+        background-color: progress !important
+    // Progressbar
+    &-container-type-success .PercentageBar-progress-div
+        @extends $SetBorderDark-1
+// Invite text
+.RequirementProgressBar-unsatisfied-text
+    @extends $TextDark
+
+// Explore servers and players game selector
+.TypeaheadInput-container-dropdown .TypeaheadInput-typeahead-options-list,
+.TypeaheadMenu-container
+    @extends $SetMildContentLight
+    .SelectMenuItem-label
+        @extends $TextMedium

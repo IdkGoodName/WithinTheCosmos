@@ -1,0 +1,22 @@
+@require "../guilded-variables"
+
+/*
+ *
+ * -=- Empty Page -=-
+ *
+ */
+
+// Not loaded
+.LayeredPageContent-fetch-error
+    @extends $PanelMedium
+
+// Not found/Not loaded/Empty
+.NullStateV2,
+.TabEmptyState
+    &-image
+        filter: guilded-null-image-transform
+    &-title
+        @extends $TextLight
+    &-container-size-md &-title,
+    &-subtitle
+        @extends $TextMedium

@@ -1,0 +1,77 @@
+@require "../guilded-variables"
+
+/*
+ * -=- Activity list -=-
+ */
+
+// Activity menu
+.ChannelActivityDisplay
+    &-group-header,
+    &-container
+        @extends $PanelDark
+    &-item
+        @extends $ContentLight
+// Activity menu content
+.ChannelActivityItem
+    // Text
+    &-header
+        @extends $TextLight
+    &-footer
+        @extends $TextDark
+    // Unread activity menu item
+    &-container::after
+        @extends $ContentGlare
+    &-container.ChannelActivityItem-container-unread
+        @extends $ContentLightHighlighted
+        SetNotification()
+        .ChannelActivityItem-header
+            @extends $TextNotification
+            font-weight: bold
+        &:hover .ChannelActivityItem-header
+            @extends $TextNotificationHover
+    // Type icons
+    &-icon
+        // Wrapper
+        .AvatarIcon-container
+            background-color: bg-colour[1] !important
+        // Icon types
+        .icon-application
+            fill: $gold
+        .icon-reply-filled-no-padding,
+        .icon-toolbar-mention
+            fill: $yellow
+        .icon-calendar-new
+            fill: $red
+        .icon-toolbar-emoji
+            fill: $blue
+        .icon-volume-full
+            fill: $green
+
+/*
+ * -=- Channel Switcher -=-
+ */
+
+// Channel switcher
+.ChatChannelSwitcherOverlay
+    &-container
+        background-color: bg-colour[2]
+        color: fg-colour[1]
+    &-results-container
+        SetScrollbar()
+    &Footer-container
+        @extends $PanelReallyDark
+// Channel switcher channel
+.ChatChannelSwitcherRow
+    &-container
+        @extends $TextMedium
+        // Header of the channels
+        &-header
+            @extends $TextDark
+        // Selected
+        &-selected
+            @extends $ContentLight
+        &:not(&-header)
+            margin: 0 spacing-2
+            // Hovered over
+            &::after
+                @extends $ContentGlare
