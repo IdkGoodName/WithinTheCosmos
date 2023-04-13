@@ -28,8 +28,12 @@
 
 // Hover outline
 .StreamPlayer
-    &-container:hover &-inset-border
-        border-color: active
+    &-border-container:hover &-inset-border,
+    &-inset-border:hover
+        // border: solid 1px var(--accent-0)
+        @extends $FullBorderTheme
+    &-border-container&-container-speaking &-inset-border
+        @extends $FullBorderGood
     // The user pill
     &MemberDisplay-pill
         @extends $PanelReallyDark

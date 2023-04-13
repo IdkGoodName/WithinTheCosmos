@@ -29,28 +29,25 @@
 
 // Tab text
 .DesktopOptionsControlItemTemplate-label-text
-    @extends $TextDark
+    @extends $TextDarkTransition
 
 settings-item-margin = 5px
 .DesktopOptionsControlItemTemplate-container
     border-radius: radius-1
     padding: 6px 12px
-    HasHighlightPill(settings-item-margin)
 
     @extends $FullBorderTransparent
     // Tab hover text
     &:hover
-        @extends $MildContentLightHighlighted
-
+        // @extends $Panel
         &::after
-            display: none
+            @extends $ContentGlare
 
         .DesktopOptionsControlItemTemplate-label-text
             @extends $TextMedium
     // Tab active
     &-active
-        GiveHighlightPill(75%, settings-item-margin)
-        @extends $PanelTransparent
+        @extends $ContentLight
 
         &, &:hover
             .DesktopOptionsControlItemTemplate-label-text

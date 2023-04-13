@@ -34,8 +34,9 @@
 .CustomFormSummaryResultSection-header
     @extends $TextDark
 // Title
-.CustomFormResultHeader-container
-    @extends $TextLight
+.CustomFormResultHeader
+    &-container, &-title
+        @extends $TextLight
 // Text response in a form
 .CustomFormSummaryTextResponse-container
     @extends $MildContentLight
@@ -52,7 +53,7 @@
         @extends $TextDark
 // Individual response container
 .CustomFormIndividualResponse-result-display
-    @extends $MildContentLight
+    @extends $PanelMild
 // Individual response message input text
 .TextAreaFieldDisplayRenderer-container
     color: var(--body-text-color)

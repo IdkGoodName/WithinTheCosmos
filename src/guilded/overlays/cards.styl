@@ -61,12 +61,19 @@
         &-container
             @extends $ContentLight
     &-flavor-gold &-icon
-        @extends $SvgTheme
+        //@extends $SvgTheme
+        @extends $SvgThemeContrast
     &-flavor-gold:hover &-icon
-        @extends $SvgThemeDull
-    &-flavor-gold, &-container:hover:not(&-disabled)&-flavor-gold
+        //@extends $SvgThemeDull
+        @extends $SvgThemeContrast
+    &-flavor-gold
         & ^[0]-icon-container
-            background: bg-colour[4]
+            @extends $PanelTheme
+            // background: var(--accent-0)
+    &-container:hover:not(&-disabled)&-flavor-gold
+        & ^[0]-icon-container
+            @extends $PanelThemeDull
+
     // Labels
     &-label
         @extends $TextDarkTransition

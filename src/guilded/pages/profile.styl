@@ -9,7 +9,7 @@
 
 // Profile content
 .UserProfileV3-container
-    &, &-micro-scrollbar
+    &, &-micro-scrollbar, &-thick-scrollbar
         @extends $PanelDark
         SetScrollbar()
 
@@ -42,6 +42,9 @@
     // // Avatar
     // &-picture
     //     @extends $RadiusHigh
+
+.UserProfileNavHeader-background
+    opacity: 30%
 
 /*
  * --- Posts ---
@@ -132,7 +135,7 @@
     &GameInfo-name
         @extends $TextLight
     &-banner
-        opacity: 0.4
+        opacity: 30%
 
 // Game header player's name
 .GameAliasDisplay-container

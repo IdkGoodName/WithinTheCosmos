@@ -95,14 +95,14 @@
     &.ReactionBadge-container-active
         // Normal active reaction
         .ReactionBadge-container-content
-            background-color: mix(bg-colour[2], active, 85%)
-            border-color: alpha(active, 0.1)
+            background-color: mix(bg-colour[1], active, 90%)
+            border-color: alpha(active, 0.15)
             // Active reaction label
             .ReactionBadge-count
                 color: active
         // Active reaction hover
         &.ReactionBadge-container:not(.ReactionBadge-container-disabled):hover .ReactionBadge-container-content
-            background-color: mix(bg-colour[2], active, 90%)
+            background-color: mix(bg-colour[1], active, 85%)
 
 /*
  * -=- Image Upload -=-
@@ -172,14 +172,17 @@
  * -=- Badges & Pills -=-
  */
 
+$Badge
+    color: fg-colour[2]
+    background: bg-colour[1] !important
+    border: solid 1px border-dark[1] !important
+
 /*
  * --- General purpose badge ---
  */
 
 .CalloutBadge-container
-    background: bg-colour[0] !important
-    border: solid 1px border-dark[1] !important
-    @extends $TextMedium
+    @extends $Badge
 // Stylus ruins it
 // .CalloutBadge-container[style="background: rgb(108, 186, 80);"]
 //     color: $green !important
@@ -224,10 +227,6 @@ $RolePill
  * --- User badges ---
  */
 
-$Badge
-    color: fg-colour[2]
-    background: bg-colour[1] !important
-    border: solid 1px border-dark[1] !important
 
 .UserBadge
     // // If there is an icon in the badge, remove the name
@@ -263,6 +262,7 @@ $Badge
 .RadiosField-option-details-header-badge
     color: info
     background: bg-colour[0] !important
+    // border-color: alpha(info, 0.4)
 
 // [LIVE]
 // .TeamChannelItemContents-label-wrapper
@@ -271,14 +271,17 @@ $Badge
 // Group reorder [DEFAULT]
 .GroupSettingsPanel-name-wrapper .CalloutBadge-container
     color: $blue
+    // border-color: alpha($blue, 0.4)
 
 .ReGuildedBadges-type
     // [NEW] in the changelog
     &-new
         color: $red
+        // border-color: alpha($red, 0.4)
     // [ADDON] for addon settings
     &-addon
         color: #cc5555
+        // border-color: alpha(#cc5555, 0.4)
 
 /*
  * --- Tournament badges ---
@@ -290,8 +293,10 @@ $Badge
         @extends $Badge
     &-in-progress
         color: active
+        border-color: alpha(active, 0.4)
     &-unpublished
         color: waiting
+        border-color: alpha(waiting, 0.4)
 .TournamentBadges-badge
     &-type
         &-featured
@@ -335,13 +340,28 @@ $Badge
     &-container-desktop::after
         @extends $ContentGlare
 
+// Buttons
+.ToggleControl-container
+    @extends $SetBorderLight-2
+    // overflow: hidden
+
+// Showcase event buttons
+.ToggleControlButton
+    &-container, &-icon
+        @extends $FontDark
+
 .ToggleControlButton-container.ToggleControlButton-container
+    &-desktop:hover, &-selected
+        color: good-1
+        background-color: bg-colour[4]
+    &-selected:focus, &-selected:active
+        @extends $TextGood
     // Showcase event buttons hover
     &-desktop:hover .ToggleControlButton-icon
         @extends $SvgMedium
     &-selected
         .ToggleControlButton-icon
-            @extends $SvgTheme
+            @extends $SvgGood
 
         button-list = { name: "Going", placeholder: "$SvgGood" } { name: "Maybe", placeholder: "$SvgNeutral" } { name: "Declined", placeholder: "$SvgBad" }
 
@@ -349,7 +369,7 @@ $Badge
             // Have to use a hack
             name = attribute-value(type.name)
 
-            &[title={name}]
+            &[data-id={name}]
                 .ToggleControlButton-icon
                     @extends {type.placeholder}
 
@@ -557,3 +577,21 @@ define-carousel-fade(bg-colour[2])
 .ShareContentTrigger-icon,
 .ContentMetadataReplyInfo-icon
     @extends $SvgDark
+
+/*
+ * -=- Image -=-
+ */
+
+// Pop up banner
+.GlassySplashHeader
+    &-image-wrapper &-image
+        mask-image: linear-gradient(to bottom, black, transparent 100%)
+        -webkit-mask-image: linear-gradient(to bottom, black, transparent 100%)
+    &-image-wrapper
+        opacity: 30%
+    // &-image-wrapper
+    //     @extends $RemoveItem
+    // Remove its highlighting
+    .EventCard-container:hover &-container,
+    &-container&-container-desktop&-container-clickable:hover
+        @extends $PanelTransparent

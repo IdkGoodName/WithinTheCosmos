@@ -4,23 +4,35 @@
 @require "../guilded-variables"
 
 /*
- * --- Calendar ---
+ * -=- Calendar Placeholders -=-
+ */
+
+$CalendarDayDifferentMonth
+    @extends $PanelMild
+$CalendarDayNormal
+    @extends $PanelMedium
+$CalendarDayHovered
+    @extends $PanelMediumHighlighted
+$CalendarDayToday
+    @extends $PanelMediumHighlighted
+$CalendarDayTodayHighlight
+    background-color: var(--game-color)
+    color: var(--accent-foreground) !important
+
+/*
+ * -=- Calendar -=-
  */
 
 // Day cards
 +prefix-classes("FullSizedCalendar")
-    .-container
-        @extends $MildContentLight
-        padding-top: spacing-2
-        border-radius: radius-2
     // Week day header
     .WeekdayHeader-day
         @extends $TextDark
     // Calendar days and weeks
     .-week
-        @extends $PanelLight
+        @extends $MildContentLight
     .-day
-        @extends $SetSubContentLight
+        @extends $CalendarDayNormal
         // Day numbers
         .DayHeader-date
             @extends $TextMedium
@@ -28,24 +40,22 @@
     .Day-container-desktop.Day-container-can-create
         @extends $TransitionBackground
         &:hover
-            @extends $PanelLight
+            @extends $CalendarDayHovered
     .Day-new-event-icon
         @extends $SvgDark
         transition: opacity
     // Calendar special days
-    .Day-container-in-past,
-    .Day-container-different-month
-        background-color: bg-colour[4]
-        color: fg-colour[0]
+    .-day.Day-container-in-past,
+    .-day.Day-container-different-month
+        @extends $CalendarDayDifferentMonth
         // Don't make text stand out
         .DayHeader-date
             @extends $TextDarker
     .Day-container-today
-        @extends $PanelLight
+        @extends $CalendarDayToday
         // Highlight the date
         .DayHeader-date
-            background-color: var(--game-color)
-            color: var(--accent-foreground)
+            @extends $CalendarDayTodayHighlight
     // Event name
     .Event-name
         @extends $TextMedium
@@ -64,22 +74,14 @@
     .Event-container-with-start-time.Event-container-desktop::after
         @extends $ContentGlare
 
-// Buttons
-.ToggleControl-container
-    @extends $SetBorderLight-2
-    overflow: hidden
-.ToggleControlButton-container.ToggleControlButton-container
-    &-desktop:hover, &-selected
-        color: var(--accent-0)
-        background-color: bg-colour[4]
-    &-selected:focus, &-selected:active
-        @extends $TextTheme
 // Month switching
 .DateSwitcher
     &-month-name
         @extends $TextLight
     &-button
-        @extends $SvgDark
+        @extends $SvgDarkTransition
+    &-button:hover
+        @extends $SvgMedium
 
 // Upcoming
 .UpcomingCalendar
@@ -89,7 +91,7 @@
         @extends $PanelMedium
 
 /*
- * --- Calendar Pop-up ---
+ * --- Date picker Pop-up ---
  */
 
 // Date input pop-up
@@ -100,7 +102,7 @@
     // Month name
     &-header
         color: fg-colour[3]
-        background-color: bg-colour[3]
+        background-color: bg-colour[1]
     &-arrow
         @extends $SvgDark
     // Week day
@@ -108,39 +110,65 @@
         @extends $TextDark
     // Day
     &-day
-        @extends $PanelLight
+        @extends $CalendarDayNormal
         transition: background-color
         &-contents
-            color: fg-colour[2] !important
-    &-day-next-month
-        @extends $PanelMild
+            @extends $TextMedium
+            // color: fg-colour[2] // !important
+    &-day&-day-next-month
+        @extends $CalendarDayDifferentMonth
         .DayPicker-day-contents
-            color: fg-colour[0] !important
+            // color: fg-colour[0]
+            @extends $TextDarker
+    // Selectable day hover
     &-day:hover
-        @extends $PanelLight
-    // Day numbers
-    &-container-desktop &-day:hover &-day-contents,
-    &-container-desktop &-day-selected.DayPicker-day:hover &-day-contents
-        @extends $PanelTransparent
+        @extends $CalendarDayHovered
+    &-container-desktop &-day:hover &-day-contents
+        background-color: transparent
+        color: active
+    // Current day
+    &-day-today
+        @extends $CalendarDayToday
+    &-container-desktop &-day-today:hover,
+    &-day-today
+        .DayPicker-day-contents
+            @extends $CalendarDayTodayHighlight
+
+    // Selected day hover
+    &-container-desktop &-day-selected&-day:hover &-day-contents,
+    // Selected day
     &-day-selected &-day-contents
-        background-color: var(--game-color)
-        color: #FFF !important
+        background: active
+        color: var(--accent-foreground) !important
 
 /*
- * --- Pop up ---
+ * --- Calendar Card ---
  */
+
+.EventCard
+    // When it starts and ends
+    &Metadata-subtitle
+        @extends $TextDark
+    // The description of it
+    &Description-container
+        @extends $TextMedium
+        @extends $SetBorderLight-1
+    &Header
+        // The name of the event in the pop up
+        &-name
+            @extends $TextLight
+        // The header text and colour
+        &-details
+            height: 55px
+    // Whether the user is going or not
+    &-status-toggle
+        @extends $SetBorderLight-1
 
 // Pop-up top-level
 .TransientMenu-container-style-card
-    overflow: hidden
-    @extends $PanelMedium
-// Pop up banner
-.GlassySplashHeader
-    &-image-wrapper &-image
-        mask-image: linear-gradient(to bottom, black, transparent 112px)
-    // Remove its highlighting
-    .EventCard-container:hover &-container
-        @extends $PanelTransparent
+    // overflow: hidden
+    @extends $SetContentRoughDark
+
 /*
  * --- View ---
  */

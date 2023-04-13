@@ -23,8 +23,6 @@ $FormDropdownActive
     font-weight: bold
 FormDropdownActive()
     @extends $FormDropdownActive
-
-    GiveHighlightPill(75%, form-dropdown-margin)
 $FormDropdownActiveFocused
     background-color: bg-colour[5]
     border: solid 1px border-light[1]
@@ -71,11 +69,14 @@ $FormDropdownActiveFocused
     &-container
         @extends $TextDark
 
-.FormResultDisplayFieldWrapper-field-header
-    &-icon
-        @extends $SvgDark
-    &-text
-        @extends $TextMedium
+.FormResultDisplayFieldWrapper
+    &-field-header
+        &-icon
+            @extends $SvgDark
+        &-text
+            @extends $TextMedium
+    &-container .GuildedText-container:not(.GuildedText-container-type-subtext)
+        @extends $InlineCode
 
 
 /*
@@ -541,6 +542,12 @@ $FormDropdownActiveFocused
 // Form selector icon
 .GuildedSelectIcon-container
     @extends $SvgDark
+    &-color-success
+        @extends $SvgGood
+    &-color-neutral
+        @extends $SvgNeutral
+    &-color-cancel
+        @extends $SvgBad
 
 .Select
     // Form selector options

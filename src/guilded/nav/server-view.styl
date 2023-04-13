@@ -60,6 +60,7 @@ body
 // The parent of the .TeamBanner-image-banner component
 .TeamNavHeader-banner
     height: 100%
+    -webkit-mask-image: linear-gradient(to bottom, black, black 0%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0))
     mask-image: linear-gradient(to bottom, black, black 0%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0))
 
     .TeamBanner-image-banner
@@ -204,7 +205,7 @@ SetChannel(className)
 
 $ChannelNotificationUpsell
     background-color: bg-colour[0]
-    border: solid 1px alpha($green, 0.5)
+    border: solid 1px alpha(highlight, 0.5)
 
 // Invite others
 .ChannelUpsell-container

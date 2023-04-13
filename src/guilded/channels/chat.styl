@@ -43,14 +43,14 @@ define-message-type(colour)
     .ReactionBadge-container.ReactionBadge-container-active
         // Normal active reaction
         .ReactionBadge-container-content
-            background-color: mix(bg-colour[2], colour, 85%)
-            border-color: alpha(colour, 0.1)
+            background-color: mix(bg-colour[1], colour, 90%)
+            border-color: alpha(colour, 0.15)
             // Active reaction label
             .ReactionBadge-count
                 color: colour
         // Active reaction hover
         &.ReactionBadge-container:not(.ReactionBadge-container-disabled):hover .ReactionBadge-container-content
-            background-color: mix(bg-colour[2], colour, 90%)
+            background-color: mix(bg-colour[1], colour, 85%)
 
 .ChatV2Message-container
     // Message

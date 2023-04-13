@@ -41,13 +41,20 @@
     @extends $SubContentDark
     @extends $TextDark
 
+$WhimsicalIcon
+    opacity: 0.1
+
 .TeamExplore
     &-whimsical-icon
-        opacity: 0.1
+        @extends $WhimsicalIcon
     &-search
         @extends $MildContentLight
         &:hover
             @extends $PanelMediumHighlighted
+
+.BotExplore
+    &-whimsical-icon
+        @extends $WhimsicalIcon
 
 /*
  * --- Modals ---

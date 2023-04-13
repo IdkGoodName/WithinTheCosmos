@@ -40,6 +40,8 @@
             @extends $TextDark
         &-bigBody
             @extends $TextDark
+        &-fineText
+            @extends $TextDark
         &-code
             @extends $InlineCode
     &-color
@@ -81,6 +83,14 @@
             .-icon
                 fill: black
 
+// Links
+.RouteLink-linkify
+    Link()
+
+@media only screen and (min-width: 770px)
+    .RouteLink-linkify:hover
+        @extends $TextThemeBleached
+
 // Link/Hyperlink
 .MediaUploaderDropImageInstructions-browse-link,
 .TeamListItemsCompletedHeader-show-complete,
@@ -98,7 +108,6 @@
 .EmbedCardFooter-link,
 .CardList-label-link,
 .StatusMessage-link,
-.RouteLink-linkify
     Link()
 
 /*
@@ -108,6 +117,8 @@
 $TabContainer
     @extends $FullBorderLight-2
     border-radius: radius-2
+$TabUnselected
+    border-radius: 0
 $TabHover
     @extends $PanelMild
 $TabSelected
@@ -118,7 +129,8 @@ $TabSelectedHover
 $TabText
     @extends $TextDarkTransition
 $TabTextHover
-    @extends $TextMedium
+    // @extends $TextMedium
+    @extends $TextTheme
 $TabTextSelected
     @extends $TextTheme
 $TabTextSelectedHover
@@ -127,7 +139,8 @@ $TabTextSelectedHover
 $TabIcon
     @extends $SvgDarkTransition
 $TabIconHover
-    @extends $SvgMedium
+    // @extends $SvgMedium
+    @extends $SvgTheme
 $TabIconSelected
     @extends $SvgTheme
 $TabIconSelectedHover
@@ -140,6 +153,7 @@ $TabIconSelectedHover
     // Tabs themselves
     &Item
         &-container
+            @extends $TabUnselected
             &:hover, &:active, &:focus
                 @extends $TabHover
                 & ^[1]-icon
@@ -166,11 +180,12 @@ $TabIconSelectedHover
             @extends $TabContainer
             width: max-content
             &-container:not(&-container-wrapped)
-                // 44px (default) + 2px (border we added)
-                height: 46px
+                // 44px (default) + 2px (border we added) = 46px
+                height: 48px
     &-highlighter
         display: none
     &-container
+        @extends $TabUnselected
         .GH2-container
             @extends $TabText
         &:hover
@@ -191,6 +206,15 @@ $TabIconSelectedHover
 /*
  * -=- Icons -=-
  */
+
+// Triple dot menu icon
+.ContextMenuTrigger
+    &-container-desktop&-container-type-light &-icon,
+    &-container &-icon
+        @extends $SvgDarkTransition
+    &-container-desktop&-container-type-light:hover &-icon,
+    &-container-desktop:hover &-icon
+        @extends $SvgMedium
 
 /*
  * --- Team badges ---

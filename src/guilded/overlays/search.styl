@@ -29,3 +29,26 @@
     &Info-preview
         @extends $MildContentLight
         @extends $TextMedium
+
+/*
+ * -=- Filter -=-
+ */
+
+.FilterWrapper
+    &-container
+        @extends $ContentRoughDark
+    &-header
+        @extends $SetBorderLight-1
+    &-search
+        @extends $ContentLight
+.Filter-container
+    padding: 0 spacing-1
+.FilterOption
+    &-container
+        @extends $FullBorderTransparent
+        &:hover
+            @extends $ContentLight
+        &-active&:hover,
+        &-active
+            @extends $ContentLightHighlighted
+    

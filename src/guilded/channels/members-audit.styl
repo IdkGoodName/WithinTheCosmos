@@ -47,52 +47,6 @@
  * --- Filter ---
  */
 
-// Filter icon
-+prefix-classes("ItemManagerFilterButton")
-    .-icon
-        @extends $SvgDarkTransition
-    .-container
-        // Filter icon hover
-        &:not(&-active):hover .-icon
-            @extends $SvgMedium
-        // Filter settings clicked
-        &-open .-icon
-            @extends $SvgLight
-        // Text
-        &-active
-            @extends $TextTheme
-            &:hover
-                @extends $TextThemeDull
-                .-icon
-                    @extends $SvgThemeDull
-            .-icon
-                @extends $SvgTheme
-
-.ItemManagerFilterWrapper
-    &-header
-        @extends $RemoveBorder
-    // Filter settings
-    &-container
-        @extends $PanelDark
-        @extends $RemoveBorder
-    // Filter settings search
-    &-search
-        @extends $ContentLight
-    // Clear hover
-    &-clear:hover
-        @extends $TextMedium
-
-// Filter menu hover
-.ItemManagerFilterOption
-    &-container
-        &:hover
-            background-color: bg-lighter
-        &-active
-            @extends $ContentLight
-    &-icon
-        @extends $SvgDark
-
-
 .SearchBarInput
     // Search bar
     &-input
@@ -103,6 +57,26 @@
     // Filter settings search icon
     &-icon
         @extends $SvgMedium
+
+.FilterButton
+    &-icon
+        @extends $SvgDarkTransition
+    // Hover
+    &-container:not(&-container-active):hover &-icon
+        @extends $SvgMedium
+    // Open
+    &-container-open &-icon
+        @extends $SvgLight
+    // Active
+    &-container-active &-icon
+        @extends $SvgTheme
+    &-container-active
+        @extends $TextTheme
+    // Active hover
+    &-container-active:hover &-icon
+        @extends $SvgThemeDull
+    &-container-active:hover
+        @extends $TextThemeDull
 
 /*
  * -=- Audit log -=-

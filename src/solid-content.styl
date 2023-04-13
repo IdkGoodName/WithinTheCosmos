@@ -1,0 +1,180 @@
+@require "./set"
+
+// Background
+$PanelDarkest
+    background: bg-colour[0]
+$PanelReallyDark
+    background: bg-colour[1]
+$PanelDark
+    background: bg-colour[2]
+$PanelMild
+    background: bg-colour[3]
+$PanelMedium
+    background: bg-colour[4]
+$PanelMediumHighlighted
+    background: bg-colour[5]
+$PanelLight
+    background: bg-colour[6]
+$PanelTransparent
+    background: transparent
+
+$PanelImportant
+    background: important
+$PanelBad
+    background: bad-0
+$PanelNeutral
+    background: neutral-0
+$PanelNormal
+    background: normal-0
+$PanelGood
+    background: good-0
+
+$PanelSkeleton
+    background: skeleton-0
+
+/*
+ * -=- Bordered -=-
+ */
+
+SetBorderOverlay(colour, radius)
+    +cache("set-border;" + colour + ";" + radius)
+        display: block
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background: transparent
+        border: solid 1px colour
+        border-radius: radius
+        z-index: 5
+        pointer-events: none
+
+$RemoveBorder
+    border: none
+
+// Borders
+$FullBorderLight-0
+    border: solid 1px border-light[0]
+$FullBorderLight-1
+    border: solid 1px border-light[1]
+$FullBorderLight-2
+    border: solid 1px border-light[2]
+$FullBorderLight-3
+    border: solid 1px border-light[3]
+$SetBorderLight-0
+    border-color: border-light[0]
+$SetBorderLight-1
+    border-color: border-light[1]
+$SetBorderLight-2
+    border-color: border-light[2]
+$SetBorderLight-3
+    border-color: border-light[3]
+
+$FullBorderDark-0
+    border: solid 1px border-dark[0]
+$FullBorderDark-1
+    border: solid 1px border-dark[1]
+$SetBorderDark-0
+    border-color: border-dark[0]
+$SetBorderDark-1
+    border-color: border-dark[1]
+
+$FullBorderTransparent
+    border: solid 1px transparent
+$FullBorderTheme
+    border: solid 1px var(--accent-0)
+$FullBorderGood
+    border: solid 1px good-0
+$SetBorderTheme
+    border-color: var(--accent-0)
+$SetBorderThemeDull
+    border-color: var(--accent-1)
+$SetBorderSelection
+    border-color: var(--accent-selection)
+$SetBorderGood
+    border-color: good-0
+$SetBorderBad
+    border-color: bad-0
+$SetBorderTransparent
+    border-color: transparent
+
+/*
+ * --- Panels ---
+ */
+
+PanelBordered(bg-col, border-col)
+    background: bg-col
+    border: solid 1px border-col
+SetPanelBordered(bg-col, border-col)
+    background: bg-col
+    border-color: border-col
+
+$SubContentDark
+    PanelBordered(bg-colour[3], border-dark[0])
+$SetSubContentDark
+    SetPanelBordered(bg-colour[3], border-dark[1])
+$ContentDark
+    PanelBordered(bg-colour[2], border-dark[1])
+$SetContentDark
+    SetPanelBordered(bg-colour[2], border-dark[1])
+$ContentRoughDark
+    PanelBordered(bg-colour[1], border-dark[1])
+$SetContentRoughDark
+    SetPanelBordered(bg-colour[1], border-dark[1])
+
+$MildContentLight
+    PanelBordered(bg-colour[3], border-light[0])
+$SetMildContentLight
+    SetPanelBordered(bg-colour[3], border-light[0])
+$ContentLight
+    PanelBordered(bg-colour[4], border-light[0])
+$SetContentLight
+    SetPanelBordered(bg-colour[4], border-light[0])
+$SubContentLight
+    PanelBordered(bg-colour[5], border-light[0])
+$SetSubContentLight
+    SetPanelBordered(bg-colour[5], border-light[0])
+
+$MildContentLightHighlighted
+    PanelBordered(bg-colour[3], border-light[1])
+$SetMildContentLightHighlighted
+    SetPanelBordered(bg-colour[3], border-light[1])
+$ContentLightHighlighted
+    PanelBordered(bg-colour[4], border-light[1])
+$SetContentLightHighlighted
+    SetPanelBordered(bg-colour[4], border-light[1])
+$SubContentLightHighlighted
+    PanelBordered(bg-colour[5], border-light[1])
+$SetSubContentLightHighlighted
+    SetPanelBordered(bg-colour[5], border-light[1])
+
+$ContentGreyHighlight
+    PanelBordered(bg-colour[6], border-light[1])
+
+$ContentTransparent
+    background: transparent
+    border: none
+
+/*
+ * --- Content Type Panels ---
+ */
+
+PanelType(colour)
+    background: bg-colour[2]
+    border: solid 1px alpha(colour, 0.25)
+    color: colour
+    fill: colour
+$PanelWarning
+    PanelType(warning)
+$PanelInfo
+    PanelType(info)
+$PanelCaution
+    PanelType(bad-1)
+$PanelSuccess
+    PanelType(good-1)
+$PanelTheme
+    background: var(--accent-0)
+$PanelThemeDull
+    background: var(--accent-1)
