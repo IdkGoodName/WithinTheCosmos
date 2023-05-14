@@ -120,7 +120,7 @@ StatusMessageType(colour)
         background: bg-colour[1]
         border-bottom: solid 1px active
         .StatusMessage-content
-            color: active
+            @extends $TextActive
     // Same with stream mode, but purple
     &.StatusMessage-container-banner-type-streamer-mode
         background: bg-colour[1]

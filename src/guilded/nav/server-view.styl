@@ -115,12 +115,12 @@ body
 
 // Section list header
 .TeamNavSectionsList-header
-    display: none
+    @extends $RemoveItem
 // Channel list header
 .TeamChannelsList-container .ChannelListHeader-container-type-default
     // Don't display the text
     .ChannelListHeader-text
-        display: none
+        @extends $RemoveItem
     // Add 3 dots instead
     &::before
         position: relative
@@ -204,11 +204,15 @@ SetChannel(className)
     background-color: bg-colour[1]
 
 $ChannelNotificationUpsell
-    background-color: bg-colour[0]
-    border: solid 1px alpha(highlight, 0.5)
+    background-color: bg-colour[2]
+    border: solid 1px alpha(important, 0.25)
+    border-radius: radius-2
 
 // Invite others
-.ChannelUpsell-container
-    @extends $ChannelNotificationUpsell
+.ChannelUpsell
+    &-container
+        @extends $ChannelNotificationUpsell
+    &-title, &-description
+        @extends $TextImportant
 .SetupUpsell-container
     @extends $ChannelNotificationUpsell

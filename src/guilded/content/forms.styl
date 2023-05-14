@@ -813,7 +813,7 @@ blue-glow = tint($blue, 20%)
 
     // Disabled
     &-container&-container-type-gilded&-container-disabled:not(&-container-hollow)::before
-        display: none
+        @extends $RemoveItem
     &-container&-container-filled&-container-disabled,
     &-container&-container-desktop&-container-filled&-container-disabled:hover
         @extends $SetContentRoughDark
@@ -881,6 +881,18 @@ $ColourSelectorPlus
         @extends $SvgDarkTransition
         ^[0]-container:hover &
             @extends $SvgMedium
+
+// Role icon uploader icon
+.ImageFieldIconPlaceholder
+    // Icon background
+    &-container
+        @extends $ContentLight
+        // Icon
+        &-color-gray
+            @extends $SvgDark
+        // Hover
+        &::after
+            @extends $ContentGreyHighlight
 
 // Role description
 .TeamRolesListInstructions-container

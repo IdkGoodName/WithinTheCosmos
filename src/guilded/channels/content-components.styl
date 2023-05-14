@@ -99,10 +99,14 @@
             border-color: alpha(active, 0.15)
             // Active reaction label
             .ReactionBadge-count
-                color: active
+                @extends $TextActive
         // Active reaction hover
         &.ReactionBadge-container:not(.ReactionBadge-container-disabled):hover .ReactionBadge-container-content
             background-color: mix(bg-colour[1], active, 85%)
+
+// More reactions
+.ViewMoreReactionsButton-container
+    @extends $ContentDark
 
 /*
  * -=- Image Upload -=-
@@ -192,9 +196,9 @@ $Badge
  */
 
 $RolePill
-    border-radius: radius-1
+    border-radius: radius-2
     border: solid 1px border-light[0] !important
-    background: bg-colour[3]
+    background: bg-colour[4]
 
 .TeamMemberRolePill
     &-container
@@ -220,8 +224,8 @@ $RolePill
     &-container
         @extends $SvgMedium
     &-container-size-md
-        @extends $SetContentDark
-
+        @extends $SetContentLight
+        border-radius: radius-2
 
 /*
  * --- User badges ---
@@ -231,7 +235,7 @@ $RolePill
 .UserBadge
     // // If there is an icon in the badge, remove the name
     // &-image ~ &-name
-    //     display: none
+    //     @extends $RemoveItem
     // Override all colours for badges
     &-container:not(.UserFlairRow-icon)[style]
         @extends $Badge
@@ -451,7 +455,7 @@ define-carousel-fade(bg-colour[2])
     &-name
         grid-row: 1
         grid-column: 2
-    &-status
+    &-status, &-role-icon
         grid-row: 1
         grid-column: 3
     &-user-badge
@@ -530,7 +534,7 @@ define-carousel-fade(bg-colour[2])
         line-height: 0
         align-items: flex-start
         .ReactionPickerButton-container-with-label::after
-            display: none
+            @extends $RemoveItem
     &-reply-info
         grid-area: replyInfo
         // grid-row: 1
@@ -564,7 +568,7 @@ define-carousel-fade(bg-colour[2])
             &Display-container
                 padding-left: 0
                 &::before
-                    display: none
+                    @extends $RemoveItem
                 &:hover .LastReplyDisplayContent-container
                     @extends $PanelMediumHighlighted
 

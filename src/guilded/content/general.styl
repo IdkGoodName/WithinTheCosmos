@@ -117,6 +117,7 @@
 $TabContainer
     @extends $FullBorderLight-2
     border-radius: radius-2
+    width: max-content
 $TabUnselected
     border-radius: 0
 $TabHover
@@ -169,7 +170,7 @@ $TabIconSelectedHover
                     @extends $TabIconSelectedHover
 
             &-selected::after
-                display: none
+                @extends $RemoveItem
         // Icons
         &-icon
             @extends $TabIcon
@@ -178,12 +179,12 @@ $TabIconSelectedHover
     &Menu
         &-tabs
             @extends $TabContainer
-            width: max-content
+            // width: max-content
             &-container:not(&-container-wrapped)
                 // 44px (default) + 2px (border we added) = 46px
                 height: 48px
     &-highlighter
-        display: none
+        @extends $RemoveItem
     &-container
         @extends $TabUnselected
         .GH2-container
